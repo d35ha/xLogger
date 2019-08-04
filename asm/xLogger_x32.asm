@@ -131,7 +131,7 @@ WRITE_THREAD_ID:
     add     edi, edx
     mov     dword [esi - 4h], edx
     fs mov  eax, dword [TEB_THREADID_OFFSET]
-    call    eax_TO_HEX
+    call    EAX_TO_HEX
     mov     byte [edi], '['
     mov     byte [edi + edx + 1h], ']'
     mov     byte [edi + edx + 2h], ' '
@@ -152,7 +152,6 @@ WRITE_THREAD_ID:
     pop     esi
     add     dword [esi - 4h], edx
     add     ebp, edx
-   
     movzx   edi, byte [ebp]
     inc     ebp
     sub     esp, 8h
@@ -195,7 +194,7 @@ VALUE_SHIFTED:
     je      STRING_PARAMETER
     jmp     BOOL_PARAMETER
 QWORD_PARAM:
-    call    eax_TO_HEX
+    call    EAX_TO_HEX
     mov     dword [esp], esi
     mov     dword [esp + 4h], edi
     mov     edi, esi
@@ -213,7 +212,7 @@ QWORD_PARAM:
     mov     eax, [esp + ebx * 4h + 28h]
     jmp     VALUE_SHIFTED
 VALUE_PARAMETER:
-    call    eax_TO_HEX
+    call    EAX_TO_HEX
     mov     dword [esp], esi
     mov     dword [esp + 4h], edi
     mov     edi, esi
@@ -537,7 +536,7 @@ SPIN_LOCK_R:
     mov     edi, [esp + 4h]
     add     esp, 8h
     add     esp, edx
-    call    eax_TO_HEX
+    call    EAX_TO_HEX
     sub     esp, 8h
     mov     dword [esp], esi
     mov     dword [esp + 4h], edi
@@ -570,7 +569,7 @@ SPIN_LOCK_R:
     xor     edx, edx
     div     dword [esp + 8h]
     add     esp, 18h
-    call    eax_TO_HEX
+    call    EAX_TO_HEX
     mov     eax, ebp
     sub     esp, 8h
     mov     dword [esp], esi
@@ -637,7 +636,7 @@ PUSH_IO_STATUS_BLOCK:
     pop     esi
     push    ecx
     ret
-eax_TO_HEX:
+EAX_TO_HEX:
     sub     esp, 8h
     mov     dword [esp], esi
     mov     dword [esp + 4h], edi
