@@ -1,0 +1,8 @@
+[CallingConvention]
+@=STDCALL
+[SystemFunction036]
+SourceModule=advapi32.api
+[SystemFunction040]
+SourceModule=advapi32.api
+[SystemFunction041]
+SourceModule=advapi32.api

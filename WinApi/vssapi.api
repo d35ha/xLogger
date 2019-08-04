@@ -1,0 +1,61 @@
+[CallingConvention]
+@=STDCALL
+[CreateVssBackupComponentsInternal]
+1=IVssBackupComponents** ppBackup
+ParamCount=1
+[CreateVssExamineWriterMetadataInternal]
+1=BSTR bstrXML
+2=IVssExamineWriterMetadata** ppMetadata
+ParamCount=2
+Header=windows.h.api;
+[CreateVssExpressWriterInternal]
+1=IVssExpressWriter** ppWriter
+ParamCount=1
+[CreateWriter]
+1=CVssWriter* pWriter
+2=IVssWriterImpl** pWriterImpl
+ParamCount=2
+[CreateWriterEx]
+1=CVssWriterEx* pWriter
+2=IVssWriterImpl** pWriterImpl
+ParamCount=2
+[IsVolumeSnapshotted]
+1=VSS_PWSZ pwszVolumeName
+2=BOOL* pbSnapshotsPresent
+3=LONG* plSnapshotCapability
+ParamCount=3
+[IsVolumeSnapshottedInternal]
+1=VSS_PWSZ pwszVolumeName
+2=BOOL* pbSnapshotsPresent
+3=LONG* plSnapshotCapability
+ParamCount=3
+[ShouldBlockRevert]
+1=LPCWSTR wszVolumeName
+2=bool* pbBlock
+ParamCount=2
+[ShouldBlockRevertInternal]
+1=LPCWSTR wszVolumeName
+2=bool* pbBlock
+ParamCount=2
+[VssFreeSnapshotProperties]
+1=VSS_SNAPSHOT_PROP* pProp
+ParamCount=1
+[VssFreeSnapshotPropertiesInternal]
+1=VSS_SNAPSHOT_PROP* pProp
+ParamCount=1
+[?CreateVssBackupComponents@@YAJPEAPEAVIVssBackupComponents@@@Z]
+1=IVssBackupComponents** ppBackup
+ParamCount=1
+[?CreateVssExamineWriterMetadata@@YAJPEAGPEAPEAVIVssExamineWriterMetadata@@@Z]
+1=BSTR bstrXML
+2=IVssExamineWriterMetadata** ppMetadata
+ParamCount=2
+Header=windows.h.api;
+[?CreateVssBackupComponents@@YGJPAPAVIVssBackupComponents@@@Z]
+1=IVssBackupComponents** ppBackup
+ParamCount=1
+[?CreateVssExamineWriterMetadata@@YGJPAGPAPAVIVssExamineWriterMetadata@@@Z]
+1=BSTR bstrXML
+2=IVssExamineWriterMetadata** ppMetadata
+ParamCount=2
+Header=windows.h.api;

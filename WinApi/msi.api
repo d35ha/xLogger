@@ -1,0 +1,950 @@
+[CallingConvention]
+@=STDCALL
+[MsiSetInternalUI]
+1=[INSTALLUILEVEL] dwUILevel
+2=HWND* phWnd
+ParamCount=2
+Header=msi.h.api;windows.h.api;
+[MsiSetExternalUI]
+1=INSTALLUI_HANDLER puiHandler
+2=[MsiInstallLogMode] dwMessageFilter
+3=LPVOID pvContext
+ParamCount=3
+Header=msi.h.api;
+[MsiSetExternalUIRecord]
+1=PINSTALLUI_HANDLER_RECORD puiHandler
+2=[MsiInstallLogMode] dwMessageFilter
+3=LPVOID pvContext
+4=PINSTALLUI_HANDLER_RECORD ppuiPrevHandler
+ParamCount=4
+Header=msi.h.api;
+[MsiEnableLog]
+1=[MsiInstallLogMode] dwLogMode
+2=LPCTSTR szLogFile
+3=[MsiInstallLogAttributes] dwLogAttributes
+ParamCount=3
+Header=msi.h.api;
+[MsiCloseHandle]
+1=MSIHANDLE hAny
+ParamCount=1
+Header=msi.h.api;
+[MsiCloseAllHandles]
+ParamCount=0
+[MsiAdvertiseProduct]
+1=LPCTSTR szPackagePath
+2=LPCTSTR szScriptfilePath
+3=LPCTSTR szTransforms
+4=[LANGID] lgidLanguage
+ParamCount=4
+Header=windows.h.api;
+[MsiAdvertiseProductEx]
+1=LPCTSTR szPackagePath
+2=LPCTSTR szScriptfilePath
+3=LPCTSTR szTransforms
+4=[LANGID] lgidLanguage
+5=[MsiArchFlags] dwPlatform
+6=[MsiAdOptions] dwOptions
+ParamCount=6
+Header=msi.h.api;windows.h.api;
+[MsiAdvertiseScript]
+1=LPCTSTR szScriptFile
+2=[MsiScriptFlags] dwFlags
+3=PHKEY phRegData
+4=BOOL fRemoveItems
+ParamCount=4
+Header=msi.h.api;registry.h.api;
+[MsiInstallProduct]
+1=LPCTSTR szPackagePath
+2=LPCTSTR szCommandLine
+ParamCount=2
+[MsiConfigureProduct]
+1=LPCTSTR szProduct
+2=[MsiInstallLevel] iInstallLevel
+3=[INSTALLSTATE] eInstallState
+ParamCount=3
+Header=msi.h.api;
+[MsiConfigureProductEx]
+1=LPCTSTR szProduct
+2=[MsiInstallLevel] iInstallLevel
+3=[INSTALLSTATE] eInstallState
+4=LPCTSTR szCommandLine
+ParamCount=4
+Header=msi.h.api;
+[MsiReinstallProduct]
+1=LPCTSTR szProduct
+2=[MsiReinstallMode] dwReinstallMode
+ParamCount=2
+Header=msi.h.api;
+[MsiConfigureFeature]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+3=[INSTALLSTATE] eInstallState
+ParamCount=3
+Header=msi.h.api;
+[MsiReinstallFeature]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+3=[MsiReinstallMode] dwReinstallMode
+ParamCount=3
+Header=msi.h.api;
+[MsiInstallMissingComponent]
+1=LPCTSTR szProduct
+2=LPCTSTR szComponent
+3=[INSTALLSTATE] eInstallState
+ParamCount=3
+Header=msi.h.api;
+[MsiInstallMissingFile]
+1=LPCTSTR szProduct
+2=LPCTSTR szFile
+ParamCount=2
+[MsiNotifySidChange]
+1=LPCTSTR szOldSid
+2=LPCTSTR szNewSid
+ParamCount=2
+[MsiProcessAdvertiseScript]
+1=LPCTSTR szScriptFile
+2=LPCTSTR szIconFolder
+3=[HKEY] hRegData
+4=BOOL fShortcuts
+5=BOOL fRemoveItems
+ParamCount=5
+Header=registry.h.api;
+[MsiSourceListAddSource]
+1=LPCTSTR szProduct
+2=LPCTSTR szUserName
+3=DWORD dwReserved
+4=LPCTSTR szSource
+ParamCount=4
+[MsiSourceListAddSourceEx]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiSourceType] dwOptions
+5=LPCTSTR szSource
+6=DWORD dwIndex
+ParamCount=6
+Header=msi.h.api;
+[MsiSourceListClearSource]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiSourceType] dwOptions
+5=LPCTSTR szSource
+ParamCount=5
+Header=msi.h.api;
+[MsiSourceListClearAll]
+1=LPCTSTR szProduct
+2=LPCTSTR szUserName
+3=DWORD dwReserved
+ParamCount=3
+[MsiSourceListClearAllEx]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiSourceType] dwOptions
+ParamCount=4
+Header=msi.h.api;
+[MsiSourceListForceResolution]
+1=LPCTSTR szProduct
+2=LPCTSTR szUserName
+3=DWORD dwReserved
+ParamCount=3
+[MsiSourceListForceResolutionEx]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiCode] dwOptions
+ParamCount=4
+Header=msi.h.api;
+[MsiSourceListGetInfo]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiCode] dwOptions
+5=LPCTSTR szProperty
+6=LPTSTR szValue
+7=LPDWORD pcchValue
+ParamCount=7
+Header=msi.h.api;
+[MsiSourceListSetInfo]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiSourceType] dwOptions
+5=LPCTSTR szProperty
+6=LPCTSTR szValue
+ParamCount=6
+Header=msi.h.api;
+[MsiSourceListEnumMediaDisks]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSID
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiCode] dwOptions
+5=DWORD dwIndex
+6=LPWORD pdwDiskId
+7=LPTSTR szVolumeLabel
+8=LPDWORD pcchVolumeLabel
+9=LPTSTR szDiskPrompt
+10=LPDWORD pcchDiskPrompt
+ParamCount=10
+Header=msi.h.api;
+[MsiSourceListAddMediaDisk]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiCode] dwOptions
+5=DWORD dwDiskId
+6=LPCTSTR szVolumeLabel
+7=LPCTSTR szDiskPrompt
+ParamCount=7
+Header=msi.h.api;
+[MsiSourceListClearMediaDisk]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiCode] dwOptions
+5=DWORD dwDiskID
+ParamCount=5
+Header=msi.h.api;
+[MsiSourceListEnumSources]
+1=LPCTSTR szProductCodeOrPatchCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiSourceType] dwOptions
+5=DWORD dwIndex
+6=LPTSTR szSource
+7=LPDWORD pcchSource
+ParamCount=7
+Header=msi.h.api;
+[MsiProvideAssembly]
+1=LPCTSTR szAssemblyName
+2=LPCTSTR szAppContext
+3=[MsiInstallMode] dwInstallMode
+4=[MsiAssemblyInfo] dwAssemblyInfo
+5=LPTSTR lpPathBuf
+6=DWORD* pcchPathBuf
+ParamCount=6
+Header=msi.h.api;
+[MsiProvideComponent]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+3=LPCTSTR szComponent
+4=[MsiInstallMode] dwInstallMode
+5=LPTSTR lpPathBuf
+6=DWORD* pcchPathBuf
+ParamCount=6
+Header=msi.h.api;
+[MsiProvideQualifiedComponent]
+1=LPCTSTR szComponent
+2=LPCTSTR szQualifier
+3=[MsiInstallMode] dwInstallMode
+4=LPTSTR lpPathBuf
+5=DWORD* pcchPathBuf
+ParamCount=5
+Header=msi.h.api;
+[MsiProvideQualifiedComponentEx]
+1=LPCTSTR szComponent
+2=LPCTSTR szQualifier
+3=[MsiInstallMode] dwInstallMode
+4=LPTSTR szProduct
+5=DWORD dwUnused1
+6=DWORD dwUnused2
+7=LPTSTR lpPathBuf
+8=DWORD* pcchPathBuf
+ParamCount=8
+Header=msi.h.api;
+[MsiGetComponentPath]
+1=LPCTSTR szProduct
+2=LPCTSTR szComponent
+3=LPTSTR lpPathBuf
+4=DWORD* pcchBuf
+ParamCount=4
+[MsiGetComponentPathEx]
+1=LPCTSTR szProductCode
+2=LPCTSTR szComponentCode
+3=LPCTSTR szUserSid
+4=[MSIINSTALLCONTEXT] dwContext
+5=LPTSTR szPathBuf
+6=LPDWORD pcchBuf
+ParamCount=6
+Header=msi.h.api;
+[MsiLocateComponent]
+1=LPCTSTR szComponent
+2=LPTSTR lpPathBuf
+3=DWORD* pcchBuf
+ParamCount=3
+[MsiQueryComponentState]
+1=LPTSTR szProductCode
+2=LPTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=LPCTSTR szComponent
+5=INSTALLSTATE* pdwState
+ParamCount=5
+Header=msi.h.api;
+[MsiCollectUserInfo]
+1=LPCTSTR szProduct
+ParamCount=1
+[MsiUseFeature]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+ParamCount=2
+[MsiUseFeatureEx]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+3=[MsiInstallMode] dwInstallMode
+4=DWORD dwReserved
+ParamCount=4
+Header=msi.h.api;
+[MsiGetProductCode]
+1=LPCTSTR szComponent
+2=LPTSTR lpProductBuf
+ParamCount=2
+[MsiEnumProducts]
+1=DWORD iProductIndex
+2=LPTSTR lpProductBuf
+ParamCount=2
+[MsiEnumProductsEx]
+1=LPCTSTR szProductCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=DWORD dwIndex
+5=TCHAR [39] szInstalledProductCode
+6=MSIINSTALLCONTEXT* pdwInstalledContext
+7=LPTSTR szSid
+8=LPDWORD pcchSid
+ParamCount=8
+Header=msi.h.api;
+[MsiEnumRelatedProducts]
+1=LPCTSTR lpUpgradeCode
+2=DWORD dwReserved
+3=DWORD iProductIndex
+4=LPTSTR lpProductBuf
+ParamCount=4
+[MsiEnumFeatures]
+1=LPCTSTR szProduct
+2=DWORD iFeatureIndex
+3=LPTSTR lpFeatureBuf
+4=LPTSTR lpParentBuf
+ParamCount=4
+[MsiEnumComponents]
+1=DWORD iComponentIndex
+2=LPTSTR lpComponentBuf
+ParamCount=2
+[MsiEnumComponentsEx]
+1=LPCTSTR szUserSid
+2=[MSIINSTALLCONTEXT] dwContext
+3=DWORD dwIndex
+4=TCHAR [39] szInstalledComponentCode
+5=MSIINSTALLCONTEXT* pdwInstalledContext
+6=LPTSTR szSid
+7=LPDWORD pcchSid
+ParamCount=7
+Header=msi.h.api;
+[MsiEnumClients]
+1=LPCTSTR szComponent
+2=DWORD iProductIndex
+3=LPTSTR lpProductBuf
+ParamCount=3
+[MsiEnumClientsEx]
+1=LPCTSTR szComponent
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=DWORD dwProductIndex
+5=TCHAR [39] szProductBuf
+6=MSIINSTALLCONTEXT* pdwInstalledContext
+7=LPTSTR szSid
+8=LPDWORD pcchSid
+ParamCount=8
+Header=msi.h.api;
+[MsiEnumComponentQualifiers]
+1=LPTSTR szComponent
+2=DWORD iIndex
+3=LPTSTR lpQualifierBuf
+4=DWORD* pcchQualifierBuf
+5=LPTSTR lpApplicationDataBuf
+6=DWORD* pcchApplicationDataBuf
+ParamCount=6
+[MsiQueryFeatureState]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+ParamCount=2
+[MsiQueryFeatureStateEx]
+1=LPTSTR szProductCode
+2=LPTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=LPCTSTR szFeature
+5=INSTALLSTATE* pdwState
+ParamCount=5
+Header=msi.h.api;
+[MsiQueryProductState]
+1=LPCTSTR szProduct
+ParamCount=1
+[MsiGetFeatureUsage]
+1=LPCTSTR szProduct
+2=LPCTSTR szFeature
+3=DWORD* pdwUseCount
+4=WORD* pwDateUsed
+ParamCount=4
+[MsiGetProductInfo]
+1=LPCTSTR szProduct
+2=LPCTSTR szProperty
+3=LPTSTR lpValueBuf
+4=DWORD* pcchValueBuf
+ParamCount=4
+[MsiGetProductInfoEx]
+1=LPCTSTR szProductCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=LPCTSTR szProperty
+5=LPTSTR lpValue
+6=LPDWORD pcchValue
+ParamCount=6
+Header=msi.h.api;
+[MsiGetUserInfo]
+1=LPCTSTR szProduct
+2=LPTSTR lpUserNameBuf
+3=DWORD* pcchUserNameBuf
+4=LPTSTR lpOrgNameBuf
+5=DWORD* pcchOrgNameBuf
+6=LPTSTR lpSerialBuf
+7=DWORD* pcchSerialBuf
+ParamCount=7
+[MsiOpenProduct]
+1=LPCTSTR szProduct
+2=MSIHANDLE* hProduct
+ParamCount=2
+Header=msi.h.api;
+[MsiOpenPackage]
+1=LPCTSTR szPackagePath
+2=MSIHANDLE* hProduct
+ParamCount=2
+Header=msi.h.api;
+[MsiOpenPackageEx]
+1=LPCTSTR szPackagePath
+2=[MsiOpenPackageFlags] dwOptions
+3=MSIHANDLE* hProduct
+ParamCount=3
+Header=msi.h.api;
+[MsiIsProductElevated]
+1=LPCTSTR szProductCode
+2=BOOL* pfElevated
+ParamCount=2
+[MsiGetProductInfoFromScript]
+1=LPCTSTR szScriptFile
+2=LPTSTR lpProductBuf39
+3=LANGID* plgidLanguage
+4=DWORD* pdwVersion
+5=LPTSTR lpNameBuf
+6=DWORD* pcchNameBuf
+7=LPTSTR lpPackageBuf
+8=DWORD* pcchPackageBuf
+ParamCount=8
+Header=windows.h.api;
+[MsiGetProductProperty]
+1=MSIHANDLE hProduct
+2=LPCTSTR szProperty
+3=LPTSTR lpValueBuf
+4=DWORD* pcchValueBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiGetShortcutTarget]
+1=LPCTSTR szShortcutTarget
+2=LPTSTR szProductCode
+3=LPTSTR szFeatureId
+4=LPTSTR szComponentCode
+ParamCount=4
+[MsiGetFeatureInfo]
+1=MSIHANDLE hProduct
+2=LPCTSTR szFeature
+3=MsiInstallFeatureAttr* lpAttributes
+4=LPTSTR lpTitleBuf
+5=LPDWORD pcchTitleBuf
+6=LPTSTR lpHelpBuf
+7=LPDWORD pcchHelpBuf
+ParamCount=7
+Header=msi.h.api;
+[MsiVerifyPackage]
+1=LPCTSTR szPackagePath
+ParamCount=1
+[MsiApplyPatch]
+1=LPCTSTR szPatchPackage
+2=LPCTSTR szInstallPackage
+3=[INSTALLTYPE] eInstallType
+4=LPCTSTR szCommandLine
+ParamCount=4
+Header=msi.h.api;
+[MsiEnumPatches]
+1=LPCTSTR szProduct
+2=DWORD iPatchIndex
+3=LPTSTR lpPatchBuf
+4=LPTSTR lpTransformsBuf
+5=DWORD* pcchTransformsBuf
+ParamCount=5
+[MsiGetPatchInfo]
+1=LPCTSTR szPatch
+2=LPCTSTR szAttribute
+3=LPTSTR lpValueBuf
+4=DWORD* pcchValueBuf
+ParamCount=4
+[MsiRemovePatches]
+1=LPCTSTR szPatchList
+2=LPCTSTR szProductCode
+3=[INSTALLTYPE] eUninstallType
+4=LPCTSTR szPropertyList
+ParamCount=4
+Header=msi.h.api;
+[MsiDeterminePatchSequence]
+1=LPCTSTR szProductCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=DWORD cPatchInfo
+5=PMSIPATCHSEQUENCEINFO pPatchInfo
+ParamCount=5
+Header=msi.h.api;
+[MsiApplyMultiplePatches]
+1=LPCTSTR szPatchPackages
+2=LPCTSTR szProductCode
+3=LPCTSTR szPropertiesList
+ParamCount=3
+[MsiEnumPatchesEx]
+1=LPCTSTR szProductCode
+2=LPCTSTR szUserSid
+3=[MSIINSTALLCONTEXT] dwContext
+4=[MsiPatchState] dwFilter
+5=DWORD dwIndex
+6=TCHAR [39] szPatchCode
+7=TCHAR [39] szTargetProductCode
+8=MSIINSTALLCONTEXT* pdwTargetProductContext
+9=LPTSTR szTargetUserSid
+10=LPDWORD pcchTargetUserSid
+ParamCount=10
+Header=msi.h.api;
+[MsiGetPatchFileList]
+1=LPCTSTR szProductCode
+2=LPCTSTR szPatchList
+3=LPDWORD pcFiles
+4=MSIHANDLE** pphFileRecords
+ParamCount=4
+Header=msi.h.api;
+[MsiGetPatchInfoEx]
+1=LPCTSTR szPatchCode
+2=LPCTSTR szProductCode
+3=LPCTSTR szUserSid
+4=[MSIINSTALLCONTEXT] dwContext
+5=LPCTSTR szProperty
+6=LPTSTR lpValue
+7=DWORD* pcchValue
+ParamCount=7
+Header=msi.h.api;
+[MsiExtractPatchXMLData]
+1=LPCTSTR szPatchPath
+2=DWORD dwReserved
+3=LPTSTR szXMLData
+4=DWORD* pcchXMLData
+ParamCount=4
+[MsiDetermineApplicablePatches]
+1=LPCTSTR szProductPackagePath
+2=DWORD cPatchInfo
+3=PMSIPATCHSEQUENCEINFO pPatchInfo
+ParamCount=3
+Header=msi.h.api;
+[MsiGetFileHash]
+1=LPCTSTR szFilePath
+2=DWORD dwOptions
+3=PMSIFILEHASHINFO pHash
+ParamCount=3
+Header=msi.h.api;
+[MsiGetFileSignatureInformation]
+1=LPCTSTR szSignedObjectPath
+2=[MsiHashFlags] dwFlags
+3=PCCERT_CONTEXT* ppcCertContext
+4=BYTE* pbHashData
+5=DWORD* pcbHashData
+ParamCount=5
+Header=msi.h.api;cryptography.h.api;
+[MsiGetFileVersion]
+1=LPCTSTR szFilePath
+2=LPTSTR lpVersionBuf
+3=DWORD* pcchVersionBuf
+4=LPTSTR lpLangBuf
+5=DWORD* pcchLangBuf
+ParamCount=5
+[MsiBeginTransaction]
+1=LPCWSTR szTransactionName
+2=[MsiTransactionAttributes] dwTransactionAttributes
+3=MSIHANDLE* hTransactionID
+4=HANDLE* phChangeOfOwnerEvent
+ParamCount=4
+Header=msi.h.api;windows.h.api;
+[MsiJoinTransaction]
+1=MSIHANDLE hTransactionID
+2=[MsiTransactionAttributes] dwTransactionAttributes
+3=HANDLE* phChangeOfOwnerEvent
+ParamCount=3
+Header=msi.h.api;windows.h.api;
+[MsiEndTransaction]
+1=[MsiTransactionState] dwTransactionState
+ParamCount=1
+Header=msi.h.api;
+[MsiDatabaseCommit]
+1=MSIHANDLE hDatabase
+ParamCount=1
+Header=msi.h.api;
+[MsiDatabaseGetPrimaryKeys]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szTableName
+3=MSIHANDLE* phRecord
+ParamCount=3
+Header=msi.h.api;
+[MsiDatabaseIsTablePersistent]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szTableName
+ParamCount=2
+Header=msi.h.api;
+[MsiDatabaseOpenView]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szQuery
+3=MSIHANDLE* phView
+ParamCount=3
+Header=msi.h.api;
+[MsiGetActiveDatabase]
+1=MSIHANDLE hInstall
+ParamCount=1
+Header=msi.h.api;
+[MsiViewGetColumnInfo]
+1=MSIHANDLE hView
+2=[MSICOLINFO] eColumnInfo
+3=MSIHANDLE* phRecord
+ParamCount=3
+Header=msi.h.api;
+[MsiOpenDatabase]
+1=LPCTSTR szDatabasePath
+2=LPCTSTR szPersist
+3=MSIHANDLE* phDatabase
+ParamCount=3
+Header=msi.h.api;
+[MsiViewClose]
+1=MSIHANDLE hView
+ParamCount=1
+Header=msi.h.api;
+[MsiViewExecute]
+1=MSIHANDLE hView
+2=MSIHANDLE hRecord
+ParamCount=2
+Header=msi.h.api;
+[MsiViewFetch]
+1=MSIHANDLE hView
+2=MSIHANDLE* phRecord
+ParamCount=2
+Header=msi.h.api;
+[MsiViewGetError]
+1=MSIHANDLE hView
+2=LPTSTR szColumnNameBuffer
+3=DWORD* pcchBuf
+ParamCount=3
+Header=msi.h.api;
+[MsiViewModify]
+1=MSIHANDLE hView
+2=[MSIMODIFY] eModifyMode
+3=MSIHANDLE hRecord
+ParamCount=3
+Header=msi.h.api;
+[MsiCreateTransformSummaryInfo]
+1=MSIHANDLE hDatabase
+2=MSIHANDLE hDatabaseReference
+3=LPCTSTR szTransformFile
+4=[MSITRANSFORM_ERROR] iErrorConditions
+5=[MSITRANSFORM_VALIDATE] iValidation
+ParamCount=5
+Header=msi.h.api;
+[MsiDatabaseApplyTransform]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szTransformFile
+3=[MSITRANSFORM_ERROR] iErrorConditions
+ParamCount=3
+Header=msi.h.api;
+[MsiDatabaseExport]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szTableName
+3=LPCTSTR szFolderPath
+4=LPCTSTR szFileName
+ParamCount=4
+Header=msi.h.api;
+[MsiDatabaseGenerateTransform]
+1=MSIHANDLE hDatabase
+2=MSIHANDLE hDatabaseReference
+3=LPCTSTR szTransformFile
+4=int iReserved1
+5=int iReserved2
+ParamCount=5
+Header=msi.h.api;
+[MsiDatabaseImport]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szFolderPath
+3=LPCTSTR szFileName
+ParamCount=3
+Header=msi.h.api;
+[MsiDatabaseMerge]
+1=MSIHANDLE hDatabase
+2=MSIHANDLE hDatabaseMerge
+3=LPCTSTR szTableName
+ParamCount=3
+Header=msi.h.api;
+[MsiGetDatabaseState]
+1=MSIHANDLE hDatabase
+ParamCount=1
+Header=msi.h.api;
+[MsiCreateRecord]
+1=unsigned int cParams
+ParamCount=1
+[MsiFormatRecord]
+1=MSIHANDLE hInstall
+2=MSIHANDLE hRecord
+3=LPTSTR szResultBuf
+4=DWORD* pcchResultBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiRecordClearData]
+1=MSIHANDLE hRecord
+ParamCount=1
+Header=msi.h.api;
+[MsiRecordDataSize]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+ParamCount=2
+Header=msi.h.api;
+[MsiRecordGetFieldCount]
+1=MSIHANDLE hRecord
+ParamCount=1
+Header=msi.h.api;
+[MsiRecordGetInteger]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+ParamCount=2
+Header=msi.h.api;
+[MsiRecordGetString]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+3=LPTSTR szValueBuf
+4=DWORD* pcchValueBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiRecordIsNull]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+ParamCount=2
+Header=msi.h.api;
+[MsiRecordReadStream]
+1=MSIHANDLE hRecord
+2=UINT iField
+3=char* szDataBuf
+4=DWORD* pcbDataBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiRecordSetInteger]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+3=int iValue
+ParamCount=3
+Header=msi.h.api;
+[MsiRecordSetStream]
+1=MSIHANDLE hRecord
+2=UINT iField
+3=LPCTSTR szFilePath
+ParamCount=3
+Header=msi.h.api;
+[MsiRecordSetString]
+1=MSIHANDLE hRecord
+2=unsigned int iField
+3=LPCTSTR szValue
+ParamCount=3
+Header=msi.h.api;
+[MsiGetSummaryInformation]
+1=MSIHANDLE hDatabase
+2=LPCTSTR szDatabasePath
+3=UINT uiUpdateCount
+4=MSIHANDLE* phSummaryInfo
+ParamCount=4
+Header=msi.h.api;
+[MsiSummaryInfoGetProperty]
+1=MSIHANDLE hSummaryInfo
+2=[MSI_PID] uiProperty
+3=MSI_DATA_TYPE* puiDataType
+4=INT* piValue
+5=FILETIME* pftValue
+6=LPTSTR szValueBuf
+7=DWORD* pcchValueBuf
+ParamCount=7
+Header=msi.h.api;windows.h.api;
+[MsiSummaryInfoGetPropertyCount]
+1=MSIHANDLE hSummaryInfo
+2=UINT* puiPropertyCount
+ParamCount=2
+Header=msi.h.api;
+[MsiSummaryInfoPersist]
+1=MSIHANDLE hSummaryInfo
+ParamCount=1
+Header=msi.h.api;
+[MsiSummaryInfoSetProperty]
+1=MSIHANDLE hSummaryInfo
+2=[MSI_PID] uiProperty
+3=MSI_DATA_TYPE uiDataType
+4=INT iValue
+5=FILETIME* pftValue
+6=LPTSTR szValue
+ParamCount=6
+Header=msi.h.api;windows.h.api;
+[MsiGetLanguage]
+1=MSIHANDLE hInstall
+ParamCount=1
+Header=msi.h.api;
+[MsiGetLastErrorRecord]
+ParamCount=0
+[MsiGetMode]
+1=MSIHANDLE hInstall
+2=[MSIRUNMODE] iRunMode
+ParamCount=2
+Header=msi.h.api;
+[MsiGetProperty]
+1=MSIHANDLE hInstall
+2=LPCTSTR szName
+3=LPTSTR szValueBuf
+4=DWORD* pchValueBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiSetProperty]
+1=MSIHANDLE hInstall
+2=LPCTSTR szName
+3=LPCTSTR szValue
+ParamCount=3
+Header=msi.h.api;
+[MsiSetMode]
+1=MSIHANDLE hInstall
+2=unsigned int iRunMode
+3=BOOL fState
+ParamCount=3
+Header=msi.h.api;
+[MsiDoAction]
+1=MSIHANDLE hInstall
+2=LPCTSTR szAction
+ParamCount=2
+Header=msi.h.api;
+[MsiEvaluateCondition]
+1=MSIHANDLE hInstall
+2=LPCTSTR szCondition
+ParamCount=2
+Header=msi.h.api;
+[MsiProcessMessage]
+1=MSIHANDLE hInstall
+2=[INSTALLMESSAGE] eMessageType
+3=MSIHANDLE hRecord
+ParamCount=3
+Header=msi.h.api;
+[MsiSequence]
+1=MSIHANDLE hInstall
+2=LPCTSTR szTable
+3=INT iSequenceMode
+ParamCount=3
+Header=msi.h.api;
+[MsiGetSourcePath]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFolder
+3=LPTSTR szPathBuf
+4=DWORD* pcchPathBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiGetTargetPath]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFolder
+3=LPTSTR szPathBuf
+4=DWORD* pcchPathBuf
+ParamCount=4
+Header=msi.h.api;
+[MsiSetTargetPath]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFolder
+3=LPCTSTR szFolderPath
+ParamCount=3
+Header=msi.h.api;
+[MsiEnumComponentCosts]
+1=MSIHANDLE hInstall
+2=LPCTSTR szComponent
+3=DWORD dwIndex
+4=[INSTALLSTATE] iState
+5=LPTSTR lpDriveBuf
+6=DWORD* pcchDriveBuf
+7=int* piCost
+8=int* pTempCost
+ParamCount=8
+Header=msi.h.api;
+[MsiGetComponentState]
+1=MSIHANDLE hInstall
+2=LPCTSTR szComponent
+3=INSTALLSTATE* piInstalled
+4=INSTALLSTATE* piAction
+ParamCount=4
+Header=msi.h.api;
+[MsiGetFeatureCost]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFeature
+3=[MSICOSTTREE] iCostTree
+4=[INSTALLSTATE] iState
+5=INT* piCost
+ParamCount=5
+Header=msi.h.api;
+[MsiGetFeatureState]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFeature
+3=INSTALLSTATE* piInstalled
+4=INSTALLSTATE* piAction
+ParamCount=4
+Header=msi.h.api;
+[MsiGetFeatureValidStates]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFeature
+3=INSTALLSTATE-DWORD* pInstallState
+ParamCount=3
+Header=msi.h.api;
+[MsiSetComponentState]
+1=MSIHANDLE hInstall
+2=LPCTSTR szComponent
+3=[INSTALLSTATE] iState
+ParamCount=3
+Header=msi.h.api;
+[MsiSetFeatureAttributes]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFeature
+3=[MsiInstallFeatureAttr] dwAttributes
+ParamCount=3
+Header=msi.h.api;
+[MsiSetFeatureState]
+1=MSIHANDLE hInstall
+2=LPCTSTR szFeature
+3=[INSTALLSTATE] iState
+ParamCount=3
+Header=msi.h.api;
+[MsiSetInstallLevel]
+1=MSIHANDLE hInstall
+2=int iInstallLevel
+ParamCount=2
+Header=msi.h.api;
+[MsiVerifyDiskSpace]
+1=MSIHANDLE hInstall
+ParamCount=1
+Header=msi.h.api;
+[MsiEnableUIPreview]
+1=MSIHANDLE hDatabase
+2=MSIHANDLE* phPreview
+ParamCount=2
+Header=msi.h.api;
+[MsiPreviewBillboard]
+1=MSIHANDLE hPreview
+2=LPCTSTR szControlName
+3=LPCTSTR szBillboard
+ParamCount=3
+Header=msi.h.api;
+[MsiPreviewDialog]
+1=MSIHANDLE hPreview
+2=LPCTSTR szDialogName
+ParamCount=2
+Header=msi.h.api;

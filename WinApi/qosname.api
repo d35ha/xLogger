@@ -1,0 +1,19 @@
+[CallingConvention]
+@=STDCALL
+[WPUGetQOSTemplate]
+1=LPGUID lpProviderId
+2=LPWSABUF lpQOSName
+3=LPQOS lpQOS
+ParamCount=3
+Header=sockets.h.api;windows.h.api;
+[WSCInstallQOSTemplate]
+1=LPGUID lpProviderId
+2=LPWSABUF lpQOSName
+3=LPQOS lpQOS
+ParamCount=3
+Header=sockets.h.api;windows.h.api;
+[WSCRemoveQOSTemplate]
+1=LPGUID lpProviderId
+2=LPWSABUF lpQOSName
+ParamCount=2
+Header=sockets.h.api;windows.h.api;

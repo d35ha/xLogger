@@ -1,0 +1,186 @@
+[CallingConvention]
+@=STDCALL
+[LookupAccountNameLocal]
+1=LPCTSTR lpAccountName
+2=PSID Sid
+3=LPDWORD cbSid
+4=LPTSTR ReferencedDomainName
+5=LPDWORD cchReferencedDomainName
+6=PSID_NAME_USE peUse
+ParamCount=6
+Header=security.h.api;windows.h.api;
+[LookupAccountSidLocal]
+1=PSID lpSid
+2=LPTSTR lpName
+3=LPDWORD cchName
+4=LPTSTR lpReferencedDomainName
+5=LPDWORD cchReferencedDomainName
+6=PSID_NAME_USE peUse
+ParamCount=6
+Header=security.h.api;windows.h.api;
+[LsaLookupClose]
+1=LSA_LOOKUP_HANDLE ObjectHandle
+ParamCount=1
+Header=sechost.h.api;
+[LsaLookupFreeMemory]
+1=PVOID Buffer
+ParamCount=1
+[LsaLookupGetDomainInfo]
+1=LSA_LOOKUP_HANDLE PolicyHandle
+2=[LSA_LOOKUP_DOMAIN_INFO_CLASS] DomainInfoClass
+3=PVOID* DomainInfo
+ParamCount=3
+Header=sechost.h.api;
+[LsaLookupOpenLocalPolicy]
+1=PLSA_OBJECT_ATTRIBUTES ObjectAttributes
+2=[ACCESS_MASK] AccessMask
+3=PLSA_LOOKUP_HANDLE PolicyHandle
+ParamCount=3
+Header=sechost.h.api;advapi32.h.api;windows.h.api;
+[LsaLookupTranslateNames]
+1=LSA_LOOKUP_HANDLE PolicyHandle
+2=ULONG Flags
+3=ULONG Count
+4=PLSA_UNICODE_STRING Names
+5=PLSA_REFERENCED_DOMAIN_LIST* ReferencedDomains
+6=PLSA_TRANSLATED_SID2* Sids
+ParamCount=6
+Header=sechost.h.api;advapi32.h.api;network.h.api;
+[LsaLookupTranslateSids]
+1=LSA_LOOKUP_HANDLE PolicyHandle
+2=ULONG Count
+3=PSID* Sids
+4=PLSA_REFERENCED_DOMAIN_LIST* ReferencedDomains
+5=PLSA_TRANSLATED_NAME* Names
+ParamCount=5
+Header=sechost.h.api;advapi32.h.api;network.h.api;windows.h.api;
+[AuditComputeEffectivePolicyBySid]
+SourceModule=advapi32.api
+[AuditFree]
+SourceModule=advapi32.api
+[AuditQuerySystemPolicy]
+SourceModule=advapi32.api
+[AuditSetSystemPolicy]
+SourceModule=advapi32.api
+[ChangeServiceConfig2]
+SourceModule=advapi32.api
+[ChangeServiceConfig]
+SourceModule=advapi32.api
+[CloseServiceHandle]
+SourceModule=advapi32.api
+[ControlService]
+SourceModule=advapi32.api
+[ControlServiceEx]
+SourceModule=advapi32.api
+[ConvertSecurityDescriptorToStringSecurityDescriptor]
+SourceModule=advapi32.api
+[ConvertSidToStringSid]
+SourceModule=advapi32.api
+[ConvertStringSecurityDescriptorToSecurityDescriptor]
+SourceModule=advapi32.api
+[ConvertStringSidToSid]
+SourceModule=advapi32.api
+[CreateService]
+SourceModule=advapi32.api
+[CredDelete]
+SourceModule=advapi32.api
+[CredEnumerate]
+SourceModule=advapi32.api
+[CredFindBestCredential]
+SourceModule=advapi32.api
+[CredFree]
+SourceModule=advapi32.api
+[CredGetSessionTypes]
+SourceModule=advapi32.api
+[CredGetTargetInfo]
+SourceModule=advapi32.api
+[CredIsMarshaledCredential]
+SourceModule=advapi32.api
+[CredIsProtected]
+SourceModule=advapi32.api
+[CredMarshalCredential]
+SourceModule=advapi32.api
+[CredProtect]
+SourceModule=advapi32.api
+[CredReadDomainCredentials]
+SourceModule=advapi32.api
+[CredRead]
+SourceModule=advapi32.api
+[CredUnmarshalCredential]
+SourceModule=advapi32.api
+[CredUnprotect]
+SourceModule=advapi32.api
+[CredWriteDomainCredentials]
+SourceModule=advapi32.api
+[CredWrite]
+SourceModule=advapi32.api
+[DeleteService]
+SourceModule=advapi32.api
+[EnumDependentServices]
+SourceModule=advapi32.api
+[EnumServicesStatusEx]
+SourceModule=advapi32.api
+[LsaAddAccountRights]
+SourceModule=advapi32.api
+[LsaClose]
+SourceModule=advapi32.api
+[LsaEnumerateAccountRights]
+SourceModule=advapi32.api
+[LsaEnumerateAccountsWithUserRight]
+SourceModule=advapi32.api
+[LsaFreeMemory]
+SourceModule=advapi32.api
+[LsaLookupNames2]
+SourceModule=advapi32.api
+[LsaLookupSids]
+SourceModule=advapi32.api
+[LsaLookupSids2]
+SourceModule=advapi32.api
+[LsaOpenPolicy]
+SourceModule=advapi32.api
+[LsaOpenSecret]
+SourceModule=advapi32.api
+[LsaQueryInformationPolicy]
+SourceModule=advapi32.api
+[LsaQuerySecret]
+SourceModule=advapi32.api
+[LsaRemoveAccountRights]
+SourceModule=advapi32.api
+[LsaRetrievePrivateData]
+SourceModule=advapi32.api
+[LsaSetInformationPolicy]
+SourceModule=advapi32.api
+[LsaSetSecret]
+SourceModule=advapi32.api
+[LsaStorePrivateData]
+SourceModule=advapi32.api
+[NotifyServiceStatusChange]
+SourceModule=advapi32.api
+[OpenSCManager]
+SourceModule=advapi32.api
+[OpenService]
+SourceModule=advapi32.api
+[QueryServiceConfig2]
+SourceModule=advapi32.api
+[QueryServiceConfig]
+SourceModule=advapi32.api
+[QueryServiceDynamicInformation]
+SourceModule=advapi32.api
+[QueryServiceObjectSecurity]
+SourceModule=advapi32.api
+[QueryServiceStatus]
+SourceModule=advapi32.api
+[QueryServiceStatusEx]
+SourceModule=advapi32.api
+[RegisterServiceCtrlHandlerEx]
+SourceModule=advapi32.api
+[RegisterServiceCtrlHandler]
+SourceModule=advapi32.api
+[SetServiceObjectSecurity]
+SourceModule=advapi32.api
+[SetServiceStatus]
+SourceModule=advapi32.api
+[StartServiceCtrlDispatcher]
+SourceModule=advapi32.api
+[StartService]
+SourceModule=advapi32.api

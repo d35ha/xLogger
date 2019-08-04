@@ -1,0 +1,139 @@
+[CallingConvention]
+@=STDCALL
+[GetImageConfigInformation]
+1=PLOADED_IMAGE LoadedImage
+2=PIMAGE_LOAD_CONFIG_DIRECTORY ImageConfigInformation
+ParamCount=2
+Header=imagehlp.h.api;
+[GetImageUnusedHeaderBytes]
+1=PLOADED_IMAGE LoadedImage
+2=PDWORD SizeUnusedHeaderBytes
+ParamCount=2
+Header=imagehlp.h.api;
+[ImageLoad]
+1=PSTR DllName
+2=PSTR DllPath
+ParamCount=2
+[ImageUnload]
+1=PLOADED_IMAGE LoadedImage
+ParamCount=1
+Header=imagehlp.h.api;
+[MapAndLoad]
+1=PSTR ImageName
+2=PSTR DllPath
+3=PLOADED_IMAGE LoadedImage
+4=BOOL DotDll
+5=BOOL ReadOnly
+ParamCount=5
+Header=imagehlp.h.api;
+[SetImageConfigInformation]
+1=PLOADED_IMAGE LoadedImage
+2=PIMAGE_LOAD_CONFIG_DIRECTORY ImageConfigInformation
+ParamCount=2
+Header=imagehlp.h.api;
+[UnMapAndLoad]
+1=PLOADED_IMAGE LoadedImage
+ParamCount=1
+Header=imagehlp.h.api;
+[ImageAddCertificate]
+1=HANDLE FileHandle
+2=LPWIN_CERTIFICATE Certificate
+3=PDWORD Index
+ParamCount=3
+Header=imagehlp.h.api;windows.h.api;
+[ImageEnumerateCertificates]
+1=HANDLE FileHandle
+2=WORD TypeFilter
+3=PDWORD CertificateCount
+4=PDWORD Indices
+5=DWORD IndexCount
+ParamCount=5
+Header=windows.h.api;
+[ImageGetCertificateData]
+1=HANDLE FileHandle
+2=DWORD CertificateIndex
+3=LPWIN_CERTIFICATE Certificate
+4=PDWORD RequiredLength
+ParamCount=4
+Header=imagehlp.h.api;windows.h.api;
+[ImageGetCertificateHeader]
+1=HANDLE FileHandle
+2=DWORD CertificateIndex
+3=LPWIN_CERTIFICATE CertificateHeader
+ParamCount=3
+Header=imagehlp.h.api;windows.h.api;
+[ImageGetDigestStream]
+1=HANDLE FileHandle
+2=DWORD DigestLevel
+3=DIGEST_FUNCTION DigestFunction
+4=DIGEST_HANDLE DigestHandle
+ParamCount=4
+Header=imagehlp.h.api;windows.h.api;
+[ImageRemoveCertificate]
+1=HANDLE FileHandle
+2=DWORD Index
+ParamCount=2
+Header=windows.h.api;
+[BindImage]
+1=PSTR ImageName
+2=PSTR DllPath
+3=PSTR SymbolPath
+ParamCount=3
+[BindImageEx]
+1=DWORD Flags
+2=PSTR ImageName
+3=PSTR DllPath
+4=PSTR SymbolPath
+5=PIMAGEHLP_STATUS_ROUTINE StatusRoutine
+ParamCount=5
+Header=imagehlp.h.api;
+[CheckSumMappedFile]
+1=PVOID BaseAddress
+2=DWORD FileLength
+3=PDWORD HeaderSum
+4=PDWORD CheckSum
+ParamCount=4
+[MapFileAndCheckSum]
+1=PTSTR Filename
+2=PDWORD HeaderSum
+3=PDWORD CheckSum
+ParamCount=3
+[ReBaseImage]
+1=PCSTR CurrentImageName
+2=PCSTR SymbolPath
+3=BOOL fReBase
+4=BOOL fRebaseSysfileOk
+5=BOOL fGoingDown
+6=ULONG CheckImageSize
+7=ULONG* OldImageSize
+8=ULONG_PTR* OldImageBase
+9=ULONG* NewImageSize
+10=ULONG_PTR* NewImageBase
+11=ULONG TimeStamp
+ParamCount=11
+[SplitSymbols]
+1=PSTR ImageName
+2=PSTR SymbolsPath
+3=PSTR SymbolFilePath
+4=DWORD Flags
+ParamCount=4
+[TouchFileTimes]
+1=HANDLE FileHandle
+2=PSYSTEMTIME pSystemTime
+ParamCount=2
+Header=windows.h.api;
+[UpdateDebugInfoFile]
+1=PSTR ImageFileName
+2=PSTR SymbolPath
+3=PSTR DebugFilePath
+4=PIMAGE_NT_HEADERS NtHeaders
+ParamCount=4
+Header=windows.h.api;
+[UpdateDebugInfoFileEx]
+1=PSTR ImageFileName
+2=PSTR SymbolPath
+3=PSTR DebugFilePath
+4=PIMAGE_NT_HEADERS NtHeaders
+5=DWORD OldChecksum
+ParamCount=5
+Header=windows.h.api;

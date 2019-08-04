@@ -1,0 +1,90 @@
+[CallingConvention]
+@=STDCALL
+[MagGetColorEffect]
+1=HWND hwnd
+2=PMAGCOLOREFFECT pEffect
+ParamCount=2
+Header=windows.h.api;
+[MagGetFullscreenColorEffect]
+1=PMAGCOLOREFFECT pEffect
+ParamCount=1
+[MagGetFullscreenTransform]
+1=float* pMagLevel
+2=int* pxOffset
+3=int* pyOffset
+ParamCount=3
+[MagGetImageScalingCallback]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[MagGetInputTransform]
+1=BOOL* pfEnabled
+2=LPRECT prcSource
+3=LPRECT prcDest
+ParamCount=3
+Header=windows.h.api;
+[MagGetWindowFilterList]
+1=HWND hwnd
+2=DWORD* pdwFilterMode
+3=int count
+4=HWND* pHWND
+ParamCount=4
+Header=windows.h.api;
+[MagGetWindowSource]
+1=HWND hwnd
+2=RECT* pRect
+ParamCount=2
+Header=windows.h.api;
+[MagGetWindowTransform]
+1=HWND hwnd
+2=PMAGTRANSFORM pTransform
+ParamCount=2
+Header=windows.h.api;
+[MagInitialize]
+ParamCount=0
+[MagSetColorEffect]
+1=HWND hwnd
+2=PMAGCOLOREFFECT pEffect
+ParamCount=2
+Header=windows.h.api;
+[MagSetFullscreenColorEffect]
+1=PMAGCOLOREFFECT pEffect
+ParamCount=1
+[MagSetFullscreenTransform]
+1=float magLevel
+2=int xOffset
+3=int yOffset
+ParamCount=3
+[MagSetImageScalingCallback]
+1=HWND hwnd
+2=MagImageScalingCallback callback
+ParamCount=2
+Header=windows.h.api;
+[MagSetInputTransform]
+1=BOOL fEnabled
+2=LPRECT prcSource
+3=LPRECT prcDest
+ParamCount=3
+Header=windows.h.api;
+[MagSetWindowFilterList]
+1=HWND hwnd
+2=DWORD dwFilterMode
+3=int count
+4=HWND* pHWND
+ParamCount=4
+Header=windows.h.api;
+[MagSetWindowSource]
+1=HWND hwnd
+2=RECT rect
+ParamCount=2
+Header=windows.h.api;
+[MagSetWindowTransform]
+1=HWND hwnd
+2=PMAGTRANSFORM pTransform
+ParamCount=2
+Header=windows.h.api;
+[MagShowSystemCursor]
+1=BOOL fShowCursor
+ParamCount=1
+[MagUninitialize]
+ParamCount=0

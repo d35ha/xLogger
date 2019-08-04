@@ -1,0 +1,251 @@
+[CallingConvention]
+@=STDCALL
+[AddISNSServer]
+1=PTCHAR Address
+ParamCount=1
+[AddIScsiConnection]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+2=PVOID Reserved
+3=ULONG InitiatorPortNumber
+4=PISCSI_TARGET_PORTAL TargetPortal
+5=[ISCSI_SECURITY_FLAGS] SecurityFlags
+6=PISCSI_LOGIN_OPTIONS LoginOptions
+7=ULONG KeySize
+8=PCHAR Key
+9=PISCSI_UNIQUE_CONNECTION_ID ConnectionId
+ParamCount=9
+Header=iscsidsc.h.api;
+[AddIScsiSendTargetPortal]
+1=PTCHAR InitiatorName
+2=ULONG InitiatorPortNumber
+3=PISCSI_LOGIN_OPTIONS LoginOptions
+4=[ISCSI_SECURITY_FLAGS] SecurityFlags
+5=PISCSI_TARGET_PORTAL Portal
+ParamCount=5
+Header=iscsidsc.h.api;
+[AddIScsiStaticTarget]
+1=PTCHAR TargetName
+2=PTCHAR TargetAlias
+3=[ISCSI_TARGET_FLAGS] TargetFlags
+4=BOOLEAN Persist
+5=PISCSI_TARGET_MAPPING Mappings
+6=PISCSI_LOGIN_OPTIONS LoginOptions
+7=PISCSI_TARGET_PORTAL_GROUP PortalGroup
+ParamCount=7
+Header=iscsidsc.h.api;
+[AddPersistentIScsiDevice]
+1=PTCHAR VolumePath
+ParamCount=1
+[AddRadiusServer]
+1=PWCHAR Address
+ParamCount=1
+[ClearPersistentIScsiDevices]
+ParamCount=0
+[GetDevicesForIScsiSession]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+2=ULONG* DeviceCount
+3=PISCSI_DEVICE_ON_SESSION Devices
+ParamCount=3
+Header=iscsidsc.h.api;
+[GetIScsiIKEInfo]
+1=PTCHAR InitiatorName
+2=ULONG PortNumber
+3=PULONG Reserved
+4=PIKE_AUTHENTICATION_INFORMATION AuthInfo
+ParamCount=4
+Header=iscsidsc.h.api;
+[GetIScsiInitiatorNodeName]
+1=PTCHAR InitiatorNodeName
+ParamCount=1
+[GetIScsiSessionList]
+1=ULONG* BufferSize
+2=ULONG* SessionCount
+3=PISCSI_SESSION_INFO SessionInfo
+ParamCount=3
+Header=iscsidsc.h.api;
+[GetIScsiTargetInformation]
+1=PTCHAR TargetName
+2=PTCHAR DiscoveryMechanism
+3=[TARGET_INFORMATION_CLASS] InfoClass
+4=PULONG BufferSize
+5=PVOID Buffer
+ParamCount=5
+Header=iscsidsc.h.api;
+[GetIScsiVersionInformation]
+1=PISCSI_VERSION_INFO VersionInfo
+ParamCount=1
+Header=iscsidsc.h.api;
+[LoginIScsiTarget]
+1=PTCHAR TargetName
+2=BOOLEAN IsInformationalSession
+3=PTCHAR InitiatorName
+4=ULONG InitiatorPortNumber
+5=PISCSI_TARGET_PORTAL TargetPortal
+6=[ISCSI_SECURITY_FLAGS] SecurityFlags
+7=PISCSI_TARGET_MAPPING Mappings
+8=PISCSI_LOGIN_OPTIONS LoginOptions
+9=ULONG KeySize
+10=PCHAR Key
+11=BOOLEAN IsPersistent
+12=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+13=PISCSI_UNIQUE_CONNECTION_ID UniqueConnectionId
+ParamCount=13
+Header=iscsidsc.h.api;
+[LogoutIScsiTarget]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+ParamCount=1
+Header=iscsidsc.h.api;
+[RefreshISNSServer]
+1=PTCHAR Address
+ParamCount=1
+[RefreshIScsiSendTargetPortal]
+1=PTCHAR InitiatorInstance
+2=ULONG InitiatorPortNumber
+3=PISCSI_TARGET_PORTAL Portal
+ParamCount=3
+Header=iscsidsc.h.api;
+[RemoveISNSServer]
+1=PTCHAR Address
+ParamCount=1
+[RemoveIScsiConnection]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+2=PISCSI_UNIQUE_CONNECTION_ID UniqueConnectionId
+ParamCount=2
+Header=iscsidsc.h.api;
+[RemoveIScsiPersistentTarget]
+1=PTCHAR InitiatorInstance
+2=ULONG InitiatorPortNumber
+3=PTCHAR TargetName
+4=PISCSI_TARGET_PORTAL Portal
+ParamCount=4
+Header=iscsidsc.h.api;
+[RemoveIScsiSendTargetPortal]
+1=PTCHAR InitiatorInstance
+2=ULONG InitiatorPortNumber
+3=PISCSI_TARGET_PORTAL Portal
+ParamCount=3
+Header=iscsidsc.h.api;
+[RemoveIScsiStaticTarget]
+1=PTCHAR TargetName
+ParamCount=1
+[RemovePersistentIScsiDevice]
+1=PTCHAR VolumePath
+ParamCount=1
+[RemoveRadiusServer]
+1=PTCHAR Address
+ParamCount=1
+[ReportActiveIScsiTargetMappings]
+1=PULONG BufferSize
+2=PULONG MappingCount
+3=PISCSI_TARGET_MAPPING Mappings
+ParamCount=3
+Header=iscsidsc.h.api;
+[ReportISNSServerList]
+1=PULONG BufferSizeInChar
+2=PTCHAR Buffer
+ParamCount=2
+[ReportIScsiInitiatorList]
+1=ULONG* BufferSize
+2=PTCHAR Buffer
+ParamCount=2
+[ReportIScsiPersistentLogins]
+1=ULONG* Count
+2=PPERSISTENT_ISCSI_LOGIN_INFO PersistentLoginInfo
+3=PULONG BufferSizeInBytes
+ParamCount=3
+Header=iscsidsc.h.api;
+[ReportIScsiSendTargetPortals]
+1=PULONG PortalCount
+2=PISCSI_TARGET_PORTAL_INFO PortalInfo
+ParamCount=2
+Header=iscsidsc.h.api;
+[ReportIScsiSendTargetPortalsEx]
+1=PULONG PortalCount
+2=PULONG PortalInfoSize
+3=PISCSI_TARGET_PORTAL_INFO_EX PortalInfo
+ParamCount=3
+Header=iscsidsc.h.api;
+[ReportIScsiTargets]
+1=BOOLEAN ForceUpdate
+2=PULONG BufferSize
+3=PTCHAR Buffer
+ParamCount=3
+[ReportIScsiTargetPortals]
+1=PWCHAR InitiatorName
+2=PWCHAR TargetName
+3=PUSHORT TargetPortalTag
+4=PULONG ElementCount
+5=PISCSI_TARGET_PORTAL Portals
+ParamCount=5
+Header=iscsidsc.h.api;
+[ReportPersistentIScsiDevices]
+1=PULONG BufferSizeInChar
+2=PTCHAR Buffer
+ParamCount=2
+[ReportRadiusServerList]
+1=PULONG BufferSizeInChar
+2=PTCHAR Buffer
+ParamCount=2
+[SendScsiInquiry]
+1=PISCSI_UNIQUE_SESSION_ID* UniqueSessionId
+2=ULONGLONG Lun
+3=UCHAR EvpdCmddt
+4=UCHAR PageCode
+5=PUCHAR* ScsiStatus
+6=PULONG* ReponseSize
+7=PUCHAR ReponseBuffer
+8=PULONG* SenseSize
+9=PUCHAR SenseBuffer
+ParamCount=9
+Header=iscsidsc.h.api;
+[SendScsiReadCapacity]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+2=ULONGLONG Lun
+3=PUCHAR* ScsiStatus
+4=PULONG* ResponseSize
+5=PUCHAR ResponseBuffer
+6=PULONG* SenseSize
+7=PUCHAR SenseBuffer
+ParamCount=7
+Header=iscsidsc.h.api;
+[SendScsiReportLuns]
+1=PISCSI_UNIQUE_SESSION_ID UniqueSessionId
+2=PUCHAR* ScsiStatus
+3=PULONG* ResponseSize
+4=PUCHAR ResponseBuffer
+5=PULONG* SenseSize
+6=PUCHAR SenseBuffer
+ParamCount=6
+Header=iscsidsc.h.api;
+[SetIScsiGroupPresharedKey]
+1=ULONG KeyLength
+2=PUCHAR Key
+3=BOOLEAN Persist
+ParamCount=3
+[SetIScsiIKEInfo]
+1=PTCHAR InitiatorName
+2=ULONG PortNumber
+3=PIKE_AUTHENTICATION_INFORMATION AuthInfo
+4=BOOLEAN Persist
+ParamCount=4
+Header=iscsidsc.h.api;
+[SetIScsiInitiatorCHAPSharedSecret]
+1=ULONG SharedSecretLength
+2=PUCHAR SharedSecret
+ParamCount=2
+[SetIScsiInitiatorRADIUSSharedSecret]
+1=ULONG SharedSecretLength
+2=PUCHAR SharedSecret
+ParamCount=2
+[SetIScsiInitiatorNodeName]
+1=PTCHAR InitiatorNodeName
+ParamCount=1
+[SetIScsiTunnelModeOuterAddress]
+1=PTCHAR InitiatorName
+2=ULONG InitiatorPortNumber
+3=PTCHAR DestinationAddress
+4=PTCHAR OuterModeAddress
+5=BOOLEAN Persist
+ParamCount=5
+[SetupPersistentIScsiDevices]
+ParamCount=0

@@ -1,0 +1,521 @@
+[CallingConvention]
+@=STDCALL
+[BeginBufferedAnimation]
+1=HWND hwnd
+2=HDC hdcTarget
+3=RECT* rcTarget
+4=[BP_BUFFERFORMAT] dwFormat
+5=BP_PAINTPARAMS* pPaintParams
+6=BP_ANIMATIONPARAMS* pAnimationParams
+7=HDC* phdcFrom
+8=HDC* phdcTo
+ParamCount=8
+Header=uxtheme.h.api;gdi.h.api;windows.h.api;
+[BeginBufferedPaint]
+1=HDC hdcTarget
+2=RECT* prcTarget
+3=[BP_BUFFERFORMAT] dwFormat
+4=BP_PAINTPARAMS* pPaintParams
+5=HDC* phdc
+ParamCount=5
+Header=uxtheme.h.api;gdi.h.api;windows.h.api;
+[BufferedPaintClear]
+1=HPAINTBUFFER hBufferedPaint
+2=RECT* prc
+ParamCount=2
+Header=uxtheme.h.api;windows.h.api;
+[BufferedPaintInit]
+ParamCount=0
+[BufferedPaintRenderAnimation]
+1=HWND hwnd
+2=HDC hdcTarget
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[BufferedPaintSetAlpha]
+1=HPAINTBUFFER hBufferedPaint
+2=RECT* prc
+3=BYTE alpha
+ParamCount=3
+Header=uxtheme.h.api;windows.h.api;
+[BufferedPaintStopAllAnimations]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[BufferedPaintUnInit]
+ParamCount=0
+[CloseThemeData]
+1=HTHEME hTheme
+ParamCount=1
+Header=shell.h.api;
+[DrawThemeBackground]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=RECT* pRect
+6=RECT* pClipRect
+ParamCount=6
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[DrawThemeBackgroundEx]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=RECT* pRect
+6=DTBGOPTS* pOptions
+ParamCount=6
+Header=uxtheme.h.api;gdi.h.api;shell.h.api;windows.h.api;
+[DrawThemeEdge]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT pDestRect
+6=[BorderEdge] uEdge
+7=[BorderFlag] uFlags
+8=LPRECT pContentRect
+ParamCount=8
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[DrawThemeIcon]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT pRect
+6=HIMAGELIST himl
+7=int iImageIndex
+ParamCount=7
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[DrawThemeParentBackground]
+1=HWND hwnd
+2=HDC hdc
+3=RECT* prc
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[DrawThemeParentBackgroundEx]
+1=HWND hwnd
+2=HDC hdc
+3=[DrawThemeParentBackgroundFlags] dwFlags
+4=RECT* prc
+ParamCount=4
+Header=uxtheme.h.api;gdi.h.api;windows.h.api;
+[DrawThemeText]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCWSTR pszText
+6=int iCharCount
+7=[DrawTextFlags] dwTextFlags
+8=DWORD dwTextFlags2
+9=LPCRECT pRect
+ParamCount=9
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[DrawThemeTextEx]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCWSTR pszText
+6=int iCharCount
+7=[DrawTextFlags] dwFlags
+8=LPRECT pRect
+9=DTTOPTS* pOptions
+ParamCount=9
+Header=uxtheme.h.api;gdi.h.api;shell.h.api;windows.h.api;
+[EnableThemeDialogTexture]
+1=HWND hwnd
+2=[EnableThemeDialogTextureFlags] dwFlags
+ParamCount=2
+Header=uxtheme.h.api;windows.h.api;
+[EnableTheming]
+1=BOOL fEnable
+ParamCount=1
+[EndBufferedAnimation]
+1=HANIMATIONBUFFER hbpAnimation
+2=BOOL fUpdateTarget
+ParamCount=2
+Header=uxtheme.h.api;
+[EndBufferedPaint]
+1=HPAINTBUFFER hBufferedPaint
+2=BOOL fUpdateTarget
+ParamCount=2
+Header=uxtheme.h.api;
+[GetBufferedPaintBits]
+1=HPAINTBUFFER hBufferedPaint
+2=RGBQUAD** ppbBuffer
+3=int* pcxRow
+ParamCount=3
+Header=uxtheme.h.api;gdi.h.api;
+[GetBufferedPaintDC]
+1=HPAINTBUFFER hBufferedPaint
+ParamCount=1
+Header=uxtheme.h.api;
+[GetBufferedPaintTargetDC]
+1=HPAINTBUFFER hBufferedPaint
+ParamCount=1
+Header=uxtheme.h.api;
+[GetBufferedPaintTargetRect]
+1=HPAINTBUFFER hBufferedPaint
+2=RECT* prc
+ParamCount=2
+Header=uxtheme.h.api;windows.h.api;
+[GetCurrentThemeName]
+1=LPWSTR pszThemeFileName
+2=int dwMaxNameChars
+3=LPWSTR pszColorBuff
+4=int cchMaxColorChars
+5=LPWSTR pszSizeBuff
+6=int cchMaxSizeChars
+ParamCount=6
+[GetThemeAnimationTransform]
+1=HTHEME hTheme
+2=int iStoryboardId
+3=int iTargetId
+4=DWORD dwTransformIndex
+5=TA_TRANSFORM* pTransform
+6=DWORD cbSize
+7=DWORD pcbSizeOut
+ParamCount=7
+Header=uxtheme.h.api;shell.h.api;
+[GetThemeAppProperties]
+ParamCount=0
+[GetThemeBackgroundContentRect]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT pBoundingRect
+6=LPRECT pContentRect
+ParamCount=6
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[GetThemeBackgroundExtent]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT pContentRect
+6=LPRECT pExtentRect
+ParamCount=6
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[GetThemeBackgroundRegion]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT pRect
+6=HRGN* pRegion
+ParamCount=6
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[GetThemeBitmap]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=ULONG dwFlags
+6=HBITMAP* phBitmap
+ParamCount=6
+Header=shell.h.api;windows.h.api;
+[GetThemeBool]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=BOOL* pfVal
+ParamCount=5
+Header=shell.h.api;
+[GetThemeColor]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=COLORREF* pColor
+ParamCount=5
+Header=gdi.h.api;shell.h.api;
+[GetThemeDocumentationProperty]
+1=LPCWSTR pszThemeName
+2=LPCWSTR pszPropertyName
+3=LPWSTR pszValueBuff
+4=int cchMaxValChars
+ParamCount=4
+[GetThemeEnumValue]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=int* piVal
+ParamCount=5
+Header=shell.h.api;
+[GetThemeFilename]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=LPWSTR pszThemeFilename
+6=int cchMaxBuffChars
+ParamCount=6
+Header=shell.h.api;
+[GetThemeFont]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=int iPropId
+6=LOGFONTW* pFont
+ParamCount=6
+Header=gdi.h.api;shell.h.api;
+[GetThemeInt]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=int* piVal
+ParamCount=5
+Header=shell.h.api;
+[GetThemeIntList]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=INTLIST* pIntList
+ParamCount=5
+Header=uxtheme.h.api;shell.h.api;
+[GetThemeMargins]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=int iPropId
+6=LPRECT prc
+7=MARGINS* pMargins
+ParamCount=7
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[GetThemeMetric]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=int iPropId
+6=int* piVal
+ParamCount=6
+Header=gdi.h.api;shell.h.api;
+[GetThemePartSize]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCRECT prc
+6=[THEMESIZE] eSize
+7=SIZE* psz
+ParamCount=7
+Header=uxtheme.h.api;gdi.h.api;shell.h.api;windows.h.api;
+[GetThemePosition]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=POINT* pPoint
+ParamCount=5
+Header=shell.h.api;windows.h.api;
+[GetThemePropertyOrigin]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=PROPERTYORIGIN* pOrigin
+ParamCount=5
+Header=uxtheme.h.api;shell.h.api;
+[GetThemeRect]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=LPRECT pRect
+ParamCount=5
+Header=shell.h.api;windows.h.api;
+[GetThemeStream]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=VOID** ppvStream
+6=DWORD* pcbStream
+7=HINSTANCE hInst
+ParamCount=7
+Header=shell.h.api;windows.h.api;
+[GetThemeString]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+4=int iPropId
+5=LPWSTR pszBuff
+6=int cchMaxBuffChars
+ParamCount=6
+Header=shell.h.api;
+[GetThemeSysBool]
+1=HTHEME hTheme
+2=int iBoolID
+ParamCount=2
+Header=shell.h.api;
+[GetThemeSysColor]
+1=HTHEME hTheme
+2=[SysColorIndex] iColorID
+ParamCount=2
+Header=shell.h.api;windows.h.api;
+[GetThemeSysColorBrush]
+1=HTHEME hTheme
+2=int iColorID
+ParamCount=2
+Header=shell.h.api;
+[GetThemeSysFont]
+1=HTHEME hTheme
+2=int iFontID
+3=LOGFONTW* plf
+ParamCount=3
+Header=gdi.h.api;shell.h.api;
+[GetThemeSysInt]
+1=HTHEME hTheme
+2=int iIntID
+3=int* piValue
+ParamCount=3
+Header=shell.h.api;
+[GetThemeSysSize]
+1=HTHEME hTheme
+2=int iSizeID
+ParamCount=2
+Header=shell.h.api;
+[GetThemeSysString]
+1=HTHEME hTheme
+2=int iStringID
+3=LPWSTR pszStringBuff
+4=int cchMaxStringChars
+ParamCount=4
+Header=shell.h.api;
+[GetThemeTextExtent]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=LPCWSTR pszText
+6=int iCharCount
+7=[DrawTextFlags] dwTextFlags
+8=LPCRECT pBoundingRect
+9=LPRECT pExtentRect
+ParamCount=9
+Header=gdi.h.api;shell.h.api;windows.h.api;
+[GetThemeTextMetrics]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=TEXTMETRIC* ptm
+ParamCount=5
+Header=gdi.h.api;shell.h.api;
+[GetThemeTimingFunction]
+1=HTHEME hTheme
+2=int iTimingFunctionId
+3=TA_TIMINGFUNCTION* pTimingFunction
+4=DWORD cbSize
+5=DWORD pcbSizeOut
+ParamCount=5
+Header=uxtheme.h.api;shell.h.api;
+[GetThemeTransitionDuration]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateIdFrom
+4=int iStateIdTo
+5=int iPropId
+6=DWORD* pdwDuration
+ParamCount=6
+Header=shell.h.api;
+[GetWindowTheme]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[HitTestThemeBackground]
+1=HTHEME hTheme
+2=HDC hdc
+3=int iPartId
+4=int iStateId
+5=[HitTestThemeBackgroundOptions] dwOptions
+6=LPCRECT pRect
+7=HRGN hrgn
+8=POINT ptTest
+9=HitTestReturnCode* pwHitTestCode
+ParamCount=9
+Header=uxtheme.h.api;gdi.h.api;shell.h.api;windows.h.api;
+[IsAppThemed]
+ParamCount=0
+[IsCompositionActive]
+ParamCount=0
+[IsThemeActive]
+ParamCount=0
+[IsThemeBackgroundPartiallyTransparent]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+ParamCount=3
+Header=shell.h.api;
+[IsThemeDialogTextureEnabled]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[IsThemePartDefined]
+1=HTHEME hTheme
+2=int iPartId
+3=int iStateId
+ParamCount=3
+Header=shell.h.api;
+[OpenThemeData]
+1=HWND hwnd
+2=LPCWSTR pszClassList
+ParamCount=2
+Header=windows.h.api;
+[OpenThemeDataEx]
+1=HWND hwnd
+2=LPCWSTR pszClassIdList
+3=DWORD dwFlags
+ParamCount=3
+Header=windows.h.api;
+[SetThemeAppProperties]
+1=DWORD dwFlags
+ParamCount=1
+[SetWindowTheme]
+1=HWND hwnd
+2=LPCWSTR pszSubAppName
+3=LPCWSTR pszSubIdList
+ParamCount=3
+Header=windows.h.api;
+[SetWindowThemeAttribute]
+1=HWND hwnd
+2=[WINDOWTHEMEATTRIBUTETYPE] eAttribute
+3=PVOID pvAttribute
+4=DWORD cbAttribute
+ParamCount=4
+Header=uxtheme.h.api;windows.h.api;
+[GetThemeAnimationProperty]
+1=HTHEME hTheme
+2=int iStoryboardId
+3=int iTargetId
+4=[TA_PROPERTY] eProperty
+5=VOID* pvProperty
+6=DWORD cbSize
+7=DWORD pcbSizeOut
+ParamCount=7
+Header=uxtheme.h.api;shell.h.api;
+[BeginPanningFeedback]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[EndPanningFeedback]
+1=HWND hwnd
+2=BOOL fAnimateBack
+ParamCount=2
+Header=windows.h.api;
+[UpdatePanningFeedback]
+1=HWND hwnd
+2=LONG lTotalOverpanOffsetX
+3=LONG lTotalOverpanOffsetY
+4=BOOL fInInertia
+ParamCount=4
+Header=windows.h.api;

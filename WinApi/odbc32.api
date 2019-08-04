@@ -1,0 +1,620 @@
+[CallingConvention]
+@=STDCALL
+[SQLAllocConnect]
+1=SQLHENV EnvironmentHandle
+2=SQLHDBC* ConnectionHandle
+ParamCount=2
+Header=odbc32.h.api;
+[SQLAllocEnv]
+1=SQLHENV* EnvironmentHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLAllocHandle]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE InputHandle
+3=SQLHANDLE* OutputHandlePtr
+ParamCount=3
+Header=odbc32.h.api;
+[SQLAllocStmt]
+1=SQLHDBC ConnectionHandle
+2=SQLHSTMT* StatementHandle
+ParamCount=2
+Header=odbc32.h.api;
+[SQLBindCol]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ColumnNumber
+3=SQLSMALLINT TargetType
+4=SQLPOINTER TargetValuePtr
+5=SQLLEN BufferLength
+6=SQLLEN* StrLen_or_Ind
+ParamCount=6
+Header=odbc32.h.api;
+[SQLBindParam]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ParameterNumber
+3=SQLSMALLINT ValueType
+4=SQLSMALLINT ParameterType
+5=SQLULEN LengthPrecision
+6=SQLSMALLINT ParameterScale
+7=SQLPOINTER ParameterValue
+8=SQLLEN* StrLen_or_IndPtr
+ParamCount=8
+Header=odbc32.h.api;
+[SQLBindParameter]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ParameterNumber
+3=SQLSMALLINT InputOutputType
+4=SQLSMALLINT ValueType
+5=SQLSMALLINT ParameterType
+6=SQLULEN ColumnSize
+7=SQLSMALLINT DecimalDigits
+8=SQLPOINTER ParameterValuePtr
+9=SQLLEN BufferLength
+10=SQLLEN* StrLen_or_IndPtr
+ParamCount=10
+Header=odbc32.h.api;
+[SQLBrowseConnect]
+1=SQLHDBC ConnectionHandle
+2=SQLCHAR* InConnectionString
+3=SQLSMALLINT StringLength1
+4=SQLCHAR* OutConnectionString
+5=SQLSMALLINT BufferLength
+6=SQLSMALLINT* StringLength2Ptr
+ParamCount=6
+Header=odbc32.h.api;
+[SQLBulkOperations]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT Operation
+ParamCount=2
+Header=odbc32.h.api;
+[SQLCancel]
+1=SQLHSTMT StatementHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLCancelHandle]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE Handle
+ParamCount=2
+Header=odbc32.h.api;
+[SQLCloseCursor]
+1=SQLHSTMT StatementHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLColAttribute]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ColumnNumber
+3=SQLUSMALLINT FieldIdentifier
+4=SQLPOINTER CharacterAttributePtr
+5=SQLSMALLINT BufferLength
+6=SQLSMALLINT* StringLengthPtr
+7=SQLLEN* NumericAttributePtr
+ParamCount=7
+Header=odbc32.h.api;
+[SQLColAttributes]
+1=SQLHSTMT hstmt
+2=SQLUSMALLINT icol
+3=SQLUSMALLINT fDescType
+4=SQLPOINTER rgbDesc
+5=SQLSMALLINT cbDescMax
+6=SQLSMALLINT* pcbDesc
+7=SQLLEN* pfDesc
+ParamCount=7
+Header=odbc32.h.api;
+[SQLColumnPrivileges]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+8=SQLCHAR* ColumnName
+9=SQLSMALLINT NameLength4
+ParamCount=9
+Header=odbc32.h.api;
+[SQLColumns]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+8=SQLCHAR* ColumnName
+9=SQLSMALLINT NameLength4
+ParamCount=9
+Header=odbc32.h.api;
+[SQLCompleteAsync]
+1=SQLSMALLINT HandleType
+2=SQLHANDLE Handle
+3=RETCODE* AsyncRetCodePtr
+ParamCount=3
+Header=odbc32.h.api;odbc.h.api;
+[SQLConnect]
+1=SQLHDBC ConnectionHandle
+2=SQLCHAR* ServerName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* UserName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* Authentication
+7=SQLSMALLINT NameLength3
+ParamCount=7
+Header=odbc32.h.api;
+[SQLCopyDesc]
+1=SQLHDESC SourceDescHandle
+2=SQLHDESC TargetDescHandle
+ParamCount=2
+Header=odbc32.h.api;
+[SQLDataSources]
+1=SQLHENV EnvironmentHandle
+2=SQLUSMALLINT Direction
+3=SQLCHAR* ServerName
+4=SQLSMALLINT BufferLength1
+5=SQLSMALLINT* NameLength1Ptr
+6=SQLCHAR* Description
+7=SQLSMALLINT BufferLength2
+8=SQLSMALLINT* NameLength2Ptr
+ParamCount=8
+Header=odbc32.h.api;
+[SQLDescribeCol]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ColumnNumber
+3=SQLCHAR* ColumnName
+4=SQLSMALLINT BufferLength
+5=SQLSMALLINT* NameLengthPtr
+6=SQLSMALLINT* DataTypePtr
+7=SQLULEN* ColumnSizePtr
+8=SQLSMALLINT* DecimalDigitsPtr
+9=SQLSMALLINT* NullablePtr
+ParamCount=9
+Header=odbc32.h.api;
+[SQLDescribeParam]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ParameterNumber
+3=SQLSMALLINT* DataTypePtr
+4=SQLULEN* ParameterSizePtr
+5=SQLSMALLINT* DecimalDigitsPtr
+6=SQLSMALLINT* NullablePtr
+ParamCount=6
+Header=odbc32.h.api;
+[SQLDisconnect]
+1=SQLHDBC ConnectionHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLDriverConnect]
+1=SQLHDBC ConnectionHandle
+2=SQLHWND WindowHandle
+3=SQLCHAR* InConnectionString
+4=SQLSMALLINT StringLength1
+5=SQLCHAR* OutConnectionString
+6=SQLSMALLINT BufferLength
+7=SQLSMALLINT* StringLength2Ptr
+8=[SQL_DRIVER_COMPLETION] DriverCompletion
+ParamCount=8
+Header=odbc32.h.api;
+[SQLDrivers]
+1=SQLHENV EnvironmentHandle
+2=SQLUSMALLINT Direction
+3=SQLCHAR* DriverDescription
+4=SQLSMALLINT BufferLength1
+5=SQLSMALLINT* DescriptionLengthPtr
+6=SQLCHAR* DriverAttributes
+7=SQLSMALLINT BufferLength2
+8=SQLSMALLINT* AttributesLengthPtr
+ParamCount=8
+Header=odbc32.h.api;
+[SQLEndTran]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE Handle
+3=[SQL_ENDTRAN_OPTION] CompletionType
+ParamCount=3
+Header=odbc32.h.api;
+[SQLError]
+1=SQLHENV EnvironmentHandle
+2=SQLHDBC ConnectionHandle
+3=SQLHSTMT StatementHandle
+4=SQLCHAR* SQLState
+5=SQLINTEGER* NativeError
+6=SQLCHAR* MessageText
+7=SQLSMALLINT BufferLength
+8=SQLSMALLINT* TextLength
+ParamCount=8
+Header=odbc32.h.api;
+[SQLExecDirect]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* StatementText
+3=SQLINTEGER TextLength
+ParamCount=3
+Header=odbc32.h.api;
+[SQLExecute]
+1=SQLHSTMT StatementHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLExtendedFetch]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT FetchOrientation
+3=SQLLEN FetchOffset
+4=SQLULEN* RowCountPtr
+5=SQLUSMALLINT* RowStatusArray
+ParamCount=5
+Header=odbc32.h.api;
+[SQLFetch]
+1=SQLHSTMT StatementHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLFetchScroll]
+1=SQLHSTMT StatementHandle
+2=[SQL_FETCH_TYPE] FetchOrientation
+3=SQLLEN FetchOffset
+ParamCount=3
+Header=odbc32.h.api;
+[SQLForeignKeys]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* PKCatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* PKSchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* PKTableName
+7=SQLSMALLINT NameLength3
+8=SQLCHAR* FKCatalogName
+9=SQLSMALLINT NameLength4
+10=SQLCHAR* FKSchemaName
+11=SQLSMALLINT NameLength5
+12=SQLCHAR* FKTableName
+13=SQLSMALLINT NameLength6
+ParamCount=13
+Header=odbc32.h.api;
+[SQLFreeConnect]
+1=SQLHDBC ConnectionHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLFreeEnv]
+1=SQLHENV EnvironmentHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLFreeHandle]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE Handle
+ParamCount=2
+Header=odbc32.h.api;
+[SQLFreeStmt]
+1=SQLHSTMT StatementHandle
+2=[SQL_FREESTMT_OPTION] Option
+ParamCount=2
+Header=odbc32.h.api;
+[SQLGetConnectAttr]
+1=SQLHDBC ConnectionHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER BufferLength
+5=SQLINTEGER* StringLengthPtr
+ParamCount=5
+Header=odbc32.h.api;
+[SQLGetConnectOption]
+1=SQLHDBC ConnectionHandle
+2=SQLUSMALLINT Option
+3=SQLPOINTER Value
+ParamCount=3
+Header=odbc32.h.api;
+[SQLGetCursorName]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CursorName
+3=SQLSMALLINT BufferLength
+4=SQLSMALLINT* NameLengthPtr
+ParamCount=4
+Header=odbc32.h.api;
+[SQLGetData]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT Col_or_Param_Num
+3=SQLSMALLINT TargetType
+4=SQLPOINTER TargetValuePtr
+5=SQLLEN BufferLength
+6=SQLLEN* StrLen_or_IndPtr
+ParamCount=6
+Header=odbc32.h.api;
+[SQLGetDescField]
+1=SQLHDESC DescriptorHandle
+2=SQLSMALLINT RecNumber
+3=SQLSMALLINT FieldIdentifier
+4=SQLPOINTER ValuePtr
+5=SQLINTEGER BufferLength
+6=SQLINTEGER* StringLengthPtr
+ParamCount=6
+Header=odbc32.h.api;
+[SQLGetDescRec]
+1=SQLHDESC DescriptorHandle
+2=SQLSMALLINT RecNumber
+3=SQLCHAR* Name
+4=SQLSMALLINT BufferLength
+5=SQLSMALLINT* StringLengthPtr
+6=SQLSMALLINT* TypePtr
+7=SQLSMALLINT* SubTypePtr
+8=SQLLEN* LengthPtr
+9=SQLSMALLINT* PrecisionPtr
+10=SQLSMALLINT* ScalePtr
+11=SQLSMALLINT* NullablePtr
+ParamCount=11
+Header=odbc32.h.api;
+[SQLGetDiagField]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE Handle
+3=SQLSMALLINT RecNumber
+4=SQLSMALLINT DiagIdentifier
+5=SQLPOINTER DiagInfoPtr
+6=SQLSMALLINT BufferLength
+7=SQLSMALLINT* StringLengthPtr
+ParamCount=7
+Header=odbc32.h.api;
+[SQLGetDiagRec]
+1=[SQL_HANDLE_TYPE] HandleType
+2=SQLHANDLE Handle
+3=SQLSMALLINT RecNumber
+4=SQLCHAR* SQLState
+5=SQLINTEGER* NativeErrorPtr
+6=SQLCHAR* MessageText
+7=SQLSMALLINT BufferLength
+8=SQLSMALLINT* TextLengthPtr
+ParamCount=8
+Header=odbc32.h.api;
+[SQLGetEnvAttr]
+1=SQLHENV EnvironmentHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER BufferLength
+5=SQLINTEGER* StringLengthPtr
+ParamCount=5
+Header=odbc32.h.api;
+[SQLGetFunctions]
+1=SQLHDBC ConnectionHandle
+2=SQLUSMALLINT FunctionId
+3=SQLUSMALLINT* SupportedPtr
+ParamCount=3
+Header=odbc32.h.api;
+[SQLGetInfo]
+1=SQLHDBC ConnectionHandle
+2=SQLUSMALLINT InfoType
+3=SQLPOINTER InfoValuePtr
+4=SQLSMALLINT BufferLength
+5=SQLSMALLINT* StringLengthPtr
+ParamCount=5
+Header=odbc32.h.api;
+[SQLGetStmtAttr]
+1=SQLHSTMT StatementHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER BufferLength
+5=SQLINTEGER* StringLengthPtr
+ParamCount=5
+Header=odbc32.h.api;
+[SQLGetStmtOption]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT Option
+3=SQLPOINTER Value
+ParamCount=3
+Header=odbc32.h.api;
+[SQLGetTypeInfo]
+1=SQLHSTMT StatementHandle
+2=SQLSMALLINT DataType
+ParamCount=2
+Header=odbc32.h.api;
+[SQLMoreResults]
+1=SQLHSTMT StatementHandle
+ParamCount=1
+Header=odbc32.h.api;
+[SQLNativeSql]
+1=SQLHDBC ConnectionHandle
+2=SQLCHAR* InStatementText
+3=SQLINTEGER TextLength1
+4=SQLCHAR* OutStatementText
+5=SQLINTEGER BufferLength
+6=SQLINTEGER* TextLength2Ptr
+ParamCount=6
+Header=odbc32.h.api;
+[SQLNumParams]
+1=SQLHSTMT StatementHandle
+2=SQLSMALLINT* ParameterCountPtr
+ParamCount=2
+Header=odbc32.h.api;
+[SQLNumResultCols]
+1=SQLHSTMT StatementHandle
+2=SQLSMALLINT* ColumnCountPtr
+ParamCount=2
+Header=odbc32.h.api;
+[SQLParamData]
+1=SQLHSTMT StatementHandle
+2=SQLPOINTER* ValuePtrPtr
+ParamCount=2
+Header=odbc32.h.api;
+[SQLParamOptions]
+1=SQLHSTMT hstmt
+2=SQLULEN crow
+3=SQLULEN* pirow
+ParamCount=3
+Header=odbc32.h.api;
+[SQLPrepare]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* StatementText
+3=SQLINTEGER TextLength
+ParamCount=3
+Header=odbc32.h.api;
+[SQLPrimaryKeys]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+ParamCount=7
+Header=odbc32.h.api;
+[SQLProcedureColumns]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* ProcName
+7=SQLSMALLINT NameLength3
+8=SQLCHAR* ColumnName
+9=SQLSMALLINT NameLength4
+ParamCount=9
+Header=odbc32.h.api;
+[SQLProcedures]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* ProcName
+7=SQLSMALLINT NameLength3
+ParamCount=7
+Header=odbc32.h.api;
+[SQLPutData]
+1=SQLHSTMT StatementHandle
+2=SQLPOINTER DataPtr
+3=SQLLEN StrLen_or_Ind
+ParamCount=3
+Header=odbc32.h.api;
+[SQLRowCount]
+1=SQLHSTMT StatementHandle
+2=SQLLEN* RowCountPtr
+ParamCount=2
+Header=odbc32.h.api;
+[SQLSetConnectAttr]
+1=SQLHDBC ConnectionHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER StringLength
+ParamCount=4
+Header=odbc32.h.api;
+[SQLSetConnectOption]
+1=SQLHDBC ConnectionHandle
+2=SQLUSMALLINT Option
+3=SQLULEN Value
+ParamCount=3
+Header=odbc32.h.api;
+[SQLSetCursorName]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CursorName
+3=SQLSMALLINT NameLength
+ParamCount=3
+Header=odbc32.h.api;
+[SQLSetDescField]
+1=SQLHDESC DescriptorHandle
+2=SQLSMALLINT RecNumber
+3=SQLSMALLINT FieldIdentifier
+4=SQLPOINTER ValuePtr
+5=SQLINTEGER BufferLength
+ParamCount=5
+Header=odbc32.h.api;
+[SQLSetDescRec]
+1=SQLHDESC DescriptorHandle
+2=SQLSMALLINT RecNumber
+3=SQLSMALLINT Type
+4=SQLSMALLINT SubType
+5=SQLLEN Length
+6=SQLSMALLINT Precision
+7=SQLSMALLINT Scale
+8=SQLPOINTER DataPtr
+9=SQLLEN* StringLengthPtr
+10=SQLLEN* IndicatorPtr
+ParamCount=10
+Header=odbc32.h.api;
+[SQLSetEnvAttr]
+1=SQLHENV EnvironmentHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER StringLength
+ParamCount=4
+Header=odbc32.h.api;
+[SQLSetParam]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT ParameterNumber
+3=SQLSMALLINT ValueType
+4=SQLSMALLINT ParameterType
+5=SQLULEN LengthPrecision
+6=SQLSMALLINT ParameterScale
+7=SQLPOINTER ParameterValue
+8=SQLLEN* StrLen_or_Ind
+ParamCount=8
+Header=odbc32.h.api;
+[SQLSetPos]
+1=SQLHSTMT StatementHandle
+2=SQLSETPOSIROW RowNumber
+3=SQLUSMALLINT Operation
+4=SQLUSMALLINT LockType
+ParamCount=4
+Header=odbc32.h.api;
+[SQLSetScrollOptions]
+1=SQLHSTMT hstmt
+2=SQLUSMALLINT fConcurrency
+3=SQLLEN crowKeyset
+4=SQLUSMALLINT crowRowset
+ParamCount=4
+Header=odbc32.h.api;
+[SQLSetStmtAttr]
+1=SQLHSTMT StatementHandle
+2=SQLINTEGER Attribute
+3=SQLPOINTER ValuePtr
+4=SQLINTEGER StringLength
+ParamCount=4
+Header=odbc32.h.api;
+[SQLSetStmtOption]
+1=SQLHSTMT StatementHandle
+2=SQLUSMALLINT Option
+3=SQLULEN Value
+ParamCount=3
+Header=odbc32.h.api;
+[SQLSpecialColumns]
+1=SQLHSTMT StatementHandle
+2=SQLSMALLINT IdentifierType
+3=SQLCHAR* CatalogName
+4=SQLSMALLINT NameLength1
+5=SQLCHAR* SchemaName
+6=SQLSMALLINT NameLength2
+7=SQLCHAR* TableName
+8=SQLSMALLINT NameLength3
+9=SQLSMALLINT Scope
+10=SQLSMALLINT Nullable
+ParamCount=10
+Header=odbc32.h.api;
+[SQLStatistics]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+8=SQLUSMALLINT Unique
+9=SQLUSMALLINT Reserved
+ParamCount=9
+Header=odbc32.h.api;
+[SQLTablePrivileges]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+ParamCount=7
+Header=odbc32.h.api;
+[SQLTables]
+1=SQLHSTMT StatementHandle
+2=SQLCHAR* CatalogName
+3=SQLSMALLINT NameLength1
+4=SQLCHAR* SchemaName
+5=SQLSMALLINT NameLength2
+6=SQLCHAR* TableName
+7=SQLSMALLINT NameLength3
+8=SQLCHAR* TableType
+9=SQLSMALLINT NameLength4
+ParamCount=9
+Header=odbc32.h.api;
+[SQLTransact]
+1=SQLHENV EnvironmentHandle
+2=SQLHDBC ConnectionHandle
+3=SQLUSMALLINT CompletionType
+ParamCount=3
+Header=odbc32.h.api;

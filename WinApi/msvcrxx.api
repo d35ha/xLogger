@@ -1,0 +1,5922 @@
+[CallingConvention]
+@=CDECL
+[memccpy]
+1=void* dest
+2=const void* src
+3=int c
+4=size_t count
+ParamCount=4
+[memchr]
+1=const void* buf
+2=int c
+3=size_t count
+ParamCount=3
+[memcmp]
+1=const void* buf1
+2=const void* buf2
+3=size_t count
+ParamCount=3
+[memcpy]
+1=void* dest
+2=const void* src
+3=size_t count
+ParamCount=3
+[memcpy_s]
+1=void* dest
+2=size_t numberOfElements
+3=const void* src
+4=size_t count
+ParamCount=4
+[wmemcpy_s]
+1=wchar_t* dest
+2=size_t numberOfElements
+3=const wchar_t* src
+4=size_t count
+ParamCount=4
+[memicmp]
+1=const void* buf1
+2=const void* buf2
+3=size_t count
+ParamCount=3
+[memicmp_l]
+1=const void* buf1
+2=const void* buf2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[memmove]
+1=void* dest
+2=const void* src
+3=size_t count
+ParamCount=3
+[memmove_s]
+1=void* dest
+2=size_t numberOfElements
+3=const void* src
+4=size_t count
+ParamCount=4
+[wmemmove_s]
+1=wchar_t* dest
+2=size_t numberOfElements
+3=const wchar_t* src
+4=size_t count
+ParamCount=4
+[memset]
+1=void* dest
+2=int c
+3=size_t count
+ParamCount=3
+[swab]
+1=char* src
+2=char* dest
+3=int n
+ParamCount=3
+[isleadbyte]
+1=int c
+ParamCount=1
+[isleadbyte_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbalnum]
+1=unsigned int c
+ParamCount=1
+[ismbbalnum_l]
+1=unsigned int c
+ParamCount=1
+[ismbbalpha]
+1=unsigned int c
+ParamCount=1
+[ismbbalpha_l]
+1=unsigned int c
+ParamCount=1
+[ismbbgraph]
+1=unsigned int c
+ParamCount=1
+[ismbbgraph_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbkalnum]
+1=unsigned int c
+ParamCount=1
+[ismbbkalnum_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbkana]
+1=unsigned int c
+ParamCount=1
+[ismbbkana_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbkprint]
+1=unsigned int c
+ParamCount=1
+[ismbbkprint_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbkpunct]
+1=unsigned int c
+ParamCount=1
+[ismbbkpunct_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbblead]
+1=unsigned int c
+ParamCount=1
+[ismbblead_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbprint]
+1=unsigned int c
+ParamCount=1
+[ismbbprint_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbpunct]
+1=unsigned int c
+ParamCount=1
+[ismbbpunct_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbbtrail]
+1=unsigned int c
+ParamCount=1
+[ismbbtrail_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbslead]
+1=unsigned char* str
+2=unsigned char* current
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbstrail]
+1=unsigned char* str
+2=unsigned char* current
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbslead_l]
+1=unsigned char* str
+2=unsigned char* current
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[ismbstrail_l]
+1=unsigned char* str
+2=unsigned char* current
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbbtype]
+1=unsigned char c
+2=int type
+ParamCount=2
+[mbbtype_l]
+1=unsigned char c
+2=int type
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsbtype]
+1=unsigned char* mbstr
+2=size_t count
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsbtype_l]
+1=unsigned char* mbstr
+2=size_t count
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[isalnum]
+1=int c
+ParamCount=1
+[iswalnum]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isalnum_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswalnum_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcalnum]
+1=unsigned int c
+ParamCount=1
+[ismbcalnum_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcalpha]
+1=unsigned int c
+ParamCount=1
+[ismbcalpha_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcdigit]
+1=unsigned int c
+ParamCount=1
+[ismbcdigit_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isalpha]
+1=int c
+ParamCount=1
+[iswalpha]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isalpha_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswalpha_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isascii]
+1=int c
+ParamCount=1
+[iswascii]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[iscntrl]
+1=int c
+ParamCount=1
+[iswcntrl]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[iscntrl_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswcntrl_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iscsym]
+1=int c
+ParamCount=1
+[iswcsym]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[iscsymf]
+1=int c
+ParamCount=1
+[iswcsymf]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[iswcsym_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswcsymf_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isdigit]
+1=int c
+ParamCount=1
+[iswdigit]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isdigit_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswdigit_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isgraph]
+1=int c
+ParamCount=1
+[iswgraph]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isgraph_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswgraph_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcgraph]
+1=unsigned int c
+ParamCount=1
+[ismbcgraph_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcprint]
+1=unsigned int c
+ParamCount=1
+[ismbcprint_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcpunct]
+1=unsigned int c
+ParamCount=1
+[ismbcpunct_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcspace]
+1=unsigned int c
+ParamCount=1
+[ismbcspace_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[islower]
+1=int c
+ParamCount=1
+[iswlower]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[islower_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswlower_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbclower]
+1=unsigned int c
+ParamCount=1
+[ismbclower_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcupper]
+1=unsigned int c
+ParamCount=1
+[ismbcupper_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbchira]
+1=unsigned int c
+ParamCount=1
+[ismbchira_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbckata]
+1=unsigned int c
+ParamCount=1
+[ismbckata_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbclegal]
+1=unsigned int c
+ParamCount=1
+[ismbclegal_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcsymbol]
+1=unsigned int c
+ParamCount=1
+[ismbcsymbol_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcl0]
+1=unsigned int c
+ParamCount=1
+[ismbcl0_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcl1]
+1=unsigned int c
+ParamCount=1
+[ismbcl1_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ismbcl2]
+1=unsigned int c
+ParamCount=1
+[ismbcl2_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isprint]
+1=int c
+ParamCount=1
+[iswprint]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isprint_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswprint_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ispunct]
+1=int c
+ParamCount=1
+[iswpunct]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[ispunct_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswpunct_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isspace]
+1=int c
+ParamCount=1
+[iswspace]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isspace_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswspace_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isupper]
+1=int c
+ParamCount=1
+[isupper_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswupper]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[iswupper_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[isctype]
+1=int c
+2=_ctype_t mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[isctype_l]
+1=int c
+2=_ctype_t mask
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[iswctype]
+1=wint_t c
+2=[wctype_t] mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[is_wctype]
+1=wint_t c
+2=[wctype_t] mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswctype_l]
+1=wint_t c
+2=[wctype_t] mask
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[isxdigit]
+1=int c
+ParamCount=1
+[iswxdigit]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[isxdigit_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[iswxdigit_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wctype]
+1=const char* property
+ParamCount=1
+[pctype_func]
+ParamCount=0
+[aligned_free]
+1=void* memblock
+ParamCount=1
+[aligned_free_dbg]
+1=void* memblock
+ParamCount=1
+[aligned_malloc]
+1=size_t size
+2=size_t alignment
+ParamCount=2
+[aligned_malloc_dbg]
+1=size_t size
+2=size_t alignment
+3=const char* filename
+4=int linenumber
+ParamCount=4
+[aligned_msize]
+1=void* memblock
+2=size_t alignment
+3=size_t offset
+ParamCount=3
+[aligned_msize_dbg]
+1=void* memblock
+2=size_t alignment
+3=size_t offset
+ParamCount=3
+[aligned_offset_malloc]
+1=size_t size
+2=size_t alignment
+3=size_t offset
+ParamCount=3
+[aligned_offset_malloc_dbg]
+1=size_t size
+2=size_t alignment
+3=size_t offset
+4=const char* filename
+5=int linenumber
+ParamCount=5
+[aligned_offset_realloc]
+1=void* memblock
+2=size_t size
+3=size_t alignment
+4=size_t offset
+ParamCount=4
+[aligned_offset_realloc_dbg]
+1=void* memblock
+2=size_t size
+3=size_t alignment
+4=size_t offset
+5=const char* filename
+6=int linenumber
+ParamCount=6
+[aligned_offset_recalloc]
+1=void* memblock
+2=size_t num
+3=size_t size
+4=size_t alignment
+5=size_t offset
+ParamCount=5
+[aligned_offset_recalloc_dbg]
+1=void* memblock
+2=size_t num
+3=size_t size
+4=size_t alignment
+5=size_t offset
+6=const char* filename
+7=int linenumber
+ParamCount=7
+[aligned_realloc]
+1=void* memblock
+2=size_t size
+3=size_t alignment
+ParamCount=3
+[aligned_realloc_dbg]
+1=void* memblock
+2=size_t size
+3=size_t alignment
+4=const char* filename
+5=int linenumber
+ParamCount=5
+[aligned_recalloc]
+1=void* memblock
+2=size_t num
+3=size_t size
+4=size_t alignment
+ParamCount=4
+[aligned_recalloc_dbg]
+1=void* memblock
+2=size_t num
+3=size_t size
+4=size_t alignment
+5=const char* filename
+6=int linenumber
+ParamCount=6
+[abs]
+1=int n
+ParamCount=1
+[abs64]
+1=__int64 n
+ParamCount=1
+[wtof]
+1=const wchar_t* str
+ParamCount=1
+[wtof_l]
+1=const wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wtoi]
+1=const wchar_t* str
+ParamCount=1
+[wtoi_l]
+1=const wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wtol]
+1=const wchar_t* str
+ParamCount=1
+[wtol_l]
+1=const wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[itoa]
+1=int value
+2=char* str
+3=int radix
+ParamCount=3
+[i64toa]
+1=__int64 value
+2=char* str
+3=int radix
+ParamCount=3
+[ui64toa]
+1=unsigned __int64 value
+2=char* str
+3=int radix
+ParamCount=3
+[itow]
+1=int value
+2=wchar_t* str
+3=int radix
+ParamCount=3
+[i64tow]
+1=__int64 value
+2=wchar_t* str
+3=int radix
+ParamCount=3
+[ui64tow]
+1=unsigned __int64 value
+2=wchar_t* str
+3=int radix
+ParamCount=3
+[itoa_s]
+1=int value
+2=char* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[i64toa_s]
+1=__int64 value
+2=char* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[ui64toa_s]
+1=unsigned __int64 value
+2=char* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[itow_s]
+1=int value
+2=wchar_t* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[i64tow_s]
+1=__int64 value
+2=wchar_t* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[ui64tow_s]
+1=unsigned __int64 value
+2=wchar_t* buffer
+3=size_t sizeInCharacters
+4=int radix
+ParamCount=4
+[labs]
+1=long n
+ParamCount=1
+[ltoa]
+1=long value
+2=char* str
+3=int radix
+ParamCount=3
+[ltow]
+1=long value
+2=wchar_t* str
+3=int radix
+ParamCount=3
+[ltoa_s]
+1=long value
+2=char* str
+3=size_t sizeOfstr
+4=int radix
+ParamCount=4
+[ltow_s]
+1=long value
+2=wchar_t* str
+3=size_t sizeOfstr
+4=int radix
+ParamCount=4
+[mbbtombc]
+1=unsigned int c
+ParamCount=1
+[mbbtombc_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbcjistojms]
+1=unsigned int c
+ParamCount=1
+[mbcjistojms_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbcjmstojis]
+1=unsigned int c
+ParamCount=1
+[mbcjmstojis_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbctohira]
+1=unsigned int c
+ParamCount=1
+[mbctohira_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbctokata]
+1=unsigned int c
+ParamCount=1
+[mbctokata_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbctombb]
+1=unsigned int c
+ParamCount=1
+[mbctombb_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[toascii]
+1=int c
+ParamCount=1
+[tolower]
+1=int c
+ParamCount=1
+[towlower]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[tolower_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[towlower_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[toupper]
+1=int c
+ParamCount=1
+[towupper]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[toupper_l]
+1=int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[towupper_l]
+1=wint_t c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ultoa]
+1=unsigned long value
+2=char* str
+3=int radix
+ParamCount=3
+[ultow]
+1=unsigned long value
+2=wchar_t* str
+3=int radix
+ParamCount=3
+[ultoa_s]
+1=unsigned long value
+2=char* str
+3=size_t sizeOfstr
+4=int radix
+ParamCount=4
+[ultow_s]
+1=unsigned long value
+2=wchar_t* str
+3=size_t sizeOfstr
+4=int radix
+ParamCount=4
+[fcvt]
+1=double value
+2=int count
+3=int* dec
+4=int* sign
+ParamCount=4
+[fcvt_s]
+1=char* buffer
+2=size_t sizeInBytes
+3=double value
+4=int count
+5=int* dec
+6=int* sign
+ParamCount=6
+[gcvt]
+1=double value
+2=int digits
+3=char* buffer
+ParamCount=3
+[gcvt_s]
+1=char* buffer
+2=size_t sizeInBytes
+3=double value
+4=int digits
+ParamCount=4
+[atol_l]
+1=const char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[atoi_l]
+1=const char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[atof]
+1=const char* str
+ParamCount=1
+[atof_l]
+1=const char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[atoi64_l]
+1=const char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[atoi]
+1=const char* str
+ParamCount=1
+[atoi64]
+1=const char* str
+ParamCount=1
+[atol]
+1=const char* str
+ParamCount=1
+[atodbl]
+1=_CRT_DOUBLE* value
+2=char* str
+ParamCount=2
+Header=msvcrxx.h.api;
+[atodbl_l]
+1=_CRT_DOUBLE* value
+2=char* str
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[atoldbl]
+1=_LDOUBLE* value
+2=char* str
+ParamCount=2
+Header=msvcrxx.h.api;
+[atoldbl_l]
+1=_LDOUBLE* value
+2=char* str
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[atoflt]
+1=_CRT_FLOAT* value
+2=char* str
+ParamCount=2
+Header=msvcrxx.h.api;
+[atoflt_l]
+1=_CRT_FLOAT* value
+2=char* str
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wtoi64]
+1=const wchar_t* str
+ParamCount=1
+[wtoi64_l]
+1=const wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[strtoul]
+1=const char* nptr
+2=char** endptr
+3=int base
+ParamCount=3
+[strtoul_l]
+1=const char* nptr
+2=char** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcstoul]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+ParamCount=3
+[wcstoul_l]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strtod]
+1=const char* nptr
+2=char** endptr
+ParamCount=2
+[strtod_l]
+1=const char* nptr
+2=char** endptr
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcstod]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+ParamCount=2
+[wcstod_l]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strtol]
+1=const char* nptr
+2=char** endptr
+3=int base
+ParamCount=3
+[wcstol]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+ParamCount=3
+[strtol_l]
+1=const char* nptr
+2=char** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcstol_l]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbtowc]
+1=wchar_t* wchar
+2=const char* mbchar
+3=size_t count
+ParamCount=3
+[mbtowc_l]
+1=wchar_t* wchar
+2=const char* mbchar
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbstowcs]
+1=wchar_t* wcstr
+2=const char* mbstr
+3=size_t count
+ParamCount=3
+[mbstowcs_l]
+1=wchar_t* wcstr
+2=const char* mbstr
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbstowcs_s]
+1=size_t* pReturnValue
+2=wchar_t* wcstr
+3=size_t sizeInWords
+4=const char* mbstr
+5=size_t count
+ParamCount=5
+[mbstowcs_s_l]
+1=size_t* pReturnValue
+2=wchar_t* wcstr
+3=size_t sizeInWords
+4=const char* mbstr
+5=size_t count
+6=_locale_t locale
+ParamCount=6
+Header=msvcrxx.h.api;
+[wcstombs]
+1=char* mbstr
+2=const wchar_t* wcstr
+3=size_t count
+ParamCount=3
+[wcstombs_l]
+1=char* mbstr
+2=const wchar_t* wcstr
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcstombs_s]
+1=size_t* pReturnValue
+2=char* mbstr
+3=size_t sizeInBytes
+4=const wchar_t* wcstr
+5=size_t count
+ParamCount=5
+[wcstombs_s_l]
+1=size_t* pReturnValue
+2=char* mbstr
+3=size_t sizeInBytes
+4=const wchar_t* wcstr
+5=size_t count
+6=_locale_t locale
+ParamCount=6
+Header=msvcrxx.h.api;
+[wctomb]
+1=char* mbchar
+2=wchar_t wchar
+ParamCount=2
+[wctomb_l]
+1=char* mbchar
+2=wchar_t wchar
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wctomb_s]
+1=int* pRetValue
+2=char* mbchar
+3=size_t sizeInBytes
+4=wchar_t wchar
+ParamCount=4
+[wctomb_s_l]
+1=int* pRetValue
+2=char* mbchar
+3=size_t sizeInBytes
+4=wchar_t wchar
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[mbctoupper_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbctoupper]
+1=unsigned int c
+ParamCount=1
+[mbctolower]
+1=unsigned int c
+ParamCount=1
+[mbctolower_l]
+1=unsigned int c
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[ecvt]
+1=double value
+2=int count
+3=int* dec
+4=int* sign
+ParamCount=4
+[ecvt_s]
+1=char* _Buffer
+2=size_t _SizeInBytes
+3=double _Value
+4=int _Count
+5=int* _Dec
+6=int* _Sign
+ParamCount=6
+[mbrtowc]
+1=wchar_t* wchar
+2=const char* mbchar
+3=size_t count
+4=mbstate_t mbstate
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsrtowcs]
+1=wchar_t* wcstr
+2=const char** mbstr
+3=size_t count
+4=mbstate_t* mbstate
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsrtowcs_s]
+1=size_t* pReturnValue
+2=wchar_t* wcstr
+3=size_t sizeInWords
+4=const char** mbstr
+5=size_t count
+6=mbstate_t* mbstate
+ParamCount=6
+Header=msvcrxx.h.api;
+[strtoi64]
+1=const char* nptr
+2=char** endptr
+3=int base
+ParamCount=3
+[wcstoi64]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+ParamCount=3
+[strtoi64_l]
+1=const char* nptr
+2=char** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcstoi64_l]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strtoui64]
+1=const char* nptr
+2=char** endptr
+3=int base
+ParamCount=3
+[wcstoui64]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+ParamCount=3
+[strtoui64_l]
+1=const char* nptr
+2=char** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcstoui64_l]
+1=const wchar_t* nptr
+2=wchar_t** endptr
+3=int base
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcrtomb]
+1=char* mbchar
+2=wchar_t wchar
+3=mbstate_t* mbstate
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcrtomb_s]
+1=size_t* pReturnValue
+2=char* mbchar
+3=size_t sizeOfmbchar
+4=wchar_t* wchar
+5=mbstate_t* mbstate
+ParamCount=5
+Header=msvcrxx.h.api;
+[wcsrtombs]
+1=char* mbstr
+2=const wchar_t** wcstr
+3=size_t count
+4=mbstate_t* mbstate
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsrtombs_s]
+1=size_t* pReturnValue
+2=char* mbstr
+3=size_t sizeInBytes
+4=const wchar_t** wcstr
+5=size_t count
+6=mbstate_t* mbstate
+ParamCount=6
+Header=msvcrxx.h.api;
+[wctob]
+1=wint_t wchar
+ParamCount=1
+Header=msvcrxx.h.api;
+[byteswap_ushort]
+1=unsigned short val
+ParamCount=1
+[byteswap_ulong]
+1=unsigned long val
+ParamCount=1
+[byteswap_uint64]
+1=unsigned __int64 val
+ParamCount=1
+[btowc]
+1=int c
+ParamCount=1
+[CrtCheckMemory]
+ParamCount=0
+[CrtDbgBreak]
+ParamCount=0
+[CrtDbgReport]
+1=[CRT_REPORT_TYPE] reportType
+2=const char* filename
+3=int linenumber
+4=const char* moduleName
+5=const char* format
+ParamCount=-5
+Header=msvcrxx.h.api;
+[CrtDbgReportW]
+1=[CRT_REPORT_TYPE] reportType
+2=const wchar_t* filename
+3=int linenumber
+4=const wchar_t* moduleName
+5=const wchar_t* format
+ParamCount=-5
+Header=msvcrxx.h.api;
+[CrtDoForAllClientObjects]
+1=void* pfn
+2=void* context
+ParamCount=2
+[CrtDumpMemoryLeaks]
+ParamCount=0
+[CrtIsMemoryBlock]
+1=const void* userData
+2=unsigned int size
+3=long* requestNumber
+4=char** filename
+5=int* linenumber
+ParamCount=5
+[CrtIsValidHeapPointer]
+1=const void* userData
+ParamCount=1
+[CrtIsValidPointer]
+1=const void* address
+2=unsigned int size
+3=int access
+ParamCount=3
+[CrtMemCheckpoint]
+1=_CrtMemState* state
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtMemDifference]
+1=_CrtMemState* stateDiff
+2=_CrtMemState* oldState
+3=_CrtMemState* newState
+ParamCount=3
+Header=msvcrxx.h.api;
+[CrtMemDumpAllObjectsSince]
+1=_CrtMemState* state
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtMemDumpStatistics]
+1=_CrtMemState* state
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtReportBlockType]
+1=const void* pBlock
+ParamCount=1
+[CrtSetAllocHook]
+1=_CRT_ALLOC_HOOK allocHook
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtSetBreakAlloc]
+1=long lBreakAlloc
+ParamCount=1
+[CrtSetDbgFlag]
+1=[CRTDBG_FLAG] newFlag
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtSetDumpClient]
+1=_CRT_DUMP_CLIENT dumpClient
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtSetReportFile]
+1=[CRT_REPORT_TYPE] reportType
+2=[_HFILE] reportFile
+ParamCount=2
+Header=msvcrxx.h.api;
+[CrtSetReportHook]
+1=_CRT_REPORT_HOOK reportHook
+ParamCount=1
+Header=msvcrxx.h.api;
+[CrtSetReportHook2]
+1=[CRT_RPTHOOK_MODE] mode
+2=_CRT_REPORT_HOOK pfnNewHook
+ParamCount=2
+Header=msvcrxx.h.api;
+[CrtSetReportHookW2]
+1=[CRT_RPTHOOK_MODE] mode
+2=_CRT_REPORT_HOOKW pfnNewHook
+ParamCount=2
+Header=msvcrxx.h.api;
+[CrtSetReportMode]
+1=[CRT_REPORT_TYPE] reportType
+2=[CRTDBG_MODE] reportMode
+ParamCount=2
+Header=msvcrxx.h.api;
+[CrtGetAllocHook]
+ParamCount=0
+[CrtGetDumpClient]
+ParamCount=0
+[CrtGetReportHook]
+ParamCount=0
+[CrtSetDebugFillThreshold]
+1=size_t _NewThreshold
+ParamCount=1
+[chdir]
+1=const char* dirname
+ParamCount=1
+[wchdir]
+1=const wchar_t* dirname
+ParamCount=1
+[chdrive]
+1=int drive
+ParamCount=1
+[getcwd]
+1=char* buffer
+2=int maxlen
+ParamCount=2
+[getcwd_dbg]
+1=char* buffer
+2=int maxlen
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[wgetcwd]
+1=wchar_t* buffer
+2=int maxlen
+ParamCount=2
+[wgetcwd_dbg]
+1=wchar_t* buffer
+2=int maxlen
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[getdcwd]
+1=int drive
+2=char* buffer
+3=int maxlen
+ParamCount=3
+[getdcwd_dbg]
+1=int drive
+2=char* buffer
+3=int maxlen
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[wgetdcwd]
+1=int drive
+2=wchar_t* buffer
+3=int maxlen
+ParamCount=3
+[wgetdcwd_dbg]
+1=int drive
+2=wchar_t* buffer
+3=int maxlen
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[getdiskfree]
+1=unsigned int drive
+2=struct _diskfree_t* driveinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[getdrive]
+ParamCount=0
+[getdrives]
+ParamCount=0
+[mkdir]
+1=const char* dirname
+ParamCount=1
+[wmkdir]
+1=const wchar_t* dirname
+ParamCount=1
+[rmdir]
+1=const char* dirname
+ParamCount=1
+[wrmdir]
+1=const wchar_t* dirname
+ParamCount=1
+[searchenv]
+1=const char* filename
+2=const char* varname
+3=char* pathname
+ParamCount=3
+[wsearchenv]
+1=const wchar_t* filename
+2=const wchar_t* varname
+3=wchar_t* pathname
+ParamCount=3
+[searchenv_s]
+1=const char* filename
+2=const char* varname
+3=char* pathname
+4=size_t numberOfElements
+ParamCount=4
+[wsearchenv_s]
+1=const wchar_t* filename
+2=const wchar_t* varname
+3=wchar_t* pathname
+4=size_t numberOfElements
+ParamCount=4
+[set_error_mode]
+1=[set_error_mode] modeval
+ParamCount=1
+Header=msvcrxx.h.api;
+[seterrormode]
+1=[set_error_mode] mode
+ParamCount=1
+Header=msvcrxx.h.api;
+[purecall]
+ParamCount=0
+[set_purecall_handler]
+1=_purecall_handler function
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_doserrno]
+1=int* pValue
+ParamCount=1
+[get_errno]
+1=int* pValue
+ParamCount=1
+[set_doserrno]
+1=int value
+ParamCount=1
+[set_errno]
+1=int value
+ParamCount=1
+[set_abort_behavior]
+1=[abort_flag] flags
+2=[abort_flag] mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[get_invalid_parameter_handler]
+ParamCount=0
+[set_invalid_parameter_handler]
+1=_invalid_parameter_handler pNew
+ParamCount=1
+Header=msvcrxx.h.api;
+[amsg_exit]
+1=int rterrnum
+ParamCount=1
+[?_set_se_translator@@YAP6AXIPAU_EXCEPTION_POINTERS@@@ZP6AXI0@Z@Z]
+1=_se_translator_function seTransFunction
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_terminate]
+ParamCount=0
+[?set_terminate@@YAP6AXXZP6AXXZ@Z]
+1=terminate_function termFunction
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_unexpected]
+ParamCount=0
+[?set_unexpected@@YAP6AXXZP6AXXZ@Z]
+1=unexpected_function unexpFunction
+ParamCount=1
+Header=msvcrxx.h.api;
+[?terminate@@YAXXZ]
+ParamCount=0
+[?unexpected@@YAXXZ]
+ParamCount=0
+[CxxFrameHandler]
+1=EHExceptionRecord* pExcept
+2=EHRegistrationNode* pRN
+3=void* pContext
+4=DispatcherContext* pDC
+ParamCount=4
+Header=msvcrxx.h.api;
+[except_handler3]
+1=PEXCEPTION_RECORD exception_record
+2=PEXCEPTION_REGISTRATION registration
+3=PCONTEXT context
+4=PEXCEPTION_REGISTRATION dispatcher
+ParamCount=4
+Header=msvcrxx.h.api;windows.h.api;
+[uncaught_exception]
+ParamCount=0
+[XcptFilter]
+1=[xcpt_num] xcptnum
+2=PEXCEPTION_POINTERS pxcptinfoptrs
+ParamCount=2
+Header=msvcrxx.h.api;windows.h.api;
+[resetstkoflw]
+ParamCount=0
+[abnormal_termination]
+ParamCount=0
+[chsize]
+1=int fd
+2=long size
+ParamCount=2
+[chsize_s]
+1=int fd
+2=__int64 size
+ParamCount=2
+[filelength]
+1=int fd
+ParamCount=1
+[filelengthi64]
+1=int fd
+ParamCount=1
+[fstat]
+1=int fd
+2=struct _stat* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[fstat32]
+1=int fd
+2=struct _stat32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[fstat64]
+1=int fd
+2=struct _stat64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[fstati64]
+1=int fd
+2=struct _stati64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[fstat32i64]
+1=int fd
+2=struct _stat32i64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[fstat64i32]
+1=int fd
+2=struct _stat64i32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[get_osfhandle]
+1=int fd
+ParamCount=1
+[isatty]
+1=int fd
+ParamCount=1
+[locking]
+1=int fd
+2=[_LK_MODE] mode
+3=long nbytes
+ParamCount=3
+Header=msvcrxx.h.api;
+[open_osfhandle]
+1=intptr_t osfhandle
+2=int flags
+ParamCount=2
+Header=msvcrxx.h.api;
+[access]
+1=const char* path
+2=int mode
+ParamCount=2
+[waccess]
+1=const wchar_t* path
+2=int mode
+ParamCount=2
+[access_s]
+1=const char* path
+2=int mode
+ParamCount=2
+[waccess_s]
+1=const wchar_t* path
+2=int mode
+ParamCount=2
+[chmod]
+1=const char* filename
+2=[perm_mode] pmode
+ParamCount=2
+Header=msvcrxx.h.api;
+[wchmod]
+1=const wchar_t* filename
+2=[perm_mode] pmode
+ParamCount=2
+Header=msvcrxx.h.api;
+[fullpath]
+1=char* absPath
+2=const char* relPath
+3=size_t maxLength
+ParamCount=3
+[fullpath_dbg]
+1=char* absPath
+2=const char* relPath
+3=size_t maxLength
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[wfullpath]
+1=wchar_t* absPath
+2=const wchar_t* relPath
+3=size_t maxLength
+ParamCount=3
+[wfullpath_dbg]
+1=wchar_t* absPath
+2=const wchar_t* relPath
+3=size_t maxLength
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[makepath]
+1=char* path
+2=const char* drive
+3=const char* dir
+4=const char* fname
+5=const char* ext
+ParamCount=5
+[wmakepath]
+1=wchar_t* path
+2=const wchar_t* drive
+3=const wchar_t* dir
+4=const wchar_t* fname
+5=const wchar_t* ext
+ParamCount=5
+[makepath_s]
+1=char* path
+2=size_t sizeInBytes
+3=const char* drive
+4=const char* dir
+5=const char* fname
+6=const char* ext
+ParamCount=6
+[wmakepath_s]
+1=wchar_t* path
+2=size_t sizeInWords
+3=const wchar_t* drive
+4=const wchar_t* dir
+5=const wchar_t* fname
+6=const wchar_t* ext
+ParamCount=6
+[mktemp]
+1=char* template
+ParamCount=1
+[wmktemp]
+1=wchar_t* template
+ParamCount=1
+[mktemp_s]
+1=char* template
+2=size_t sizeInChars
+ParamCount=2
+[wmktemp_s]
+1=wchar_t* template
+2=size_t sizeInChars
+ParamCount=2
+[remove]
+1=const char* path
+ParamCount=1
+[wremove]
+1=const wchar_t* path
+ParamCount=1
+[rename]
+1=const char* oldname
+2=const char* newname
+ParamCount=2
+[wrename]
+1=const wchar_t* oldname
+2=const wchar_t* newname
+ParamCount=2
+[splitpath]
+1=const char* path
+2=char* drive
+3=char* dir
+4=char* fname
+5=char* ext
+ParamCount=5
+[wsplitpath]
+1=const wchar_t* path
+2=wchar_t* drive
+3=wchar_t* dir
+4=wchar_t* fname
+5=wchar_t* ext
+ParamCount=5
+[splitpath_s]
+1=const char* path
+2=char* drive
+3=size_t driveNumberOfElements
+4=char* dir
+5=size_t dirNumberOfElements
+6=char* fname
+7=size_t nameNumberOfElements
+8=char* ext
+9=size_t extNumberOfElements
+ParamCount=9
+[wsplitpath_s]
+1=const wchar_t* path
+2=wchar_t* drive
+3=size_t driveNumberOfElements
+4=wchar_t* dir
+5=size_t dirNumberOfElements
+6=wchar_t* fname
+7=size_t nameNumberOfElements
+8=wchar_t* ext
+9=size_t extNumberOfElements
+ParamCount=9
+[stat]
+1=const char* path
+2=struct _stat* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[stat32]
+1=const char* path
+2=struct _stat32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[stat64]
+1=const char* path
+2=struct _stat64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[stati64]
+1=const char* path
+2=struct _stati64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[stat32i64]
+1=const char* path
+2=struct _stat32i64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[stat64i32]
+1=const char* path
+2=struct _stat64i32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstat]
+1=const wchar_t* path
+2=struct _stat* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstat32]
+1=const wchar_t* path
+2=struct _stat32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstat64]
+1=const wchar_t* path
+2=struct _stat64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstati64]
+1=const wchar_t* path
+2=struct _stati64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstat32i64]
+1=const wchar_t* path
+2=struct _stat32i64* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[wstat64i32]
+1=const wchar_t* path
+2=struct _stat64i32* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[unlink]
+1=const char* filename
+ParamCount=1
+[wunlink]
+1=const wchar_t* filename
+ParamCount=1
+[acos]
+1=double x
+ParamCount=1
+[acosf]
+1=float x
+ParamCount=1
+[asin]
+1=double x
+ParamCount=1
+[asinf]
+1=float x
+ParamCount=1
+[atan]
+1=double x
+ParamCount=1
+[atan2]
+1=double y
+2=double x
+ParamCount=2
+[atanf]
+1=float x
+ParamCount=1
+[atan2f]
+1=float y
+2=float x
+ParamCount=2
+[cabs]
+1=struct _complex z
+ParamCount=-1
+[ceil]
+1=double x
+ParamCount=1
+[ceilf]
+1=float x
+ParamCount=1
+[chgsign]
+1=double x
+ParamCount=1
+[chgsignf]
+1=float x
+ParamCount=1
+[clearfp]
+ParamCount=0
+[control87]
+1=[control_bits] new
+2=[control_mask] mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[controlfp]
+1=[control_bits] new
+2=[control_mask] mask
+ParamCount=2
+Header=msvcrxx.h.api;
+[control87_2]
+1=[control_bits] new
+2=[control_mask] mask
+3=unsigned int* x86_cw
+4=unsigned int* sse2_cw
+ParamCount=4
+Header=msvcrxx.h.api;
+[controlfp_s]
+1=unsigned int* currentControl
+2=[control_bits] newControl
+3=[control_mask] mask
+ParamCount=3
+Header=msvcrxx.h.api;
+[copysign]
+1=double x
+2=double y
+ParamCount=2
+[copysignf]
+1=float x
+2=float y
+ParamCount=2
+[cos]
+1=double x
+ParamCount=1
+[cosf]
+1=float x
+ParamCount=1
+[cosh]
+1=double x
+ParamCount=1
+[coshf]
+1=float x
+ParamCount=1
+[div]
+1=int numer
+2=int denom
+ParamCount=2
+[exp]
+1=double x
+ParamCount=1
+[expf]
+1=float x
+ParamCount=1
+[fabs]
+1=double x
+ParamCount=1
+[finite]
+1=double x
+ParamCount=1
+[floor]
+1=double x
+ParamCount=1
+[floorf]
+1=float x
+ParamCount=1
+[fmod]
+1=double x
+2=double y
+ParamCount=2
+[fmodf]
+1=float x
+2=float y
+ParamCount=2
+[fpclass]
+1=double x
+ParamCount=1
+[fpieee_flt]
+1=unsigned long excCode
+2=struct _EXCEPTION_POINTERS* excInfo
+3=void* handler
+ParamCount=3
+Header=msvcrxx.h.api;
+[fpreset]
+ParamCount=0
+[frexp]
+1=double x
+2=int* expptr
+ParamCount=2
+[hypot]
+1=double x
+2=double y
+ParamCount=2
+[hypotf]
+1=float x
+2=float y
+ParamCount=2
+[isnan]
+1=double x
+ParamCount=1
+[ldexp]
+1=double x
+2=int exp
+ParamCount=2
+[ldiv]
+1=long int numer
+2=long int denom
+ParamCount=2
+Header=msvcrxx.h.api;
+[log]
+1=double x
+ParamCount=1
+[logf]
+1=float x
+ParamCount=1
+[log10]
+1=double x
+ParamCount=1
+[log10f]
+1=float x
+ParamCount=1
+[logb]
+1=double x
+ParamCount=1
+[lrotl]
+1=unsigned long value
+2=int shift
+ParamCount=2
+[lrotr]
+1=unsigned long value
+2=int shift
+ParamCount=2
+[matherr]
+1=struct _exception* except
+ParamCount=1
+Header=msvcrxx.h.api;
+[setusermatherr]
+1=_HANDLE_MATH_ERROR pf
+ParamCount=1
+Header=msvcrxx.h.api;
+[modf]
+1=double x
+2=double* intptr
+ParamCount=2
+[modff]
+1=float x
+2=float* intptr
+ParamCount=2
+[nextafter]
+1=double x
+2=double y
+ParamCount=2
+[pow]
+1=double x
+2=double y
+ParamCount=2
+[powf]
+1=float x
+2=float y
+ParamCount=2
+[rand]
+ParamCount=0
+[rand_s]
+1=unsigned int* randomValue
+ParamCount=1
+[rotl]
+1=unsigned int value
+2=int shift
+ParamCount=2
+[rotl64]
+1=unsigned __int64 value
+2=int shift
+ParamCount=2
+[rotr]
+1=unsigned int value
+2=int shift
+ParamCount=2
+[rotr64]
+1=unsigned __int64 value
+2=int shift
+ParamCount=2
+[scalb]
+1=double x
+2=long exp
+ParamCount=2
+[set_controlfp]
+1=unsigned int newControl
+2=unsigned int mask
+ParamCount=2
+[sin]
+1=double x
+ParamCount=1
+[sinf]
+1=float x
+ParamCount=1
+[sinh]
+1=double x
+ParamCount=1
+[sinhf]
+1=float x
+ParamCount=1
+[sqrt]
+1=double x
+ParamCount=1
+[sqrtf]
+1=float x
+ParamCount=1
+[srand]
+1=unsigned int seed
+ParamCount=1
+[statusfp]
+ParamCount=0
+[tan]
+1=double x
+ParamCount=1
+[tanf]
+1=float x
+ParamCount=1
+[tanh]
+1=double x
+ParamCount=1
+[tanhf]
+1=float x
+ParamCount=1
+[y0]
+1=double x
+ParamCount=1
+[y1]
+1=double x
+ParamCount=1
+[yn]
+1=int n
+2=double x
+ParamCount=2
+[j0]
+1=double x
+ParamCount=1
+[j1]
+1=double x
+ParamCount=1
+[jn]
+1=int n
+2=double x
+ParamCount=2
+[set_SSE2_enable]
+1=int flag
+ParamCount=1
+[set_fmode]
+1=[file_translation_mode] mode
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_fmode]
+1=file_translation_mode* pmode
+ParamCount=1
+Header=msvcrxx.h.api;
+[setmode]
+1=int fd
+2=[file_translation_mode] mode
+ParamCount=2
+Header=msvcrxx.h.api;
+[p__fmode]
+ParamCount=0
+[clearerr]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[clearerr_s]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fclose]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fcloseall]
+ParamCount=0
+[fdopen]
+1=int fd
+2=const char* mode
+ParamCount=2
+[wfdopen]
+1=int fd
+2=const wchar_t* mode
+ParamCount=2
+[feof]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[ferror]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fflush]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fgetc]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fgetwc]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fgetpos]
+1=FILE* stream
+2=fpos_t* pos
+ParamCount=2
+Header=msvcrxx.h.api;
+[fgets]
+1=char* str
+2=int n
+3=FILE* stream
+ParamCount=3
+Header=msvcrxx.h.api;
+[fgetws]
+1=wchar_t* str
+2=int n
+3=FILE* stream
+ParamCount=3
+Header=msvcrxx.h.api;
+[fileno]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[flushall]
+ParamCount=0
+[fopen]
+1=const char* filename
+2=const char* mode
+ParamCount=2
+[wfopen]
+1=const wchar_t* filename
+2=const wchar_t* mode
+ParamCount=2
+[fopen_s]
+1=FILE** pFile
+2=const char* filename
+3=const char* mode
+ParamCount=3
+Header=msvcrxx.h.api;
+[wfopen_s]
+1=FILE** pFile
+2=const wchar_t* filename
+3=const wchar_t* mode
+ParamCount=3
+Header=msvcrxx.h.api;
+[fprintf]
+1=FILE* stream
+2=const char* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fprintf_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fwprintf]
+1=FILE* stream
+2=const wchar_t* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fwprintf_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fprintf_s]
+1=FILE* stream
+2=const char* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fprintf_s_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fwprintf_s]
+1=FILE* stream
+2=const wchar_t* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fwprintf_s_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fputc]
+1=int c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[fputwc]
+1=wchar_t c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[fputs]
+1=const char* str
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[fputws]
+1=const wchar_t* str
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[fread]
+1=void* buffer
+2=size_t size
+3=size_t count
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[freopen]
+1=const char* path
+2=const char* mode
+3=FILE* stream
+ParamCount=3
+Header=msvcrxx.h.api;
+[wfreopen]
+1=const wchar_t* path
+2=const wchar_t* mode
+3=FILE* stream
+ParamCount=3
+Header=msvcrxx.h.api;
+[freopen_s]
+1=FILE** pFile
+2=const char* path
+3=const char* mode
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[wfreopen_s]
+1=FILE** pFile
+2=const wchar_t* path
+3=const wchar_t* mode
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[fscanf]
+1=FILE* stream
+2=const char* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fscanf_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fwscanf]
+1=FILE* stream
+2=const wchar_t* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fwscanf_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fscanf_s]
+1=FILE* stream
+2=const char* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fscanf_s_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fwscanf_s]
+1=FILE* stream
+2=const wchar_t* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fwscanf_s_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fseek]
+1=FILE* stream
+2=long offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=msvcrxx.h.api;windows.h.api;
+[fseeki64]
+1=FILE* stream
+2=__int64 offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=msvcrxx.h.api;windows.h.api;
+[fsetpos]
+1=FILE* stream
+2=fpos_t* pos
+ParamCount=2
+Header=msvcrxx.h.api;
+[fsopen]
+1=const char* filename
+2=const char* mode
+3=[share_flag] shflag
+ParamCount=3
+Header=msvcrxx.h.api;
+[wfsopen]
+1=const wchar_t* filename
+2=const wchar_t* mode
+3=[share_flag] shflag
+ParamCount=3
+Header=msvcrxx.h.api;
+[ftell]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftelli64]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fwrite]
+1=const void* buffer
+2=size_t size
+3=size_t count
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[getc]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[getwc]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[getmaxstdio]
+ParamCount=0
+[gets]
+1=char* buffer
+ParamCount=1
+[getws]
+1=wchar_t* buffer
+ParamCount=1
+[gets_s]
+1=char* buffer
+2=size_t sizeInCharacters
+ParamCount=2
+[getws_s]
+1=wchar_t* buffer
+2=size_t sizeInCharacters
+ParamCount=2
+[getw]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[putc]
+1=int c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[putwc]
+1=wchar_t c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[puts]
+1=const char* str
+ParamCount=1
+[putws]
+1=const wchar_t* str
+ParamCount=1
+[putw]
+1=int binint
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[rewind]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[rmtmp]
+ParamCount=0
+[setbuf]
+1=FILE* stream
+2=char* buffer
+ParamCount=2
+Header=msvcrxx.h.api;
+[setmaxstdio]
+1=int newmax
+ParamCount=1
+[setvbuf]
+1=FILE* stream
+2=char* buffer
+3=[buffer_mode] mode
+4=size_t size
+ParamCount=4
+Header=msvcrxx.h.api;
+[tempnam]
+1=const char* dir
+2=const char* prefix
+ParamCount=2
+[tempnam_dbg]
+1=const char* dir
+2=const char* prefix
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[wtempnam]
+1=const wchar_t* dir
+2=const wchar_t* prefix
+ParamCount=2
+[wtempnam_dbg]
+1=const wchar_t* dir
+2=const wchar_t* prefix
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[tmpnam]
+1=char* str
+ParamCount=1
+[wtmpnam]
+1=wchar_t* str
+ParamCount=1
+[tmpfile]
+ParamCount=0
+[tmpfile_s]
+1=FILE** pFilePtr
+ParamCount=1
+Header=msvcrxx.h.api;
+[tmpnam_s]
+1=char* str
+2=size_t sizeInChars
+ParamCount=2
+[wtmpnam_s]
+1=wchar_t* str
+2=size_t sizeInChars
+ParamCount=2
+[ungetc]
+1=int c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[ungetwc]
+1=wint_t c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[vcprintf_s]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vcprintf_s_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vcwprintf_s]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vcwprintf_s_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfprintf_s]
+1=FILE* stream
+2=const char* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfprintf_s_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vfwprintf_s]
+1=FILE* stream
+2=const wchar_t* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfwprintf_s_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vprintf_s]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vprintf_s_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vwprintf_s]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vwprintf_s_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[printf]
+1=const char* format
+ParamCount=-1
+[printf_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[wprintf]
+1=const wchar_t* format
+ParamCount=-1
+[wprintf_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[printf_s]
+1=const char* format
+ParamCount=-1
+[printf_s_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[wprintf_s]
+1=const wchar_t* format
+ParamCount=-1
+[wprintf_s_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[scanf]
+1=const char* format
+ParamCount=-1
+[scanf_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[wscanf]
+1=const wchar_t* format
+ParamCount=-1
+[wscanf_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[scanf_s]
+1=const char* format
+ParamCount=-1
+[scanf_s_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[wscanf_s]
+1=const wchar_t* format
+ParamCount=-1
+[wscanf_s_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[vcprintf]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vcprintf_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vcwprintf]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vcwprintf_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vcprintf_p]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vcprintf_p_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vcwprintf_p]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vcwprintf_p_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfprintf]
+1=FILE* stream
+2=const char* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfprintf_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vfwprintf]
+1=FILE* stream
+2=const wchar_t* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfwprintf_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vfprintf_p]
+1=FILE* stream
+2=const char* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfprintf_p_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vfwprintf_p]
+1=FILE* stream
+2=const wchar_t* format
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vfwprintf_p_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vprintf]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vprintf_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vwprintf]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vwprintf_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vprintf_p]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vprintf_p_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vwprintf_p]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vwprintf_p_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vscprintf]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vscprintf_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vscwprintf]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vscwprintf_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vscprintf_p]
+1=const char* format
+2=va_list argptr
+ParamCount=2
+[vscprintf_p_l]
+1=const char* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[vscwprintf_p]
+1=const wchar_t* format
+2=va_list argptr
+ParamCount=2
+[vscwprintf_p_l]
+1=const wchar_t* format
+2=_locale_t locale
+3=va_list argptr
+ParamCount=3
+Header=msvcrxx.h.api;
+[wprintf_p]
+1=const wchar_t* format
+ParamCount=-1
+[wprintf_p_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fprintf_p]
+1=FILE* stream
+2=const char* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fprintf_p_l]
+1=FILE* stream
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[fwprintf_p]
+1=FILE* stream
+2=const wchar_t* format
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fwprintf_p_l]
+1=FILE* stream
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[printf_p]
+1=const char* format
+ParamCount=-1
+[printf_p_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[putchar]
+1=int c
+ParamCount=1
+[putwchar]
+1=wchar_t c
+ParamCount=1
+[getchar]
+ParamCount=0
+[getwchar]
+ParamCount=0
+[fgetchar]
+ParamCount=0
+[fgetwchar]
+ParamCount=0
+[fputchar]
+1=int c
+ParamCount=1
+[fputwchar]
+1=wchar_t c
+ParamCount=1
+[lock_file]
+1=FILE* file
+ParamCount=1
+Header=msvcrxx.h.api;
+[unlock_file]
+1=FILE* file
+ParamCount=1
+Header=msvcrxx.h.api;
+[close]
+1=int fd
+ParamCount=1
+[commit]
+1=int fd
+ParamCount=1
+[creat]
+1=const char* filename
+2=[perm_mode] pmode
+ParamCount=2
+Header=msvcrxx.h.api;
+[wcreat]
+1=const wchar_t* filename
+2=[perm_mode] pmode
+ParamCount=2
+Header=msvcrxx.h.api;
+[dup]
+1=int fd
+ParamCount=1
+[dup2]
+1=int fd1
+2=int fd2
+ParamCount=2
+[eof]
+1=int fd
+ParamCount=1
+[lseek]
+1=int fd
+2=long offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=windows.h.api;
+[lseeki64]
+1=int fd
+2=__int64 offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=windows.h.api;
+[open]
+1=const char* filename
+2=[open_flag] oflag
+3=[perm_mode] pmode
+ParamCount=3
+Header=msvcrxx.h.api;
+[wopen]
+1=const wchar_t* filename
+2=[open_flag] oflag
+3=[perm_mode] pmode
+ParamCount=3
+Header=msvcrxx.h.api;
+[read]
+1=int fd
+2=void* buffer
+3=unsigned int count
+ParamCount=3
+[sopen]
+1=const char* filename
+2=[open_flag] oflag
+3=[share_flag] shflag
+4=[perm_mode] pmode
+ParamCount=4
+Header=msvcrxx.h.api;
+[wsopen]
+1=const wchar_t* filename
+2=[open_flag] oflag
+3=[share_flag] shflag
+4=[perm_mode] pmode
+ParamCount=4
+Header=msvcrxx.h.api;
+[sopen_s]
+1=int* pfh
+2=const char* filename
+3=[open_flag] oflag
+4=[share_flag] shflag
+5=[perm_mode] pmode
+ParamCount=5
+Header=msvcrxx.h.api;
+[wsopen_s]
+1=int* pfh
+2=const wchar_t* filename
+3=[open_flag] oflag
+4=[share_flag] shflag
+5=[perm_mode] pmode
+ParamCount=5
+Header=msvcrxx.h.api;
+[tell]
+1=int handle
+ParamCount=1
+[telli64]
+1=int handle
+ParamCount=1
+[umask]
+1=[perm_mode] pmode
+ParamCount=1
+Header=msvcrxx.h.api;
+[umask_s]
+1=[perm_mode] mode
+2=perm_mode* pOldMode
+ParamCount=2
+Header=msvcrxx.h.api;
+[write]
+1=int fd
+2=const void* buffer
+3=unsigned int count
+ParamCount=3
+[cgets]
+1=char* buffer
+ParamCount=1
+[cgetws]
+1=wchar_t* buffer
+ParamCount=1
+[cgets_s]
+1=char* buffer
+2=size_t numberOfElements
+3=size_t* pSizeRead
+ParamCount=3
+[cgetws_s]
+1=wchar_t* buffer
+2=size_t* pSizeRead
+ParamCount=2
+[cprintf]
+1=const char* format
+ParamCount=-1
+[cprintf_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cwprintf]
+1=wchar* format
+ParamCount=-1
+Header=msvcrxx.h.api;
+[cwprintf_l]
+1=wchar* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cprintf_s]
+1=const char* format
+ParamCount=-1
+[cprintf_s_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cwprintf_s]
+1=wchar* format
+ParamCount=-1
+Header=msvcrxx.h.api;
+[cwprintf_s_l]
+1=wchar* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cputs]
+1=const char* str
+ParamCount=1
+[cputws]
+1=const wchar_t* str
+ParamCount=1
+[cscanf]
+1=const char* format
+ParamCount=-1
+[cscanf_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cwscanf]
+1=const wchar_t* format
+ParamCount=-1
+[cwscanf_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cscanf_s]
+1=const char* format
+ParamCount=-1
+[cscanf_s_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cwscanf_s]
+1=const wchar_t* format
+ParamCount=-1
+[cwscanf_s_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[getch]
+ParamCount=0
+[getwch]
+ParamCount=0
+[getche]
+ParamCount=0
+[getwche]
+ParamCount=0
+[inp]
+1=unsigned short port
+ParamCount=1
+[inpw]
+1=unsigned short port
+ParamCount=1
+[inpd]
+1=unsigned short port
+ParamCount=1
+[kbhit]
+ParamCount=0
+[outp]
+1=unsigned short port
+2=int databyte
+ParamCount=2
+[outpw]
+1=unsigned short port
+2=unsigned short dataword
+ParamCount=2
+[outpd]
+1=unsigned short port
+2=unsigned long dataword
+ParamCount=2
+[putch]
+1=int c
+ParamCount=1
+[putwch]
+1=wchar_t c
+ParamCount=1
+[ungetch]
+1=int c
+ParamCount=1
+[ungetwch]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[cprintf_p]
+1=const char* format
+ParamCount=-1
+[cprintf_p_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[cwprintf_p]
+1=wchar* format
+ParamCount=-1
+Header=msvcrxx.h.api;
+[cwprintf_p_l]
+1=wchar* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[fclose_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fflush_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fgetwc_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fread_nolock]
+1=void* buffer
+2=size_t size
+3=size_t count
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[fseek_nolock]
+1=FILE* stream
+2=long offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=msvcrxx.h.api;windows.h.api;
+[fseeki64_nolock]
+1=FILE* stream
+2=__int64 offset
+3=[SEEK_TYPE] origin
+ParamCount=3
+Header=msvcrxx.h.api;windows.h.api;
+[ftell_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftelli64_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[fwrite_nolock]
+1=const void* buffer
+2=size_t size
+3=size_t count
+4=FILE* stream
+ParamCount=4
+Header=msvcrxx.h.api;
+[getc_nolock]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[getch_nolock]
+ParamCount=0
+[getwch_nolock]
+ParamCount=0
+[getche_nolock]
+ParamCount=0
+[getwche_nolock]
+ParamCount=0
+[getdcwd_nolock]
+1=int drive
+2=char* buffer
+3=int maxlen
+ParamCount=3
+[wgetdcwd_nolock]
+1=int drive
+2=wchar_t* buffer
+3=int maxlen
+ParamCount=3
+[putch_nolock]
+1=int c
+ParamCount=1
+[putwch_nolock]
+1=wchar_t c
+ParamCount=1
+[ungetc_nolock]
+1=int c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[ungetwc_nolock]
+1=wint_t c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[ungetch_nolock]
+1=int c
+ParamCount=1
+[ungetwch_nolock]
+1=wint_t c
+ParamCount=1
+Header=msvcrxx.h.api;
+[fputwc_nolock]
+1=wchar_t c
+2=FILE* stream
+ParamCount=2
+Header=msvcrxx.h.api;
+[setlocale]
+1=[locale_category] category
+2=const char* locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wsetlocale]
+1=[locale_category] category
+2=const wchar_t* locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[create_locale]
+1=[locale_category] category
+2=const char* locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[free_locale]
+1=_locale_t locale
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_current_locale]
+ParamCount=0
+[configthreadlocale]
+1=[thread_locale_type] type
+ParamCount=1
+Header=msvcrxx.h.api;
+[localeconv]
+ParamCount=0
+[mbccpy]
+1=unsigned char* dest
+2=unsigned char* src
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbccpy_l]
+1=unsigned char* dest
+2=unsigned char* src
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbccpy_s]
+1=unsigned char* dest
+2=size_t buffSizeInBytes
+3=int* pCopied
+4=unsigned char* src
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbccpy_s_l]
+1=unsigned char* dest
+2=size_t buffSizeInBytes
+3=int* pCopied
+4=unsigned char* src
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[getmbcp]
+ParamCount=0
+[setmbcp]
+1=[_MB_CP_TYPE] codepage
+ParamCount=1
+Header=msvcrxx.h.api;
+[mb_cur_max_func]
+ParamCount=0
+[mb_cur_max]
+ParamCount=0
+[lc_codepage_func]
+ParamCount=0
+[lc_handle_func]
+ParamCount=0
+[crtLCMapStringW]
+1=[LCID] Locale
+2=[LocaleMappingFlags] dwMapFlags
+3=LPCWSTR lpSrcStr
+4=int cchSrc
+5=LPWSTR lpDestStr
+6=int cchDest
+ParamCount=6
+Header=windows.h.api;
+[calloc]
+1=size_t num
+2=size_t size
+ParamCount=2
+[??3@YAXPAX@Z]
+1=void* object
+ParamCount=1
+[??3@YAXPEAX@Z]
+1=void* object
+ParamCount=1
+[??_V@YAXPAX@Z]
+1=void* object
+ParamCount=1
+[??_V@YAXPEAX@Z]
+1=void* object
+ParamCount=1
+[expand]
+1=void* memblock
+2=size_t size
+ParamCount=2
+[free]
+1=void* memblock
+ParamCount=1
+[freea]
+1=void* memblock
+ParamCount=1
+[get_heap_handle]
+ParamCount=0
+[get_sbh_threshold]
+ParamCount=0
+[heapadd]
+1=void* memblock
+2=size_t size
+ParamCount=2
+[heapchk]
+ParamCount=0
+[heapmin]
+ParamCount=0
+[heapset]
+1=unsigned int fill
+ParamCount=1
+[heapwalk]
+1=_HEAPINFO* entryinfo
+ParamCount=1
+Header=msvcrxx.h.api;
+[malloc]
+1=size_t size
+ParamCount=1
+[msize]
+1=void* memblock
+ParamCount=1
+[??2@YAPAXI@Z]
+1=size_t count
+ParamCount=1
+[??2@YAPEAX_K@Z]
+1=size_t count
+ParamCount=1
+[??_U@YAPAXI@Z]
+1=size_t count
+ParamCount=1
+[??_U@YAPEAX_K@Z]
+1=size_t count
+ParamCount=1
+[?_query_new_handler@@YAP6AHI@ZXZ]
+ParamCount=0
+[?_query_new_mode@@YAHXZ]
+ParamCount=0
+[realloc]
+1=void* memblock
+2=size_t size
+ParamCount=2
+[callnewh]
+1=size_t size
+ParamCount=1
+[?_set_new_handler@@YAP6AHI@ZP6AHI@Z@Z]
+1=_PNH pNewHandler
+ParamCount=1
+Header=msvcrxx.h.api;
+[?_set_new_mode@@YAHH@Z]
+1=int newhandlermode
+ParamCount=1
+[expand_dbg]
+1=void* userData
+2=size_t newSize
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[calloc_dbg]
+1=size_t num
+2=size_t size
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[free_dbg]
+1=void* userData
+2=[DBG_BLOCK_TYPE] blockType
+ParamCount=2
+Header=msvcrxx.h.api;
+[malloc_dbg]
+1=size_t size
+2=[DBG_BLOCK_TYPE] blockType
+3=const char* filename
+4=int linenumber
+ParamCount=4
+Header=msvcrxx.h.api;
+[msize_dbg]
+1=void* userData
+2=[DBG_BLOCK_TYPE] blockType
+ParamCount=2
+Header=msvcrxx.h.api;
+[realloc_dbg]
+1=void* userData
+2=size_t newSize
+3=[DBG_BLOCK_TYPE] blockType
+4=const char* filename
+5=int linenumber
+ParamCount=5
+Header=msvcrxx.h.api;
+[recalloc]
+1=void* memblock
+2=size_t size
+ParamCount=2
+[recalloc_dbg]
+1=void* userData
+2=size_t num
+3=size_t size
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[get_amblksiz]
+1=size_t* blockSize
+ParamCount=1
+[set_amblksiz]
+1=size_t blockSize
+ParamCount=1
+[set_sbh_threshold]
+1=size_t size
+ParamCount=1
+[abort]
+ParamCount=0
+[atexit]
+1=void* func
+ParamCount=1
+[beginthread]
+1=void* start_address
+2=unsigned int stack_size
+3=void* arglist
+ParamCount=3
+Header=msvcrxx.h.api;
+[beginthreadex]
+1=void* security
+2=unsigned int stack_size
+3=void* start_address
+4=void* arglist
+5=[thread_initflag] initflag
+6=unsigned int* thrdaddr
+ParamCount=6
+Header=msvcrxx.h.api;
+[cexit]
+ParamCount=0
+[c_exit]
+ParamCount=0
+[cwait]
+1=int* termstat
+2=intptr_t procHandle
+3=int action
+ParamCount=3
+Header=msvcrxx.h.api;
+[endthread]
+ParamCount=0
+[endthreadex]
+1=unsigned int retval
+ParamCount=1
+Header=msvcrxx.h.api;
+[execl]
+1=const char* cmdname
+2=const char* args
+ParamCount=-2
+[wexecl]
+1=const wchar_t* cmdname
+2=const wchar_t* args
+ParamCount=-2
+[execle]
+1=const char* cmdname
+2=const char* args
+ParamCount=-2
+[wexecle]
+1=const wchar_t* cmdname
+2=const wchar_t* args
+ParamCount=-2
+[execlp]
+1=const char* cmdname
+2=const char* args
+ParamCount=-2
+[wexeclp]
+1=const wchar_t* cmdname
+2=const wchar_t* args
+ParamCount=-2
+[execlpe]
+1=const char* cmdname
+2=const char* args
+ParamCount=-2
+[wexeclpe]
+1=const wchar_t* cmdname
+2=const wchar_t* args
+ParamCount=-2
+[execv]
+1=const char* cmdname
+2=const char** argv
+ParamCount=2
+[wexecv]
+1=const wchar_t* cmdname
+2=const wchar_t** argv
+ParamCount=2
+[execve]
+1=const char* cmdname
+2=const char** argv
+3=const char** envp
+ParamCount=3
+[wexecve]
+1=const wchar_t* cmdname
+2=const wchar_t** argv
+3=const wchar_t** envp
+ParamCount=3
+[execvp]
+1=const char* cmdname
+2=const char** argv
+ParamCount=2
+[wexecvp]
+1=const wchar_t* cmdname
+2=const wchar_t** argv
+ParamCount=2
+[execvpe]
+1=const char* cmdname
+2=const char** argv
+3=const char** envp
+ParamCount=3
+[wexecvpe]
+1=const wchar_t* cmdname
+2=const wchar_t** argv
+3=const wchar_t** envp
+ParamCount=3
+[exit]
+1=int status
+ParamCount=-1
+[getenv]
+1=const char* varname
+ParamCount=1
+[wgetenv]
+1=const wchar_t* varname
+ParamCount=1
+[getenv_s]
+1=size_t* pReturnValue
+2=char* buffer
+3=size_t numberOfElements
+4=const char* varname
+ParamCount=4
+[wgetenv_s]
+1=size_t* pReturnValue
+2=wchar_t* buffer
+3=size_t numberOfElements
+4=const wchar_t* varname
+ParamCount=4
+[getpid]
+ParamCount=0
+[onexit]
+1=_onexit_t function
+ParamCount=1
+Header=msvcrxx.h.api;
+[pclose]
+1=FILE* stream
+ParamCount=1
+Header=msvcrxx.h.api;
+[perror]
+1=const char* string
+ParamCount=1
+[wperror]
+1=const wchar_t* string
+ParamCount=1
+[pipe]
+1=int* pfds
+2=unsigned int psize
+3=[open_flag] textmode
+ParamCount=3
+Header=msvcrxx.h.api;
+[popen]
+1=const char* command
+2=const char* mode
+ParamCount=2
+[wpopen]
+1=const wchar_t* command
+2=const wchar_t* mode
+ParamCount=2
+[putenv]
+1=const char* envstring
+ParamCount=1
+[wputenv]
+1=const wchar_t* envstring
+ParamCount=1
+[putenv_s]
+1=const char* name
+2=const char* value
+ParamCount=2
+[wputenv_s]
+1=const wchar_t* name
+2=const wchar_t* value
+ParamCount=2
+[raise]
+1=[SIGNAL] sig
+ParamCount=1
+Header=msvcrxx.h.api;
+[signal]
+1=[SIGNAL] sig
+2=[SIGNAL_FUNC] func
+ParamCount=2
+Header=msvcrxx.h.api;
+[spawnl]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[wspawnl]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[spawnle]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[wspawnle]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[spawnlp]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[wspawnlp]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[spawnlpe]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[wspawnlpe]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t* args
+ParamCount=-3
+Header=msvcrxx.h.api;
+[spawnv]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char** argv
+ParamCount=3
+Header=msvcrxx.h.api;
+[wspawnv]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t** argv
+ParamCount=3
+Header=msvcrxx.h.api;
+[spawnve]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char** argv
+4=const char** envp
+ParamCount=4
+Header=msvcrxx.h.api;
+[wspawnve]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t** argv
+4=const wchar_t** envp
+ParamCount=4
+Header=msvcrxx.h.api;
+[spawnvp]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char** argv
+ParamCount=3
+Header=msvcrxx.h.api;
+[wspawnvp]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t** argv
+ParamCount=3
+Header=msvcrxx.h.api;
+[spawnvpe]
+1=[spawn_mode] mode
+2=const char* cmdname
+3=const char** argv
+4=const char** envp
+ParamCount=4
+Header=msvcrxx.h.api;
+[wspawnvpe]
+1=[spawn_mode] mode
+2=const wchar_t* cmdname
+3=const wchar_t** argv
+4=const wchar_t** envp
+ParamCount=4
+Header=msvcrxx.h.api;
+[system]
+1=const char* command
+ParamCount=1
+[wsystem]
+1=const wchar_t* command
+ParamCount=1
+[dupenv_s]
+1=char** buffer
+2=size_t* numberOfElements
+3=const char* varname
+ParamCount=3
+[wdupenv_s]
+1=wchar_t** buffer
+2=size_t* numberOfElements
+3=const wchar_t* varname
+ParamCount=3
+[dupenv_s_dbg]
+1=char** buffer
+2=size_t* numberOfElements
+3=const char* varname
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[wdupenv_s_dbg]
+1=wchar_t** buffer
+2=size_t* numberOfElements
+3=const wchar_t* varname
+4=[DBG_BLOCK_TYPE] blockType
+5=const char* filename
+6=int linenumber
+ParamCount=6
+Header=msvcrxx.h.api;
+[getmainargs]
+1=int* _Argc
+2=char*** _Argv
+3=char*** _Env
+4=int _DoWildCard
+5=_startupinfo* _StartInfo
+ParamCount=5
+Header=msvcrxx.h.api;
+[wgetmainargs]
+1=int* _Argc
+2=wchar_t*** _Argv
+3=wchar_t*** _Env
+4=int _DoWildCard
+5=_startupinfo* _StartInfo
+ParamCount=5
+Header=msvcrxx.h.api;
+[get_pgmptr]
+1=char** pValue
+ParamCount=1
+[get_wpgmptr]
+1=wchar_t** pValue
+ParamCount=1
+[get_fileinfo]
+1=int* pFileInfo
+ParamCount=1
+[set_fileinfo]
+1=int value
+ParamCount=1
+[set_app_type]
+1=[C_APP_TYPE] at
+ParamCount=1
+Header=msvcrxx.h.api;
+[dllonexit]
+1=_onexit_t func
+2=_PVFV** pbegin
+3=_PVFV** pend
+ParamCount=3
+Header=msvcrxx.h.api;
+[sleep]
+1=unsigned long duration
+ParamCount=1
+[loaddll]
+1=char* filename
+ParamCount=1
+[unloaddll]
+1=intptr_t handle
+ParamCount=1
+Header=msvcrxx.h.api;
+[getdllprocaddr]
+1=intptr_t handle
+2=char* procedureName
+3=intptr_t ordinal
+ParamCount=3
+Header=msvcrxx.h.api;
+[bsearch]
+1=const void* key
+2=const void* base
+3=size_t num
+4=size_t width
+5=compare_function compare
+ParamCount=5
+Header=msvcrxx.h.api;
+[bsearch_s]
+1=const void* key
+2=const void* base
+3=size_t num
+4=size_t width
+5=compare_s_function compare
+6=void* context
+ParamCount=6
+Header=msvcrxx.h.api;
+[lfind]
+1=const void* key
+2=const void* base
+3=unsigned int* num
+4=unsigned int width
+5=compare_function compare
+ParamCount=5
+Header=msvcrxx.h.api;
+[lfind_s]
+1=const void* key
+2=const void* base
+3=unsigned int* num
+4=size_t size
+5=compare_s_function compare
+6=void* context
+ParamCount=6
+Header=msvcrxx.h.api;
+[lsearch]
+1=const void* key
+2=void* base
+3=unsigned int* num
+4=unsigned int width
+5=compare_function compare
+ParamCount=5
+Header=msvcrxx.h.api;
+[lsearch_s]
+1=const void* key
+2=void* base
+3=unsigned int* num
+4=size_t size
+5=compare_s_function compare
+6=void* context
+ParamCount=6
+Header=msvcrxx.h.api;
+[qsort]
+1=void* base
+2=size_t num
+3=size_t width
+4=compare_s_function compare
+ParamCount=4
+Header=msvcrxx.h.api;
+[qsort_s]
+1=void* base
+2=size_t num
+3=size_t width
+4=compare_s_function compare
+5=void* context
+ParamCount=5
+Header=msvcrxx.h.api;
+[mbsdec]
+1=unsigned char* start
+2=unsigned char* current
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsdec_l]
+1=unsigned char* start
+2=unsigned char* current
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsinc]
+1=unsigned char* current
+ParamCount=1
+Header=msvcrxx.h.api;
+[mbsinc_l]
+1=unsigned char* current
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsnbcat]
+1=unsigned char* dest
+2=unsigned char* src
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbcat_l]
+1=unsigned char* dest
+2=unsigned char* src
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbcat_s]
+1=unsigned char* dest
+2=size_t sizeInBytes
+3=unsigned char* src
+4=size_t count
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbcat_s_l]
+1=unsigned char* dest
+2=size_t sizeInBytes
+3=unsigned char* src
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[mbsnbcmp]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbcmp_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbcnt]
+1=unsigned char* str
+2=size_t count
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsnbcnt_l]
+1=unsigned char* str
+2=size_t count
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnccnt]
+1=unsigned char* str
+2=size_t count
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsnccnt_l]
+1=unsigned char* str
+2=size_t count
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strncnt]
+1=const char* str
+2=size_t count
+ParamCount=2
+[wcsncnt]
+1=const wchar_t* str
+2=size_t count
+ParamCount=2
+[mbsnbcpy]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbcpy_l]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbcpy_s]
+1=unsigned char* strDest
+2=size_t sizeInBytes
+3=unsigned char* strSource
+4=size_t count
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbcpy_s_l]
+1=unsigned char* strDest
+2=size_t sizeInBytes
+3=unsigned char* strSource
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[mbsnbicmp]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbset]
+1=unsigned char* str
+2=unsigned int c
+3=size_t count
+ParamCount=3
+[mbsnbset_l]
+1=unsigned char* str
+2=unsigned int c
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnextc]
+1=unsigned char* str
+ParamCount=1
+Header=msvcrxx.h.api;
+[mbsnextc_l]
+1=unsigned char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsninc]
+1=unsigned char* str
+2=size_t count
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsninc_l]
+1=unsigned char* str
+2=size_t count
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsspnp]
+1=unsigned char* str
+2=unsigned char* charset
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsspnp_l]
+1=unsigned char* str
+2=unsigned char* charset
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[scprintf]
+1=const char* format
+ParamCount=-1
+[scprintf_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[scwprintf]
+1=const wchar_t* format
+ParamCount=-1
+[scwprintf_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[snscanf]
+1=const char* input
+2=size_t length
+3=const char* format
+ParamCount=-3
+[snscanf_l]
+1=const char* input
+2=size_t length
+3=const char* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[snwscanf]
+1=const wchar_t* input
+2=size_t length
+3=const wchar_t* format
+ParamCount=-3
+[snwscanf_l]
+1=const wchar_t* input
+2=size_t length
+3=const wchar_t* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[sscanf]
+1=const char* buffer
+2=const char* format
+ParamCount=-2
+[sscanf_l]
+1=const char* buffer
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[swscanf]
+1=const wchar_t* buffer
+2=const wchar_t* format
+ParamCount=-2
+[swscanf_l]
+1=const wchar_t* buffer
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[sprintf]
+1=char* buffer
+2=const char* format
+ParamCount=-2
+[sprintf_l]
+1=char* buffer
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[swprintf]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+ParamCount=-3
+[swprintf_l]
+1=wchar_t* buffer
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[sprintf_p]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=const char* format
+ParamCount=-3
+[sprintf_p_l]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=const char* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[swprintf_p]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=const wchar_t* format
+ParamCount=-3
+[swprintf_p_l]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=const wchar_t* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[strcat]
+1=char* strDestination
+2=const char* strSource
+ParamCount=2
+[wcscat]
+1=wchar_t* strDestination
+2=const wchar_t* strSource
+ParamCount=2
+[mbscat]
+1=unsigned char* strDestination
+2=unsigned char* strSource
+ParamCount=2
+Header=msvcrxx.h.api;
+[strcat_s]
+1=char* strDestination
+2=size_t numberOfElements
+3=const char* strSource
+ParamCount=3
+[wcscat_s]
+1=wchar_t* strDestination
+2=size_t numberOfElements
+3=const wchar_t* strSource
+ParamCount=3
+[mbscat_s]
+1=unsigned char* strDestination
+2=size_t numberOfElements
+3=unsigned char* strSource
+ParamCount=3
+Header=msvcrxx.h.api;
+[strchr]
+1=const char* str
+2=int c
+ParamCount=2
+[wcschr]
+1=const wchar_t* str
+2=wchar_t c
+ParamCount=2
+[mbschr]
+1=unsigned char* str
+2=unsigned int c
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbschr_l]
+1=unsigned char* str
+2=unsigned int c
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strcmp]
+1=const char* string1
+2=const char* string2
+ParamCount=2
+[wcscmp]
+1=const wchar_t* string1
+2=const wchar_t* string2
+ParamCount=2
+[mbscmp]
+1=unsigned char* string1
+2=unsigned char* string2
+ParamCount=2
+Header=msvcrxx.h.api;
+[strcpy]
+1=char* strDestination
+2=const char* strSource
+ParamCount=2
+[wcscpy]
+1=wchar_t* strDestination
+2=const wchar_t* strSource
+ParamCount=2
+[mbscpy]
+1=unsigned char* strDestination
+2=unsigned char* strSource
+ParamCount=2
+Header=msvcrxx.h.api;
+[strcpy_s]
+1=char* strDestination
+2=size_t numberOfElements
+3=const char* strSource
+ParamCount=3
+[wcscpy_s]
+1=wchar_t* strDestination
+2=size_t numberOfElements
+3=const wchar_t* strSource
+ParamCount=3
+[mbscpy_s]
+1=unsigned char* strDestination
+2=size_t numberOfElements
+3=unsigned char* strSource
+ParamCount=3
+Header=msvcrxx.h.api;
+[strcspn]
+1=const char* str
+2=const char* strCharSet
+ParamCount=2
+[wcscspn]
+1=const wchar_t* str
+2=const wchar_t* strCharSet
+ParamCount=2
+[mbscspn]
+1=unsigned char* str
+2=unsigned char* strCharSet
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbscspn_l]
+1=unsigned char* str
+2=unsigned char* strCharSet
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strdup]
+1=const char* strSource
+ParamCount=1
+[wcsdup]
+1=const wchar_t* strSource
+ParamCount=1
+[mbsdup]
+1=unsigned char* strSource
+ParamCount=1
+Header=msvcrxx.h.api;
+[strerror]
+1=int errnum
+ParamCount=1
+[wcserror]
+1=int errnum
+ParamCount=1
+[strerror_s]
+1=char* buffer
+2=size_t numberOfElements
+3=int errnum
+ParamCount=3
+[wcserror_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+3=int errnum
+ParamCount=3
+[strnlen]
+1=const char* str
+2=size_t numberOfElements
+ParamCount=2
+[wcsnlen]
+1=const wchar_t* str
+2=size_t numberOfElements
+ParamCount=2
+[mbsnlen]
+1=unsigned char* str
+2=size_t numberOfElements
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsnlen_l]
+1=unsigned char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbstrnlen]
+1=const char* str
+2=size_t numberOfElements
+ParamCount=2
+[mbstrnlen_l]
+1=const char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strlwr]
+1=char* str
+ParamCount=1
+[wcslwr]
+1=wchar_t* str
+ParamCount=1
+[mbslwr]
+1=unsigned char* str
+ParamCount=1
+[strlwr_l]
+1=char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wcslwr_l]
+1=wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbslwr_l]
+1=unsigned char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[strncat]
+1=char* strDest
+2=const char* strSource
+3=size_t count
+ParamCount=3
+[wcsncat]
+1=wchar_t* strDest
+2=const wchar_t* strSource
+3=size_t count
+ParamCount=3
+[mbsncat]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsncat_l]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strncat_s]
+1=char* strDest
+2=size_t numberOfElements
+3=const char* strSource
+4=size_t count
+ParamCount=4
+[wcsncat_s]
+1=wchar_t* strDest
+2=size_t numberOfElements
+3=const wchar_t* strSource
+4=size_t count
+ParamCount=4
+[mbsncat_s]
+1=unsigned char* strDest
+2=size_t numberOfElements
+3=unsigned char* strSource
+4=size_t count
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsncat_s_l]
+1=unsigned char* strDest
+2=size_t numberOfElements
+3=unsigned char* strSource
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[strncmp]
+1=const char* string1
+2=const char* string2
+3=size_t count
+ParamCount=3
+[wcsncmp]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+ParamCount=3
+[mbsncmp]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsncmp_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strncpy]
+1=char* strDest
+2=const char* strSource
+3=size_t count
+ParamCount=3
+[wcsncpy]
+1=wchar_t* strDest
+2=const wchar_t* strSource
+3=size_t count
+ParamCount=3
+[mbsncpy]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsncpy_l]
+1=unsigned char* strDest
+2=unsigned char* strSource
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strncpy_s]
+1=char* strDest
+2=size_t numberOfElements
+3=const char* strSource
+4=size_t count
+ParamCount=4
+[wcsncpy_s]
+1=wchar_t* strDest
+2=size_t numberOfElements
+3=const wchar_t* strSource
+4=size_t count
+ParamCount=4
+[mbsncpy_s]
+1=unsigned char* strDest
+2=size_t numberOfElements
+3=unsigned char* strSource
+4=size_t count
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsncpy_s_l]
+1=unsigned char* strDest
+2=size_t numberOfElements
+3=unsigned char* strSource
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[strnset]
+1=char* str
+2=int c
+3=size_t count
+ParamCount=3
+[wcsnset]
+1=wchar_t* str
+2=wchar_t c
+3=size_t count
+ParamCount=3
+[mbsnset]
+1=unsigned char* str
+2=unsigned int c
+3=size_t count
+ParamCount=3
+[mbsnset_l]
+1=unsigned char* str
+2=unsigned int c
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strpbrk]
+1=const char* str
+2=const char* strCharSet
+ParamCount=2
+[wcspbrk]
+1=const wchar_t* str
+2=const wchar_t* strCharSet
+ParamCount=2
+[mbspbrk]
+1=unsigned char* str
+2=unsigned char* strCharSet
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbspbrk_l]
+1=unsigned char* str
+2=unsigned char* strCharSet
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strrchr]
+1=const char* str
+2=int c
+ParamCount=2
+[wcsrchr]
+1=const wchar_t* str
+2=wchar_t c
+ParamCount=2
+[mbsrchr]
+1=unsigned char* str
+2=unsigned int c
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsrchr_l]
+1=unsigned char* str
+2=unsigned int c
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strrev]
+1=char* str
+ParamCount=1
+[wcsrev]
+1=wchar_t* str
+ParamCount=1
+[mbsrev]
+1=unsigned char* str
+ParamCount=1
+[mbsrev_l]
+1=unsigned char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[strset]
+1=char* str
+2=int c
+ParamCount=2
+[wcsset]
+1=wchar_t* str
+2=wchar_t c
+ParamCount=2
+[mbsset]
+1=unsigned char* str
+2=unsigned int c
+ParamCount=2
+[mbsset_l]
+1=unsigned char* str
+2=unsigned int c
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strspn]
+1=const char* str
+2=const char* strCharSet
+ParamCount=2
+[wcsspn]
+1=const wchar_t* str
+2=const wchar_t* strCharSet
+ParamCount=2
+[mbsspn]
+1=unsigned char* str
+2=unsigned char* strCharSet
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsspn_l]
+1=unsigned char* str
+2=unsigned char* strCharSet
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strstr]
+1=const char* str
+2=const char* strSearch
+ParamCount=2
+[wcsstr]
+1=const wchar_t* str
+2=const wchar_t* strSearch
+ParamCount=2
+[mbsstr]
+1=unsigned char* str
+2=unsigned char* strSearch
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsstr_l]
+1=unsigned char* str
+2=unsigned char* strSearch
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strtok]
+1=char* strToken
+2=const char* strDelimit
+ParamCount=2
+[wcstok]
+1=wchar_t* strToken
+2=const wchar_t* strDelimit
+ParamCount=2
+[mbstok]
+1=unsigned char* strToken
+2=unsigned char* strDelimit
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbstok_l]
+1=unsigned char* strToken
+2=unsigned char* strDelimit
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strtok_s]
+1=char* strToken
+2=const char* strDelimit
+3=char** context
+ParamCount=3
+[wcstok_s]
+1=wchar_t* strToken
+2=const wchar_t* strDelimit
+3=wchar_t** context
+ParamCount=3
+[mbstok_s]
+1=unsigned char* strToken
+2=unsigned char* strDelimit
+3=char** context
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbstok_s_l]
+1=unsigned char* strToken
+2=unsigned char* strDelimit
+3=char** context
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strupr]
+1=char* str
+ParamCount=1
+[wcsupr]
+1=wchar_t* str
+ParamCount=1
+[mbsupr]
+1=unsigned char* str
+ParamCount=1
+[strupr_l]
+1=char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wcsupr_l]
+1=wchar_t* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbsupr_l]
+1=unsigned char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[vsprintf]
+1=char* buffer
+2=const char* format
+3=va_list argptr
+ParamCount=3
+[vsprintf_l]
+1=char* buffer
+2=const char* format
+3=_locale_t locale
+4=va_list argptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[vswprintf]
+1=wchar_t* buffer
+2=const wchar_t* format
+3=va_list argptr
+ParamCount=3
+[vswprintf_l]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vsprintf_p]
+1=char* buffer
+2=size_t sizeInBytes
+3=const char* format
+4=va_list argptr
+ParamCount=4
+[vsprintf_p_l]
+1=char* buffer
+2=size_t sizeInBytes
+3=const char* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vswprintf_p]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=va_list argptr
+ParamCount=4
+[vswprintf_p_l]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vsnprintf]
+1=char* buffer
+2=size_t count
+3=const char* format
+4=va_list argptr
+ParamCount=4
+[vsnprintf_l]
+1=char* buffer
+2=size_t count
+3=const char* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vsnwprintf]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=va_list argptr
+ParamCount=4
+[vsnwprintf_l]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[strlen]
+1=const char* str
+ParamCount=1
+[mbslen]
+1=unsigned char* str
+ParamCount=1
+Header=msvcrxx.h.api;
+[mbslen_l]
+1=unsigned char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[mbstrlen]
+1=const char* str
+ParamCount=1
+[mbstrlen_l]
+1=const char* str
+2=_locale_t locale
+ParamCount=2
+Header=msvcrxx.h.api;
+[wcslen]
+1=const wchar_t* str
+ParamCount=1
+[mbclen]
+1=unsigned char* c
+ParamCount=1
+Header=msvcrxx.h.api;
+[mblen]
+1=const char* mbstr
+2=size_t count
+ParamCount=2
+[mblen_l]
+1=const char* mbstr
+2=size_t count
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strcoll]
+1=const char* string1
+2=const char* string2
+ParamCount=2
+[wcscoll]
+1=const wchar_t* string1
+2=const wchar_t* string2
+ParamCount=2
+[mbscoll]
+1=unsigned char* string1
+2=unsigned char* string2
+ParamCount=2
+Header=msvcrxx.h.api;
+[strcoll_l]
+1=const char* string1
+2=const char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcscoll_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbscoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[stricoll]
+1=const char* string1
+2=const char* string2
+ParamCount=2
+[wcsicoll]
+1=const wchar_t* string1
+2=const wchar_t* string2
+ParamCount=2
+[mbsicoll]
+1=unsigned char* string1
+2=unsigned char* string2
+ParamCount=2
+Header=msvcrxx.h.api;
+[stricoll_l]
+1=const char* string1
+2=const char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcsicoll_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsicoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strncoll]
+1=const char* string1
+2=const char* string2
+3=size_t count
+ParamCount=3
+[wcsncoll]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+ParamCount=3
+[mbsncoll]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[strncoll_l]
+1=const char* string1
+2=const char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsncoll_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsncoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strnicoll]
+1=const char* string1
+2=const char* string2
+3=size_t count
+ParamCount=3
+[wcsnicoll]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+ParamCount=3
+[mbsnicoll]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[strnicoll_l]
+1=const char* string1
+2=const char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsnicoll_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnicoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[strcmpi]
+1=const char* string1
+2=const char* string2
+ParamCount=2
+[stricmp]
+1=const char* string1
+2=const char* string2
+ParamCount=2
+[wcsicmp]
+1=const wchar_t* string1
+2=const wchar_t* string2
+ParamCount=2
+[mbsicmp]
+1=unsigned char* string1
+2=unsigned char* string2
+ParamCount=2
+Header=msvcrxx.h.api;
+[stricmp_l]
+1=const char* string1
+2=const char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcsicmp_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsicmp_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcsnicmp_l]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnicmp_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnicmp]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[strnicmp_l]
+1=const char* string1
+2=const char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsnicmp]
+1=const wchar_t* string1
+2=const wchar_t* string2
+3=size_t count
+ParamCount=3
+[strnicmp]
+1=const char* string1
+2=const char* string2
+3=size_t count
+ParamCount=3
+[strupr_s]
+1=char* str
+2=size_t numberOfElements
+ParamCount=2
+[wcsupr_s]
+1=wchar_t* str
+2=size_t numberOfElements
+ParamCount=2
+[strupr_s_l]
+1=char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcsupr_s_l]
+1=wchar_t* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsupr_s]
+1=unsigned char* str
+2=size_t numberOfElements
+ParamCount=2
+[mbsupr_s_l]
+1=unsigned char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[strlwr_s]
+1=char* str
+2=size_t numberOfElements
+ParamCount=2
+[strlwr_s_l]
+1=char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbslwr_s]
+1=unsigned char* str
+2=size_t numberOfElements
+ParamCount=2
+[mbslwr_s_l]
+1=unsigned char* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[wcslwr_s]
+1=wchar_t* str
+2=size_t numberOfElements
+ParamCount=2
+[wcslwr_s_l]
+1=wchar_t* str
+2=size_t numberOfElements
+3=_locale_t locale
+ParamCount=3
+Header=msvcrxx.h.api;
+[snscanf_s]
+1=const char* input
+2=size_t length
+3=const char* format
+ParamCount=-3
+[snscanf_s_l]
+1=const char* input
+2=size_t length
+3=const char* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[snwscanf_s]
+1=const wchar_t* input
+2=size_t length
+3=const wchar_t* format
+ParamCount=-3
+[snwscanf_s_l]
+1=const wchar_t* input
+2=size_t length
+3=const wchar_t* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[vsnprintf_s]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const char* format
+5=va_list argptr
+ParamCount=5
+[vsnprintf_s_l]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const char* format
+5=_locale_t locale
+6=va_list argptr
+ParamCount=6
+Header=msvcrxx.h.api;
+[vsnwprintf_s]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const wchar_t* format
+5=va_list argptr
+ParamCount=5
+[vsnwprintf_s_l]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const wchar_t* format
+5=_locale_t locale
+6=va_list argptr
+ParamCount=6
+Header=msvcrxx.h.api;
+[swprintf_s]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=const wchar_t* format
+ParamCount=-3
+[swprintf_s_l]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=const wchar_t* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[sprintf_s_l]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=const char* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[sprintf_s]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=const char* format
+ParamCount=-3
+[swscanf_s_l]
+1=const wchar_t* buffer
+2=const wchar_t* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[swscanf_s]
+1=const wchar_t* buffer
+2=const wchar_t* format
+ParamCount=-2
+[sscanf_s_l]
+1=const char* buffer
+2=const char* format
+3=_locale_t locale
+ParamCount=-3
+Header=msvcrxx.h.api;
+[sscanf_s]
+1=const char* buffer
+2=const char* format
+ParamCount=-2
+[vswprintf_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+3=const wchar_t* format
+4=va_list argptr
+ParamCount=4
+[vswprintf_s_l]
+1=wchar_t* buffer
+2=size_t numberOfElements
+3=const wchar_t* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vsprintf_s_l]
+1=char* buffer
+2=size_t numberOfElements
+3=const char* format
+4=_locale_t locale
+5=va_list argptr
+ParamCount=5
+Header=msvcrxx.h.api;
+[vsprintf_s]
+1=char* buffer
+2=size_t numberOfElements
+3=const char* format
+4=va_list argptr
+ParamCount=4
+[strdup_dbg]
+1=const char* strSource
+2=[DBG_BLOCK_TYPE] blockType
+3=const char* filename
+4=int linenumber
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsdup_dbg]
+1=const wchar_t* strSource
+2=[DBG_BLOCK_TYPE] blockType
+3=const char* filename
+4=int linenumber
+ParamCount=4
+Header=msvcrxx.h.api;
+[strxfrm]
+1=char* strDest
+2=const char* strSource
+3=size_t count
+ParamCount=3
+[wcsxfrm]
+1=wchar_t* strDest
+2=const wchar_t* strSource
+3=size_t count
+ParamCount=3
+[strxfrm_l]
+1=char* strDest
+2=const char* strSource
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsxfrm_l]
+1=wchar_t* strDest
+2=const wchar_t* strSource
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbrlen]
+1=const char* str
+2=size_t maxSize
+3=mbstate_t mbstate
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbcoll]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbcoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbicoll]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+ParamCount=3
+Header=msvcrxx.h.api;
+[mbsnbicoll_l]
+1=unsigned char* string1
+2=unsigned char* string2
+3=size_t count
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[mbsnbset_s]
+1=unsigned char* str
+2=size_t size
+3=unsigned int c
+4=size_t count
+ParamCount=4
+[mbsnbset_s_l]
+1=unsigned char* str
+2=size_t size
+3=unsigned int c
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[scprintf_p]
+1=const char* format
+ParamCount=-1
+[scprintf_p_l]
+1=const char* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[scwprintf_p]
+1=const wchar_t* format
+ParamCount=-1
+[scwprintf_p_l]
+1=const wchar_t* format
+2=_locale_t locale
+ParamCount=-2
+Header=msvcrxx.h.api;
+[snprintf_s]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const char* format
+ParamCount=-4
+[snprintf_s_l]
+1=char* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const char* format
+5=_locale_t locale
+ParamCount=-5
+Header=msvcrxx.h.api;
+[snwprintf_s]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const wchar_t* format
+ParamCount=-4
+[snwprintf_s_l]
+1=wchar_t* buffer
+2=size_t sizeOfBuffer
+3=size_t count
+4=const wchar_t* format
+5=_locale_t locale
+ParamCount=-5
+Header=msvcrxx.h.api;
+[snprintf]
+1=char* buffer
+2=size_t count
+3=const char* format
+ParamCount=-3
+[snprintf_l]
+1=char* buffer
+2=size_t count
+3=const char* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[snwprintf]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+ParamCount=-3
+[snwprintf_l]
+1=wchar_t* buffer
+2=size_t count
+3=const wchar_t* format
+4=_locale_t locale
+ParamCount=-4
+Header=msvcrxx.h.api;
+[strnset_s]
+1=char* str
+2=size_t numberOfElements
+3=int c
+4=size_t count
+ParamCount=4
+[wcsnset_s]
+1=wchar_t* str
+2=size_t numberOfElements
+3=wchar_t c
+4=size_t count
+ParamCount=4
+[mbsnset_s]
+1=unsigned char* str
+2=size_t numberOfElements
+3=unsigned int c
+4=size_t count
+ParamCount=4
+[mbsnset_s_l]
+1=unsigned char* str
+2=size_t numberOfElements
+3=unsigned int c
+4=size_t count
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[strset_s]
+1=char* str
+2=size_t numberOfElements
+3=int c
+ParamCount=3
+[wcsset_s]
+1=wchar_t* str
+2=size_t numberOfElements
+3=wchar_t c
+ParamCount=3
+[mbsset_s]
+1=unsigned char* str
+2=size_t numberOfElements
+3=unsigned int c
+ParamCount=3
+[mbsset_s_l]
+1=unsigned char* str
+2=size_t numberOfElements
+3=unsigned int c
+4=_locale_t locale
+ParamCount=4
+Header=msvcrxx.h.api;
+[findclose]
+1=intptr_t handle
+ParamCount=1
+Header=msvcrxx.h.api;
+[findfirst]
+1=const char* filespec
+2=struct _finddata_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findfirst32]
+1=const char* filespec
+2=struct _finddata32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findfirst64]
+1=const char* filespec
+2=struct __finddata64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findfirsti64]
+1=const char* filespec
+2=struct _finddatai64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findfirst32i64]
+1=const char* filespec
+2=struct _finddata32i64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findfirst64i32]
+1=const char* filespec
+2=struct _finddata64i32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirst]
+1=const wchar_t* filespec
+2=struct _wfinddata_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirst32]
+1=const wchar_t* filespec
+2=struct _wfinddata32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirst64]
+1=const wchar_t* filespec
+2=struct _wfinddata64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirsti64]
+1=const wchar_t* filespec
+2=struct _wfinddatai64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirst32i64]
+1=const wchar_t* filespec
+2=struct _wfinddata32i64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindfirst64i32]
+1=const wchar_t* filespec
+2=struct _wfinddata64i32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnext]
+1=intptr_t handle
+2=struct _finddata_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnext32]
+1=intptr_t handle
+2=struct _finddata32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnext64]
+1=intptr_t handle
+2=struct __finddata64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnexti64]
+1=intptr_t handle
+2=struct _finddatai64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnext32i64]
+1=intptr_t handle
+2=struct _finddata32i64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[findnext64i32]
+1=intptr_t handle
+2=struct _finddata64i32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnext]
+1=intptr_t handle
+2=struct _wfinddata_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnext32]
+1=intptr_t handle
+2=struct _wfinddata32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnext64]
+1=intptr_t handle
+2=struct _wfinddata64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnexti64]
+1=intptr_t handle
+2=struct _wfinddatai64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnext32i64]
+1=intptr_t handle
+2=struct _wfinddatai64_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[wfindnext64i32]
+1=intptr_t handle
+2=struct _wfinddata64i32_t* fileinfo
+ParamCount=2
+Header=msvcrxx.h.api;
+[asctime]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[wasctime]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[asctime_s]
+1=char* buffer
+2=size_t numberOfElements
+3=struct tm* _tm
+ParamCount=3
+Header=msvcrxx.h.api;
+[wasctime_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+ParamCount=2
+[clock]
+ParamCount=0
+[ctime]
+1=const time_t* timer
+ParamCount=1
+[ctime32]
+1=__time32_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[ctime64]
+1=__time64_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[wctime]
+1=const time_t* timer
+ParamCount=1
+[wctime32]
+1=__time32_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[wctime64]
+1=__time64_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[ctime32_s]
+1=char* buffer
+2=size_t numberOfElements
+3=__time32_t* time
+ParamCount=3
+Header=msvcrxx.h.api;
+[ctime64_s]
+1=char* buffer
+2=size_t numberOfElements
+3=__time64_t* time
+ParamCount=3
+Header=msvcrxx.h.api;
+[wctime32_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+3=__time32_t* time
+ParamCount=3
+Header=msvcrxx.h.api;
+[wctime64_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+3=__time64_t* time
+ParamCount=3
+Header=msvcrxx.h.api;
+[ftime]
+1=struct _timeb* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftime32]
+1=struct __timeb32* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftime64]
+1=struct __timeb64* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftime32_s]
+1=struct __timeb32* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[ftime64_s]
+1=struct __timeb64* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[futime]
+1=int fd
+2=struct _utimbuf* filetime
+ParamCount=2
+Header=msvcrxx.h.api;
+[futime32]
+1=int fd
+2=struct __utimbuf32* filetime
+ParamCount=2
+Header=msvcrxx.h.api;
+[futime64]
+1=int fd
+2=struct __utimbuf64* filetime
+ParamCount=2
+Header=msvcrxx.h.api;
+[gmtime]
+1=const time_t* timer
+ParamCount=1
+[gmtime32]
+1=__time32_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[gmtime64]
+1=__time64_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[gmtime32_s]
+1=struct tm* _tm
+2=__time32_t* time
+ParamCount=2
+Header=msvcrxx.h.api;
+[gmtime64_s]
+1=struct tm* _tm
+2=__time64_t* time
+ParamCount=2
+Header=msvcrxx.h.api;
+[localtime]
+1=const time_t* timer
+ParamCount=1
+[localtime32]
+1=__time32_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[localtime64]
+1=__time64_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[localtime32_s]
+1=struct tm* _tm
+2=__time32_t* time
+ParamCount=2
+Header=msvcrxx.h.api;
+[localtime64_s]
+1=struct tm* _tm
+2=__time64_t* time
+ParamCount=2
+Header=msvcrxx.h.api;
+[mkgmtime]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[mkgmtime32]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[mkgmtime64]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[mktime]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[mktime32]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[mktime64]
+1=struct tm* timeptr
+ParamCount=1
+Header=msvcrxx.h.api;
+[strdate]
+1=char* datestr
+ParamCount=1
+[wstrdate]
+1=wchar_t* datestr
+ParamCount=1
+[strdate_s]
+1=char* buffer
+2=size_t numberOfElements
+ParamCount=2
+[wstrdate_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+ParamCount=2
+[strtime]
+1=char* timestr
+ParamCount=1
+[wstrtime]
+1=wchar_t* timestr
+ParamCount=1
+[strtime_s]
+1=char* buffer
+2=size_t numberOfElements
+ParamCount=2
+[wstrtime_s]
+1=wchar_t* buffer
+2=size_t numberOfElements
+ParamCount=2
+[time]
+1=time_t* timer
+ParamCount=1
+[time32]
+1=__time32_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[time64]
+1=__time64_t* timer
+ParamCount=1
+Header=msvcrxx.h.api;
+[tzset]
+ParamCount=0
+[utime]
+1=const char* filename
+2=struct _utimbuf* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[utime32]
+1=const char* filename
+2=struct __utimbuf32* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[utime64]
+1=const char* filename
+2=struct __utimbuf64* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[wutime]
+1=const wchar_t* filename
+2=struct _utimbuf* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[wutime32]
+1=const wchar_t* filename
+2=struct __utimbuf32* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[wutime64]
+1=const wchar_t* filename
+2=struct __utimbuf64* times
+ParamCount=2
+Header=msvcrxx.h.api;
+[difftime32]
+1=__time32_t timer1
+2=__time32_t timer0
+ParamCount=2
+Header=msvcrxx.h.api;
+[difftime64]
+1=__time64_t timer1
+2=__time64_t timer0
+ParamCount=2
+Header=msvcrxx.h.api;
+[difftime]
+1=time_t timer1
+2=time_t timer0
+ParamCount=2
+[strftime]
+1=char* strDest
+2=size_t maxsize
+3=const char* format
+4=struct tm* timeptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[strftime_l]
+1=char* strDest
+2=size_t maxsize
+3=const char* format
+4=struct tm* timeptr
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[wcsftime]
+1=wchar_t* strDest
+2=size_t maxsize
+3=const wchar_t* format
+4=struct tm* timeptr
+ParamCount=4
+Header=msvcrxx.h.api;
+[wcsftime_l]
+1=wchar_t* strDest
+2=size_t maxsize
+3=const wchar_t* format
+4=struct tm* timeptr
+5=_locale_t locale
+ParamCount=5
+Header=msvcrxx.h.api;
+[get_dstbias]
+1=int* seconds
+ParamCount=1
+[get_daylight]
+1=int* hours
+ParamCount=1
+[get_timezone]
+1=long* seconds
+ParamCount=1
+[get_tzname]
+1=size_t* pReturnValue
+2=char* timeZoneName
+3=size_t sizeInBytes
+4=int index
+ParamCount=4
+[getsystime]
+1=struct tm* _tm
+ParamCount=1
+Header=msvcrxx.h.api;
+[setsystime]
+1=struct tm* _tm
+2=unsigned int millisec
+ParamCount=2
+Header=msvcrxx.h.api;
+[get_output_format]
+ParamCount=0
+[set_output_format]
+1=[output_format] format
+ParamCount=1
+Header=msvcrxx.h.api;
+[get_printf_count_output]
+ParamCount=0
+[set_printf_count_output]
+1=int enable
+ParamCount=1
+[lock]
+1=[LOCK_NUM] locknum
+ParamCount=1
+Header=msvcrxx.h.api;
+[unlock]
+1=[LOCK_NUM] locknum
+ParamCount=1
+Header=msvcrxx.h.api;
+[initterm]
+1=_PVFV* pfbegin
+2=_PVFV* pfend
+ParamCount=2
+Header=msvcrxx.h.api;
+[initterm_e]
+1=_PVFV* pfbegin
+2=_PVFV* pfend
+ParamCount=2
+Header=msvcrxx.h.api;
+[RTDynamicCast]
+1=PVOID inptr
+2=LONG VfDelta
+3=PVOID SrcType
+4=PVOID TargetType
+5=BOOL isReference
+ParamCount=5
+[p__commode]
+ParamCount=0
+[beep]
+1=unsigned int frequency
+2=unsigned int duration
+ParamCount=2
+Header=msvcrxx.h.api;

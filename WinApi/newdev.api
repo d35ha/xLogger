@@ -1,0 +1,64 @@
+[CallingConvention]
+@=STDCALL
+[InstallNewDevice]
+1=HWND hwndParent
+2=LPGUID ClassGuid
+3=PDWORD pReboot
+ParamCount=3
+Header=windows.h.api;
+[DiInstallDevice]
+1=HWND hwndParent
+2=HDEVINFO DeviceInfoSet
+3=PSP_DEVINFO_DATA DeviceInfoData
+4=PSP_DRVINFO_DATA DriverInfoData
+5=DWORD Flags
+6=PBOOL NeedReboot
+ParamCount=6
+Header=setup.h.api;windows.h.api;
+[DiInstallDriver]
+1=HWND hwndParent
+2=LPCTSTR FullInfPath
+3=DWORD Flags
+4=PBOOL NeedReboot
+ParamCount=4
+Header=windows.h.api;
+[DiRollbackDriver]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=HWND hwndParent
+4=DWORD Flags
+5=PBOOL NeedReboot
+ParamCount=5
+Header=windows.h.api;
+[DiShowUpdateDevice]
+1=HWND hwndParent
+2=HDEVINFO DeviceInfoSet
+3=PSP_DEVINFO_DATA DeviceInfoData
+4=DWORD Flags
+5=PBOOL NeedReboot
+ParamCount=5
+Header=windows.h.api;
+[DiUninstallDevice]
+1=HWND hwndParent
+2=HDEVINFO DeviceInfoSet
+3=PSP_DEVINFO_DATA DeviceInfoData
+4=DWORD Flags
+5=PBOOL NeedReboot
+ParamCount=5
+Header=windows.h.api;
+[UpdateDriverForPlugAndPlayDevices]
+1=HWND hwndParent
+2=LPCTSTR HardwareId
+3=LPCTSTR FullInfPath
+4=DWORD InstallFlags
+5=PBOOL bRebootRequired
+ParamCount=5
+Header=windows.h.api;
+[InstallSelectedDriver]
+1=HWND hwndParent
+2=HDEVINFO DeviceInfoSet
+3=LPCTSTR Reserved
+4=BOOL Backup
+5=PDWORD bReboot
+ParamCount=5
+Header=windows.h.api;

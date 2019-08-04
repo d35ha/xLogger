@@ -1,0 +1,112 @@
+[CallingConvention]
+@=STDCALL
+[SnmpSvcGetUptime]
+ParamCount=0
+[SnmpSvcSetLogLevel]
+1=INT nLogLevel
+ParamCount=1
+[SnmpSvcSetLogType]
+1=INT nLogType
+ParamCount=1
+[SnmpUtilAsnAnyCpy]
+1=AsnAny* pAnyDst
+2=AsnAny* pAnySrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilAsnAnyFree]
+1=AsnAny* pAny
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilDbgPrint]
+1=INT nLogLevel
+2=LPSTR szFormat
+ParamCount=2
+[SnmpUtilIdsToA]
+1=UINT* Ids
+2=UINT IdLength
+ParamCount=2
+[SnmpUtilMemAlloc]
+1=UINT nBytes
+ParamCount=1
+[SnmpUtilMemFree]
+1=LPVOID pMem
+ParamCount=1
+[SnmpUtilMemReAlloc]
+1=LPVOID pMem
+2=UINT nBytes
+ParamCount=2
+[SnmpUtilOctetsCmp]
+1=AsnOctetString* pOctets1
+2=AsnOctetString* pOctets2
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilOctetsCpy]
+1=AsnOctetString* pOctetsDst
+2=AsnOctetString* pOctetsSrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilOctetsFree]
+1=AsnOctetString* pOctets
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilOctetsNCmp]
+1=AsnOctetString* pOctets1
+2=AsnOctetString* pOctets2
+3=UINT nChars
+ParamCount=3
+Header=snmp.h.api;
+[SnmpUtilOidAppend]
+1=AsnObjectIdentifier* pOidDst
+2=AsnObjectIdentifier* pOidSrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilOidCmp]
+1=AsnObjectIdentifier* pOid1
+2=AsnObjectIdentifier* pOid2
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilOidCpy]
+1=AsnObjectIdentifier* pOidDst
+2=AsnObjectIdentifier* pOidSrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilOidFree]
+1=AsnObjectIdentifier* pOid
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilOidNCmp]
+1=AsnObjectIdentifier* pOid1
+2=AsnObjectIdentifier* pOid2
+3=UINT nSubIds
+ParamCount=3
+Header=snmp.h.api;
+[SnmpUtilOidToA]
+1=AsnObjectIdentifier* Oid
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilPrintAsnAny]
+1=AsnAny* pAny
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilPrintOid]
+1=AsnObjectIdentifier* Oid
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilVarBindCpy]
+1=SnmpVarBind* pVbDst
+2=SnmpVarBind* pVbSrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilVarBindListCpy]
+1=SnmpVarBindList* pVblDst
+2=SnmpVarBindList* pVblSrc
+ParamCount=2
+Header=snmp.h.api;
+[SnmpUtilVarBindFree]
+1=SnmpVarBind* pVb
+ParamCount=1
+Header=snmp.h.api;
+[SnmpUtilVarBindListFree]
+1=SnmpVarBindList* pVbl
+ParamCount=1
+Header=snmp.h.api;

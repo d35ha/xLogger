@@ -1,0 +1,3190 @@
+[CallingConvention]
+@=STDCALL
+[CreateDialogIndirectParam]
+1=HINSTANCE hInstance
+2=LPCDLGTEMPLATE lpTemplate
+3=HWND hWndParent
+4=DLGPROC lpDialogFunc
+5=LPARAM lParamInit
+ParamCount=5
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[CreateDialogParam]
+1=HINSTANCE hInstance
+2=LPCTSTR lpTemplateName
+3=HWND hWndParent
+4=DLGPROC lpDialogFunc
+5=LPARAM lParamInit
+ParamCount=5
+Header=gdi.h.api;windows.h.api;
+[DefDlgProc]
+1=HWND hDlg
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[DialogBoxIndirectParam]
+1=HINSTANCE hInstance
+2=LPCDLGTEMPLATE hDialogTemplate
+3=HWND hWndParent
+4=DLGPROC lpDialogFunc
+5=LPARAM dwInitParam
+ParamCount=5
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[DialogBoxParam]
+1=HINSTANCE hInstance
+2=LPCTSTR lpTemplateName
+3=HWND hWndParent
+4=DLGPROC lpDialogFunc
+5=LPARAM dwInitParam
+ParamCount=5
+Header=gdi.h.api;windows.h.api;
+[EndDialog]
+1=HWND hDlg
+2=INT_PTR nResult
+ParamCount=2
+Header=windows.h.api;
+[GetDialogBaseUnits]
+ParamCount=0
+[GetDlgCtrlID]
+1=HWND hwndCtl
+ParamCount=1
+Header=windows.h.api;
+[GetDlgItem]
+1=HWND hDlg
+2=int nIDDlgItem
+ParamCount=2
+Header=windows.h.api;
+[GetDlgItemInt]
+1=HWND hDlg
+2=int nIDDlgItem
+3=BOOL* lpTranslated
+4=BOOL bSigned
+ParamCount=4
+Header=windows.h.api;
+[GetDlgItemText]
+1=HWND hDlg
+2=int nIDDlgItem
+3=LPTSTR lpString
+4=int nMaxCount
+ParamCount=4
+Header=windows.h.api;
+[GetNextDlgGroupItem]
+1=HWND hDlg
+2=HWND hCtl
+3=BOOL bPrevious
+ParamCount=3
+Header=windows.h.api;
+[GetNextDlgTabItem]
+1=HWND hDlg
+2=HWND hCtl
+3=BOOL bPrevious
+ParamCount=3
+Header=windows.h.api;
+[IsDialogMessage]
+1=HWND hDlg
+2=LPMSG lpMsg
+ParamCount=2
+Header=windows.h.api;
+[MapDialogRect]
+1=HWND hDlg
+2=LPRECT lpRect
+ParamCount=2
+Header=windows.h.api;
+[MessageBox]
+1=HWND hWnd
+2=LPCTSTR lpText
+3=LPCTSTR lpCaption
+4=[MessageBoxType] uType
+ParamCount=4
+Header=shell.h.api;windows.h.api;
+[MessageBoxEx]
+1=HWND hWnd
+2=LPCTSTR lpText
+3=LPCTSTR lpCaption
+4=[MessageBoxType] uType
+5=WORD wLanguageId
+ParamCount=5
+Header=shell.h.api;windows.h.api;
+[MessageBoxIndirect]
+1=LPMSGBOXPARAMS lpMsgBoxParams
+ParamCount=1
+Header=user32.h.api;
+[MessageBoxTimeout]
+1=HWND hWnd
+2=LPCTSTR lpText
+3=LPCTSTR lpCaption
+4=[MessageBoxType] uType
+5=WORD wLanguageId
+6=[WaitTimeout] dwMilliseconds
+ParamCount=6
+Header=shell.h.api;windows.h.api;
+[SendDlgItemMessage]
+1=HWND hDlg
+2=int nIDDlgItem
+3=[WinMsg] Msg
+4=WPARAM wParam
+5=LPARAM lParam
+ParamCount=5
+Header=windows.h.api;
+[SetDlgItemInt]
+1=HWND hDlg
+2=int nIDDlgItem
+3=UINT uValue
+4=BOOL bSigned
+ParamCount=4
+Header=windows.h.api;
+[SetDlgItemText]
+1=HWND hDlg
+2=int nIDDlgItem
+3=LPCTSTR lpString
+ParamCount=3
+Header=windows.h.api;
+[BroadcastSystemMessage]
+1=DWORD dwFlags
+2=LPDWORD lpdwRecipients
+3=UINT uiMessage
+4=WPARAM wParam
+5=LPARAM lParam
+ParamCount=5
+Header=windows.h.api;
+[BroadcastSystemMessageEx]
+1=DWORD dwFlags
+2=LPDWORD lpdwRecipients
+3=UINT uiMessage
+4=WPARAM wParam
+5=LPARAM lParam
+6=PBSMINFO pBSMInfo
+ParamCount=6
+Header=user32.h.api;windows.h.api;
+[DispatchMessage]
+1=MSG* lpmsg
+ParamCount=1
+Header=windows.h.api;
+[GetInputState]
+ParamCount=0
+[GetMessage]
+1=LPMSG lpMsg
+2=HWND hWnd
+3=UINT wMsgFilterMin
+4=UINT wMsgFilterMax
+ParamCount=4
+Header=windows.h.api;
+[GetMessageExtraInfo]
+ParamCount=0
+[GetMessagePos]
+ParamCount=0
+[GetMessageTime]
+ParamCount=0
+[GetQueueStatus]
+1=[QueueStatusFlag] flags
+ParamCount=1
+Header=user32.h.api;
+[InSendMessage]
+ParamCount=0
+[InSendMessageEx]
+1=LPVOID lpReserved
+ParamCount=1
+[PeekMessage]
+1=LPMSG lpMsg
+2=HWND hWnd
+3=UINT wMsgFilterMin
+4=UINT wMsgFilterMax
+5=[PeekMessageFlag] wRemoveMsg
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[PostMessage]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[PostQuitMessage]
+1=int nExitCode
+ParamCount=1
+[PostThreadMessage]
+1=DWORD idThread
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[RegisterWindowMessage]
+1=LPCTSTR lpString
+ParamCount=1
+[ReplyMessage]
+1=LRESULT lResult
+ParamCount=1
+Header=windows.h.api;
+[SendMessage]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[SendMessageCallback]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+5=SENDASYNCPROC lpCallBack
+6=ULONG_PTR dwData
+ParamCount=6
+Header=user32.h.api;windows.h.api;
+[SendMessageTimeout]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+5=[SendMessageTimeoutFlags] fuFlags
+6=UINT uTimeout
+7=PDWORD_PTR lpdwResult
+ParamCount=7
+Header=user32.h.api;windows.h.api;
+[SendNotifyMessage]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[SetMessageExtraInfo]
+1=LPARAM lParam
+ParamCount=1
+Header=windows.h.api;
+[TranslateMessage]
+1=MSG* lpMsg
+ParamCount=1
+Header=windows.h.api;
+[WaitMessage]
+ParamCount=0
+[GetGuiResources]
+1=[ProcessHandle] hProcess
+2=DWORD uiFlags
+ParamCount=2
+Header=windows.h.api;
+[IsImmersiveProcess]
+1=HANDLE hProcess
+ParamCount=1
+Header=windows.h.api;
+[SetProcessRestrictionExemption]
+1=BOOL fEnableExemption
+ParamCount=1
+[AttachThreadInput]
+1=DWORD idAttach
+2=DWORD idAttachTo
+3=BOOL fAttach
+ParamCount=3
+[WaitForInputIdle]
+1=[ProcessHandle] hProcess
+2=[WaitTimeout] dwMilliseconds
+ParamCount=2
+Header=windows.h.api;
+[IsWow64Message]
+ParamCount=0
+[UserHandleGrantAccess]
+1=HANDLE hUserHandle
+2=HANDLE hJob
+3=BOOL bGrant
+ParamCount=3
+Header=windows.h.api;
+[AdjustWindowRect]
+1=LPRECT lpRect
+2=[WindowStyle] dwStyle
+3=BOOL bMenu
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[AdjustWindowRectEx]
+1=LPRECT lpRect
+2=[WindowStyle] dwStyle
+3=BOOL bMenu
+4=[WindowExStyle] dwExStyle
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[AllowActivateDetachQueuesSetFocus]
+ParamCount=0
+[AllowSetForegroundWindow]
+1=DWORD dwProcessId
+ParamCount=1
+[AnimateWindow]
+1=HWND hwnd
+2=DWORD dwTime
+3=[AnimateWindowFlags] dwFlags
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[AnyPopup]
+ParamCount=0
+[ArrangeIconicWindows]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[BeginDeferWindowPos]
+1=int nNumWindows
+ParamCount=1
+[BringWindowToTop]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[CalculatePopupWindowPosition]
+1=POINT* anchorPoint
+2=SIZE* windowSize
+3=[TrackPopupMenuFlags] flags
+4=RECT* excludeRect
+5=RECT* popupWindowPosition
+ParamCount=5
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[CascadeWindows]
+1=HWND hwndParent
+2=[MDITILE_CASCADE] wHow
+3=RECT* lpRect
+4=UINT cKids
+5=HWND* lpKids
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[ChangeWindowMessageFilter]
+1=[WinMsg] message
+2=[WindowMessageFilterEnum] dwFlag
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[ChangeWindowMessageFilterEx]
+1=HWND hWnd
+2=[WinMsg] message
+3=[MSGFLT_ACTION] action
+4=PCHANGEFILTERSTRUCT pChangeFilterStruct
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[ChildWindowFromPoint]
+1=HWND hWndParent
+2=POINT Point
+ParamCount=2
+Header=windows.h.api;
+[ChildWindowFromPointEx]
+1=HWND hwndParent
+2=POINT pt
+3=[CWP_FLAGS] uFlags
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[CloseWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[CreateWindow]
+1=LPCTSTR lpClassName
+2=LPCTSTR lpWindowName
+3=DWORD dwStyle
+4=[CreateWindow_CW] x
+5=[CreateWindow_CW] y
+6=[CreateWindow_CW] nWidth
+7=[CreateWindow_CW] nHeight
+8=HWND hWndParent
+9=HMENU hMenu
+10=HINSTANCE hInstance
+11=LPVOID lpParam
+ParamCount=11
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[CreateWindowEx]
+1=[WindowExStyle] dwExStyle
+2=LPCTSTR lpClassName
+3=LPCTSTR lpWindowName
+4=[WindowStyle] dwStyle
+5=[CreateWindow_CW] x
+6=[CreateWindow_CW] y
+7=[CreateWindow_CW] nWidth
+8=[CreateWindow_CW] nHeight
+9=HWND hWndParent
+10=HMENU hMenu
+11=HINSTANCE hInstance
+12=LPVOID lpParam
+ParamCount=12
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[DeferWindowPos]
+1=HDWP hWinPosInfo
+2=HWND hWnd
+3=[HwndInsertAfterEnum] hWndInsertAfter
+4=int x
+5=int y
+6=int cx
+7=int cy
+8=[SetWindowPosFlags] uFlags
+ParamCount=8
+Header=user32.h.api;shell.h.api;windows.h.api;
+[DeregisterShellHookWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[DestroyWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[EndDeferWindowPos]
+1=HDWP hWinPosInfo
+ParamCount=1
+Header=shell.h.api;
+[EndTask]
+1=HWND hWnd
+2=BOOL fShutDown
+3=BOOL fForce
+ParamCount=3
+Header=windows.h.api;
+[EnumChildWindows]
+1=HWND hWndParent
+2=WNDENUMPROC lpEnumFunc
+3=LPARAM lParam
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[EnumThreadWindows]
+1=DWORD dwThreadId
+2=WNDENUMPROC lpfn
+3=LPARAM lParam
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[EnumWindows]
+1=WNDENUMPROC lpEnumFunc
+2=LPARAM lParam
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[FindWindow]
+1=LPCTSTR lpClassName
+2=LPCTSTR lpWindowName
+ParamCount=2
+[FindWindowEx]
+1=HWND hwndParent
+2=HWND hwndChildAfter
+3=LPCTSTR lpszClass
+4=LPCTSTR lpszWindow
+ParamCount=4
+Header=windows.h.api;
+[GetAltTabInfo]
+1=HWND hwnd
+2=int iItem
+3=PALTTABINFO pati
+4=LPTSTR pszItemText
+5=UINT cchItemText
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[GetAncestor]
+1=HWND hwnd
+2=[GetAncestorEnum] gaFlags
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetClientRect]
+1=HWND hWnd
+2=LPRECT lpRect
+ParamCount=2
+Header=windows.h.api;
+[GetDesktopWindow]
+ParamCount=0
+[GetForegroundWindow]
+ParamCount=0
+[GetGUIThreadInfo]
+1=DWORD idThread
+2=LPGUITHREADINFO lpgui
+ParamCount=2
+Header=user32.h.api;
+[GetLastActivePopup]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetLayeredWindowAttributes]
+1=HWND hwnd
+2=COLORREF* pcrKey
+3=BYTE* pbAlpha
+4=LayeredWindowAttribute* pdwFlags
+ParamCount=4
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[GetParent]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetProcessDefaultLayout]
+1=DWORD* pdwDefaultLayout
+ParamCount=1
+[GetShellWindow]
+ParamCount=0
+[GetTitleBarInfo]
+1=HWND hwnd
+2=PTITLEBARINFO pti
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetTopWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetWindow]
+1=HWND hWnd
+2=[GetWindowEnum] uCmd
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetWindowDisplayAffinity]
+1=HWND hWnd
+2=DWORD* dwAffinity
+ParamCount=2
+Header=windows.h.api;
+[GetWindowInfo]
+1=HWND hwnd
+2=PWINDOWINFO pwi
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetWindowModuleFileName]
+1=HWND hwnd
+2=LPTSTR lpszFileName
+3=UINT cchFileNameMax
+ParamCount=3
+Header=windows.h.api;
+[GetWindowPlacement]
+1=HWND hWnd
+2=WINDOWPLACEMENT* lpwndpl
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetWindowRect]
+1=HWND hWnd
+2=LPRECT lpRect
+ParamCount=2
+Header=windows.h.api;
+[GetWindowText]
+1=HWND hWnd
+2=LPTSTR lpString
+3=int nMaxCount
+ParamCount=3
+Header=windows.h.api;
+[GetWindowTextLength]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetWindowThreadProcessId]
+1=HWND hWnd
+2=LPDWORD lpdwProcessId
+ParamCount=2
+Header=windows.h.api;
+[InternalGetWindowText]
+1=HWND hWnd
+2=LPWSTR lpString
+3=int nMaxCount
+ParamCount=3
+Header=windows.h.api;
+[IsChild]
+1=HWND hWndParent
+2=HWND hWnd
+ParamCount=2
+Header=windows.h.api;
+[IsGUIThread]
+1=BOOL bConvert
+ParamCount=1
+[IsHungAppWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[IsIconic]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[IsProcessDPIAware]
+ParamCount=0
+[IsWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[IsWindowUnicode]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[IsWindowVisible]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[IsZoomed]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[LockSetForegroundWindow]
+1=[LockSetForegroundWindowCode] uLockCode
+ParamCount=1
+Header=user32.h.api;
+[LogicalToPhysicalPoint]
+1=HWND hWnd
+2=LPPOINT lpPoint
+ParamCount=2
+Header=windows.h.api;
+[MoveWindow]
+1=HWND hWnd
+2=int X
+3=int Y
+4=int nWidth
+5=int nHeight
+6=BOOL bRepaint
+ParamCount=6
+Header=windows.h.api;
+[OpenIcon]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[PhysicalToLogicalPoint]
+1=HWND hWnd
+2=LPPOINT lpPoint
+ParamCount=2
+Header=windows.h.api;
+[RealChildWindowFromPoint]
+1=HWND hwndParent
+2=POINT ptParentClientCoords
+ParamCount=2
+Header=windows.h.api;
+[RealGetWindowClass]
+1=HWND hwnd
+2=LPTSTR pszType
+3=UINT cchType
+ParamCount=3
+Header=windows.h.api;
+[RegisterShellHookWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetForegroundWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetLayeredWindowAttributes]
+1=HWND hwnd
+2=[COLORREF] crKey
+3=BYTE bAlpha
+4=[LayeredWindowAttribute] dwFlags
+ParamCount=4
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[SetParent]
+1=HWND hWndChild
+2=HWND hWndNewParent
+ParamCount=2
+Header=windows.h.api;
+[SetProcessDefaultLayout]
+1=DWORD dwDefaultLayout
+ParamCount=1
+[SetProcessDPIAware]
+ParamCount=0
+[SetWindowDisplayAffinity]
+1=HWND hWnd
+2=DWORD dwAffinity
+ParamCount=2
+Header=windows.h.api;
+[SetWindowPlacement]
+1=HWND hWnd
+2=WINDOWPLACEMENT* lpwndpl
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[SetWindowPos]
+1=HWND hWnd
+2=[HwndInsertAfterEnum] hWndInsertAfter
+3=int X
+4=int Y
+5=int cx
+6=int cy
+7=[SetWindowPosFlags] uFlags
+ParamCount=7
+Header=user32.h.api;windows.h.api;
+[SetWindowText]
+1=HWND hWnd
+2=LPCTSTR lpString
+ParamCount=2
+Header=windows.h.api;
+[ShowOwnedPopups]
+1=HWND hWnd
+2=BOOL fShow
+ParamCount=2
+Header=windows.h.api;
+[ShowWindow]
+1=HWND hWnd
+2=[ShowWindowCmd] nCmdShow
+ParamCount=2
+Header=windows.h.api;
+[ShowWindowAsync]
+1=HWND hWnd
+2=int nCmdShow
+ParamCount=2
+Header=windows.h.api;
+[SoundSentry]
+ParamCount=0
+[SwitchToThisWindow]
+1=HWND hWnd
+2=BOOL fAltTab
+ParamCount=2
+Header=windows.h.api;
+[TileWindows]
+1=HWND hwndParent
+2=[MDITILE_TILE] wHow
+3=RECT* lpRect
+4=UINT cKids
+5=HWND* lpKids
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[UpdateLayeredWindow]
+1=HWND hwnd
+2=HDC hdcDst
+3=POINT* pptDst
+4=SIZE* psize
+5=HDC hdcSrc
+6=POINT* pptSrc
+7=[COLORREF] crKey
+8=BLENDFUNCTION* pblend
+9=[UpdateLayeredWindowFlags] dwFlags
+ParamCount=9
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[UpdateLayeredWindowIndirect]
+1=HWND hwnd
+2=UPDATELAYEREDWINDOWINFO* pULWInfo
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[WindowFromPhysicalPoint]
+1=POINT Point
+ParamCount=1
+[WindowFromPoint]
+1=POINT Point
+ParamCount=1
+[ExitWindowsEx]
+1=[EWX_FLAGS] uFlags
+2=[SHTDN_REASON] dwReason
+ParamCount=2
+Header=windows.h.api;
+[LockWorkStation]
+ParamCount=0
+[ShutdownBlockReasonCreate]
+1=HWND hWnd
+2=LPCWSTR pwszReason
+ParamCount=2
+Header=windows.h.api;
+[ShutdownBlockReasonDestroy]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[ShutdownBlockReasonQuery]
+1=HWND hWnd
+2=LPWSTR pwszBuff
+3=DWORD* pcchBuff
+ParamCount=3
+Header=windows.h.api;
+[LoadBitmap]
+1=HINSTANCE hInstance
+2=[LoadBitmapString/LPCTSTR] lpBitmapName
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetSysColorBrush]
+1=[SysColorIndex] nIndex
+ParamCount=1
+Header=windows.h.api;
+[CheckDlgButton]
+1=HWND hDlg
+2=int nIDButton
+3=[ButtonState] uCheck
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[CheckRadioButton]
+1=HWND hDlg
+2=int nIDFirstButton
+3=int nIDLastButton
+4=int nIDCheckButton
+ParamCount=4
+Header=windows.h.api;
+[IsDlgButtonChecked]
+1=HWND hDlg
+2=int nIDButton
+ParamCount=2
+Header=windows.h.api;
+[CreateCaret]
+1=HWND hWnd
+2=HBITMAP hBitmap
+3=int nWidth
+4=int nHeight
+ParamCount=4
+Header=windows.h.api;
+[DestroyCaret]
+ParamCount=0
+[GetCaretBlinkTime]
+ParamCount=0
+[GetCaretPos]
+1=LPPOINT lpPoint
+ParamCount=1
+Header=windows.h.api;
+[HideCaret]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetCaretBlinkTime]
+1=UINT uMSeconds
+ParamCount=1
+[SetCaretPos]
+1=int X
+2=int Y
+ParamCount=2
+[ShowCaret]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[AddClipboardFormatListener]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[ChangeClipboardChain]
+1=HWND hWndRemove
+2=HWND hWndNewNext
+ParamCount=2
+Header=windows.h.api;
+[CloseClipboard]
+ParamCount=0
+[CountClipboardFormats]
+ParamCount=0
+[EmptyClipboard]
+ParamCount=0
+[EnumClipboardFormats]
+1=UINT format
+ParamCount=1
+[GetClipboardData]
+1=[ClipboardFormat] uFormat
+ParamCount=1
+Header=user32.h.api;
+[GetClipboardFormatName]
+1=UINT format
+2=LPTSTR lpszFormatName
+3=int cchMaxCount
+ParamCount=3
+[GetClipboardOwner]
+ParamCount=0
+[GetClipboardSequenceNumber]
+ParamCount=0
+[GetClipboardViewer]
+ParamCount=0
+[GetOpenClipboardWindow]
+ParamCount=0
+[GetPriorityClipboardFormat]
+1=UINT* paFormatPriorityList
+2=int cFormats
+ParamCount=2
+[GetUpdatedClipboardFormats]
+1=PUINT lpuiFormats
+2=UINT cFormats
+3=PUINT pcFormatsOut
+ParamCount=3
+[IsClipboardFormatAvailable]
+1=[ClipboardFormat] format
+ParamCount=1
+Header=user32.h.api;
+[OpenClipboard]
+1=HWND hWndNewOwner
+ParamCount=1
+Header=windows.h.api;
+[RegisterClipboardFormat]
+1=LPCTSTR lpszFormat
+ParamCount=1
+[RemoveClipboardFormatListener]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[SetClipboardData]
+1=[ClipboardFormat] uFormat
+2=HANDLE hMem
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[SetClipboardViewer]
+1=HWND hWndNewViewer
+ParamCount=1
+Header=windows.h.api;
+[DlgDirListComboBox]
+1=HWND hDlg
+2=LPTSTR lpPathSpec
+3=int nIDComboBox
+4=int nIDStaticPath
+5=UINT uFiletype
+ParamCount=5
+Header=windows.h.api;
+[DlgDirSelectComboBoxEx]
+1=HWND hDlg
+2=LPTSTR lpString
+3=int nCount
+4=int nIDComboBox
+ParamCount=4
+Header=windows.h.api;
+[GetComboBoxInfo]
+1=HWND hwndCombo
+2=PCOMBOBOXINFO pcbi
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[ClientToScreen]
+1=HWND hWnd
+2=LPPOINT lpPoint
+ParamCount=2
+Header=windows.h.api;
+[MapWindowPoints]
+1=HWND hWndFrom
+2=HWND hWndTo
+3=LPPOINT lpPoints
+4=UINT cPoints
+ParamCount=4
+Header=windows.h.api;
+[ScreenToClient]
+1=HWND hWnd
+2=LPPOINT lpPoint
+ParamCount=2
+Header=windows.h.api;
+[ClipCursor]
+1=RECT* lpRect
+ParamCount=1
+Header=windows.h.api;
+[CopyCursor]
+1=HCURSOR pcur
+ParamCount=1
+Header=gdi.h.api;
+[CreateCursor]
+1=HINSTANCE hInst
+2=int xHotSpot
+3=int yHotSpot
+4=int nWidth
+5=int nHeight
+6=const VOID* pvANDPlane
+7=const VOID* pvXORPlane
+ParamCount=7
+Header=windows.h.api;
+[DestroyCursor]
+1=HCURSOR hCursor
+ParamCount=1
+Header=gdi.h.api;
+[GetClipCursor]
+1=LPRECT lpRect
+ParamCount=1
+Header=windows.h.api;
+[GetCursor]
+ParamCount=0
+[GetCursorInfo]
+1=PCURSORINFO pci
+ParamCount=1
+Header=user32.h.api;
+[GetCursorPos]
+1=LPPOINT lpPoint
+ParamCount=1
+Header=windows.h.api;
+[GetPhysicalCursorPos]
+1=LPPOINT lpPoint
+ParamCount=1
+Header=windows.h.api;
+[LoadCursor]
+1=HINSTANCE hInstance
+2=[LoadCursorString/LPCTSTR] lpCursorName
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[LoadCursorFromFile]
+1=LPCTSTR lpFileName
+ParamCount=1
+[SetCursor]
+1=HCURSOR hCursor
+ParamCount=1
+Header=gdi.h.api;
+[SetCursorPos]
+1=int X
+2=int Y
+ParamCount=2
+[SetPhysicalCursorPos]
+1=int X
+2=int Y
+ParamCount=2
+[SetSystemCursor]
+1=HCURSOR hcur
+2=[CursorId] id
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[ShowCursor]
+1=BOOL bShow
+ParamCount=1
+[ChangeDisplaySettings]
+1=DEVMODE* lpDevMode
+2=DWORD dwflags
+ParamCount=2
+Header=windows.h.api;
+[ChangeDisplaySettingsEx]
+1=LPCTSTR lpszDeviceName
+2=DEVMODE* lpDevMode
+3=HWND hwnd
+4=DWORD dwflags
+5=LPVOID lParam
+ParamCount=5
+Header=windows.h.api;
+[EnumDisplayDevices]
+1=LPCTSTR lpDevice
+2=DWORD iDevNum
+3=PDISPLAY_DEVICE lpDisplayDevice
+4=[EnumDisplayDevicesFlags] dwFlags
+ParamCount=4
+Header=user32.h.api;
+[EnumDisplaySettings]
+1=LPCTSTR lpszDeviceName
+2=[EnumDisplaySettingsEnum] iModeNum
+3=DEVMODE* lpDevMode
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[EnumDisplaySettingsEx]
+1=LPCTSTR lpszDeviceName
+2=DWORD iModeNum
+3=DEVMODE* lpDevMode
+4=DWORD dwFlags
+ParamCount=4
+Header=windows.h.api;
+[GetDC]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetDCEx]
+1=HWND hWnd
+2=HRGN hrgnClip
+3=[DCExFlags] flags
+ParamCount=3
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[ReleaseDC]
+1=HWND hWnd
+2=HDC hDC
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[RegisterDeviceNotification]
+1=HANDLE hRecipient
+2=LPVOID NotificationFilter
+3=[DeviceNotificationFlags] Flags
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[UnregisterDeviceNotification]
+1=HDEVNOTIFY Handle
+ParamCount=1
+Header=user32.h.api;
+[DdeSetQualityOfService]
+1=HWND hwndClient
+2=SECURITY_QUALITY_OF_SERVICE* pqosNew
+3=PSECURITY_QUALITY_OF_SERVICE pqosPrev
+ParamCount=3
+Header=security.h.api;windows.h.api;
+[FreeDDElParam]
+1=UINT msg
+2=LPARAM lParam
+ParamCount=2
+Header=windows.h.api;
+[ImpersonateDdeClientWindow]
+1=HWND hWndClient
+2=HWND hWndServer
+ParamCount=2
+Header=windows.h.api;
+[PackDDElParam]
+1=UINT msg
+2=UINT_PTR uiLo
+3=UINT_PTR uiHi
+ParamCount=3
+[ReuseDDElParam]
+1=LPARAM lParam
+2=UINT msgIn
+3=UINT msgOut
+4=UINT_PTR uiLo
+5=UINT_PTR uiHi
+ParamCount=5
+Header=windows.h.api;
+[UnpackDDElParam]
+1=UINT msg
+2=LPARAM lParam
+3=PUINT_PTR puiLo
+4=PUINT_PTR puiHi
+ParamCount=4
+Header=windows.h.api;
+[DdeAbandonTransaction]
+1=DWORD idInst
+2=HCONV hConv
+3=DWORD idTransaction
+ParamCount=3
+Header=user32.h.api;
+[DdeAccessData]
+1=HDDEDATA hData
+2=LPDWORD pcbDataSize
+ParamCount=2
+Header=user32.h.api;
+[DdeAddData]
+1=HDDEDATA hData
+2=LPBYTE pSrc
+3=DWORD cb
+4=DWORD cbOff
+ParamCount=4
+Header=user32.h.api;
+[DdeClientTransaction]
+1=LPBYTE pData
+2=DWORD cbData
+3=HCONV hConv
+4=HSZ hszItem
+5=UINT wFmt
+6=UINT wType
+7=DWORD dwTimeout
+8=LPDWORD pdwResult
+ParamCount=8
+Header=user32.h.api;
+[DdeCmpStringHandles]
+1=HSZ hsz1
+2=HSZ hsz2
+ParamCount=2
+Header=user32.h.api;
+[DdeConnect]
+1=DWORD idInst
+2=HSZ hszService
+3=HSZ hszTopic
+4=PCONVCONTEXT pCC
+ParamCount=4
+Header=user32.h.api;
+[DdeConnectList]
+1=DWORD idInst
+2=HSZ hszService
+3=HSZ hszTopic
+4=HCONVLIST hConvList
+5=PCONVCONTEXT pCC
+ParamCount=5
+Header=user32.h.api;
+[DdeCreateDataHandle]
+1=DWORD idInst
+2=LPBYTE pSrc
+3=DWORD cb
+4=DWORD cbOff
+5=HSZ hszItem
+6=UINT wFmt
+7=UINT afCmd
+ParamCount=7
+Header=user32.h.api;
+[DdeCreateStringHandle]
+1=DWORD idInst
+2=LPTSTR psz
+3=[CODE_PAGE|int] iCodePage
+ParamCount=3
+Header=windows.h.api;
+[DdeDisconnect]
+1=HCONV hConv
+ParamCount=1
+Header=user32.h.api;
+[DdeDisconnectList]
+1=HCONVLIST hConvList
+ParamCount=1
+Header=user32.h.api;
+[DdeEnableCallback]
+1=DWORD idInst
+2=HCONV hConv
+3=UINT wCmd
+ParamCount=3
+Header=user32.h.api;
+[DdeFreeDataHandle]
+1=HDDEDATA hData
+ParamCount=1
+Header=user32.h.api;
+[DdeFreeStringHandle]
+1=DWORD idInst
+2=HSZ hsz
+ParamCount=2
+Header=user32.h.api;
+[DdeGetData]
+1=HDDEDATA hData
+2=LPBYTE pDst
+3=DWORD cbMax
+4=DWORD cbOff
+ParamCount=4
+Header=user32.h.api;
+[DdeGetLastError]
+1=DWORD idInst
+ParamCount=1
+[DdeImpersonateClient]
+1=HCONV hConv
+ParamCount=1
+Header=user32.h.api;
+[DdeInitialize]
+1=LPDWORD pidInst
+2=PFNCALLBACK pfnCallback
+3=[DDE_INITIALIZE_FLAGS] afCmd
+4=DWORD ulRes
+ParamCount=4
+Header=user32.h.api;
+[DdeKeepStringHandle]
+1=DWORD idInst
+2=HSZ hsz
+ParamCount=2
+Header=user32.h.api;
+[DdeNameService]
+1=DWORD idInst
+2=UINT hsz1
+3=UINT hsz2
+4=UINT afCmd
+ParamCount=4
+[DdePostAdvise]
+1=DWORD idInst
+2=HSZ hszTopic
+3=HSZ hszItem
+ParamCount=3
+Header=user32.h.api;
+[DdeQueryConvInfo]
+1=HCONV hConv
+2=DWORD idTransaction
+3=PCONVINFO pConvInfo
+ParamCount=3
+Header=user32.h.api;
+[DdeQueryNextServer]
+1=HCONVLIST hConvList
+2=HCONV hConvPrev
+ParamCount=2
+Header=user32.h.api;
+[DdeQueryString]
+1=DWORD idInst
+2=HSZ hsz
+3=LPTSTR psz
+4=DWORD cchMax
+5=[CODE_PAGE|int] iCodePage
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[DdeReconnect]
+1=HCONV hConv
+ParamCount=1
+Header=user32.h.api;
+[DdeSetUserHandle]
+1=HCONV hConv
+2=DWORD id
+3=DWORD_PTR hUser
+ParamCount=3
+Header=user32.h.api;
+[DdeUnaccessData]
+1=HDDEDATA hData
+ParamCount=1
+Header=user32.h.api;
+[DdeUninitialize]
+1=DWORD idInst
+ParamCount=1
+[FlashWindow]
+1=HWND hWnd
+2=BOOL bInvert
+ParamCount=2
+Header=windows.h.api;
+[FlashWindowEx]
+1=PFLASHWINFO pfwi
+ParamCount=1
+Header=user32.h.api;
+[MessageBeep]
+1=[MessageBeepType] uType
+ParamCount=1
+Header=shell.h.api;
+[SetLastErrorEx]
+1=ERROR_CODE dwErrCode
+2=[SET_LAST_ERROR_EX_TYPE] dwType
+ParamCount=2
+Header=kernel32.h.api;
+[FillRect]
+1=HDC hDC
+2=RECT* lprc
+3=HBRUSH hbr
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[FrameRect]
+1=HDC hDC
+2=RECT* lprc
+3=HBRUSH hbr
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[InvertRect]
+1=HDC hDC
+2=RECT* lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[DrawText]
+1=HDC hDC
+2=LPCTSTR lpchText
+3=int nCount
+4=LPRECT lpRect
+5=[DrawTextFlags] uFormat
+ParamCount=5
+Header=gdi.h.api;windows.h.api;
+[DrawTextEx]
+1=HDC hdc
+2=LPTSTR lpchText
+3=int cchText
+4=LPRECT lprc
+5=[DrawTextFlags] dwDTFormat
+6=LPDRAWTEXTPARAMS lpDTParams
+ParamCount=6
+Header=gdi.h.api;windows.h.api;
+[GetTabbedTextExtent]
+1=HDC hDC
+2=LPCTSTR lpString
+3=int nCount
+4=int nTabPositions
+5=const LPINT lpnTabStopPositions
+ParamCount=5
+Header=gdi.h.api;
+[TabbedTextOut]
+1=HDC hDC
+2=int X
+3=int Y
+4=LPCTSTR lpString
+5=int nCount
+6=int nTabPositions
+7=const LPINT lpnTabStopPositions
+8=int nTabOrigin
+ParamCount=8
+Header=gdi.h.api;
+[CallMsgFilter]
+1=LPMSG lpMsg
+2=int nCode
+ParamCount=2
+Header=windows.h.api;
+[CallNextHookEx]
+1=HHOOK hhk
+2=int nCode
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[SetWindowsHookEx]
+1=[WindowsHook] idHook
+2=HOOKPROC lpfn
+3=HINSTANCE hMod
+4=DWORD dwThreadId
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[UnhookWindowsHookEx]
+1=HHOOK hhk
+ParamCount=1
+Header=user32.h.api;
+[CopyIcon]
+1=HICON hIcon
+ParamCount=1
+Header=gdi.h.api;
+[CreateIcon]
+1=HINSTANCE hInstance
+2=int nWidth
+3=int nHeight
+4=BYTE cPlanes
+5=BYTE cBitsPixel
+6=const BYTE* lpbANDbits
+7=const BYTE* lpbXORbits
+ParamCount=7
+Header=windows.h.api;
+[CreateIconFromResource]
+1=PBYTE presbits
+2=DWORD dwResSize
+3=BOOL fIcon
+4=DWORD dwVer
+ParamCount=4
+[CreateIconFromResourceEx]
+1=PBYTE pbIconBits
+2=DWORD cbIconBits
+3=BOOL fIcon
+4=DWORD dwVersion
+5=int cxDesired
+6=int cyDesired
+7=UINT uFlags
+ParamCount=7
+[CreateIconIndirect]
+1=PICONINFO piconinfo
+ParamCount=1
+Header=user32.h.api;
+[DestroyIcon]
+1=HICON hIcon
+ParamCount=1
+Header=gdi.h.api;
+[DrawIcon]
+1=HDC hDC
+2=int X
+3=int Y
+4=HICON hIcon
+ParamCount=4
+Header=gdi.h.api;
+[DrawIconEx]
+1=HDC hdc
+2=int xLeft
+3=int yTop
+4=HICON hIcon
+5=int cxWidth
+6=int cyWidth
+7=UINT istepIfAniCur
+8=HBRUSH hbrFlickerFreeDraw
+9=[DrawIconFlags] diFlags
+ParamCount=9
+Header=user32.h.api;gdi.h.api;
+[GetIconInfo]
+1=HICON hIcon
+2=PICONINFO piconinfo
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[GetIconInfoEx]
+1=HICON hIcon
+2=PICONINFOEX piconinfoex
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[LoadIcon]
+1=HINSTANCE hInstance
+2=[LoadIconString/LPCTSTR] lpIconName
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[LookupIconIdFromDirectory]
+1=PBYTE presbits
+2=BOOL fIcon
+ParamCount=2
+[LookupIconIdFromDirectoryEx]
+1=PBYTE presbits
+2=BOOL fIcon
+3=int cxDesired
+4=int cyDesired
+5=[LRFlags] Flags
+ParamCount=5
+Header=windows.h.api;
+[PrivateExtractIcons]
+1=LPCTSTR lpszFile
+2=int nIconIndex
+3=int cxIcon
+4=int cyIcon
+5=HICON* phicon
+6=UINT* piconid
+7=UINT nIcons
+8=[LRFlags] flags
+ParamCount=8
+Header=gdi.h.api;windows.h.api;
+[CopyAcceleratorTable]
+1=HACCEL hAccelSrc
+2=LPACCEL lpAccelDst
+3=int cAccelEntries
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[CreateAcceleratorTable]
+1=LPACCEL lpaccl
+2=int cEntries
+ParamCount=2
+Header=user32.h.api;
+[DestroyAcceleratorTable]
+1=HACCEL hAccel
+ParamCount=1
+Header=windows.h.api;
+[LoadAccelerators]
+1=HINSTANCE hInstance
+2=LPCTSTR lpTableName
+ParamCount=2
+Header=windows.h.api;
+[TranslateAccelerator]
+1=HWND hWnd
+2=HACCEL hAccTable
+3=LPMSG lpMsg
+ParamCount=3
+Header=windows.h.api;
+[ActivateKeyboardLayout]
+1=[KeyboardLayoutHandle] hkl
+2=[KeyboardLayoutFlags] Flags
+ParamCount=2
+Header=user32.h.api;
+[BlockInput]
+1=BOOL fBlockIt
+ParamCount=1
+[EnableWindow]
+1=HWND hWnd
+2=BOOL bEnable
+ParamCount=2
+Header=windows.h.api;
+[GetActiveWindow]
+ParamCount=0
+[GetAsyncKeyState]
+1=[VirtKeyCode] vKey
+ParamCount=1
+Header=windows.h.api;
+[GetFocus]
+ParamCount=0
+[GetKBCodePage]
+ParamCount=0
+[GetKeyboardLayout]
+1=DWORD idThread
+ParamCount=1
+[GetKeyboardLayoutList]
+1=int nBuff
+2=HKL* lpList
+ParamCount=2
+Header=windows.h.api;
+[GetKeyboardLayoutName]
+1=LPTSTR pwszKLID
+ParamCount=1
+[GetKeyboardState]
+1=PBYTE lpKeyState
+ParamCount=1
+[GetKeyNameText]
+1=LONG lParam
+2=LPTSTR lpString
+3=int nSize
+ParamCount=3
+[GetKeyState]
+1=[VirtKeyCode] nVirtKey
+ParamCount=1
+Header=windows.h.api;
+[GetLastInputInfo]
+1=PLASTINPUTINFO plii
+ParamCount=1
+Header=user32.h.api;
+[IsWindowEnabled]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[keybd_event]
+1=BYTE bVk
+2=BYTE bScan
+3=DWORD dwFlags
+4=ULONG_PTR dwExtraInfo
+ParamCount=4
+[LoadKeyboardLayout]
+1=LPCTSTR pwszKLID
+2=[KeyboardLayoutFlags] Flags
+ParamCount=2
+Header=user32.h.api;
+[MapVirtualKey]
+1=UINT uCode
+2=[MapVirtualKeyType] uMapType
+ParamCount=2
+Header=user32.h.api;
+[MapVirtualKeyEx]
+1=UINT uCode
+2=[MapVirtualKeyType] uMapType
+3=HKL dwhkl
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[OemKeyScan]
+1=WORD wOemChar
+ParamCount=1
+[RegisterHotKey]
+1=HWND hWnd
+2=int id
+3=UINT fsModifiers
+4=UINT vk
+ParamCount=4
+Header=windows.h.api;
+[SendInput]
+1=UINT nInputs
+2=LPINPUT pInputs
+3=int cbSize
+ParamCount=3
+Header=user32.h.api;
+[SetActiveWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetFocus]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetKeyboardState]
+1=LPBYTE lpKeyState
+ParamCount=1
+[ToAscii]
+1=UINT uVirtKey
+2=UINT uScanCode
+3=PBYTE lpKeyState
+4=LPWORD lpChar
+5=UINT uFlags
+ParamCount=5
+[ToAsciiEx]
+1=UINT uVirtKey
+2=UINT uScanCode
+3=PBYTE lpKeyState
+4=LPWORD lpChar
+5=UINT uFlags
+6=HKL dwhkl
+ParamCount=6
+Header=windows.h.api;
+[ToUnicode]
+1=UINT wVirtKey
+2=UINT wScanCode
+3=const PBYTE lpKeyState
+4=LPWSTR pwszBuff
+5=int cchBuff
+6=UINT wFlags
+ParamCount=6
+[ToUnicodeEx]
+1=UINT wVirtKey
+2=UINT wScanCode
+3=const PBYTE lpKeyState
+4=LPWSTR pwszBuff
+5=int cchBuff
+6=UINT wFlags
+7=HKL dwhkl
+ParamCount=7
+Header=windows.h.api;
+[UnloadKeyboardLayout]
+1=HKL hkl
+ParamCount=1
+Header=windows.h.api;
+[UnregisterHotKey]
+1=HWND hWnd
+2=int id
+ParamCount=2
+Header=windows.h.api;
+[VkKeyScan]
+1=TCHAR ch
+ParamCount=1
+[VkKeyScanEx]
+1=TCHAR ch
+2=HKL dwhkl
+ParamCount=2
+Header=windows.h.api;
+[DlgDirList]
+1=HWND hDlg
+2=LPTSTR lpPathSpec
+3=int nIDListBox
+4=int nIDStaticPath
+5=UINT uFileType
+ParamCount=5
+Header=windows.h.api;
+[DlgDirSelectEx]
+1=HWND hDlg
+2=LPTSTR lpString
+3=int nCount
+4=int nIDListBox
+ParamCount=4
+Header=windows.h.api;
+[GetListBoxInfo]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[AppendMenu]
+1=HMENU hMenu
+2=UINT uFlags
+3=UINT_PTR uIDNewItem
+4=LPCTSTR lpNewItem
+ParamCount=4
+Header=gdi.h.api;
+[CheckMenuItem]
+1=HMENU hmenu
+2=UINT uIDCheckItem
+3=[CheckMenuItemFlag] uCheck
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[CheckMenuRadioItem]
+1=HMENU hmenu
+2=UINT idFirst
+3=UINT idLast
+4=UINT idCheck
+5=[MenuCommandPosFlag] uFlags
+ParamCount=5
+Header=user32.h.api;gdi.h.api;
+[CreateMenu]
+ParamCount=0
+[CreatePopupMenu]
+ParamCount=0
+[DeleteMenu]
+1=HMENU hMenu
+2=UINT uPosition
+3=[MenuCommandPosFlag] uFlags
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[DestroyMenu]
+1=HMENU hMenu
+ParamCount=1
+Header=gdi.h.api;
+[DrawMenuBar]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[EnableMenuItem]
+1=HMENU hMenu
+2=UINT uIDEnableItem
+3=[EnableMenuItemFlag] uEnable
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[EndMenu]
+ParamCount=0
+[GetMenu]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetMenuBarInfo]
+1=HWND hwnd
+2=[ObjectIdEnum] idObject
+3=LONG idItem
+4=PMENUBARINFO pmbi
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[GetMenuCheckMarkDimensions]
+ParamCount=0
+[GetMenuDefaultItem]
+1=HMENU hMenu
+2=UINT fByPos
+3=[GetMenuDefaultItemFlags] gmdiFlags
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[GetMenuInfo]
+1=HMENU hmenu
+2=LPCMENUINFO lpcmi
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[GetMenuItemCount]
+1=HMENU hMenu
+ParamCount=1
+Header=gdi.h.api;
+[GetMenuItemID]
+1=HMENU hMenu
+2=int nPos
+ParamCount=2
+Header=gdi.h.api;
+[GetMenuItemInfo]
+1=HMENU hMenu
+2=UINT uItem
+3=BOOL fByPosition
+4=LPMENUITEMINFO lpmii
+ParamCount=4
+Header=user32.h.api;gdi.h.api;
+[GetMenuItemRect]
+1=HWND hWnd
+2=HMENU hMenu
+3=UINT uItem
+4=LPRECT lprcItem
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[GetMenuState]
+1=HMENU hMenu
+2=UINT uId
+3=[MenuCommandPosFlag] uFlags
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[GetMenuString]
+1=HMENU hMenu
+2=UINT uIDItem
+3=LPTSTR lpString
+4=int nMaxCount
+5=UINT uFlag
+ParamCount=5
+Header=gdi.h.api;
+[GetSubMenu]
+1=HMENU hMenu
+2=int nPos
+ParamCount=2
+Header=gdi.h.api;
+[GetSystemMenu]
+1=HWND hWnd
+2=BOOL bRevert
+ParamCount=2
+Header=windows.h.api;
+[HiliteMenuItem]
+1=HWND hwnd
+2=HMENU hmenu
+3=UINT uItemHilite
+4=UINT uHilite
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[InsertMenu]
+1=HMENU hMenu
+2=UINT uPosition
+3=[InsertMenuFlags] uFlags
+4=UINT_PTR uIDNewItem
+5=LPCTSTR lpNewItem
+ParamCount=5
+Header=user32.h.api;gdi.h.api;
+[InsertMenuItem]
+1=HMENU hMenu
+2=UINT uItem
+3=BOOL fByPosition
+4=LPCMENUITEMINFO lpmii
+ParamCount=4
+Header=user32.h.api;gdi.h.api;
+[IsMenu]
+1=HMENU hMenu
+ParamCount=1
+Header=gdi.h.api;
+[LoadMenu]
+1=HINSTANCE hInstance
+2=LPCTSTR lpMenuName
+ParamCount=2
+Header=windows.h.api;
+[LoadMenuIndirect]
+1=MENUTEMPLATE* lpMenuTemplate
+ParamCount=1
+Header=user32.h.api;
+[MenuItemFromPoint]
+1=HWND hWnd
+2=HMENU hMenu
+3=POINT ptScreen
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[ModifyMenu]
+1=HMENU hMnu
+2=UINT uPosition
+3=UINT uFlags
+4=UINT_PTR uIDNewItem
+5=LPCTSTR lpNewItem
+ParamCount=5
+Header=gdi.h.api;
+[RemoveMenu]
+1=HMENU hMenu
+2=UINT uPosition
+3=[MenuCommandPosFlag] uFlags
+ParamCount=3
+Header=user32.h.api;gdi.h.api;
+[SetMenu]
+1=HWND hWnd
+2=HMENU hMenu
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[SetMenuDefaultItem]
+1=HMENU hMenu
+2=UINT uItem
+3=UINT fByPos
+ParamCount=3
+Header=gdi.h.api;
+[SetMenuInfo]
+1=HMENU hmenu
+2=LPCMENUINFO lpcmi
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[SetMenuItemBitmaps]
+1=HMENU hMenu
+2=UINT uPosition
+3=UINT uFlags
+4=HBITMAP hBitmapUnchecked
+5=HBITMAP hBitmapChecked
+ParamCount=5
+Header=gdi.h.api;windows.h.api;
+[SetMenuItemInfo]
+1=HMENU hMenu
+2=UINT uItem
+3=BOOL fByPosition
+4=LPMENUITEMINFO lpmii
+ParamCount=4
+Header=user32.h.api;gdi.h.api;
+[TrackPopupMenu]
+1=HMENU hMenu
+2=[TrackPopupMenuFlags] uFlags
+3=int x
+4=int y
+5=int nReserved
+6=HWND hWnd
+7=RECT* prcRect
+ParamCount=7
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[TrackPopupMenuEx]
+1=HMENU hmenu
+2=[TrackPopupMenuFlags] fuFlags
+3=int x
+4=int y
+5=HWND hwnd
+6=LPTPMPARAMS lptpm
+ParamCount=6
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[DragDetect]
+1=HWND hwnd
+2=POINT pt
+ParamCount=2
+Header=windows.h.api;
+[GetCapture]
+ParamCount=0
+[GetDoubleClickTime]
+ParamCount=0
+[GetMouseMovePointsEx]
+1=UINT cbSize
+2=LPMOUSEMOVEPOINT lppt
+3=LPMOUSEMOVEPOINT lpptBuf
+4=int nBufPoints
+5=DWORD resolution
+ParamCount=5
+Header=user32.h.api;
+[mouse_event]
+1=DWORD dwFlags
+2=DWORD dx
+3=DWORD dy
+4=DWORD dwData
+5=ULONG_PTR dwExtraInfo
+ParamCount=5
+[ReleaseCapture]
+ParamCount=0
+[SetCapture]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[SetDoubleClickTime]
+1=UINT uInterval
+ParamCount=1
+[SwapMouseButton]
+1=BOOL fSwap
+ParamCount=1
+[TrackMouseEvent]
+1=LPTRACKMOUSEEVENT lpEventTrack
+ParamCount=1
+Header=gdi.h.api;
+[EnumDisplayMonitors]
+1=HDC hdc
+2=LPCRECT lprcClip
+3=MONITORENUMPROC lpfnEnum
+4=LPARAM dwData
+ParamCount=4
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[GetMonitorInfo]
+1=HMONITOR hMonitor
+2=LPMONITORINFO lpmi
+ParamCount=2
+Header=user32.h.api;gdi.h.api;
+[MonitorFromPoint]
+1=POINT pt
+2=[MonitorFlags] dwFlags
+ParamCount=2
+Header=user32.h.api;
+[MonitorFromRect]
+1=LPCRECT lprc
+2=[MonitorFlags] dwFlags
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[MonitorFromWindow]
+1=HWND hwnd
+2=[MonitorFlags] dwFlags
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[CreateMDIWindow]
+1=LPCTSTR lpClassName
+2=LPCTSTR lpWindowName
+3=DWORD dwStyle
+4=int X
+5=int Y
+6=int nWidth
+7=int nHeight
+8=HWND hWndParent
+9=HINSTANCE hInstance
+10=LPARAM lParam
+ParamCount=10
+Header=windows.h.api;
+[DefFrameProc]
+1=HWND hWnd
+2=HWND hWndMDIClient
+3=UINT uMsg
+4=WPARAM wParam
+5=LPARAM lParam
+ParamCount=5
+Header=windows.h.api;
+[DefMDIChildProc]
+1=HWND hWnd
+2=UINT uMsg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[TranslateMDISysAccel]
+1=HWND hWndClient
+2=LPMSG lpMsg
+ParamCount=2
+Header=windows.h.api;
+[BeginPaint]
+1=HWND hwnd
+2=LPPAINTSTRUCT lpPaint
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[DrawAnimatedRects]
+1=HWND hwnd
+2=int idAni
+3=RECT* lprcFrom
+4=RECT* lprcTo
+ParamCount=4
+Header=windows.h.api;
+[DrawCaption]
+1=HWND hwnd
+2=HDC hdc
+3=LPCRECT lprc
+4=UINT uFlags
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[DrawEdge]
+1=HDC hdc
+2=LPRECT qrc
+3=[BorderEdge] edge
+4=[BorderFlag] grfFlags
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[DrawFocusRect]
+1=HDC hDC
+2=RECT* lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[DrawFrameControl]
+1=HDC hdc
+2=LPRECT lprc
+3=UINT uType
+4=UINT uState
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[DrawState]
+1=HDC hdc
+2=HBRUSH hbr
+3=DRAWSTATEPROC lpOutputFunc
+4=LPARAM lData
+5=WPARAM wData
+6=int x
+7=int y
+8=int cx
+9=int cy
+10=[DrawStateFlags] fuFlags
+ParamCount=10
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[EndPaint]
+1=HWND hWnd
+2=PAINTSTRUCT* lpPaint
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[ExcludeUpdateRgn]
+1=HDC hDC
+2=HWND hWnd
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetUpdateRect]
+1=HWND hWnd
+2=LPRECT lpRect
+3=BOOL bErase
+ParamCount=3
+Header=windows.h.api;
+[GetUpdateRgn]
+1=HWND hWnd
+2=HRGN hRgn
+3=BOOL bErase
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[GetWindowDC]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[GetWindowRgn]
+1=HWND hWnd
+2=HRGN hRgn
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetWindowRgnBox]
+1=HWND hWnd
+2=LPRECT lprc
+ParamCount=2
+Header=windows.h.api;
+[GrayString]
+1=HDC hDC
+2=HBRUSH hBrush
+3=GRAYSTRINGPROC lpOutputFunc
+4=LPARAM lpData
+5=int nCount
+6=int X
+7=int Y
+8=int nWidth
+9=int nHeight
+ParamCount=9
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[InvalidateRect]
+1=HWND hWnd
+2=RECT* lpRect
+3=BOOL bErase
+ParamCount=3
+Header=windows.h.api;
+[InvalidateRgn]
+1=HWND hWnd
+2=HRGN hRgn
+3=BOOL bErase
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[LockWindowUpdate]
+1=HWND hWndLock
+ParamCount=1
+Header=windows.h.api;
+[PaintDesktop]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[RedrawWindow]
+1=HWND hWnd
+2=RECT* lprcUpdate
+3=HRGN hrgnUpdate
+4=[RedrawWindowFlags] flags
+ParamCount=4
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[SetWindowRgn]
+1=HWND hWnd
+2=HRGN hRgn
+3=BOOL bRedraw
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[UpdateWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[ValidateRect]
+1=HWND hWnd
+2=RECT* lpRect
+ParamCount=2
+Header=windows.h.api;
+[ValidateRgn]
+1=HWND hWnd
+2=HRGN hRgn
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[WindowFromDC]
+1=HDC hDC
+ParamCount=1
+Header=gdi.h.api;
+[RegisterPowerSettingNotification]
+1=HANDLE hRecipient
+2=LPCGUID PowerSettingGuid
+3=[DeviceNotificationFlags] Flags
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[UnregisterPowerSettingNotification]
+1=HPOWERNOTIFY Handle
+ParamCount=1
+Header=power.h.api;
+[PrintWindow]
+1=HWND hwnd
+2=HDC hdcBlt
+3=UINT nFlags
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[DefRawInputProc]
+1=PRAWINPUT* paRawInput
+2=INT nInput
+3=UINT cbSizeHeader
+ParamCount=3
+Header=user32.h.api;
+[GetRawInputBuffer]
+1=PRAWINPUT pData
+2=PUINT pcbSize
+3=UINT cbSizeHeader
+ParamCount=3
+Header=user32.h.api;
+[GetRawInputData]
+1=HRAWINPUT hRawInput
+2=UINT uiCommand
+3=LPVOID pData
+4=PUINT pcbSize
+5=UINT cbSizeHeader
+ParamCount=5
+Header=user32.h.api;
+[GetRawInputDeviceInfo]
+1=HANDLE hDevice
+2=UINT uiCommand
+3=LPVOID pData
+4=PUINT pcbSize
+ParamCount=4
+Header=windows.h.api;
+[GetRawInputDeviceList]
+1=PRAWINPUTDEVICELIST pRawInputDeviceList
+2=PUINT puiNumDevices
+3=UINT cbSize
+ParamCount=3
+Header=user32.h.api;
+[GetRegisteredRawInputDevices]
+1=PRAWINPUTDEVICE pRawInputDevices
+2=PUINT puiNumDevices
+3=UINT cbSize
+ParamCount=3
+Header=user32.h.api;
+[RegisterRawInputDevices]
+1=PCRAWINPUTDEVICE pRawInputDevices
+2=UINT uiNumDevices
+3=UINT cbSize
+ParamCount=3
+Header=user32.h.api;
+[CopyRect]
+1=LPRECT lprcDst
+2=RECT* lprcSrc
+ParamCount=2
+Header=windows.h.api;
+[EqualRect]
+1=RECT* lprc1
+2=RECT* lprc2
+ParamCount=2
+Header=windows.h.api;
+[InflateRect]
+1=LPRECT lprc
+2=int dx
+3=int dy
+ParamCount=3
+Header=windows.h.api;
+[IntersectRect]
+1=LPRECT lprcDst
+2=RECT* lprcSrc1
+3=RECT* lprcSrc2
+ParamCount=3
+Header=windows.h.api;
+[IsRectEmpty]
+1=RECT* lprc
+ParamCount=1
+Header=windows.h.api;
+[OffsetRect]
+1=LPRECT lprc
+2=int dx
+3=int dy
+ParamCount=3
+Header=windows.h.api;
+[PtInRect]
+1=RECT* lprc
+2=POINT pt
+ParamCount=2
+Header=windows.h.api;
+[SetRect]
+1=LPRECT lprc
+2=int xLeft
+3=int yTop
+4=int xRight
+5=int yBottom
+ParamCount=5
+Header=windows.h.api;
+[SetRectEmpty]
+1=LPRECT lprc
+ParamCount=1
+Header=windows.h.api;
+[SubtractRect]
+1=LPRECT lprcDst
+2=RECT* lprcSrc1
+3=RECT* lprcSrc2
+ParamCount=3
+Header=windows.h.api;
+[UnionRect]
+1=LPRECT lprcDst
+2=RECT* lprcSrc1
+3=RECT* lprcSrc2
+ParamCount=3
+Header=windows.h.api;
+[CopyImage]
+1=HANDLE hImage
+2=[ImageType] uType
+3=int cxDesired
+4=int cyDesired
+5=[LRFlags] fuFlags
+ParamCount=5
+Header=windows.h.api;
+[LoadImage]
+1=HINSTANCE hinst
+2=[LoadImageString/LPCTSTR] lpszName
+3=[ImageType] uType
+4=int cxDesired
+5=int cyDesired
+6=[LRFlags] fuLoad
+ParamCount=6
+Header=user32.h.api;windows.h.api;
+[EnableScrollBar]
+1=HWND hWnd
+2=UINT wSBflags
+3=UINT wArrows
+ParamCount=3
+Header=windows.h.api;
+[GetScrollBarInfo]
+1=HWND hwnd
+2=[ObjectIdEnum] idObject
+3=PSCROLLBARINFO psbi
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetScrollInfo]
+1=HWND hwnd
+2=[SBType] fnBar
+3=LPSCROLLINFO lpsi
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[GetScrollPos]
+1=HWND hWnd
+2=[SBType] nBar
+ParamCount=2
+Header=windows.h.api;
+[GetScrollRange]
+1=HWND hWnd
+2=[SBType] nBar
+3=LPINT lpMinPos
+4=LPINT lpMaxPos
+ParamCount=4
+Header=windows.h.api;
+[ScrollDC]
+1=HDC hDC
+2=int dx
+3=int dy
+4=RECT* lprcScroll
+5=RECT* lprcClip
+6=HRGN hrgnUpdate
+7=LPRECT lprcUpdate
+ParamCount=7
+Header=gdi.h.api;windows.h.api;
+[ScrollWindow]
+1=HWND hWnd
+2=int XAmount
+3=int YAmount
+4=RECT* lpRect
+5=RECT* lpClipRect
+ParamCount=5
+Header=windows.h.api;
+[ScrollWindowEx]
+1=HWND hWnd
+2=int dx
+3=int dy
+4=RECT* prcScroll
+5=RECT* prcClip
+6=HRGN hrgnUpdate
+7=LPRECT prcUpdate
+8=[ScrollWindowFlags] flags
+ParamCount=8
+Header=user32.h.api;gdi.h.api;windows.h.api;
+[SetScrollInfo]
+1=HWND hwnd
+2=[SBType] fnBar
+3=LPCSCROLLINFO lpsi
+4=BOOL fRedraw
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[SetScrollPos]
+1=HWND hWnd
+2=[SBType] nBar
+3=int nPos
+4=BOOL bRedraw
+ParamCount=4
+Header=windows.h.api;
+[SetScrollRange]
+1=HWND hWnd
+2=[SBType] nBar
+3=int nMinPos
+4=int nMaxPos
+5=BOOL bRedraw
+ParamCount=5
+Header=windows.h.api;
+[ShowScrollBar]
+1=HWND hWnd
+2=[SBType] wBar
+3=BOOL bShow
+ParamCount=3
+Header=windows.h.api;
+[CharLower]
+1=LPTSTR lpsz
+ParamCount=1
+[CharLowerBuff]
+1=LPTSTR lpsz
+2=DWORD cchLength
+ParamCount=2
+[CharNext]
+1=LPCTSTR lpsz
+ParamCount=1
+[CharNextExA]
+1=[CodePageEnum] CodePage
+2=LPCSTR lpCurrentChar
+3=DWORD dwFlags
+ParamCount=3
+Header=windows.h.api;
+[CharPrev]
+1=LPCTSTR lpszStart
+2=LPCTSTR lpszCurrent
+ParamCount=2
+[CharPrevExA]
+1=[CodePageEnum] CodePage
+2=LPCSTR lpStart
+3=LPCSTR lpCurrentChar
+4=DWORD dwFlags
+ParamCount=4
+Header=windows.h.api;
+[CharToOem]
+1=LPCTSTR lpszSrc
+2=LPSTR lpszDst
+ParamCount=2
+[CharToOemBuff]
+1=LPCTSTR lpszSrc
+2=LPSTR lpszDst
+3=DWORD cchDstLength
+ParamCount=3
+[CharUpper]
+1=LPTSTR lpsz
+ParamCount=1
+[CharUpperBuff]
+1=LPTSTR lpsz
+2=DWORD cchLength
+ParamCount=2
+[IsCharAlpha]
+1=TCHAR ch
+ParamCount=1
+[IsCharAlphaNumeric]
+1=TCHAR ch
+ParamCount=1
+[IsCharLower]
+1=TCHAR ch
+ParamCount=1
+[IsCharUpper]
+1=TCHAR ch
+ParamCount=1
+[LoadString]
+1=HINSTANCE hInstance
+2=UINT uID
+3=LPTSTR lpBuffer
+4=int nBufferMax
+ParamCount=4
+Header=windows.h.api;
+[OemToChar]
+1=LPCSTR lpszSrc
+2=LPTSTR lpszDst
+ParamCount=2
+[OemToCharBuff]
+1=LPCTSTR lpszSrc
+2=LPTSTR lpszDst
+3=DWORD cchDstLength
+ParamCount=3
+[wsprintf]
+1=LPTSTR lpOut
+2=LPCTSTR lpFmt
+ParamCount=-2
+[wvsprintf]
+1=LPTSTR lpOutput
+2=LPCTSTR lpFmt
+3=va_list arglist
+ParamCount=3
+[MsgWaitForMultipleObjects]
+1=DWORD nCount
+2=HANDLE* pHandles
+3=BOOL bWaitAll
+4=[WaitTimeout] dwMilliseconds
+5=[QueueStatusFlag] dwWakeMask
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[MsgWaitForMultipleObjectsEx]
+1=DWORD nCount
+2=HANDLE* pHandles
+3=[WaitTimeout] dwMilliseconds
+4=[QueueStatusFlag] dwWakeMask
+5=[MsgWaitForMultipleObjectsFlags] dwFlags
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[GetKeyboardType]
+1=int nTypeFlag
+ParamCount=1
+[GetSysColor]
+1=[SysColorIndex] nIndex
+ParamCount=1
+Header=windows.h.api;
+[GetSystemMetrics]
+1=[SystemMetricIndex] nIndex
+ParamCount=1
+Header=user32.h.api;
+[SetSysColors]
+1=int cElements
+2=const INT* lpaElements
+3=COLORREF* lpaRgbValues
+ParamCount=3
+Header=gdi.h.api;
+[SystemParametersInfo]
+1=[SystemParametersInfoEnum] uiAction
+2=UINT uiParam
+3=PVOID pvParam
+4=[SystemParametersInfoFlags] fWinIni
+ParamCount=4
+Header=shell.h.api;
+[KillTimer]
+1=HWND hWnd
+2=UINT_PTR uIDEvent
+ParamCount=2
+Header=windows.h.api;
+[SetCoalescableTimer]
+1=HWND hwnd
+2=UINT_PTR nIDEvent
+3=UINT uElapse
+4=TIMERPROC lpTimerFunc
+5=[TIMERV_COALESCING] uToleranceDelay
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[SetTimer]
+1=HWND hWnd
+2=UINT_PTR nIDEvent
+3=UINT uElapse
+4=TIMERPROC lpTimerFunc
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[GetClassInfo]
+1=HINSTANCE hInstance
+2=LPCTSTR lpClassName
+3=LPWNDCLASS lpWndClass
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetClassInfoEx]
+1=HINSTANCE hinst
+2=LPCTSTR lpszClass
+3=LPWNDCLASSEX lpwcx
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetClassLong]
+1=HWND hWnd
+2=[ClassLongIndex] nIndex
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetClassName]
+1=HWND hWnd
+2=LPTSTR lpClassName
+3=int nMaxCount
+ParamCount=3
+Header=windows.h.api;
+[GetClassWord]
+1=HWND hWnd
+2=[ClassLongIndex] nIndex
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetWindowLong]
+1=HWND hWnd
+2=[WindowLongIndex] nIndex
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[RegisterClass]
+1=WNDCLASS* lpWndClass
+ParamCount=1
+Header=user32.h.api;
+[RegisterClassEx]
+1=WNDCLASSEX* lpwcx
+ParamCount=1
+Header=user32.h.api;
+[SetClassLong]
+1=HWND hWnd
+2=[ClassLongIndex] nIndex
+3=LONG dwNewLong
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[SetClassWord]
+1=HWND hWnd
+2=[ClassLongIndex] nIndex
+3=WORD wNewWord
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[SetWindowLong]
+1=HWND hWnd
+2=[WindowLongIndex] nIndex
+3=LONG dwNewLong
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[UnregisterClass]
+1=LPCTSTR lpClassName
+2=HINSTANCE hInstance
+ParamCount=2
+Header=windows.h.api;
+[CallWindowProc]
+1=WNDPROC lpPrevWndFunc
+2=HWND hWnd
+3=[WinMsg] Msg
+4=WPARAM wParam
+5=LPARAM lParam
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[DefWindowProc]
+1=HWND hWnd
+2=[WinMsg] Msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[EnumProps]
+1=HWND hWnd
+2=PROPENUMPROC lpEnumFunc
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[EnumPropsEx]
+1=HWND hWnd
+2=PROPENUMPROCEX lpEnumFunc
+3=LPARAM lParam
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetProp]
+1=HWND hWnd
+2=LPCTSTR lpString
+ParamCount=2
+Header=windows.h.api;
+[RemoveProp]
+1=HWND hWnd
+2=LPCTSTR lpString
+ParamCount=2
+Header=windows.h.api;
+[SetProp]
+1=HWND hWnd
+2=LPCTSTR lpString
+3=HANDLE hData
+ParamCount=3
+Header=windows.h.api;
+[CloseWindowStation]
+1=HWINSTA hWinSta
+ParamCount=1
+Header=user32.h.api;
+[CreateWindowStation]
+1=LPCTSTR lpwinsta
+2=[CreateWindowStationFlags] dwFlags
+3=[WindowStationAccessRights] dwDesiredAccess
+4=LPSECURITY_ATTRIBUTES lpsa
+ParamCount=4
+Header=user32.h.api;security.h.api;
+[EnumWindowStations]
+1=WINSTAENUMPROC lpEnumFunc
+2=LPARAM lParam
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetProcessWindowStation]
+ParamCount=0
+[GetUserObjectInformation]
+1=HANDLE hObj
+2=[UserObjectInformationEnum] nIndex
+3=PVOID pvInfo
+4=DWORD nLength
+5=LPDWORD lpnLengthNeeded
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[OpenWindowStation]
+1=LPTSTR lpszWinSta
+2=BOOL fInherit
+3=[WindowStationAccessRights] dwDesiredAccess
+ParamCount=3
+Header=user32.h.api;
+[SetProcessWindowStation]
+1=HWINSTA hWinSta
+ParamCount=1
+Header=user32.h.api;
+[CloseDesktop]
+1=HDESK hDesktop
+ParamCount=1
+Header=user32.h.api;
+[CreateDesktop]
+1=LPCTSTR lpszDesktop
+2=LPCTSTR lpszDevice
+3=LPDEVMODE pDevmode
+4=[DesktopFlags] dwFlags
+5=[DESKTOP_ACCESS_MASK] dwDesiredAccess
+6=LPSECURITY_ATTRIBUTES lpsa
+ParamCount=6
+Header=user32.h.api;security.h.api;windows.h.api;
+[CreateDesktopEx]
+1=LPCTSTR lpszDesktop
+2=LPCTSTR lpszDevice
+3=LPDEVMODE pDevmode
+4=[DesktopFlags] dwFlags
+5=[DESKTOP_ACCESS_MASK] dwDesiredAccess
+6=LPSECURITY_ATTRIBUTES lpsa
+7=ULONG ulHeapSize
+8=PVOID pvoid
+ParamCount=8
+Header=user32.h.api;security.h.api;windows.h.api;
+[EnumDesktops]
+1=HWINSTA hwinsta
+2=DESKTOPENUMPROC lpEnumFunc
+3=LPARAM lParam
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[EnumDesktopWindows]
+1=HDESK hDesktop
+2=WNDENUMPROC lpfn
+3=LPARAM lParam
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetThreadDesktop]
+1=DWORD dwThreadId
+ParamCount=1
+[OpenDesktop]
+1=LPTSTR lpszDesktop
+2=[DesktopFlags] dwFlags
+3=BOOL fInherit
+4=[DESKTOP_ACCESS_MASK] dwDesiredAccess
+ParamCount=4
+Header=user32.h.api;
+[OpenInputDesktop]
+1=[DesktopFlags] dwFlags
+2=BOOL fInherit
+3=[DESKTOP_ACCESS_MASK] dwDesiredAccess
+ParamCount=3
+Header=user32.h.api;
+[SetThreadDesktop]
+1=HDESK hDesktop
+ParamCount=1
+Header=user32.h.api;
+[SetUserObjectInformation]
+1=HANDLE hObj
+2=[UserObjectInformationEnum] nIndex
+3=PVOID pvInfo
+4=DWORD nLength
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[SwitchDesktop]
+1=HDESK hDesktop
+ParamCount=1
+Header=user32.h.api;
+[GetMenuContextHelpId]
+1=HMENU hmenu
+ParamCount=1
+Header=gdi.h.api;
+[GetWindowContextHelpId]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[SetMenuContextHelpId]
+1=HMENU hmenu
+2=DWORD dwContextHelpId
+ParamCount=2
+Header=gdi.h.api;
+[SetWindowContextHelpId]
+1=HWND hwnd
+2=DWORD dwContextHelpId
+ParamCount=2
+Header=windows.h.api;
+[WinHelp]
+1=HWND hWndMain
+2=LPCTSTR lpszHelp
+3=UINT uCommand
+4=ULONG_PTR dwData
+ParamCount=4
+Header=windows.h.api;
+[GetUserObjectSecurity]
+1=HANDLE hObj
+2=PSECURITY_INFORMATION pSIRequested
+3=PSECURITY_DESCRIPTOR pSD
+4=DWORD nLength
+5=LPDWORD lpnLengthNeeded
+ParamCount=5
+Header=security.h.api;windows.h.api;
+[SetUserObjectSecurity]
+1=HANDLE hObj
+2=PSECURITY_INFORMATION pSIRequested
+3=PSECURITY_DESCRIPTOR pSID
+ParamCount=3
+Header=security.h.api;windows.h.api;
+[SetWinEventHook]
+1=UINT eventMin
+2=UINT eventMax
+3=HMODULE hmodWinEventProc
+4=WINEVENTPROC lpfnWinEventProc
+5=DWORD idProcess
+6=DWORD idThread
+7=[WinEventFlags] dwflags
+ParamCount=7
+Header=user32.h.api;
+[UnhookWinEvent]
+1=HWINEVENTHOOK hWinEventHook
+ParamCount=1
+Header=user32.h.api;
+[IsWinEventHookInstalled]
+1=DWORD event
+ParamCount=1
+[NotifyWinEvent]
+1=DWORD event
+2=HWND hwnd
+3=[ObjectIdEnum] idObject
+4=LONG idChild
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[CloseTouchInputHandle]
+1=HTOUCHINPUT hTouchInput
+ParamCount=1
+Header=user32.h.api;
+[GetTouchInputInfo]
+1=HTOUCHINPUT hTouchInput
+2=UINT cInputs
+3=PTOUCHINPUT pInputs
+4=int cbSize
+ParamCount=4
+Header=user32.h.api;
+[IsTouchWindow]
+1=HWND hWnd
+2=PULONG pulFlags
+ParamCount=2
+Header=windows.h.api;
+[RegisterTouchWindow]
+1=HWND hWnd
+2=ULONG ulFlags
+ParamCount=2
+Header=windows.h.api;
+[UnregisterTouchWindow]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[CloseGestureInfoHandle]
+1=HGESTUREINFO hGestureInfo
+ParamCount=1
+Header=user32.h.api;
+[GetGestureExtraArgs]
+1=HGESTUREINFO hGestureInfo
+2=UINT cbExtraArgs
+3=PBYTE pExtraArgs
+ParamCount=3
+Header=user32.h.api;
+[GetGestureInfo]
+1=HGESTUREINFO hGestureInfo
+2=PGESTUREINFO pGestureInfo
+ParamCount=2
+Header=user32.h.api;
+[GetGestureConfig]
+1=HWND hwnd
+2=DWORD dwReserved
+3=DWORD dwFlags
+4=PUINT pcIDs
+5=PGESTURECONFIG pGestureConfig
+6=UINT cbSize
+ParamCount=6
+Header=user32.h.api;windows.h.api;
+[SetGestureConfig]
+1=HWND hwnd
+2=DWORD dwReserved
+3=UINT cIDs
+4=PGESTURECONFIG pGestureConfig
+5=UINT cbSize
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[DesktopHasWatermarkText]
+ParamCount=0
+[FrostCrashedWindow]
+1=HWND hwndToReplace
+2=HWND hwndErrorReportOwnerWnd
+ParamCount=2
+Header=windows.h.api;
+[GetSendMessageReceiver]
+1=DWORD threadId
+ParamCount=1
+[GetWindowCompositionAttribute]
+1=HWND hwnd
+2=WINCOMPATTRDATA* pAttrData
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetWindowMinimizeRect]
+1=HWND hwndToQuery
+2=RECT* pRect
+ParamCount=2
+Header=windows.h.api;
+[GhostWindowFromHungWindow]
+1=HWND hwndGhost
+ParamCount=1
+Header=windows.h.api;
+[HungWindowFromGhostWindow]
+1=HWND hwndGhost
+ParamCount=1
+Header=windows.h.api;
+[IsSETEnabled]
+ParamCount=0
+[IsServerSideWindow]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[IsThreadDesktopComposited]
+ParamCount=0
+[IsWindowInDestroy]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[MB_GetString]
+1=int strId
+ParamCount=1
+[NtUserSetChildWindowNoActivate]
+1=HWND hwndChild
+ParamCount=1
+Header=windows.h.api;
+[QuerySendMessage]
+1=MSG* pMsg
+ParamCount=1
+Header=windows.h.api;
+[SetWindowCompositionAttribute]
+1=HWND hwnd
+2=WINCOMPATTRDATA* pAttrData
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[UpdateWindowTransform]
+1=HWND hwnd
+2=D3DMATRIX* pMatrix
+3=DWORD unk
+ParamCount=3
+Header=directx.h.api;windows.h.api;
+[InitializeTouchInjection]
+1=UINT32 maxCount
+2=[TOUCH_FEEDBACK_MODE] dwMode
+ParamCount=2
+Header=user32.h.api;
+[InjectTouchInput]
+1=UINT32 count
+2=POINTER_TOUCH_INFO* contacts
+ParamCount=2
+Header=user32.h.api;
+[AddPointerInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 pointerId
+ParamCount=2
+Header=user32.h.api;
+[BufferPointerPacketsInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 entriesCount
+3=POINTER_INFO* pointerInfo
+ParamCount=3
+Header=user32.h.api;
+[CreateInteractionContext]
+1=HINTERACTIONCONTEXT* interactionContext
+ParamCount=1
+Header=user32.h.api;
+[DestroyInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+ParamCount=1
+Header=user32.h.api;
+[GetCrossSlideParameterInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[CROSS_SLIDE_THRESHOLD] threshold
+3=float* distance
+ParamCount=3
+Header=user32.h.api;
+[GetInertiaParameterInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[INERTIA_PARAMETER] inertiaParameter
+3=float* value
+ParamCount=3
+Header=user32.h.api;
+[GetInteractionConfigurationInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 configurationCount
+3=INTERACTION_CONTEXT_CONFIGURATION* configuration
+ParamCount=3
+Header=user32.h.api;
+[GetMouseWheelParameterInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[MOUSE_WHEEL_PARAMETER] parameter
+3=float* value
+ParamCount=3
+Header=user32.h.api;
+[GetPropertyInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[INTERACTION_CONTEXT_PROPERTY] contextProperty
+3=UINT32* value
+ParamCount=3
+Header=user32.h.api;
+[GetStateInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=POINTER_INFO* pointerInfo
+3=INTERACTION_STATE* state
+ParamCount=3
+Header=user32.h.api;
+[ProcessBufferedPacketsInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+ParamCount=1
+Header=user32.h.api;
+[ProcessInertiaInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+ParamCount=1
+Header=user32.h.api;
+[ProcessPointerFramesInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 entriesCount
+3=UINT32 pointerCount
+4=POINTER_INFO* pointerInfo
+ParamCount=4
+Header=user32.h.api;
+[RegisterOutputCallbackInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=INTERACTION_CONTEXT_OUTPUT_CALLBACK outputCallback
+3=void* clientData
+ParamCount=3
+Header=user32.h.api;
+[RemovePointerInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 pointerId
+ParamCount=2
+Header=user32.h.api;
+[ResetInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+ParamCount=1
+Header=user32.h.api;
+[SetCrossSlideParametersInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 parameterCount
+3=CROSS_SLIDE_PARAMETER* crossSlideParameters
+ParamCount=3
+Header=user32.h.api;
+[SetInertiaParameterInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[INERTIA_PARAMETER] inertiaParameter
+3=float value
+ParamCount=3
+Header=user32.h.api;
+[SetInteractionConfigurationInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=UINT32 configurationCount
+3=INTERACTION_CONTEXT_CONFIGURATION* configuration
+ParamCount=3
+Header=user32.h.api;
+[SetMouseWheelParameterInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[MOUSE_WHEEL_PARAMETER] parameter
+3=float value
+ParamCount=3
+Header=user32.h.api;
+[SetPivotInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=float x
+3=float y
+4=float radius
+ParamCount=4
+Header=user32.h.api;
+[SetPropertyInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+2=[INTERACTION_CONTEXT_PROPERTY] contextProperty
+3=UINT32 value
+ParamCount=3
+Header=user32.h.api;
+[StopInteractionContext]
+1=HINTERACTIONCONTEXT interactionContext
+ParamCount=1
+Header=user32.h.api;
+[EnableMouseInPointer]
+1=BOOL fEnable
+ParamCount=1
+[GetPointerCursorId]
+1=UINT32 pointerId
+2=UINT32* cursorId
+ParamCount=2
+[GetPointerFrameInfo]
+1=UINT32 pointerId
+2=UINT32* pointerCount
+3=POINTER_INFO* pointerInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerFrameInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=UINT32* pointerCount
+4=POINTER_INFO* pointerInfo
+ParamCount=4
+Header=user32.h.api;
+[GetPointerFramePenInfo]
+1=UINT32 pointerId
+2=UINT32* pointerCount
+3=POINTER_PEN_INFO* penInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerFramePenInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=UINT32* pointerCount
+4=POINTER_PEN_INFO* penInfo
+ParamCount=4
+Header=user32.h.api;
+[GetPointerFrameTouchInfo]
+1=UINT32 pointerId
+2=UINT32* pointerCount
+3=POINTER_TOUCH_INFO* touchInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerFrameTouchInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=UINT32* pointerCount
+4=POINTER_TOUCH_INFO* touchInfo
+ParamCount=4
+Header=user32.h.api;
+[GetPointerInfo]
+1=UINT32 pointerId
+2=POINTER_INFO* pointerInfo
+ParamCount=2
+Header=user32.h.api;
+[GetPointerInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=POINTER_INFO* pointerInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerPenInfo]
+1=UINT32 pointerId
+2=POINTER_PEN_INFO* penInfo
+ParamCount=2
+Header=user32.h.api;
+[GetPointerPenInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=POINTER_PEN_INFO* penInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerTouchInfo]
+1=UINT32 pointerId
+2=POINTER_TOUCH_INFO* touchInfo
+ParamCount=2
+Header=user32.h.api;
+[GetPointerTouchInfoHistory]
+1=UINT32 pointerId
+2=UINT32* entriesCount
+3=POINTER_TOUCH_INFO* touchInfo
+ParamCount=3
+Header=user32.h.api;
+[GetPointerType]
+1=UINT32 pointerId
+2=POINTER_INPUT_TYPE* pointerType
+ParamCount=2
+Header=user32.h.api;
+[GetUnpredictedMessagePos]
+ParamCount=0
+[IsMouseInPointerEnabled]
+ParamCount=0
+[SkipPointerFrameMessages]
+1=UINT32 pointerId
+ParamCount=1
+[EvaluateProximityToPolygon]
+1=UINT32 numVertices
+2=POINT* controlPolygon
+3=TOUCH_HIT_TESTING_INPUT* pHitTestingInput
+4=TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval
+ParamCount=4
+Header=user32.h.api;windows.h.api;
+[EvaluateProximityToRect]
+1=RECT* controlBoundingBox
+2=TOUCH_HIT_TESTING_INPUT* pHitTestingInput
+3=TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[PackTouchHitTestingProximityEvaluation]
+1=TOUCH_HIT_TESTING_INPUT* pHitTestingInput
+2=TOUCH_HIT_TESTING_PROXIMITY_EVALUATION* pProximityEval
+ParamCount=2
+Header=user32.h.api;
+[RegisterTouchHitTestingWindow]
+1=HWND hwnd
+2=ULONG value
+ParamCount=2
+Header=windows.h.api;
+[GetCIMSSM]
+1=INPUT_MESSAGE_SOURCE* inputMessageSource
+ParamCount=1
+Header=user32.h.api;
+[GetCurrentInputMessageSource]
+1=INPUT_MESSAGE_SOURCE* inputMessageSource
+ParamCount=1
+Header=user32.h.api;
+[GetPointerDevice]
+1=HANDLE device
+2=POINTER_DEVICE_INFO* pointerDevice
+ParamCount=2
+Header=user32.h.api;windows.h.api;
+[GetPointerDeviceCursors]
+1=HANDLE device
+2=UINT32* cursorCount
+3=POINTER_DEVICE_CURSOR_INFO* deviceCursors
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetPointerDeviceProperties]
+1=HANDLE device
+2=UINT32* propertyCount
+3=POINTER_DEVICE_PROPERTY* pointerProperties
+ParamCount=3
+Header=user32.h.api;windows.h.api;
+[GetPointerDeviceRects]
+1=HANDLE device
+2=RECT* pointerDeviceRect
+3=RECT* displayRect
+ParamCount=3
+Header=windows.h.api;
+[GetPointerDevices]
+1=UINT32 deviceCount
+2=POINTER_DEVICE_INFO* pointerDevices
+ParamCount=2
+Header=user32.h.api;
+[GetRawPointerDeviceData]
+1=UINT32 pointerId
+2=UINT32 historyCount
+3=UINT32 propertiesCount
+4=POINTER_DEVICE_PROPERTY* pProperties
+5=LONG* pValues
+ParamCount=5
+Header=user32.h.api;
+[RegisterPointerDeviceNotifications]
+1=HWND window
+2=BOOL notifyRange
+ParamCount=2
+Header=windows.h.api;
+[RegisterSuspendResumeNotification]
+1=PDEVICE_NOTIFY_SUBSCRIBE_PARAMETERS hRecipient
+2=[POWER_NOTIFICATION_FLAGS] Flags
+ParamCount=2
+Header=user32.h.api;power.h.api;
+[UnregisterSuspendResumeNotification]
+1=HPOWERNOTIFY RegistrationHandle
+ParamCount=1
+Header=power.h.api;
+[GetWindowFeedbackSetting]
+1=HWND hwnd
+2=[FEEDBACK_TYPE] feedback
+3=[GWFS_FLAGS] dwFlags
+4=UINT32* pSize
+5=VOID* config
+ParamCount=5
+Header=user32.h.api;windows.h.api;
+[SetWindowFeedbackSetting]
+1=HWND hwnd
+2=[FEEDBACK_TYPE] feedback
+3=DWORD dwFlags
+4=UINT32 size
+5=const VOID* configuration
+ParamCount=5
+Header=user32.h.api;windows.h.api;

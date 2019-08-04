@@ -1,0 +1,289 @@
+[CallingConvention]
+@=STDCALL
+[SCardAccessStartedEvent]
+ParamCount=0
+[SCardAddReaderToGroup]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPCTSTR szGroupName
+ParamCount=3
+Header=scard.h.api;
+[SCardAudit]
+1=SCARDCONTEXT hContext
+2=[SCARD_AUDIT_CHV] dwEvent
+ParamCount=2
+Header=winscard.h.api;scard.h.api;
+[SCardBeginTransaction]
+1=SCARDHANDLE hCard
+ParamCount=1
+Header=scard.h.api;
+[SCardCancel]
+1=SCARDCONTEXT hContext
+ParamCount=1
+Header=scard.h.api;
+[SCardConnect]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReader
+3=DWORD dwShareMode
+4=DWORD dwPreferredProtocols
+5=LPSCARDHANDLE phCard
+6=LPDWORD pdwActiveProtocol
+ParamCount=6
+Header=scard.h.api;
+[SCardControl]
+1=SCARDHANDLE hCard
+2=DWORD dwControlCode
+3=LPCVOID lpInBuffer
+4=DWORD nInBufferSize
+5=LPVOID lpOutBuffer
+6=DWORD nOutBufferSize
+7=LPDWORD lpBytesReturned
+ParamCount=7
+Header=scard.h.api;
+[SCardDisconnect]
+1=SCARDHANDLE hCard
+2=DWORD dwDisposition
+ParamCount=2
+Header=scard.h.api;
+[SCardEndTransaction]
+1=SCARDHANDLE hCard
+2=DWORD dwDisposition
+ParamCount=2
+Header=scard.h.api;
+[SCardEstablishContext]
+1=[SCardScope] dwScope
+2=LPCVOID pvReserved1
+3=LPCVOID pvReserved2
+4=LPSCARDCONTEXT phContext
+ParamCount=4
+Header=winscard.h.api;scard.h.api;
+[SCardForgetCardType]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCardName
+ParamCount=2
+Header=scard.h.api;
+[SCardForgetReader]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+ParamCount=2
+Header=scard.h.api;
+[SCardForgetReaderGroup]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szGroupName
+ParamCount=2
+Header=scard.h.api;
+[SCardFreeMemory]
+1=SCARDCONTEXT hContext
+2=LPCVOID pvMem
+ParamCount=2
+Header=scard.h.api;
+[SCardGetAttrib]
+1=SCARDHANDLE hCard
+2=DWORD dwAttrId
+3=LPBYTE pbAttr
+4=LPDWORD pcbAttrLen
+ParamCount=4
+Header=scard.h.api;
+[SCardGetCardTypeProviderName]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCardName
+3=DWORD dwProviderId
+4=LPTSTR szProvider
+5=LPDWORD* pcchProvider
+ParamCount=5
+Header=scard.h.api;
+[SCardGetDeviceTypeId]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPDWORD pdwDeviceTypeId
+ParamCount=3
+Header=scard.h.api;
+[SCardGetProviderId]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCard
+3=LPGUID pguidProviderId
+ParamCount=3
+Header=scard.h.api;windows.h.api;
+[SCardGetReaderDeviceInstanceId]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPTSTR szDeviceInstanceId
+4=LPDWORD cchDeviceInstanceId
+ParamCount=4
+Header=scard.h.api;
+[SCardGetReaderIcon]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPBYTE pbIcon
+4=LPDWORD pcbIcon
+ParamCount=4
+Header=scard.h.api;
+[SCardGetStatusChange]
+1=SCARDCONTEXT hContext
+2=DWORD dwTimeout
+3=LPSCARD_READERSTATE rgReaderStates
+4=DWORD cReaders
+ParamCount=4
+Header=winscard.h.api;scard.h.api;
+[SCardGetTransmitCount]
+1=SCARDHANDLE hCard
+2=LPDWORD pcTransmitCount
+ParamCount=2
+Header=scard.h.api;
+[SCardIntroduceCardType]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCardName
+3=LPCGUID pguidPrimaryProvider
+4=LPCGUID rgguidInterfaces
+5=DWORD dwInterfaceCount
+6=LPCBYTE pbAtr
+7=LPCBYTE pbAtrMask
+8=DWORD cbAtrLen
+ParamCount=8
+Header=scard.h.api;windows.h.api;
+[SCardIntroduceReader]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPCTSTR szDeviceName
+ParamCount=3
+Header=scard.h.api;
+[SCardIntroduceReaderGroup]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szGroupName
+ParamCount=2
+Header=scard.h.api;
+[SCardIsValidContext]
+1=SCARDCONTEXT hContext
+ParamCount=1
+Header=scard.h.api;
+[SCardListCards]
+1=SCARDCONTEXT hContext
+2=LPCBYTE pbAtr
+3=LPCGUID rgguidInterfaces
+4=DWORD cguidInterfaceCount
+5=LPTSTR mszCards
+6=LPDWORD pcchCards
+ParamCount=6
+Header=scard.h.api;windows.h.api;
+[SCardListInterfaces]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCard
+3=LPGUID pguidInterfaces
+4=LPDWORD pcguidInterfaces
+ParamCount=4
+Header=scard.h.api;windows.h.api;
+[SCardListReaderGroups]
+1=SCARDCONTEXT hContext
+2=LPTSTR mszGroups
+3=LPDWORD pcchGroups
+ParamCount=3
+Header=scard.h.api;
+[SCardListReaders]
+1=SCARDCONTEXT hContext
+2=LPCTSTR mszGroups
+3=LPTSTR mszReaders
+4=LPDWORD pcchReaders
+ParamCount=4
+Header=scard.h.api;
+[SCardListReadersWithDeviceInstanceId]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szDeviceInstanceId
+3=LPTSTR mszReaders
+4=LPDWORD pcchReaders
+ParamCount=4
+Header=scard.h.api;
+[SCardLocateCards]
+1=SCARDCONTEXT hContext
+2=LPCTSTR mszCards
+3=LPSCARD_READERSTATE rgReaderStates
+4=DWORD cReaders
+ParamCount=4
+Header=winscard.h.api;scard.h.api;
+[SCardLocateCardsByATR]
+1=SCARDCONTEXT hContext
+2=LPSCARD_ATRMASK rgAtrMasks
+3=DWORD cAtrs
+4=LPSCARD_READERSTATE rgReaderStates
+5=DWORD cReaders
+ParamCount=5
+Header=winscard.h.api;scard.h.api;
+[SCardReadCache]
+1=SCARDCONTEXT hContext
+2=UUID* CardIdentifier
+3=DWORD FreshnessCounter
+4=LPTSTR LookupName
+5=PBYTE Data
+6=DWORD* DataLen
+ParamCount=6
+Header=scard.h.api;windows.h.api;
+[SCardReconnect]
+1=SCARDHANDLE hCard
+2=DWORD dwShareMode
+3=DWORD dwPreferredProtocols
+4=DWORD dwInitialization
+5=LPDWORD pdwActiveProtocol
+ParamCount=5
+Header=scard.h.api;
+[SCardReleaseContext]
+1=SCARDCONTEXT hContext
+ParamCount=1
+Header=scard.h.api;
+[SCardReleaseStartedEvent]
+ParamCount=0
+[SCardRemoveReaderFromGroup]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szReaderName
+3=LPCTSTR szGroupName
+ParamCount=3
+Header=scard.h.api;
+[SCardSetAttrib]
+1=SCARDHANDLE hCard
+2=DWORD dwAttrId
+3=LPCBYTE pbAttr
+4=DWORD cbAttrLen
+ParamCount=4
+Header=scard.h.api;
+[SCardSetCardTypeProviderName]
+1=SCARDCONTEXT hContext
+2=LPCTSTR szCardName
+3=DWORD dwProviderId
+4=LPCTSTR szProvider
+ParamCount=4
+Header=scard.h.api;
+[SCardState]
+1=SCARDHANDLE hCard
+2=LPDWORD pdwState
+3=LPDWORD pdwProtocol
+4=LPBYTE pbAtr
+5=LPDWORD pcbAtrLen
+ParamCount=5
+Header=scard.h.api;
+[SCardStatus]
+1=SCARDHANDLE hCard
+2=LPTSTR szReaderName
+3=LPDWORD pcchReaderLen
+4=LPDWORD pdwState
+5=LPDWORD pdwProtocol
+6=LPBYTE pbAtr
+7=LPDWORD pcbAtrLen
+ParamCount=7
+Header=scard.h.api;
+[SCardTransmit]
+1=SCARDHANDLE hCard
+2=LPCSCARD_IO_REQUEST pioSendPci
+3=LPCBYTE pbSendBuffer
+4=DWORD cbSendLength
+5=LPSCARD_IO_REQUEST pioRecvPci
+6=LPBYTE pbRecvBuffer
+7=LPDWORD pcbRecvLength
+ParamCount=7
+Header=winscard.h.api;scard.h.api;
+[SCardWriteCache]
+1=SCARDCONTEXT hContext
+2=UUID* CardIdentifier
+3=DWORD FreshnessCounter
+4=LPTSTR LookupName
+5=PBYTE Data
+6=DWORD DataLen
+ParamCount=6
+Header=scard.h.api;windows.h.api;

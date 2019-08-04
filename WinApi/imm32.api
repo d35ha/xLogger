@@ -1,0 +1,258 @@
+[CallingConvention]
+@=STDCALL
+[ImmAssociateContext]
+1=HWND hWnd
+2=HIMC hIMC
+ParamCount=2
+Header=imm32.h.api;windows.h.api;
+[ImmAssociateContextEx]
+1=HWND hWnd
+2=HIMC hIMC
+3=DWORD dwFlags
+ParamCount=3
+Header=imm32.h.api;windows.h.api;
+[ImmConfigureIME]
+1=HKL hKL
+2=HWND hWnd
+3=DWORD dwMode
+4=LPVOID lpData
+ParamCount=4
+Header=windows.h.api;
+[ImmCreateContext]
+ParamCount=0
+[ImmDestroyContext]
+1=HIMC hIMC
+ParamCount=1
+Header=imm32.h.api;
+[ImmDisableIME]
+1=DWORD idThread
+ParamCount=1
+[ImmDisableTextFrameService]
+1=DWORD idThread
+ParamCount=1
+[ImmEnumInputContext]
+1=DWORD idThread
+2=IMCENUMPROC lpfn
+3=LPARAM lParam
+ParamCount=3
+Header=imm32.h.api;windows.h.api;
+[ImmEnumRegisterWord]
+1=HKL hKL
+2=REGISTERWORDENUMPROC lpfnEnumProc
+3=LPCTSTR lpszReading
+4=DWORD dwStyle
+5=LPCTSTR lpszRegister
+6=LPVOID lpData
+ParamCount=6
+Header=imm32.h.api;windows.h.api;
+[ImmEscape]
+1=HKL hKL
+2=HIMC hIMC
+3=UINT uEscape
+4=LPVOID lpData
+ParamCount=4
+Header=imm32.h.api;windows.h.api;
+[ImmGetCandidateList]
+1=HIMC hIMC
+2=DWORD dwIndex
+3=LPCANDIDATELIST lpCandList
+4=DWORD dwBufLen
+ParamCount=4
+Header=imm32.h.api;
+[ImmGetCandidateListCount]
+1=HIMC hIMC
+2=LPDWORD lpdwListCount
+ParamCount=2
+Header=imm32.h.api;
+[ImmGetCandidateWindow]
+1=HIMC hIMC
+2=DWORD dwIndex
+3=LPCANDIDATEFORM lpCandidate
+ParamCount=3
+Header=imm32.h.api;
+[ImmGetCompositionFont]
+1=HIMC hIMC
+2=LPLOGFONT lplf
+ParamCount=2
+Header=imm32.h.api;gdi.h.api;
+[ImmGetCompositionString]
+1=HIMC hIMC
+2=DWORD dwIndex
+3=LPVOID lpBuf
+4=DWORD dwBufLen
+ParamCount=4
+Header=imm32.h.api;
+[ImmGetCompositionWindow]
+1=HIMC hIMC
+2=LPCOMPOSITIONFORM lpCompForm
+ParamCount=2
+Header=imm32.h.api;
+[ImmGetContext]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[ImmGetConversionList]
+1=HKL hKL
+2=HIMC hIMC
+3=LPCTSTR lpSrc
+4=LPCANDIDATELIST lpDst
+5=DWORD dwBufLen
+6=UINT uFlag
+ParamCount=6
+Header=imm32.h.api;windows.h.api;
+[ImmGetConversionStatus]
+1=HIMC hIMC
+2=LPDWORD lpfdwConversion
+3=LPDWORD lpfdwSentence
+ParamCount=3
+Header=imm32.h.api;
+[ImmGetDefaultIMEWnd]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[ImmGetDescription]
+1=HKL hKL
+2=LPTSTR lpszDescription
+3=UINT uBufLen
+ParamCount=3
+Header=windows.h.api;
+[ImmGetGuideLine]
+1=HIMC hIMC
+2=DWORD dwIndex
+3=LPTSTR lpBuf
+4=DWORD dwBufLen
+ParamCount=4
+Header=imm32.h.api;
+[ImmGetIMEFileName]
+1=HKL hKL
+2=LPTSTR lpszFileName
+3=UINT uBufLen
+ParamCount=3
+Header=windows.h.api;
+[ImmGetImeMenuItems]
+1=HIMC hIMC
+2=DWORD dwFlags
+3=DWORD dwType
+4=LPIMEMENUITEMINFO lpImeParentMenu
+5=LPIMEMENUITEMINFO lpImeMenu
+6=DWORD dwSize
+ParamCount=6
+Header=imm32.h.api;
+[ImmGetOpenStatus]
+1=HIMC hIMC
+ParamCount=1
+Header=imm32.h.api;
+[ImmGetProperty]
+1=HKL hKL
+2=[ImmGetPropertyIndex] fdwIndex
+ParamCount=2
+Header=imm32.h.api;windows.h.api;
+[ImmGetRegisterWordStyle]
+1=HKL hKL
+2=UINT nItem
+3=LPSTYLEBUF lpStyleBuf
+ParamCount=3
+Header=imm32.h.api;windows.h.api;
+[ImmGetStatusWindowPos]
+1=HIMC hIMC
+2=LPPOINT lpptPos
+ParamCount=2
+Header=imm32.h.api;windows.h.api;
+[ImmGetVirtualKey]
+1=HWND hWnd
+ParamCount=1
+Header=windows.h.api;
+[ImmInstallIME]
+1=LPCTSTR lpszIMEFileName
+2=LPCTSTR lpszLayoutText
+ParamCount=2
+[ImmIsIME]
+1=HKL hKL
+ParamCount=1
+Header=windows.h.api;
+[ImmIsUIMessage]
+1=HWND hWndIME
+2=UINT msg
+3=WPARAM wParam
+4=LPARAM lParam
+ParamCount=4
+Header=windows.h.api;
+[ImmNotifyIME]
+1=HIMC hIMC
+2=[ImmNotifyAction] dwAction
+3=[CompositionString] dwIndex
+4=DWORD dwValue
+ParamCount=4
+Header=imm32.h.api;
+[ImmRegisterWord]
+1=HKL hKL
+2=LPCTSTR lpszReading
+3=DWORD dwStyle
+4=LPCTSTR lpszRegister
+ParamCount=4
+Header=windows.h.api;
+[ImmReleaseContext]
+1=HWND hWnd
+2=HIMC hIMC
+ParamCount=2
+Header=imm32.h.api;windows.h.api;
+[ImmRequestMessage]
+1=HIMC hIMC
+2=WPARAM wParam
+3=LPARAM lParam
+ParamCount=3
+Header=imm32.h.api;windows.h.api;
+[ImmSetCandidateWindow]
+1=HIMC hIMC
+2=LPCANDIDATEFORM lpCandidate
+ParamCount=2
+Header=imm32.h.api;
+[ImmSetCompositionFont]
+1=HIMC hIMC
+2=LPLOGFONT lplf
+ParamCount=2
+Header=imm32.h.api;gdi.h.api;
+[ImmSetCompositionString]
+1=HIMC hIMC
+2=DWORD dwIndex
+3=LPVOID lpComp
+4=DWORD dwCompLen
+5=LPVOID lpRead
+6=DWORD dwReadLen
+ParamCount=6
+Header=imm32.h.api;
+[ImmSetCompositionWindow]
+1=HIMC hIMC
+2=LPCOMPOSITIONFORM lpCompForm
+ParamCount=2
+Header=imm32.h.api;
+[ImmSetConversionStatus]
+1=HIMC hIMC
+2=DWORD fdwConversion
+3=DWORD fdwSentence
+ParamCount=3
+Header=imm32.h.api;
+[ImmSetOpenStatus]
+1=HIMC hIMC
+2=BOOL fOpen
+ParamCount=2
+Header=imm32.h.api;
+[ImmSetStatusWindowPos]
+1=HIMC hIMC
+2=LPPOINT lpptPos
+ParamCount=2
+Header=imm32.h.api;windows.h.api;
+[ImmSimulateHotKey]
+1=HWND hWnd
+2=DWORD dwHotKeyID
+ParamCount=2
+Header=windows.h.api;
+[ImmUnregisterWord]
+1=HKL hKL
+2=LPCTSTR lpszReading
+3=DWORD dwStyle
+4=LPCTSTR lpszUnregister
+ParamCount=4
+Header=windows.h.api;
+[IMMDisableLegacyIME]
+ParamCount=0

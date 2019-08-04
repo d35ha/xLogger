@@ -1,0 +1,437 @@
+[CallingConvention]
+@=STDCALL
+[CoEnterApplicationThreadLifetimeLoop]
+ParamCount=0
+[CoGetApplicationThreadReference]
+1=IUnknown** ppThreadReference
+ParamCount=1
+[CoWaitForMultipleObjects]
+1=DWORD dwFlags
+2=DWORD dwTimeout
+3=ULONG cHandles
+4=LPHANDLE pHandles
+5=LPDWORD lpdwIndex
+ParamCount=5
+Header=windows.h.api;
+[GetRestrictedErrorInfo]
+1=IRestrictedErrorInfo** ppRestrictedErrorInfo
+ParamCount=1
+[SetRestrictedErrorInfo]
+1=IRestrictedErrorInfo* pRestrictedErrorInfo
+ParamCount=1
+[CoDecodeProxy]
+1=DWORD dwClientPid
+2=UINT64 ui64ProxyAddress
+3=PServerInformation pServerInformation
+ParamCount=3
+Header=combase.h.api;
+[HSTRING_UserFree]
+1=ULONG* pFlags
+2=HSTRING* ppidl
+ParamCount=2
+[HSTRING_UserFree64]
+1=ULONG* pFlags
+2=HSTRING* ppidl
+ParamCount=2
+[HSTRING_UserMarshal]
+1=ULONG* pFlags
+2=UCHAR* pBuffer
+3=HSTRING* ppidl
+ParamCount=3
+[HSTRING_UserMarshal64]
+1=ULONG* pFlags
+2=UCHAR* pBuffer
+3=HSTRING* ppidl
+ParamCount=3
+[HSTRING_UserSize]
+1=ULONG* pFlags
+2=ULONG StartingSize
+3=HSTRING* ppidl
+ParamCount=3
+[HSTRING_UserSize64]
+1=ULONG* pFlags
+2=ULONG StartingSize
+3=HSTRING* ppidl
+ParamCount=3
+[HSTRING_UserUnmarshal]
+1=ULONG* pFlags
+2=UCHAR* pBuffer
+3=HSTRING* ppidl
+ParamCount=3
+[HSTRING_UserUnmarshal64]
+1=ULONG* pFlags
+2=UCHAR* pBuffer
+3=HSTRING* ppidl
+ParamCount=3
+[RoActivateInstance]
+1=HSTRING activatableClassId
+2=IInspectable** instance
+ParamCount=2
+[RoCaptureErrorContext]
+1=HRESULT hrError
+ParamCount=1
+[RoFailFastWithErrorContext]
+1=HRESULT hrError
+ParamCount=1
+[RoFreeParameterizedTypeExtra]
+1=ROPARAMIIDHANDLE extra
+ParamCount=1
+Header=combase.h.api;
+[RoGetActivatableClassRegistration]
+1=HSTRING activatableClassId
+2=PActivatableClassRegistration* activatableClassRegistration
+ParamCount=2
+Header=combase.h.api;
+[RoGetActivationFactory]
+1=HSTRING activatableClassId
+2=REFIID iid
+3=void** factory
+ParamCount=3
+Header=windows.h.api;
+[RoGetApartmentIdentifier]
+1=UINT64* apartmentIdentifier
+ParamCount=1
+[RoGetErrorReportingFlags]
+1=RO_ERROR_REPORTING_FLAGS* pflags
+ParamCount=1
+Header=combase.h.api;
+[RoGetParameterizedTypeInstanceIID]
+1=UINT32 nameElementCount
+2=PCWSTR* nameElements
+3=IRoMetaDataLocator& metaDataLocator
+4=GUID* iid
+5=ROPARAMIIDHANDLE* pExtra
+ParamCount=5
+Header=combase.h.api;windows.h.api;
+[RoGetServerActivatableClasses]
+1=HSTRING serverName
+2=HSTRING** activatableClassIds
+3=DWORD* count
+ParamCount=3
+[RoInitialize]
+1=[RO_INIT_TYPE] initType
+ParamCount=1
+Header=combase.h.api;
+[RoOriginateError]
+1=HRESULT error
+2=HSTRING message
+ParamCount=2
+[RoOriginateErrorW]
+1=HRESULT error
+2=UINT cchMax
+3=PCWSTR message
+ParamCount=3
+[RoParameterizedTypeExtraGetTypeSignature]
+1=ROPARAMIIDHANDLE extra
+ParamCount=1
+Header=combase.h.api;
+[RoRegisterActivationFactories]
+1=HSTRING* activatableClassIds
+2=PFNGETACTIVATIONFACTORY* activationFactoryCallbacks
+3=UINT32 count
+4=RO_REGISTRATION_COOKIE* cookie
+ParamCount=4
+Header=combase.h.api;
+[RoRegisterForApartmentShutdown]
+1=IApartmentShutdown* callbackObject
+2=UINT64* apartmentIdentifier
+3=APARTMENT_SHUTDOWN_REGISTRATION_COOKIE* regCookie
+ParamCount=3
+Header=combase.h.api;
+[RoResolveRestrictedErrorInfoReference]
+1=PCWSTR reference
+2=IRestrictedErrorInfo** ppRestrictedErrorInfo
+ParamCount=2
+[RoRevokeActivationFactories]
+1=RO_REGISTRATION_COOKIE cookie
+ParamCount=1
+Header=combase.h.api;
+[RoSetErrorReportingFlags]
+1=[RO_ERROR_REPORTING_FLAGS] flags
+ParamCount=1
+Header=combase.h.api;
+[RoTransformError]
+1=HRESULT oldError
+2=HRESULT newError
+3=HSTRING message
+ParamCount=3
+[RoTransformErrorW]
+1=HRESULT oldError
+2=HRESULT newError
+3=UINT cchMax
+4=PCWSTR message
+ParamCount=4
+[RoUninitialize]
+ParamCount=0
+[RoUnregisterForApartmentShutdown]
+1=APARTMENT_SHUTDOWN_REGISTRATION_COOKIE regCookie
+ParamCount=1
+Header=combase.h.api;
+[WindowsCompareStringOrdinal]
+1=HSTRING string1
+2=HSTRING string2
+3=INT32* result
+ParamCount=3
+[WindowsConcatString]
+1=HSTRING string1
+2=HSTRING string2
+3=HSTRING* newString
+ParamCount=3
+[WindowsCreateString]
+1=LPCWSTR sourceString
+2=UINT32 length
+3=HSTRING* string
+ParamCount=3
+[WindowsCreateStringReference]
+1=PCWSTR sourceString
+2=UINT32 length
+3=HSTRING_HEADER* hstringHeader
+4=HSTRING* string
+ParamCount=4
+[WindowsDeleteString]
+1=HSTRING string
+ParamCount=1
+[WindowsDeleteStringBuffer]
+1=HSTRING_BUFFER bufferHandle
+ParamCount=1
+[WindowsDuplicateString]
+1=HSTRING string
+2=HSTRING* newString
+ParamCount=2
+[WindowsGetStringLen]
+1=HSTRING string
+ParamCount=1
+[WindowsGetStringRawBuffer]
+1=HSTRING string
+2=UINT32* length
+ParamCount=2
+[WindowsInspectString]
+1=UINT_PTR targetHString
+2=USHORT machine
+3=PINSPECT_HSTRING_CALLBACK callback
+4=void* context
+5=UINT32* length
+6=UINT_PTR* targetStringAddress
+ParamCount=6
+Header=combase.h.api;
+[WindowsIsStringEmpty]
+1=HSTRING string
+ParamCount=1
+[WindowsPreallocateStringBuffer]
+1=UINT32 length
+2=WCHAR** mutableBuffer
+3=HSTRING_BUFFER* bufferHandle
+ParamCount=3
+[WindowsPromoteStringBuffer]
+1=HSTRING_BUFFER bufferHandle
+2=HSTRING* string
+ParamCount=2
+[WindowsReplaceString]
+1=HSTRING string
+2=HSTRING stringReplaced
+3=HSTRING stringReplaceWith
+4=HSTRING* newString
+ParamCount=4
+[WindowsStringHasEmbeddedNull]
+1=HSTRING string
+2=BOOL* hasEmbedNull
+ParamCount=2
+[WindowsSubstring]
+1=HSTRING string
+2=UINT32 startIndex
+3=HSTRING* newString
+ParamCount=3
+[WindowsSubstringWithSpecifiedLength]
+1=HSTRING string
+2=UINT32 startIndex
+3=UINT32 length
+4=HSTRING* newString
+ParamCount=4
+[WindowsTrimStringEnd]
+1=HSTRING string
+2=HSTRING trimString
+3=HSTRING* newString
+ParamCount=3
+[WindowsTrimStringStart]
+1=HSTRING string
+2=HSTRING trimString
+3=HSTRING* newString
+ParamCount=3
+[CoAllowUnmarshalerCLSID]
+1=REFCLSID clsid
+ParamCount=1
+Header=windows.h.api;
+[CLSIDFromProgID]
+SourceModule=ole32.api
+[CLSIDFromString]
+SourceModule=ole32.api
+[CoAddRefServerProcess]
+SourceModule=ole32.api
+[CoCancelCall]
+SourceModule=ole32.api
+[CoCopyProxy]
+SourceModule=ole32.api
+[CoCreateFreeThreadedMarshaler]
+SourceModule=ole32.api
+[CoCreateGuid]
+SourceModule=ole32.api
+[CoCreateInstance]
+SourceModule=ole32.api
+[CoCreateInstanceEx]
+SourceModule=ole32.api
+[CoCreateInstanceFromApp]
+SourceModule=ole32.api
+[CoDecrementMTAUsage]
+SourceModule=ole32.api
+[CoDisableCallCancellation]
+SourceModule=ole32.api
+[CoDisconnectContext]
+SourceModule=ole32.api
+[CoDisconnectObject]
+SourceModule=ole32.api
+[CoEnableCallCancellation]
+SourceModule=ole32.api
+[CoFreeUnusedLibraries]
+SourceModule=ole32.api
+[CoFreeUnusedLibrariesEx]
+SourceModule=ole32.api
+[CoGetApartmentType]
+SourceModule=ole32.api
+[CoGetCallContext]
+SourceModule=ole32.api
+[CoGetCallerTID]
+SourceModule=ole32.api
+[CoGetCancelObject]
+SourceModule=ole32.api
+[CoGetClassObject]
+SourceModule=ole32.api
+[CoGetContextToken]
+SourceModule=ole32.api
+[CoGetCurrentLogicalThreadId]
+SourceModule=ole32.api
+[CoGetCurrentProcess]
+SourceModule=ole32.api
+[CoGetInstanceFromFile]
+SourceModule=ole32.api
+[CoGetInstanceFromIStorage]
+SourceModule=ole32.api
+[CoGetInterfaceAndReleaseStream]
+SourceModule=ole32.api
+[CoGetMalloc]
+SourceModule=ole32.api
+[CoGetMarshalSizeMax]
+SourceModule=ole32.api
+[CoGetModuleType]
+SourceModule=ole32.api
+[CoGetObjectContext]
+SourceModule=ole32.api
+[CoGetPSClsid]
+SourceModule=ole32.api
+[CoGetStandardMarshal]
+SourceModule=ole32.api
+[CoGetStdMarshalEx]
+SourceModule=ole32.api
+[CoGetTreatAsClass]
+SourceModule=ole32.api
+[CoImpersonateClient]
+SourceModule=ole32.api
+[CoIncrementMTAUsage]
+SourceModule=ole32.api
+[CoInitializeEx]
+SourceModule=ole32.api
+[CoInitializeSecurity]
+SourceModule=ole32.api
+[CoInvalidateRemoteMachineBindings]
+SourceModule=ole32.api
+[CoIsHandlerConnected]
+SourceModule=ole32.api
+[CoLockObjectExternal]
+SourceModule=ole32.api
+[CoMarshalHresult]
+SourceModule=ole32.api
+[CoMarshalInterface]
+SourceModule=ole32.api
+[CoMarshalInterThreadInterfaceInStream]
+SourceModule=ole32.api
+[CoQueryAuthenticationServices]
+SourceModule=ole32.api
+[CoQueryClientBlanket]
+SourceModule=ole32.api
+[CoQueryProxyBlanket]
+SourceModule=ole32.api
+[CoRegisterClassObject]
+SourceModule=ole32.api
+[CoRegisterInitializeSpy]
+SourceModule=ole32.api
+[CoRegisterMallocSpy]
+SourceModule=ole32.api
+[CoRegisterMessageFilter]
+SourceModule=ole32.api
+[CoRegisterPSClsid]
+SourceModule=ole32.api
+[CoRegisterSurrogate]
+SourceModule=ole32.api
+[CoReleaseMarshalData]
+SourceModule=ole32.api
+[CoReleaseServerProcess]
+SourceModule=ole32.api
+[CoResumeClassObjects]
+SourceModule=ole32.api
+[CoRevertToSelf]
+SourceModule=ole32.api
+[CoRevokeClassObject]
+SourceModule=ole32.api
+[CoRevokeInitializeSpy]
+SourceModule=ole32.api
+[CoRevokeMallocSpy]
+SourceModule=ole32.api
+[CoSetCancelObject]
+SourceModule=ole32.api
+[CoSetProxyBlanket]
+SourceModule=ole32.api
+[CoSuspendClassObjects]
+SourceModule=ole32.api
+[CoSwitchCallContext]
+SourceModule=ole32.api
+[CoTaskMemAlloc]
+SourceModule=ole32.api
+[CoTaskMemFree]
+SourceModule=ole32.api
+[CoTaskMemRealloc]
+SourceModule=ole32.api
+[CoTestCancel]
+SourceModule=ole32.api
+[CoUninitialize]
+SourceModule=ole32.api
+[CoUnmarshalHresult]
+SourceModule=ole32.api
+[CoUnmarshalInterface]
+SourceModule=ole32.api
+[CoWaitForMultipleHandles]
+SourceModule=ole32.api
+[CreateStreamOnHGlobal]
+SourceModule=ole32.api
+[FreePropVariantArray]
+SourceModule=ole32.api
+[GetHGlobalFromStream]
+SourceModule=ole32.api
+[IIDFromString]
+SourceModule=ole32.api
+[ProgIDFromCLSID]
+SourceModule=ole32.api
+[PropVariantClear]
+SourceModule=ole32.api
+[PropVariantCopy]
+SourceModule=ole32.api
+[StringFromCLSID]
+SourceModule=ole32.api
+[StringFromGUID2]
+SourceModule=ole32.api
+[StringFromIID]
+SourceModule=ole32.api
+[CreateErrorInfo]
+SourceModule=oleaut32.api
+[GetErrorInfo]
+SourceModule=oleaut32.api
+[SetErrorInfo]
+SourceModule=oleaut32.api

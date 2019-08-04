@@ -1,0 +1,173 @@
+[CallingConvention]
+@=STDCALL
+[SSL_OptionSetDefault]
+1=[SSLOption] option
+2=PRBool on
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_OptionGetDefault]
+1=[SSLOption] option
+2=PRBool* on
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_CipherPrefSetDefault]
+1=[SSLCipher] cipher
+2=PRBool enabled
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_CipherPrefGetDefault]
+1=[SSLCipher] cipher
+2=PRBool* enabled
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_ClearSessionCache]
+ParamCount=0
+[SSL_ConfigServerSessionIDCache]
+1=int maxCacheEntries
+2=PRUint32 timeout
+3=PRUint32 ssl3_timeout
+4=const char* directory
+ParamCount=4
+[SSL_ConfigMPServerSIDCache]
+1=int maxCacheEntries
+2=PRUint32 timeout
+3=PRUint32 ssl3_timeout
+4=const char* directory
+ParamCount=4
+[SSL_InheritMPServerSIDCache]
+1=const char* envString
+ParamCount=1
+[NSS_SetDomesticPolicy]
+ParamCount=0
+[NSS_SetExportPolicy]
+ParamCount=0
+[NSS_SetFrancePolicy]
+ParamCount=0
+[SSL_CipherPolicySet]
+1=[SSLCipher] cipher
+2=[SSLPolicy] policy
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_CipherPolicyGet]
+1=[SSLCipher] cipher
+2=[SSLPolicy] policy
+ParamCount=2
+Header=ssl3.h.api;
+[SSL_ImportFD]
+1=PRFileDesc* model
+2=PRFileDesc* fd
+ParamCount=2
+[SSL_OptionSet]
+1=PRFileDesc* fd
+2=[SSLOption] option
+3=PRBool on
+ParamCount=3
+Header=ssl3.h.api;
+[SSL_OptionGet]
+1=PRFileDesc* fd
+2=[SSLOption] option
+3=PRBool* on
+ParamCount=3
+Header=ssl3.h.api;
+[SSL_CipherPrefSet]
+1=PRFileDesc* fd
+2=[SSLCipher] cipher
+3=PRBool enabled
+ParamCount=3
+Header=ssl3.h.api;
+[SSL_CipherPrefGet]
+1=PRFileDesc* fd
+2=[SSLCipher] cipher
+3=PRBool* enabled
+ParamCount=3
+Header=ssl3.h.api;
+[SSL_ConfigSecureServer]
+1=PRFileDesc* fd
+2=CERTCertificate* cert
+3=SECKEYPrivateKey* key
+4=SSLKEAType keaType
+ParamCount=4
+[SSL_SetURL]
+1=PRFileDesc* fd
+2=char* url
+ParamCount=2
+[SSL_SetPKCS11PinArg]
+1=PRFileDesc* fd
+2=void* a
+ParamCount=2
+[SSL_AuthCertificateHook]
+1=PRFileDesc* fd
+2=SSLAuthCertificate f
+3=void* arg
+ParamCount=3
+[SSL_AuthCertificate]
+1=void* arg
+2=PRFileDesc* fd
+3=PRBool checksig
+4=PRBool isServer
+ParamCount=4
+[SSL_BadCertHook]
+1=PRFileDesc* fd
+2=SSLBadCertHandler f
+3=void* arg
+ParamCount=3
+[SSL_GetClientAuthDataHook]
+1=PRFileDesc* fd
+2=SSLGetClientAuthData f
+3=void* arg
+ParamCount=3
+[NSS_GetClientAuthData]
+1=void* arg
+2=PRFileDesc* socket
+3=CERTDistNamesStr* caNames
+4=CERTCertificateStr** pRetCert
+5=SECKEYPrivateKeyStr** pRetKey
+ParamCount=5
+[SSL_HandshakeCallback]
+1=PRFileDesc* fd
+2=SSLHandshakeCallback cb
+3=void* client_data
+ParamCount=3
+[SSL_InvalidateSession]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_DataPending]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_SecurityStatus]
+1=PRFileDesc* fd
+2=SSLSecurityStatus* on
+3=char** cipher
+4=int* keysize
+5=int* secretKeySize
+6=char** issuer
+7=char** subject
+ParamCount=7
+Header=ssl3.h.api;
+[SSL_GetSessionID]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_SetSockPeerID]
+1=PRFileDesc* fd
+2=char* peerID
+ParamCount=2
+[SSL_PeerCertificate]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_RevealURL]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_RevealPinArg]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_ForceHandshake]
+1=PRFileDesc* fd
+ParamCount=1
+[SSL_ReHandshake]
+1=PRFileDesc* fd
+2=PRBool flushCache
+ParamCount=2
+[SSL_ResetHandshake]
+1=PRFileDesc* fd
+2=PRBool asServer
+ParamCount=2

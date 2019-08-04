@@ -1,0 +1,21 @@
+[CallingConvention]
+@=STDCALL
+[DownlevelGetLocaleScripts]
+1=LPCWSTR lpLocaleName
+2=LPWSTR lpScripts
+3=int cchScripts
+ParamCount=3
+[DownlevelGetStringScripts]
+1=DWORD dwFlags
+2=LPCWSTR lpString
+3=int cchString
+4=LPWSTR lpScripts
+5=int cchScripts
+ParamCount=5
+[DownlevelVerifyScripts]
+1=DWORD dwFlags
+2=LPCWSTR lpLocaleScripts
+3=int cchLocaleScripts
+4=LPCWSTR lpTestScripts
+5=int cchTestScripts
+ParamCount=5

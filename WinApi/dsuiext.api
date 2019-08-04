@@ -1,0 +1,16 @@
+[CallingConvention]
+@=STDCALL
+[DsBrowseForContainer]
+1=PDSBROWSEINFO pInfo
+ParamCount=1
+[DsGetFriendlyClassName]
+1=LPWSTR pszObjectClass
+2=LPWSTR pszBuffer
+3=INT cchBuffer
+ParamCount=3
+[DsGetIcon]
+1=DWORD dwFlags
+2=LPWSTR pszObjectClass
+3=INT cxImage
+4=INT cyImage
+ParamCount=4

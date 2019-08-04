@@ -1,0 +1,181 @@
+[CallingConvention]
+@=STDCALL
+[WdsCliAuthorizeSession]
+1=HANDLE hSession
+2=PWDS_CLI_CRED pCred
+ParamCount=2
+Header=windows.h.api;
+[WdsCliCancelTransfer]
+1=HANDLE hTransfer
+ParamCount=1
+Header=windows.h.api;
+[WdsCliClose]
+1=HANDLE Handle
+ParamCount=1
+Header=windows.h.api;
+[WdsCliCreateSession]
+1=PWSTR pwszServer
+2=PWDS_CLI_CRED pCred
+3=PHANDLE phSession
+ParamCount=3
+Header=windows.h.api;
+[WdsCliFindFirstImage]
+1=HANDLE hSession
+2=PHANDLE phFindHandle
+ParamCount=2
+Header=windows.h.api;
+[WdsCliFindNextImage]
+1=HANDLE Handle
+ParamCount=1
+Header=windows.h.api;
+[WdsCliFreeStringArray]
+1=PWSTR* ppwszArray
+2=ULONG ulCount
+ParamCount=2
+[WdsCliObtainDriverPackages]
+1=HANDLE hImage
+2=PWSTR* ppwszServerName
+3=PWSTR** pppwszDriverPackages
+4=ULONG* pulCount
+ParamCount=4
+Header=windows.h.api;
+[WdsCliGetEnumerationFlags]
+1=HANDLE Handle
+2=PDWORD pdwFlags
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageArchitecture]
+1=HANDLE hIfh
+2=PDWORD pdwValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageDescription]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageGroup]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageHalName]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageHandleFromFindHandle]
+1=HANDLE FindHandle
+2=PHANDLE phImageHandle
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageHandleFromTransferHandle]
+1=HANDLE hTransfer
+2=PHANDLE phImageHandle
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageIndex]
+1=HANDLE hIfh
+2=PDWORD pdwValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageLanguage]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageLanguages]
+1=HANDLE hIfh
+2=PTSTR** pppszValues
+3=PDWORD pdwNumValues
+ParamCount=3
+Header=windows.h.api;
+[WdsCliGetImageLastModifiedTime]
+1=HANDLE hIfh
+2=PSYSTEMTIME* ppSysTimeValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageName]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageNamespace]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImagePath]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageSize]
+1=HANDLE hIfh
+2=PULONGLONG pullValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetImageVersion]
+1=HANDLE hIfh
+2=PWSTR* ppwszValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliGetTransferSize]
+1=HANDLE hIfh
+2=PULONGLONG pullValue
+ParamCount=2
+Header=windows.h.api;
+[WdsCliInitializeLog]
+1=HANDLE hSession
+2=ULONG ulClientArchitecture
+3=PWSTR pwszClientId
+4=PWSTR pwszClientAddress
+ParamCount=4
+Header=windows.h.api;
+[WdsCliLog]
+1=HANDLE hSession
+2=ULONG ulLogLevel
+3=ULONG ulMessageCode
+ParamCount=-3
+Header=windows.h.api;
+[WdsCliRegisterTrace]
+1=PFN_WdsCliTraceFunction pfn
+ParamCount=1
+[WdsCliTransferFile]
+1=PCWSTR pwszServer
+2=PCWSTR pwszNamespace
+3=PCWSTR pwszRemoteFilePath
+4=PCWSTR pwszLocalFilePath
+5=DWORD dwFlags
+6=DWORD dwReserved
+7=PFN_WdsCliCallback pfnWdsCliCallback
+8=PVOID pvUserData
+9=PHANDLE phTransfer
+ParamCount=9
+Header=windows.h.api;
+[WdsCliTransferImage]
+1=HANDLE hImage
+2=PWSTR pwszLocalPath
+3=DWORD dwFlags
+4=DWORD dwReserved
+5=PFN_WdsCliCallback pfnWdsCliCallback
+6=PVOID pvUserData
+7=PHANDLE phTransfer
+ParamCount=7
+Header=windows.h.api;
+[WdsCliWaitForTransfer]
+1=HANDLE hTransfer
+ParamCount=1
+Header=windows.h.api;
+[WdsCliGetDriverQueryXml]
+1=PWSTR pwszWinDirPath
+2=PWSTR* ppwszDriverQuery
+ParamCount=2
+[WdsCliObtainDriverPackagesEx]
+1=HANDLE hSession
+2=PWSTR pwszDriverQuery
+3=PWSTR* ppwszServerName
+4=PWSTR** pppwszDriverPackages
+5=ULONG* pulCount
+ParamCount=5
+Header=windows.h.api;

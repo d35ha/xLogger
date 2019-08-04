@@ -1,0 +1,22 @@
+[CallingConvention]
+@=STDCALL
+[CscSearchApiGetInterface]
+1=ULONG Version
+2=ULONG Cookie
+3=CCscSearchApiInterface** Interface
+ParamCount=3
+[OfflineFilesEnable]
+1=BOOL bEnable
+2=BOOL* pbRebootRequired
+ParamCount=2
+[OfflineFilesQueryStatus]
+1=BOOL* pbActive
+2=BOOL* pbEnabled
+ParamCount=2
+[OfflineFilesQueryStatusEx]
+1=BOOL* pbActive
+2=BOOL* pbEnabled
+3=BOOL* pbAvailable
+ParamCount=3
+[OfflineFilesStart]
+ParamCount=0

@@ -1,0 +1,8 @@
+[CallingConvention]
+@=STDCALL
+[CmFree]
+1=void* pvPtr
+ParamCount=1
+[CmMalloc]
+1=size_t nBytes
+ParamCount=1

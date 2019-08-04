@@ -1,0 +1,188 @@
+[CallingConvention]
+@=STDCALL
+[EnterCriticalPolicySection]
+1=BOOL bMachine
+ParamCount=1
+[FreeGPOList]
+1=PGROUP_POLICY_OBJECT pGPOList
+ParamCount=1
+Header=userenv.h.api;
+[GetAppliedGPOList]
+1=DWORD dwFlags
+2=LPCTSTR pMachineName
+3=PSID pSidUser
+4=GUID* pGuidExtension
+5=PGROUP_POLICY_OBJECT* ppGPOList
+ParamCount=5
+Header=userenv.h.api;windows.h.api;
+[GetGPOList]
+1=HANDLE hToken
+2=LPCTSTR lpName
+3=LPCTSTR lpHostName
+4=LPCTSTR lpComputerName
+5=DWORD dwFlags
+6=PGROUP_POLICY_OBJECT* pGPOList
+ParamCount=6
+Header=userenv.h.api;windows.h.api;
+[LeaveCriticalPolicySection]
+1=HANDLE hSection
+ParamCount=1
+Header=windows.h.api;
+[ProcessGroupPolicyCompleted]
+1=REFGPEXTENSIONID extensionId
+2=ASYNCCOMPLETIONHANDLE pAsyncHandle
+3=DWORD dwStatus
+ParamCount=3
+Header=userenv.h.api;
+[ProcessGroupPolicyCompletedEx]
+1=REFGPEXTENSIONID extensionId
+2=ASYNCCOMPLETIONHANDLE pAsyncHandle
+3=DWORD dwStatus
+4=HRESULT RsopStatus
+ParamCount=4
+Header=userenv.h.api;
+[RefreshPolicy]
+1=BOOL bMachine
+ParamCount=1
+[RefreshPolicyEx]
+1=BOOL bMachine
+2=DWORD dwOptions
+ParamCount=2
+[RegisterGPNotification]
+1=HANDLE hEvent
+2=BOOL bMachine
+ParamCount=2
+Header=windows.h.api;
+[RsopAccessCheckByType]
+1=PSECURITY_DESCRIPTOR pSecurityDescriptor
+2=PSID pPrincipalSelfSid
+3=PRSOPTOKEN pRsopToken
+4=[ACCESS_MASK_DWORD] dwDesiredAccessMask
+5=POBJECT_TYPE_LIST pObjectTypeList
+6=DWORD ObjectTypeListLength
+7=PGENERIC_MAPPING pGenericMapping
+8=PPRIVILEGE_SET pPrivilegeSet
+9=LPDWORD pdwPrivilegeSetLength
+10=ACCESS_MASK_LPDWORD pdwGrantedAccessMask
+11=LPBOOL pbAccessStatus
+ParamCount=11
+Header=userenv.h.api;security.h.api;windows.h.api;
+[RsopFileAccessCheck]
+1=LPWSTR pszFileName
+2=PRSOPTOKEN pRsopToken
+3=[ACCESS_MASK_DWORD] dwDesiredAccessMask
+4=ACCESS_MASK_LPDWORD pdwGrantedAccessMask
+5=LPBOOL pbAccessStatus
+ParamCount=5
+Header=userenv.h.api;windows.h.api;
+[RsopResetPolicySettingStatus]
+1=DWORD dwFlags
+2=IWbemServices* pServices
+3=IWbemClassObject* pSettingInstance
+ParamCount=3
+[RsopSetPolicySettingStatus]
+1=DWORD dwFlags
+2=IWbemServices* pServices
+3=IWbemClassObject* pSettingInstance
+4=DWORD nInfo
+5=POLICYSETTINGSTATUSINFO* pStatus
+ParamCount=5
+Header=userenv.h.api;
+[UnregisterGPNotification]
+1=HANDLE hEvent
+ParamCount=1
+Header=windows.h.api;
+[CreateEnvironmentBlock]
+1=LPVOID* lpEnvironment
+2=HANDLE hToken
+3=BOOL bInherit
+ParamCount=3
+Header=windows.h.api;
+[CreateProfile]
+1=LPCWSTR pszUserSid
+2=LPCWSTR pszUserName
+3=LPWSTR pszProfilePath
+4=DWORD cchProfilePath
+ParamCount=4
+[CreateUserProfileEx]
+1=PSID pSid
+2=LPCTSTR lpUserName
+3=LPCTSTR lpUserHive
+4=LPTSTR lpProfileDir
+5=DWORD dwDirSize
+6=BOOL bWin9xUpg
+ParamCount=6
+Header=windows.h.api;
+[DeleteProfile]
+1=LPCTSTR lpSidString
+2=LPCTSTR lpProfilePath
+3=LPCTSTR lpComputerName
+ParamCount=3
+[DestroyEnvironmentBlock]
+1=LPVOID lpEnvironment
+ParamCount=1
+[ExpandEnvironmentStringsForUser]
+1=HANDLE hToken
+2=LPCTSTR lpSrc
+3=LPTSTR lpDest
+4=DWORD dwSize
+ParamCount=4
+Header=windows.h.api;
+[GetAllUsersProfileDirectory]
+1=LPTSTR lpProfileDir
+2=LPDWORD lpcchSize
+ParamCount=2
+[GetDefaultUserProfileDirectory]
+1=LPTSTR lpProfileDir
+2=LPDWORD lpcchSize
+ParamCount=2
+[GetProfilesDirectory]
+1=LPTSTR lpProfilesDir
+2=LPDWORD lpcchSize
+ParamCount=2
+[GetProfileType]
+1=ProfileType* pdwFlags
+ParamCount=1
+Header=userenv.h.api;
+[GetUserProfileDirectory]
+1=HANDLE hToken
+2=LPTSTR lpProfileDir
+3=LPDWORD lpcchSize
+ParamCount=3
+Header=windows.h.api;
+[LoadUserProfile]
+1=HANDLE hToken
+2=LPPROFILEINFO lpProfileInfo
+ParamCount=2
+Header=userenv.h.api;windows.h.api;
+[UnloadUserProfile]
+1=HANDLE hToken
+2=HANDLE hProfile
+ParamCount=2
+Header=windows.h.api;
+[CreateAppContainerProfile]
+1=PCWSTR pszAppContainerName
+2=PCWSTR pszDisplayName
+3=PCWSTR pszDescription
+4=PSID_AND_ATTRIBUTES pCapabilities
+5=DWORD dwCapabilityCount
+6=PSID* ppSidAppContainerSid
+ParamCount=6
+Header=security.h.api;windows.h.api;
+[DeleteAppContainerProfile]
+1=PCWSTR pszAppContainerName
+ParamCount=1
+[DeriveAppContainerSidFromAppContainerName]
+1=PCWSTR pszAppContainerName
+2=PSID* ppsidAppContainerSid
+ParamCount=2
+Header=windows.h.api;
+[GetAppContainerFolderPath]
+1=PCWSTR pszAppContainerSid
+2=PWSTR* ppszPath
+ParamCount=2
+[GetAppContainerRegistryLocation]
+1=[REGSAM] desiredAccess
+2=PHKEY phAppContainerKey
+ParamCount=2
+Header=registry.h.api;

@@ -1,0 +1,143 @@
+[CallingConvention]
+@=STDCALL
+[WNetSetLastError]
+1=DWORD err
+2=LPTSTR lpError
+3=LPTSTR lpProvider
+ParamCount=3
+[MultinetGetConnectionPerformance]
+1=LPNETRESOURCE lpNetResource
+2=LPNETCONNECTINFOSTRUCT lpNetConnectInfoStruct
+ParamCount=2
+Header=mpr.h.api;
+[WNetAddConnection2]
+1=LPNETRESOURCE lpNetResource
+2=LPCTSTR lpPassword
+3=LPCTSTR lpUsername
+4=[ConnectFlags] dwFlags
+ParamCount=4
+Header=mpr.h.api;
+[WNetAddConnection3]
+1=HWND hwndOwner
+2=LPNETRESOURCE lpNetResource
+3=LPTSTR lpPassword
+4=LPTSTR lpUserName
+5=[ConnectFlags] dwFlags
+ParamCount=5
+Header=mpr.h.api;windows.h.api;
+[WNetCancelConnection]
+1=LPCTSTR lpName
+2=BOOL fForce
+ParamCount=2
+[WNetCancelConnection2]
+1=LPCTSTR lpName
+2=[ConnectFlags] dwFlags
+3=BOOL fForce
+ParamCount=3
+Header=mpr.h.api;
+[WNetCloseEnum]
+1=HANDLE hEnum
+ParamCount=1
+Header=windows.h.api;
+[WNetConnectionDialog]
+1=HWND hwnd
+2=[RESOURCETYPE] dwType
+ParamCount=2
+Header=mpr.h.api;windows.h.api;
+[WNetConnectionDialog1]
+1=LPCONNECTDLGSTRUCT lpConnDlgStruct
+ParamCount=1
+Header=mpr.h.api;
+[WNetDisconnectDialog]
+1=HWND hwnd
+2=[RESOURCETYPE] dwType
+ParamCount=2
+Header=mpr.h.api;windows.h.api;
+[WNetDisconnectDialog1]
+1=LPDISCDLGSTRUCT lpConnDlgStruct
+ParamCount=1
+Header=mpr.h.api;
+[WNetEnumResource]
+1=HANDLE hEnum
+2=LPDWORD lpcCount
+3=LPNETRESOURCE lpBuffer
+4=LPDWORD lpBufferSize
+ParamCount=4
+Header=mpr.h.api;windows.h.api;
+[WNetGetConnection]
+1=LPCTSTR lpLocalName
+2=LPTSTR lpRemoteName
+3=LPDWORD lpnLength
+ParamCount=3
+[WNetGetLastError]
+1=LPDWORD lpError
+2=LPTSTR lpErrorBuf
+3=DWORD nErrorBufSize
+4=LPTSTR lpNameBuf
+5=DWORD nNameBufSize
+ParamCount=5
+[WNetGetNetworkInformation]
+1=LPCTSTR lpProvider
+2=LPNETINFOSTRUCT lpNetInfoStruct
+ParamCount=2
+Header=mpr.h.api;
+[WNetGetProviderName]
+1=DWORD dwNetType
+2=LPTSTR lpProviderName
+3=LPDWORD lpBufferSize
+ParamCount=3
+[WNetGetResourceInformation]
+1=LPNETRESOURCE lpNetResource
+2=LPVOID lpBuffer
+3=LPDWORD lpcbBuffer
+4=LPTSTR* lplpSystem
+ParamCount=4
+Header=mpr.h.api;
+[WNetGetResourceParent]
+1=LPNETRESOURCE lpNetResource
+2=LPNETRESOURCE lpBuffer
+3=LPDWORD lpcbBuffer
+ParamCount=3
+Header=mpr.h.api;
+[WNetGetUniversalName]
+1=LPCTSTR lpLocalPath
+2=[UniversalInfoLevel] dwInfoLevel
+3=LPVOID lpBuffer
+4=LPDWORD lpBufferSize
+ParamCount=4
+Header=mpr.h.api;
+[WNetGetUser]
+1=LPCTSTR lpName
+2=LPTSTR lpUserName
+3=LPDWORD lpnLength
+ParamCount=3
+[WNetOpenEnum]
+1=[ResourceScope] dwScope
+2=[RESOURCETYPE] dwType
+3=[RESOURCEUSAGE] dwUsage
+4=LPNETRESOURCE lpNetResource
+5=LPHANDLE lphEnum
+ParamCount=5
+Header=mpr.h.api;windows.h.api;
+[WNetRestoreConnectionW]
+1=HWND hwndParent
+2=LPCWSTR lpDevice
+3=BOOL fUseUI
+ParamCount=3
+Header=windows.h.api;
+[WNetUseConnection]
+1=HWND hwndOwner
+2=LPNETRESOURCE lpNetResource
+3=LPCTSTR lpPassword
+4=LPCTSTR lpUserID
+5=[ConnectFlags] dwFlags
+6=LPTSTR lpAccessName
+7=LPDWORD lpBufferSize
+8=LPDWORD lpResult
+ParamCount=8
+Header=mpr.h.api;windows.h.api;
+[WNetAddConnection]
+1=LPCTSTR lpRemoteName
+2=LPCTSTR lpPassword
+3=LPCTSTR lpLocalName
+ParamCount=3

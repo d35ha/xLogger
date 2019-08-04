@@ -1,0 +1,119 @@
+[CallingConvention]
+@=STDCALL
+[EmptyWorkingSet]
+1=[ProcessHandle] hProcess
+ParamCount=1
+Header=windows.h.api;
+[EnumDeviceDrivers]
+1=LPVOID* lpImageBase
+2=DWORD cb
+3=LPDWORD lpcbNeeded
+ParamCount=3
+[EnumPageFiles]
+1=PENUM_PAGE_CALLBACK pCallbackRoutine
+2=LPVOID lpContext
+ParamCount=2
+Header=processes.h.api;
+[EnumProcesses]
+1=DWORD* pProcessIds
+2=DWORD cb
+3=DWORD* pBytesReturned
+ParamCount=3
+[EnumProcessModules]
+1=[ProcessHandle] hProcess
+2=HMODULE* lphModule
+3=DWORD cb
+4=LPDWORD lpcbNeeded
+ParamCount=4
+Header=windows.h.api;
+[EnumProcessModulesEx]
+1=[ProcessHandle] hProcess
+2=HMODULE* lphModule
+3=DWORD cb
+4=LPDWORD lpcbNeeded
+5=DWORD dwFilterFlag
+ParamCount=5
+Header=windows.h.api;
+[GetDeviceDriverBaseName]
+1=LPVOID ImageBase
+2=LPTSTR lpBaseName
+3=DWORD nSize
+ParamCount=3
+[GetDeviceDriverFileName]
+1=LPVOID ImageBase
+2=LPTSTR lpFilename
+3=DWORD nSize
+ParamCount=3
+[GetMappedFileName]
+1=[ProcessHandle] hProcess
+2=LPVOID lpv
+3=LPTSTR lpFilename
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[GetModuleBaseName]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPTSTR lpBaseName
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[GetModuleFileNameEx]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPTSTR lpFilename
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[GetModuleInformation]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPMODULEINFO lpmodinfo
+4=DWORD cb
+ParamCount=4
+Header=processes.h.api;windows.h.api;
+[GetPerformanceInfo]
+1=PPERFORMANCE_INFORMATION pPerformanceInformation
+2=DWORD cb
+ParamCount=2
+Header=processes.h.api;
+[GetProcessImageFileName]
+1=[ProcessHandle] hProcess
+2=LPTSTR lpImageFileName
+3=DWORD nSize
+ParamCount=3
+Header=windows.h.api;
+[GetProcessMemoryInfo]
+1=HANDLE Process
+2=PPROCESS_MEMORY_COUNTERS ppsmemCounters
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[GetWsChanges]
+1=[ProcessHandle] hProcess
+2=PPSAPI_WS_WATCH_INFORMATION lpWatchInfo
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[GetWsChangesEx]
+1=[ProcessHandle] hProcess
+2=PPSAPI_WS_WATCH_INFORMATION_EX lpWatchInfoEx
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[InitializeProcessForWsWatch]
+1=[ProcessHandle] hProcess
+ParamCount=1
+Header=windows.h.api;
+[QueryWorkingSet]
+1=[ProcessHandle] hProcess
+2=PVOID pv
+3=DWORD cb
+ParamCount=3
+Header=windows.h.api;
+[QueryWorkingSetEx]
+1=[ProcessHandle] hProcess
+2=PVOID pv
+3=DWORD cb
+ParamCount=3
+Header=windows.h.api;

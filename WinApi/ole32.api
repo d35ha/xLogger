@@ -1,0 +1,1200 @@
+[CallingConvention]
+@=STDCALL
+[BindMoniker]
+1=LPMONIKER pmk
+2=DWORD grfOpt
+3=REFIID iidResult
+4=LPVOID* ppvResult
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[CLSIDFromProgID]
+1=LPCOLESTR lpszProgID
+2=LPCLSID lpclsid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CLSIDFromProgIDEx]
+1=LPCOLESTR lpszProgID
+2=LPCLSID lpclsid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CLSIDFromString]
+1=LPCOLESTR lpsz
+2=LPCLSID pclsid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CoAddRefServerProcess]
+ParamCount=0
+[CoAllowSetForegroundWindow]
+1=IUnknown* pUnk
+2=LPVOID lpvReserved
+ParamCount=2
+[CoCancelCall]
+1=DWORD dwThreadId
+2=ULONG ulTimeout
+ParamCount=2
+[CoCopyProxy]
+1=IUnknown* pProxy
+2=IUnknown** ppCopy
+ParamCount=2
+[CoCreateFreeThreadedMarshaler]
+1=LPUNKNOWN punkOuter
+2=LPUNKNOWN* ppunkMarshal
+ParamCount=2
+Header=windows.h.api;
+[CoCreateGuid]
+1=GUID* pguid
+ParamCount=1
+Header=windows.h.api;
+[CoCreateInstance]
+1=REFCLSID rclsid
+2=LPUNKNOWN pUnkOuter
+3=[CLSCTX] dwClsContext
+4=REFIID riid
+5=LPVOID* ppv
+ParamCount=5
+Header=ole.h.api;windows.h.api;
+[CoCreateInstanceEx]
+1=REFCLSID rclsid
+2=IUnknown* punkOuter
+3=[CLSCTX] dwClsCtx
+4=COSERVERINFO* pServerInfo
+5=DWORD dwCount
+6=MULTI_QI* pResults
+ParamCount=6
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoDisableCallCancellation]
+1=LPVOID pReserved
+ParamCount=1
+[CoDisconnectContext]
+1=DWORD dwTimeout
+ParamCount=1
+[CoDisconnectObject]
+1=LPUNKNOWN pUnk
+2=DWORD dwReserved
+ParamCount=2
+Header=windows.h.api;
+[CoDosDateTimeToFileTime]
+1=WORD nDosDate
+2=WORD nDosTime
+3=FILETIME* lpFileTime
+ParamCount=3
+Header=windows.h.api;
+[CoEnableCallCancellation]
+1=LPVOID pReserved
+ParamCount=1
+[CoFileTimeNow]
+1=FILETIME* lpFileTime
+ParamCount=1
+Header=windows.h.api;
+[CoFileTimeToDosDateTime]
+1=FILETIME* lpFileTime
+2=LPWORD lpDosDate
+3=LPWORD lpDosTime
+ParamCount=3
+Header=windows.h.api;
+[CoFreeAllLibraries]
+ParamCount=0
+[CoFreeLibrary]
+1=HINSTANCE hInst
+ParamCount=1
+Header=windows.h.api;
+[CoFreeUnusedLibraries]
+ParamCount=0
+[CoFreeUnusedLibrariesEx]
+1=DWORD dwUnloadDelay
+2=DWORD dwReserved
+ParamCount=2
+[CoGetApartmentType]
+1=APTTYPE* pAptType
+2=APTTYPEQUALIFIER* pAptQualifier
+ParamCount=2
+Header=ole.h.api;
+[CoGetCallContext]
+1=REFIID riid
+2=void** ppInterface
+ParamCount=2
+Header=windows.h.api;
+[CoGetCallerTID]
+1=LPDWORD lpdwTID
+ParamCount=1
+[CoGetCancelObject]
+1=DWORD dwThreadId
+2=REFIID iid
+3=void** ppUnk
+ParamCount=3
+Header=windows.h.api;
+[CoGetClassObject]
+1=REFCLSID rclsid
+2=[CLSCTX] dwClsContext
+3=COSERVERINFO* pServerInfo
+4=REFIID riid
+5=LPVOID* ppv
+ParamCount=5
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoGetContextToken]
+1=ULONG_PTR* pToken
+ParamCount=1
+[CoGetCurrentLogicalThreadId]
+1=GUID* pguid
+ParamCount=1
+Header=windows.h.api;
+[CoGetCurrentProcess]
+ParamCount=0
+[CoGetInstanceFromFile]
+1=COSERVERINFO* pServerInfo
+2=CLSID* pClsid
+3=IUnknown* punkOuter
+4=[CLSCTX] dwClsCtx
+5=[STGM_FLAGS] grfMode
+6=OLECHAR* pwszName
+7=DWORD dwCount
+8=MULTI_QI* pResults
+ParamCount=8
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoGetInstanceFromIStorage]
+1=COSERVERINFO* pServerInfo
+2=CLSID* pClsid
+3=IUnknown* punkOuter
+4=[CLSCTX] dwClsCtx
+5=struct IStorage* pstg
+6=DWORD dwCount
+7=MULTI_QI* pResults
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoGetInterceptor]
+1=REFIID iidIntercepted
+2=IUnknown* punkOuter
+3=REFIID iid
+4=void** ppv
+ParamCount=4
+Header=windows.h.api;
+[CoGetInterfaceAndReleaseStream]
+1=LPSTREAM pStm
+2=REFIID iid
+3=LPVOID* ppv
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[CoGetMalloc]
+1=DWORD dwMemContext
+2=LPMALLOC* ppMalloc
+ParamCount=2
+Header=ole.h.api;
+[CoGetMarshalSizeMax]
+1=ULONG* pulSize
+2=REFIID riid
+3=LPUNKNOWN pUnk
+4=DWORD dwDestContext
+5=LPVOID pvDestContext
+6=[MSHLFLAGS] mshlflags
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[CoGetObject]
+1=LPCWSTR pszName
+2=BIND_OPTS* pBindOptions
+3=REFIID riid
+4=void** ppv
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[CoGetObjectContext]
+1=REFIID riid
+2=LPVOID* ppv
+ParamCount=2
+Header=windows.h.api;
+[CoGetPSClsid]
+1=REFIID riid
+2=CLSID* pClsid
+ParamCount=2
+Header=windows.h.api;
+[CoGetStandardMarshal]
+1=REFIID riid
+2=LPUNKNOWN pUnk
+3=DWORD dwDestContext
+4=LPVOID pvDestContext
+5=[MSHLFLAGS] mshlflags
+6=LPMARSHAL* ppMarshal
+ParamCount=6
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoGetStdMarshalEx]
+1=LPUNKNOWN pUnkOuter
+2=DWORD smexflags
+3=LPUNKNOWN* ppUnkInner
+ParamCount=3
+Header=windows.h.api;
+[CoGetTreatAsClass]
+1=REFCLSID clsidOld
+2=LPCLSID pClsidNew
+ParamCount=2
+Header=windows.h.api;
+[CoImpersonateClient]
+ParamCount=0
+[CoInitialize]
+1=LPVOID pvReserved
+ParamCount=1
+[CoInitializeEx]
+1=LPVOID pvReserved
+2=[COINIT_FLAG] dwCoInit
+ParamCount=2
+Header=ole.h.api;
+[CoInitializeSecurity]
+1=PSECURITY_DESCRIPTOR pSecDesc
+2=LONG cAuthSvc
+3=SOLE_AUTHENTICATION_SERVICE* asAuthSvc
+4=void* pReserved1
+5=[RPC_C_AUTHN_LEVEL] dwAuthnLevel
+6=[RPC_C_IMP_LEVEL] dwImpLevel
+7=void* pAuthList
+8=[EOLE_AUTHENTICATION_CAPABILITIES] dwCapabilities
+9=void* pReserved3
+ParamCount=9
+Header=ole32.h.api;rpc.h.api;security.h.api;
+[CoInstall]
+1=IBindCtx* pbc
+2=DWORD dwFlags
+3=uCLSSPEC* pClassSpec
+4=QUERYCONTEXT* pQuery
+5=LPWSTR pszCodeBase
+ParamCount=5
+Header=ole.h.api;
+[CoInvalidateRemoteMachineBindings]
+1=LPOLESTR pszMachineName
+ParamCount=1
+Header=ole.h.api;
+[CoIsHandlerConnected]
+1=LPUNKNOWN pUnk
+ParamCount=1
+Header=windows.h.api;
+[CoIsOle1Class]
+1=REFCLSID rclsid
+ParamCount=1
+Header=windows.h.api;
+[CoLoadLibrary]
+1=LPOLESTR lpszLibName
+2=BOOL bAutoFree
+ParamCount=2
+Header=ole.h.api;
+[CoLockObjectExternal]
+1=LPUNKNOWN pUnk
+2=BOOL fLock
+3=BOOL fLastUnlockReleases
+ParamCount=3
+Header=windows.h.api;
+[CoMarshalHresult]
+1=LPSTREAM pstm
+2=HRESULT hresult
+ParamCount=2
+Header=ole.h.api;
+[CoMarshalInterface]
+1=LPSTREAM pStm
+2=REFIID riid
+3=LPUNKNOWN pUnk
+4=DWORD dwDestContext
+5=LPVOID pvDestContext
+6=[MSHLFLAGS] mshlflags
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[CoMarshalInterThreadInterfaceInStream]
+1=REFIID riid
+2=LPUNKNOWN pUnk
+3=LPSTREAM* ppStm
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[CoQueryAuthenticationServices]
+1=DWORD* pcAuthSvc
+2=SOLE_AUTHENTICATION_SERVICE** asAuthSvc
+ParamCount=2
+Header=ole32.h.api;
+[CoQueryClientBlanket]
+1=DWORD* pAuthnSvc
+2=DWORD* pAuthzSvc
+3=OLECHAR** pServerPrincName
+4=DWORD* pAuthnLevel
+5=DWORD* pImpLevel
+6=RPC_AUTHZ_HANDLE* pPrivs
+7=DWORD* pCapabilities
+ParamCount=7
+Header=ole.h.api;rpc.h.api;
+[CoQueryProxyBlanket]
+1=IUnknown* pProxy
+2=DWORD* pwAuthnSvc
+3=DWORD* pAuthzSvc
+4=OLECHAR** pServerPrincName
+5=DWORD* pAuthnLevel
+6=DWORD* pImpLevel
+7=RPC_AUTH_IDENTITY_HANDLE* pAuthInfo
+8=DWORD* pCapabilites
+ParamCount=8
+Header=ole.h.api;rpc.h.api;
+[CoRegisterClassObject]
+1=REFCLSID rclsid
+2=LPUNKNOWN pUnk
+3=[CLSCTX] dwClsContext
+4=[REGCLS] flags
+5=LPDWORD lpdwRegister
+ParamCount=5
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[CoRegisterInitializeSpy]
+1=LPINITIALIZESPY pSpy
+2=ULARGE_INTEGER* puliCookie
+ParamCount=2
+Header=ole32.h.api;windows.h.api;
+[CoRegisterMallocSpy]
+1=LPMALLOCSPY pMallocSpy
+ParamCount=1
+Header=ole32.h.api;
+[CoRegisterMessageFilter]
+1=LPMESSAGEFILTER lpMessageFilter
+2=LPMESSAGEFILTER* lplpMessageFilter
+ParamCount=2
+Header=ole32.h.api;
+[CoRegisterPSClsid]
+1=REFIID riid
+2=REFCLSID rclsid
+ParamCount=2
+Header=windows.h.api;
+[CoRegisterSurrogate]
+1=LPSURROGATE pSurrogate
+ParamCount=1
+Header=ole32.h.api;
+[CoReleaseMarshalData]
+1=LPSTREAM pStm
+ParamCount=1
+Header=ole.h.api;
+[CoReleaseServerProcess]
+ParamCount=0
+[CoResumeClassObjects]
+ParamCount=0
+[CoRevertToSelf]
+ParamCount=0
+[CoRevokeClassObject]
+1=DWORD dwRegister
+ParamCount=1
+[CoRevokeInitializeSpy]
+1=ULARGE_INTEGER uliCookie
+ParamCount=1
+[CoRevokeMallocSpy]
+ParamCount=0
+[CoSetCancelObject]
+1=IUnknown* pUnk
+ParamCount=1
+[CoSetProxyBlanket]
+1=IUnknown* pProxy
+2=[RPC_C_AUTHN_SVC] dwAuthnSvc
+3=[RPC_C_AUTHZ] dwAuthzSvc
+4=OLECHAR* pServerPrincName
+5=[RPC_C_AUTHN_LEVEL] dwAuthnLevel
+6=[RPC_C_IMP_LEVEL] dwImpLevel
+7=RPC_AUTH_IDENTITY_HANDLE pAuthInfo
+8=[EOLE_AUTHENTICATION_CAPABILITIES] dwCapabilities
+ParamCount=8
+Header=ole32.h.api;ole.h.api;rpc.h.api;
+[CoSuspendClassObjects]
+ParamCount=0
+[CoSwitchCallContext]
+1=IUnknown* pNewObject
+2=IUnknown** ppOldObject
+ParamCount=2
+[CoTaskMemAlloc]
+1=SIZE_T cb
+ParamCount=1
+[CoTaskMemFree]
+1=LPVOID pv
+ParamCount=1
+[CoTaskMemRealloc]
+1=LPVOID pv
+2=SIZE_T cb
+ParamCount=2
+[CoTestCancel]
+ParamCount=0
+[CoTreatAsClass]
+1=REFCLSID clsidOld
+2=REFCLSID clsidNew
+ParamCount=2
+Header=windows.h.api;
+[CoUninitialize]
+ParamCount=0
+[CoUnmarshalHresult]
+1=LPSTREAM pstm
+2=HRESULT* phresult
+ParamCount=2
+Header=ole.h.api;
+[CoUnmarshalInterface]
+1=LPSTREAM pStm
+2=REFIID riid
+3=LPVOID* ppv
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[CoWaitForMultipleHandles]
+1=DWORD dwFlags
+2=DWORD dwTimeout
+3=ULONG cHandles
+4=LPHANDLE pHandles
+5=LPDWORD lpdwindex
+ParamCount=5
+Header=windows.h.api;
+[CreateAntiMoniker]
+1=LPMONIKER* ppmk
+ParamCount=1
+Header=ole.h.api;
+[CreateBindCtx]
+1=DWORD reserved
+2=LPBC* ppbc
+ParamCount=2
+Header=ole.h.api;
+[CreateClassMoniker]
+1=REFCLSID rclsid
+2=LPMONIKER* ppmk
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CreateFileMoniker]
+1=LPCOLESTR lpszPathName
+2=LPMONIKER* ppmk
+ParamCount=2
+Header=ole.h.api;
+[CreateGenericComposite]
+1=LPMONIKER pmkFirst
+2=LPMONIKER pmkRest
+3=LPMONIKER* ppmkComposite
+ParamCount=3
+Header=ole.h.api;
+[CreateItemMoniker]
+1=LPCOLESTR lpszDelim
+2=LPCOLESTR lpszItem
+3=LPMONIKER* ppmk
+ParamCount=3
+Header=ole.h.api;
+[CreateObjrefMoniker]
+1=LPUNKNOWN punk
+2=LPMONIKER* ppmk
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CreatePointerMoniker]
+1=LPUNKNOWN punk
+2=LPMONIKER* ppmk
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[GetClassFile]
+1=LPCOLESTR szFilename
+2=CLSID* pclsid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[GetRunningObjectTable]
+1=DWORD reserved
+2=LPRUNNINGOBJECTTABLE* pprot
+ParamCount=2
+Header=ole32.h.api;
+[IIDFromString]
+1=LPCOLESTR lpsz
+2=LPIID lpiid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[IsAccelerator]
+1=HACCEL hAccel
+2=int cAccelEntries
+3=LPMSG lpMsg
+4=WORD* lpwCmd
+ParamCount=4
+Header=windows.h.api;
+[IsEqualGUID]
+1=REFGUID rguid1
+2=REFGUID rguid2
+ParamCount=2
+Header=windows.h.api;
+[MkParseDisplayName]
+1=LPBC pbc
+2=LPCOLESTR szUserName
+3=ULONG* pchEaten
+4=LPMONIKER* ppmk
+ParamCount=4
+Header=ole.h.api;
+[MonikerCommonPrefixWith]
+1=LPMONIKER pmkThis
+2=LPMONIKER pmkOther
+3=LPMONIKER* ppmkCommon
+ParamCount=3
+Header=ole.h.api;
+[MonikerRelativePathTo]
+1=LPMONIKER pmkSrc
+2=LPMONIKER pmkDest
+3=LPMONIKER* ppmkRelPath
+4=BOOL dwReserved
+ParamCount=4
+Header=ole.h.api;
+[OleDoAutoConvert]
+1=LPSTORAGE pStg
+2=LPCLSID pClsidNew
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[OleGetAutoConvert]
+1=REFCLSID clsidOld
+2=LPCLSID pClsidNew
+ParamCount=2
+Header=windows.h.api;
+[OleGetIconOfClass]
+1=REFCLSID rclsid
+2=LPOLESTR lpszLabel
+3=BOOL fUseTypeAsLabel
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[OleGetIconOfFile]
+1=LPOLESTR lpszPath
+2=BOOL fUseFileAsLabel
+ParamCount=2
+Header=ole.h.api;
+[OleRegGetMiscStatus]
+1=REFCLSID clsid
+2=[DVASPECT] dwAspect
+3=DWORD* pdwStatus
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[OleRegGetUserType]
+1=REFCLSID clsid
+2=DWORD dwFormOfType
+3=LPOLESTR* pszUserType
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[OleSetAutoConvert]
+1=REFCLSID clsidOld
+2=REFCLSID clsidNew
+ParamCount=2
+Header=windows.h.api;
+[ProgIDFromCLSID]
+1=REFCLSID clsid
+2=LPOLESTR* lplpszProgID
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[StringFromCLSID]
+1=REFCLSID rclsid
+2=LPOLESTR* lplpsz
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[StringFromGUID2]
+1=REFGUID rguid
+2=LPOLESTR lpsz
+3=int cchMax
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[StringFromIID]
+1=REFIID rclsid
+2=LPOLESTR* lplpsz
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[CoRegisterChannelHook]
+1=REFGUID ExtensionUuid
+2=IChannelHook* pChannelHook
+ParamCount=2
+Header=windows.h.api;
+[CoCreateInstanceFromApp]
+1=REFCLSID rclsid
+2=IUnknown* punkOuter
+3=DWORD dwClsCtx
+4=PVOID reserved
+5=DWORD dwCount
+6=MULTI_QI* pResults
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[CoDecrementMTAUsage]
+1=CO_MTA_USAGE_COOKIE Cookie
+ParamCount=1
+Header=ole32.h.api;
+[CoHandlePriorityEventsFromMessagePump]
+ParamCount=0
+[CoIncrementMTAUsage]
+1=CO_MTA_USAGE_COOKIE* pCookie
+ParamCount=1
+Header=ole32.h.api;
+[CoSetMessageDispatcher]
+1=PMessageDispatcher pMessageDispatcher
+ParamCount=1
+Header=ole32.h.api;
+[CreateDataAdviseHolder]
+1=LPDATAADVISEHOLDER* ppDAHolder
+ParamCount=1
+Header=ole32.h.api;
+[CreateDataCache]
+1=LPUNKNOWN pUnkOuter
+2=REFCLSID rclsid
+3=REFIID iid
+4=LPVOID* ppv
+ParamCount=4
+Header=windows.h.api;
+[CreateOleAdviseHolder]
+1=LPOLEADVISEHOLDER* ppOAHolder
+ParamCount=1
+Header=ole32.h.api;
+[DoDragDrop]
+1=LPDATAOBJECT pDataObj
+2=LPDROPSOURCE pDropSource
+3=DWORD dwOKEffects
+4=LPDWORD pdwEffect
+ParamCount=4
+Header=ole32.h.api;ole.h.api;
+[OleCreate]
+1=REFCLSID rclsid
+2=REFIID riid
+3=[OLERENDER] renderopt
+4=LPFORMATETC pFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateDefaultHandler]
+1=REFCLSID clsid
+2=LPUNKNOWN pUnkOuter
+3=REFIID riid
+4=LPVOID* lplpObj
+ParamCount=4
+Header=windows.h.api;
+[OleCreateEmbeddingHelper]
+1=REFCLSID clsid
+2=LPUNKNOWN pUnkOuter
+3=DWORD flags
+4=LPCLASSFACTORY pCF
+5=REFIID riid
+6=LPVOID* lplpObj
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[OleCreateEx]
+1=REFCLSID rclsid
+2=REFIID riid
+3=DWORD dwFlags
+4=[OLERENDER] renderopt
+5=ULONG cFormats
+6=DWORD* rgAdvf
+7=LPFORMATETC rgFormatEtc
+8=IAdviseSink* lpAdviseSink
+9=DWORD* rgdwConnection
+10=LPOLECLIENTSITE pClientSite
+11=LPSTORAGE pStg
+12=LPVOID* ppvObj
+ParamCount=12
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateFromData]
+1=LPDATAOBJECT pSrcDataObj
+2=REFIID riid
+3=[OLERENDER] renderopt
+4=LPFORMATETC pFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateFromDataEx]
+1=LPDATAOBJECT pSrcDataObj
+2=REFIID riid
+3=DWORD dwFlags
+4=[OLERENDER] renderopt
+5=ULONG cFormats
+6=DWORD* rgAdvf
+7=LPFORMATETC rgFormatEtc
+8=IAdviseSink* lpAdviseSink
+9=DWORD* rgdwConnection
+10=LPOLECLIENTSITE pClientSite
+11=LPSTORAGE pStg
+12=LPVOID* ppvObj
+ParamCount=12
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateFromFile]
+1=REFCLSID rclsid
+2=LPCOLESTR lpszFileName
+3=REFIID riid
+4=[OLERENDER] renderopt
+5=LPFORMATETC lpFormatEtc
+6=LPOLECLIENTSITE pClientSite
+7=LPSTORAGE pStg
+8=LPVOID* ppvObj
+ParamCount=8
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateFromFileEx]
+1=REFCLSID rclsid
+2=LPCOLESTR lpszFileName
+3=REFIID riid
+4=DWORD dwFlags
+5=[OLERENDER] renderopt
+6=ULONG cFormats
+7=DWORD* rgAdvf
+8=LPFORMATETC rgFormatEtc
+9=IAdviseSink* lpAdviseSink
+10=DWORD* rgdwConnection
+11=LPOLECLIENTSITE pClientSite
+12=LPSTORAGE pStg
+13=LPVOID* ppvObj
+ParamCount=13
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLink]
+1=LPMONIKER pmkLinkSrc
+2=REFIID riid
+3=[OLERENDER] renderopt
+4=LPFORMATETC lpFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLinkEx]
+1=LPMONIKER pmkLinkSrc
+2=REFIID riid
+3=DWORD dwFlags
+4=[OLERENDER] renderopt
+5=ULONG cFormats
+6=DWORD* rgAdvf
+7=LPFORMATETC rgFormatEtc
+8=IAdviseSink* lpAdviseSink
+9=DWORD* rgdwConnection
+10=LPOLECLIENTSITE pClientSite
+11=LPSTORAGE pStg
+12=LPVOID* ppvObj
+ParamCount=12
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLinkFromData]
+1=LPDATAOBJECT pSrcDataObj
+2=REFIID riid
+3=[OLERENDER] renderopt
+4=LPFORMATETC pFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLinkFromDataEx]
+1=LPDATAOBJECT pSrcDataObj
+2=REFIID riid
+3=DWORD dwFlags
+4=[OLERENDER] renderopt
+5=ULONG cFormats
+6=DWORD* rgAdvf
+7=LPFORMATETC rgFormatEtc
+8=IAdviseSink* lpAdviseSink
+9=DWORD* rgdwConnection
+10=LPOLECLIENTSITE pClientSite
+11=LPSTORAGE pStg
+12=LPVOID* ppvObj
+ParamCount=12
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLinkToFile]
+1=LPCOLESTR lpszFileName
+2=REFIID riid
+3=[OLERENDER] renderopt
+4=LPFORMATETC lpFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateLinkToFileEx]
+1=LPCOLESTR lpszFileName
+2=REFIID riid
+3=DWORD dwFlags
+4=[OLERENDER] renderopt
+5=ULONG cFormats
+6=DWORD* rgAdvf
+7=LPFORMATETC rgFormatEtc
+8=IAdviseSink* lpAdviseSink
+9=DWORD* rgdwConnection
+10=LPOLECLIENTSITE pClientSite
+11=LPSTORAGE pStg
+12=LPVOID* ppvObj
+ParamCount=12
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleCreateMenuDescriptor]
+1=HMENU hmenuCombined
+2=LPOLEMENUGROUPWIDTHS lpMenuWidths
+ParamCount=2
+Header=gdi.h.api;ole.h.api;
+[OleCreateStaticFromData]
+1=LPDATAOBJECT pSrcDataObj
+2=REFIID iid
+3=[OLERENDER] renderopt
+4=LPFORMATETC pFormatEtc
+5=LPOLECLIENTSITE pClientSite
+6=LPSTORAGE pStg
+7=LPVOID* ppvObj
+ParamCount=7
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleDestroyMenuDescriptor]
+1=HOLEMENU holemenu
+ParamCount=1
+Header=ole.h.api;
+[OleDraw]
+1=LPUNKNOWN pUnknown
+2=[DVASPECT] dwAspect
+3=HDC hdcDraw
+4=LPCRECT lprcBounds
+ParamCount=4
+Header=gdi.h.api;ole.h.api;windows.h.api;
+[OleDuplicateData]
+1=HANDLE hSrc
+2=CLIPFORMAT cfFormat
+3=UINT uiFlags
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[OleFlushClipboard]
+ParamCount=0
+[OleGetClipboard]
+1=LPDATAOBJECT* ppDataObj
+ParamCount=1
+Header=ole.h.api;
+[OleInitialize]
+1=LPVOID pvReserved
+ParamCount=1
+[OleIsCurrentClipboard]
+1=LPDATAOBJECT pDataObj
+ParamCount=1
+Header=ole.h.api;
+[OleIsRunning]
+1=LPOLEOBJECT pObject
+ParamCount=1
+Header=ole.h.api;
+[OleLoad]
+1=LPSTORAGE pStg
+2=REFIID riid
+3=REFCLSID rclsid
+4=LPOLECLIENTSITE pClientSite
+5=LPVOID* ppvObj
+ParamCount=5
+Header=ole.h.api;windows.h.api;
+[OleLoadFromStream]
+1=LPSTREAM pStm
+2=REFIID iidInterface
+3=LPVOID* ppvObj
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[OleLockRunning]
+1=LPUNKNOWN pUnknown
+2=BOOL fLock
+3=BOOL fLastUnlockCloses
+ParamCount=3
+Header=windows.h.api;
+[OleMetafilePictFromIconAndLabel]
+1=HICON hIcon
+2=LPOLESTR lpszLabel
+3=LPOLESTR lpszSourceFile
+4=UINT iIconIndex
+ParamCount=4
+Header=gdi.h.api;ole.h.api;
+[OleNoteObjectVisible]
+1=LPUNKNOWN pUnknown
+2=BOOL fVisible
+ParamCount=2
+Header=windows.h.api;
+[OleQueryCreateFromData]
+1=LPDATAOBJECT pSrcDataObject
+ParamCount=1
+Header=ole.h.api;
+[OleQueryLinkFromData]
+1=LPDATAOBJECT pSrcDataObject
+ParamCount=1
+Header=ole.h.api;
+[OleRegEnumFormatEtc]
+1=REFCLSID clsid
+2=DWORD dwDirection
+3=LPENUMFORMATETC* ppenum
+ParamCount=3
+Header=ole32.h.api;windows.h.api;
+[OleRegEnumVerbs]
+1=REFCLSID clsid
+2=LPENUMOLEVERB* ppenum
+ParamCount=2
+Header=ole32.h.api;windows.h.api;
+[OleRun]
+1=LPUNKNOWN pUnknown
+ParamCount=1
+Header=windows.h.api;
+[OleSave]
+1=LPPERSISTSTORAGE pPS
+2=LPSTORAGE pStg
+3=BOOL fSameAsLoad
+ParamCount=3
+Header=ole32.h.api;ole.h.api;
+[OleSaveToStream]
+1=LPPERSISTSTREAM pPStm
+2=LPSTREAM pStm
+ParamCount=2
+Header=ole32.h.api;ole.h.api;
+[OleSetClipboard]
+1=LPDATAOBJECT pDataObj
+ParamCount=1
+Header=ole.h.api;
+[OleSetContainedObject]
+1=LPUNKNOWN pUnknown
+2=BOOL fContained
+ParamCount=2
+Header=windows.h.api;
+[OleSetMenuDescriptor]
+1=HOLEMENU holemenu
+2=HWND hwndFrame
+3=HWND hwndActiveObject
+4=LPOLEINPLACEFRAME lpFrame
+5=LPOLEINPLACEACTIVEOBJECT lpActiveObj
+ParamCount=5
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleTranslateAccelerator]
+1=LPOLEINPLACEFRAME lpFrame
+2=LPOLEINPLACEFRAMEINFO lpFrameInfo
+3=LPMSG lpmsg
+ParamCount=3
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[OleUninitialize]
+ParamCount=0
+[RegisterDragDrop]
+1=HWND hwnd
+2=LPDROPTARGET pDropTarget
+ParamCount=2
+Header=ole32.h.api;windows.h.api;
+[ReleaseStgMedium]
+1=LPSTGMEDIUM pMedium
+ParamCount=1
+Header=ole.h.api;
+[RevokeDragDrop]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[CreateILockBytesOnHGlobal]
+1=HGLOBAL hGlobal
+2=BOOL fDeleteOnRelease
+3=ILockBytes** ppLkbyt
+ParamCount=3
+Header=windows.h.api;
+[CreateStreamOnHGlobal]
+1=HGLOBAL hGlobal
+2=BOOL fDeleteOnRelease
+3=LPSTREAM* ppstm
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[FmtIdToPropStgName]
+1=FMTID* pfmtid
+2=LPOLESTR oszName
+ParamCount=2
+Header=ole.h.api;
+[FreePropVariantArray]
+1=ULONG cVariants
+2=PROPVARIANT* rgvars
+ParamCount=2
+Header=ole.h.api;
+[GetConvertStg]
+1=IStorage* pStg
+ParamCount=1
+[GetHGlobalFromILockBytes]
+1=ILockBytes* pLkbyt
+2=HGLOBAL* phglobal
+ParamCount=2
+Header=windows.h.api;
+[GetHGlobalFromStream]
+1=IStream* pstm
+2=HGLOBAL* phglobal
+ParamCount=2
+Header=windows.h.api;
+[OleConvertIStorageToOLESTREAM]
+1=IStorage* pStg
+2=LPOLESTREAM lpolestream
+ParamCount=2
+Header=ole32.h.api;
+[OleConvertIStorageToOLESTREAMEx]
+1=IStorage* pStg
+2=CLIPFORMAT cfFormat
+3=LONG lWidth
+4=LONG lHeight
+5=DWORD dwSize
+6=LPSTGMEDIUM pmedium
+7=LPOLESTREAM lpolestm
+ParamCount=7
+Header=ole32.h.api;ole.h.api;
+[OleConvertOLESTREAMToIStorage]
+1=LPOLESTREAM lpolestream
+2=IStorage* pstg
+3=DVTARGETDEVICE* ptd
+ParamCount=3
+Header=ole32.h.api;ole.h.api;
+[OleConvertOLESTREAMToIStorageEx]
+1=LPOLESTREAM lpolestm
+2=IStorage* pstg
+3=CLIPFORMAT* pcfFormat
+4=LONG* plWidth
+5=LONG* plHeight
+6=DWORD* pdwSize
+7=LPSTGMEDIUM pmedium
+ParamCount=7
+Header=ole32.h.api;ole.h.api;
+[PropStgNameToFmtId]
+1=LPOLESTR oszName
+2=FMTID* pfmtid
+ParamCount=2
+Header=ole.h.api;
+[PropVariantClear]
+1=PROPVARIANT* pvar
+ParamCount=1
+Header=ole.h.api;
+[PropVariantCopy]
+1=PROPVARIANT* pvarDest
+2=PROPVARIANT* pvarSrc
+ParamCount=2
+Header=ole.h.api;
+[ReadClassStg]
+1=IStorage* pStg
+2=CLSID* pclsid
+ParamCount=2
+Header=windows.h.api;
+[ReadClassStm]
+1=IStream* pStm
+2=CLSID* pclsid
+ParamCount=2
+Header=windows.h.api;
+[ReadFmtUserTypeStg]
+1=IStorage* pStg
+2=CLIPFORMAT* pcf
+3=LPWSTR* lplpszUserType
+ParamCount=3
+Header=ole.h.api;
+[StgConvertPropertyToVariant]
+1=SERIALIZEDPROPERTYVALUE* prop
+2=USHORT CodePage
+3=PROPVARIANT* pvar
+4=IMemoryAllocator* pma
+ParamCount=4
+Header=ole32.h.api;ole.h.api;
+[SetConvertStg]
+1=IStorage* pStg
+2=BOOL fConvert
+ParamCount=2
+[StgConvertVariantToProperty]
+1=PROPVARIANT* pvar
+2=USHORT CodePage
+3=SERIALIZEDPROPERTYVALUE* pprop
+4=ULONG* pcb
+5=PROPID pid
+6=BOOLEAN fReserved
+7=ULONG* pcIndirect
+ParamCount=7
+Header=ole.h.api;
+[StgCreateDocfile]
+1=const WCHAR* pwcsName
+2=[STGM_FLAGS] grfMode
+3=DWORD reserved
+4=IStorage** ppstgOpen
+ParamCount=4
+Header=ole.h.api;
+[StgCreateDocfileOnILockBytes]
+1=ILockBytes* plkbyt
+2=[STGM_FLAGS] grfMode
+3=DWORD reserved
+4=IStorage** ppstgOpen
+ParamCount=4
+Header=ole.h.api;
+[StgCreatePropSetStg]
+1=IStorage* pStorage
+2=DWORD dwReserved
+3=IPropertySetStorage** ppPropSetStg
+ParamCount=3
+[StgCreatePropStg]
+1=IUnknown* pUnk
+2=REFFMTID fmtid
+3=CLSID* pclsid
+4=[PROPSETFLAG] grfFlags
+5=DWORD dwReserved
+6=IPropertyStorage** ppPropStg
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[StgCreateStorageEx]
+1=const WCHAR* pwcsName
+2=[STGM_FLAGS] grfMode
+3=[STGFMT] stgfmt
+4=DWORD grfAttrs
+5=STGOPTIONS* pStgOptions
+6=PSECURITY_DESCRIPTOR* pSecurityDescriptor
+7=REFIID riid
+8=void** ppObjectOpen
+ParamCount=8
+Header=ole32.h.api;ole.h.api;security.h.api;windows.h.api;
+[StgGetIFillLockBytesOnFile]
+1=OLECHAR* pwcsName
+2=IFillLockBytes** ppflb
+ParamCount=2
+Header=ole.h.api;
+[StgGetIFillLockBytesOnILockBytes]
+1=ILockBytes* pilb
+2=IFillLockBytes** ppflb
+ParamCount=2
+[StgIsStorageFile]
+1=const WCHAR* pwcsName
+ParamCount=1
+[StgIsStorageILockBytes]
+1=ILockBytes* plkbyt
+ParamCount=1
+[StgOpenAsyncDocfileOnIFillLockBytes]
+1=IFillLockBytes* ppflb
+2=[STGM_FLAGS] grfmode
+3=[ASYNC_MODE_FLAGS] asyncFlags
+4=IStorage** ppstgOpen
+ParamCount=4
+Header=ole32.h.api;ole.h.api;
+[StgOpenPropStg]
+1=IUnknown* pUnk
+2=REFFMTID fmtid
+3=[PROPSETFLAG] grfFlags
+4=DWORD dwReserved
+5=IPropertyStorage** ppPropStg
+ParamCount=5
+Header=ole.h.api;
+[StgOpenStorage]
+1=const WCHAR* pwcsName
+2=IStorage* pstgPriority
+3=[STGM_FLAGS] grfMode
+4=SNB snbExclude
+5=DWORD reserved
+6=IStorage** ppstgOpen
+ParamCount=6
+Header=ole.h.api;
+[StgOpenStorageEx]
+1=const WCHAR* pwcsName
+2=[STGM_FLAGS] grfMode
+3=[STGFMT] stgfmt
+4=DWORD grfAttrs
+5=STGOPTIONS* pStgOptions
+6=void* reserved2
+7=REFIID riid
+8=void** ppObjectOpen
+ParamCount=8
+Header=ole32.h.api;ole.h.api;windows.h.api;
+[StgOpenStorageOnILockBytes]
+1=ILockBytes* plkbyt
+2=IStorage* pStgPriority
+3=[STGM_FLAGS] grfMode
+4=SNB snbExclude
+5=DWORD reserved
+6=IStorage** ppstgOpen
+ParamCount=6
+Header=ole.h.api;
+[StgPropertyLengthAsVariant]
+1=SERIALIZEDPROPERTYVALUE* pProp
+2=ULONG cbProp
+3=USHORT CodePage
+4=BYTE bReserved
+ParamCount=4
+Header=ole.h.api;
+[StgSetTimes]
+1=WCHAR const* lpszName
+2=ME const* pctime
+3=ME const* patime
+4=ME const* pmtime
+ParamCount=4
+Header=windows.h.api;
+[WriteClassStg]
+1=IStorage* pStg
+2=REFCLSID rclsid
+ParamCount=2
+Header=windows.h.api;
+[WriteClassStm]
+1=IStream* pStm
+2=REFCLSID rclsid
+ParamCount=2
+Header=windows.h.api;
+[WriteFmtUserTypeStg]
+1=IStorage* pStg
+2=CLIPFORMAT cf
+3=LPWSTR* lpszUserType
+ParamCount=3
+Header=ole.h.api;
+[CoGetModuleType]
+1=LPCWSTR pwszFile
+2=int* pModuleType
+ParamCount=2

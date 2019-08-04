@@ -1,0 +1,2149 @@
+[CallingConvention]
+@=STDCALL
+[OleIconToCursor]
+1=HINSTANCE hinstExe
+2=HICON hIcon
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[OleCreateFontIndirect]
+1=LPFONTDESC lpFontDesc
+2=REFIID riid
+3=LPVOID* lplpvObj
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[OleCreatePictureIndirect]
+1=LPPICTDESC lpPictDesc
+2=REFIID riid
+3=BOOL fOwn
+4=LPVOID* lplpvObj
+ParamCount=4
+Header=oleaut32.h.api;windows.h.api;
+[OleLoadPicture]
+1=LPSTREAM lpstream
+2=LONG lSize
+3=BOOL fRunmode
+4=REFIID riid
+5=LPVOID* lplpvObj
+ParamCount=5
+Header=ole.h.api;windows.h.api;
+[OleLoadPictureEx]
+1=LPSTREAM lpstream
+2=LONG lSize
+3=BOOL fRunmode
+4=REFIID riid
+5=DWORD xSizeDesired
+6=DWORD ySizeDesired
+7=[OleLoadPictureExFlags] dwFlags
+8=LPVOID* lplpvObj
+ParamCount=8
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[OleCreatePropertyFrame]
+1=HWND hwndOwner
+2=UINT x
+3=UINT y
+4=LPCOLESTR lpszCaption
+5=ULONG cObjects
+6=LPUNKNOWN* ppUnk
+7=ULONG cPages
+8=LPCLSID pPageClsID
+9=[LCID] lcid
+10=DWORD dwReserved
+11=LPVOID pvReserved
+ParamCount=11
+Header=ole.h.api;windows.h.api;
+[OleCreatePropertyFrameIndirect]
+1=LPOCPFIPARAMS lpParams
+ParamCount=1
+Header=oleaut32.h.api;
+[OleLoadPicturePath]
+1=LPOLESTR szURLorPath
+2=LPUNKNOWN punkCaller
+3=DWORD dwReserved
+4=OLE_COLOR clrReserved
+5=REFIID riid
+6=LPVOID* ppvRet
+ParamCount=6
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[OleTranslateColor]
+1=OLE_COLOR clr
+2=HPALETTE hpal
+3=COLORREF* lpcolorref
+ParamCount=3
+Header=oleaut32.h.api;gdi.h.api;
+[SafeArrayAccessData]
+1=SAFEARRAY* psa
+2=void** ppvData
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayAllocData]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayAllocDescriptor]
+1=UINT cDims
+2=SAFEARRAY** ppsaOut
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayAllocDescriptorEx]
+1=[VARTYPE] vt
+2=UINT cDims
+3=SAFEARRAY** ppsaOut
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayCopy]
+1=SAFEARRAY* psa
+2=SAFEARRAY** ppsaOut
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayCopyData]
+1=SAFEARRAY* psaSource
+2=SAFEARRAY* psaTarget
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayCreate]
+1=[VARTYPE] vt
+2=UINT cDims
+3=SAFEARRAYBOUND* rgsabound
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayCreateEx]
+1=[VARTYPE] vt
+2=UINT cDims
+3=SAFEARRAYBOUND* rgsabound
+4=PVOID pvExtra
+ParamCount=4
+Header=ole.h.api;
+[SafeArrayCreateVector]
+1=[VARTYPE] vt
+2=LONG lLbound
+3=ULONG cElements
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayCreateVectorEx]
+1=[VARTYPE] vt
+2=LONG lLbound
+3=ULONG cElements
+4=PVOID pvExtra
+ParamCount=4
+Header=ole.h.api;
+[SafeArrayDestroy]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayDestroyData]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayDestroyDescriptor]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayGetDim]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayGetElement]
+1=SAFEARRAY* psa
+2=LONG* rgIndices
+3=void* pv
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayGetElemsize]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayGetIID]
+1=SAFEARRAY* psa
+2=GUID* pguid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[SafeArrayGetLBound]
+1=SAFEARRAY* psa
+2=UINT nDim
+3=LONG* plLbound
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayGetRecordInfo]
+1=SAFEARRAY* psa
+2=IRecordInfo** prinfo
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayGetUBound]
+1=SAFEARRAY* psa
+2=UINT nDim
+3=LONG* plUbound
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayGetVartype]
+1=SAFEARRAY* psa
+2=VARTYPE* pvt
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayLock]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayPtrOfIndex]
+1=SAFEARRAY* psa
+2=LONG* rgIndices
+3=void** ppvData
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayPutElement]
+1=SAFEARRAY* psa
+2=LONG* rgIndices
+3=void* pv
+ParamCount=3
+Header=ole.h.api;
+[SafeArrayRedim]
+1=SAFEARRAY* psa
+2=SAFEARRAYBOUND* psaboundNew
+ParamCount=2
+Header=ole.h.api;
+[SafeArraySetIID]
+1=SAFEARRAY* psa
+2=REFGUID guid
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[SafeArraySetRecordInfo]
+1=SAFEARRAY* psa
+2=IRecordInfo* prinfo
+ParamCount=2
+Header=ole.h.api;
+[SafeArrayUnaccessData]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[SafeArrayUnlock]
+1=SAFEARRAY* psa
+ParamCount=1
+Header=ole.h.api;
+[BstrFromVector]
+1=SAFEARRAY* psa
+2=BSTR* pbstr
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[SetOaNoCache]
+ParamCount=0
+[VarBstrCat]
+1=BSTR bstrLeft
+2=BSTR bstrRight
+3=LPBSTR pbstrResult
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[VarBstrCmp]
+1=BSTR bstrLeft
+2=BSTR bstrRight
+3=[LCID] lcid
+4=ULONG dwFlags
+ParamCount=4
+Header=windows.h.api;
+[VectorFromBstr]
+1=BSTR bstr
+2=SAFEARRAY** ppsa
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[VarCyAbs]
+1=CY cyIn
+2=LPCY pcyResult
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarCyAdd]
+1=CY cyLeft
+2=CY cyRight
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[VarCyCmp]
+1=CY cyLeft
+2=CY cyRight
+ParamCount=-2
+[VarCyCmpR8]
+1=CY cyLeft
+2=double dblRight
+ParamCount=-2
+[VarCyFix]
+1=CY cyIn
+2=LPCY pcyResult
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarCyInt]
+1=CY cyIn
+2=LPCY pcyResult
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarCyMul]
+1=CY cyLeft
+2=CY cyRight
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[VarCyMulI4]
+1=CY cyLeft
+2=long lRight
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[VarCyMulI8]
+1=CY cyLeft
+2=LONG64 lRight
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[VarCyNeg]
+1=CY cyIn
+2=LPCY pcyResult
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarCyRound]
+1=CY cyIn
+2=int cDecimals
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[VarCySub]
+1=CY cyLeft
+2=CY cyRight
+3=LPCY pcyResult
+ParamCount=-3
+Header=oleaut32.h.api;
+[GetVarConversionLocaleSetting]
+1=ULONG* dwFlags
+ParamCount=1
+[SetVarConversionLocaleSetting]
+1=ULONG dwFlags
+ParamCount=1
+[VarI1FromUI1]
+1=BYTE bIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromUI2]
+1=USHORT uiIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromUI4]
+1=ULONG ulIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromUI8]
+1=ULONG64 i64In
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromI2]
+1=SHORT uiIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromI4]
+1=LONG lIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromI8]
+1=LONG64 i64In
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromR4]
+1=FLOAT fltIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromR8]
+1=DOUBLE dblIn
+2=CHAR* pcOut
+ParamCount=2
+[VarI1FromCy]
+1=CY cyIn
+2=CHAR* pcOut
+ParamCount=-2
+[VarI1FromDec]
+1=DECIMAL* pdecIn
+2=CHAR* pcOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI1FromDate]
+1=DATE dateIn
+2=CHAR* pcOut
+ParamCount=2
+Header=shell.h.api;
+[VarI1FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=CHAR* pcOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarI1FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=CHAR* pcOut
+ParamCount=3
+Header=windows.h.api;
+[VarI1FromBool]
+1=[VARIANT_BOOL] boolIn
+2=CHAR* pcOut
+ParamCount=2
+Header=ole.h.api;
+[VarUI1FromUI2]
+1=USHORT uiIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromUI4]
+1=ULONG ulIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromUI8]
+1=ULONG64 i64In
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromI1]
+1=CHAR cIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromI2]
+1=SHORT sIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromI4]
+1=LONG lIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromI8]
+1=LONG64 i64In
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromR4]
+1=FLOAT fltIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromR8]
+1=DOUBLE dblIn
+2=BYTE* pbOut
+ParamCount=2
+[VarUI1FromCy]
+1=CY cyIn
+2=BYTE* pbOut
+ParamCount=-2
+[VarUI1FromDec]
+1=DECIMAL* pdecIn
+2=BYTE* pbOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarUI1FromDate]
+1=DATE dateIn
+2=BYTE* pbOut
+ParamCount=2
+Header=shell.h.api;
+[VarUI1FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BYTE* pbOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarUI1FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=BYTE* pbOut
+ParamCount=3
+Header=windows.h.api;
+[VarUI1FromBool]
+1=[VARIANT_BOOL] boolIn
+2=BYTE* pbOut
+ParamCount=2
+Header=ole.h.api;
+[VarI2FromUI1]
+1=BYTE bIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromUI2]
+1=USHORT uiIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromUI4]
+1=ULONG ulIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromUI8]
+1=ULONG64 ui64In
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromI1]
+1=CHAR cIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromI4]
+1=LONG lIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromI8]
+1=LONG64 i64In
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromR4]
+1=FLOAT fltIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromR8]
+1=DOUBLE dblIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromCy]
+1=CY cyIn
+2=SHORT* psOut
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarI2FromDec]
+1=DECIMAL* pdecIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI2FromDate]
+1=DATE dateIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;shell.h.api;
+[VarI2FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=SHORT* psOut
+ParamCount=4
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[VarI2FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=SHORT* psOut
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[VarI2FromBool]
+1=[VARIANT_BOOL] boolIn
+2=SHORT* psOut
+ParamCount=2
+Header=oleaut32.h.api;ole.h.api;
+[VarUI2FromI1]
+1=CHAR cIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromI2]
+1=SHORT uiIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromI4]
+1=LONG lIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromI8]
+1=LONG64 i64In
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromUI1]
+1=BYTE bIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromUI4]
+1=ULONG ulIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromUI8]
+1=ULONG64 i64In
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromR4]
+1=FLOAT fltIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromR8]
+1=DOUBLE dblIn
+2=USHORT* puiOut
+ParamCount=2
+[VarUI2FromCy]
+1=CY cyIn
+2=USHORT* puiOut
+ParamCount=-2
+[VarUI2FromDec]
+1=DECIMAL* pdecIn
+2=USHORT* puiOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarUI2FromDate]
+1=DATE dateIn
+2=USHORT* puiOut
+ParamCount=2
+Header=shell.h.api;
+[VarUI2FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=USHORT* puiOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarUI2FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=USHORT* puiOut
+ParamCount=3
+Header=windows.h.api;
+[VarUI2FromBool]
+1=[VARIANT_BOOL] boolIn
+2=USHORT* puiOut
+ParamCount=2
+Header=ole.h.api;
+[VarI4FromUI2]
+1=USHORT uiIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromUI4]
+1=ULONG ulIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromUI8]
+1=ULONG64 ui64In
+2=LONG* plOut
+ParamCount=2
+[VarI4FromI1]
+1=CHAR cIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromUI1]
+1=BYTE bIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromI2]
+1=SHORT sIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromI8]
+1=LONG64 i64In
+2=LONG* plOut
+ParamCount=2
+[VarI4FromR4]
+1=FLOAT fltIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromR8]
+1=DOUBLE dblIn
+2=LONG* plOut
+ParamCount=2
+[VarI4FromCy]
+1=CY cyIn
+2=LONG* plOut
+ParamCount=-2
+[VarI4FromDec]
+1=DECIMAL* pdecIn
+2=LONG* plOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI4FromDate]
+1=DATE dateIn
+2=LONG* plOut
+ParamCount=2
+Header=shell.h.api;
+[VarI4FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=LONG* plOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarI4FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=LONG* plOut
+ParamCount=3
+Header=windows.h.api;
+[VarI4FromBool]
+1=[VARIANT_BOOL] boolIn
+2=LONG* plOut
+ParamCount=2
+Header=ole.h.api;
+[VarUI4FromUI2]
+1=USHORT uiIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromI1]
+1=CHAR cIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromI2]
+1=SHORT uiIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromUI1]
+1=BYTE bIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromUI8]
+1=ULONG64 ui64In
+2=ULONG* plOut
+ParamCount=2
+[VarUI4FromI4]
+1=LONG lIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromI8]
+1=LONG64 i64In
+2=ULONG* plOut
+ParamCount=2
+[VarUI4FromR4]
+1=FLOAT fltIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromR8]
+1=DOUBLE dblIn
+2=ULONG* pulOut
+ParamCount=2
+[VarUI4FromCy]
+1=CY cyIn
+2=ULONG* pulOut
+ParamCount=-2
+[VarUI4FromDec]
+1=DECIMAL* pdecIn
+2=ULONG* pulOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarUI4FromDate]
+1=DATE dateIn
+2=ULONG* pulOut
+ParamCount=2
+Header=shell.h.api;
+[VarUI4FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=ULONG* pulOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarUI4FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=ULONG* pulOut
+ParamCount=3
+Header=windows.h.api;
+[VarUI4FromBool]
+1=[VARIANT_BOOL] boolIn
+2=ULONG* pulOut
+ParamCount=2
+Header=ole.h.api;
+[VarR4FromUI2]
+1=USHORT uiIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromUI4]
+1=ULONG ulIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromUI8]
+1=ULONG64 ui64In
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromI1]
+1=CHAR cIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromUI1]
+1=BYTE bIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromI2]
+1=SHORT sIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromI4]
+1=LONG lIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromI8]
+1=LONG64 i64In
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromR8]
+1=DOUBLE dblIn
+2=FLOAT* pfltOut
+ParamCount=2
+[VarR4FromCy]
+1=CY cyIn
+2=FLOAT* pfltOut
+ParamCount=-2
+[VarR4FromDec]
+1=DECIMAL* pdecIn
+2=FLOAT* pfltOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarR4FromDate]
+1=DATE dateIn
+2=FLOAT* pfltOut
+ParamCount=2
+Header=shell.h.api;
+[VarR4FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=FLOAT* pfltOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarR4FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=FLOAT* pfltOut
+ParamCount=3
+Header=windows.h.api;
+[VarR4FromBool]
+1=[VARIANT_BOOL] boolIn
+2=FLOAT* pfltOut
+ParamCount=2
+Header=ole.h.api;
+[VarR8FromUI2]
+1=USHORT uiIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromUI4]
+1=ULONG ulIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromUI8]
+1=ULONG64 ui64In
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromI1]
+1=CHAR cIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromUI1]
+1=BYTE bIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromI2]
+1=SHORT sIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromI4]
+1=LONG lIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromI8]
+1=LONG64 i64In
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromR4]
+1=FLOAT fltIn
+2=DOUBLE* pdblOut
+ParamCount=2
+[VarR8FromCy]
+1=CY cyIn
+2=DOUBLE* pdblOut
+ParamCount=-2
+[VarR8FromDec]
+1=DECIMAL* pdecIn
+2=DOUBLE* pdblOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarR8FromDate]
+1=DATE dateIn
+2=DOUBLE* pdblOut
+ParamCount=2
+Header=shell.h.api;
+[VarR8FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=DOUBLE* pdblOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarR8FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=DOUBLE* pdblOut
+ParamCount=3
+Header=windows.h.api;
+[VarR8FromBool]
+1=[VARIANT_BOOL] boolIn
+2=DOUBLE* pdblOut
+ParamCount=2
+Header=ole.h.api;
+[VarDateFromUI2]
+1=USHORT uiIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromUI4]
+1=ULONG ulIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromUI8]
+1=ULONG64 ui64In
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromI1]
+1=CHAR cIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromUI1]
+1=BYTE bIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromI2]
+1=SHORT sIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromI4]
+1=LONG lIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromI8]
+1=LONG64 i64In
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromR4]
+1=FLOAT fltIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromR8]
+1=DOUBLE dblIn
+2=DATE* pdateOut
+ParamCount=2
+Header=shell.h.api;
+[VarDateFromCy]
+1=CY cyIn
+2=DATE* pdateOut
+ParamCount=-2
+Header=shell.h.api;
+[VarDateFromDec]
+1=DECIMAL* pdecIn
+2=DATE* pdateOut
+ParamCount=2
+Header=oleaut32.h.api;shell.h.api;
+[VarDateFromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=DATE* pdateOut
+ParamCount=4
+Header=ole.h.api;shell.h.api;windows.h.api;
+[VarDateFromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=DATE* pdateOut
+ParamCount=3
+Header=shell.h.api;windows.h.api;
+[VarDateFromBool]
+1=[VARIANT_BOOL] boolIn
+2=DATE* pdateOut
+ParamCount=2
+Header=ole.h.api;shell.h.api;
+[VarCyFromUI2]
+1=USHORT uiIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromUI4]
+1=ULONG ulIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromUI8]
+1=ULONG64 ui64In
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromI1]
+1=CHAR cIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromUI1]
+1=BYTE bIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromI2]
+1=SHORT sIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromI4]
+1=LONG lIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromI8]
+1=LONG64 i64In
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromR4]
+1=FLOAT fltIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromR8]
+1=DOUBLE dblIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromDec]
+1=DECIMAL* pdecIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarCyFromDate]
+1=DATE dateIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;shell.h.api;
+[VarCyFromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=CY* pcyOut
+ParamCount=4
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[VarCyFromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=CY* pcyOut
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[VarCyFromBool]
+1=[VARIANT_BOOL] boolIn
+2=CY* pcyOut
+ParamCount=2
+Header=oleaut32.h.api;ole.h.api;
+[VarBstrFromUI2]
+1=USHORT uiIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromUI4]
+1=ULONG ulIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromUI8]
+1=ULONG64 ui64In
+2=[LCID] lcid
+3=unsigned long dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromI1]
+1=CHAR cIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromUI1]
+1=BYTE bVal
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromI2]
+1=SHORT iVal
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromI4]
+1=LONG lIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromI8]
+1=LONG64 i64In
+2=[LCID] lcid
+3=unsigned long dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromR4]
+1=FLOAT fltIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromR8]
+1=DOUBLE dblIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromCy]
+1=CY cyIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=-4
+Header=windows.h.api;
+[VarBstrFromDec]
+1=DECIMAL* pdecIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=oleaut32.h.api;windows.h.api;
+[VarBstrFromDate]
+1=DATE dateIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=shell.h.api;windows.h.api;
+[VarBstrFromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarBstrFromBool]
+1=[VARIANT_BOOL] boolIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarBoolFromUI2]
+1=USHORT uiIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromUI4]
+1=ULONG ulIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromUI8]
+1=ULONG64 i64In
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromI1]
+1=CHAR cIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromUI1]
+1=BYTE bIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromI2]
+1=SHORT sIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromI4]
+1=LONG lIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromI8]
+1=LONG64 i64In
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromR4]
+1=FLOAT fltIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromR8]
+1=DOUBLE dblIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;
+[VarBoolFromCy]
+1=CY cyIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=-2
+Header=ole.h.api;
+[VarBoolFromDec]
+1=DECIMAL* pdecIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=oleaut32.h.api;ole.h.api;
+[VarBoolFromDate]
+1=DATE dateIn
+2=VARIANT_BOOL* pboolOut
+ParamCount=2
+Header=ole.h.api;shell.h.api;
+[VarBoolFromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=VARIANT_BOOL* pboolOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarBoolFromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=VARIANT_BOOL* pboolOut
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[VarDecFromUI2]
+1=USHORT uiIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromUI4]
+1=ULONG ulIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromUI8]
+1=ULONG64 ui64In
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromI1]
+1=CHAR cIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromUI1]
+1=BYTE bIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromI2]
+1=SHORT uiIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromI4]
+1=LONG lIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromI8]
+1=LONG64 i64In
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromR4]
+1=FLOAT fltIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromR8]
+1=DOUBLE dblIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecFromCy]
+1=CY cyIn
+2=DECIMAL* pdecOut
+ParamCount=-2
+Header=oleaut32.h.api;
+[VarDecFromDate]
+1=DATE dateIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;shell.h.api;
+[VarDecFromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=DECIMAL* pdecOut
+ParamCount=4
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[VarDecFromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=DECIMAL* pdecOut
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[VarDecFromBool]
+1=[VARIANT_BOOL] boolIn
+2=DECIMAL* pdecOut
+ParamCount=2
+Header=oleaut32.h.api;ole.h.api;
+[VarI8FromBool]
+1=[VARIANT_BOOL] boolIn
+2=LONG64* pi64Out
+ParamCount=2
+Header=ole.h.api;
+[VarI8FromCy]
+1=CY cyIn
+2=LONG64* pi64Out
+ParamCount=-2
+[VarI8FromDate]
+1=DATE dateIn
+2=LONG64* pi64Out
+ParamCount=2
+Header=shell.h.api;
+[VarI8FromDec]
+1=DECIMAL* pdecIn
+2=LONG64* pi64Out
+ParamCount=2
+Header=oleaut32.h.api;
+[VarI8FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=LONG64* pi64Out
+ParamCount=3
+Header=windows.h.api;
+[VarI8FromI1]
+1=CHAR cIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromI2]
+1=SHORT sIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromR4]
+1=FLOAT fltIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromR8]
+1=DOUBLE dblIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=unsigned long dwFlags
+4=LONG64* pi64Out
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarI8FromUI1]
+1=BYTE bIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromUI2]
+1=USHORT uiIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromUI4]
+1=ULONG ulIn
+2=LONG64* pi64Out
+ParamCount=2
+[VarI8FromUI8]
+1=ULONG64 ui64In
+2=LONG64* pi64Out
+ParamCount=2
+[VarUI8FromBool]
+1=[VARIANT_BOOL] boolIn
+2=ULONG64* pi64Out
+ParamCount=2
+Header=ole.h.api;
+[VarUI8FromCy]
+1=CY cyIn
+2=ULONG64* pi64Out
+ParamCount=-2
+[VarUI8FromDate]
+1=DATE dateIn
+2=ULONG64* pi64Out
+ParamCount=2
+Header=shell.h.api;
+[VarUI8FromDec]
+1=DECIMAL* pdecIn
+2=ULONG64* pi64Out
+ParamCount=2
+Header=oleaut32.h.api;
+[VarUI8FromDisp]
+1=IDispatch* pdispIn
+2=[LCID] lcid
+3=ULONG64* pi64Out
+ParamCount=3
+Header=windows.h.api;
+[VarUI8FromI1]
+1=CHAR cIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromI2]
+1=SHORT sIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromI8]
+1=LONG64 ui64In
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromR4]
+1=FLOAT fltIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromR8]
+1=DOUBLE dblIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=unsigned long dwFlags
+4=ULONG64* pi64Out
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarUI8FromUI1]
+1=BYTE bIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromUI2]
+1=USHORT uiIn
+2=ULONG64* pi64Out
+ParamCount=2
+[VarUI8FromUI4]
+1=ULONG ulIn
+2=ULONG64* pi64Out
+ParamCount=2
+[DosDateTimeToVariantTime]
+1=USHORT wDosDate
+2=USHORT wDosTime
+3=DOUBLE* pvtime
+ParamCount=3
+[GetAltMonthNames]
+1=[LCID] lcid
+2=LPOLESTR** prgp
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[SystemTimeToVariantTime]
+1=LPSYSTEMTIME lpSystemTime
+2=DOUBLE* pvtime
+ParamCount=2
+Header=windows.h.api;
+[VarDateFromUdate]
+1=UDATE* pudateIn
+2=ULONG dwFlags
+3=DATE* pdateOut
+ParamCount=3
+Header=oleaut32.h.api;shell.h.api;
+[VarDateFromUdateEx]
+1=UDATE* pudateIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=DATE* pdateOut
+ParamCount=4
+Header=oleaut32.h.api;shell.h.api;windows.h.api;
+[VariantTimeToDosDateTime]
+1=DOUBLE vtime
+2=USHORT* pwDosDate
+3=USHORT* pwDosTime
+ParamCount=3
+[VariantTimeToSystemTime]
+1=DOUBLE vtime
+2=LPSYSTEMTIME lpSystemTime
+ParamCount=2
+Header=windows.h.api;
+[VarUdateFromDate]
+1=DATE dateIn
+2=ULONG dwFlags
+3=UDATE* pudateOut
+ParamCount=3
+Header=oleaut32.h.api;shell.h.api;
+[VarDecAbs]
+1=LPDECIMAL pdecIn
+2=LPDECIMAL pdecResult
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecAdd]
+1=LPDECIMAL pdecLeft
+2=LPDECIMAL pdecRight
+3=LPDECIMAL pdecResult
+ParamCount=3
+Header=oleaut32.h.api;
+[VarDecCmp]
+1=LPDECIMAL pdecLeft
+2=LPDECIMAL pdecRight
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecCmpR8]
+1=LPDECIMAL pdecLeft
+2=double dblRight
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecDiv]
+1=LPDECIMAL pdecLeft
+2=LPDECIMAL pdecRight
+3=LPDECIMAL pdecResult
+ParamCount=3
+Header=oleaut32.h.api;
+[VarDecFix]
+1=LPDECIMAL pdecIn
+2=LPDECIMAL pdecResult
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecInt]
+1=LPDECIMAL pdecIn
+2=LPDECIMAL pdecResult
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecMul]
+1=LPDECIMAL pdecLeft
+2=LPDECIMAL pdecRight
+3=LPDECIMAL pdecResult
+ParamCount=3
+Header=oleaut32.h.api;
+[VarDecNeg]
+1=LPDECIMAL pdecIn
+2=LPDECIMAL pdecResult
+ParamCount=2
+Header=oleaut32.h.api;
+[VarDecRound]
+1=LPDECIMAL pdecIn
+2=int cDecimals
+3=LPDECIMAL pdecResult
+ParamCount=3
+Header=oleaut32.h.api;
+[VarDecSub]
+1=LPDECIMAL pdecLeft
+2=LPDECIMAL pdecRight
+3=LPDECIMAL pdecResult
+ParamCount=3
+Header=oleaut32.h.api;
+[VarNumFromParseNum]
+1=NUMPARSE* pnumprs
+2=BYTE* rgbDig
+3=ULONG dwVtBits
+4=VARIANT* pvar
+ParamCount=4
+Header=oleaut32.h.api;ole.h.api;
+[VarParseNumFromStr]
+1=LPCOLESTR strIn
+2=[LCID] lcid
+3=ULONG dwFlags
+4=NUMPARSE* pnumprs
+5=BYTE* rgbDig
+ParamCount=5
+Header=oleaut32.h.api;ole.h.api;windows.h.api;
+[BSTR_UserFree]
+1=unsigned long* pFlags
+2=BSTR* pBstr
+ParamCount=2
+Header=windows.h.api;
+[BSTR_UserFree64]
+1=unsigned long* pFlags
+2=BSTR* pBstr
+ParamCount=2
+Header=windows.h.api;
+[BSTR_UserMarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[BSTR_UserMarshal64]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[BSTR_UserSize]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[BSTR_UserSize64]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[BSTR_UserUnmarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[BSTR_UserUnmarshal64]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=BSTR* pBstr
+ParamCount=3
+Header=windows.h.api;
+[LPSAFEARRAY_Marshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=LPSAFEARRAY* ppSafeArray
+4=IID* piid
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[LPSAFEARRAY_Size]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=LPSAFEARRAY* ppSafeArray
+4=IID* piid
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[LPSAFEARRAY_Unmarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=LPSAFEARRAY* ppSafeArray
+4=IID* piid
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[LPSAFEARRAY_UserFree]
+1=unsigned long* pFlags
+2=LPSAFEARRAY* ppSafeArray
+ParamCount=2
+Header=ole.h.api;
+[LPSAFEARRAY_UserMarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=LPSAFEARRAY* ppSafeArray
+ParamCount=3
+Header=ole.h.api;
+[LPSAFEARRAY_UserSize]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=LPSAFEARRAY* ppSafeArray
+ParamCount=3
+Header=ole.h.api;
+[LPSAFEARRAY_UserUnmarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=LPSAFEARRAY* ppSafeArray
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserFree]
+1=unsigned long* pFlags
+2=VARIANT* pVariant
+ParamCount=2
+Header=ole.h.api;
+[VARIANT_UserFree64]
+1=unsigned long* pFlags
+2=VARIANT* pVariant
+ParamCount=2
+Header=ole.h.api;
+[VARIANT_UserMarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserMarshal64]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserSize]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserSize64]
+1=unsigned long* pFlags
+2=unsigned long Offset
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserUnmarshal]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[VARIANT_UserUnmarshal64]
+1=unsigned long* pFlags
+2=unsigned char* pBuffer
+3=VARIANT* pVariant
+ParamCount=3
+Header=ole.h.api;
+[SysAllocString]
+1=OLECHAR* psz
+ParamCount=1
+Header=ole.h.api;
+[SysAllocStringByteLen]
+1=LPCSTR psz
+2=UINT len
+ParamCount=2
+[SysAllocStringLen]
+1=OLECHAR* strIn
+2=UINT ui
+ParamCount=2
+Header=ole.h.api;
+[SysFreeString]
+1=BSTR bstrString
+ParamCount=1
+Header=windows.h.api;
+[SysReAllocString]
+1=BSTR* pbstr
+2=OLECHAR* psz
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[SysReAllocStringLen]
+1=BSTR* pbstr
+2=OLECHAR* psz
+3=unsigned int len
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[SysStringByteLen]
+1=BSTR bstr
+ParamCount=1
+Header=windows.h.api;
+[SysStringLen]
+1=BSTR bstr
+ParamCount=1
+Header=windows.h.api;
+[VarAbs]
+1=LPVARIANT pvarIn
+2=LPVARIANT pvarResult
+ParamCount=2
+Header=ole.h.api;
+[VarAdd]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarAnd]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarCat]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarCmp]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=[LCID] lcid
+4=ULONG dwFlags
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarDiv]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarEqv]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarFix]
+1=LPVARIANT pvarIn
+2=LPVARIANT pvarResult
+ParamCount=2
+Header=ole.h.api;
+[VarIdiv]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarImp]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarInt]
+1=LPVARIANT pvarIn
+2=LPVARIANT pvarResult
+ParamCount=2
+Header=ole.h.api;
+[VarMod]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarMul]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarNeg]
+1=LPVARIANT pvarIn
+2=LPVARIANT pvarResult
+ParamCount=2
+Header=ole.h.api;
+[VarNot]
+1=LPVARIANT pvarIn
+2=LPVARIANT pvarResult
+ParamCount=2
+Header=ole.h.api;
+[VarOr]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarPow]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarR4CmpR8]
+1=float fltLeft
+2=double dblRight
+ParamCount=2
+[VarR8Pow]
+1=double dblLeft
+2=double dblRight
+3=double* pdblResult
+ParamCount=3
+[VarR8Round]
+1=double dblIn
+2=int cDecimals
+3=double* pdblResult
+ParamCount=3
+[VarRound]
+1=LPVARIANT pvarIn
+2=int cDecimals
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarSub]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VarXor]
+1=LPVARIANT pvarLeft
+2=LPVARIANT pvarRight
+3=LPVARIANT pvarResult
+ParamCount=3
+Header=ole.h.api;
+[VariantChangeType]
+1=VARIANTARG* pvargDest
+2=VARIANTARG* pvarSrc
+3=USHORT wFlags
+4=[VARTYPE] vt
+ParamCount=4
+Header=ole.h.api;
+[VariantChangeTypeEx]
+1=VARIANTARG* pvargDest
+2=VARIANTARG* pvarSrc
+3=[LCID] lcid
+4=USHORT wFlags
+5=[VARTYPE] vt
+ParamCount=5
+Header=ole.h.api;windows.h.api;
+[VariantClear]
+1=VARIANTARG* pvarg
+ParamCount=1
+Header=ole.h.api;
+[VariantCopy]
+1=VARIANTARG* pvargDest
+2=VARIANTARG* pvargSrc
+ParamCount=2
+Header=ole.h.api;
+[VariantCopyInd]
+1=VARIANT* pvarDest
+2=VARIANTARG* pvargSrc
+ParamCount=2
+Header=ole.h.api;
+[VariantInit]
+1=VARIANTARG* pvarg
+ParamCount=1
+Header=ole.h.api;
+[CreateDispTypeInfo]
+1=INTERFACEDATA* pidata
+2=[LCID] lcid
+3=ITypeInfo** pptinfo
+ParamCount=3
+Header=oleaut32.h.api;windows.h.api;
+[CreateStdDispatch]
+1=IUnknown* punkOuter
+2=void* pvThis
+3=ITypeInfo* ptinfo
+4=IUnknown** ppunkStdDisp
+ParamCount=4
+[DispCallFunc]
+1=void* pvInstance
+2=ULONG_PTR oVft
+3=[CALLCONV] cc
+4=[VARTYPE] vtReturn
+5=UINT cActuals
+6=VARTYPE* prgvt
+7=VARIANTARG** prgpvarg
+8=VARIANT* pvargResult
+ParamCount=8
+Header=ole.h.api;
+[DispGetIDsOfNames]
+1=ITypeInfo* ptinfo
+2=OLECHAR** rgszNames
+3=UINT cNames
+4=DISPID* rgdispid
+ParamCount=4
+Header=ole.h.api;
+[DispGetParam]
+1=DISPPARAMS* pdispparams
+2=UINT position
+3=[VARTYPE] vtTarg
+4=VARIANT* pvarResult
+5=UINT* puArgErr
+ParamCount=5
+Header=ole.h.api;
+[DispInvoke]
+1=void* _this
+2=ITypeInfo* ptinfo
+3=[DISPID] dispidMember
+4=WORD wFlags
+5=DISPPARAMS* pparams
+6=VARIANT* pvarResult
+7=EXCEPINFO* pexcepinfo
+8=UINT* puArgErr
+ParamCount=8
+Header=ole.h.api;
+[CreateErrorInfo]
+1=ICreateErrorInfo** pperrinfo
+ParamCount=1
+[GetErrorInfo]
+1=ULONG dwReserved
+2=IErrorInfo** pperrinfo
+ParamCount=2
+[SetErrorInfo]
+1=ULONG dwReserved
+2=IErrorInfo* perrinfo
+ParamCount=2
+[VarFormat]
+1=LPVARIANT pvarIn
+2=LPOLESTR pstrFormat
+3=int iFirstDay
+4=int iFirstWeek
+5=ULONG dwFlags
+6=BSTR* pbstrOut
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[VarFormatCurrency]
+1=LPVARIANT pvarIn
+2=int iNumDig
+3=int iIncLead
+4=int iUseParens
+5=int iGroup
+6=ULONG dwFlags
+7=BSTR* pbstrOut
+ParamCount=7
+Header=ole.h.api;windows.h.api;
+[VarFormatDateTime]
+1=LPVARIANT pvarIn
+2=int iNamedFormat
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=ole.h.api;windows.h.api;
+[VarFormatFromTokens]
+1=LPVARIANT pvarIn
+2=LPOLESTR pstrFormat
+3=LPBYTE pbTokCur
+4=ULONG dwFlags
+5=BSTR* pbstrOut
+6=[LCID] lcid
+ParamCount=6
+Header=ole.h.api;windows.h.api;
+[VarFormatNumber]
+1=LPVARIANT pvarIn
+2=int iNumDig
+3=int iIncLead
+4=int iUseParens
+5=int iGroup
+6=ULONG dwFlags
+7=BSTR* pbstrOut
+ParamCount=7
+Header=ole.h.api;windows.h.api;
+[VarFormatPercent]
+1=LPVARIANT pvarIn
+2=int iNumDig
+3=int iIncLead
+4=int iUseParens
+5=int iGroup
+6=ULONG dwFlags
+7=BSTR* pbstrOut
+ParamCount=7
+Header=ole.h.api;windows.h.api;
+[VarMonthName]
+1=int iMonth
+2=int fAbbrev
+3=ULONG dwFlags
+4=BSTR* pbstrOut
+ParamCount=4
+Header=windows.h.api;
+[VarTokenizeFormatString]
+1=LPOLESTR pstrFormat
+2=LPBYTE rgbTok
+3=int cbTok
+4=int iFirstDay
+5=int iFirstWeek
+6=[LCID] lcid
+7=int* pcbActual
+ParamCount=7
+Header=ole.h.api;windows.h.api;
+[VarWeekdayName]
+1=int iWeekday
+2=int fAbbrev
+3=int iFirstDay
+4=ULONG dwFlags
+5=BSTR* pbstrOut
+ParamCount=5
+Header=windows.h.api;
+[OleLoadPictureFile]
+1=VARIANT varFileName
+2=LPDISPATCH* lplpdispPicture
+ParamCount=-2
+Header=ole.h.api;
+[OleLoadPictureFileEx]
+1=VARIANT varFileName
+2=DWORD xSizeDesired
+3=DWORD ySizeDesired
+4=DWORD dwFlags
+5=LPDISPATCH* lplpdispPicture
+ParamCount=-5
+Header=ole.h.api;
+[OleSavePictureFile]
+1=LPDISPATCH lpdispPicture
+2=BSTR bstrFileName
+ParamCount=2
+Header=ole.h.api;windows.h.api;
+[GetActiveObject]
+1=REFCLSID rclsid
+2=void* pvReserved
+3=IUnknown** ppunk
+ParamCount=3
+Header=windows.h.api;
+[RegisterActiveObject]
+1=IUnknown* punk
+2=REFCLSID rclsid
+3=DWORD dwFlags
+4=DWORD* pdwRegister
+ParamCount=4
+Header=windows.h.api;
+[RevokeActiveObject]
+1=DWORD dwRegister
+2=void* pvReserved
+ParamCount=2
+[CreateTypeLib]
+1=SYSKIND syskind
+2=LPCOLESTR szFile
+3=ICreateTypeLib** ppctlib
+ParamCount=3
+Header=ole.h.api;
+[CreateTypeLib2]
+1=SYSKIND syskind
+2=LPCOLESTR szFile
+3=ICreateTypeLib2** ppctlib
+ParamCount=3
+Header=ole.h.api;
+[OACreateTypeLib2]
+1=SYSKIND syskind
+2=LPCOLESTR szFile
+3=ICreateTypeLib2** ppctlib
+ParamCount=3
+Header=ole.h.api;
+[OaBuildVersion]
+ParamCount=0
+[LHashValOfNameSys]
+1=SYSKIND syskind
+2=[LCID] lcid
+3=OLECHAR* szName
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[LHashValOfNameSysA]
+1=SYSKIND syskind
+2=[LCID] lcid
+3=LPCSTR szName
+ParamCount=3
+Header=windows.h.api;
+[LoadRegTypeLib]
+1=REFGUID rguid
+2=WORD wVerMajor
+3=WORD wVerMinor
+4=[LCID] lcid
+5=ITypeLib** pptlib
+ParamCount=5
+Header=windows.h.api;
+[LoadTypeLib]
+1=LPCOLESTR szFile
+2=ITypeLib** pptlib
+ParamCount=2
+Header=ole.h.api;
+[LoadTypeLibEx]
+1=LPCOLESTR szFile
+2=[REGKIND] regkind
+3=ITypeLib** pptlib
+ParamCount=3
+Header=oleaut32.h.api;ole.h.api;
+[OaEnablePerUserTLibRegistration]
+ParamCount=0
+[QueryPathOfRegTypeLib]
+1=REFGUID guid
+2=USHORT wMaj
+3=USHORT wMin
+4=[LCID] lcid
+5=LPBSTR lpbstrPathName
+ParamCount=5
+Header=oleaut32.h.api;windows.h.api;
+[RegisterTypeLib]
+1=ITypeLib* ptlib
+2=LPCOLESTR szFullPath
+3=LPCOLESTR szHelpDir
+ParamCount=3
+Header=ole.h.api;
+[RegisterTypeLibForUser]
+1=ITypeLib* ptlib
+2=OLECHAR* szFullPath
+3=OLECHAR* szHelpDir
+ParamCount=3
+Header=ole.h.api;
+[UnRegisterTypeLib]
+1=REFGUID libID
+2=WORD wVerMajor
+3=WORD wVerMinor
+4=[LCID] lcid
+5=SYSKIND syskind
+ParamCount=5
+Header=windows.h.api;
+[UnRegisterTypeLibForUser]
+1=REFGUID libID
+2=WORD wMajorVerNum
+3=WORD wMinorVerNum
+4=[LCID] lcid
+5=SYSKIND syskind
+ParamCount=5
+Header=windows.h.api;
+[ClearCustData]
+1=LPCUSTDATA pCustData
+ParamCount=1
+Header=ole.h.api;
+[GetRecordInfoFromGuids]
+1=REFGUID rGuidTypeLib
+2=ULONG uVerMajor
+3=ULONG uVerMinor
+4=[LCID] lcid
+5=REFGUID rGuidTypeInfo
+6=IRecordInfo** ppRecInfo
+ParamCount=6
+Header=windows.h.api;
+[GetRecordInfoFromTypeInfo]
+1=ITypeInfo* pTypeInfo
+2=IRecordInfo** ppRecInfo
+ParamCount=2

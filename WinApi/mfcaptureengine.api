@@ -1,0 +1,5 @@
+[CallingConvention]
+@=STDCALL
+[MFCreateCaptureEngine]
+1=IMFCaptureEngine** ppCaptureEngine
+ParamCount=1

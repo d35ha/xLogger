@@ -1,0 +1,474 @@
+[CallingConvention]
+@=STDCALL
+[CallNtPowerInformation]
+1=[POWER_INFORMATION_LEVEL] InformationLevel
+2=PVOID lpInputBuffer
+3=ULONG nInputBufferSize
+4=PVOID lpOutputBuffer
+5=ULONG nOutputBufferSize
+ParamCount=5
+Header=power.h.api;
+[DevicePowerClose]
+ParamCount=0
+[DevicePowerEnumDevices]
+1=ULONG QueryIndex
+2=ULONG QueryInterpretationFlags
+3=ULONG QueryFlags
+4=PBYTE pReturnBuffer
+5=PULONG pBufferSize
+ParamCount=5
+[DevicePowerOpen]
+1=ULONG Flags
+ParamCount=1
+[DevicePowerSetDeviceState]
+1=LPCWSTR DeviceDescription
+2=[DEVICEPOWER_FLAGS] SetFlags
+3=PCVOID SetData
+ParamCount=3
+Header=powrprof.h.api;
+[GetCurrentPowerPolicies]
+1=PGLOBAL_POWER_POLICY pGlobalPowerPolicy
+2=PPOWER_POLICY pPowerPolicy
+ParamCount=2
+Header=powrprof.h.api;
+[PowerCanRestoreIndividualDefaultPowerScheme]
+1=GUID* SchemeGuid
+ParamCount=1
+Header=windows.h.api;
+[PowerCreatePossibleSetting]
+1=[HKEY] RootSystemPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG PossibleSettingIndex
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerCreateSetting]
+1=[HKEY] RootSystemPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+ParamCount=3
+Header=registry.h.api;windows.h.api;
+[PowerDeleteScheme]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+ParamCount=2
+Header=registry.h.api;windows.h.api;
+[PowerDeterminePlatformRole]
+ParamCount=0
+[PowerDuplicateScheme]
+1=[HKEY] RootPowerKey
+2=GUID* SourceSchemeGuid
+3=GUID** DestinationSchemeGuid
+ParamCount=3
+Header=registry.h.api;windows.h.api;
+[PowerEnumerate]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=[POWER_DATA_ACCESSOR] AccessFlags
+5=ULONG Index
+6=UCHAR* Buffer
+7=DWORD* BufferSize
+ParamCount=7
+Header=power.h.api;registry.h.api;windows.h.api;
+[PowerImportPowerScheme]
+1=[HKEY] RootPowerKey
+2=LPCWSTR ImportFileNamePath
+3=GUID** DestinationSchemeGuid
+ParamCount=3
+Header=registry.h.api;windows.h.api;
+[PowerIsSettingRangeDefined]
+1=GUID* SubKeyGuid
+2=GUID* SettingGuid
+ParamCount=2
+Header=windows.h.api;
+[PowerReadACDefaultIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemePersonalityGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPDWORD AcDefaultIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerReadACValue]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=RegType-PULONG Type
+6=LPBYTE Buffer
+7=LPDWORD BufferSize
+ParamCount=7
+Header=registry.h.api;windows.h.api;
+[PowerReadACValueIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPDWORD AcValueIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerReadDCDefaultIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemePersonalityGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPDWORD DcDefaultIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerReadDCValue]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=RegType-PULONG Type
+6=PUCHAR Buffer
+7=LPDWORD BufferSize
+ParamCount=7
+Header=registry.h.api;windows.h.api;
+[PowerReadDCValueIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPDWORD DcValueIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerReadDescription]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPWSTR Buffer
+6=LPDWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerReadFriendlyName]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=LPWSTR Buffer
+6=LPDWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerReadIconResourceSpecifier]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=PUCHAR Buffer
+6=LPDWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerReadPossibleDescription]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG PossibleSettingIndex
+5=PUCHAR Buffer
+6=LPDWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerReadPossibleFriendlyName]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG PossibleSettingIndex
+5=PUCHAR Buffer
+6=LPDWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerReadPossibleValue]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=RegType-PULONG Type
+5=ULONG PossibleSettingIndex
+6=PUCHAR Buffer
+7=LPDWORD BufferSize
+ParamCount=7
+Header=registry.h.api;windows.h.api;
+[PowerReadSettingAttributes]
+1=GUID* SubGroupGuid
+2=GUID* PowerSettingGuid
+ParamCount=2
+Header=windows.h.api;
+[PowerReadValueIncrement]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=LPDWORD ValueIncrement
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerReadValueMax]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=LPDWORD ValueMaximum
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerReadValueMin]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=LPDWORD ValueMinimum
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerReadValueUnitsSpecifier]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=LPWSTR Buffer
+5=LPDWORD BufferSize
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerRemovePowerSetting]
+1=GUID* PowerSettingSubKeyGuid
+2=GUID* PowerSettingGuid
+ParamCount=2
+Header=windows.h.api;
+[PowerReplaceDefaultPowerSchemes]
+ParamCount=0
+[PowerRestoreDefaultPowerSchemes]
+ParamCount=0
+[PowerRestoreIndividualDefaultPowerScheme]
+1=GUID* SchemeGuid
+ParamCount=1
+Header=windows.h.api;
+[PowerSetActiveScheme]
+1=[HKEY] UserRootPowerKey
+2=GUID* SchemeGuid
+ParamCount=2
+Header=registry.h.api;windows.h.api;
+[PowerSettingAccessCheck]
+1=[POWER_DATA_ACCESSOR] AccessFlags
+2=GUID* PowerGuid
+ParamCount=2
+Header=power.h.api;windows.h.api;
+[PowerSettingAccessCheckEx]
+1=[POWER_DATA_ACCESSOR] AccessFlags
+2=GUID* PowerGuid
+3=[REGSAM] AccessType
+ParamCount=3
+Header=power.h.api;registry.h.api;windows.h.api;
+[PowerSettingRegisterNotification]
+1=LPCGUID SettingGuid
+2=DWORD Flags
+3=HANDLE Recipient
+4=PHPOWERNOTIFY RegistrationHandle
+ParamCount=4
+Header=power.h.api;windows.h.api;
+[PowerSettingUnregisterNotification]
+1=HPOWERNOTIFY RegistrationHandle
+ParamCount=1
+Header=power.h.api;
+[PowerWriteACDefaultIndex]
+1=[HKEY] RootSystemPowerKey
+2=GUID* SchemePersonalityGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=DWORD DefaultAcIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerWriteACValueIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=DWORD AcValueIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerWriteDCDefaultIndex]
+1=[HKEY] RootSystemPowerKey
+2=GUID* SchemePersonalityGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=DWORD DefaultDcIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerWriteDCValueIndex]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=DWORD DcValueIndex
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[PowerWriteDescription]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=UCHAR* Buffer
+6=DWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerWriteFriendlyName]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=UCHAR* Buffer
+6=DWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerWriteIconResourceSpecifier]
+1=[HKEY] RootPowerKey
+2=GUID* SchemeGuid
+3=GUID* SubGroupOfPowerSettingsGuid
+4=GUID* PowerSettingGuid
+5=UCHAR* Buffer
+6=DWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerWritePossibleDescription]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG PossibleSettingIndex
+5=UCHAR* Buffer
+6=DWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerWritePossibleFriendlyName]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG PossibleSettingIndex
+5=UCHAR* Buffer
+6=DWORD BufferSize
+ParamCount=6
+Header=registry.h.api;windows.h.api;
+[PowerWritePossibleValue]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=ULONG Type
+5=ULONG PossibleSettingIndex
+6=UCHAR* Buffer
+7=DWORD BufferSize
+ParamCount=7
+Header=registry.h.api;windows.h.api;
+[PowerWriteSettingAttributes]
+1=GUID* SubGroupGuid
+2=GUID* PowerSettingGuid
+3=DWORD Attributes
+ParamCount=3
+Header=windows.h.api;
+[PowerWriteValueIncrement]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=DWORD ValueIncrement
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerWriteValueMax]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=DWORD ValueMaximum
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerWriteValueMin]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=DWORD ValueMinimum
+ParamCount=4
+Header=registry.h.api;windows.h.api;
+[PowerWriteValueUnitsSpecifier]
+1=[HKEY] RootPowerKey
+2=GUID* SubGroupOfPowerSettingsGuid
+3=GUID* PowerSettingGuid
+4=UCHAR* Buffer
+5=DWORD BufferSize
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[CanUserWritePwrScheme]
+ParamCount=0
+[DeletePwrScheme]
+1=UINT uiIndex
+ParamCount=1
+[EnumPwrSchemes]
+1=PWRSCHEMESENUMPROC lpfnPwrSchemesEnumProc
+2=LPARAM lParam
+ParamCount=2
+Header=powrprof.h.api;windows.h.api;
+[GetActivePwrScheme]
+1=PUINT puiID
+ParamCount=1
+[PowerGetActiveScheme]
+1=[HKEY] UserRootPowerKey
+2=GUID** ActivePolicyGuid
+ParamCount=2
+Header=registry.h.api;windows.h.api;
+[GetPwrDiskSpindownRange]
+1=PUINT RangeMax
+2=PUINT RangeMin
+ParamCount=2
+[IsPwrHibernateAllowed]
+ParamCount=0
+[GetPwrCapabilities]
+1=PSYSTEM_POWER_CAPABILITIES lpSystemPowerCapabilities
+ParamCount=1
+Header=powrprof.h.api;
+[IsPwrShutdownAllowed]
+ParamCount=0
+[IsPwrSuspendAllowed]
+ParamCount=0
+[ReadGlobalPwrPolicy]
+1=PGLOBAL_POWER_POLICY pGlobalPowerPolicy
+ParamCount=1
+Header=powrprof.h.api;
+[ReadProcessorPwrScheme]
+1=UINT uiID
+2=PMACHINE_PROCESSOR_POWER_POLICY pMachineProcessorPowerPolicy
+ParamCount=2
+Header=powrprof.h.api;
+[ReadPwrScheme]
+1=UINT uiID
+2=PPOWER_POLICY pPowerPolicy
+ParamCount=2
+Header=powrprof.h.api;
+[SetActivePwrScheme]
+1=UINT uiID
+2=PGLOBAL_POWER_POLICY lpGlobalPowerPolicy
+3=PPOWER_POLICY lpPowerPolicy
+ParamCount=3
+Header=powrprof.h.api;
+[SetSuspendState]
+1=BOOLEAN Hibernate
+2=BOOLEAN ForceCritical
+3=BOOLEAN DisableWakeEvent
+ParamCount=3
+[WriteGlobalPwrPolicy]
+1=PGLOBAL_POWER_POLICY pGlobalPowerPolicy
+ParamCount=1
+Header=powrprof.h.api;
+[WriteProcessorPwrScheme]
+1=UINT ID
+2=PMACHINE_PROCESSOR_POWER_POLICY pMachineProcessorPowerPolicy
+ParamCount=2
+Header=powrprof.h.api;
+[WritePwrScheme]
+1=PUINT puiID
+2=LPWSTR lpszName
+3=LPWSTR lpszDescription
+4=PPOWER_POLICY pPowerPolicy
+ParamCount=4
+Header=powrprof.h.api;
+[PowerDeterminePlatformRoleEx]
+1=[POWER_PLATFORM_ROLE_VERSION] Version
+ParamCount=1
+Header=powrprof.h.api;
+[PowerRegisterSuspendResumeNotification]
+1=[POWER_NOTIFICATION_FLAGS] Flags
+2=HANDLE Recipient
+3=PHPOWERNOTIFY RegistrationHandle
+ParamCount=3
+Header=power.h.api;windows.h.api;
+[PowerUnregisterSuspendResumeNotification]
+1=HPOWERNOTIFY RegistrationHandle
+ParamCount=1
+Header=power.h.api;

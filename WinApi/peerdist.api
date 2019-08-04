@@ -1,0 +1,202 @@
+[CallingConvention]
+@=STDCALL
+[PeerDistStartup]
+1=DWORD dwVersionRequested
+2=PPEERDIST_INSTANCE_HANDLE phPeerDist
+3=PDWORD pdwSupportedVersion
+ParamCount=3
+Header=peerdist.h.api;
+[PeerDistShutdown]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+ParamCount=1
+Header=peerdist.h.api;
+[PeerDistGetStatus]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_STATUS* pPeerDistStatus
+ParamCount=2
+Header=peerdist.h.api;
+[PeerDistGetStatusEx]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_STATUS_INFO* pPeerDistStatusInfo
+ParamCount=2
+Header=peerdist.h.api;
+[PeerDistGetOverlappedResult]
+1=LPOVERLAPPED lpOverlapped
+2=LPDWORD lpNumberOfBytesTransferred
+3=BOOL bWait
+ParamCount=3
+Header=windows.h.api;
+[PeerDistRegisterForStatusChangeNotification]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=HANDLE hCompletionPort
+3=ULONG_PTR ulCompletionKey
+4=LPOVERLAPPED lpOverlapped
+5=PEERDIST_STATUS* pPeerDistStatus
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistRegisterForStatusChangeNotificationEx]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=HANDLE hCompletionPort
+3=ULONG_PTR ulCompletionKey
+4=LPOVERLAPPED lpOverlapped
+5=PEERDIST_STATUS_INFO* pPeerDistStatus
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistUnregisterForStatusChangeNotification]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+ParamCount=1
+Header=peerdist.h.api;
+[PeerDistClientOpenContent]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PCPEERDIST_CONTENT_TAG pContentTag
+3=HANDLE hCompletionPort
+4=ULONG_PTR ulCompletionKey
+5=PPEERDIST_CONTENT_HANDLE phContentHandle
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientCloseContent]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+ParamCount=2
+Header=peerdist.h.api;
+[PeerDistClientGetInformationByHandle]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=[PEERDIST_CLIENT_INFO_BY_HANDLE_CLASS] PeerDistClientInfoClass
+4=DWORD dwBufferSize
+5=LPVOID lpInformation
+ParamCount=5
+Header=peerdist.h.api;
+[PeerDistClientAddContentInformation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=DWORD cbNumberOfBytes
+4=PBYTE pBuffer
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientCompleteContentInformation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientAddData]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=DWORD cbNumberOfBytes
+4=PBYTE pBuffer
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientBlockRead]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=DWORD cbMaxNumberOfBytesToRead
+4=PBYTE pBuffer
+5=DWORD dwTimeoutInMilliseconds
+6=LPOVERLAPPED lpOverlapped
+ParamCount=6
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientStreamRead]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=DWORD cbMaxNumberOfBytesToRead
+4=PBYTE pBuffer
+5=DWORD dwTimeoutInMilliseconds
+6=LPOVERLAPPED lpOverlapped
+ParamCount=6
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientFlushContent]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PCPEERDIST_CONTENT_TAG pContentTag
+3=HANDLE hCompletionPort
+4=ULONG_PTR ulCompletionKey
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistClientCancelAsyncOperation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentHandle
+3=LPOVERLAPPED pOverlapped
+ParamCount=3
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerPublishStream]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=DWORD cbContentIdentifier
+3=PBYTE pContentIdentifier
+4=ULONGULONG cbContentLength
+5=PCPEERDIST_PUBLICATION_OPTIONS pPublishOptions
+6=HANDLE hCompletionPort
+7=ULONG_PTR ulCompletionKey
+8=PEERDIST_STREAM_HANDLE phStream
+ParamCount=8
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerPublishAddToStream]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_STREAM_HANDLE hStream
+3=DWORD cbNumberOfBytes
+4=PBYTE pBuffer
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerPublishCompleteStream]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_STREAM_HANDLE hStream
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerCloseStreamHandle]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_STREAM_HANDLE hStream
+ParamCount=2
+Header=peerdist.h.api;
+[PeerDistServerUnpublish]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=DWORD cbContentIdentifier
+3=PBYTE pContentIdentifier
+ParamCount=3
+Header=peerdist.h.api;
+[PeerDistServerOpenContentInformation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=DWORD cbContentIdentifier
+3=PBYTE pContentIdentifier
+4=ULONGULONG ullContentOffset
+5=ULONGULONG cbContentLength
+6=HANDLE hCompletionPort
+7=ULONG_PTR ulCompletionKey
+8=PPEERDIST_CONTENTINFO_HANDLE phContentInfo
+ParamCount=8
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerOpenContentInformationEx]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=DWORD cbContentIdentifier
+3=PBYTE pContentIdentifier
+4=ULONGLONG ullContentOffset
+5=ULONGLONG cbContentLength
+6=PEERDIST_RETRIEVAL_OPTIONS* pRetrievalOptions
+7=HANDLE hCompletionPort
+8=ULONG_PTR ulCompletionKey
+9=PPEERDIST_CONTENTINFO_HANDLE phContentInfo
+ParamCount=9
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerRetrieveContentInformation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENTINFO_HANDLE hContentInfo
+3=DWORD cbMaxNumberOfBytes
+4=PBYTE pBuffer
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=peerdist.h.api;windows.h.api;
+[PeerDistServerCloseContentInformation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=PEERDIST_CONTENT_HANDLE hContentInfo
+ParamCount=2
+Header=peerdist.h.api;
+[PeerDistServerCancelAsyncOperation]
+1=PEERDIST_INSTANCE_HANDLE hPeerDist
+2=DWORD cbContentIdentifier
+3=PBYTE pContentIdentifier
+4=LPOVERLAPPED pOverlapped
+ParamCount=4
+Header=peerdist.h.api;windows.h.api;

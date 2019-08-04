@@ -1,0 +1,276 @@
+[CallingConvention]
+@=STDCALL
+[CreateNamedPropertyStore]
+1=INamedPropertyStore** ppStore
+ParamCount=1
+[MFCreate3GPMediaSink]
+1=IMFByteStream* pIByteStream
+2=IMFMediaType* pVideoMediaType
+3=IMFMediaType* pAudioMediaType
+4=IMFMediaSink** ppIMediaSink
+ParamCount=4
+[MFCreateAC3MediaSink]
+1=IMFByteStream* pTargetByteStream
+2=IMFMediaType* pAudioMediaType
+3=IMFMediaSink** ppMediaSink
+ParamCount=3
+[MFCreateADTSMediaSink]
+1=IMFByteStream* pTargetByteStream
+2=IMFMediaType* pAudioMediaType
+3=IMFMediaSink** ppMediaSink
+ParamCount=3
+[MFCreateAggregateSource]
+1=IMFCollection* pSourceCollection
+2=IMFMediaSource** ppAggSource
+ParamCount=2
+[MFCreateASFContentInfo]
+1=IMFASFContentInfo** ppIContentInfo
+ParamCount=1
+[MFCreateASFIndexer]
+1=IMFASFIndexer** ppIIndexer
+ParamCount=1
+[MFCreateASFIndexerByteStream]
+1=IMFByteStream* pIContentByteStream
+2=QWORD cbIndexStartOffset
+3=IMFByteStream** pIIndexByteStream
+ParamCount=3
+[MFCreateASFMediaSink]
+1=IMFByteStream* pIByteStream
+2=IMFMediaSink** ppIMediaSink
+ParamCount=2
+[MFCreateASFMediaSinkActivate]
+1=LPCWSTR pwszFileName
+2=IMFASFContentInfo* pContentInfo
+3=IMFActivate** ppIActivate
+ParamCount=3
+[MFCreateASFMultiplexer]
+1=IMFASFMultiplexer** ppIMultiplexer
+ParamCount=1
+[MFCreateASFProfile]
+1=IMFASFProfile** ppIProfile
+ParamCount=1
+[MFCreateASFProfileFromPresentationDescriptor]
+1=IMFPresentationDescriptor* pIPD
+2=IMFASFProfile** ppIProfile
+ParamCount=2
+[MFCreateASFSplitter]
+1=IMFASFSplitter** ppISplitter
+ParamCount=1
+[MFCreateASFStreamingMediaSink]
+1=IMFByteStream* pIByteStream
+2=IMFMediaSink** ppIMediaSink
+ParamCount=2
+[MFCreateASFStreamingMediaSinkActivate]
+1=IMFActivate* pByteStreamActivate
+2=IMFASFContentInfo* pContentInfo
+3=IMFActivate** ppIActivate
+ParamCount=3
+[MFCreateASFStreamSelector]
+1=IMFASFProfile* pIASFProfile
+2=IMFASFStreamSelector** ppSelector
+ParamCount=2
+[MFCreateAudioRenderer]
+1=IMFAttributes* pAudioAttributes
+2=IMFMediaSink** ppSink
+ParamCount=2
+[MFCreateAudioRendererActivate]
+1=IMFActivate** ppActivate
+ParamCount=1
+[MFCreateCredentialCache]
+1=IMFNetCredentialCache** ppCache
+ParamCount=1
+[MFCreateDeviceSource]
+1=IMFAttributes* pAttributes
+2=IMFMediaSource** ppSource
+ParamCount=2
+[MFCreateDeviceSourceActivate]
+1=IMFAttributes* pAttributes
+2=IMFActivate** ppActivate
+ParamCount=2
+[MFCreateMediaSession]
+1=IMFAttributes* pConfiguration
+2=IMFMediaSession** ppMS
+ParamCount=2
+[MFCreateMP3MediaSink]
+1=IMFByteStream* pTargetByteStream
+2=IMFMediaSink** ppMediaSink
+ParamCount=2
+[MFCreateMPEG4MediaSink]
+1=IMFByteStream* pIByteStream
+2=IMFMediaType* pVideoMediaType
+3=IMFMediaType* pAudioMediaType
+4=IMFMediaSink** ppIMediaSink
+ParamCount=4
+[MFCreateMuxSink]
+1=GUID guidOutputSubType
+2=IMFAttributes* pOutputAttributes
+3=IMFByteStream* pOutputByteStream
+4=IMFMediaSink** ppMuxSink
+ParamCount=-4
+[MFCreateNetSchemePlugin]
+1=REFIID riid
+2=LPVOID* ppvHandler
+ParamCount=2
+Header=windows.h.api;
+[MFCreatePMPMediaSession]
+1=DWORD dwCreationFlags
+2=IMFAttributes* pConfiguration
+3=IMFMediaSession** ppMediaSession
+4=IMFActivate** ppEnablerActivate
+ParamCount=4
+[MFCreatePMPServer]
+1=DWORD dwCreationFlags
+2=IMFPMPServer** ppPMPServer
+ParamCount=2
+[MFCreatePresentationClock]
+1=IMFPresentationClock** ppPresentationClock
+ParamCount=1
+[MFCreatePresentationDescriptorFromASFProfile]
+1=IMFASFProfile* pIProfile
+2=IMFPresentationDescriptor** ppIPD
+ParamCount=2
+[MFCreateProxyLocator]
+1=LPCWSTR pszProtocol
+2=IPropertyStore* pProxyConfig
+3=IMFNetProxyLocator** ppProxyLocator
+ParamCount=3
+[MFCreateRemoteDesktopPlugin]
+1=IMFRemoteDesktopPlugin** ppPlugin
+ParamCount=1
+[MFCreateSampleCopierMFT]
+1=IMFTransform** ppCopierMFT
+ParamCount=1
+[MFCreateSampleGrabberSinkActivate]
+1=IMFMediaType* pIMFMediaType
+2=IMFSampleGrabberSinkCallback* pIMFSampleGrabberSinkCallback
+3=IMFActivate** ppIActivate
+ParamCount=3
+[MFCreateSequencerSegmentOffset]
+1=MFSequencerElementId dwId
+2=MFTIME hnsOffset
+3=PROPVARIANT* pvarSegmentOffset
+ParamCount=3
+Header=ole.h.api;
+[MFCreateSequencerSource]
+1=IUnknown* pReserved
+2=IMFSequencerSource** ppSequencerSource
+ParamCount=2
+[MFCreateSimpleTypeHandler]
+1=IMFMediaTypeHandler** ppHandler
+ParamCount=1
+[MFCreateStandardQualityManager]
+1=IMFQualityManager** ppQualityManager
+ParamCount=1
+[MFCreateTopoLoader]
+1=IMFTopoLoader** ppObj
+ParamCount=1
+[MFCreateTopology]
+1=IMFTopology** ppTopo
+ParamCount=1
+[MFCreateTopologyNode]
+1=MF_TOPOLOGY_TYPE NodeType
+2=IMFTopologyNode** ppNode
+ParamCount=2
+[MFCreateTranscodeProfile]
+1=IMFTranscodeProfile** ppTranscodeProfile
+ParamCount=1
+[MFCreateTranscodeSinkActivate]
+1=IMFActivate** ppActivate
+ParamCount=1
+[MFCreateTranscodeTopology]
+1=IMFMediaSource* pSrc
+2=LPCWSTR pwszOutputFilePath
+3=IMFTranscodeProfile* pProfile
+4=IMFTopology** ppTranscodeTopo
+ParamCount=4
+[MFCreateTranscodeTopologyFromByteStream]
+1=IMFMediaSource* pSrc
+2=IMFByteStream* pOutputStream
+3=IMFTranscodeProfile* pProfile
+4=IMFTopology** ppTranscodeTopo
+ParamCount=4
+[MFCreateVideoRenderer]
+1=REFIID riidRenderer
+2=void** ppVideoRenderer
+ParamCount=2
+Header=windows.h.api;
+[MFCreateVideoRendererActivate]
+1=HWND hwndVideo
+2=IMFActivate** ppActivate
+ParamCount=2
+Header=windows.h.api;
+[MFCreateWMAEncoderActivate]
+1=IMFMediaType* pMediaType
+2=IPropertyStore* pEncodingConfigurationProperties
+3=IMFActivate** ppActivate
+ParamCount=3
+[MFCreateWMVEncoderActivate]
+1=IMFMediaType* pMediaType
+2=IPropertyStore* pEncodingConfigurationProperties
+3=IMFActivate** ppActivate
+ParamCount=3
+[MFEnumDeviceSources]
+1=IMFAttributes* pAttributes
+2=IMFActivate*** pppSourceActivate
+3=UINT32* pcSourceActivate
+ParamCount=3
+[MFGetService]
+1=IUnknown* punkObject
+2=REFGUID guidService
+3=REFIID riid
+4=LPVOID* ppvObject
+ParamCount=4
+Header=windows.h.api;
+[MFGetSupportedMimeTypes]
+1=PROPVARIANT* pPropVarMimeTypeArray
+ParamCount=1
+Header=ole.h.api;
+[MFGetSupportedSchemes]
+1=PROPVARIANT* pPropVarSchemeArray
+ParamCount=1
+Header=ole.h.api;
+[MFGetTopoNodeCurrentType]
+1=IMFTopologyNode* pNode
+2=DWORD dwStreamIndex
+3=BOOL fOutput
+4=IMFMediaType** ppType
+ParamCount=4
+[MFRequireProtectedEnvironment]
+1=IMFPresentationDescriptor* pPresentationDescriptor
+ParamCount=1
+[MFShutdownObject]
+1=IUnknown* pUnk
+ParamCount=1
+[MFTranscodeGetAudioOutputAvailableTypes]
+1=REFGUID guidSubType
+2=DWORD dwMFTFlags
+3=IMFAttributes* pCodecConfig
+4=IMFCollection** ppAvailableTypes
+ParamCount=4
+Header=windows.h.api;
+[MFCreateFMPEG4MediaSink]
+1=IMFByteStream* pIByteStream
+2=IMFMediaType* pVideoMediaType
+3=IMFMediaType* pAudioMediaType
+4=IMFMediaSink** ppIMediaSink
+ParamCount=4
+[MFCreateMP3ByteStreamPlugin]
+1=REFIID riid
+2=LPVOID* ppvHandler
+ParamCount=2
+Header=windows.h.api;
+[MFCreateProtectedEnvironmentAccess]
+1=IMFProtectedEnvironmentAccess** ppAccess
+ParamCount=1
+[MFGetLocalId]
+1=const BYTE* verifier
+2=UINT32 size
+3=LPWSTR* id
+ParamCount=3
+[MFGetSystemId]
+1=IMFSystemId** ppId
+ParamCount=1
+[MFLoadSignedLibrary]
+1=LPCWSTR pszName
+2=IMFSignedLibrary** ppLib
+ParamCount=2

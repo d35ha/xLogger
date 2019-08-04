@@ -1,0 +1,136 @@
+[CallingConvention]
+@=STDCALL
+[CreateRandomAccessStreamOnFile]
+1=PCWSTR filePath
+2=[FileAccessMode] accessMode
+3=REFIID riid
+4=void** ppv
+ParamCount=4
+Header=shcore.h.api;windows.h.api;
+[CreateRandomAccessStreamOverStream]
+1=IStream* stream
+2=[BSOS_OPTIONS] options
+3=REFIID riid
+4=void** ppv
+ParamCount=4
+Header=shcore.h.api;windows.h.api;
+[CreateStreamOverRandomAccessStream]
+1=IUnknown* randomAccessStream
+2=REFIID riid
+3=void** ppv
+ParamCount=3
+Header=windows.h.api;
+[GetScaleFactorForDevice]
+1=[DISPLAY_DEVICE_TYPE] deviceType
+ParamCount=1
+Header=shcore.h.api;
+[RegisterScaleChangeNotifications]
+1=[DISPLAY_DEVICE_TYPE] displayDevice
+2=HWND hwndNotify
+3=UINT uMsgNotify
+4=DWORD* pdwCookie
+ParamCount=4
+Header=shcore.h.api;windows.h.api;
+[RevokeScaleChangeNotifications]
+1=[DISPLAY_DEVICE_TYPE] displayDevice
+2=DWORD dwCookie
+ParamCount=2
+Header=shcore.h.api;
+[CommandLineToArgvW]
+SourceModule=shell32.api
+[GetCurrentProcessExplicitAppUserModelID]
+SourceModule=shell32.api
+[SetCurrentProcessExplicitAppUserModelID]
+SourceModule=shell32.api
+[GetProcessReference]
+SourceModule=shlwapi.api
+[IsOS]
+SourceModule=shlwapi.api
+[IStream_Copy]
+SourceModule=shlwapi.api
+[IStream_Read]
+SourceModule=shlwapi.api
+[IStream_ReadStr]
+SourceModule=shlwapi.api
+[IStream_Reset]
+SourceModule=shlwapi.api
+[IStream_Size]
+SourceModule=shlwapi.api
+[IStream_Write]
+SourceModule=shlwapi.api
+[IStream_WriteStr]
+SourceModule=shlwapi.api
+[IUnknown_AtomicRelease]
+SourceModule=shlwapi.api
+[IUnknown_GetSite]
+SourceModule=shlwapi.api
+[IUnknown_QueryService]
+SourceModule=shlwapi.api
+[IUnknown_Set]
+SourceModule=shlwapi.api
+[IUnknown_SetSite]
+SourceModule=shlwapi.api
+[SetProcessReference]
+SourceModule=shlwapi.api
+[SHAnsiToAnsi]
+SourceModule=shlwapi.api
+[SHAnsiToUnicode]
+SourceModule=shlwapi.api
+[SHCopyKey]
+SourceModule=shlwapi.api
+[SHCreateMemStream]
+SourceModule=shlwapi.api
+[SHCreateStreamOnFileEx]
+SourceModule=shlwapi.api
+[SHCreateStreamOnFile]
+SourceModule=shlwapi.api
+[SHCreateThread]
+SourceModule=shlwapi.api
+[SHCreateThreadRef]
+SourceModule=shlwapi.api
+[SHCreateThreadWithHandle]
+SourceModule=shlwapi.api
+[SHDeleteEmptyKey]
+SourceModule=shlwapi.api
+[SHDeleteKey]
+SourceModule=shlwapi.api
+[SHDeleteValue]
+SourceModule=shlwapi.api
+[SHEnumKeyEx]
+SourceModule=shlwapi.api
+[SHEnumValue]
+SourceModule=shlwapi.api
+[SHGetThreadRef]
+SourceModule=shlwapi.api
+[SHGetValue]
+SourceModule=shlwapi.api
+[SHOpenRegStream2]
+SourceModule=shlwapi.api
+[SHOpenRegStream]
+SourceModule=shlwapi.api
+[SHQueryInfoKey]
+SourceModule=shlwapi.api
+[SHQueryValueEx]
+SourceModule=shlwapi.api
+[SHRegDuplicateHKey]
+SourceModule=shlwapi.api
+[SHRegGetIntW]
+SourceModule=shlwapi.api
+[SHRegGetPath]
+SourceModule=shlwapi.api
+[SHRegGetValue]
+SourceModule=shlwapi.api
+[SHRegSetPath]
+SourceModule=shlwapi.api
+[SHReleaseThreadRef]
+SourceModule=shlwapi.api
+[SHSetThreadRef]
+SourceModule=shlwapi.api
+[SHSetValue]
+SourceModule=shlwapi.api
+[SHStrDup]
+SourceModule=shlwapi.api
+[SHUnicodeToAnsi]
+SourceModule=shlwapi.api
+[SHUnicodeToUnicode]
+SourceModule=shlwapi.api

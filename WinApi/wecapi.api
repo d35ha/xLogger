@@ -1,0 +1,94 @@
+[CallingConvention]
+@=STDCALL
+[EcClose]
+1=EC_HANDLE Object
+ParamCount=1
+Header=wecapi.h.api;
+[EcDeleteSubscription]
+1=LPCWSTR SubscriptionName
+2=DWORD Flags
+ParamCount=2
+[EcEnumNextSubscription]
+1=EC_HANDLE SubscriptionEnum
+2=DWORD SubscriptionNameBufferSize
+3=LPWSTR SubscriptionNameBuffer
+4=PDWORD SubscriptionNameBufferUsed
+ParamCount=4
+Header=wecapi.h.api;
+[EcGetObjectArrayProperty]
+1=EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray
+2=[EC_SUBSCRIPTION_PROPERTY_ID] PropertyId
+3=DWORD ArrayIndex
+4=DWORD Flags
+5=DWORD PropertyValueBufferSize
+6=PEC_VARIANT PropertyValueBuffer
+7=PDWORD PropertyValueBufferUsed
+ParamCount=7
+Header=wecapi.h.api;
+[EcGetObjectArraySize]
+1=EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray
+2=PDWORD ObjectArraySize
+ParamCount=2
+Header=wecapi.h.api;
+[EcGetSubscriptionProperty]
+1=EC_HANDLE Subscription
+2=[EC_SUBSCRIPTION_PROPERTY_ID] PropertyId
+3=DWORD Flags
+4=DWORD PropertyValueBufferSize
+5=PEC_VARIANT PropertyValueBuffer
+6=PDWORD PropertyValueBufferUsed
+ParamCount=6
+Header=wecapi.h.api;
+[EcGetSubscriptionRunTimeStatus]
+1=LPCWSTR SubscriptionName
+2=[EC_SUBSCRIPTION_RUNTIME_STATUS_INFO_ID] StatusInfoId
+3=LPCWSTR EventSourceName
+4=DWORD Flags
+5=DWORD StatusValueBufferSize
+6=PEC_VARIANT StatusValueBuffer
+7=PDWORD StatusValueBufferUsed
+ParamCount=7
+Header=wecapi.h.api;
+[EcInsertObjectArrayElement]
+1=EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray
+2=DWORD ArrayIndex
+ParamCount=2
+Header=wecapi.h.api;
+[EcOpenSubscriptionEnum]
+1=DWORD Flags
+ParamCount=1
+[EcOpenSubscription]
+1=LPCWSTR SubscriptionName
+2=DWORD AccessMask
+3=DWORD Flags
+ParamCount=3
+[EcSaveSubscription]
+1=EC_HANDLE Subscription
+2=DWORD Flags
+ParamCount=2
+Header=wecapi.h.api;
+[EcSetObjectArrayProperty]
+1=EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray
+2=[EC_SUBSCRIPTION_PROPERTY_ID] PropertyId
+3=DWORD ArrayIndex
+4=DWORD Flags
+5=PEC_VARIANT PropertyValue
+ParamCount=5
+Header=wecapi.h.api;
+[EcSetSubscriptionProperty]
+1=EC_HANDLE Subscription
+2=[EC_SUBSCRIPTION_PROPERTY_ID] PropertyId
+3=DWORD Flags
+4=PEC_VARIANT PropertyValue
+ParamCount=4
+Header=wecapi.h.api;
+[EcRemoveObjectArrayElement]
+1=EC_OBJECT_ARRAY_PROPERTY_HANDLE ObjectArray
+2=DWORD ArrayIndex
+ParamCount=2
+Header=wecapi.h.api;
+[EcRetrySubscription]
+1=LPCWSTR SubscriptionName
+2=LPCWSTR EventSourceName
+3=DWORD Flags
+ParamCount=3

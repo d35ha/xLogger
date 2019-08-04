@@ -1,0 +1,72 @@
+[CallingConvention]
+@=STDCALL
+[DhcpCApiCleanup]
+ParamCount=0
+[DhcpDeRegisterParamChange]
+1=DWORD Flags
+2=LPVOID Reserved
+3=LPVOID Event
+ParamCount=3
+[DhcpRegisterParamChange]
+1=DWORD Flags
+2=LPVOID Reserved
+3=LPWSTR AdapterName
+4=LPDHCPCAPI_CLASSID pClassId
+5=DHCPCAPI_PARAMS_ARRAY Params
+6=LPVOID Handle
+ParamCount=-6
+[DhcpRequestParams]
+1=DWORD Flags
+2=LPVOID Reserved
+3=LPWSTR AdapterName
+4=LPDHCPCAPI_CLASSID ClassId
+5=DHCPCAPI_PARAMS_ARRAY SendParams
+6=DHCPCAPI_PARAMS_ARRAY RecdParams
+7=LPBYTE Buffer
+8=LPDWORD pSize
+9=LPWSTR RequestIdStr
+ParamCount=-9
+[DhcpRemoveDNSRegistrations]
+ParamCount=0
+[DhcpUndoRequestParams]
+1=DWORD Flags
+2=LPVOID Reserved
+3=LPWSTR AdapterName
+4=LPWSTR RequestIdStr
+ParamCount=4
+[DhcpCApiInitialize]
+1=LPDWORD Version
+ParamCount=1
+[McastApiCleanup]
+ParamCount=0
+[McastApiStartup]
+1=PDWORD pVersion
+ParamCount=1
+[McastEnumerateScopes]
+1=IP_ADDR_FAMILY AddrFamily
+2=BOOL ReQuery
+3=PMCAST_SCOPE_ENTRY pScopeList
+4=PDWORD pScopeLen
+5=PDWORD pScopeCount
+ParamCount=5
+[McastGenUID]
+1=LPMCAST_CLIENT_UID pRequestID
+ParamCount=1
+[McastReleaseAddress]
+1=IP_ADDR_FAMILY AddrFamily
+2=LPMCAST_CLIENT_UID pRequestID
+3=PMCAST_LEASE_REQUEST pReleaseRequest
+ParamCount=3
+[McastRenewAddress]
+1=IP_ADDR_FAMILY AddrFamily
+2=LPMCAST_CLIENT_UID pRequestID
+3=PMCAST_LEASE_REQUEST pRenewRequest
+4=PMCAST_LEASE_RESPONSE pRenewResponse
+ParamCount=4
+[McastRequestAddress]
+1=IP_ADDR_FAMILY AddrFamily
+2=LPMCAST_CLIENT_UID pRequestID
+3=PMCAST_SCOPE_CTX pScopeCtx
+4=PMCAST_LEASE_REQUEST pAddrRequest
+5=PMCAST_LEASE_RESPONSE pAddrResponse
+ParamCount=5

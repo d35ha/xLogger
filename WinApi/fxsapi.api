@@ -1,0 +1,195 @@
+[CallingConvention]
+@=STDCALL
+[FaxOpenPort]
+1=HANDLE FaxHandle
+2=DWORD DeviceId
+3=DWORD Flags
+4=LPHANDLE FaxPortHandle
+ParamCount=4
+Header=windows.h.api;
+[FaxGetConfiguration]
+1=HANDLE FaxHandle
+2=PFAX_CONFIGURATION* FaxConfig
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxSetConfiguration]
+1=HANDLE FaxHandle
+2=FAX_CONFIGURATION* FaxConfig
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxSetGlobalRoutingInfo]
+1=HANDLE FaxHandle
+2=FAX_GLOBAL_ROUTING_INFO* RoutingInfo
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxSetLoggingCategories]
+1=HANDLE FaxHandle
+2=FAX_LOG_CATEGORY* Categories
+3=DWORD NumberCategories
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxGetDeviceStatus]
+1=HANDLE FaxPortHandle
+2=PFAX_DEVICE_STATUS* DeviceStatus
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxGetPort]
+1=HANDLE FaxPortHandle
+2=PFAX_PORT_INFO* PortInfo
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxSetPort]
+1=HANDLE FaxPortHandle
+2=FAX_PORT_INFO* PortInfo
+ParamCount=2
+Header=fax.h.api;windows.h.api;
+[FaxSendDocumentForBroadcast]
+1=HANDLE FaxHandle
+2=LPCTSTR FileName
+3=LPDWORD FaxJobId
+4=PFAX_RECIPIENT_CALLBACK FaxRecipientCallback
+5=LPVOID Context
+ParamCount=5
+Header=fax.h.api;windows.h.api;
+[FaxPrintCoverPage]
+1=FAX_CONTEXT_INFO* FaxContextInfo
+2=FAX_COVERPAGE_INFO* CoverPageInfo
+ParamCount=2
+Header=fax.h.api;
+[FaxStartPrintJob]
+1=LPCTSTR PrinterName
+2=FAX_PRINT_INFO* PrintInfo
+3=LPDWORD FaxJobId
+4=PFAX_CONTEXT_INFO FaxContextInfo
+ParamCount=4
+Header=fax.h.api;
+[FaxAbort]
+1=HANDLE FaxHandle
+2=DWORD JobId
+ParamCount=2
+Header=windows.h.api;
+[FaxEnumJobs]
+1=HANDLE FaxHandle
+2=PFAX_JOB_ENTRY* JobEntry
+3=LPDWORD JobsReturned
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxGetJob]
+1=HANDLE FaxHandle
+2=DWORD JobId
+3=PFAX_JOB_ENTRY* JobEntry
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxSetJob]
+1=HANDLE FaxHandle
+2=DWORD JobId
+3=DWORD Command
+4=FAX_JOB_ENTRY* JobEntry
+ParamCount=4
+Header=fax.h.api;windows.h.api;
+[FaxAccessCheck]
+1=HANDLE FaxHandle
+2=DWORD AccessMask
+ParamCount=2
+Header=windows.h.api;
+[FaxCompleteJobParams]
+1=PFAX_JOB_PARAM* JobParams
+2=PFAX_COVERPAGE_INFO* CoverpageInfo
+ParamCount=2
+Header=fax.h.api;
+[FaxFreeBuffer]
+1=LPVOID Buffer
+ParamCount=1
+[FaxRegisterRoutingExtensionW]
+1=HANDLE FaxHandle
+2=LPCWSTR ExtensionName
+3=LPCWSTR FriendlyName
+4=LPCWSTR ImageName
+5=PFAX_ROUTING_INSTALLATION_CALLBACK CallBack
+6=LPVOID Context
+ParamCount=6
+Header=fax.h.api;windows.h.api;
+[FaxRegisterServiceProviderW]
+1=LPCWSTR DeviceProvider
+2=LPCWSTR FriendlyName
+3=LPCWSTR ImageName
+4=LPCWSTR TspName
+ParamCount=4
+[FaxClose]
+1=HANDLE FaxHandle
+ParamCount=1
+Header=windows.h.api;
+[FaxConnectFaxServer]
+1=LPCTSTR MachineName
+2=LPHANDLE FaxHandle
+ParamCount=2
+Header=windows.h.api;
+[FaxEnableRoutingMethod]
+1=HANDLE FaxPortHandle
+2=LPCTSTR RoutingGuid
+3=BOOL Enabled
+ParamCount=3
+Header=windows.h.api;
+[FaxEnumGlobalRoutingInfo]
+1=HANDLE FaxHandle
+2=PFAX_GLOBAL_ROUTING_INFO* RoutingInfo
+3=LPDWORD MethodsReturned
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxEnumPorts]
+1=HANDLE FaxHandle
+2=PFAX_PORT_INFO* PortInfo
+3=LPDWORD PortsReturned
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxEnumRoutingMethods]
+1=HANDLE FaxPortHandle
+2=PFAX_ROUTING_METHOD* RoutingMethod
+3=LPDWORD MethodsReturned
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxGetLoggingCategories]
+1=HANDLE FaxHandle
+2=PFAX_LOG_CATEGORY* Categories
+3=LPDWORD NumberCategories
+ParamCount=3
+Header=fax.h.api;windows.h.api;
+[FaxGetPageData]
+1=HANDLE FaxHandle
+2=DWORD JobId
+3=LPBYTE* Buffer
+4=LPDWORD BufferSize
+5=LPDWORD ImageWidth
+6=LPDWORD ImageHeight
+ParamCount=6
+Header=windows.h.api;
+[FaxGetRoutingInfo]
+1=HANDLE FaxPortHandle
+2=LPCTSTR RoutingGuid
+3=LPBYTE* RoutingInfoBuffer
+4=LPDWORD RoutingInfoBufferSize
+ParamCount=4
+Header=windows.h.api;
+[FaxInitializeEventQueue]
+1=HANDLE FaxHandle
+2=HANDLE CompletionPort
+3=ULONG_PTR CompletionKey
+4=HWND hWnd
+5=UINT MessageStart
+ParamCount=5
+Header=windows.h.api;
+[FaxSendDocument]
+1=HANDLE FaxHandle
+2=LPCTSTR FileName
+3=PFAX_JOB_PARAM JobParams
+4=FAX_COVERPAGE_INFO* CoverpageInfo
+5=LPDWORD FaxJobId
+ParamCount=5
+Header=fax.h.api;windows.h.api;
+[FaxSetRoutingInfo]
+1=HANDLE FaxPortHandle
+2=LPCTSTR RoutingGuid
+3=const BYTE* RoutingInfoBuffer
+4=DWORD RoutingInfoBufferSize
+ParamCount=4
+Header=windows.h.api;

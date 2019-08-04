@@ -1,0 +1,21 @@
+[CallingConvention]
+@=STDCALL
+[DavCancelConnectionsToServer]
+1=LPWSTR lpName
+2=BOOL fForce
+ParamCount=2
+[DavGetTheLockOwnerOfTheFile]
+1=LPCWSTR FileName
+2=PWSTR LockOwnerName
+3=PULONG LockOwnerNameLengthInBytes
+ParamCount=3
+[DavInvalidateCache]
+1=LPWSTR URLName
+ParamCount=1
+[DavRegisterAuthCallback]
+1=PFNDAVAUTHCALLBACK CallBack
+2=ULONG Version
+ParamCount=2
+[DavUnregisterAuthCallback]
+1=OPAQUE_HANDLE hCallback
+ParamCount=1

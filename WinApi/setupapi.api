@@ -1,0 +1,1813 @@
+[CallingConvention]
+@=STDCALL
+[InstallHinfSection]
+1=HWND hwnd
+2=HINSTANCE ModuleHandle
+3=PCTSTR CmdLineBuffer
+4=INT nCmdShow
+ParamCount=4
+Header=windows.h.api;
+[SetupAddInstallSectionToDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=HINF InfHandle
+3=HINF LayoutInfHandle
+4=PCTSTR SectionName
+5=PVOID Reserved1
+6=UINT Reserved2
+ParamCount=6
+Header=setupapi.h.api;
+[SetupAddSectionToDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=HINF InfHandle
+3=HINF ListInfHandle
+4=PCTSTR SectionName
+5=UINT Operation
+6=PVOID Reserved1
+7=UINT Reserved2
+ParamCount=7
+Header=setupapi.h.api;
+[SetupAddToDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=PCTSTR TargetFilespec
+3=LONGLONG FileSize
+4=UINT Operation
+5=PVOID Reserved1
+6=UINT Reserved2
+ParamCount=6
+Header=setupapi.h.api;
+[SetupAddToSourceList]
+1=DWORD Flags
+2=PCTSTR Source
+ParamCount=2
+[SetupAdjustDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=LPCTSTR DriveRoot
+3=LONGLONG Amount
+4=PVOID Reserved1
+5=UINT Reserved2
+ParamCount=5
+Header=setupapi.h.api;
+[SetupBackupError]
+1=HWND hwndParent
+2=PCTSTR DialogTitle
+3=PCTSTR SourceFile
+4=PCTSTR TargetFile
+5=UINT Win32ErrorCode
+6=DWORD Style
+ParamCount=6
+Header=windows.h.api;
+[SetupCancelTemporarySourceList]
+ParamCount=0
+[SetupCloseFileQueue]
+1=HSPFILEQ QueueHandle
+ParamCount=1
+Header=setupapi.h.api;
+[SetupCloseInfFile]
+1=HINF InfHandle
+ParamCount=1
+Header=setupapi.h.api;
+[SetupCommitFileQueue]
+1=HWND Owner
+2=HSPFILEQ QueueHandle
+3=PSP_FILE_CALLBACK MsgHandler
+4=PVOID Context
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupConfigureWmiFromInfSection]
+1=HINF InfHandle
+2=PCWSTR SectionName
+3=DWORD Flags
+ParamCount=3
+Header=setupapi.h.api;
+[SetupCopyError]
+1=HWND hwndParent
+2=PCTSTR DialogTitle
+3=PCTSTR DiskName
+4=PCTSTR PathToSource
+5=PCTSTR SourceFile
+6=PCTSTR TargetPathFile
+7=UINT Win32ErrorCode
+8=DWORD Style
+9=PTSTR PathBuffer
+10=DWORD PathBufferSize
+11=PDWORD PathRequiredSize
+ParamCount=11
+Header=windows.h.api;
+[SetupCopyOEMInf]
+1=PCTSTR SourceInfFileName
+2=PCTSTR OEMSourceMediaLocation
+3=DWORD OEMSourceMediaType
+4=DWORD CopyStyle
+5=PTSTR DestinationInfFileName
+6=DWORD DestinationInfFileNameSize
+7=PDWORD RequiredSize
+8=PTSTR DestinationInfFileNameComponent
+ParamCount=8
+[SetupCreateDiskSpaceList]
+1=PVOID Reserved1
+2=DWORD Reserved2
+3=[SPDSL_FLAGS] Flags
+ParamCount=3
+Header=setupapi.h.api;
+[SetupDecompressOrCopyFile]
+1=PCTSTR SourceFileName
+2=PCTSTR TargetFileName
+3=PUINT CompressionType
+ParamCount=3
+[SetupDefaultQueueCallback]
+1=PVOID Context
+2=UINT Notification
+3=UINT Param1
+4=UINT Param2
+ParamCount=4
+[SetupDeleteError]
+1=HWND hwndParent
+2=PCTSTR DialogTitle
+3=PCTSTR File
+4=UINT Win32ErrorCode
+5=DWORD Style
+ParamCount=5
+Header=windows.h.api;
+[SetupDestroyDiskSpaceList]
+1=HDSKSPC DiskSpace
+ParamCount=1
+Header=setupapi.h.api;
+[SetupDuplicateDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=PVOID Reserved1
+3=DWORD Reserved2
+4=UINT Flags
+ParamCount=4
+Header=setupapi.h.api;
+[SetupEnumInfSections]
+1=HINF InfHandle
+2=UINT EnumerationIndex
+3=PTSTR ReturnBuffer
+4=DWORD ReturnBufferSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupFindFirstLine]
+1=HINF InfHandle
+2=PCTSTR Section
+3=PCTSTR Key
+4=PINFCONTEXT Context
+ParamCount=4
+Header=setupapi.h.api;
+[SetupFindNextLine]
+1=PINFCONTEXT ContextIn
+2=PINFCONTEXT ContextOut
+ParamCount=2
+Header=setupapi.h.api;
+[SetupFindNextMatchLine]
+1=PINFCONTEXT ContextIn
+2=PCTSTR Key
+3=PINFCONTEXT ContextOut
+ParamCount=3
+Header=setupapi.h.api;
+[SetupFreeSourceList]
+1=PCTSTR** List
+2=UINT Count
+ParamCount=2
+[SetupGetBinaryField]
+1=PINFCONTEXT Context
+2=DWORD FieldIndex
+3=BYTE* ReturnBuffer
+4=DWORD ReturnBufferSize
+5=LPDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupGetFieldCount]
+1=PINFCONTEXT Context
+ParamCount=1
+Header=setupapi.h.api;
+[SetupGetFileCompressionInfo]
+1=PCTSTR SourceFileName
+2=PTSTR* ActualSourceFileName
+3=PDWORD SourceFileSize
+4=PDWORD TargetFileSize
+5=PUINT CompressionType
+ParamCount=5
+[SetupGetFileCompressionInfoEx]
+1=PCTSTR SourceFileName
+2=PTSTR ActualSourceFileNameBuffer
+3=DWORD ActualSourceFileNameLen
+4=PDWORD RequiredBufferLen
+5=PDWORD SourceFileSize
+6=PDWORD TargetFileSize
+7=PUINT CompressionType
+ParamCount=7
+[SetupGetFileQueueCount]
+1=HSPFILEQ FileQueue
+2=UINT SubQueueFileOp
+3=PUINT NumOperations
+ParamCount=3
+Header=setupapi.h.api;
+[SetupGetFileQueueFlags]
+1=HSPFILEQ FileQueue
+2=PDWORD Flags
+ParamCount=2
+Header=setupapi.h.api;
+[SetupGetInfFileList]
+1=PCTSTR DirectoryPath
+2=[InfStyle] InfStyle
+3=PTSTR ReturnBuffer
+4=DWORD ReturnBufferSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupGetInfInformation]
+1=LPCVOID InfSpec
+2=DWORD SearchControl
+3=PSP_INF_INFORMATION ReturnBuffer
+4=DWORD ReturnBufferSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupGetIntField]
+1=PINFCONTEXT Context
+2=DWORD FieldIndex
+3=PINT IntegerValue
+ParamCount=3
+Header=setupapi.h.api;
+[SetupGetLineByIndex]
+1=HINF InfHandle
+2=PCTSTR Section
+3=DWORD Index
+4=PINFCONTEXT Context
+ParamCount=4
+Header=setupapi.h.api;
+[SetupGetLineCount]
+1=HINF InfHandle
+2=PCTSTR Section
+ParamCount=2
+Header=setupapi.h.api;
+[SetupGetLineText]
+1=PINFCONTEXT Context
+2=HINF InfHandle
+3=PCTSTR Section
+4=PCTSTR Key
+5=PTSTR ReturnBuffer
+6=DWORD ReturnBufferSize
+7=PDWORD RequiredSize
+ParamCount=7
+Header=setupapi.h.api;
+[SetupGetMultiSzField]
+1=PINFCONTEXT Context
+2=DWORD FieldIndex
+3=PTSTR ReturnBuffer
+4=DWORD ReturnBufferSize
+5=LPDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupGetSourceFileLocation]
+1=HINF InfHandle
+2=PINFCONTEXT InfContext
+3=PCTSTR FileName
+4=PUINT SourceId
+5=PTSTR ReturnBuffer
+6=DWORD ReturnBufferSize
+7=PDWORD RequiredSize
+ParamCount=7
+Header=setupapi.h.api;
+[SetupGetSourceFileSize]
+1=HINF InfHandle
+2=PINFCONTEXT InfContext
+3=PCTSTR FileName
+4=PCTSTR Section
+5=PDWORD FileSize
+6=UINT RoundingFactor
+ParamCount=6
+Header=setupapi.h.api;
+[SetupGetSourceInfo]
+1=HINF InfHandle
+2=UINT SourceId
+3=UINT InfoDesired
+4=PTSTR ReturnBuffer
+5=DWORD ReturnBufferSize
+6=LPDWORD RequiredSize
+ParamCount=6
+Header=setupapi.h.api;
+[SetupGetStringField]
+1=PINFCONTEXT Context
+2=DWORD FieldIndex
+3=PTSTR ReturnBuffer
+4=DWORD ReturnBufferSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupGetTargetPath]
+1=HINF InfHandle
+2=PINFCONTEXT InfContext
+3=PCTSTR Section
+4=PTSTR ReturnBuffer
+5=DWORD ReturnBufferSize
+6=PDWORD RequiredSize
+ParamCount=6
+Header=setupapi.h.api;
+[SetupInitDefaultQueueCallback]
+1=HWND OwnerWindow
+ParamCount=1
+Header=windows.h.api;
+[SetupInitDefaultQueueCallbackEx]
+1=HWND OwnerWindow
+2=HWND AlternateProgressWindow
+3=UINT ProgressMessage
+4=DWORD Reserved1
+5=PVOID Reserved2
+ParamCount=5
+Header=windows.h.api;
+[SetupInitializeFileLog]
+1=PCTSTR LogFileName
+2=DWORD Flags
+ParamCount=2
+[SetupInstallFile]
+1=HINF InfHandle
+2=PINFCONTEXT InfContext
+3=PCTSTR SourceFile
+4=PCTSTR SourcePathRoot
+5=PCTSTR DestinationName
+6=DWORD CopyStyle
+7=PSP_FILE_CALLBACK CopyMsgHandler
+8=PVOID Context
+ParamCount=8
+Header=setupapi.h.api;
+[SetupInstallFileEx]
+1=HINF InfHandle
+2=PINFCONTEXT InfContext
+3=PCTSTR SourceFile
+4=PCTSTR SourcePathRoot
+5=PCTSTR DestinationName
+6=DWORD CopyStyle
+7=PSP_FILE_CALLBACK CopyMsgHandler
+8=PVOID Context
+9=PBOOL FileWasInUse
+ParamCount=9
+Header=setupapi.h.api;
+[SetupInstallFilesFromInfSection]
+1=HINF InfHandle
+2=HINF LayoutInfHandle
+3=HSPFILEQ FileQueue
+4=PCTSTR SectionName
+5=PCTSTR SourceRootPath
+6=UINT CopyFlags
+ParamCount=6
+Header=setupapi.h.api;
+[SetupInstallFromInfSection]
+1=HWND Owner
+2=HINF InfHandle
+3=PCTSTR SectionName
+4=[SPINST_FLAGS] Flags
+5=[HKEY] RelativeKeyRoot
+6=PCTSTR SourceRootPath
+7=UINT CopyFlags
+8=PSP_FILE_CALLBACK MsgHandler
+9=PVOID Context
+10=HDEVINFO DeviceInfoSet
+11=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=11
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupInstallServicesFromInfSection]
+1=HINF InfHandle
+2=PCTSTR SectionName
+3=DWORD Flags
+ParamCount=3
+Header=setupapi.h.api;
+[SetupInstallServicesFromInfSectionEx]
+1=HINF InfHandle
+2=PCTSTR SectionName
+3=DWORD Flags
+4=HDEVINFO DeviceInfoSet
+5=PSP_DEVINFO_DATA DeviceInfoData
+6=PVOID Reserved1
+7=PVOID Reserved2
+ParamCount=7
+Header=setupapi.h.api;windows.h.api;
+[SetupIterateCabinet]
+1=PCTSTR CabinetFile
+2=DWORD Reserved
+3=PSP_FILE_CALLBACK MsgHandler
+4=PVOID Context
+ParamCount=4
+Header=setupapi.h.api;
+[SetupLogFile]
+1=HSPFILELOG FileLogHandle
+2=PCTSTR LogSectionName
+3=PCTSTR SourceFileName
+4=PCTSTR TargetFileName
+5=DWORD Checksum
+6=PCTSTR DiskTagfile
+7=PCTSTR DiskDescription
+8=PCTSTR OtherInfo
+9=DWORD Flags
+ParamCount=9
+Header=setupapi.h.api;
+[SetupLogError]
+1=PCTSTR MessageString
+2=[LogSeverity] Severity
+ParamCount=2
+Header=setupapi.h.api;
+[SetupOpenAppendInfFile]
+1=PCTSTR FileName
+2=HINF InfHandle
+3=PUINT ErrorLine
+ParamCount=3
+Header=setupapi.h.api;
+[SetupOpenFileQueue]
+ParamCount=0
+[SetupOpenInfFile]
+1=PCTSTR FileName
+2=PCTSTR InfClass
+3=[InfStyle] InfStyle
+4=PUINT ErrorLine
+ParamCount=4
+Header=setupapi.h.api;
+[SetupOpenLog]
+1=BOOL Erase
+ParamCount=1
+[SetupCloseLog]
+ParamCount=0
+[SetupOpenMasterInf]
+ParamCount=0
+[SetupPromptForDisk]
+1=HWND hwndParent
+2=PCTSTR DialogTitle
+3=PCTSTR DiskName
+4=PCTSTR PathToSource
+5=PCTSTR FileSought
+6=PCTSTR TagFile
+7=DWORD DiskPromptStyle
+8=PTSTR PathBuffer
+9=DWORD PathBufferSize
+10=PDWORD PathRequiredSize
+ParamCount=10
+Header=windows.h.api;
+[SetupPromptReboot]
+1=HSPFILEQ FileQueue
+2=HWND Owner
+3=BOOL ScanOnly
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupQueryDrivesInDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=PSTR ReturnBuffer
+3=DWORD ReturnBufferSize
+4=PDWORD RequiredSize
+ParamCount=4
+Header=setupapi.h.api;
+[SetupQueryFileLog]
+1=HSPFILELOG FileLogHandle
+2=PCTSTR LogSectionName
+3=PCTSTR TargetFileName
+4=[SetupFileLogInfo] DesiredInfo
+5=PTSTR DataOut
+6=DWORD ReturnBufferSize
+7=PDWORD RequiredSize
+ParamCount=7
+Header=setupapi.h.api;
+[SetupQueryInfFileInformation]
+1=PSP_INF_INFORMATION InfInformation
+2=UINT InfIndex
+3=PTSTR ReturnBuffer
+4=DWORD ReturnBufferSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;
+[SetupQueryInfOriginalFileInformation]
+1=PSP_INF_INFORMATION InfInformation
+2=UINT InfIndex
+3=PSP_ALTPLATFORM_INFO AlternatePlatformInfo
+4=PSP_ORIGINAL_FILE_INFO OriginalFileInfo
+ParamCount=4
+Header=setupapi.h.api;
+[SetupQueryInfVersionInformation]
+1=PSP_INF_INFORMATION InfInformation
+2=UINT InfIndex
+3=PCTSTR Key
+4=PTSTR ReturnBuffer
+5=DWORD ReturnBufferSize
+6=PDWORD RequiredSize
+ParamCount=6
+Header=setupapi.h.api;
+[SetupQuerySourceList]
+1=DWORD Flags
+2=PCTSTR** List
+3=PUINT Count
+ParamCount=3
+[SetupQuerySpaceRequiredOnDrive]
+1=HDSKSPC DiskSpace
+2=PCTSTR DriveSpec
+3=LONGLONG* SpaceRequired
+4=PVOID Reserved1
+5=UINT Reserved2
+ParamCount=5
+Header=setupapi.h.api;
+[SetupQueueCopy]
+1=HSPFILEQ QueueHandle
+2=PCTSTR SourceRootPath
+3=PCTSTR SourcePath
+4=PCTSTR SourceFileName
+5=PCTSTR SourceDescription
+6=PCTSTR SourceTagFile
+7=PCTSTR TargetDirectory
+8=PCTSTR TargetFileName
+9=DWORD CopyStyle
+ParamCount=9
+Header=setupapi.h.api;
+[SetupQueueCopyIndirect]
+1=PSP_FILE_COPY_PARAMS CopyParams
+ParamCount=1
+Header=setupapi.h.api;
+[SetupQueueCopySection]
+1=HSPFILEQ QueueHandle
+2=PCTSTR SourceRootPath
+3=HINF InfHandle
+4=HINF ListInfHandle
+5=PCTSTR Section
+6=DWORD CopyStyle
+ParamCount=6
+Header=setupapi.h.api;
+[SetupQueueDefaultCopy]
+1=HSPFILEQ QueueHandle
+2=HINF InfHandle
+3=PCTSTR SourceRootPath
+4=PCTSTR SourceFileName
+5=PCTSTR TargetFileName
+6=DWORD CopyStyle
+ParamCount=6
+Header=setupapi.h.api;
+[SetupQueueDelete]
+1=HSPFILEQ QueueHandle
+2=PCTSTR PathPart1
+3=PCTSTR PathPart2
+ParamCount=3
+Header=setupapi.h.api;
+[SetupQueueDeleteSection]
+1=HSPFILEQ QueueHandle
+2=HINF InfHandle
+3=HINF ListInfHandle
+4=PCTSTR Section
+ParamCount=4
+Header=setupapi.h.api;
+[SetupQueueRename]
+1=HSPFILEQ QueueHandle
+2=PCTSTR SourcePath
+3=PCTSTR SourceFileName
+4=PCTSTR TargetPath
+5=PCTSTR TargetFileName
+ParamCount=5
+Header=setupapi.h.api;
+[SetupQueueRenameSection]
+1=HSPFILEQ QueueHandle
+2=HINF InfHandle
+3=HINF ListInfHandle
+4=PCTSTR Section
+ParamCount=4
+Header=setupapi.h.api;
+[SetupRemoveFileLogEntry]
+1=HSPFILELOG FileLogHandle
+2=PCTSTR LogSectionName
+3=PCTSTR TargetFileName
+ParamCount=3
+Header=setupapi.h.api;
+[SetupRemoveFromDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=PCTSTR TargetFilespec
+3=UINT Operation
+4=PVOID Reserved1
+5=UINT Reserved2
+ParamCount=5
+Header=setupapi.h.api;
+[SetupRemoveFromSourceList]
+1=DWORD Flags
+2=PCTSTR Source
+ParamCount=2
+[SetupRemoveInstallSectionFromDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=HINF InfHandle
+3=HINF LayoutInfHandle
+4=PCTSTR SectionName
+5=PVOID Reserved1
+6=UINT Reserved2
+ParamCount=6
+Header=setupapi.h.api;
+[SetupRemoveSectionFromDiskSpaceList]
+1=HDSKSPC DiskSpace
+2=HINF InfHandle
+3=HINF ListInfHandle
+4=PCTSTR SectionName
+5=UINT Operation
+6=PVOID Reserved1
+7=UINT Reserved2
+ParamCount=7
+Header=setupapi.h.api;
+[SetupRenameError]
+1=HWND hwndParent
+2=PCTSTR DialogTitle
+3=PCTSTR SourceFile
+4=PCTSTR TargetFile
+5=UINT Win32ErrorCode
+6=DWORD Style
+ParamCount=6
+Header=windows.h.api;
+[SetupScanFileQueue]
+1=HSPFILEQ FileQueue
+2=DWORD Flags
+3=HWND Window
+4=PSP_FILE_CALLBACK CallbackRoutine
+5=PVOID CallbackContext
+6=PDWORD Result
+ParamCount=6
+Header=setupapi.h.api;windows.h.api;
+[SetupSetDirectoryId]
+1=HINF InfHandle
+2=DWORD Id
+3=PCTSTR Directory
+ParamCount=3
+Header=setupapi.h.api;
+[SetupSetDirectoryIdEx]
+1=HINF InfHandle
+2=DWORD Id
+3=PCTSTR Directory
+4=DWORD Flags
+5=DWORD Reserved1
+6=PVOID Reserved2
+ParamCount=6
+Header=setupapi.h.api;
+[SetupSetFileQueueAlternatePlatform]
+1=HSPFILEQ QueueHandle
+2=PSP_ALTPLATFORM_INFO AlternatePlatformInfo
+3=PCWSTR AlternateDefaultCatalogFile
+ParamCount=3
+Header=setupapi.h.api;
+[SetupSetFileQueueFlags]
+1=HSPFILEQ FileQueue
+2=DWORD FlagMask
+3=DWORD Flags
+ParamCount=3
+Header=setupapi.h.api;
+[SetupSetPlatformPathOverride]
+1=PCTSTR Override
+ParamCount=1
+[SetupSetSourceList]
+1=DWORD Flags
+2=PCTSTR* SourceList
+3=UINT SourceCount
+ParamCount=3
+[SetupTermDefaultQueueCallback]
+1=PVOID Context
+ParamCount=1
+[SetupTerminateFileLog]
+1=HSPFILELOG FileLogHandle
+ParamCount=1
+Header=setupapi.h.api;
+[SetupUninstallNewlyCopiedInfs]
+1=HSPFILEQ QueueHandle
+2=DWORD Flags
+3=PVOID Reserved
+ParamCount=3
+Header=setupapi.h.api;
+[SetupUninstallOEMInf]
+1=PCWSTR InfFileName
+2=DWORD Flags
+3=PVOID Reserved
+ParamCount=3
+[SetupVerifyInfFile]
+1=PCWSTR InfName
+2=PSP_ALTPLATFORM_INFO AltPlatformInfo
+3=PSP_INF_SIGNER_INFO InfFileName
+ParamCount=3
+Header=setupapi.h.api;
+[SetupGetInfDriverStoreLocation]
+1=PCTSTR FileName
+2=PSP_ALTPLATFORM_INFO AlternatePlatformInfo
+3=PCTSTR LocaleName
+4=PTSTR ReturnBuffer
+5=DWORD ReturnBufferSize
+6=PDWORD RequiredSize
+ParamCount=6
+Header=setupapi.h.api;
+[SetupGetInfPublishedName]
+1=PCTSTR DriverStoreLocation
+2=PTSTR ReturnBuffer
+3=DWORD ReturnBufferSize
+4=PDWORD RequiredSize
+ParamCount=4
+[SetupGetNonInteractiveMode]
+ParamCount=0
+[SetupSetNonInteractiveMode]
+1=BOOL NonInteractiveFlag
+ParamCount=1
+[SetupDiAskForOEMDisk]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiBuildClassInfoList]
+1=[SetupDiBuildClassInfoListFlags] Flags
+2=LPGUID ClassGuidList
+3=DWORD ClassGuidListSize
+4=PDWORD RequiredSize
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiBuildClassInfoListEx]
+1=[SetupDiBuildClassInfoListFlags] Flags
+2=LPGUID ClassGuidList
+3=DWORD ClassGuidListSize
+4=PDWORD RequiredSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+Header=setupapi.h.api;windows.h.api;
+[SetupDiBuildDriverInfoList]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DiDriverType] DriverType
+ParamCount=3
+Header=setup.h.api;windows.h.api;
+[SetupDiCallClassInstaller]
+1=[DI_FUNCTION] InstallFunction
+2=HDEVINFO DeviceInfoSet
+3=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupDiCancelDriverInfoSearch]
+1=HDEVINFO DeviceInfoSet
+ParamCount=1
+Header=windows.h.api;
+[SetupDiChangeState]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiClassGuidsFromName]
+1=PCTSTR ClassName
+2=LPGUID ClassGuidList
+3=DWORD ClassGuidListSize
+4=PDWORD RequiredSize
+ParamCount=4
+Header=windows.h.api;
+[SetupDiClassGuidsFromNameEx]
+1=PCTSTR ClassName
+2=LPGUID ClassGuidList
+3=DWORD ClassGuidListSize
+4=PDWORD RequiredSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+Header=windows.h.api;
+[SetupDiClassNameFromGuid]
+1=LPGUID ClassGuid
+2=PTSTR ClassName
+3=DWORD ClassNameSize
+4=PDWORD RequiredSize
+ParamCount=4
+Header=windows.h.api;
+[SetupDiClassNameFromGuidEx]
+1=LPGUID ClassGuid
+2=PTSTR ClassName
+3=DWORD ClassNameSize
+4=PDWORD RequiredSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+Header=windows.h.api;
+[SetupDiCreateDeviceInfo]
+1=HDEVINFO DeviceInfoSet
+2=PCTSTR DeviceName
+3=LPGUID ClassGuid
+4=PCTSTR DeviceDescription
+5=HWND hwndParent
+6=[SetupDiCreateDeviceInfoFlags] CreationFlags
+7=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=7
+Header=setupapi.h.api;windows.h.api;
+[SetupDiCreateDeviceInfoList]
+1=LPGUID ClassGuid
+2=HWND hwndParent
+ParamCount=2
+Header=windows.h.api;
+[SetupDiCreateDeviceInfoListEx]
+1=LPGUID ClassGuid
+2=HWND hwndParent
+3=PCTSTR MachineName
+4=PVOID Reserved
+ParamCount=4
+Header=windows.h.api;
+[SetupDiCreateDeviceInterface]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=LPGUID InterfaceClassGuid
+4=PCTSTR ReferenceString
+5=DWORD CreationFlags
+6=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+ParamCount=6
+Header=setupapi.h.api;windows.h.api;
+[SetupDiCreateDeviceInterfaceRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DWORD Reserved
+4=[REGSAM] samDesired
+5=HINF InfHandle
+6=PCTSTR InfSectionName
+ParamCount=6
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupDiCreateDevRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DeviceInfoScope] Scope
+4=DWORD HwProfile
+5=[DeviceInfoKeyType] KeyType
+6=HINF InfHandle
+7=PCTSTR InfSectionName
+ParamCount=7
+Header=setupapi.h.api;windows.h.api;
+[SetupDiDeleteDeviceInfo]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiDeleteDeviceInterfaceData]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+ParamCount=2
+Header=setupapi.h.api;windows.h.api;
+[SetupDiDeleteDeviceInterfaceRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DWORD Reserved
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupDiDeleteDevRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DeviceInfoScope] Scope
+4=DWORD HwProfile
+5=[DeviceInfoKeyType] KeyType
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiDestroyClassImageList]
+1=PSP_CLASSIMAGELIST_DATA ClassImageListData
+ParamCount=1
+Header=setupapi.h.api;
+[SetupDiDestroyDeviceInfoList]
+1=HDEVINFO DeviceInfoSet
+ParamCount=1
+Header=windows.h.api;
+[SetupDiDestroyDriverInfoList]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DiDriverType] DriverType
+ParamCount=3
+Header=setup.h.api;windows.h.api;
+[SetupDiDrawMiniIcon]
+1=HDC hdc
+2=RECT rc
+3=INT MiniIconIndex
+4=DWORD Flags
+ParamCount=4
+Header=gdi.h.api;
+[SetupDiEnumDeviceInfo]
+1=HDEVINFO DeviceInfoSet
+2=DWORD MemberIndex
+3=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=3
+Header=windows.h.api;
+[SetupDiEnumDeviceInterfaces]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=LPGUID InterfaceClassGuid
+4=DWORD MemberIndex
+5=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiEnumDriverInfo]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DiDriverType] DriverType
+4=DWORD MemberIndex
+5=PSP_DRVINFO_DATA DriverInfoData
+ParamCount=5
+Header=setup.h.api;windows.h.api;
+[SetupDiFinishInstallAction]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiGetActualModelsSection]
+1=PINFCONTEXT Context
+2=PSP_ALTPLATFORM_INFO AlternatePlatformInfo
+3=PTSTR DecoratedModelsSection
+4=DWORD DecoratedModelsSectionSize
+5=PDWORD RequiredSize
+6=PVOID Reserved
+ParamCount=6
+Header=setupapi.h.api;
+[SetupDiGetActualSectionToInstall]
+1=HINF InfHandle
+2=PCTSTR InfSectionName
+3=PTSTR InfSectionWithExt
+4=DWORD InfSectionWithExtSize
+5=PDWORD RequiredSize
+6=PTSTR* Extension
+ParamCount=6
+Header=setupapi.h.api;
+[SetupDiGetActualSectionToInstallEx]
+1=HINF InfHandle
+2=PCTSTR InfSectionName
+3=PSP_ALTPLATFORM_INFO AlternatePlatformInfo
+4=PTSTR InfSectionWithExt
+5=DWORD InfSectionWithExtSize
+6=PDWORD RequiredSize
+7=PTSTR* Extension
+8=PVOID Reserved
+ParamCount=8
+Header=setupapi.h.api;
+[SetupDiGetClassBitmapIndex]
+1=LPGUID ClassGuid
+2=PINT MiniIconIndex
+ParamCount=2
+Header=windows.h.api;
+[SetupDiGetClassDescription]
+1=LPGUID ClassGuid
+2=PTSTR ClassDescription
+3=DWORD ClassDescriptionSize
+4=PDWORD RequiredSize
+ParamCount=4
+Header=windows.h.api;
+[SetupDiGetClassDescriptionEx]
+1=LPGUID ClassGuid
+2=PTSTR ClassDescription
+3=DWORD ClassDescriptionSize
+4=PDWORD RequiredSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+Header=windows.h.api;
+[SetupDiGetClassDevPropertySheets]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=LPPROPSHEETHEADER PropertySheetHeader
+4=DWORD PropertySheetHeaderPageListSize
+5=PDWORD RequiredSize
+6=[DiGetClassDevPropertySheetsType] PropertySheetType
+ParamCount=6
+Header=setupapi.h.api;ole.h.api;windows.h.api;
+[SetupDiGetClassDevs]
+1=LPGUID ClassGuid
+2=PCTSTR Enumerator
+3=HWND hwndParent
+4=[DeviceInfoGetFlags] Flags
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetClassDevsEx]
+1=LPGUID ClassGuid
+2=PCTSTR Enumerator
+3=HWND hwndParent
+4=[DeviceInfoGetFlags] Flags
+5=HDEVINFO DeviceInfoSet
+6=PCTSTR MachineName
+7=PVOID Reserved
+ParamCount=7
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetClassImageIndex]
+1=PSP_CLASSIMAGELIST_DATA ClassImageListData
+2=LPGUID ClassGuid
+3=PINT ImageIndex
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetClassImageList]
+1=PSP_CLASSIMAGELIST_DATA ClassImageListData
+ParamCount=1
+Header=setupapi.h.api;
+[SetupDiGetClassImageListEx]
+1=PSP_CLASSIMAGELIST_DATA ClassImageListData
+2=PCTSTR MachineName
+3=PVOID Reserved
+ParamCount=3
+Header=setupapi.h.api;
+[SetupDiGetClassInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_CLASSINSTALL_HEADER ClassInstallParams
+4=DWORD ClassInstallParamsSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetClassPropertyW]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKey
+3=DEVPROPTYPE* PropertyType
+4=PBYTE PropertyBuffer
+5=DWORD PropertyBufferSize
+6=PDWORD RequiredSize
+7=[DiClassPropertyFlags] Flags
+ParamCount=7
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetClassPropertyExW]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKey
+3=DEVPROPTYPE* PropertyType
+4=PBYTE PropertyBuffer
+5=DWORD PropertyBufferSize
+6=PDWORD RequiredSize
+7=[DiClassPropertyFlags] Flags
+8=PCWSTR MachineName
+9=PVOID Reserved
+ParamCount=9
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetClassPropertyKeys]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKeyArray
+3=DWORD PropertyKeyCount
+4=PDWORD RequiredPropertyKeyCount
+5=[DiClassPropertyFlags] Flags
+ParamCount=5
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetClassPropertyKeysExW]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKeyArray
+3=DWORD PropertyKeyCount
+4=PDWORD RequiredPropertyKeyCount
+5=[DiClassPropertyFlags] Flags
+6=PCWSTR MachineName
+7=PVOID Reserved
+ParamCount=7
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetClassRegistryProperty]
+1=LPGUID ClassGuid
+2=DWORD Property
+3=RegType* PropertyRegDataType
+4=PBYTE PropertyBuffer
+5=DWORD PropertyBufferSize
+6=PDWORD RequiredSize
+7=PCTSTR MachineName
+8=PVOID Reserved
+ParamCount=8
+Header=registry.h.api;windows.h.api;
+[SetupDiGetCustomDeviceProperty]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PCTSTR CustomPropertyName
+4=[GetCustomDevicePropertyFlags] Flags
+5=RegType* PropertyRegDataType
+6=PBYTE PropertyBuffer
+7=DWORD PropertyBufferSize
+8=PDWORD RequiredSize
+ParamCount=8
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupDiGetDeviceInfoListClass]
+1=HDEVINFO DeviceInfoSet
+2=LPGUID ClassGuid
+ParamCount=2
+Header=windows.h.api;
+[SetupDiGetDeviceInfoListDetail]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_LIST_DETAIL_DATA DeviceInfoSetDetailData
+ParamCount=2
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetDeviceInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DEVINSTALL_PARAMS DeviceInstallParams
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetDeviceInstanceId]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PTSTR DeviceInstanceId
+4=DWORD DeviceInstanceIdSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=windows.h.api;
+[SetupDiGetDeviceInterfaceAlias]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=LPGUID AliasInterfaceClassGuid
+4=PSP_DEVICE_INTERFACE_DATA AliasDeviceInterfaceData
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetDeviceInterfaceDetail]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=PSP_DEVICE_INTERFACE_DETAIL_DATA DeviceInterfaceDetailData
+4=DWORD DeviceInterfaceDetailDataSize
+5=PDWORD RequiredSize
+6=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=6
+Header=setupapi.h.api;windows.h.api;
+[SetupDiGetDeviceInterfacePropertyW]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DEVPROPKEY* PropertyKey
+4=DEVPROPTYPE* PropertyType
+5=PBYTE PropertyBuffer
+6=DWORD PropertyBufferSize
+7=PDWORD RequiredSize
+8=DWORD Flags
+ParamCount=8
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetDeviceInterfacePropertyKeys]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DEVPROPKEY* PropertyKeyArray
+4=DWORD PropertyKeyCount
+5=PDWORD RequiredPropertyKeyCount
+6=DWORD Flags
+ParamCount=6
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetDevicePropertyW]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=DEVPROPKEY* PropertyKey
+4=DEVPROPTYPE* PropertyType
+5=PBYTE PropertyBuffer
+6=DWORD PropertyBufferSize
+7=PDWORD RequiredSize
+8=DWORD Flags
+ParamCount=8
+Header=setup.h.api;windows.h.api;
+[SetupDiGetDevicePropertyKeys]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=DEVPROPKEY* PropertyKeyArray
+4=DWORD PropertyKeyCount
+5=PDWORD RequiredPropertyKeyCount
+6=DWORD Flags
+ParamCount=6
+Header=setup.h.api;windows.h.api;
+[SetupDiGetDeviceRegistryProperty]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[SetupDeviceRegistryProperty] Property
+4=RegType* PropertyRegDataType
+5=PBYTE PropertyBuffer
+6=DWORD PropertyBufferSize
+7=PDWORD RequiredSize
+ParamCount=7
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupDiGetDriverInfoDetail]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DRVINFO_DATA DriverInfoData
+4=PSP_DRVINFO_DETAIL_DATA DriverInfoDetailData
+5=DWORD DriverInfoDetailDataSize
+6=PDWORD RequiredSize
+ParamCount=6
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetDriverInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DRVINFO_DATA DriverInfoData
+4=PSP_DRVINSTALL_PARAMS DriverInstallParams
+ParamCount=4
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiGetHwProfileFriendlyName]
+1=DWORD HwProfile
+2=PTSTR FriendlyName
+3=DWORD FriendlyNameSize
+4=PDWORD RequiredSize
+ParamCount=4
+[SetupDiGetHwProfileFriendlyNameEx]
+1=DWORD HwProfile
+2=PTSTR FriendlyName
+3=DWORD FriendlyNameSize
+4=PDWORD RequiredSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+[SetupDiGetHwProfileList]
+1=PDWORD HwProfileList
+2=DWORD HwProfileListSize
+3=PDWORD RequiredSize
+4=PDWORD CurrentlyActiveIndex
+ParamCount=4
+[SetupDiGetHwProfileListEx]
+1=PDWORD HwProfileList
+2=DWORD HwProfileListSize
+3=PDWORD RequiredSize
+4=PDWORD CurrentlyActiveIndex
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+[SetupDiGetINFClass]
+1=PCTSTR InfName
+2=LPGUID ClassGuid
+3=PTSTR ClassName
+4=DWORD ClassNameSize
+5=PDWORD RequiredSize
+ParamCount=5
+Header=windows.h.api;
+[SetupDiGetSelectedDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiGetSelectedDriver]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DRVINFO_DATA DriverInfoData
+ParamCount=3
+Header=setup.h.api;windows.h.api;
+[SetupDiGetWizardPage]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_INSTALLWIZARD_DATA InstallWizardData
+4=DWORD PageType
+5=DWORD Flags
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiInstallClass]
+1=HWND hwndParent
+2=PCTSTR InfFileName
+3=DWORD Flags
+4=HSPFILEQ FileQueue
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiInstallClassEx]
+1=HWND hwndParent
+2=PCTSTR InfFileName
+3=DWORD Flags
+4=HSPFILEQ FileQueue
+5=LPGUID InterfaceClassGuid
+6=PVOID Reserved1
+7=PVOID Reserved2
+ParamCount=7
+Header=setupapi.h.api;windows.h.api;
+[SetupDiInstallDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiInstallDeviceInterfaces]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiInstallDriverFiles]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiLoadClassIcon]
+1=LPGUID ClassGuid
+2=HICON* LargeIcon
+3=LPINT MiniIconIndex
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[SetupDiLoadDeviceIcon]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=UINT cxIcon
+4=UINT cyIcon
+5=DWORD Flags
+6=HICON* hIcon
+ParamCount=6
+Header=gdi.h.api;windows.h.api;
+[SetupDiOpenClassRegKey]
+1=LPGUID ClassGuid
+2=[REGSAM] samDesired
+ParamCount=2
+Header=registry.h.api;windows.h.api;
+[SetupDiOpenClassRegKeyEx]
+1=LPGUID ClassGuid
+2=[REGSAM] samDesired
+3=DWORD Flags
+4=PCTSTR MachineName
+5=PVOID Reserved
+ParamCount=5
+Header=registry.h.api;windows.h.api;
+[SetupDiOpenDeviceInfo]
+1=HDEVINFO DeviceInfoSet
+2=PCTSTR DeviceInstanceId
+3=HWND hwndParent
+4=[OpenDeviceInfoFlags] OpenFlags
+5=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiOpenDeviceInterface]
+1=HDEVINFO DeviceInfoSet
+2=PCTSTR DevicePath
+3=[OpenDeviceInterfaceFlags] OpenFlags
+4=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiOpenDeviceInterfaceRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DWORD Reserved
+4=[REGSAM] samDesired
+ParamCount=4
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupDiOpenDevRegKey]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[DeviceInfoScope] Scope
+4=DWORD HwProfile
+5=[DeviceInfoKeyType] KeyType
+6=[REGSAM] samDesired
+ParamCount=6
+Header=setupapi.h.api;registry.h.api;windows.h.api;
+[SetupDiRegisterCoDeviceInstallers]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiRegisterDeviceInfo]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=DWORD Flags
+4=PSP_DETSIG_CMPPROC CompareProc
+5=PVOID CompareContext
+6=PSP_DEVINFO_DATA DupDeviceInfoData
+ParamCount=6
+Header=setupapi.h.api;windows.h.api;
+[SetupDiRemoveDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiRemoveDeviceInterface]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+ParamCount=2
+Header=setupapi.h.api;windows.h.api;
+[SetupDiRestartDevices]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiSelectBestCompatDrv]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiSelectDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiSelectOEMDrv]
+1=HWND hwndParent
+2=HDEVINFO DeviceInfoSet
+3=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=3
+Header=windows.h.api;
+[SetupDiSetClassInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_CLASSINSTALL_HEADER ClassInstallParams
+4=DWORD ClassInstallParamsSize
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiSetClassPropertyW]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKey
+3=[DEVPROPTYPE] PropertyType
+4=CONST PBYTE PropertyBuffer
+5=DWORD PropertyBufferSize
+6=[DiClassPropertyFlags] Flags
+ParamCount=6
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiSetClassPropertyExW]
+1=GUID* ClassGuid
+2=DEVPROPKEY* PropertyKey
+3=[DEVPROPTYPE] PropertyType
+4=CONST PBYTE PropertyBuffer
+5=DWORD PropertyBufferSize
+6=DWORD Flags
+7=PVOID Reserved
+ParamCount=7
+Header=setup.h.api;windows.h.api;
+[SetupDiSetClassRegistryProperty]
+1=LPGUID ClassGuid
+2=DWORD Property
+3=CONST BYTE* PropertyBuffer
+4=DWORD PropertyBufferSize
+5=PCTSTR MachineName
+6=PVOID Reserved
+ParamCount=6
+Header=windows.h.api;
+[SetupDiSetDeviceInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DEVINSTALL_PARAMS DeviceInstallParams
+ParamCount=3
+Header=setupapi.h.api;windows.h.api;
+[SetupDiSetDeviceInterfaceDefault]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DWORD Flags
+4=PVOID Reserved
+ParamCount=4
+Header=setupapi.h.api;windows.h.api;
+[SetupDiSetDeviceInterfacePropertyW]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVICE_INTERFACE_DATA DeviceInterfaceData
+3=DEVPROPKEY* PropertyKey
+4=[DEVPROPTYPE] PropertyType
+5=CONST PBYTE PropertyBuffer
+6=DWORD PropertyBufferSize
+7=DWORD Flags
+ParamCount=7
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiSetDevicePropertyW]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=DEVPROPKEY* PropertyKey
+4=[DEVPROPTYPE] PropertyType
+5=CONST PBYTE PropertyBuffer
+6=DWORD PropertyBufferSize
+7=DWORD Flags
+ParamCount=7
+Header=setup.h.api;windows.h.api;
+[SetupDiSetDeviceRegistryProperty]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=[SetupDeviceRegistryProperty] Property
+4=CONST BYTE* PropertyBuffer
+5=DWORD PropertyBufferSize
+ParamCount=5
+Header=setupapi.h.api;windows.h.api;
+[SetupDiSetDriverInstallParams]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DRVINFO_DATA DriverInfoData
+4=PSP_DRVINSTALL_PARAMS DriverInstallParams
+ParamCount=4
+Header=setupapi.h.api;setup.h.api;windows.h.api;
+[SetupDiSetSelectedDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiSetSelectedDriver]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+3=PSP_DRVINFO_DATA DriverInfoData
+ParamCount=3
+Header=setup.h.api;windows.h.api;
+[SetupDiUnremoveDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupDiMoveDuplicateDevice]
+1=HDEVINFO DeviceInfoSet
+2=PSP_DEVINFO_DATA DeviceInfoData
+ParamCount=2
+Header=windows.h.api;
+[SetupGetThreadLogToken]
+ParamCount=0
+[SetupSetThreadLogToken]
+1=SP_LOG_TOKEN LogToken
+ParamCount=1
+Header=setupapi.h.api;
+[SetupWriteTextLog]
+1=SP_LOG_TOKEN LogToken
+2=DWORD Category
+3=DWORD Flags
+4=PCTSTR MessageStr
+ParamCount=-4
+Header=setupapi.h.api;
+[SetupWriteTextLogError]
+1=SP_LOG_TOKEN LogToken
+2=DWORD Category
+3=DWORD LogFlags
+4=DWORD Error
+5=PCSTR MessageStr
+ParamCount=-5
+Header=setupapi.h.api;
+[SetupWriteTextLogInfLine]
+1=SP_LOG_TOKEN LogToken
+2=DWORD Flags
+3=HINF InfHandle
+4=PINFCONTEXT Context
+ParamCount=4
+Header=setupapi.h.api;
+[CM_Add_Empty_Log_Conf]
+SourceModule=cfgmgr32.api
+[CM_Add_Empty_Log_Conf_Ex]
+SourceModule=cfgmgr32.api
+[CM_Add_ID_Ex]
+SourceModule=cfgmgr32.api
+[CM_Add_ID]
+SourceModule=cfgmgr32.api
+[CM_Add_Range]
+SourceModule=cfgmgr32.api
+[CM_Add_Res_Des]
+SourceModule=cfgmgr32.api
+[CM_Add_Res_Des_Ex]
+SourceModule=cfgmgr32.api
+[CM_Apply_PowerScheme]
+SourceModule=cfgmgr32.api
+[CM_Connect_Machine]
+SourceModule=cfgmgr32.api
+[CM_Create_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Create_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Create_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Delete_Class_Key]
+SourceModule=cfgmgr32.api
+[CM_Delete_Class_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Delete_Device_Interface_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Delete_Device_Interface_Key]
+SourceModule=cfgmgr32.api
+[CM_Delete_DevNode_Key]
+SourceModule=cfgmgr32.api
+[CM_Delete_DevNode_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Delete_PowerScheme]
+SourceModule=cfgmgr32.api
+[CM_Delete_Range]
+SourceModule=cfgmgr32.api
+[CM_Detect_Resource_Conflict]
+SourceModule=cfgmgr32.api
+[CM_Detect_Resource_Conflict_Ex]
+SourceModule=cfgmgr32.api
+[CM_Disable_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Disable_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Disconnect_Machine]
+SourceModule=cfgmgr32.api
+[CM_Dup_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Duplicate_PowerScheme]
+SourceModule=cfgmgr32.api
+[CM_Enable_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Enable_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Enumerate_Classes]
+SourceModule=cfgmgr32.api
+[CM_Enumerate_Classes_Ex]
+SourceModule=cfgmgr32.api
+[CM_Enumerate_Enumerators_Ex]
+SourceModule=cfgmgr32.api
+[CM_Enumerate_Enumerators]
+SourceModule=cfgmgr32.api
+[CM_Find_Range]
+SourceModule=cfgmgr32.api
+[CM_First_Range]
+SourceModule=cfgmgr32.api
+[CM_Free_Log_Conf]
+SourceModule=cfgmgr32.api
+[CM_Free_Log_Conf_Ex]
+SourceModule=cfgmgr32.api
+[CM_Free_Log_Conf_Handle]
+SourceModule=cfgmgr32.api
+[CM_Free_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Free_Res_Des]
+SourceModule=cfgmgr32.api
+[CM_Free_Res_Des_Ex]
+SourceModule=cfgmgr32.api
+[CM_Free_Res_Des_Handle]
+SourceModule=cfgmgr32.api
+[CM_Free_Resource_Conflict_Handle]
+SourceModule=cfgmgr32.api
+[CM_Get_Child]
+SourceModule=cfgmgr32.api
+[CM_Get_Child_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Class_Key_Name_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Class_Key_Name]
+SourceModule=cfgmgr32.api
+[CM_Get_Class_Name_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Class_Name]
+SourceModule=cfgmgr32.api
+[CM_Get_Class_Registry_Property]
+SourceModule=cfgmgr32.api
+[CM_Get_Depth]
+SourceModule=cfgmgr32.api
+[CM_Get_Depth_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_List_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_List_Size_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_List_Size]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_List]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_Size]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID_Size_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_ID]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_Alias_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_Alias]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_List_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_List_Size_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_List_Size]
+SourceModule=cfgmgr32.api
+[CM_Get_Device_Interface_List]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Custom_Property_ExW]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Custom_Property]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Registry_Property_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Registry_Property]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Status]
+SourceModule=cfgmgr32.api
+[CM_Get_DevNode_Status_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_First_Log_Conf]
+SourceModule=cfgmgr32.api
+[CM_Get_First_Log_Conf_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Global_State]
+SourceModule=cfgmgr32.api
+[CM_Get_Global_State_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Hardware_Profile_Info_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Hardware_Profile_Info]
+SourceModule=cfgmgr32.api
+[CM_Get_HW_Prof_Flags_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_HW_Prof_Flags]
+SourceModule=cfgmgr32.api
+[CM_Get_Log_Conf_Priority]
+SourceModule=cfgmgr32.api
+[CM_Get_Log_Conf_Priority_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Next_Log_Conf]
+SourceModule=cfgmgr32.api
+[CM_Get_Next_Log_Conf_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Next_Res_Des]
+SourceModule=cfgmgr32.api
+[CM_Get_Next_Res_Des_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Parent]
+SourceModule=cfgmgr32.api
+[CM_Get_Parent_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Res_Des_Data]
+SourceModule=cfgmgr32.api
+[CM_Get_Res_Des_Data_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Res_Des_Data_Size]
+SourceModule=cfgmgr32.api
+[CM_Get_Res_Des_Data_Size_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Resource_Conflict_Count]
+SourceModule=cfgmgr32.api
+[CM_Get_Resource_Conflict_Details]
+SourceModule=cfgmgr32.api
+[CM_Get_Sibling]
+SourceModule=cfgmgr32.api
+[CM_Get_Sibling_Ex]
+SourceModule=cfgmgr32.api
+[CM_Get_Version]
+SourceModule=cfgmgr32.api
+[CM_Get_Version_Ex]
+SourceModule=cfgmgr32.api
+[CM_Import_PowerScheme]
+SourceModule=cfgmgr32.api
+[CM_Intersect_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Invert_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Is_Dock_Station_Present]
+SourceModule=cfgmgr32.api
+[CM_Is_Dock_Station_Present_Ex]
+SourceModule=cfgmgr32.api
+[CM_Is_Version_Available]
+SourceModule=cfgmgr32.api
+[CM_Is_Version_Available_Ex]
+SourceModule=cfgmgr32.api
+[CM_Locate_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Locate_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Merge_Range_List]
+SourceModule=cfgmgr32.api
+[CM_Modify_Res_Des]
+SourceModule=cfgmgr32.api
+[CM_Modify_Res_Des_Ex]
+SourceModule=cfgmgr32.api
+[CM_Move_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Move_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Next_Range]
+SourceModule=cfgmgr32.api
+[CM_Open_Class_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Open_Class_Key]
+SourceModule=cfgmgr32.api
+[CM_Open_Device_Interface_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Open_Device_Interface_Key]
+SourceModule=cfgmgr32.api
+[CM_Open_DevNode_Key]
+SourceModule=cfgmgr32.api
+[CM_Open_DevNode_Key_Ex]
+SourceModule=cfgmgr32.api
+[CM_Query_And_Remove_SubTree_Ex]
+SourceModule=cfgmgr32.api
+[CM_Query_And_Remove_SubTree]
+SourceModule=cfgmgr32.api
+[CM_Query_Arbitrator_Free_Data]
+SourceModule=cfgmgr32.api
+[CM_Query_Arbitrator_Free_Data_Ex]
+SourceModule=cfgmgr32.api
+[CM_Query_Arbitrator_Free_Size]
+SourceModule=cfgmgr32.api
+[CM_Query_Arbitrator_Free_Size_Ex]
+SourceModule=cfgmgr32.api
+[CM_Query_Remove_SubTree]
+SourceModule=cfgmgr32.api
+[CM_Query_Remove_SubTree_Ex]
+SourceModule=cfgmgr32.api
+[CM_Query_Resource_Conflict_List]
+SourceModule=cfgmgr32.api
+[CM_Reenumerate_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Reenumerate_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Register_Device_Driver]
+SourceModule=cfgmgr32.api
+[CM_Register_Device_Driver_Ex]
+SourceModule=cfgmgr32.api
+[CM_Register_Device_Interface_Ex]
+SourceModule=cfgmgr32.api
+[CM_Register_Device_Interface]
+SourceModule=cfgmgr32.api
+[CM_Remove_SubTree]
+SourceModule=cfgmgr32.api
+[CM_Remove_SubTree_Ex]
+SourceModule=cfgmgr32.api
+[CM_Request_Device_Eject_Ex]
+SourceModule=cfgmgr32.api
+[CM_Request_Device_Eject]
+SourceModule=cfgmgr32.api
+[CM_Request_Eject_PC]
+SourceModule=cfgmgr32.api
+[CM_Request_Eject_PC_Ex]
+SourceModule=cfgmgr32.api
+[CM_Restore_DefaultPowerScheme]
+SourceModule=cfgmgr32.api
+[CM_RestoreAll_DefaultPowerSchemes]
+SourceModule=cfgmgr32.api
+[CM_Run_Detection]
+SourceModule=cfgmgr32.api
+[CM_Run_Detection_Ex]
+SourceModule=cfgmgr32.api
+[CM_Set_ActiveScheme]
+SourceModule=cfgmgr32.api
+[CM_Set_Class_Registry_Property]
+SourceModule=cfgmgr32.api
+[CM_Set_DevNode_Problem]
+SourceModule=cfgmgr32.api
+[CM_Set_DevNode_Problem_Ex]
+SourceModule=cfgmgr32.api
+[CM_Set_DevNode_Registry_Property_Ex]
+SourceModule=cfgmgr32.api
+[CM_Set_DevNode_Registry_Property]
+SourceModule=cfgmgr32.api
+[CM_Set_HW_Prof]
+SourceModule=cfgmgr32.api
+[CM_Set_HW_Prof_Ex]
+SourceModule=cfgmgr32.api
+[CM_Set_HW_Prof_Flags_Ex]
+SourceModule=cfgmgr32.api
+[CM_Set_HW_Prof_Flags]
+SourceModule=cfgmgr32.api
+[CM_Setup_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Setup_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Test_Range_Available]
+SourceModule=cfgmgr32.api
+[CM_Uninstall_DevNode]
+SourceModule=cfgmgr32.api
+[CM_Uninstall_DevNode_Ex]
+SourceModule=cfgmgr32.api
+[CM_Unregister_Device_Interface_Ex]
+SourceModule=cfgmgr32.api
+[CM_Unregister_Device_Interface]
+SourceModule=cfgmgr32.api
+[CM_Write_UserPowerKey]
+SourceModule=cfgmgr32.api
+[CMP_WaitNoPendingInstallEvents]
+SourceModule=cfgmgr32.api

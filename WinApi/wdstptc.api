@@ -1,0 +1,53 @@
+[CallingConvention]
+@=STDCALL
+[WdsTransportClientAddRefBuffer]
+1=PVOID pvBuffer
+ParamCount=1
+[WdsTransportClientCancelSession]
+1=HANDLE hSessionKey
+ParamCount=1
+Header=windows.h.api;
+[WdsTransportClientCloseSession]
+1=HANDLE hSessionKey
+ParamCount=1
+Header=windows.h.api;
+[WdsTransportClientCompleteReceive]
+1=HANDLE hSessionKey
+2=HANDLE ulSize
+3=PULARGE_INTEGER pullOffset
+ParamCount=3
+Header=windows.h.api;
+[WdsTransportClientInitialize]
+ParamCount=0
+[WdsTransportClientInitializeSession]
+1=PWDS_TRANSPORTCLIENT_REQUEST pSessionRequest
+2=PVOID pCallerData
+3=PHANDLE hSessionKey
+ParamCount=3
+Header=wdstptc.h.api;windows.h.api;
+[WdsTransportClientQueryStatus]
+1=HANDLE hSessionKey
+2=PULONG puStatus
+3=PULONG puErrorCode
+ParamCount=3
+Header=windows.h.api;
+[WdsTransportClientRegisterCallback]
+1=HANDLE hSessionKey
+2=[TRANSPORTCLIENT_CALLBACK_ID] CallbackId
+3=PVOID pfnCallback
+ParamCount=3
+Header=wdstptc.h.api;windows.h.api;
+[WdsTransportClientReleaseBuffer]
+1=PVOID pvBuffer
+ParamCount=1
+[WdsTransportClientShutdown]
+ParamCount=0
+[WdsTransportClientStartSession]
+1=HANDLE hSessionKey
+ParamCount=1
+Header=windows.h.api;
+[WdsTransportClientWaitForCompletion]
+1=HANDLE hSessionKey
+2=ULONG uTimeout
+ParamCount=2
+Header=windows.h.api;

@@ -1,0 +1,771 @@
+[CallingConvention]
+@=STDCALL
+[auxGetDevCaps]
+1=UINT_PTR uDeviceID
+2=LPAUXCAPS lpCaps
+3=UINT cbCaps
+ParamCount=3
+Header=winmm.h.api;
+[auxGetNumDevs]
+ParamCount=0
+[auxGetVolume]
+1=UINT uDeviceID
+2=LPDWORD lpdwVolume
+ParamCount=2
+[auxOutMessage]
+1=UINT uDeviceID
+2=UINT uMsg
+3=DWORD_PTR dwParam1
+4=DWORD_PTR dwParam2
+ParamCount=4
+[auxSetVolume]
+1=UINT uDeviceID
+2=DWORD dwVolume
+ParamCount=2
+[joyConfigChanged]
+1=DWORD dwFlags
+ParamCount=1
+[joyGetDevCaps]
+1=UINT_PTR uJoyID
+2=LPJOYCAPS pjc
+3=UINT cbjc
+ParamCount=3
+Header=winmm.h.api;
+[joyGetNumDevs]
+ParamCount=0
+[joyGetPos]
+1=UINT uJoyID
+2=LPJOYINFO pji
+ParamCount=2
+Header=winmm.h.api;
+[joyGetPosEx]
+1=UINT uJoyID
+2=LPJOYINFOEX pji
+ParamCount=2
+Header=winmm.h.api;
+[joyGetThreshold]
+1=UINT uJoyID
+2=LPUINT puThreshold
+ParamCount=2
+[joyReleaseCapture]
+1=UINT uJoyID
+ParamCount=1
+[joySetCapture]
+1=HWND hwnd
+2=UINT uJoyID
+3=UINT uPeriod
+4=BOOL fChanged
+ParamCount=4
+Header=windows.h.api;
+[joySetThreshold]
+1=UINT uJoyID
+2=UINT uThreshold
+ParamCount=2
+[mciExecute]
+1=LPCSTR pszCommand
+ParamCount=1
+[mciGetCreatorTask]
+1=MCIDEVICEID IDDevice
+ParamCount=1
+Header=winmm.h.api;
+[mciGetDeviceID]
+1=LPCTSTR lpszDevice
+ParamCount=1
+[mciGetDeviceIDFromElementID]
+1=DWORD dwElementID
+2=LPCTSTR lpstrType
+ParamCount=2
+[mciGetErrorString]
+1=DWORD fdwError
+2=LPTSTR lpszErrorText
+3=UINT cchErrorText
+ParamCount=3
+[mciGetYieldProc]
+1=MCIDEVICEID IDDevice
+2=LPDWORD lpdwYieldData
+ParamCount=2
+Header=winmm.h.api;
+[mciSendCommand]
+1=MCIDEVICEID IDDevice
+2=UINT uMsg
+3=DWORD fdwCommand
+4=DWORD_PTR dwParam
+ParamCount=4
+Header=winmm.h.api;
+[mciSendString]
+1=LPCTSTR lpszCommand
+2=LPTSTR lpszReturnString
+3=UINT cchReturn
+4=HANDLE hwndCallback
+ParamCount=4
+Header=windows.h.api;
+[mciSetYieldProc]
+1=MCIDEVICEID IDDevice
+2=YIELDPROC yp
+3=DWORD dwYieldData
+ParamCount=3
+Header=winmm.h.api;
+[midiConnect]
+1=HMIDI hMidi
+2=HMIDIOUT hmo
+3=LPVOID pReserved
+ParamCount=3
+Header=winmm.h.api;
+[midiDisconnect]
+1=HMIDI hMidi
+2=HMIDIOUT hmo
+3=LPVOID pReserved
+ParamCount=3
+Header=winmm.h.api;
+[midiInAddBuffer]
+1=HMIDIIN hMidiIn
+2=LPMIDIHDR lpMidiInHdr
+3=UINT cbMidiInHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiInClose]
+1=HMIDIIN hMidiIn
+ParamCount=1
+Header=winmm.h.api;
+[midiInGetDevCaps]
+1=UINT_PTR uDeviceID
+2=LPMIDIINCAPS lpMidiInCaps
+3=UINT cbMidiInCaps
+ParamCount=3
+Header=winmm.h.api;
+[midiInGetErrorText]
+1=[MMRESULT] wError
+2=LPTSTR lpText
+3=UINT cchText
+ParamCount=3
+Header=multimedia.h.api;
+[midiInGetID]
+1=HMIDIIN hmi
+2=LPUINT puDeviceID
+ParamCount=2
+Header=winmm.h.api;
+[midiInGetNumDevs]
+ParamCount=0
+[midiInMessage]
+1=HMIDIIN deviceID
+2=UINT msg
+3=DWORD_PTR dw1
+4=DWORD_PTR dw2
+ParamCount=4
+Header=winmm.h.api;
+[midiInOpen]
+1=LPHMIDIIN lphMidiIn
+2=UINT_PTR uDeviceID
+3=DWORD_PTR dwCallback
+4=DWORD_PTR dwCallbackInstance
+5=[midiInOutOpenFlags] dwFlags
+ParamCount=5
+Header=winmm.h.api;
+[midiInPrepareHeader]
+1=HMIDIIN hMidiIn
+2=LPMIDIHDR lpMidiInHdr
+3=UINT cbMidiInHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiInReset]
+1=HMIDIIN hMidiIn
+ParamCount=1
+Header=winmm.h.api;
+[midiInStart]
+1=HMIDIIN hMidiIn
+ParamCount=1
+Header=winmm.h.api;
+[midiInStop]
+1=HMIDIIN hMidiIn
+ParamCount=1
+Header=winmm.h.api;
+[midiInUnprepareHeader]
+1=HMIDIIN hMidiIn
+2=LPMIDIHDR lpMidiInHdr
+3=UINT cbMidiInHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiOutCacheDrumPatches]
+1=HMIDIOUT hmo
+2=UINT wPatch
+3=WORD* lpKeyArray
+4=UINT wFlags
+ParamCount=4
+Header=winmm.h.api;
+[midiOutCachePatches]
+1=HMIDIOUT hmo
+2=UINT wBank
+3=WORD* lpPatchArray
+4=UINT wFlags
+ParamCount=4
+Header=winmm.h.api;
+[midiOutClose]
+1=HMIDIOUT hmo
+ParamCount=1
+Header=winmm.h.api;
+[midiOutGetDevCaps]
+1=UINT_PTR uDeviceID
+2=LPMIDIOUTCAPS lpMidiOutCaps
+3=UINT cbMidiOutCaps
+ParamCount=3
+Header=winmm.h.api;
+[midiOutGetErrorText]
+1=[MMRESULT] mmrError
+2=LPTSTR lpText
+3=UINT cchText
+ParamCount=3
+Header=multimedia.h.api;
+[midiOutGetID]
+1=HMIDIOUT hmo
+2=LPUINT puDeviceID
+ParamCount=2
+Header=winmm.h.api;
+[midiOutGetNumDevs]
+ParamCount=0
+[midiOutGetVolume]
+1=HMIDIOUT hmo
+2=LPDWORD lpdwVolume
+ParamCount=2
+Header=winmm.h.api;
+[midiOutLongMsg]
+1=HMIDIOUT hmo
+2=LPMIDIHDR lpMidiOutHdr
+3=UINT cbMidiOutHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiOutMessage]
+1=HMIDIOUT deviceID
+2=UINT msg
+3=DWORD_PTR dw1
+4=DWORD_PTR dw2
+ParamCount=4
+Header=winmm.h.api;
+[midiOutOpen]
+1=LPHMIDIOUT lphmo
+2=UINT_PTR uDeviceID
+3=DWORD_PTR dwCallback
+4=DWORD_PTR dwCallbackInstance
+5=[midiInOutOpenFlags] dwFlags
+ParamCount=5
+Header=winmm.h.api;
+[midiOutPrepareHeader]
+1=HMIDIOUT hmo
+2=LPMIDIHDR lpMidiOutHdr
+3=UINT cbMidiOutHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiOutReset]
+1=HMIDIOUT hmo
+ParamCount=1
+Header=winmm.h.api;
+[midiOutSetVolume]
+1=HMIDIOUT hmo
+2=DWORD dwVolume
+ParamCount=2
+Header=winmm.h.api;
+[midiOutShortMsg]
+1=HMIDIOUT hmo
+2=DWORD dwMsg
+ParamCount=2
+Header=winmm.h.api;
+[midiOutUnprepareHeader]
+1=HMIDIOUT hmo
+2=LPMIDIHDR lpMidiOutHdr
+3=UINT cbMidiOutHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiStreamClose]
+1=HMIDISTRM hStream
+ParamCount=1
+Header=winmm.h.api;
+[midiStreamOpen]
+1=LPHMIDISTRM lphStream
+2=LPUINT puDeviceID
+3=DWORD cMidi
+4=DWORD_PTR dwCallback
+5=DWORD_PTR dwInstance
+6=DWORD fdwOpen
+ParamCount=6
+Header=winmm.h.api;
+[midiStreamOut]
+1=HMIDISTRM hMidiStream
+2=LPMIDIHDR lpMidiHdr
+3=UINT cbMidiHdr
+ParamCount=3
+Header=winmm.h.api;
+[midiStreamPause]
+1=HMIDISTRM hms
+ParamCount=1
+Header=winmm.h.api;
+[midiStreamPosition]
+1=HMIDISTRM hms
+2=LPMMTIME pmmt
+3=UINT cbmmt
+ParamCount=3
+Header=winmm.h.api;
+[midiStreamProperty]
+1=HMIDISTRM hm
+2=LPBYTE lppropdata
+3=DWORD dwProperty
+ParamCount=3
+Header=winmm.h.api;
+[midiStreamRestart]
+1=HMIDISTRM hms
+ParamCount=1
+Header=winmm.h.api;
+[midiStreamStop]
+1=HMIDISTRM hms
+ParamCount=1
+Header=winmm.h.api;
+[mixerClose]
+1=HMIXER hmx
+ParamCount=1
+Header=winmm.h.api;
+[mixerGetControlDetails]
+1=HMIXEROBJ hmxobj
+2=LPMIXERCONTROLDETAILS pmxcd
+3=DWORD fdwDetails
+ParamCount=3
+Header=winmm.h.api;
+[mixerGetDevCaps]
+1=UINT_PTR uMxId
+2=LPMIXERCAPS pmxcaps
+3=UINT cbmxcaps
+ParamCount=3
+Header=winmm.h.api;
+[mixerGetID]
+1=HMIXEROBJ hmxobj
+2=UINT* puMxId
+3=DWORD fdwId
+ParamCount=3
+Header=winmm.h.api;
+[mixerGetLineControls]
+1=HMIXEROBJ hmxobj
+2=LPMIXERLINECONTROLS pmxlc
+3=DWORD fdwControls
+ParamCount=3
+Header=winmm.h.api;
+[mixerGetLineInfo]
+1=HMIXEROBJ hmxobj
+2=LPMIXERLINE pmxl
+3=DWORD fdwInfo
+ParamCount=3
+Header=winmm.h.api;
+[mixerGetNumDevs]
+ParamCount=0
+[mixerMessage]
+1=HMIXER driverID
+2=UINT uMsg
+3=DWORD_PTR dwParam1
+4=DWORD_PTR dwParam2
+ParamCount=4
+Header=winmm.h.api;
+[mixerOpen]
+1=LPHMIXER phmx
+2=UINT uMxId
+3=DWORD_PTR dwCallback
+4=DWORD_PTR dwInstance
+5=DWORD fdwOpen
+ParamCount=5
+Header=winmm.h.api;
+[mixerSetControlDetails]
+1=HMIXEROBJ hmxobj
+2=LPMIXERCONTROLDETAILS pmxcd
+3=DWORD fdwDetails
+ParamCount=3
+Header=winmm.h.api;
+[mmioAdvance]
+1=HMMIO hmmio
+2=LPMMIOINFO lpmmioinfo
+3=UINT wFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioAscend]
+1=HMMIO hmmio
+2=LPMMCKINFO lpck
+3=UINT wFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioClose]
+1=HMMIO hmmio
+2=[mmioCloseFlags] wFlags
+ParamCount=2
+Header=winmm.h.api;
+[mmioCreateChunk]
+1=HMMIO hmmio
+2=LPMMCKINFO lpck
+3=[mmioCreateChunkFlags] wFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioDescend]
+1=HMMIO hmmio
+2=LPMMCKINFO lpck
+3=LPMMCKINFO lpckParent
+4=[mmioDescendFlags] wFlags
+ParamCount=4
+Header=winmm.h.api;
+[mmioFlush]
+1=HMMIO hmmio
+2=[mmioFlushFlags] fuFlush
+ParamCount=2
+Header=winmm.h.api;
+[mmioGetInfo]
+1=HMMIO hmmio
+2=LPMMIOINFO lpmmioinfo
+3=UINT wFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioInstallIOProc]
+1=FOURCC fccIOProc
+2=LPMMIOPROC pIOProc
+3=[mmioInstallIOProcFlags] dwFlags
+ParamCount=3
+Header=winmm.h.api;multimedia.h.api;
+[mmioOpen]
+1=LPTSTR szFilename
+2=LPMMIOINFO lpmmioinfo
+3=DWORD dwOpenFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioRead]
+1=HMMIO hmmio
+2=HPSTR pch
+3=LONG cch
+ParamCount=3
+Header=winmm.h.api;
+[mmioRename]
+1=LPCTSTR szFilename
+2=LPCTSTR szNewFilename
+3=LPMMIOINFO lpmmioinfo
+4=DWORD dwRenameFlags
+ParamCount=4
+Header=winmm.h.api;
+[mmioSeek]
+1=HMMIO hmmio
+2=LONG lOffset
+3=[mmioSeekOffset] iOrigin
+ParamCount=3
+Header=winmm.h.api;
+[mmioSendMessage]
+1=HMMIO hmmio
+2=UINT wMsg
+3=LPARAM lParam1
+4=LPARAM lParam2
+ParamCount=4
+Header=winmm.h.api;windows.h.api;
+[mmioSetBuffer]
+1=HMMIO hmmio
+2=LPSTR pchBuffer
+3=LONG cchBuffer
+4=UINT wFlags
+ParamCount=4
+Header=winmm.h.api;
+[mmioSetInfo]
+1=HMMIO hmmio
+2=LPMMIOINFO lpmmioinfo
+3=UINT wFlags
+ParamCount=3
+Header=winmm.h.api;
+[mmioStringToFOURCC]
+1=LPCTSTR sz
+2=[mmioStringToFOURCCFlags] wFlags
+ParamCount=2
+Header=winmm.h.api;
+[mmioWrite]
+1=HMMIO hmmio
+2=LPVOID|char* pch
+3=LONG cch
+ParamCount=3
+Header=winmm.h.api;
+[timeBeginPeriod]
+1=UINT uPeriod
+ParamCount=1
+[timeEndPeriod]
+1=UINT uPeriod
+ParamCount=1
+[timeGetDevCaps]
+1=LPTIMECAPS ptc
+2=UINT cbtc
+ParamCount=2
+Header=winmm.h.api;
+[timeGetSystemTime]
+1=LPMMTIME pmmt
+2=UINT cbmmt
+ParamCount=2
+Header=winmm.h.api;
+[timeGetTime]
+ParamCount=0
+[timeKillEvent]
+1=UINT uTimerID
+ParamCount=1
+[timeSetEvent]
+1=UINT uDelay
+2=UINT uResolution
+3=LPTIMECALLBACK lpTimeProc
+4=DWORD_PTR dwUser
+5=UINT fuEvent
+ParamCount=5
+Header=winmm.h.api;
+[waveInAddBuffer]
+1=HWAVEIN hwi
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[waveInClose]
+1=HWAVEIN hwi
+ParamCount=1
+Header=winmm.h.api;
+[waveInGetDevCaps]
+1=UINT_PTR uDeviceID
+2=LPWAVEINCAPS pwic
+3=UINT cbwic
+ParamCount=3
+Header=winmm.h.api;
+[waveInGetErrorText]
+1=[MMRESULT] mmrError
+2=LPTSTR pszText
+3=UINT cchText
+ParamCount=3
+Header=multimedia.h.api;
+[waveInGetID]
+1=HWAVEIN hwi
+2=LPUINT puDeviceID
+ParamCount=2
+Header=winmm.h.api;
+[waveInGetNumDevs]
+ParamCount=0
+[waveInGetPosition]
+1=HWAVEIN hwi
+2=LPMMTIME pmmt
+3=UINT cbmmt
+ParamCount=3
+Header=winmm.h.api;
+[waveInMessage]
+1=HWAVEIN deviceID
+2=UINT uMsg
+3=DWORD_PTR dwParam1
+4=DWORD_PTR dwParam2
+ParamCount=4
+Header=winmm.h.api;
+[waveInOpen]
+1=LPHWAVEIN phwi
+2=UINT_PTR uDeviceID
+3=LPWAVEFORMATEX pwfx
+4=DWORD_PTR dwCallback
+5=DWORD_PTR dwCallbackInstance
+6=[waveInOutOpenFlags] fdwOpen
+ParamCount=6
+Header=winmm.h.api;multimedia.h.api;
+[waveInPrepareHeader]
+1=HWAVEIN hwi
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[waveInReset]
+1=HWAVEIN hwi
+ParamCount=1
+Header=winmm.h.api;
+[waveInStart]
+1=HWAVEIN hwi
+ParamCount=1
+Header=winmm.h.api;
+[waveInStop]
+1=HWAVEIN hwi
+ParamCount=1
+Header=winmm.h.api;
+[waveInUnprepareHeader]
+1=HWAVEIN hwi
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[waveOutBreakLoop]
+1=HWAVEOUT hwo
+ParamCount=1
+Header=winmm.h.api;
+[waveOutClose]
+1=HWAVEOUT hwo
+ParamCount=1
+Header=winmm.h.api;
+[waveOutGetDevCaps]
+1=UINT_PTR uDeviceID
+2=LPWAVEOUTCAPS pwoc
+3=UINT cbwoc
+ParamCount=3
+Header=winmm.h.api;
+[waveOutGetErrorText]
+1=[MMRESULT] mmrError
+2=LPTSTR pszText
+3=UINT cchText
+ParamCount=3
+Header=multimedia.h.api;
+[waveOutGetID]
+1=HWAVEOUT hwo
+2=LPUINT puDeviceID
+ParamCount=2
+Header=winmm.h.api;
+[waveOutGetNumDevs]
+ParamCount=0
+[waveOutGetPitch]
+1=HWAVEOUT hwo
+2=LPDWORD pdwPitch
+ParamCount=2
+Header=winmm.h.api;
+[waveOutGetPlaybackRate]
+1=HWAVEOUT hwo
+2=LPDWORD pdwRate
+ParamCount=2
+Header=winmm.h.api;
+[waveOutGetPosition]
+1=HWAVEOUT hwo
+2=LPMMTIME pmmt
+3=UINT cbmmt
+ParamCount=3
+Header=winmm.h.api;
+[waveOutGetVolume]
+1=HWAVEOUT hwo
+2=LPDWORD pdwVolume
+ParamCount=2
+Header=winmm.h.api;
+[waveOutMessage]
+1=HWAVEOUT deviceID
+2=UINT uMsg
+3=DWORD_PTR dwParam1
+4=DWORD_PTR dwParam2
+ParamCount=4
+Header=winmm.h.api;
+[waveOutOpen]
+1=LPHWAVEOUT phwo
+2=UINT_PTR uDeviceID
+3=LPWAVEFORMATEX pwfx
+4=DWORD_PTR dwCallback
+5=DWORD_PTR dwCallbackInstance
+6=[waveInOutOpenFlags] fdwOpen
+ParamCount=6
+Header=winmm.h.api;multimedia.h.api;
+[waveOutPause]
+1=HWAVEOUT hwo
+ParamCount=1
+Header=winmm.h.api;
+[waveOutPrepareHeader]
+1=HWAVEOUT hwo
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[waveOutReset]
+1=HWAVEOUT hwo
+ParamCount=1
+Header=winmm.h.api;
+[waveOutRestart]
+1=HWAVEOUT hwo
+ParamCount=1
+Header=winmm.h.api;
+[waveOutSetPitch]
+1=HWAVEOUT hwo
+2=DWORD dwPitch
+ParamCount=2
+Header=winmm.h.api;
+[waveOutSetPlaybackRate]
+1=HWAVEOUT hwo
+2=DWORD dwRate
+ParamCount=2
+Header=winmm.h.api;
+[waveOutSetVolume]
+1=HWAVEOUT hwo
+2=DWORD dwVolume
+ParamCount=2
+Header=winmm.h.api;
+[waveOutUnprepareHeader]
+1=HWAVEOUT hwo
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[waveOutWrite]
+1=HWAVEOUT hwo
+2=LPWAVEHDR pwh
+3=UINT cbwh
+ParamCount=3
+Header=winmm.h.api;
+[PlaySound]
+1=LPCTSTR pszSound
+2=HMODULE hmod
+3=[SND_FLAGS] fdwSound
+ParamCount=3
+Header=winmm.h.api;
+[sndPlaySound]
+1=LPCTSTR lpszSound
+2=[SND_FLAGS] fuSound
+ParamCount=2
+Header=winmm.h.api;
+[CloseDriver]
+1=HDRVR hDriver
+2=LPARAM lParam1
+3=LPARAM lParam2
+ParamCount=3
+Header=winmm.h.api;windows.h.api;
+[DefDriverProc]
+1=DWORD_PTR dwDriverIdentifier
+2=HDRVR hdrvr
+3=UINT uMsg
+4=LPARAM lParam1
+5=LPARAM lParam2
+ParamCount=5
+Header=winmm.h.api;windows.h.api;
+[DriverCallback]
+1=DWORD_PTR dwCallback
+2=[DCB_FLAGS] dwFlags
+3=HDRVR hDevice
+4=DWORD dwMsg
+5=DWORD_PTR dwUser
+6=DWORD_PTR dwParam1
+7=DWORD_PTR dwParam2
+ParamCount=7
+Header=winmm.h.api;
+[DrvGetModuleHandle]
+1=HDRVR hDriver
+ParamCount=1
+Header=winmm.h.api;
+[GetDriverModuleHandle]
+1=HDRVR hDriver
+ParamCount=1
+Header=winmm.h.api;
+[OpenDriver]
+1=LPCWSTR szDriverName
+2=LPCWSTR szSectionName
+3=LPARAM lParam2
+ParamCount=3
+Header=windows.h.api;
+[SendDriverMessage]
+1=HDRVR hDriver
+2=UINT message
+3=LPARAM lParam1
+4=LPARAM lParam2
+ParamCount=4
+Header=winmm.h.api;windows.h.api;
+[mmDrvInstall]
+1=HDRVR hDriver
+2=LPCWSTR wszDrvEntry
+3=DRIVERMSGPROC drvMessage
+4=UINT wFlags
+ParamCount=4
+Header=winmm.h.api;
+[mmGetCurrentTask]
+ParamCount=0
+[mmTaskBlock]
+1=DWORD h
+ParamCount=1
+[mmTaskCreate]
+1=LPTASKCALLBACK lpfn
+2=HANDLE* lph
+3=DWORD_PTR dwInst
+ParamCount=3
+Header=winmm.h.api;windows.h.api;
+[mmTaskSignal]
+1=DWORD h
+ParamCount=1
+[mmTaskYield]
+ParamCount=0

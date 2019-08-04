@@ -1,0 +1,7 @@
+[CallingConvention]
+@=STDCALL
+[InitLocalMsCtfMonitor]
+1=DWORD dwFlags
+ParamCount=1
+[UninitLocalMsCtfMonitor]
+ParamCount=0

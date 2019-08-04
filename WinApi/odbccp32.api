@@ -1,0 +1,149 @@
+[CallingConvention]
+@=STDCALL
+[SQLConfigDataSource]
+1=HWND hwndParent
+2=[ODBC_DSN_REQUEST] fRequest
+3=LPCTSTR lpszDriver
+4=LPCTSTR lpszAttributes
+ParamCount=4
+Header=odbc.h.api;windows.h.api;
+[SQLConfigDriver]
+1=HWND hwndParent
+2=[ODBC_DRIVER_REQUEST] fRequest
+3=LPCTSTR lpszDriver
+4=LPCTSTR lpszArgs
+5=LPTSTR lpszMsg
+6=WORD cbMsgMax
+7=WORD* pcbMsgOut
+ParamCount=7
+Header=odbc.h.api;windows.h.api;
+[SQLCreateDataSource]
+1=HWND hwnd
+2=LPTSTR lpszDS
+ParamCount=2
+Header=windows.h.api;
+[SQLGetConfigMode]
+1=ODBC_CONFIG_MODE* pwConfigMode
+ParamCount=1
+Header=odbc.h.api;
+[SQLGetInstalledDrivers]
+1=LPTSTR lpszBuf
+2=WORD cbBufMax
+3=WORD* pcbBufOut
+ParamCount=3
+[SQLGetPrivateProfileString]
+1=LPCTSTR lpszSection
+2=LPCTSTR lpszEntry
+3=LPCTSTR lpszDefault
+4=LPCTSTR RetBuffer
+5=INT cbRetBuffer
+6=LPCTSTR lpszFilename
+ParamCount=6
+[SQLGetTranslator]
+1=HWND hwndParent
+2=LPTSTR lpszName
+3=WORD cbNameMax
+4=WORD* pcbNameOut
+5=LPTSTR lpszPath
+6=WORD cbPathMax
+7=WORD* pcbPathOut
+8=DWORD* pvOption
+ParamCount=8
+Header=windows.h.api;
+[SQLInstallDriverEx]
+1=LPCTSTR lpszDriver
+2=LPCTSTR lpszPathIn
+3=LPTSTR lpszPathOut
+4=WORD cbPathOutMax
+5=WORD* pcbPathOut
+6=[ODBC_INSTALL_REQUEST] fRequest
+7=LPDWORD lpdwUsageCount
+ParamCount=7
+Header=odbc.h.api;
+[SQLInstallDriverManager]
+1=LPTSTR lpszPath
+2=WORD cbPathMax
+3=WORD* pcbPathOut
+ParamCount=3
+[SQLInstallerError]
+1=WORD iError
+2=ODBC_ERROR_CODE* pfErrorCode
+3=LPTSTR lpszErrorMsg
+4=WORD cbErrorMsgMax
+5=WORD* pcbErrorMsg
+ParamCount=5
+Header=odbc.h.api;
+[SQLInstallTranslator]
+1=LPCTSTR lpszInfFile
+2=LPCTSTR lpszTranslator
+3=LPCTSTR lpszPathIn
+4=LPTSTR lpszPathOut
+5=WORD cbPathOutMax
+6=WORD* pcbPathOut
+7=WORD fRequest
+8=LPDWORD lpdwUsageCount
+ParamCount=8
+[SQLInstallTranslatorEx]
+1=LPCTSTR lpszTranslator
+2=LPCTSTR lpszPathIn
+3=LPTSTR lpszPathOut
+4=WORD cbPathOutMax
+5=WORD* pcbPathOut
+6=WORD fRequest
+7=LPDWORD lpdwUsageCount
+ParamCount=7
+[SQLManageDataSources]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;
+[SQLPostInstallerError]
+1=[ODBC_ERROR_CODE] fErrorCode
+2=LPTSTR szErrorMsg
+ParamCount=2
+Header=odbc.h.api;
+[SQLReadFileDSN]
+1=LPCTSTR lpszFileName
+2=LPCTSTR lpszAppName
+3=LPCTSTR lpszKeyName
+4=LPTSTR lpszString
+5=WORD cbString
+6=WORD* pcbString
+ParamCount=6
+[SQLRemoveDriver]
+1=LPCTSTR lpszDriver
+2=BOOL fRemoveDSN
+3=LPDWORD lpdwUsageCount
+ParamCount=3
+[SQLRemoveDriverManager]
+1=LPDWORD pdwUsageCount
+ParamCount=1
+[SQLRemoveDSNFromIni]
+1=LPCTSTR lpszDSN
+ParamCount=1
+[SQLRemoveTranslator]
+1=LPCTSTR lpszTranslator
+2=LPDWORD lpdwUsageCount
+ParamCount=2
+[SQLSetConfigMode]
+1=[ODBC_CONFIG_MODE] wConfigMode
+ParamCount=1
+Header=odbc.h.api;
+[SQLValidDSN]
+1=LPCTSTR lpszDSN
+ParamCount=1
+[SQLWriteDSNToIni]
+1=LPCTSTR lpszDSN
+2=LPCTSTR lpszDriver
+ParamCount=2
+[SQLWriteFileDSN]
+1=LPCTSTR lpszFileName
+2=LPCTSTR lpszAppName
+3=LPCTSTR lpszKeyName
+4=LPCTSTR lpszString
+ParamCount=4
+[SQLWritePrivateProfileString]
+1=LPCTSTR lpszSection
+2=LPCTSTR lpszEntry
+3=LPCTSTR lpszString
+4=LPCTSTR lpszFilename
+ParamCount=4

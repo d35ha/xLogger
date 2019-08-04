@@ -1,0 +1,409 @@
+[CallingConvention]
+@=STDCALL
+[AlignReservedLog]
+1=PVOID pvMarshal
+2=ULONG cReservedRecords
+3=LONGLONG [] rgcbReservation
+4=PLONGLONG pcbAlignReservation
+ParamCount=-4
+Header=clfsw32.h.api;
+[AllocReservedLog]
+1=PVOID pvMarshal
+2=ULONG cReservedRecords
+3=PLONGLONG pcbAdjustment
+ParamCount=3
+[CloseAndResetLogFile]
+1=HANDLE hLog
+ParamCount=1
+Header=windows.h.api;
+[CreateLogFile]
+1=LPCWSTR pszLogFileName
+2=[ACCESS_MASK] fDesiredAccess
+3=[FILE_SHARE_MODE] dwShareMode
+4=LPSECURITY_ATTRIBUTES psaLogFile
+5=[CREATE_LOG_DISPOSITION] fCreateDisposition
+6=[CREATE_LOG_FLAGS_ATTRIBUTES] fFlagsAndAttributes
+ParamCount=6
+Header=clfsw32.h.api;native.h.api;security.h.api;windows.h.api;
+[DeleteLogByHandle]
+1=HANDLE hLog
+ParamCount=1
+Header=windows.h.api;
+[DeleteLogFile]
+1=LPCWSTR pszLogFileName
+2=PVOID pvReserved
+ParamCount=2
+[DumpLogRecords]
+1=PWSTR pwszLogFileName
+2=[CLFS_RECORD_TYPE] fRecordType
+3=PCLFS_LSN plsnStart
+4=PCLFS_LSN plsnEnd
+5=PFILE pstrmOut
+6=CLFS_PRINT_RECORD_ROUTINE pfnPrintRecord
+7=CLFS_BLOCK_ALLOCATION pfnAllocBlock
+8=CLFS_BLOCK_DEALLOCATION pfnFreeBlock
+9=PVOID pvBlockAllocContext
+10=ULONG cbBlock
+11=ULONG cMaxBlocks
+ParamCount=11
+Header=clfsw32.h.api;
+[FlushLogBuffers]
+1=PVOID pvMarshal
+2=LPOVERLAPPED pOverlapped
+ParamCount=2
+Header=windows.h.api;
+[FlushLogToLsn]
+1=PVOID pvMarshalContext
+2=PCLFS_LSN plsnFlush
+3=PCLFS_LSN plsnLastFlushed
+4=LPOVERLAPPED pOverlapped
+ParamCount=4
+Header=clfsw32.h.api;windows.h.api;
+[FreeReservedLog]
+1=PVOID pvMarshal
+2=ULONG cReservedRecords
+3=PLONGLONG pcbAdjustment
+ParamCount=3
+[ReserveAndAppendLog]
+1=PVOID pvMarshal
+2=PCLFS_WRITE_ENTRY rgWriteEntries
+3=ULONG cWriteEntries
+4=PCLFS_LSN plsnUndoNext
+5=PCLFS_LSN plsnPrevious
+6=ULONG cReserveRecords
+7=LONGLONG [] rgcbReservation
+8=ULONG fFlags
+9=PCLFS_LSN plsn
+10=LPOVERLAPPED pOverlapped
+ParamCount=-10
+Header=clfsw32.h.api;windows.h.api;
+[ReserveAndAppendLogAligned]
+1=PVOID pvMarshal
+2=PCLFS_WRITE_ENTRY rgWriteEntries
+3=ULONG cWriteEntries
+4=ULONG cbEntryAlignment
+5=PCLFS_LSN plsnUndoNext
+6=PCLFS_LSN plsnPrevious
+7=ULONG cReserveRecords
+8=LONGLONG [] rgcbReservation
+9=ULONG fFlags
+10=PCLFS_LSN plsn
+11=LPOVERLAPPED overlapped
+ParamCount=-11
+Header=clfsw32.h.api;windows.h.api;
+[GetLogFileInformation]
+1=HANDLE hLog
+2=PCLFS_INFORMATION pinfoBuffer
+3=PULONG cbBuffer
+ParamCount=3
+Header=clfsw32.h.api;windows.h.api;
+[GetLogIoStatistics]
+1=HANDLE hLog
+2=PVOID pvStatsBuffer
+3=ULONG cbStatsBuffer
+4=[CLFS_IOSTATS_CLASS] eStatsClass
+5=PULONG pcbStatsWritten
+ParamCount=5
+Header=clfsw32.h.api;windows.h.api;
+[ReadLogRecord]
+1=PVOID pvMarshal
+2=PCLFS_LSN plsnFirst
+3=[CLFS_CONTEXT_MODE] eContextMode
+4=PVOID* ppvReadBuffer
+5=PULONG pcbReadBuffer
+6=PCLFS_RECORD_TYPE peRecordType
+7=PCLFS_LSN plsnUndoNext
+8=PCLFS_LSN plsnPrevious
+9=PVOID* ppvReadContext
+10=LPOVERLAPPED pOverlapped
+ParamCount=10
+Header=clfsw32.h.api;windows.h.api;
+[ReadNextLogRecord]
+1=PVOID pvReadContext
+2=PVOID* ppvBuffer
+3=PULONG pcbBuffer
+4=PCLFS_RECORD_TYPE peRecordType
+5=PCLFS_LSN plsnUser
+6=PCLFS_LSN plsnUndoNext
+7=PCLFS_LSN plsnPrevious
+8=PCLFS_LSN plsnRecord
+9=LPOVERLAPPED pOverlapped
+ParamCount=9
+Header=clfsw32.h.api;windows.h.api;
+[SetEndOfLog]
+1=HANDLE hLog
+2=PCLFS_LSN plsnEnd
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=clfsw32.h.api;windows.h.api;
+[TruncateLog]
+1=PVOID pvMarshal
+2=PCLFS_LSN plsnEnd
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=clfsw32.h.api;windows.h.api;
+[TerminateReadLog]
+1=PVOID pvCursorContext
+ParamCount=1
+[GetLogReservationInfo]
+1=PVOID pvMarshal
+2=PULONG pcbRecordNumber
+3=PLONGLONG pcbUserReservation
+4=PLONGLONG pcbCommitReservation
+ParamCount=4
+[AddLogContainer]
+1=HANDLE hLog
+2=PULONGLONG pcbContainer
+3=LPWSTR pwszContainerPath
+4=LPVOID pReserved
+ParamCount=4
+Header=windows.h.api;
+[AddLogContainerSet]
+1=HANDLE hLog
+2=USHORT cContainers
+3=PULONGLONG pcbContainer
+4=LPWSTR* rgwszContainerPath
+5=PVOID Reserved
+ParamCount=5
+Header=windows.h.api;
+[CreateLogContainerScanContext]
+1=HANDLE hLog
+2=ULONG cFromContainer
+3=ULONG cContainers
+4=[CLFS_SCAN_MODE] eScanMode
+5=PCLFS_SCAN_CONTEXT pcxScan
+6=LPOVERLAPPED pOverlapped
+ParamCount=6
+Header=clfsw32.h.api;windows.h.api;
+[ScanLogContainers]
+1=PCLFS_SCAN_CONTEXT pcxScan
+2=[CLFS_SCAN_MODE] eScanMode
+3=LPVOID pReserved
+ParamCount=3
+Header=clfsw32.h.api;
+[GetLogContainerName]
+1=HANDLE hLog
+2=CLFS_CONTAINER_ID cidLogicalContainer
+3=LPCWSTR pwstrContainerName
+4=ULONG cLenContainerName
+5=PULONG pcActualLenContainerName
+ParamCount=5
+Header=clfsw32.h.api;windows.h.api;
+[RemoveLogContainer]
+1=HANDLE hLog
+2=LPWSTR pwszContainerPath
+3=BOOL fForce
+4=LPVOID pReserved
+ParamCount=4
+Header=windows.h.api;
+[RemoveLogContainerSet]
+1=HANDLE hLog
+2=USHORT cContainers
+3=LPWSTR* rgwszContainerPath
+4=BOOL fForce
+5=LPVOID pReserved
+ParamCount=5
+Header=windows.h.api;
+[AdvanceLogBase]
+1=PVOID pvMarshal
+2=PCLFS_LSN plsnBase
+3=ULONG fFlags
+4=LPOVERLAPPED pOverlapped
+ParamCount=4
+Header=clfsw32.h.api;windows.h.api;
+[ReadLogRestartArea]
+1=PVOID pvMarshal
+2=PVOID* ppvRestartBuffer
+3=PULONG pcbRestartBuffer
+4=PCLFS_LSN plsn
+5=PVOID* ppvContext
+6=LPOVERLAPPED pOverlapped
+ParamCount=6
+Header=clfsw32.h.api;windows.h.api;
+[ReadPreviousLogRestartArea]
+1=PVOID pvReadContext
+2=PVOID* ppvRestartBuffer
+3=PULONG pcbRestartBuffer
+4=PCLFS_LSN plsnRestart
+5=LPOVERLAPPED pOverlapped
+ParamCount=5
+Header=clfsw32.h.api;windows.h.api;
+[WriteLogRestartArea]
+1=PVOID pvMarshal
+2=PVOID pvRestartBuffer
+3=ULONG cbRestartBuffer
+4=PCLFS_LSN plsnBase
+5=ULONG fFlags
+6=PULONG pcbWritten
+7=PCLFS_LSN plsnNext
+8=LPOVERLAPPED pOverlapped
+ParamCount=8
+Header=clfsw32.h.api;windows.h.api;
+[GetNextLogArchiveExtent]
+1=CLFS_LOG_ARCHIVE_CONTEXT pvArchiveContext
+2=CLFS_ARCHIVE_DESCRIPTOR [] rgadExtent
+3=ULONG cDescriptors
+4=PULONG pcDescriptorsReturned
+ParamCount=-4
+Header=clfsw32.h.api;
+[PrepareLogArchive]
+1=HANDLE hLog
+2=PWSTR pszBaseLogFileName
+3=ULONG cLen
+4=PCLFS_LSN plsnLow
+5=PCLFS_LSN plsnHigh
+6=PULONG pcActualLength
+7=PULONGLONG poffBaseLogFileData
+8=PULONGLONG pcbBaseLogFileLength
+9=PCLFS_LSN plsnBase
+10=PCLFS_LSN plsnLast
+11=PCLFS_LSN plsnCurrentArchiveTail
+12=PCLFS_LOG_ARCHIVE_CONTEXT ppvArchiveContext
+ParamCount=12
+Header=clfsw32.h.api;windows.h.api;
+[ReadLogArchiveMetadata]
+1=CLFS_LOG_ARCHIVE_CONTEXT pvArchiveContext
+2=ULONG cbOffset
+3=ULONG cbBytesToRead
+4=PBYTE pbReadBuffer
+5=PULONG pcbBytesRead
+ParamCount=5
+Header=clfsw32.h.api;
+[SetLogArchiveMode]
+1=HANDLE hLog
+2=[CLFS_LOG_ARCHIVE_MODE] eMode
+ParamCount=2
+Header=clfsw32.h.api;windows.h.api;
+[SetLogArchiveTail]
+1=HANDLE hLog
+2=PCLFS_LSN plsnArchiveTail
+3=LPVOID pReserved
+ParamCount=3
+Header=clfsw32.h.api;windows.h.api;
+[TerminateLogArchive]
+1=CLFS_LOG_ARCHIVE_CONTEXT pvArchiveContext
+ParamCount=1
+Header=clfsw32.h.api;
+[ValidateLog]
+1=LPCWSTR pszLogFileName
+2=LPSECURITY_ATTRIBUTES psaLogFile
+3=PCLFS_INFORMATION pinfoBuffer
+4=PULONG pcbBuffer
+ParamCount=4
+Header=clfsw32.h.api;security.h.api;
+[CreateLogMarshallingArea]
+1=HANDLE hLog
+2=CLFS_BLOCK_ALLOCATION pfnAllocBuffer
+3=CLFS_BLOCK_DEALLOCATION pfnFreeBuffer
+4=PVOID pvBlockAllocContext
+5=ULONG cbMarshallingBuffer
+6=ULONG cMaxWriteBuffers
+7=ULONG cMaxReadBuffers
+8=PVOID* ppvMarshal
+ParamCount=8
+Header=clfsw32.h.api;windows.h.api;
+[DeleteLogMarshallingArea]
+1=PVOID pvMarshal
+ParamCount=1
+[LsnBlockOffset]
+1=CLFS_LSN* plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnContainer]
+1=CLFS_LSN* plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnCreate]
+1=CLFS_CONTAINER_ID cidContainer
+2=ULONG offBlock
+3=ULONG cRecord
+ParamCount=3
+Header=clfsw32.h.api;
+[LsnEqual]
+1=CLFS_LSN* plsn1
+2=CLFS_LSN* plsn2
+ParamCount=2
+Header=clfsw32.h.api;
+[LsnGreater]
+1=CLFS_LSN* plsn1
+2=CLFS_LSN* plsn2
+ParamCount=2
+Header=clfsw32.h.api;
+[LsnLess]
+1=CLFS_LSN* plsn1
+2=CLFS_LSN* plsn2
+ParamCount=2
+Header=clfsw32.h.api;
+[LsnNull]
+1=CLFS_LSN* plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnRecordSequence]
+1=CLFS_LSN* plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnDecrement]
+1=PCLFS_LSN plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnIncrement]
+1=PCLFS_LSN plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[LsnInvalid]
+1=CLFS_LSN* plsn
+ParamCount=1
+Header=clfsw32.h.api;
+[DeregisterManageableLogClient]
+1=HANDLE hLog
+ParamCount=1
+Header=windows.h.api;
+[HandleLogFull]
+1=HANDLE hLog
+ParamCount=1
+Header=windows.h.api;
+[InstallLogPolicy]
+1=HANDLE hLog
+2=PCLFS_MGMT_POLICY pPolicy
+ParamCount=2
+Header=clfsw32.h.api;windows.h.api;
+[LogTailAdvanceFailure]
+1=HANDLE hLog
+2=ERROR_CODE dwReason
+ParamCount=2
+Header=windows.h.api;
+[QueryLogPolicy]
+1=HANDLE hLog
+2=[CLFS_MGMT_POLICY_TYPE] ePolicyType
+3=PCLFS_MGMT_POLICY pPolicyBuffer
+4=PULONG pcbPolicyBuffer
+ParamCount=4
+Header=clfsw32.h.api;windows.h.api;
+[ReadLogNotification]
+1=HANDLE hLog
+2=PCLFS_MGMT_NOTIFICATION pNotification
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=clfsw32.h.api;windows.h.api;
+[RegisterForLogWriteNotification]
+1=HANDLE hLog
+2=ULONG cbThreshold
+3=BOOL fEnable
+ParamCount=3
+Header=windows.h.api;
+[RemoveLogPolicy]
+1=HANDLE hLog
+2=[CLFS_MGMT_POLICY_TYPE] ePolicyType
+ParamCount=2
+Header=clfsw32.h.api;windows.h.api;
+[RegisterManageableLogClient]
+1=HANDLE hLog
+2=PLOG_MANAGEMENT_CALLBACKS pCallbacks
+ParamCount=2
+Header=clfsw32.h.api;windows.h.api;
+[SetLogFileSizeWithPolicy]
+1=HANDLE hLog
+2=PULONGLONG pDesiredSize
+3=PULONGLONG pResultingSize
+ParamCount=3
+Header=windows.h.api;

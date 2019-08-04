@@ -1,0 +1,95 @@
+[CallingConvention]
+@=STDCALL
+[CertSrvBackupClose]
+1=HCSBC hbc
+ParamCount=1
+[CertSrvBackupEnd]
+1=HCSBC hbc
+ParamCount=1
+[CertSrvBackupFree]
+1=VOID* pv
+ParamCount=1
+[CertSrvBackupGetBackupLogsW]
+1=HCSBC hbc
+2=WCHAR** ppwszzBackupLogFiles
+3=DWORD* pcbSize
+ParamCount=3
+[CertSrvBackupGetDatabaseNamesW]
+1=HCSBC hbc
+2=WCHAR** ppwszzAttachmentInformation
+3=DWORD* pcbSize
+ParamCount=3
+[CertSrvBackupGetDynamicFileListW]
+1=HCSBC hbc
+2=WCHAR** ppwszzFileList
+3=DWORD* pcbSize
+ParamCount=3
+[CertSrvBackupOpenFileW]
+1=HCSBC hbc
+2=const WCHAR* pwszAttachmentName
+3=DWORD cbReadHintSize
+4=LARGE_INTEGER* pliFileSize
+ParamCount=4
+Header=windows.h.api;
+[CertSrvBackupPrepareW]
+1=const WCHAR* pwszServerName
+2=ULONG grbitJet
+3=ULONG dwBackupFlags
+4=HCSBC* phbc
+ParamCount=4
+[CertSrvBackupRead]
+1=HCSBC hbc
+2=VOID* pvBuffer
+3=DWORD cbBuffer
+4=DWORD* pcbRead
+ParamCount=4
+[CertSrvBackupTruncateLogs]
+1=HCSBC hbc
+ParamCount=1
+[CertSrvIsServerOnlineW]
+1=const WCHAR* pwszServerName
+2=BOOL* pfServerOnline
+ParamCount=2
+[CertSrvRestoreEnd]
+1=HCSBC hbc
+ParamCount=1
+[CertSrvRestoreGetDatabaseLocationsW]
+1=HCSBC hbc
+2=WCHAR** ppwszzDatabaseLocationList
+3=DWORD* pcbSize
+ParamCount=3
+[CertSrvRestorePrepareW]
+1=const WCHAR* pwszServerName
+2=ULONG dwRestoreFlags
+3=HCSBC* phbc
+ParamCount=3
+[CertSrvRestoreRegisterW]
+1=HCSBC hbc
+2=const WCHAR* pwszCheckPointFilePath
+3=const WCHAR* pwszLogPath
+4=CSEDB_RSTMAP [] rgrstmap
+5=LONG crstmap
+6=const WCHAR* pwszBackupLogPath
+7=ULONG genLow
+8=ULONG genHigh
+ParamCount=-8
+[CertSrvRestoreRegisterComplete]
+1=HCSBC hbc
+2=HRESULT hrRestoreState
+ParamCount=2
+[CertSrvRestoreRegisterThroughFile]
+1=HCSBC hbc
+2=const WCHAR* pwszCheckPointFilePath
+3=const WCHAR* pwszLogPath
+4=CSEDB_RSTMAP [] rgrstmap
+5=LONG crstmap
+6=const WCHAR* pwszBackupLogPath
+7=ULONG genLow
+8=ULONG genHigh
+ParamCount=-8
+[CertSrvServerControlW]
+1=const WCHAR* pwszServerName
+2=DWORD dwControlFlags
+3=DWORD* pcbOut
+4=BYTE** ppbOut
+ParamCount=4

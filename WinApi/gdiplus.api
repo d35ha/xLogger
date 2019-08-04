@@ -1,0 +1,3953 @@
+[CallingConvention]
+@=STDCALL
+[GdiplusStartup]
+1=ULONG_PTR* token
+2=GdiplusStartupInput* input
+3=GdiplusStartupOutput* output
+ParamCount=3
+Header=gdiplus.h.api;
+[GdiplusShutdown]
+1=ULONG_PTR token
+ParamCount=1
+[GdipCreatePath]
+1=[GpFillMode] brushMode
+2=GpPath** path
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreatePath2]
+1=NST GpPointF* points
+2=NST PathPointType* types
+3=INT count
+4=[GpFillMode] fillMode
+5=GpPath** path
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipCreatePath2I]
+1=NST GpPoint* points
+2=NST PathPointType* types
+3=INT count
+4=[GpFillMode] fillMode
+5=GpPath** path
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipClonePath]
+1=GpPath* path
+2=GpPath** clonePath
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeletePath]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipResetPath]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetPointCount]
+1=GpPath* path
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathTypes]
+1=GpPath* path
+2=PathPointType* types
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathPoints]
+1=GpPath* path
+2=GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathPointsI]
+1=GpPath* path
+2=GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathFillMode]
+1=GpPath* path
+2=GpFillMode* fillmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathFillMode]
+1=GpPath* path
+2=[GpFillMode] fillmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathData]
+1=GpPath* path
+2=GpPathData* pathData
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipStartPathFigure]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipClosePathFigure]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipClosePathFigures]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetPathMarker]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipClearPathMarkers]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipReversePath]
+1=GpPath* path
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetPathLastPoint]
+1=GpPath* path
+2=GpPointF* lastPoint
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipAddPathLine]
+1=GpPath* path
+2=REAL x1
+3=REAL y1
+4=REAL x2
+5=REAL y2
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathLine2]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathArc]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+6=REAL startAngle
+7=REAL sweepAngle
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipAddPathBezier]
+1=GpPath* path
+2=REAL x1
+3=REAL y1
+4=REAL x2
+5=REAL y2
+6=REAL x3
+7=REAL y3
+8=REAL x4
+9=REAL y4
+ParamCount=9
+Header=gdiplus.h.api;
+[GdipAddPathBeziers]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathCurve]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathCurve2]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+4=REAL tension
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipAddPathCurve3]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+4=INT offset
+5=INT numberOfSegments
+6=REAL tension
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipAddPathClosedCurve]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathClosedCurve2]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+4=REAL tension
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipAddPathRectangle]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathRectangles]
+1=GpPath* path
+2=NST GpRectF* rects
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathEllipse]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathPie]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+6=REAL startAngle
+7=REAL sweepAngle
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipAddPathPolygon]
+1=GpPath* path
+2=NST GpPointF* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathPath]
+1=GpPath* path
+2=NST GpPath* addingPath
+3=BOOL connect
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathString]
+1=GpPath* path
+2=NST WCHAR* string
+3=INT length
+4=NST GpFontFamily* family
+5=INT style
+6=REAL emSize
+7=NST RectF* layoutRect
+8=NST GpStringFormat* format
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipAddPathStringI]
+1=GpPath* path
+2=NST WCHAR* string
+3=INT length
+4=NST GpFontFamily* family
+5=INT style
+6=REAL emSize
+7=NST Rect* layoutRect
+8=NST GpStringFormat* format
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipAddPathLineI]
+1=GpPath* path
+2=INT x1
+3=INT y1
+4=INT x2
+5=INT y2
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathLine2I]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathArcI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+6=REAL startAngle
+7=REAL sweepAngle
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipAddPathBezierI]
+1=GpPath* path
+2=INT x1
+3=INT y1
+4=INT x2
+5=INT y2
+6=INT x3
+7=INT y3
+8=INT x4
+9=INT y4
+ParamCount=9
+Header=gdiplus.h.api;
+[GdipAddPathBeziersI]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathCurveI]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathCurve2I]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+4=REAL tension
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipAddPathCurve3I]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+4=INT offset
+5=INT numberOfSegments
+6=REAL tension
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipAddPathClosedCurveI]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathClosedCurve2I]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+4=REAL tension
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipAddPathRectangleI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathRectanglesI]
+1=GpPath* path
+2=NST GpRect* rects
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipAddPathEllipseI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipAddPathPieI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+6=REAL startAngle
+7=REAL sweepAngle
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipAddPathPolygonI]
+1=GpPath* path
+2=NST GpPoint* points
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipFlattenPath]
+1=GpPath* path
+2=GpMatrix* matrix
+3=REAL flatness
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipWindingModeOutline]
+1=GpPath* path
+2=GpMatrix* matrix
+3=REAL flatness
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipWidenPath]
+1=GpPath* nativePath
+2=GpPen* pen
+3=GpMatrix* matrix
+4=REAL flatness
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipWarpPath]
+1=GpPath* path
+2=GpMatrix* matrix
+3=NST GpPointF* points
+4=INT count
+5=REAL srcx
+6=REAL srcy
+7=REAL srcwidth
+8=REAL srcheight
+9=[WarpMode] warpMode
+10=REAL flatness
+ParamCount=10
+Header=gdiplus.h.api;
+[GdipTransformPath]
+1=GpPath* path
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathWorldBounds]
+1=GpPath* path
+2=GpRectF* bounds
+3=NST GpMatrix* matrix
+4=NST GpPen* pen
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetPathWorldBoundsI]
+1=GpPath* path
+2=GpRect* bounds
+3=NST GpMatrix* matrix
+4=NST GpPen* pen
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipIsVisiblePathPoint]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=GpGraphics* graphics
+5=BOOL* result
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipIsVisiblePathPointI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=GpGraphics* graphics
+5=BOOL* result
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipIsOutlineVisiblePathPoint]
+1=GpPath* path
+2=REAL x
+3=REAL y
+4=GpPen* pen
+5=GpGraphics* graphics
+6=BOOL* result
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipIsOutlineVisiblePathPointI]
+1=GpPath* path
+2=INT x
+3=INT y
+4=GpPen* pen
+5=GpGraphics* graphics
+6=BOOL* result
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreatePathIter]
+1=GpPathIterator** iterator
+2=GpPath* path
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeletePathIter]
+1=GpPathIterator* iterator
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipPathIterNextSubpath]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=INT* startIndex
+4=INT* endIndex
+5=BOOL* isClosed
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipPathIterNextSubpathPath]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=GpPath* path
+4=BOOL* isClosed
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipPathIterNextPathType]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=PathPointType* pathType
+4=INT* startIndex
+5=INT* endIndex
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipPathIterNextMarker]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=INT* startIndex
+4=INT* endIndex
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipPathIterNextMarkerPath]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=GpPath* path
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipPathIterGetCount]
+1=GpPathIterator* iterator
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipPathIterGetSubpathCount]
+1=GpPathIterator* iterator
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipPathIterIsValid]
+1=GpPathIterator* iterator
+2=BOOL* valid
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipPathIterHasCurve]
+1=GpPathIterator* iterator
+2=BOOL* hasCurve
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipPathIterRewind]
+1=GpPathIterator* iterator
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipPathIterEnumerate]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=GpPointF* points
+4=PathPointType* types
+5=INT count
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipPathIterCopyData]
+1=GpPathIterator* iterator
+2=INT* resultCount
+3=GpPointF* points
+4=PathPointType* types
+5=INT startIndex
+6=INT endIndex
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreateMatrix]
+1=GpMatrix** matrix
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCreateMatrix2]
+1=REAL m11
+2=REAL m12
+3=REAL m21
+4=REAL m22
+5=REAL dx
+6=REAL dy
+7=GpMatrix** matrix
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipCreateMatrix3]
+1=NST GpRectF* rect
+2=NST GpPointF* dstplg
+3=GpMatrix** matrix
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateMatrix3I]
+1=NST GpRect* rect
+2=NST GpPoint* dstplg
+3=GpMatrix** matrix
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCloneMatrix]
+1=GpMatrix* matrix
+2=GpMatrix** cloneMatrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeleteMatrix]
+1=GpMatrix* matrix
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetMatrixElements]
+1=GpMatrix* matrix
+2=REAL m11
+3=REAL m12
+4=REAL m21
+5=REAL m22
+6=REAL dx
+7=REAL dy
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipMultiplyMatrix]
+1=GpMatrix* matrix
+2=GpMatrix* matrix2
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateMatrix]
+1=GpMatrix* matrix
+2=REAL offsetX
+3=REAL offsetY
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScaleMatrix]
+1=GpMatrix* matrix
+2=REAL scaleX
+3=REAL scaleY
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotateMatrix]
+1=GpMatrix* matrix
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipShearMatrix]
+1=GpMatrix* matrix
+2=REAL shearX
+3=REAL shearY
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipInvertMatrix]
+1=GpMatrix* matrix
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipTransformMatrixPoints]
+1=GpMatrix* matrix
+2=GpPointF* pts
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTransformMatrixPointsI]
+1=GpMatrix* matrix
+2=GpPoint* pts
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipVectorTransformMatrixPoints]
+1=GpMatrix* matrix
+2=GpPointF* pts
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipVectorTransformMatrixPointsI]
+1=GpMatrix* matrix
+2=GpPoint* pts
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetMatrixElements]
+1=NST GpMatrix* matrix
+2=REAL* matrixOut
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsMatrixInvertible]
+1=NST GpMatrix* matrix
+2=BOOL* result
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsMatrixIdentity]
+1=NST GpMatrix* matrix
+2=BOOL* result
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsMatrixEqual]
+1=NST GpMatrix* matrix
+2=NST GpMatrix* matrix2
+3=BOOL* result
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateRegion]
+1=GpRegion** region
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCreateRegionRect]
+1=NST GpRectF* rect
+2=GpRegion** region
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateRegionRectI]
+1=NST GpRect* rect
+2=GpRegion** region
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateRegionPath]
+1=GpPath* path
+2=GpRegion** region
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateRegionRgnData]
+1=NST BYTE* regionData
+2=INT size
+3=GpRegion** region
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateRegionHrgn]
+1=HRGN hRgn
+2=GpRegion** region
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCloneRegion]
+1=GpRegion* region
+2=GpRegion** cloneRegion
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeleteRegion]
+1=GpRegion* region
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetInfinite]
+1=GpRegion* region
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetEmpty]
+1=GpRegion* region
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCombineRegionRect]
+1=GpRegion* region
+2=NST GpRectF* rect
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCombineRegionRectI]
+1=GpRegion* region
+2=NST GpRect* rect
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCombineRegionPath]
+1=GpRegion* region
+2=GpPath* path
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCombineRegionRegion]
+1=GpRegion* region
+2=GpRegion* region2
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateRegion]
+1=GpRegion* region
+2=REAL dx
+3=REAL dy
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateRegionI]
+1=GpRegion* region
+2=INT dx
+3=INT dy
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTransformRegion]
+1=GpRegion* region
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetRegionBounds]
+1=GpRegion* region
+2=GpGraphics* graphics
+3=GpRectF* rect
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetRegionBoundsI]
+1=GpRegion* region
+2=GpGraphics* graphics
+3=GpRect* rect
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetRegionHRgn]
+1=GpRegion* region
+2=GpGraphics* graphics
+3=HRGN* hRgn
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;
+[GdipIsEmptyRegion]
+1=GpRegion* region
+2=GpGraphics* graphics
+3=BOOL* result
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipIsInfiniteRegion]
+1=GpRegion* region
+2=GpGraphics* graphics
+3=BOOL* result
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipIsEqualRegion]
+1=GpRegion* region
+2=GpRegion* region2
+3=GpGraphics* graphics
+4=BOOL* result
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetRegionDataSize]
+1=GpRegion* region
+2=UINT* bufferSize
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetRegionData]
+1=GpRegion* region
+2=BYTE* buffer
+3=UINT bufferSize
+4=UINT* sizeFilled
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipIsVisibleRegionPoint]
+1=GpRegion* region
+2=REAL x
+3=REAL y
+4=GpGraphics* graphics
+5=BOOL* result
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipIsVisibleRegionPointI]
+1=GpRegion* region
+2=INT x
+3=INT y
+4=GpGraphics* graphics
+5=BOOL* result
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipIsVisibleRegionRect]
+1=GpRegion* region
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+6=GpGraphics* graphics
+7=BOOL* result
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipIsVisibleRegionRectI]
+1=GpRegion* region
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+6=GpGraphics* graphics
+7=BOOL* result
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipGetRegionScansCount]
+1=GpRegion* region
+2=UINT* count
+3=GpMatrix* matrix
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetRegionScans]
+1=GpRegion* region
+2=GpRectF* rects
+3=INT* count
+4=GpMatrix* matrix
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetRegionScansI]
+1=GpRegion* region
+2=GpRect* rects
+3=INT* count
+4=GpMatrix* matrix
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipCloneBrush]
+1=GpBrush* brush
+2=GpBrush** cloneBrush
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeleteBrush]
+1=GpBrush* brush
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetBrushType]
+1=GpBrush* brush
+2=GpBrushType* type
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateHatchBrush]
+1=[GpHatchStyle] hatchstyle
+2=ARGB forecol
+3=ARGB backcol
+4=GpHatch** brush
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetHatchStyle]
+1=GpHatch* brush
+2=GpHatchStyle* hatchstyle
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetHatchForegroundColor]
+1=GpHatch* brush
+2=ARGB* forecol
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetHatchBackgroundColor]
+1=GpHatch* brush
+2=ARGB* backcol
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateTexture]
+1=GpImage* image
+2=[GpWrapMode] wrapmode
+3=GpTexture** texture
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateTexture2]
+1=GpImage* image
+2=[GpWrapMode] wrapmode
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+7=GpTexture** texture
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipCreateTextureIA]
+1=GpImage* image
+2=NST GpImageAttributes* imageAttributes
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+7=GpTexture** texture
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipCreateTexture2I]
+1=GpImage* image
+2=[GpWrapMode] wrapmode
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+7=GpTexture** texture
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipCreateTextureIAI]
+1=GpImage* image
+2=NST GpImageAttributes* imageAttributes
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+7=GpTexture** texture
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipGetTextureTransform]
+1=GpTexture* brush
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetTextureTransform]
+1=GpTexture* brush
+2=NST GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetTextureTransform]
+1=GpTexture* brush
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipMultiplyTextureTransform]
+1=GpTexture* brush
+2=NST GpMatrix* matrix
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateTextureTransform]
+1=GpTexture* brush
+2=REAL dx
+3=REAL dy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScaleTextureTransform]
+1=GpTexture* brush
+2=REAL sx
+3=REAL sy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotateTextureTransform]
+1=GpTexture* brush
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetTextureWrapMode]
+1=GpTexture* brush
+2=[GpWrapMode] wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetTextureWrapMode]
+1=GpTexture* brush
+2=GpWrapMode* wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetTextureImage]
+1=GpTexture* brush
+2=GpImage** image
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateSolidFill]
+1=ARGB color
+2=GpSolidFill** brush
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetSolidFillColor]
+1=GpSolidFill* brush
+2=ARGB color
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetSolidFillColor]
+1=GpSolidFill* brush
+2=ARGB* color
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateLineBrush]
+1=NST GpPointF* point1
+2=NST GpPointF* point2
+3=ARGB color1
+4=ARGB color2
+5=[GpWrapMode] wrapMode
+6=GpLineGradient** lineGradient
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreateLineBrushI]
+1=NST GpPoint* point1
+2=NST GpPoint* point2
+3=ARGB color1
+4=ARGB color2
+5=[GpWrapMode] wrapMode
+6=GpLineGradient** lineGradient
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreateLineBrushFromRect]
+1=NST GpRectF* rect
+2=ARGB color1
+3=ARGB color2
+4=[LinearGradientMode] mode
+5=[GpWrapMode] wrapMode
+6=GpLineGradient** lineGradient
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreateLineBrushFromRectI]
+1=NST GpRect* rect
+2=ARGB color1
+3=ARGB color2
+4=[LinearGradientMode] mode
+5=[GpWrapMode] wrapMode
+6=GpLineGradient** lineGradient
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipCreateLineBrushFromRectWithAngle]
+1=NST GpRectF* rect
+2=ARGB color1
+3=ARGB color2
+4=REAL angle
+5=BOOL isAngleScalable
+6=[GpWrapMode] wrapMode
+7=GpLineGradient** lineGradient
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipCreateLineBrushFromRectWithAngleI]
+1=NST GpRect* rect
+2=ARGB color1
+3=ARGB color2
+4=REAL angle
+5=BOOL isAngleScalable
+6=[GpWrapMode] wrapMode
+7=GpLineGradient** lineGradient
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipSetLineColors]
+1=GpLineGradient* brush
+2=ARGB color1
+3=ARGB color2
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetLineColors]
+1=GpLineGradient* brush
+2=ARGB* colors
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineRect]
+1=GpLineGradient* brush
+2=GpRectF* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineRectI]
+1=GpLineGradient* brush
+2=GpRect* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetLineGammaCorrection]
+1=GpLineGradient* brush
+2=BOOL useGammaCorrection
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineGammaCorrection]
+1=GpLineGradient* brush
+2=BOOL* useGammaCorrection
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineBlendCount]
+1=GpLineGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineBlend]
+1=GpLineGradient* brush
+2=REAL* blend
+3=REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetLineBlend]
+1=GpLineGradient* brush
+2=NST REAL* blend
+3=NST REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetLinePresetBlendCount]
+1=GpLineGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLinePresetBlend]
+1=GpLineGradient* brush
+2=ARGB* blend
+3=REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetLinePresetBlend]
+1=GpLineGradient* brush
+2=NST ARGB* blend
+3=NST REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetLineSigmaBlend]
+1=GpLineGradient* brush
+2=REAL focus
+3=REAL scale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetLineLinearBlend]
+1=GpLineGradient* brush
+2=REAL focus
+3=REAL scale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetLineWrapMode]
+1=GpLineGradient* brush
+2=[GpWrapMode] wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineWrapMode]
+1=GpLineGradient* brush
+2=GpWrapMode* wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetLineTransform]
+1=GpLineGradient* brush
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetLineTransform]
+1=GpLineGradient* brush
+2=NST GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetLineTransform]
+1=GpLineGradient* brush
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipMultiplyLineTransform]
+1=GpLineGradient* brush
+2=NST GpMatrix* matrix
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateLineTransform]
+1=GpLineGradient* brush
+2=REAL dx
+3=REAL dy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScaleLineTransform]
+1=GpLineGradient* brush
+2=REAL sx
+3=REAL sy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotateLineTransform]
+1=GpLineGradient* brush
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreatePathGradient]
+1=NST GpPointF* points
+2=INT count
+3=[GpWrapMode] wrapMode
+4=GpPathGradient** polyGradient
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipCreatePathGradientI]
+1=NST GpPoint* points
+2=INT count
+3=[GpWrapMode] wrapMode
+4=GpPathGradient** polyGradient
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipCreatePathGradientFromPath]
+1=NST GpPath* path
+2=GpPathGradient** polyGradient
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientCenterColor]
+1=GpPathGradient* brush
+2=ARGB* colors
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientCenterColor]
+1=GpPathGradient* brush
+2=ARGB colors
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientSurroundColorsWithCount]
+1=GpPathGradient* brush
+2=ARGB* color
+3=INT* count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetPathGradientSurroundColorsWithCount]
+1=GpPathGradient* brush
+2=NST ARGB* color
+3=INT* count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathGradientPath]
+1=GpPathGradient* brush
+2=GpPath* path
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientPath]
+1=GpPathGradient* brush
+2=NST GpPath* path
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientCenterPoint]
+1=GpPathGradient* brush
+2=GpPointF* points
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientCenterPointI]
+1=GpPathGradient* brush
+2=GpPoint* points
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientCenterPoint]
+1=GpPathGradient* brush
+2=NST GpPointF* points
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientCenterPointI]
+1=GpPathGradient* brush
+2=NST GpPoint* points
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientRect]
+1=GpPathGradient* brush
+2=GpRectF* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientRectI]
+1=GpPathGradient* brush
+2=GpRect* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientPointCount]
+1=GpPathGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientSurroundColorCount]
+1=GpPathGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientGammaCorrection]
+1=GpPathGradient* brush
+2=BOOL useGammaCorrection
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientGammaCorrection]
+1=GpPathGradient* brush
+2=BOOL* useGammaCorrection
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientBlendCount]
+1=GpPathGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientBlend]
+1=GpPathGradient* brush
+2=REAL* blend
+3=REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetPathGradientBlend]
+1=GpPathGradient* brush
+2=NST REAL* blend
+3=NST REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetPathGradientPresetBlendCount]
+1=GpPathGradient* brush
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientPresetBlend]
+1=GpPathGradient* brush
+2=ARGB* blend
+3=REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetPathGradientPresetBlend]
+1=GpPathGradient* brush
+2=NST ARGB* blend
+3=NST REAL* positions
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetPathGradientSigmaBlend]
+1=GpPathGradient* brush
+2=REAL focus
+3=REAL scale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetPathGradientLinearBlend]
+1=GpPathGradient* brush
+2=REAL focus
+3=REAL scale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathGradientWrapMode]
+1=GpPathGradient* brush
+2=GpWrapMode* wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientWrapMode]
+1=GpPathGradient* brush
+2=[GpWrapMode] wrapmode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPathGradientTransform]
+1=GpPathGradient* brush
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPathGradientTransform]
+1=GpPathGradient* brush
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetPathGradientTransform]
+1=GpPathGradient* brush
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipMultiplyPathGradientTransform]
+1=GpPathGradient* brush
+2=NST GpMatrix* matrix
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslatePathGradientTransform]
+1=GpPathGradient* brush
+2=REAL dx
+3=REAL dy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScalePathGradientTransform]
+1=GpPathGradient* brush
+2=REAL sx
+3=REAL sy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotatePathGradientTransform]
+1=GpPathGradient* brush
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPathGradientFocusScales]
+1=GpPathGradient* brush
+2=REAL* xScale
+3=REAL* yScale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetPathGradientFocusScales]
+1=GpPathGradient* brush
+2=REAL xScale
+3=REAL yScale
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreatePen1]
+1=ARGB color
+2=REAL width
+3=GpUnit unit
+4=GpPen** pen
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipCreatePen2]
+1=GpBrush* brush
+2=REAL width
+3=GpUnit unit
+4=GpPen** pen
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipClonePen]
+1=GpPen* pen
+2=GpPen** clonepen
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeletePen]
+1=GpPen* pen
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetPenWidth]
+1=GpPen* pen
+2=REAL width
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenWidth]
+1=GpPen* pen
+2=REAL* width
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenUnit]
+1=GpPen* pen
+2=GpUnit unit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenUnit]
+1=GpPen* pen
+2=GpUnit* unit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenLineCap197819]
+1=GpPen* pen
+2=[GpLineCap] startCap
+3=[GpLineCap] endCap
+4=[GpDashCap] dashCap
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetPenStartCap]
+1=GpPen* pen
+2=[GpLineCap] startCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenEndCap]
+1=GpPen* pen
+2=[GpLineCap] endCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenDashCap197819]
+1=GpPen* pen
+2=[GpDashCap] dashCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenStartCap]
+1=GpPen* pen
+2=GpLineCap* startCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenEndCap]
+1=GpPen* pen
+2=GpLineCap* endCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenDashCap197819]
+1=GpPen* pen
+2=GpDashCap* dashCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenLineJoin]
+1=GpPen* pen
+2=[GpLineJoin] lineJoin
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenLineJoin]
+1=GpPen* pen
+2=GpLineJoin* lineJoin
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenCustomStartCap]
+1=GpPen* pen
+2=GpCustomLineCap* customCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenCustomStartCap]
+1=GpPen* pen
+2=GpCustomLineCap** customCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenCustomEndCap]
+1=GpPen* pen
+2=GpCustomLineCap* customCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenCustomEndCap]
+1=GpPen* pen
+2=GpCustomLineCap** customCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenMiterLimit]
+1=GpPen* pen
+2=REAL miterLimit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenMiterLimit]
+1=GpPen* pen
+2=REAL* miterLimit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenMode]
+1=GpPen* pen
+2=[GpPenAlignment] penMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenMode]
+1=GpPen* pen
+2=GpPenAlignment* penMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenTransform]
+1=GpPen* pen
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenTransform]
+1=GpPen* pen
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetPenTransform]
+1=GpPen* pen
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipMultiplyPenTransform]
+1=GpPen* pen
+2=NST GpMatrix* matrix
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslatePenTransform]
+1=GpPen* pen
+2=REAL dx
+3=REAL dy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScalePenTransform]
+1=GpPen* pen
+2=REAL sx
+3=REAL sy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotatePenTransform]
+1=GpPen* pen
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetPenColor]
+1=GpPen* pen
+2=ARGB argb
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenColor]
+1=GpPen* pen
+2=ARGB* argb
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenBrushFill]
+1=GpPen* pen
+2=GpBrush* brush
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenBrushFill]
+1=GpPen* pen
+2=GpBrush** brush
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenFillType]
+1=GpPen* pen
+2=GpPenType* type
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenDashStyle]
+1=GpPen* pen
+2=GpDashStyle* dashstyle
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenDashStyle]
+1=GpPen* pen
+2=[GpDashStyle] dashstyle
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenDashOffset]
+1=GpPen* pen
+2=REAL* offset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenDashOffset]
+1=GpPen* pen
+2=REAL offset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPenDashCount]
+1=GpPen* pen
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenDashArray]
+1=GpPen* pen
+2=NST REAL* dash
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPenDashArray]
+1=GpPen* pen
+2=REAL* dash
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPenCompoundCount]
+1=GpPen* pen
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPenCompoundArray]
+1=GpPen* pen
+2=NST REAL* dash
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetPenCompoundArray]
+1=GpPen* pen
+2=REAL* dash
+3=INT count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateCustomLineCap]
+1=GpPath* fillPath
+2=GpPath* strokePath
+3=[GpLineCap] baseCap
+4=REAL baseInset
+5=GpCustomLineCap** customCap
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipDeleteCustomLineCap]
+1=GpCustomLineCap* customCap
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCloneCustomLineCap]
+1=GpCustomLineCap* customCap
+2=GpCustomLineCap** clonedCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapType]
+1=GpCustomLineCap* customCap
+2=CustomLineCapType* capType
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetCustomLineCapStrokeCaps]
+1=GpCustomLineCap* customCap
+2=[GpLineCap] startCap
+3=[GpLineCap] endCap
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapStrokeCaps]
+1=GpCustomLineCap* customCap
+2=GpLineCap* startCap
+3=GpLineCap* endCap
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetCustomLineCapStrokeJoin]
+1=GpCustomLineCap* customCap
+2=[GpLineJoin] lineJoin
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapStrokeJoin]
+1=GpCustomLineCap* customCap
+2=GpLineJoin* lineJoin
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetCustomLineCapBaseCap]
+1=GpCustomLineCap* customCap
+2=[GpLineCap] baseCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapBaseCap]
+1=GpCustomLineCap* customCap
+2=GpLineCap* baseCap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetCustomLineCapBaseInset]
+1=GpCustomLineCap* customCap
+2=REAL inset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapBaseInset]
+1=GpCustomLineCap* customCap
+2=REAL* inset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetCustomLineCapWidthScale]
+1=GpCustomLineCap* customCap
+2=REAL widthScale
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCustomLineCapWidthScale]
+1=GpCustomLineCap* customCap
+2=REAL* widthScale
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateAdjustableArrowCap]
+1=REAL height
+2=REAL width
+3=BOOL isFilled
+4=GpAdjustableArrowCap** cap
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetAdjustableArrowCapHeight]
+1=GpAdjustableArrowCap* cap
+2=REAL height
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetAdjustableArrowCapHeight]
+1=GpAdjustableArrowCap* cap
+2=REAL* height
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetAdjustableArrowCapWidth]
+1=GpAdjustableArrowCap* cap
+2=REAL width
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetAdjustableArrowCapWidth]
+1=GpAdjustableArrowCap* cap
+2=REAL* width
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetAdjustableArrowCapMiddleInset]
+1=GpAdjustableArrowCap* cap
+2=REAL middleInset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetAdjustableArrowCapMiddleInset]
+1=GpAdjustableArrowCap* cap
+2=REAL* middleInset
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetAdjustableArrowCapFillState]
+1=GpAdjustableArrowCap* cap
+2=BOOL fillState
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetAdjustableArrowCapFillState]
+1=GpAdjustableArrowCap* cap
+2=BOOL* fillState
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipLoadImageFromStream]
+1=IStream* stream
+2=GpImage** image
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipLoadImageFromFile]
+1=NST WCHAR* filename
+2=GpImage** image
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipLoadImageFromStreamICM]
+1=IStream* stream
+2=GpImage** image
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipLoadImageFromFileICM]
+1=NST WCHAR* filename
+2=GpImage** image
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCloneImage]
+1=GpImage* image
+2=GpImage** cloneImage
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDisposeImage]
+1=GpImage* image
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSaveImageToFile]
+1=GpImage* image
+2=NST WCHAR* filename
+3=NST CLSID* clsidEncoder
+4=NST EncoderParameters* encoderParams
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSaveImageToStream]
+1=GpImage* image
+2=IStream* stream
+3=NST CLSID* clsidEncoder
+4=NST EncoderParameters* encoderParams
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSaveAdd]
+1=GpImage* image
+2=NST EncoderParameters* encoderParams
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSaveAddImage]
+1=GpImage* image
+2=GpImage* newImage
+3=NST EncoderParameters* encoderParams
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetImageGraphicsContext]
+1=GpImage* image
+2=GpGraphics** graphics
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageBounds]
+1=GpImage* image
+2=GpRectF* srcRect
+3=GpUnit* srcUnit
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetImageDimension]
+1=GpImage* image
+2=REAL* width
+3=REAL* height
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetImageType]
+1=GpImage* image
+2=ImageType* type
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageWidth]
+1=GpImage* image
+2=UINT* width
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageHeight]
+1=GpImage* image
+2=UINT* height
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageHorizontalResolution]
+1=GpImage* image
+2=REAL* resolution
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageVerticalResolution]
+1=GpImage* image
+2=REAL* resolution
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageFlags]
+1=GpImage* image
+2=UINT* flags
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageRawFormat]
+1=GpImage* image
+2=GUID* format
+ParamCount=2
+Header=gdiplus.h.api;windows.h.api;
+[GdipGetImagePixelFormat]
+1=GpImage* image
+2=PixelFormat* format
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipGetImageThumbnail]
+1=GpImage* image
+2=UINT thumbWidth
+3=UINT thumbHeight
+4=GpImage** thumbImage
+5=GetThumbnailImageAbort callback
+6=VOID* callbackData
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipGetEncoderParameterListSize]
+1=GpImage* image
+2=NST CLSID* clsidEncoder
+3=UINT* size
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetEncoderParameterList]
+1=GpImage* image
+2=NST CLSID* clsidEncoder
+3=UINT size
+4=EncoderParameters* buffer
+ParamCount=4
+Header=gdiplus.h.api;gdi.h.api;
+[GdipImageGetFrameDimensionsCount]
+1=GpImage* image
+2=UINT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipImageGetFrameDimensionsList]
+1=GpImage* image
+2=GUID* dimensionIDs
+3=UINT count
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipImageGetFrameCount]
+1=GpImage* image
+2=NST GUID* dimensionID
+3=UINT* count
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipImageSelectActiveFrame]
+1=GpImage* image
+2=NST GUID* dimensionID
+3=UINT frameIndex
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipImageRotateFlip]
+1=GpImage* image
+2=[RotateFlipType] rfType
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImagePalette]
+1=GpImage* image
+2=ColorPalette* palette
+3=INT size
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetImagePalette]
+1=GpImage* image
+2=NST ColorPalette* palette
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImagePaletteSize]
+1=GpImage* image
+2=INT* size
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPropertyCount]
+1=GpImage* image
+2=UINT* numOfProperty
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPropertyIdList]
+1=GpImage* image
+2=UINT numOfProperty
+3=PROPID* list
+ParamCount=3
+Header=gdiplus.h.api;ole.h.api;
+[GdipGetPropertyItemSize]
+1=GpImage* image
+2=PROPID propId
+3=UINT* size
+ParamCount=3
+Header=gdiplus.h.api;ole.h.api;
+[GdipGetPropertyItem]
+1=GpImage* image
+2=PROPID propId
+3=UINT propSize
+4=PropertyItem* buffer
+ParamCount=4
+Header=gdiplus.h.api;ole.h.api;
+[GdipGetPropertySize]
+1=GpImage* image
+2=UINT* totalBufferSize
+3=UINT* numProperties
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetAllPropertyItems]
+1=GpImage* image
+2=UINT totalBufferSize
+3=UINT numProperties
+4=PropertyItem* allItems
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRemovePropertyItem]
+1=GpImage* image
+2=PROPID propId
+ParamCount=2
+Header=gdiplus.h.api;ole.h.api;
+[GdipSetPropertyItem]
+1=GpImage* image
+2=NST PropertyItem* item
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipFindFirstImageItem]
+1=GpImage* image
+2=ImageItemData* item
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipFindNextImageItem]
+1=GpImage* image
+2=ImageItemData* item
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageItemData]
+1=GpImage* image
+2=ImageItemData* item
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipImageForceValidation]
+1=GpImage* image
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromStream]
+1=IStream* stream
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromFile]
+1=NST WCHAR* filename
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromStreamICM]
+1=IStream* stream
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromFileICM]
+1=NST WCHAR* filename
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromScan0]
+1=INT width
+2=INT height
+3=INT stride
+4=[PixelFormat] format
+5=BYTE* scan0
+6=GpBitmap** bitmap
+ParamCount=6
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateBitmapFromGraphics]
+1=INT width
+2=INT height
+3=GpGraphics* target
+4=GpBitmap** bitmap
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromDirectDrawSurface]
+1=IDirectDrawSurface7* surface
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromGdiDib]
+1=NST BITMAPINFO* gdiBitmapInfo
+2=VOID* gdiBitmapData
+3=GpBitmap** bitmap
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateBitmapFromHBITMAP]
+1=HBITMAP hbm
+2=HPALETTE hpal
+3=GpBitmap** bitmap
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;windows.h.api;
+[GdipCreateHBITMAPFromBitmap]
+1=GpBitmap* bitmap
+2=HBITMAP* hbmReturn
+3=ARGB background
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipCreateBitmapFromHICON]
+1=HICON hicon
+2=GpBitmap** bitmap
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateHICONFromBitmap]
+1=GpBitmap* bitmap
+2=HICON* hbmReturn
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateBitmapFromResource]
+1=HINSTANCE hInstance
+2=NST WCHAR* lpBitmapName
+3=GpBitmap** bitmap
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipCloneBitmapArea]
+1=REAL x
+2=REAL y
+3=REAL width
+4=REAL height
+5=[PixelFormat] format
+6=GpBitmap* srcBitmap
+7=GpBitmap** dstBitmap
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCloneBitmapAreaI]
+1=INT x
+2=INT y
+3=INT width
+4=INT height
+5=[PixelFormat] format
+6=GpBitmap* srcBitmap
+7=GpBitmap** dstBitmap
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipBitmapLockBits]
+1=GpBitmap* bitmap
+2=NST GpRect* rect
+3=[ImageLockMode] flags
+4=[PixelFormat] format
+5=BitmapData* lockedBitmapData
+ParamCount=5
+Header=gdiplus.h.api;gdi.h.api;
+[GdipBitmapUnlockBits]
+1=GpBitmap* bitmap
+2=BitmapData* lockedBitmapData
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipBitmapGetPixel]
+1=GpBitmap* bitmap
+2=INT x
+3=INT y
+4=ARGB* color
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipBitmapSetPixel]
+1=GpBitmap* bitmap
+2=INT x
+3=INT y
+4=ARGB color
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipImageSetAbort]
+1=GpImage* pImage
+2=GdiplusAbort* pIAbort
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGraphicsSetAbort]
+1=GpGraphics* pGraphics
+2=GdiplusAbort* pIAbort
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipBitmapConvertFormat]
+1=GpBitmap* pInputBitmap
+2=[PixelFormat] format
+3=[DitherType] dithertype
+4=[PaletteType] palettetype
+5=ColorPalette* palette
+6=REAL alphaThresholdPercent
+ParamCount=6
+Header=gdiplus.h.api;gdi.h.api;
+[GdipInitializePalette]
+1=ColorPalette* palette
+2=[PaletteType] palettetype
+3=INT optimalColors
+4=BOOL useTransparentColor
+5=GpBitmap* bitmap
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipBitmapApplyEffect]
+1=GpBitmap* bitmap
+2=CGpEffect* effect
+3=RECT* roi
+4=BOOL useAuxData
+5=VOID** auxData
+6=INT* auxDataSize
+ParamCount=6
+Header=gdiplus.h.api;windows.h.api;
+[GdipBitmapCreateApplyEffect]
+1=GpBitmap** inputBitmaps
+2=INT numInputs
+3=CGpEffect* effect
+4=RECT* roi
+5=RECT* outputRect
+6=GpBitmap** outputBitmap
+7=BOOL useAuxData
+8=VOID** auxData
+9=INT* auxDataSize
+ParamCount=9
+Header=gdiplus.h.api;windows.h.api;
+[GdipBitmapGetHistogram]
+1=GpBitmap* bitmap
+2=[HistogramFormat] format
+3=UINT NumberOfEntries
+4=UINT* channel0
+5=UINT* channel1
+6=UINT* channel2
+7=UINT* channel3
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipBitmapGetHistogramSize]
+1=[HistogramFormat] format
+2=UINT* NumberOfEntries
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipBitmapSetResolution]
+1=GpBitmap* bitmap
+2=REAL xdpi
+3=REAL ydpi
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateImageAttributes]
+1=GpImageAttributes** imageattr
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCloneImageAttributes]
+1=NST GpImageAttributes* imageattr
+2=GpImageAttributes** cloneImageattr
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDisposeImageAttributes]
+1=GpImageAttributes* imageattr
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipSetImageAttributesToIdentity]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetImageAttributes]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetImageAttributesColorMatrix]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=NST ColorMatrix* colorMatrix
+5=NST ColorMatrix* grayMatrix
+6=[ColorMatrixFlags] flags
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipSetImageAttributesThreshold]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=REAL threshold
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetImageAttributesGamma]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=REAL gamma
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetImageAttributesNoOp]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetImageAttributesColorKeys]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=ARGB colorLow
+5=ARGB colorHigh
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipSetImageAttributesOutputChannel]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=[ColorChannelFlags] channelFlags
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetImageAttributesOutputChannelColorProfile]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=NST WCHAR* colorProfileFilename
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetImageAttributesRemapTable]
+1=GpImageAttributes* imageattr
+2=[ColorAdjustType] type
+3=BOOL enableFlag
+4=UINT mapSize
+5=NST ColorMap* map
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipSetImageAttributesWrapMode]
+1=GpImageAttributes* imageAttr
+2=[GpWrapMode] wrap
+3=ARGB argb
+4=BOOL clamp
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipSetImageAttributesICMMode]
+1=GpImageAttributes* imageAttr
+2=BOOL on
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageAttributesAdjustedPalette]
+1=GpImageAttributes* imageAttr
+2=ColorPalette* colorPalette
+3=[ColorAdjustType] colorAdjustType
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipFlush]
+1=GpGraphics* graphics
+2=[GpFlushIntention] intention
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateFromHDC]
+1=HDC hdc
+2=GpGraphics** graphics
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateFromHDC2]
+1=HDC hdc
+2=HANDLE hDevice
+3=GpGraphics** graphics
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;windows.h.api;
+[GdipCreateFromHWND]
+1=HWND hwnd
+2=GpGraphics** graphics
+ParamCount=2
+Header=gdiplus.h.api;windows.h.api;
+[GdipCreateFromHWNDICM]
+1=HWND hwnd
+2=GpGraphics** graphics
+ParamCount=2
+Header=gdiplus.h.api;windows.h.api;
+[GdipDeleteGraphics]
+1=GpGraphics* graphics
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetDC]
+1=GpGraphics* graphics
+2=HDC* hdc
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipReleaseDC]
+1=GpGraphics* graphics
+2=HDC hdc
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipSetCompositingMode]
+1=GpGraphics* graphics
+2=[CompositingMode] compositingMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCompositingMode]
+1=GpGraphics* graphics
+2=CompositingMode* compositingMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetRenderingOrigin]
+1=GpGraphics* graphics
+2=INT x
+3=INT y
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetRenderingOrigin]
+1=GpGraphics* graphics
+2=INT* x
+3=INT* y
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetCompositingQuality]
+1=GpGraphics* graphics
+2=[CompositingQuality] compositingQuality
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetCompositingQuality]
+1=GpGraphics* graphics
+2=CompositingQuality* compositingQuality
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetSmoothingMode]
+1=GpGraphics* graphics
+2=[SmoothingMode] smoothingMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetSmoothingMode]
+1=GpGraphics* graphics
+2=SmoothingMode* smoothingMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPixelOffsetMode]
+1=GpGraphics* graphics
+2=[PixelOffsetMode] pixelOffsetMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPixelOffsetMode]
+1=GpGraphics* graphics
+2=PixelOffsetMode* pixelOffsetMode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetTextRenderingHint]
+1=GpGraphics* graphics
+2=[TextRenderingHint] mode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetTextRenderingHint]
+1=GpGraphics* graphics
+2=TextRenderingHint* mode
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetTextContrast]
+1=GpGraphics* graphics
+2=UINT contrast
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetTextContrast]
+1=GpGraphics* graphics
+2=UINT* contrast
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetInterpolationMode]
+1=GpGraphics* graphics
+2=[InterpolationMode] interpolationMode
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipGetInterpolationMode]
+1=GpGraphics* graphics
+2=InterpolationMode* interpolationMode
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipSetWorldTransform]
+1=GpGraphics* graphics
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetWorldTransform]
+1=GpGraphics* graphics
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipMultiplyWorldTransform]
+1=GpGraphics* graphics
+2=NST GpMatrix* matrix
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateWorldTransform]
+1=GpGraphics* graphics
+2=REAL dx
+3=REAL dy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipScaleWorldTransform]
+1=GpGraphics* graphics
+2=REAL sx
+3=REAL sy
+4=[GpMatrixOrder] order
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipRotateWorldTransform]
+1=GpGraphics* graphics
+2=REAL angle
+3=[GpMatrixOrder] order
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetWorldTransform]
+1=GpGraphics* graphics
+2=GpMatrix* matrix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipResetPageTransform]
+1=GpGraphics* graphics
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetPageUnit]
+1=GpGraphics* graphics
+2=GpUnit* unit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetPageScale]
+1=GpGraphics* graphics
+2=REAL* scale
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPageUnit]
+1=GpGraphics* graphics
+2=GpUnit unit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetPageScale]
+1=GpGraphics* graphics
+2=REAL scale
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetDpiX]
+1=GpGraphics* graphics
+2=REAL* dpi
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetDpiY]
+1=GpGraphics* graphics
+2=REAL* dpi
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipTransformPoints]
+1=GpGraphics* graphics
+2=[GpCoordinateSpace] destSpace
+3=[GpCoordinateSpace] srcSpace
+4=GpPointF* points
+5=INT count
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipTransformPointsI]
+1=GpGraphics* graphics
+2=[GpCoordinateSpace] destSpace
+3=[GpCoordinateSpace] srcSpace
+4=GpPoint* points
+5=INT count
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipGetNearestColor]
+1=GpGraphics* graphics
+2=ARGB* argb
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateHalftonePalette]
+ParamCount=0
+[GdipDrawLine]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x1
+4=REAL y1
+5=REAL x2
+6=REAL y2
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawLineI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x1
+4=INT y1
+5=INT x2
+6=INT y2
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawLines]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawLinesI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawArc]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipDrawArcI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipDrawBezier]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x1
+4=REAL y1
+5=REAL x2
+6=REAL y2
+7=REAL x3
+8=REAL y3
+9=REAL x4
+10=REAL y4
+ParamCount=10
+Header=gdiplus.h.api;
+[GdipDrawBezierI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x1
+4=INT y1
+5=INT x2
+6=INT y2
+7=INT x3
+8=INT y3
+9=INT x4
+10=INT y4
+ParamCount=10
+Header=gdiplus.h.api;
+[GdipDrawBeziers]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawBeziersI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawRectangle]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawRectangleI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawRectangles]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpRectF* rects
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawRectanglesI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpRect* rects
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawEllipse]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawEllipseI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawPie]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipDrawPieI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipDrawPolygon]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawPolygonI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawPath]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=GpPath* path
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipDrawCurve]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawCurveI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawCurve2]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+5=REAL tension
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipDrawCurve2I]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+5=REAL tension
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipDrawCurve3]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+5=INT offset
+6=INT numberOfSegments
+7=REAL tension
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipDrawCurve3I]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+5=INT offset
+6=INT numberOfSegments
+7=REAL tension
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipDrawClosedCurve]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawClosedCurveI]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawClosedCurve2]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPointF* points
+4=INT count
+5=REAL tension
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipDrawClosedCurve2I]
+1=GpGraphics* graphics
+2=GpPen* pen
+3=NST GpPoint* points
+4=INT count
+5=REAL tension
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipGraphicsClear]
+1=GpGraphics* graphics
+2=ARGB color
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipFillRectangle]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillRectangleI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillRectangles]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpRectF* rects
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillRectanglesI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpRect* rects
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillPolygon]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPointF* points
+4=INT count
+5=[GpFillMode] fillMode
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipFillPolygonI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPoint* points
+4=INT count
+5=[GpFillMode] fillMode
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipFillPolygon2]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillPolygon2I]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillEllipse]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillEllipseI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillPie]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipFillPieI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+7=REAL startAngle
+8=REAL sweepAngle
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipFillPath]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=GpPath* path
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipFillClosedCurve]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPointF* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillClosedCurveI]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPoint* points
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipFillClosedCurve2]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPointF* points
+4=INT count
+5=REAL tension
+6=[GpFillMode] fillMode
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillClosedCurve2I]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=NST GpPoint* points
+4=INT count
+5=REAL tension
+6=[GpFillMode] fillMode
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipFillRegion]
+1=GpGraphics* graphics
+2=GpBrush* brush
+3=GpRegion* region
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipDrawImageFX]
+1=GpGraphics* graphics
+2=GpImage* image
+3=GpRectF* source
+4=GpMatrix* xForm
+5=CGpEffect* effect
+6=GpImageAttributes* imageAttributes
+7=GpUnit srcUnit
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipDrawImage]
+1=GpGraphics* graphics
+2=GpImage* image
+3=REAL x
+4=REAL y
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawImageI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=INT x
+4=INT y
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawImageRect]
+1=GpGraphics* graphics
+2=GpImage* image
+3=REAL x
+4=REAL y
+5=REAL width
+6=REAL height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawImageRectI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=INT x
+4=INT y
+5=INT width
+6=INT height
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipDrawImagePoints]
+1=GpGraphics* graphics
+2=GpImage* image
+3=NST GpPointF* dstpoints
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawImagePointsI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=NST GpPoint* dstpoints
+4=INT count
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipDrawImagePointRect]
+1=GpGraphics* graphics
+2=GpImage* image
+3=REAL x
+4=REAL y
+5=REAL srcx
+6=REAL srcy
+7=REAL srcwidth
+8=REAL srcheight
+9=GpUnit srcUnit
+ParamCount=9
+Header=gdiplus.h.api;
+[GdipDrawImagePointRectI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=INT x
+4=INT y
+5=INT srcx
+6=INT srcy
+7=INT srcwidth
+8=INT srcheight
+9=GpUnit srcUnit
+ParamCount=9
+Header=gdiplus.h.api;
+[GdipDrawImageRectRect]
+1=GpGraphics* graphics
+2=GpImage* image
+3=REAL dstx
+4=REAL dsty
+5=REAL dstwidth
+6=REAL dstheight
+7=REAL srcx
+8=REAL srcy
+9=REAL srcwidth
+10=REAL srcheight
+11=GpUnit srcUnit
+12=NST GpImageAttributes* imageAttributes
+13=DrawImageAbort callback
+14=VOID* callbackData
+ParamCount=14
+Header=gdiplus.h.api;
+[GdipDrawImageRectRectI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=INT dstx
+4=INT dsty
+5=INT dstwidth
+6=INT dstheight
+7=INT srcx
+8=INT srcy
+9=INT srcwidth
+10=INT srcheight
+11=GpUnit srcUnit
+12=NST GpImageAttributes* imageAttributes
+13=DrawImageAbort callback
+14=VOID* callbackData
+ParamCount=14
+Header=gdiplus.h.api;
+[GdipDrawImagePointsRect]
+1=GpGraphics* graphics
+2=GpImage* image
+3=NST GpPointF* points
+4=INT count
+5=REAL srcx
+6=REAL srcy
+7=REAL srcwidth
+8=REAL srcheight
+9=GpUnit srcUnit
+10=NST GpImageAttributes* imageAttributes
+11=DrawImageAbort callback
+12=VOID* callbackData
+ParamCount=12
+Header=gdiplus.h.api;
+[GdipDrawImagePointsRectI]
+1=GpGraphics* graphics
+2=GpImage* image
+3=NST GpPoint* points
+4=INT count
+5=INT srcx
+6=INT srcy
+7=INT srcwidth
+8=INT srcheight
+9=GpUnit srcUnit
+10=NST GpImageAttributes* imageAttributes
+11=DrawImageAbort callback
+12=VOID* callbackData
+ParamCount=12
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestPoint]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=EnumerateMetafileProc callback
+4=VOID* callbackData
+5=NST GpImageAttributes* imageAttributes
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestPointI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=EnumerateMetafileProc callback
+4=VOID* callbackData
+5=NST GpImageAttributes* imageAttributes
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestRect]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=EnumerateMetafileProc callback
+4=VOID* callbackData
+5=NST GpImageAttributes* imageAttributes
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestRectI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=EnumerateMetafileProc callback
+4=VOID* callbackData
+5=NST GpImageAttributes* imageAttributes
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestPoints]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=NST PointF* destPoints
+4=INT count
+5=EnumerateMetafileProc callback
+6=VOID* callbackData
+7=NST GpImageAttributes* imageAttributes
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileDestPointsI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=NST Point* destPoints
+4=INT count
+5=EnumerateMetafileProc callback
+6=VOID* callbackData
+7=NST GpImageAttributes* imageAttributes
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestPoint]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=[Unit] srcUnit
+4=EnumerateMetafileProc callback
+5=VOID* callbackData
+6=NST GpImageAttributes* imageAttributes
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestPointI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=[Unit] srcUnit
+4=EnumerateMetafileProc callback
+5=VOID* callbackData
+6=NST GpImageAttributes* imageAttributes
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestRect]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=[Unit] srcUnit
+4=EnumerateMetafileProc callback
+5=VOID* callbackData
+6=NST GpImageAttributes* imageAttributes
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestRectI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=[Unit] srcUnit
+4=EnumerateMetafileProc callback
+5=VOID* callbackData
+6=NST GpImageAttributes* imageAttributes
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestPoints]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=NST PointF* destPoints
+4=INT count
+5=[Unit] srcUnit
+6=EnumerateMetafileProc callback
+7=VOID* callbackData
+8=NST GpImageAttributes* imageAttributes
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipEnumerateMetafileSrcRectDestPointsI]
+1=GpGraphics* graphics
+2=NST GpMetafile* metafile
+3=NST Point* destPoints
+4=INT count
+5=[Unit] srcUnit
+6=EnumerateMetafileProc callback
+7=VOID* callbackData
+8=NST GpImageAttributes* imageAttributes
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipPlayMetafileRecord]
+1=NST GpMetafile* metafile
+2=EmfPlusRecordType recordType
+3=UINT flags
+4=UINT dataSize
+5=NST BYTE* data
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipSetClipGraphics]
+1=GpGraphics* graphics
+2=GpGraphics* srcgraphics
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetClipRect]
+1=GpGraphics* graphics
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+6=[CombineMode] combineMode
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipSetClipRectI]
+1=GpGraphics* graphics
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+6=[CombineMode] combineMode
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipSetClipPath]
+1=GpGraphics* graphics
+2=GpPath* path
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetClipRegion]
+1=GpGraphics* graphics
+2=GpRegion* region
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipSetClipHrgn]
+1=GpGraphics* graphics
+2=HRGN hRgn
+3=[CombineMode] combineMode
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;
+[GdipResetClip]
+1=GpGraphics* graphics
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipTranslateClip]
+1=GpGraphics* graphics
+2=REAL dx
+3=REAL dy
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipTranslateClipI]
+1=GpGraphics* graphics
+2=INT dx
+3=INT dy
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetClip]
+1=GpGraphics* graphics
+2=GpRegion* region
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetClipBounds]
+1=GpGraphics* graphics
+2=GpRectF* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetClipBoundsI]
+1=GpGraphics* graphics
+2=GpRect* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsClipEmpty]
+1=GpGraphics* graphics
+2=BOOL* result
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetVisibleClipBounds]
+1=GpGraphics* graphics
+2=GpRectF* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetVisibleClipBoundsI]
+1=GpGraphics* graphics
+2=GpRect* rect
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsVisibleClipEmpty]
+1=GpGraphics* graphics
+2=BOOL* result
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipIsVisiblePoint]
+1=GpGraphics* graphics
+2=REAL x
+3=REAL y
+4=BOOL* result
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipIsVisiblePointI]
+1=GpGraphics* graphics
+2=INT x
+3=INT y
+4=BOOL* result
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipIsVisibleRect]
+1=GpGraphics* graphics
+2=REAL x
+3=REAL y
+4=REAL width
+5=REAL height
+6=BOOL* result
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipIsVisibleRectI]
+1=GpGraphics* graphics
+2=INT x
+3=INT y
+4=INT width
+5=INT height
+6=BOOL* result
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipSaveGraphics]
+1=GpGraphics* graphics
+2=GraphicsState* state
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipRestoreGraphics]
+1=GpGraphics* graphics
+2=GraphicsState state
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipBeginContainer]
+1=GpGraphics* graphics
+2=NST GpRectF* dstrect
+3=NST GpRectF* srcrect
+4=GpUnit unit
+5=GraphicsContainer* state
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipBeginContainerI]
+1=GpGraphics* graphics
+2=NST GpRect* dstrect
+3=NST GpRect* srcrect
+4=GpUnit unit
+5=GraphicsContainer* state
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipBeginContainer2]
+1=GpGraphics* graphics
+2=GraphicsContainer* state
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipEndContainer]
+1=GpGraphics* graphics
+2=GraphicsContainer state
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetMetafileHeaderFromWmf]
+1=HMETAFILE hWmf
+2=NST WmfPlaceableFileHeader* wmfPlaceableFileHeader
+3=MetafileHeader* header
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;
+[GdipGetMetafileHeaderFromEmf]
+1=HENHMETAFILE hEmf
+2=MetafileHeader* header
+ParamCount=2
+Header=gdiplus.h.api;windows.h.api;
+[GdipGetMetafileHeaderFromFile]
+1=NST WCHAR* filename
+2=MetafileHeader* header
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetMetafileHeaderFromStream]
+1=IStream* stream
+2=MetafileHeader* header
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetMetafileHeaderFromMetafile]
+1=GpMetafile* metafile
+2=MetafileHeader* header
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetHemfFromMetafile]
+1=GpMetafile* metafile
+2=HENHMETAFILE* hEmf
+ParamCount=2
+Header=gdiplus.h.api;windows.h.api;
+[GdipCreateStreamOnFile]
+1=NST WCHAR* filename
+2=UINT access
+3=IStream** stream
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateMetafileFromWmf]
+1=HMETAFILE hWmf
+2=BOOL deleteWmf
+3=NST WmfPlaceableFileHeader* wmfPlaceableFileHeader
+4=GpMetafile** metafile
+ParamCount=4
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateMetafileFromEmf]
+1=HENHMETAFILE hEmf
+2=BOOL deleteEmf
+3=GpMetafile** metafile
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipCreateMetafileFromFile]
+1=NST WCHAR* file
+2=GpMetafile** metafile
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipCreateMetafileFromWmfFile]
+1=NST WCHAR* file
+2=NST WmfPlaceableFileHeader* wmfPlaceableFileHeader
+3=GpMetafile** metafile
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateMetafileFromStream]
+1=IStream* stream
+2=GpMetafile** metafile
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipRecordMetafile]
+1=HDC referenceHdc
+2=[EmfType] type
+3=NST GpRectF* frameRect
+4=[MetafileFrameUnit] frameUnit
+5=NST WCHAR* description
+6=GpMetafile** metafile
+ParamCount=6
+Header=gdiplus.h.api;gdi.h.api;
+[GdipRecordMetafileI]
+1=HDC referenceHdc
+2=[EmfType] type
+3=NST GpRect* frameRect
+4=[MetafileFrameUnit] frameUnit
+5=NST WCHAR* description
+6=GpMetafile** metafile
+ParamCount=6
+Header=gdiplus.h.api;gdi.h.api;
+[GdipRecordMetafileFileName]
+1=NST WCHAR* fileName
+2=HDC referenceHdc
+3=[EmfType] type
+4=NST GpRectF* frameRect
+5=[MetafileFrameUnit] frameUnit
+6=NST WCHAR* description
+7=GpMetafile** metafile
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipRecordMetafileFileNameI]
+1=NST WCHAR* fileName
+2=HDC referenceHdc
+3=[EmfType] type
+4=NST GpRect* frameRect
+5=[MetafileFrameUnit] frameUnit
+6=NST WCHAR* description
+7=GpMetafile** metafile
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipRecordMetafileStream]
+1=IStream* stream
+2=HDC referenceHdc
+3=[EmfType] type
+4=NST GpRectF* frameRect
+5=[MetafileFrameUnit] frameUnit
+6=NST WCHAR* description
+7=GpMetafile** metafile
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipRecordMetafileStreamI]
+1=IStream* stream
+2=HDC referenceHdc
+3=[EmfType] type
+4=NST GpRect* frameRect
+5=[MetafileFrameUnit] frameUnit
+6=NST WCHAR* description
+7=GpMetafile** metafile
+ParamCount=7
+Header=gdiplus.h.api;gdi.h.api;
+[GdipSetMetafileDownLevelRasterizationLimit]
+1=GpMetafile* metafile
+2=UINT metafileRasterizationLimitDpi
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetMetafileDownLevelRasterizationLimit]
+1=NST GpMetafile* metafile
+2=UINT* metafileRasterizationLimitDpi
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetImageDecodersSize]
+1=UINT* numDecoders
+2=UINT* size
+ParamCount=2
+[GdipGetImageDecoders]
+1=UINT numDecoders
+2=UINT size
+3=ImageCodecInfo* decoders
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetImageEncodersSize]
+1=UINT* numEncoders
+2=UINT* size
+ParamCount=2
+[GdipGetImageEncoders]
+1=UINT numEncoders
+2=UINT size
+3=ImageCodecInfo* encoders
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipComment]
+1=GpGraphics* graphics
+2=UINT sizeData
+3=NST BYTE* data
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateFontFamilyFromName]
+1=NST WCHAR* name
+2=GpFontCollection* fontCollection
+3=GpFontFamily** FontFamily
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipDeleteFontFamily]
+1=GpFontFamily* FontFamily
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCloneFontFamily]
+1=GpFontFamily* FontFamily
+2=GpFontFamily** clonedFontFamily
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetGenericFontFamilySansSerif]
+1=GpFontFamily** nativeFamily
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetGenericFontFamilySerif]
+1=GpFontFamily** nativeFamily
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetGenericFontFamilyMonospace]
+1=GpFontFamily** nativeFamily
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetFamilyName]
+1=NST GpFontFamily* family
+2=LPWSTR name
+3=[LANGID] language
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipIsStyleAvailable]
+1=NST GpFontFamily* family
+2=INT style
+3=BOOL* IsStyleAvailable
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipFontCollectionEnumerable]
+1=GpFontCollection* fontCollection
+2=GpGraphics* graphics
+3=INT* numFound
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipFontCollectionEnumerate]
+1=GpFontCollection* fontCollection
+2=INT numSought
+3=GpFontFamily* [] gpfamilies
+4=INT* numFound
+5=GpGraphics* graphics
+ParamCount=-5
+Header=gdiplus.h.api;
+[GdipGetEmHeight]
+1=NST GpFontFamily* family
+2=[FontStyle] style
+3=UINT16* EmHeight
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetCellAscent]
+1=NST GpFontFamily* family
+2=INT style
+3=UINT16* CellAscent
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetCellDescent]
+1=NST GpFontFamily* family
+2=INT style
+3=UINT16* CellDescent
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetLineSpacing]
+1=NST GpFontFamily* family
+2=[FontStyle] style
+3=UINT16* LineSpacing
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateFontFromDC]
+1=HDC hdc
+2=GpFont** font
+ParamCount=2
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateFontFromLogfont]
+1=HDC hdc
+2=NST LOGFONT* logfont
+3=GpFont** font
+ParamCount=3
+Header=gdiplus.h.api;gdi.h.api;
+[GdipCreateFont]
+1=NST GpFontFamily* fontFamily
+2=REAL emSize
+3=[FontStyle] style
+4=[Unit] unit
+5=GpFont** font
+ParamCount=5
+Header=gdiplus.h.api;
+[GdipCloneFont]
+1=GpFont* font
+2=GpFont** cloneFont
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipDeleteFont]
+1=GpFont* font
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetFamily]
+1=GpFont* font
+2=GpFontFamily** family
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetFontStyle]
+1=GpFont* font
+2=FontStyle* style
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetFontSize]
+1=GpFont* font
+2=REAL* size
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetFontUnit]
+1=GpFont* font
+2=Unit* unit
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetFontHeight]
+1=NST GpFont* font
+2=NST GpGraphics* graphics
+3=REAL* height
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetFontHeightGivenDPI]
+1=NST GpFont* font
+2=REAL dpi
+3=REAL* height
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipGetLogFont]
+1=GpFont* font
+2=GpGraphics* graphics
+3=LOGFONT* logfont
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipNewInstalledFontCollection]
+1=GpFontCollection** fontCollection
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipNewPrivateFontCollection]
+1=GpFontCollection** fontCollection
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipDeletePrivateFontCollection]
+1=GpFontCollection** fontCollection
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipGetFontCollectionFamilyCount]
+1=GpFontCollection* fontCollection
+2=INT* numFound
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetFontCollectionFamilyList]
+1=GpFontCollection* fontCollection
+2=INT numSought
+3=GpFontFamily* [] gpfamilies
+4=INT* numFound
+ParamCount=-4
+Header=gdiplus.h.api;
+[GdipPrivateAddFontFile]
+1=GpFontCollection* fontCollection
+2=NST WCHAR* filename
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipPrivateAddMemoryFont]
+1=GpFontCollection* fontCollection
+2=NST void* memory
+3=INT length
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipDrawString]
+1=GpGraphics* graphics
+2=NST WCHAR* string
+3=INT length
+4=NST GpFont* font
+5=NST RectF* layoutRect
+6=NST GpStringFormat* stringFormat
+7=NST GpBrush* brush
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipMeasureString]
+1=GpGraphics* graphics
+2=NST WCHAR* string
+3=INT length
+4=NST GpFont* font
+5=NST RectF* layoutRect
+6=NST GpStringFormat* stringFormat
+7=RectF* boundingBox
+8=INT* codepointsFitted
+9=INT* linesFilled
+ParamCount=9
+Header=gdiplus.h.api;
+[GdipMeasureCharacterRanges]
+1=GpGraphics* graphics
+2=NST WCHAR* string
+3=INT length
+4=NST GpFont* font
+5=NST GpStringFormat* stringFormat
+6=INT regionCount
+7=GpRegion** regions
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipDrawDriverString]
+1=GpGraphics* graphics
+2=NST UINT16* text
+3=INT length
+4=NST GpFont* font
+5=NST GpBrush* brush
+6=NST PointF* positions
+7=[DriverStringOptions] flags
+8=NST GpMatrix* matrix
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipMeasureDriverString]
+1=GpGraphics* graphics
+2=NST UINT16* text
+3=INT length
+4=NST GpFont* font
+5=NST PointF* positions
+6=[DriverStringOptions] flags
+7=NST GpMatrix* matrix
+8=RectF* boundingBox
+ParamCount=8
+Header=gdiplus.h.api;
+[GdipCreateStringFormat]
+1=[StringFormatFlags] formatAttributes
+2=[LANGID] language
+3=GpStringFormat** format
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipStringFormatGetGenericDefault]
+1=GpStringFormat** format
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipStringFormatGetGenericTypographic]
+1=GpStringFormat** format
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipDeleteStringFormat]
+1=GpStringFormat* format
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipCloneStringFormat]
+1=NST GpStringFormat* format
+2=GpStringFormat** newFormat
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatFlags]
+1=GpStringFormat* format
+2=[StringFormatFlags] flags
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetStringFormatFlags]
+1=NST GpStringFormat* format
+2=StringFormatFlags* flags
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatAlign]
+1=GpStringFormat* format
+2=[StringAlignment] align
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetStringFormatAlign]
+1=NST GpStringFormat* format
+2=StringAlignment* align
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatLineAlign]
+1=GpStringFormat* format
+2=[StringAlignment] align
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetStringFormatLineAlign]
+1=NST GpStringFormat* format
+2=StringAlignment* align
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatTrimming]
+1=GpStringFormat* format
+2=[StringTrimming] trimming
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetStringFormatTrimming]
+1=NST GpStringFormat* format
+2=StringTrimming* trimming
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatHotkeyPrefix]
+1=GpStringFormat* format
+2=[HotkeyPrefix] hotkeyPrefix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipGetStringFormatHotkeyPrefix]
+1=NST GpStringFormat* format
+2=HotkeyPrefix* hotkeyPrefix
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatTabStops]
+1=GpStringFormat* format
+2=REAL firstTabOffset
+3=INT count
+4=NST REAL* tabStops
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetStringFormatTabStops]
+1=NST GpStringFormat* format
+2=INT count
+3=REAL* firstTabOffset
+4=REAL* tabStops
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipGetStringFormatTabStopCount]
+1=NST GpStringFormat* format
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatDigitSubstitution]
+1=GpStringFormat* format
+2=[LANGID] language
+3=[StringDigitSubstitute] substitute
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipGetStringFormatDigitSubstitution]
+1=NST GpStringFormat* format
+2=LANGID* language
+3=StringDigitSubstitute* substitute
+ParamCount=3
+Header=gdiplus.h.api;windows.h.api;
+[GdipGetStringFormatMeasurableCharacterRangeCount]
+1=NST GpStringFormat* format
+2=INT* count
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipSetStringFormatMeasurableCharacterRanges]
+1=GpStringFormat* format
+2=INT rangeCount
+3=NST CharacterRange* ranges
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipCreateCachedBitmap]
+1=GpBitmap* bitmap
+2=GpGraphics* graphics
+3=GpCachedBitmap** cachedBitmap
+ParamCount=3
+Header=gdiplus.h.api;
+[GdipDeleteCachedBitmap]
+1=GpCachedBitmap* cachedBitmap
+ParamCount=1
+Header=gdiplus.h.api;
+[GdipDrawCachedBitmap]
+1=GpGraphics* graphics
+2=GpCachedBitmap* cachedBitmap
+3=INT x
+4=INT y
+ParamCount=4
+Header=gdiplus.h.api;
+[GdipEmfToWmfBits]
+1=HENHMETAFILE hemf
+2=UINT cbData16
+3=LPBYTE pData16
+4=INT iMapMode
+5=INT eFlags
+ParamCount=5
+Header=windows.h.api;
+[GdipSetImageAttributesCachedBackground]
+1=GpImageAttributes* imageattr
+2=BOOL enableFlag
+ParamCount=2
+Header=gdiplus.h.api;
+[GdipTestControl]
+1=[GpTestControlEnum] control
+2=void* param
+ParamCount=2
+Header=gdiplus.h.api;
+[GdiplusNotificationHook]
+1=ULONG_PTR* token
+ParamCount=1
+[GdiplusNotificationUnhook]
+1=ULONG_PTR token
+ParamCount=1
+[GdipConvertToEmfPlus]
+1=GpGraphics* refGraphics
+2=GpMetafile* metafile
+3=INT* conversionFailureFlag
+4=[EmfType] emfType
+5=const WCHAR* description
+6=GpMetafile** out_metafile
+ParamCount=6
+Header=gdiplus.h.api;
+[GdipConvertToEmfPlusToFile]
+1=GpGraphics* refGraphics
+2=GpMetafile* metafile
+3=INT* conversionFailureFlag
+4=const WCHAR* filename
+5=[EmfType] emfType
+6=const WCHAR* description
+7=GpMetafile** out_metafile
+ParamCount=7
+Header=gdiplus.h.api;
+[GdipConvertToEmfPlusToStream]
+1=GpGraphics* refGraphics
+2=GpMetafile* metafile
+3=INT* conversionFailureFlag
+4=IStream* stream
+5=[EmfType] emfType
+6=const WCHAR* description
+7=GpMetafile** out_metafile
+ParamCount=7
+Header=gdiplus.h.api;

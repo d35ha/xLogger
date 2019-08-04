@@ -1,0 +1,15 @@
+[CallingConvention]
+@=STDCALL
+[WerReportHang]
+1=HWND hwndHungWinow
+2=PCWSTR wszHungApplicationName
+ParamCount=2
+Header=windows.h.api;
+[AddERExcludedApplication]
+1=LPCTSTR szApplication
+ParamCount=1
+[ReportFault]
+1=LPEXCEPTION_POINTERS pep
+2=DWORD dwMode
+ParamCount=2
+Header=windows.h.api;

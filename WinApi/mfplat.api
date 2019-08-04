@@ -1,0 +1,708 @@
+[CallingConvention]
+@=STDCALL
+[CreatePropertyStore]
+1=IPropertyStore** ppStore
+ParamCount=1
+[MFAddPeriodicCallback]
+1=MFPERIODICCALLBACK Callback
+2=IUnknown* pContext
+3=DWORD* pdwKey
+ParamCount=3
+[MFAllocateSerialWorkQueue]
+1=DWORD dwWorkQueue
+2=DWORD* pdwWorkQueue
+ParamCount=2
+[MFAllocateWorkQueue]
+1=DWORD* pdwWorkQueue
+ParamCount=1
+[MFAllocateWorkQueueEx]
+1=MFASYNC_WORKQUEUE_TYPE WorkQueueType
+2=DWORD* pdwWorkQueue
+ParamCount=2
+[MFAverageTimePerFrameToFrameRate]
+1=UINT64 unAverageTimePerFrame
+2=UINT32* punNumerator
+3=UINT32* punDenominator
+ParamCount=3
+[MFBeginCreateFile]
+1=MF_FILE_ACCESSMODE AccessMode
+2=MF_FILE_OPENMODE OpenMode
+3=MF_FILE_FLAGS fFlags
+4=LPCWSTR pwszFilePath
+5=IMFAsyncCallback* pCallback
+6=IUnknown* pState
+7=IUnknown** ppCancelCookie
+ParamCount=7
+[MFBeginRegisterWorkQueueWithMMCSS]
+1=DWORD dwWorkQueueId
+2=LPCWSTR wszClass
+3=DWORD dwTaskId
+4=IMFAsyncCallback* pDoneCallback
+5=IUnknown* pDoneState
+ParamCount=5
+[MFBeginRegisterWorkQueueWithMMCSSEx]
+1=DWORD dwWorkQueueId
+2=LPCWSTR wszClass
+3=DWORD dwTaskId
+4=LONG lPriority
+5=IMFAsyncCallback* pDoneCallback
+6=IUnknown* pDoneState
+ParamCount=6
+[MFBeginUnregisterWorkQueueWithMMCSS]
+1=DWORD dwWorkQueueId
+2=IMFAsyncCallback* pDoneCallback
+3=IUnknown* pDoneState
+ParamCount=3
+[MFCalculateBitmapImageSize]
+1=BITMAPINFOHEADER* pBMIH
+2=UINT32 cbBufSize
+3=UINT32* pcbImageSize
+4=BOOL* pbKnown
+ParamCount=4
+Header=gdi.h.api;
+[MFCalculateImageSize]
+1=REFGUID guidSubtype
+2=UINT32 unWidth
+3=UINT32 unHeight
+4=UINT32* pcbImageSize
+ParamCount=4
+Header=windows.h.api;
+[MFCancelCreateFile]
+1=IUnknown* pCancelCookie
+ParamCount=1
+[MFCancelWorkItem]
+1=MFWORKITEM_KEY Key
+ParamCount=1
+[MFScheduleWorkItem]
+1=IMFAsyncCallback* pCallback
+2=IUnknown* pState
+3=INT64 Timeout
+4=MFWORKITEM_KEY* pKey
+ParamCount=4
+[MFScheduleWorkItemEx]
+1=IMFAsyncResult* pResult
+2=INT64 Timeout
+3=MFWORKITEM_KEY* pKey
+ParamCount=3
+[MFCompareFullToPartialMediaType]
+1=IMFMediaType* pMFTypeFull
+2=IMFMediaType* pMFTypePartial
+ParamCount=2
+[MFConvertColorInfoFromDXVA]
+1=MFVIDEOFORMAT* pToFormat
+2=DWORD dwFromDXVA
+ParamCount=2
+[MFConvertColorInfoToDXVA]
+1=DWORD* pdwToDXVA
+2=const MFVIDEOFORMAT* pFromFormat
+ParamCount=2
+[MFConvertFromFP16Array]
+1=float* pDest
+2=const WORD* pSrc
+3=DWORD dwCount
+ParamCount=3
+[MFConvertToFP16Array]
+1=WORD* pDest
+2=const float* pSrc
+3=DWORD dwCount
+ParamCount=3
+[MFCopyImage]
+1=BYTE* pDest
+2=LONG lDestStride
+3=const BYTE* pSrc
+4=LONG lSrcStride
+5=DWORD dwWidthInBytes
+6=DWORD dwLines
+ParamCount=6
+[MFCreate2DMediaBuffer]
+1=DWORD dwWidth
+2=DWORD dwHeight
+3=DWORD dwFourCC
+4=BOOL fBottomUp
+5=IMFMediaBuffer** ppBuffer
+ParamCount=5
+[MFCreateAlignedMemoryBuffer]
+1=DWORD cbMaxLength
+2=DWORD fAlignmentFlags
+3=IMFMediaBuffer** ppBuffer
+ParamCount=3
+[MFCreateAMMediaTypeFromMFMediaType]
+1=IMFMediaType* pMFType
+2=GUID guidFormatBlockType
+3=AM_MEDIA_TYPE** ppAMType
+ParamCount=-3
+Header=multimedia.h.api;
+[MFCreateAsyncResult]
+1=IUnknown* punkObject
+2=IMFAsyncCallback* pCallback
+3=IUnknown* punkState
+4=IMFAsyncResult** ppAsyncResult
+ParamCount=4
+[MFCreateAttributes]
+1=IMFAttributes** ppMFAttributes
+2=UINT32 cInitialSize
+ParamCount=2
+[MFCreateAudioMediaType]
+1=WAVEFORMATEX* pAudioFormat
+2=IMFAudioMediaType** ppIAudioMediaType
+ParamCount=2
+Header=multimedia.h.api;
+[MFCreateCollection]
+1=IMFCollection** ppIMFCollection
+ParamCount=1
+[MFCreateEventQueue]
+1=IMFMediaEventQueue** ppMediaEventQueue
+ParamCount=1
+[MFCreateFile]
+1=MF_FILE_ACCESSMODE AccessMode
+2=MF_FILE_OPENMODE OpenMode
+3=MF_FILE_FLAGS fFlags
+4=LPCWSTR pwszFileURL
+5=IMFByteStream** ppIByteStream
+ParamCount=5
+[MFCreateLegacyMediaBufferOnMFMediaBuffer]
+1=IMFSample* pIMFSample
+2=IMFMediaBuffer* pIMFMediaBuffer
+3=DWORD cbOffset
+4=IMediaBuffer** ppIMediaBuffer
+ParamCount=4
+[MFCreateMediaBufferWrapper]
+1=IMFMediaBuffer* pBuffer
+2=DWORD cbOffset
+3=DWORD dwLength
+4=IMFMediaBuffer** ppBuffer
+ParamCount=4
+[MFCreateMediaEvent]
+1=MediaEventType met
+2=REFGUID guidExtendedType
+3=HRESULT hrStatus
+4=PROPVARIANT* pvValue
+5=IMFMediaEvent** ppEvent
+ParamCount=5
+Header=ole.h.api;windows.h.api;
+[MFCreateMediaType]
+1=IMFMediaType** ppMFType
+ParamCount=1
+[MFCreateMediaTypeFromRepresentation]
+1=GUID guidRepresentation
+2=LPVOID pvRepresentation
+3=IMFMediaType** ppIMediaType
+ParamCount=-3
+[MFCreateMemoryBuffer]
+1=DWORD cbMaxLength
+2=IMFMediaBuffer** ppBuffer
+ParamCount=2
+[MFCreateMFByteStreamOnStream]
+1=IStream* pStream
+2=IMFByteStream** ppByteStream
+ParamCount=2
+[MFCreateMFVideoFormatFromMFMediaType]
+1=IMFMediaType* pMFType
+2=MFVIDEOFORMAT** ppMFVF
+3=UINT32* pcbSize
+ParamCount=3
+[MFCreatePathFromURL]
+1=LPCWSTR pwszFileURL
+2=LPWSTR* ppwszFilePath
+ParamCount=2
+[MFCreatePresentationDescriptor]
+1=DWORD cStreamDescriptors
+2=IMFStreamDescriptor** apStreamDescriptors
+3=IMFPresentationDescriptor** ppPresentationDescriptor
+ParamCount=3
+[MFCreateSample]
+1=IMFSample** ppIMFSample
+ParamCount=1
+[MFCreateSourceResolver]
+1=IMFSourceResolver** ppISourceResolver
+ParamCount=1
+[MFCreateStreamDescriptor]
+1=DWORD dwStreamIdentifier
+2=DWORD cMediaTypes
+3=IMFMediaType** apMediaTypes
+4=IMFStreamDescriptor** ppDescriptor
+ParamCount=4
+[MFCreateSystemTimeSource]
+1=IMFPresentationTimeSource** ppSystemTimeSource
+ParamCount=1
+[MFCreateTempFile]
+1=MF_FILE_ACCESSMODE AccessMode
+2=MF_FILE_OPENMODE OpenMode
+3=MF_FILE_FLAGS fFlags
+4=IMFByteStream** ppIByteStream
+ParamCount=4
+[MFCreateTransformActivate]
+1=IMFActivate** ppActivate
+ParamCount=1
+[MFCreateURLFromPath]
+1=LPCWSTR pwszFilePath
+2=LPWSTR* ppwszFileURL
+ParamCount=2
+[MFCreateVideoMediaType]
+1=const MFVIDEOFORMAT* pVideoFormat
+2=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=2
+[MFCreateVideoMediaTypeFromBitMapInfoHeader]
+1=BITMAPINFOHEADER* pbmihBitMapInfoHeader
+2=DWORD dwPixelAspectRatioX
+3=DWORD dwPixelAspectRatioY
+4=MFVideoInterlaceMode InterlaceMode
+5=QWORD VideoFlags
+6=QWORD qwFramesPerSecondNumerator
+7=QWORD qwFramesPerSecondDenominator
+8=DWORD dwMaxBitRate
+9=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=9
+Header=gdi.h.api;
+[MFCreateVideoMediaTypeFromBitMapInfoHeaderEx]
+1=BITMAPINFOHEADER* pbmihBitMapInfoHeader
+2=UINT32 cbBitMapInfoHeader
+3=DWORD dwPixelAspectRatioX
+4=DWORD dwPixelAspectRatioY
+5=MFVideoInterlaceMode InterlaceMode
+6=QWORD VideoFlags
+7=DWORD dwFramesPerSecondNumerator
+8=DWORD dwFramesPerSecondDenominator
+9=DWORD dwMaxBitRate
+10=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=10
+Header=gdi.h.api;
+[MFCreateVideoMediaTypeFromSubtype]
+1=GUID* pAMSubtype
+2=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=2
+Header=windows.h.api;
+[MFCreateVideoMediaTypeFromVideoInfoHeader]
+1=const KS_VIDEOINFOHEADER* pVideoInfoHeader
+2=DWORD cbVideoInfoHeader
+3=DWORD dwPixelAspectRatioX
+4=DWORD dwPixelAspectRatioY
+5=MFVideoInterlaceMode InterlaceMode
+6=QWORD VideoFlags
+7=GUID* pSubtype
+8=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=8
+Header=windows.h.api;
+[MFCreateVideoMediaTypeFromVideoInfoHeader2]
+1=const KS_VIDEOINFOHEADER2* pVideoInfoHeader
+2=DWORD cbVideoInfoHeader
+3=QWORD AdditionalVideoFlags
+4=GUID* pSubtype
+5=IMFVideoMediaType** ppIVideoMediaType
+ParamCount=5
+Header=windows.h.api;
+[MFCreateWaveFormatExFromMFMediaType]
+1=IMFMediaType* pMFType
+2=WAVEFORMATEX** ppWF
+3=UINT32* pcbSize
+4=UINT32 Flags
+ParamCount=4
+Header=multimedia.h.api;
+[MFDeserializeAttributesFromStream]
+1=IMFAttributes* pAttr
+2=DWORD dwOptions
+3=IStream* pStm
+ParamCount=3
+[MFDeserializePresentationDescriptor]
+1=DWORD cbData
+2=BYTE* pbData
+3=IMFPresentationDescriptor** ppPD
+ParamCount=3
+[MFEndCreateFile]
+1=IMFAsyncResult* pResult
+2=IMFByteStream** ppFile
+ParamCount=2
+[MFEndRegisterWorkQueueWithMMCSS]
+1=IMFAsyncResult* pResult
+2=DWORD* pdwTaskId
+ParamCount=2
+[MFEndUnregisterWorkQueueWithMMCSS]
+1=IMFAsyncResult* pResult
+ParamCount=1
+[MFFrameRateToAverageTimePerFrame]
+1=UINT32 unNumerator
+2=UINT32 unDenominator
+3=UINT64* punAverageTimePerFrame
+ParamCount=3
+[MFGetAttributesAsBlob]
+1=IMFAttributes* pAttributes
+2=UINT8* pBuf
+3=UINT cbBufSize
+ParamCount=3
+[MFGetAttributesAsBlobSize]
+1=IMFAttributes* pAttributes
+2=UINT32* pcbBufSize
+ParamCount=2
+[MFGetMFTMerit]
+1=IUnknown* pMFT
+2=UINT32 cbVerifier
+3=const BYTE* verifier
+4=DWORD* merit
+ParamCount=4
+[MFGetPlaneSize]
+1=DWORD format
+2=DWORD dwWidth
+3=DWORD dwHeight
+4=DWORD* pdwPlaneSize
+ParamCount=4
+[MFGetPluginControl]
+1=IMFPluginControl** ppPluginControl
+ParamCount=1
+[MFGetStrideForBitmapInfoHeader]
+1=DWORD format
+2=DWORD dwWidth
+3=LONG* pStride
+ParamCount=3
+[MFGetSystemTime]
+ParamCount=0
+[MFGetTimerPeriodicity]
+1=DWORD* Periodicity
+ParamCount=1
+[MFGetUncompressedVideoFormat]
+1=const MFVIDEOFORMAT* pVideoFormat
+ParamCount=1
+[MFGetWorkQueueMMCSSClass]
+1=DWORD dwWorkQueueId
+2=LPWSTR pwszClass
+3=DWORD* pcchClass
+ParamCount=3
+[MFGetWorkQueueMMCSSTaskId]
+1=DWORD dwWorkQueueId
+2=LPDWORD pdwTaskId
+ParamCount=2
+[MFHeapAlloc]
+1=size_t nSize
+2=ULONG dwFlags
+3=char* pszFile
+4=int line
+5=EAllocationType eat
+ParamCount=5
+[MFHeapFree]
+1=void* pv
+ParamCount=1
+[MFInitAMMediaTypeFromMFMediaType]
+1=IMFMediaType* pMFType
+2=GUID guidFormatBlockType
+3=AM_MEDIA_TYPE* pAMType
+ParamCount=-3
+Header=multimedia.h.api;
+[MFInitAttributesFromBlob]
+1=IMFAttributes* pAttributes
+2=const UINT8* pBuf
+3=UINT cbBufSize
+ParamCount=3
+[MFInitMediaTypeFromAMMediaType]
+1=IMFMediaType* pMFType
+2=AM_MEDIA_TYPE* pAMType
+ParamCount=2
+Header=multimedia.h.api;
+[MFInitMediaTypeFromMFVideoFormat]
+1=IMFMediaType* pMFType
+2=const MFVIDEOFORMAT* pMFVF
+3=UINT32 cbBufSize
+ParamCount=3
+[MFInitMediaTypeFromMPEG1VideoInfo]
+1=IMFMediaType* pMFType
+2=const MPEG1VIDEOINFO* pMP1VI
+3=UINT32 cbBufSize
+4=GUID* pSubtype
+ParamCount=4
+Header=windows.h.api;
+[MFInitMediaTypeFromMPEG2VideoInfo]
+1=IMFMediaType* pMFType
+2=const MPEG2VIDEOINFO* pMP2VI
+3=UINT32 cbBufSize
+4=GUID* pSubtype
+ParamCount=4
+Header=windows.h.api;
+[MFInitMediaTypeFromVideoInfoHeader]
+1=IMFMediaType* pMFType
+2=VIDEOINFOHEADER* pVIH
+3=UINT32 cbBufSize
+4=GUID* pSubtype
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[MFInitMediaTypeFromVideoInfoHeader2]
+1=IMFMediaType* pMFType
+2=VIDEOINFOHEADER2* pVIH2
+3=UINT32 cbBufSize
+4=GUID* pSubtype
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[MFInitMediaTypeFromWaveFormatEx]
+1=IMFMediaType* pMFType
+2=WAVEFORMATEX* pWaveFormat
+3=UINT32 cbBufSize
+ParamCount=3
+Header=multimedia.h.api;
+[MFInitVideoFormat]
+1=MFVIDEOFORMAT* pVideoFormat
+2=MFStandardVideoFormat type
+ParamCount=2
+[MFInitVideoFormat_RGB]
+1=MFVIDEOFORMAT* pVideoFormat
+2=DWORD dwWidth
+3=DWORD dwHeight
+4=DWORD D3Dfmt
+ParamCount=4
+[MFInvokeCallback]
+1=IMFAsyncResult* pAsyncResult
+ParamCount=1
+[MFllMulDiv]
+1=LONGLONG a
+2=LONGLONG b
+3=LONGLONG c
+4=LONGLONG d
+ParamCount=4
+[MFLockWorkQueue]
+1=DWORD dwWorkQueue
+ParamCount=1
+[MFPutWorkItem]
+1=DWORD dwQueue
+2=IMFAsyncCallback* pCallback
+3=IUnknown* pState
+ParamCount=3
+[MFPutWorkItemEx]
+1=DWORD dwQueue
+2=IMFAsyncResult* pResult
+ParamCount=2
+[MFRemovePeriodicCallback]
+1=DWORD dwKey
+ParamCount=1
+[MFSerializeAttributesToStream]
+1=IMFAttributes* pAttr
+2=DWORD dwOptions
+3=IStream* pStm
+ParamCount=3
+[MFSerializePresentationDescriptor]
+1=IMFPresentationDescriptor* pPD
+2=DWORD* pcbData
+3=BYTE** ppbData
+ParamCount=3
+[MFShutdown]
+ParamCount=0
+[MFStartup]
+1=ULONG Version
+2=DWORD dwFlags
+ParamCount=2
+[MFTEnum]
+1=GUID guidCategory
+2=UINT32 Flags
+3=MFT_REGISTER_TYPE_INFO* pInputType
+4=MFT_REGISTER_TYPE_INFO* pOutputType
+5=IMFAttributes* pAttributes
+6=CLSID** ppclsidMFT
+7=UINT32* pcMFTs
+ParamCount=-7
+[MFTEnumEx]
+1=GUID guidCategory
+2=UINT32 Flags
+3=const MFT_REGISTER_TYPE_INFO* pInputType
+4=const MFT_REGISTER_TYPE_INFO* pOutputType
+5=IMFActivate*** pppMFTActivate
+6=UINT32* pcMFTActivate
+ParamCount=-6
+[MFTGetInfo]
+1=CLSID clsidMFT
+2=LPWSTR* pszName
+3=MFT_REGISTER_TYPE_INFO** ppInputTypes
+4=UINT32* pcInputTypes
+5=MFT_REGISTER_TYPE_INFO** ppOutputTypes
+6=UINT32* pcOutputTypes
+7=IMFAttributes** ppAttributes
+ParamCount=-7
+Header=windows.h.api;
+[MFTRegister]
+1=CLSID clsidMFT
+2=GUID guidCategory
+3=LPWSTR pszName
+4=UINT32 Flags
+5=UINT32 cInputTypes
+6=MFT_REGISTER_TYPE_INFO* pInputTypes
+7=UINT32 cOutputTypes
+8=MFT_REGISTER_TYPE_INFO* pOutputTypes
+9=IMFAttributes* pAttributes
+ParamCount=-9
+Header=windows.h.api;
+[MFTRegisterLocal]
+1=IClassFactory* pClassFactory
+2=REFGUID guidCategory
+3=LPCWSTR pszName
+4=UINT32 Flags
+5=UINT32 cInputTypes
+6=const MFT_REGISTER_TYPE_INFO* pInputTypes
+7=UINT32 cOutputTypes
+8=const MFT_REGISTER_TYPE_INFO* pOutputTypes
+ParamCount=8
+Header=windows.h.api;
+[MFTRegisterLocalByCLSID]
+1=REFCLSID clisdMFT
+2=REFGUID guidCategory
+3=LPCWSTR pszName
+4=UINT32 Flags
+5=UINT32 cInputTypes
+6=const MFT_REGISTER_TYPE_INFO* pInputTypes
+7=UINT32 cOutputTypes
+8=const MFT_REGISTER_TYPE_INFO* pOutputTypes
+ParamCount=8
+Header=windows.h.api;
+[MFTUnregister]
+1=CLSID clsidMFT
+ParamCount=-1
+Header=windows.h.api;
+[MFTUnregisterLocal]
+1=IClassFactory* pClassFactory
+ParamCount=1
+[MFTUnregisterLocalByCLSID]
+1=CLSID clsidMFT
+ParamCount=-1
+Header=windows.h.api;
+[MFUnlockPlatform]
+ParamCount=0
+[MFLockPlatform]
+ParamCount=0
+[MFUnlockWorkQueue]
+1=DWORD dwWorkQueue
+ParamCount=1
+[MFUnwrapMediaType]
+1=IMFMediaType* pWrap
+2=IMFMediaType** ppOrig
+ParamCount=2
+[MFWrapMediaType]
+1=IMFMediaType* pOrig
+2=REFGUID MajorType
+3=REFGUID SubType
+4=IMFMediaType** ppWrap
+ParamCount=4
+Header=windows.h.api;
+[MFValidateMediaTypeSize]
+1=GUID FormatType
+2=UINT8* pBlock
+3=UINT32 cbSize
+ParamCount=-3
+[MFCreateDXGISurfaceBuffer]
+1=REFIID riid
+2=IUnknown* punkSurface
+3=UINT uSubresourceIndex
+4=BOOL fBottomUpWhenLinear
+5=IMFMediaBuffer** ppBuffer
+ParamCount=5
+Header=windows.h.api;
+[MFCreateMediaBufferFromMediaType]
+1=IMFMediaType* pMediaType
+2=LONGLONG llDuration
+3=DWORD dwMinLength
+4=DWORD dwMinAlignment
+5=IMFMediaBuffer** ppBuffer
+ParamCount=5
+[MFCreateMediaExtensionActivate]
+1=PCWSTR szActivatableClassId
+2=IUnknown* pConfiguration
+3=REFIID riid
+4=LPVOID* ppvObject
+ParamCount=4
+Header=windows.h.api;
+[MFCreateMFByteStreamOnStreamEx]
+1=IUnknown punkStream
+2=IMFByteStream** ppByteStream
+ParamCount=-2
+[MFCreateMFByteStreamWrapper]
+1=IMFByteStream* pStream
+2=IMFByteStream** ppStreamWrapper
+ParamCount=2
+[MFCreateStreamOnMFByteStream]
+1=IMFByteStream* pByteStream
+2=IStream** ppStream
+ParamCount=2
+[MFCreateStreamOnMFByteStreamEx]
+1=IMFByteStream* pByteStream
+2=REFIID riid
+3=void** ppv
+ParamCount=3
+Header=windows.h.api;
+[MFCreateVideoSampleAllocatorEx]
+1=REFIID riid
+2=void** ppSampleAllocator
+ParamCount=2
+Header=windows.h.api;
+[MFGetContentProtectionSystemCLSID]
+1=REFGUID guidProtectionSystemID
+2=CLSID* pclsid
+ParamCount=2
+Header=windows.h.api;
+[MFGetWorkQueueMMCSSPriority]
+1=DWORD dwWorkQueueId
+2=LONG* lPriority
+ParamCount=2
+[MFLockDXGIDeviceManager]
+1=UINT* pResetToken
+2=IMFDXGIDeviceManager** ppManager
+ParamCount=2
+[MFLockSharedWorkQueue]
+1=PCWSTR wszClass
+2=LONG BasePriority
+3=DWORD* pdwTaskId
+4=DWORD* pID
+ParamCount=4
+[MFMapDX9FormatToDXGIFormat]
+1=DWORD dx9
+ParamCount=1
+[MFMapDXGIFormatToDX9Format]
+1=[DXGI_FORMAT] dx11
+ParamCount=1
+Header=directx.h.api;
+[MFPutWaitingWorkItem]
+1=HANDLE hEvent
+2=LONG Priority
+3=IMFAsyncResult* pResult
+4=MFWORKITEM_KEY* pKey
+ParamCount=4
+Header=windows.h.api;
+[MFPutWorkItem2]
+1=DWORD dwQueue
+2=LONG Priority
+3=IMFAsyncCallback* pCallback
+4=IUnknown* pState
+ParamCount=4
+[MFPutWorkItemEx2]
+1=DWORD dwQueue
+2=LONG Priority
+3=IMFAsyncResult* pResult
+ParamCount=3
+[MFRegisterLocalByteStreamHandler]
+1=PCWSTR szFileExtension
+2=PCWSTR szMimeType
+3=IMFActivate* pActivate
+ParamCount=3
+[MFRegisterLocalSchemeHandler]
+1=PCWSTR szScheme
+2=IMFActivate* pActivate
+ParamCount=2
+[MFRegisterPlatformWithMMCSS]
+1=PCWSTR wszClass
+2=DWORD* pdwTaskId
+3=LONG lPriority
+ParamCount=3
+[MFUnlockDXGIDeviceManager]
+ParamCount=0
+[MFUnregisterPlatformFromMMCSS]
+ParamCount=0
+[MFCreateMediaTypeFromProperties]
+1=IUnknown* punkStream
+2=IMFMediaType** ppMediaType
+ParamCount=2
+[MFCreatePropertiesFromMediaType]
+1=IMFMediaType* pMediaType
+2=REFIID riid
+3=void** ppv
+ParamCount=3
+Header=windows.h.api;
+[MFCreateTrackedSample]
+1=IMFTrackedSample** ppMFSample
+ParamCount=1
+[MFCreateWICBitmapBuffer]
+1=REFIID riid
+2=IUnknown* punkSurface
+3=IMFMediaBuffer** ppBuffer
+ParamCount=3
+Header=windows.h.api;

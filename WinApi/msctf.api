@@ -1,0 +1,55 @@
+[CallingConvention]
+@=STDCALL
+[SetInputScope]
+1=HWND hwnd
+2=[InputScope] inputscope
+ParamCount=2
+Header=msctf.h.api;windows.h.api;
+[SetInputScopes]
+1=HWND hwnd
+2=InputScope* pInputScopes
+3=UINT cInputScopes
+4=WCHAR** ppszPhraseList
+5=UINT cPhrases
+6=WCHAR* pszRegExp
+7=WCHAR* pszSRGS
+ParamCount=7
+Header=msctf.h.api;windows.h.api;
+[SetInputScopes2]
+1=HWND hwnd
+2=InputScope* pInputScopes
+3=UINT cInputScopes
+4=IEnumString* pEnumString
+5=WCHAR* pszRegExp
+6=WCHAR* pszSRGS
+ParamCount=6
+Header=msctf.h.api;windows.h.api;
+[SetInputScopeXML]
+ParamCount=0
+[TF_CreateCategoryMgr]
+1=ITfCategoryMgr** ppcat
+ParamCount=1
+[TF_CreateDisplayAttributeMgr]
+1=ITfDisplayAttributeMgr** ppdam
+ParamCount=1
+[TF_CreateInputProcessorProfiles]
+1=ITfInputProcessorProfiles** ppipr
+ParamCount=1
+[TF_CreateLangBarItemMgr]
+1=ITfLangBarItemMgr** pplbim
+ParamCount=1
+[TF_CreateLangBarMgr]
+1=ITfLangBarMgr** pppbm
+ParamCount=1
+[TF_CreateThreadMgr]
+1=ITfThreadMgr** pptim
+ParamCount=1
+[TF_GetThreadMgr]
+1=ITfThreadMgr** pptim
+ParamCount=1
+[TF_InvalidAssemblyListCacheIfExist]
+ParamCount=0
+[MsimtfIsWindowFiltered]
+1=HWND hwnd
+ParamCount=1
+Header=windows.h.api;

@@ -1,0 +1,5376 @@
+[CallingConvention]
+@=STDCALL
+[CheckRemoteDebuggerPresent]
+1=[ProcessHandle] hProcess
+2=PBOOL pbDebuggerPresent
+ParamCount=2
+Header=windows.h.api;
+[ContinueDebugEvent]
+1=DWORD dwProcessId
+2=DWORD dwThreadId
+3=[ContinueStatusFlag] dwContinueStatus
+ParamCount=3
+Header=kernel32.h.api;
+[CopyExtendedContext]
+1=PCONTEXT_EX Destination
+2=DWORD ContextFlags
+3=PCONTEXT_EX Source
+ParamCount=3
+Header=kernel32.h.api;
+[DebugActiveProcess]
+1=DWORD dwProcessId
+ParamCount=1
+[DebugActiveProcessStop]
+1=DWORD dwProcessId
+ParamCount=1
+[DebugBreak]
+ParamCount=0
+[DebugBreakProcess]
+1=HANDLE Process
+ParamCount=1
+Header=windows.h.api;
+[DebugSetProcessKillOnExit]
+1=BOOL KillOnExit
+ParamCount=1
+[FatalExit]
+1=int ExitCode
+ParamCount=-1
+[FlushInstructionCache]
+1=[ProcessHandle] hProcess
+2=LPCVOID lpBaseAddress
+3=SIZE_T dwSize
+ParamCount=3
+Header=windows.h.api;
+[GetEnabledExtendedFeatures]
+1=DWORD64 FeatureMask
+ParamCount=1
+[GetExtendedContextLength]
+1=DWORD ContextFlags
+2=PDWORD ContextLength
+ParamCount=2
+[GetExtendedFeaturesMask]
+1=PCONTEXT_EX ContextEx
+ParamCount=1
+Header=kernel32.h.api;
+[GetThreadContext]
+1=[ThreadHandle] hThread
+2=LPCONTEXT lpContext
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetThreadSelectorEntry]
+1=[ThreadHandle] hThread
+2=DWORD dwSelector
+3=LPLDT_ENTRY lpSelectorEntry
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[InitializeExtendedContext]
+1=PVOID Context
+2=DWORD ContextFlags
+3=PCONTEXT_EX* ContextEx
+ParamCount=3
+Header=kernel32.h.api;
+[IsDebuggerPresent]
+ParamCount=0
+[LocateExtendedFeature]
+1=PCONTEXT_EX ContextEx
+2=DWORD FeatureId
+3=PDWORD Length
+ParamCount=3
+Header=kernel32.h.api;
+[LocateLegacyContext]
+1=PCONTEXT_EX ContextEx
+2=PDWORD Length
+ParamCount=2
+Header=kernel32.h.api;
+[OutputDebugString]
+1=LPCTSTR lpOutputString
+ParamCount=1
+[ReadProcessMemory]
+1=[ProcessHandle] hProcess
+2=LPCVOID lpBaseAddress
+3=LPVOID lpBuffer
+4=SIZE_T nSize
+5=SIZE_T* lpNumberOfBytesRead
+ParamCount=5
+Header=windows.h.api;
+[SetExtendedFeaturesMask]
+1=PCONTEXT_EX ContextEx
+2=DWORD64 FeatureMask
+ParamCount=2
+Header=kernel32.h.api;
+[SetThreadContext]
+1=[ThreadHandle] hThread
+2=CONTEXT* lpContext
+ParamCount=2
+Header=windows.h.api;
+[WaitForDebugEvent]
+1=LPDEBUG_EVENT lpDebugEvent
+2=[WaitTimeout] dwMilliseconds
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Wow64GetThreadContext]
+1=[ThreadHandle] hThread
+2=PWOW64_CONTEXT lpContext
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Wow64GetThreadSelectorEntry]
+1=[ThreadHandle] hThread
+2=DWORD dwSelector
+3=PWOW64_LDT_ENTRY lpSelectorEntry
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[Wow64SetThreadContext]
+1=[ThreadHandle] hThread
+2=WOW64_CONTEXT* lpContext
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[WriteProcessMemory]
+1=[ProcessHandle] hProcess
+2=LPVOID lpBaseAddress
+3=LPCVOID lpBuffer
+4=SIZE_T nSize
+5=SIZE_T* lpNumberOfBytesWritten
+ParamCount=5
+Header=windows.h.api;
+[AddDllDirectory]
+1=PCWSTR NewDirectory
+ParamCount=1
+[DisableThreadLibraryCalls]
+1=HMODULE hModule
+ParamCount=1
+[FreeLibrary]
+1=HMODULE hModule
+ParamCount=1
+[FreeLibraryAndExitThread]
+1=HMODULE hModule
+2=DWORD dwExitCode
+ParamCount=-2
+[GetDllDirectory]
+1=DWORD nBufferLength
+2=LPTSTR lpBuffer
+ParamCount=2
+[GetModuleFileName]
+1=HMODULE hModule
+2=LPTSTR lpFilename
+3=DWORD nSize
+ParamCount=3
+[GetModuleHandle]
+1=LPCTSTR lpModuleName
+ParamCount=1
+[GetModuleHandleEx]
+1=[GetModuleHandleExFlags] dwFlags
+2=LPCTSTR lpModuleName
+3=HMODULE* phModule
+ParamCount=3
+Header=kernel32.h.api;
+[GetProcAddress]
+1=HMODULE hModule
+2=LPCSTR lpProcName
+ParamCount=2
+[LoadLibrary]
+1=LPCTSTR lpFileName
+ParamCount=1
+[LoadLibraryEx]
+1=LPCTSTR lpFileName
+2=HANDLE hFile
+3=[LoadLibraryExFlags] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[LoadModule]
+1=LPCSTR lpModuleName
+2=LPVOID lpParameterBlock
+ParamCount=2
+[LoadPackagedLibrary]
+1=LPCWSTR lpwLibFileName
+2=DWORD Reserved
+ParamCount=2
+[RemoveDllDirectory]
+1=DLL_DIRECTORY_COOKIE Cookie
+ParamCount=1
+Header=kernel32.h.api;
+[SetDefaultDllDirectories]
+1=[LOAD_LIBRARY_SEARCH_FLAGS] DirectoryFlags
+ParamCount=1
+Header=kernel32.h.api;
+[SetDllDirectory]
+1=LPCTSTR lpPathName
+ParamCount=1
+[CreateToolhelp32Snapshot]
+1=[CreateToolhelp32SnapshotFlags] dwFlags
+2=DWORD th32ProcessID
+ParamCount=2
+Header=kernel32.h.api;
+[Heap32First]
+1=LPHEAPENTRY32 lphe
+2=DWORD th32ProcessID
+3=ULONG_PTR th32HeapID
+ParamCount=3
+Header=kernel32.h.api;
+[Heap32ListFirst]
+1=HANDLE hSnapshot
+2=LPHEAPLIST32 lphl
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Heap32ListNext]
+1=HANDLE hSnapshot
+2=LPHEAPLIST32 lphl
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Heap32Next]
+1=LPHEAPENTRY32 lphe
+ParamCount=1
+Header=kernel32.h.api;
+[Module32First]
+1=HANDLE hSnapshot
+2=LPMODULEENTRY32 lpme
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Module32Next]
+1=HANDLE hSnapshot
+2=LPMODULEENTRY32 lpme
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Process32First]
+1=HANDLE hSnapshot
+2=LPPROCESSENTRY32 lppe
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Process32Next]
+1=HANDLE hSnapshot
+2=LPPROCESSENTRY32 lppe
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Thread32First]
+1=HANDLE hSnapshot
+2=LPTHREADENTRY32 lpte
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Thread32Next]
+1=HANDLE hSnapshot
+2=LPTHREADENTRY32 lpte
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[Toolhelp32ReadProcessMemory]
+1=DWORD th32ProcessID
+2=LPCVOID lpBaseAddress
+3=LPVOID lpBuffer
+4=SIZE_T cbRead
+5=SIZE_T lpNumberOfBytesRead
+ParamCount=5
+[ApplicationRecoveryFinished]
+1=BOOL bSuccess
+ParamCount=1
+[ApplicationRecoveryInProgress]
+1=PBOOL pbCanceled
+ParamCount=1
+[GetApplicationRecoveryCallback]
+1=[ProcessHandle] hProcess
+2=APPLICATION_RECOVERY_CALLBACK* pRecoveryCallback
+3=PVOID* ppvParameter
+4=DWORD dwPingInterval
+5=DWORD dwFlags
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetApplicationRestartSettings]
+1=[ProcessHandle] hProcess
+2=PWSTR pwzCommandline
+3=PDWORD pcchSize
+4=PDWORD pdwFlags
+ParamCount=4
+Header=windows.h.api;
+[RegisterApplicationRecoveryCallback]
+1=APPLICATION_RECOVERY_CALLBACK pRecoveryCallback
+2=PVOID pvParameter
+3=DWORD dwPingInterval
+4=[ApplicationRestartFlags] dwFlags
+ParamCount=4
+Header=kernel32.h.api;
+[RegisterApplicationRestart]
+1=PCWSTR pwzCommandline
+2=[ApplicationRestartFlags] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[UnregisterApplicationRecoveryCallback]
+ParamCount=0
+[UnregisterApplicationRestart]
+ParamCount=0
+[GetPrivateProfileInt]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=INT nDefault
+4=LPCTSTR lpFileName
+ParamCount=4
+[GetPrivateProfileSection]
+1=LPCTSTR lpAppName
+2=LPTSTR lpReturnedString
+3=DWORD nSize
+4=LPCTSTR lpFileName
+ParamCount=4
+[GetPrivateProfileSectionNames]
+1=LPTSTR lpszReturnBuffer
+2=DWORD nSize
+3=LPCTSTR lpFileName
+ParamCount=3
+[GetPrivateProfileString]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=LPCTSTR lpDefault
+4=LPTSTR lpReturnedString
+5=DWORD nSize
+6=LPCTSTR lpFileName
+ParamCount=6
+[GetPrivateProfileStruct]
+1=LPCTSTR lpszSection
+2=LPCTSTR lpszKey
+3=LPVOID lpStruct
+4=UINT uSizeStruct
+5=LPCTSTR szFile
+ParamCount=5
+[GetProfileInt]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=INT nDefault
+ParamCount=3
+[GetProfileSection]
+1=LPCTSTR lpAppName
+2=LPTSTR lpReturnedString
+3=DWORD nSize
+ParamCount=3
+[GetProfileString]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=LPCTSTR lpDefault
+4=LPTSTR lpReturnedString
+5=DWORD nSize
+ParamCount=5
+[WritePrivateProfileSection]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpString
+3=LPCTSTR lpFileName
+ParamCount=3
+[WritePrivateProfileString]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=LPCTSTR lpString
+4=LPCTSTR lpFileName
+ParamCount=4
+[WritePrivateProfileStruct]
+1=LPCTSTR lpszSection
+2=LPCTSTR lpszKey
+3=LPVOID lpStruct
+4=UINT uSizeStruct
+5=LPCTSTR szFile
+ParamCount=5
+[WriteProfileSection]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpString
+ParamCount=2
+[WriteProfileString]
+1=LPCTSTR lpAppName
+2=LPCTSTR lpKeyName
+3=LPCTSTR lpString
+ParamCount=3
+[lopen]
+1=LPCSTR lpPathName
+2=int iReadWrite
+ParamCount=2
+[lcreat]
+1=LPCSTR lpPathName
+2=[lcreatAttribute] iAttribute
+ParamCount=2
+Header=kernel32.h.api;
+[lread]
+1=[HFILE] hFile
+2=LPVOID lpBuffer
+3=UINT uBytes
+ParamCount=3
+Header=kernel32.h.api;
+[lwrite]
+1=[HFILE] hFile
+2=LPVOID lpBuffer
+3=UINT uBytes
+ParamCount=3
+Header=kernel32.h.api;
+[hread]
+1=[HFILE] hFile
+2=LPVOID lpBuffer
+3=LONG lBytes
+ParamCount=3
+Header=kernel32.h.api;
+[hwrite]
+1=[HFILE] hFile
+2=LPVOID lpBuffer
+3=LONG lBytes
+ParamCount=3
+Header=kernel32.h.api;
+[lclose]
+1=[HFILE] hFile
+ParamCount=1
+Header=kernel32.h.api;
+[llseek]
+1=[HFILE] hFile
+2=LONG lOffset
+3=[SEEK_TYPE] iOrigin
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[AreFileApisANSI]
+ParamCount=0
+[CheckNameLegalDOS8Dot3]
+1=LPCTSTR lpName
+2=LPSTR lpOemName
+3=DWORD OemNameSize
+4=PBOOL pbNameContainsSpaces
+5=PBOOL pbNameLegal
+ParamCount=5
+[CopyFile]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=BOOL bFailIfExists
+ParamCount=3
+[CopyFile2]
+1=PCWSTR pwszExistingFileName
+2=PCWSTR pwszNewFileName
+3=COPYFILE2_EXTENDED_PARAMETERS* pExtendedParameters
+ParamCount=3
+Header=kernel32.h.api;
+[CopyFileEx]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=LPPROGRESS_ROUTINE lpProgressRoutine
+4=LPVOID lpData
+5=LPBOOL pbCancel
+6=[COPY_FILE_FLAGS] dwCopyFlags
+ParamCount=6
+Header=kernel32.h.api;
+[CopyFileTransacted]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=LPPROGRESS_ROUTINE lpProgressRoutine
+4=LPVOID lpData
+5=LPBOOL pbCancel
+6=[COPY_FILE_FLAGS] dwCopyFlags
+7=HANDLE hTransaction
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[CreateFile]
+1=LPCTSTR lpFileName
+2=[FILE_ACCESS_MASK] dwDesiredAccess
+3=[FILE_SHARE_MODE] dwShareMode
+4=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+5=[CreationDisposition] dwCreationDisposition
+6=[FlagsAndAttributes] dwFlagsAndAttributes
+7=HANDLE hTemplateFile
+ParamCount=7
+Header=kernel32.h.api;native.h.api;security.h.api;windows.h.api;
+[CreateFile2]
+1=LPCWSTR lpFileName
+2=[FILE_ACCESS_MASK] dwDesiredAccess
+3=[FILE_SHARE_MODE] dwShareMode
+4=[CreationDisposition] dwCreationDisposition
+5=LPCREATEFILE2_EXTENDED_PARAMETERS pCreateExParams
+ParamCount=5
+Header=kernel32.h.api;native.h.api;windows.h.api;
+[CreateFileTransacted]
+1=LPCTSTR lpFileName
+2=[FILE_ACCESS_MASK] dwDesiredAccess
+3=[FILE_SHARE_MODE] dwShareMode
+4=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+5=[CreationDisposition] dwCreationDisposition
+6=[FlagsAndAttributes] dwFlagsAndAttributes
+7=HANDLE hTemplateFile
+8=HANDLE hTransaction
+9=PUSHORT pusMiniVersion
+10=PVOID pExtendedParameter
+ParamCount=10
+Header=kernel32.h.api;native.h.api;security.h.api;windows.h.api;
+[CreateHardLink]
+1=LPCTSTR lpFileName
+2=LPCTSTR lpExistingFileName
+3=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+ParamCount=3
+Header=security.h.api;
+[CreateHardLinkTransacted]
+1=LPCTSTR lpFileName
+2=LPCTSTR lpExistingFileName
+3=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+4=HANDLE hTransaction
+ParamCount=4
+Header=security.h.api;windows.h.api;
+[CreateSymbolicLink]
+1=LPTSTR lpSymlinkFileName
+2=LPTSTR lpTargetFileName
+3=[CreateSymbolicLinkFlags] dwFlags
+ParamCount=3
+Header=kernel32.h.api;
+[CreateSymbolicLinkTransacted]
+1=LPTSTR lpSymlinkFileName
+2=LPTSTR lpTargetFileName
+3=[CreateSymbolicLinkFlags] dwFlags
+4=HANDLE hTransaction
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[DeleteFile]
+1=LPCTSTR lpFileName
+ParamCount=1
+[DeleteFileTransacted]
+1=LPCTSTR lpFileName
+2=HANDLE hTransaction
+ParamCount=2
+Header=windows.h.api;
+[FindClose]
+1=HANDLE hFindFile
+ParamCount=1
+Header=windows.h.api;
+[FindFirstFile]
+1=LPCTSTR lpFileName
+2=LPWIN32_FIND_DATA lpFindFileData
+ParamCount=2
+Header=windows.h.api;
+[FindFirstFileEx]
+1=LPCTSTR lpFileName
+2=[FINDEX_INFO_LEVELS] fInfoLevelId
+3=LPVOID lpFindFileData
+4=[FINDEX_SEARCH_OPS] fSearchOp
+5=LPVOID lpSearchFilter
+6=[FindFirstFileExFlags] dwAdditionalFlags
+ParamCount=6
+Header=kernel32.h.api;
+[FindFirstFileNameTransactedW]
+1=LPCWSTR lpFileName
+2=DWORD dwFlags
+3=LPDWORD StringLength
+4=PWCHAR LinkName
+5=HANDLE hTransaction
+ParamCount=5
+Header=windows.h.api;
+[FindFirstFileNameW]
+1=LPCWSTR lpFileName
+2=DWORD dwFlags
+3=LPDWORD StringLength
+4=PWCHAR LinkName
+ParamCount=4
+[FindFirstFileTransacted]
+1=LPCTSTR lpFileName
+2=[FINDEX_INFO_LEVELS] fInfoLevelId
+3=LPVOID lpFindFileData
+4=[FINDEX_SEARCH_OPS] fSearchOp
+5=LPVOID lpSearchFilter
+6=[FindFirstFileExFlags] dwAdditionalFlags
+7=HANDLE hTransaction
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[FindFirstStreamTransactedW]
+1=LPCWSTR lpFileName
+2=[STREAM_INFO_LEVELS] InfoLevel
+3=LPVOID lpFindStreamData
+4=DWORD dwFlags
+5=HANDLE hTransaction
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[FindFirstStreamW]
+1=LPCWSTR lpFileName
+2=[STREAM_INFO_LEVELS] InfoLevel
+3=LPVOID lpFindStreamData
+4=DWORD dwFlags
+ParamCount=4
+Header=kernel32.h.api;
+[FindNextFile]
+1=HANDLE hFindFile
+2=LPWIN32_FIND_DATA lpFindFileData
+ParamCount=2
+Header=windows.h.api;
+[FindNextFileNameW]
+1=HANDLE hFindStream
+2=LPDWORD StringLength
+3=PWCHAR LinkName
+ParamCount=3
+Header=windows.h.api;
+[FindNextStreamW]
+1=HANDLE hFindStream
+2=LPVOID lpFindStreamData
+ParamCount=2
+Header=windows.h.api;
+[GetBinaryType]
+1=LPCTSTR lpApplicationName
+2=GetBinaryTypeResult* lpBinaryType
+ParamCount=2
+Header=kernel32.h.api;
+[GetCompressedFileSize]
+1=LPCTSTR lpFileName
+2=LPDWORD lpFileSizeHigh
+ParamCount=2
+[GetCompressedFileSizeTransacted]
+1=LPCTSTR lpFileName
+2=LPDWORD lpFileSizeHigh
+3=HANDLE hTransaction
+ParamCount=3
+Header=windows.h.api;
+[GetFileAttributes]
+1=LPCTSTR lpFileName
+ParamCount=1
+[GetFileAttributesEx]
+1=LPCTSTR lpFileName
+2=[GET_FILEEX_INFO_LEVELS] fInfoLevelId
+3=LPVOID lpFileInformation
+ParamCount=3
+Header=windows.h.api;
+[GetFileAttributesTransacted]
+1=LPCTSTR lpFileName
+2=[GET_FILEEX_INFO_LEVELS] fInfoLevelId
+3=LPVOID lpFileInformation
+4=HANDLE hTransaction
+ParamCount=4
+Header=windows.h.api;
+[GetFileBandwidthReservation]
+1=HANDLE hFile
+2=LPDWORD lpPeriodMilliseconds
+3=LPDWORD lpBytesPerPeriod
+4=LPBOOL pDiscardable
+5=LPDWORD lpTransferSize
+6=LPDWORD lpNumOutstandingRequests
+ParamCount=6
+Header=windows.h.api;
+[GetFileInformationByHandle]
+1=HANDLE hFile
+2=LPBY_HANDLE_FILE_INFORMATION lpFileInformation
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetFileInformationByHandleEx]
+1=HANDLE hFile
+2=[FILE_INFO_BY_HANDLE_CLASS] FileInformationClass
+3=LPVOID lpFileInformation
+4=DWORD dwBufferSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetFileSize]
+1=HANDLE hFile
+2=LPDWORD lpFileSizeHigh
+ParamCount=2
+Header=windows.h.api;
+[GetFileSizeEx]
+1=HANDLE hFile
+2=PLARGE_INTEGER lpFileSize
+ParamCount=2
+Header=windows.h.api;
+[GetFileType]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[GetFinalPathNameByHandle]
+1=HANDLE hFile
+2=LPTSTR lpszFilePath
+3=DWORD cchFilePath
+4=[GetFinalPathNameByHandleFlags] dwFlags
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetFullPathName]
+1=LPCTSTR lpFileName
+2=DWORD nBufferLength
+3=LPTSTR lpBuffer
+4=LPTSTR* lpFilePart
+ParamCount=4
+[GetFullPathNameTransacted]
+1=LPCTSTR lpFileName
+2=DWORD nBufferLength
+3=LPTSTR lpBuffer
+4=LPTSTR* lpFilePart
+5=HANDLE hTransaction
+ParamCount=5
+Header=windows.h.api;
+[GetLongPathName]
+1=LPCTSTR lpszShortPath
+2=LPTSTR lpszLongPath
+3=DWORD cchBuffer
+ParamCount=3
+[GetLongPathNameTransacted]
+1=LPCTSTR lpszShortPath
+2=LPTSTR lpszLongPath
+3=DWORD cchBuffer
+4=HANDLE hTransaction
+ParamCount=4
+Header=windows.h.api;
+[GetShortPathName]
+1=LPCTSTR lpszLongPath
+2=LPTSTR lpszShortPath
+3=DWORD cchBuffer
+ParamCount=3
+[GetTempFileName]
+1=LPCTSTR lpPathName
+2=LPCTSTR lpPrefixString
+3=UINT uUnique
+4=LPTSTR lpTempFileName
+ParamCount=4
+[GetTempPath]
+1=DWORD nBufferLength
+2=LPTSTR lpBuffer
+ParamCount=2
+[MoveFile]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+ParamCount=2
+[MoveFileEx]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=[MoveFileFlags] dwFlags
+ParamCount=3
+Header=kernel32.h.api;
+[MoveFileTransacted]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=LPPROGRESS_ROUTINE lpProgressRoutine
+4=LPVOID lpData
+5=DWORD dwFlags
+6=HANDLE hTransaction
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[MoveFileWithProgress]
+1=LPCTSTR lpExistingFileName
+2=LPCTSTR lpNewFileName
+3=LPPROGRESS_ROUTINE lpProgressRoutine
+4=LPVOID lpData
+5=DWORD dwFlags
+ParamCount=5
+Header=kernel32.h.api;
+[OpenFile]
+1=LPCSTR lpFileName
+2=LPOFSTRUCT lpReOpenBuff
+3=[OpenFileFlags] uStyle
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[OpenFileById]
+1=HANDLE hFile
+2=LPFILE_ID_DESCRIPTOR lpFileID
+3=[FILE_ACCESS_MASK] dwDesiredAccess
+4=[FILE_SHARE_MODE] dwShareMode
+5=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+6=[FlagsAndAttributes] dwFlags
+ParamCount=6
+Header=kernel32.h.api;native.h.api;security.h.api;windows.h.api;
+[ReOpenFile]
+1=HANDLE hOriginalFile
+2=[FILE_ACCESS_MASK] dwDesiredAccess
+3=[FILE_SHARE_MODE] dwShareMode
+4=[FlagsAndAttributes] dwFlags
+ParamCount=4
+Header=kernel32.h.api;native.h.api;windows.h.api;
+[ReplaceFile]
+1=LPCTSTR lpReplacedFileName
+2=LPCTSTR lpReplacementFileName
+3=LPCTSTR lpBackupFileName
+4=DWORD dwReplaceFlags
+5=LPVOID lpExclude
+6=LPVOID lpReserved
+ParamCount=6
+[SearchPath]
+1=LPCTSTR lpPath
+2=LPCTSTR lpFileName
+3=LPCTSTR lpExtension
+4=DWORD nBufferLength
+5=LPTSTR lpBuffer
+6=LPTSTR* lpFilePart
+ParamCount=6
+[SetFileApisToANSI]
+ParamCount=0
+[SetFileApisToOEM]
+ParamCount=0
+[SetFileAttributes]
+1=LPCTSTR lpFileName
+2=[FileAttributes] dwFileAttributes
+ParamCount=2
+Header=windows.h.api;
+[SetFileAttributesTransacted]
+1=LPCTSTR lpFileName
+2=[FileAttributes] dwFileAttributes
+3=HANDLE hTransaction
+ParamCount=3
+Header=windows.h.api;
+[SetFileBandwidthReservation]
+1=HANDLE hFile
+2=DWORD nPeriodMilliseconds
+3=DWORD nBytesPerPeriod
+4=BOOL bDiscardable
+5=LPDWORD lpTransferSize
+6=LPDWORD lpNumOutstandingRequests
+ParamCount=6
+Header=windows.h.api;
+[SetFileInformationByHandle]
+1=HANDLE hFile
+2=[FILE_INFO_BY_HANDLE_CLASS] FileInformationClass
+3=LPVOID lpFileInformation
+4=DWORD dwBufferSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[SetFileShortName]
+1=HANDLE hFile
+2=LPCTSTR lpShortName
+ParamCount=2
+Header=windows.h.api;
+[SetFileValidData]
+1=HANDLE hFile
+2=LONGLONG ValidDataLength
+ParamCount=2
+Header=windows.h.api;
+[SetSearchPathMode]
+1=DWORD Flags
+ParamCount=1
+[CancelIo]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[CancelIoEx]
+1=HANDLE hFile
+2=LPOVERLAPPED lpOverlapped
+ParamCount=2
+Header=windows.h.api;
+[CancelSynchronousIo]
+1=[ThreadHandle] hThread
+ParamCount=1
+Header=windows.h.api;
+[CreateIoCompletionPort]
+1=HANDLE FileHandle
+2=HANDLE ExistingCompletionPort
+3=ULONG_PTR CompletionKey
+4=DWORD NumberOfConcurrentThreads
+ParamCount=4
+Header=windows.h.api;
+[FlushFileBuffers]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[GetQueuedCompletionStatus]
+1=HANDLE CompletionPort
+2=LPDWORD lpNumberOfBytes
+3=PULONG_PTR lpCompletionKey
+4=LPOVERLAPPED* lpOverlapped
+5=[WaitTimeout] dwMilliseconds
+ParamCount=5
+Header=windows.h.api;
+[GetQueuedCompletionStatusEx]
+1=HANDLE CompletionPort
+2=LPOVERLAPPED_ENTRY lpCompletionPortEntries
+3=ULONG ulCount
+4=PULONG ulNumEntriesRemoved
+5=[WaitTimeout] dwMilliseconds
+6=BOOL fAlertable
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[LockFile]
+1=HANDLE hFile
+2=DWORD dwFileOffsetLow
+3=DWORD dwFileOffsetHigh
+4=DWORD nNumberOfBytesToLockLow
+5=DWORD nNumberOfBytesToLockHigh
+ParamCount=5
+Header=windows.h.api;
+[LockFileEx]
+1=HANDLE hFile
+2=[LockFileFlags] dwFlags
+3=DWORD dwReserved
+4=DWORD nNumberOfBytesToLockLow
+5=DWORD nNumberOfBytesToLockHigh
+6=LPOVERLAPPED lpOverlapped
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[PostQueuedCompletionStatus]
+1=HANDLE CompletionPort
+2=DWORD dwNumberOfBytesTransferred
+3=ULONG_PTR dwCompletionKey
+4=LPOVERLAPPED lpOverlapped
+ParamCount=4
+Header=windows.h.api;
+[ReadFile]
+1=HANDLE hFile
+2=LPVOID lpBuffer
+3=DWORD nNumberOfBytesToRead
+4=LPDWORD lpNumberOfBytesRead
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=windows.h.api;
+[ReadFileEx]
+1=HANDLE hFile
+2=LPVOID lpBuffer
+3=DWORD nNumberOfBytesToRead
+4=LPOVERLAPPED lpOverlapped
+5=LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[ReadFileScatter]
+1=HANDLE hFile
+2=FILE_SEGMENT_ELEMENT[] aSegmentArray
+3=DWORD nNumberOfBytesToRead
+4=LPDWORD lpReserved
+5=LPOVERLAPPED lpOverlapped
+ParamCount=-5
+Header=windows.h.api;
+[SetEndOfFile]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[SetFileCompletionNotificationModes]
+1=HANDLE FileHandle
+2=UCHAR Flags
+ParamCount=2
+Header=windows.h.api;
+[SetFileIoOverlappedRange]
+1=HANDLE FileHandle
+2=PUCHAR OverlappedRangeStart
+3=ULONG Length
+ParamCount=3
+Header=windows.h.api;
+[SetFilePointer]
+1=HANDLE hFile
+2=LONG lDistanceToMove
+3=PLONG lpDistanceToMoveHigh
+4=[MoveMethodEnum] dwMoveMethod
+ParamCount=4
+Header=windows.h.api;
+[SetFilePointerEx]
+1=HANDLE hFile
+2=LARGE_INTEGER liDistanceToMove
+3=PLARGE_INTEGER lpNewFilePointer
+4=[MoveMethodEnum] dwMoveMethod
+ParamCount=4
+Header=windows.h.api;
+[UnlockFile]
+1=HANDLE hFile
+2=DWORD dwFileOffsetLow
+3=DWORD dwFileOffsetHigh
+4=DWORD nNumberOfBytesToUnlockLow
+5=DWORD nNumberOfBytesToUnlockHigh
+ParamCount=5
+Header=windows.h.api;
+[UnlockFileEx]
+1=HANDLE hFile
+2=DWORD dwReserved
+3=DWORD nNumberOfBytesToUnlockLow
+4=DWORD nNumberOfBytesToUnlockHigh
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=windows.h.api;
+[WriteFile]
+1=HANDLE hFile
+2=LPCVOID lpBuffer
+3=DWORD nNumberOfBytesToWrite
+4=LPDWORD lpNumberOfBytesWritten
+5=LPOVERLAPPED lpOverlapped
+ParamCount=5
+Header=windows.h.api;
+[WriteFileEx]
+1=HANDLE hFile
+2=LPCVOID lpBuffer
+3=DWORD nNumberOfBytesToWrite
+4=LPOVERLAPPED lpOverlapped
+5=LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[WriteFileGather]
+1=HANDLE hFile
+2=FILE_SEGMENT_ELEMENT[] aSegmentArray
+3=DWORD nNumberOfBytesToWrite
+4=LPDWORD lpReserved
+5=LPOVERLAPPED lpOverlapped
+ParamCount=-5
+Header=windows.h.api;
+[Wow64DisableWow64FsRedirection]
+1=PVOID* OldValue
+ParamCount=1
+[Wow64EnableWow64FsRedirection]
+1=BOOLEAN Wow64FsEnableRedirection
+ParamCount=1
+[Wow64RevertWow64FsRedirection]
+1=PVOID OldValue
+ParamCount=1
+[AddSecureMemoryCacheCallback]
+1=PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack
+ParamCount=1
+Header=kernel32.h.api;
+[CreateMemoryResourceNotification]
+1=[MEMORY_RESOURCE_NOTIFICATION_TYPE] NotificationType
+ParamCount=1
+Header=kernel32.h.api;
+[GetLargePageMinimum]
+ParamCount=0
+[GetPhysicallyInstalledSystemMemory]
+1=PULONGLONG TotalMemoryInKilobytes
+ParamCount=1
+[GetSystemFileCacheSize]
+1=PSIZE_T lpMinimumFileCacheSize
+2=PSIZE_T lpMaximumFileCacheSize
+3=PDWORD lpFlags
+ParamCount=3
+[GetWriteWatch]
+1=DWORD dwFlags
+2=PVOID lpBaseAddress
+3=SIZE_T dwRegionSize
+4=PVOID* lpAddresses
+5=PULONG_PTR lpdwCount
+6=PULONG lpdwGranularity
+ParamCount=6
+[GlobalMemoryStatusEx]
+1=LPMEMORYSTATUSEX lpBuffer
+ParamCount=1
+Header=kernel32.h.api;
+[QueryMemoryResourceNotification]
+1=HANDLE ResourceNotificationHandle
+2=PBOOL ResourceState
+ParamCount=2
+Header=windows.h.api;
+[RemoveSecureMemoryCacheCallback]
+1=PSECURE_MEMORY_CACHE_CALLBACK pfnCallBack
+ParamCount=1
+Header=kernel32.h.api;
+[ResetWriteWatch]
+1=LPVOID lpBaseAddress
+2=SIZE_T dwRegionSize
+ParamCount=2
+[SetSystemFileCacheSize]
+1=SIZE_T MinimumFileCacheSize
+2=SIZE_T MaximumFileCacheSize
+3=DWORD Flags
+ParamCount=3
+[GetProcessDEPPolicy]
+1=[ProcessHandle] hProcess
+2=LPDWORD lpFlags
+3=PBOOL lpPermanent
+ParamCount=3
+Header=windows.h.api;
+[GetSystemDEPPolicy]
+ParamCount=0
+[SetProcessDEPPolicy]
+1=DWORD dwFlags
+ParamCount=1
+[CreateFileMapping]
+1=[FILE_HANDLE] hFile
+2=LPSECURITY_ATTRIBUTES lpAttributes
+3=[MemoryProtection] flProtect
+4=DWORD dwMaximumSizeHigh
+5=DWORD dwMaximumSizeLow
+6=LPCTSTR lpName
+ParamCount=6
+Header=native.h.api;security.h.api;windows.h.api;
+[CreateFileMappingFromApp]
+1=HANDLE hFile
+2=PSECURITY_ATTRIBUTES SecurityAttributes
+3=ULONG PageProtection
+4=ULONG64 MaximumSize
+5=PCWSTR Name
+ParamCount=5
+Header=security.h.api;windows.h.api;
+[CreateFileMappingNuma]
+1=[FILE_HANDLE] hFile
+2=LPSECURITY_ATTRIBUTES lpFileMappingAttributes
+3=[MemoryProtection] flProtect
+4=DWORD dwMaximumSizeHigh
+5=DWORD dwMaximumSizeLow
+6=LPCTSTR lpName
+7=DWORD nndPreferred
+ParamCount=7
+Header=native.h.api;security.h.api;windows.h.api;
+[FlushViewOfFile]
+1=LPCVOID lpBaseAddress
+2=SIZE_T dwNumberOfBytesToFlush
+ParamCount=2
+[MapViewOfFile]
+1=HANDLE hFileMappingObject
+2=[MapAccessFlags] dwDesiredAccess
+3=DWORD dwFileOffsetHigh
+4=DWORD dwFileOffsetLow
+5=SIZE_T dwNumberOfBytesToMap
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[MapViewOfFileEx]
+1=HANDLE hFileMappingObject
+2=[MapAccessFlags] dwDesiredAccess
+3=DWORD dwFileOffsetHigh
+4=DWORD dwFileOffsetLow
+5=SIZE_T dwNumberOfBytesToMap
+6=LPVOID lpBaseAddress
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[MapViewOfFileExNuma]
+1=HANDLE hFileMappingObject
+2=DWORD dwDesiredAccess
+3=DWORD dwFileOffsetHigh
+4=DWORD dwFileOffsetLow
+5=SIZE_T dwNumberOfBytesToMap
+6=LPVOID lpBaseAddress
+7=DWORD nndPreferred
+ParamCount=7
+Header=windows.h.api;
+[MapViewOfFileFromApp]
+1=HANDLE hFileMappingObject
+2=ULONG DesiredAccess
+3=ULONG64 FileOffset
+4=SIZE_T NumberOfBytesToMap
+ParamCount=4
+Header=windows.h.api;
+[OpenFileMapping]
+1=[MapAccessFlags] dwDesiredAccess
+2=BOOL bInheritHandle
+3=LPCTSTR lpName
+ParamCount=3
+Header=kernel32.h.api;
+[UnmapViewOfFile]
+1=LPCVOID lpBaseAddress
+ParamCount=1
+[AllocateUserPhysicalPages]
+1=[ProcessHandle] hProcess
+2=PULONG_PTR NumberOfPages
+3=PULONG_PTR UserPfnArray
+ParamCount=3
+Header=windows.h.api;
+[FreeUserPhysicalPages]
+1=[ProcessHandle] hProcess
+2=PULONG_PTR NumberOfPages
+3=PULONG_PTR UserPfnArray
+ParamCount=3
+Header=windows.h.api;
+[MapUserPhysicalPages]
+1=PVOID lpAddress
+2=ULONG_PTR NumberOfPages
+3=PULONG_PTR UserPfnArray
+ParamCount=3
+[MapUserPhysicalPagesScatter]
+1=PVOID* VirtualAddresses
+2=ULONG_PTR NumberOfPages
+3=PULONG_PTR PageArray
+ParamCount=3
+[GetProcessHeap]
+ParamCount=0
+[GetProcessHeaps]
+1=DWORD NumberOfHeaps
+2=PHANDLE ProcessHeaps
+ParamCount=2
+Header=windows.h.api;
+[HeapAlloc]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+3=SIZE_T dwBytes
+ParamCount=3
+Header=windows.h.api;
+[HeapCompact]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+ParamCount=2
+Header=windows.h.api;
+[HeapCreate]
+1=[HEAP_FLAGS] flOptions
+2=SIZE_T dwInitialSize
+3=SIZE_T dwMaximumSize
+ParamCount=3
+Header=windows.h.api;
+[HeapDestroy]
+1=HANDLE hHeap
+ParamCount=1
+Header=windows.h.api;
+[HeapFree]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+3=LPVOID lpMem
+ParamCount=3
+Header=windows.h.api;
+[HeapLock]
+1=HANDLE hHeap
+ParamCount=1
+Header=windows.h.api;
+[HeapQueryInformation]
+1=HANDLE HeapHandle
+2=[HEAP_INFORMATION_CLASS] HeapInformationClass
+3=PVOID HeapInformation
+4=SIZE_T HeapInformationLength
+5=PSIZE_T ReturnLength
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[HeapReAlloc]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+3=LPVOID lpMem
+4=SIZE_T dwBytes
+ParamCount=4
+Header=windows.h.api;
+[HeapSetInformation]
+1=HANDLE HeapHandle
+2=[HEAP_INFORMATION_CLASS] HeapInformationClass
+3=PVOID HeapInformation
+4=SIZE_T HeapInformationLength
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[HeapSize]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+3=LPCVOID lpMem
+ParamCount=3
+Header=windows.h.api;
+[HeapUnlock]
+1=HANDLE hHeap
+ParamCount=1
+Header=windows.h.api;
+[HeapValidate]
+1=HANDLE hHeap
+2=[HEAP_FLAGS] dwFlags
+3=LPCVOID lpMem
+ParamCount=3
+Header=windows.h.api;
+[HeapWalk]
+1=HANDLE hHeap
+2=LPPROCESS_HEAP_ENTRY lpEntry
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[HeapSummary]
+1=HANDLE hHeap
+2=DWORD dwFlags
+3=LPHEAP_SUMMARY lpSummary
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[PrefetchVirtualMemory]
+1=HANDLE hProcess
+2=ULONG_PTR NumberOfEntries
+3=PWIN32_MEMORY_RANGE_ENTRY VirtualAddresses
+4=ULONG Flags
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[VirtualAlloc]
+1=LPVOID lpAddress
+2=SIZE_T dwSize
+3=[MemoryAllocationFlags] flAllocationType
+4=[MemoryProtection] flProtect
+ParamCount=4
+Header=native.h.api;
+[VirtualAllocEx]
+1=[ProcessHandle] hProcess
+2=LPVOID lpAddress
+3=SIZE_T dwSize
+4=[MemoryAllocationFlags] flAllocationType
+5=[MemoryProtection] flProtect
+ParamCount=5
+Header=native.h.api;windows.h.api;
+[VirtualAllocExNuma]
+1=[ProcessHandle] hProcess
+2=LPVOID lpAddress
+3=SIZE_T dwSize
+4=DWORD flAllocationType
+5=[MemoryProtection] flProtect
+6=DWORD nndPreferred
+ParamCount=6
+Header=native.h.api;windows.h.api;
+[VirtualFree]
+1=LPVOID lpAddress
+2=SIZE_T dwSize
+3=[MemoryAllocationFlags] dwFreeType
+ParamCount=3
+Header=native.h.api;
+[VirtualFreeEx]
+1=[ProcessHandle] hProcess
+2=LPVOID lpAddress
+3=SIZE_T dwSize
+4=[MemoryAllocationFlags] dwFreeType
+ParamCount=4
+Header=native.h.api;windows.h.api;
+[VirtualLock]
+1=LPVOID lpAddress
+2=SIZE_T dwSize
+ParamCount=2
+[VirtualProtect]
+1=LPVOID lpAddress
+2=SIZE_T dwSize
+3=[MemoryProtection] flNewProtect
+4=MemoryProtection* lpflOldProtect
+ParamCount=4
+Header=native.h.api;
+[VirtualProtectEx]
+1=[ProcessHandle] hProcess
+2=LPVOID lpAddress
+3=SIZE_T dwSize
+4=[MemoryProtection] flNewProtect
+5=MemoryProtection* lpflOldProtect
+ParamCount=5
+Header=native.h.api;windows.h.api;
+[VirtualQuery]
+1=LPCVOID lpAddress
+2=PMEMORY_BASIC_INFORMATION lpBuffer
+3=SIZE_T dwLength
+ParamCount=3
+Header=kernel32.h.api;
+[VirtualQueryEx]
+1=[ProcessHandle] hProcess
+2=LPCVOID lpAddress
+3=PMEMORY_BASIC_INFORMATION lpBuffer
+4=SIZE_T dwLength
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[VirtualUnlock]
+1=LPVOID lpAddress
+2=SIZE_T dwSize
+ParamCount=2
+[GlobalAlloc]
+1=[GlobalMemoryFlag] uFlags
+2=SIZE_T dwBytes
+ParamCount=2
+Header=kernel32.h.api;
+[LocalAlloc]
+1=[LocalMemoryFlag] uFlags
+2=SIZE_T uBytes
+ParamCount=2
+Header=kernel32.h.api;
+[GlobalFlags]
+1=HGLOBAL hMem
+ParamCount=1
+Header=windows.h.api;
+[LocalFlags]
+1=HLOCAL hMem
+ParamCount=1
+Header=kernel32.h.api;
+[GlobalFree]
+1=HGLOBAL hMem
+ParamCount=1
+Header=windows.h.api;
+[LocalFree]
+1=HLOCAL hMem
+ParamCount=1
+Header=kernel32.h.api;
+[GlobalHandle]
+1=LPCVOID pMem
+ParamCount=1
+[LocalHandle]
+1=LPCVOID pMem
+ParamCount=1
+[GlobalLock]
+1=HGLOBAL hMem
+ParamCount=1
+Header=windows.h.api;
+[LocalLock]
+1=HLOCAL hMem
+ParamCount=1
+Header=kernel32.h.api;
+[GlobalReAlloc]
+1=HGLOBAL hMem
+2=SIZE_T dwBytes
+3=[GlobalMemoryFlag] uFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[LocalReAlloc]
+1=HLOCAL hMem
+2=SIZE_T uBytes
+3=[LocalMemoryFlag] uFlags
+ParamCount=3
+Header=kernel32.h.api;
+[GlobalSize]
+1=HGLOBAL hMem
+ParamCount=1
+Header=windows.h.api;
+[LocalSize]
+1=HLOCAL hMem
+ParamCount=1
+Header=kernel32.h.api;
+[GlobalUnlock]
+1=HGLOBAL hMem
+ParamCount=1
+Header=windows.h.api;
+[LocalUnlock]
+1=HLOCAL hMem
+ParamCount=1
+Header=kernel32.h.api;
+[GetMemoryErrorHandlingCapabilities]
+1=PULONG Capabilities
+ParamCount=1
+[RegisterBadMemoryNotification]
+1=PBAD_MEMORY_CALLBACK_ROUTINE Callback
+ParamCount=1
+Header=kernel32.h.api;
+[UnregisterBadMemoryNotification]
+1=PVOID RegistrationHandle
+ParamCount=1
+[IsBadCodePtr]
+1=FARPROC lpfn
+ParamCount=1
+Header=windows.h.api;
+[IsBadReadPtr]
+1=const VOID* lp
+2=UINT_PTR ucb
+ParamCount=2
+[IsBadStringPtr]
+1=LPCTSTR lpsz
+2=UINT_PTR ucchMax
+ParamCount=2
+[IsBadWritePtr]
+1=LPVOID lp
+2=UINT_PTR ucb
+ParamCount=2
+[GlobalMemoryStatus]
+1=LPMEMORYSTATUS lpBuffer
+ParamCount=1
+Header=kernel32.h.api;
+[CreateProcess]
+1=LPCTSTR lpApplicationName
+2=LPTSTR lpCommandLine
+3=LPSECURITY_ATTRIBUTES lpProcessAttributes
+4=LPSECURITY_ATTRIBUTES lpThreadAttributes
+5=BOOL bInheritHandles
+6=[CreateProcessFlags] dwCreationFlags
+7=LPVOID lpEnvironment
+8=LPCTSTR lpCurrentDirectory
+9=LPSTARTUPINFO lpStartupInfo
+10=LPPROCESS_INFORMATION lpProcessInformation
+ParamCount=10
+Header=processes.h.api;security.h.api;windows.h.api;
+[ExitProcess]
+1=UINT uExitCode
+ParamCount=-1
+[FlushProcessWriteBuffers]
+ParamCount=0
+[FreeEnvironmentStrings]
+1=LPTCH lpszEnvironmentBlock
+ParamCount=1
+[GetCommandLine]
+ParamCount=0
+[GetCurrentProcess]
+ParamCount=0
+[GetCurrentProcessId]
+ParamCount=0
+[GetEnvironmentStrings]
+ParamCount=0
+[GetEnvironmentVariable]
+1=LPCTSTR lpName
+2=LPTSTR lpBuffer
+3=DWORD nSize
+ParamCount=3
+[GetExitCodeProcess]
+1=[ProcessHandle] hProcess
+2=LPDWORD lpExitCode
+ParamCount=2
+Header=windows.h.api;
+[GetPriorityClass]
+1=[ProcessHandle] hProcess
+ParamCount=1
+Header=windows.h.api;
+[GetProcessAffinityMask]
+1=[ProcessHandle] hProcess
+2=PDWORD_PTR lpProcessAffinityMask
+3=PDWORD_PTR lpSystemAffinityMask
+ParamCount=3
+Header=windows.h.api;
+[GetProcessGroupAffinity]
+1=[ProcessHandle] hProcess
+2=PUSHORT GroupCount
+3=PUSHORT GroupArray
+ParamCount=3
+Header=windows.h.api;
+[GetProcessHandleCount]
+1=[ProcessHandle] hProcess
+2=PDWORD pdwHandleCount
+ParamCount=2
+Header=windows.h.api;
+[GetProcessId]
+1=HANDLE Process
+ParamCount=1
+Header=windows.h.api;
+[GetProcessIdOfThread]
+1=HANDLE Thread
+ParamCount=1
+Header=windows.h.api;
+[GetProcessInformation]
+1=HANDLE hProcess
+2=[PROCESS_INFORMATION_CLASS] ProcessInformationClass
+3=LPVOID ProcessInformation
+4=DWORD ProcessInformationSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetProcessIoCounters]
+1=[ProcessHandle] hProcess
+2=PIO_COUNTERS lpIoCounters
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetProcessMitigationPolicy]
+1=HANDLE hProcess
+2=[PROCESS_MITIGATION_POLICY] MitigationPolicy
+3=PVOID lpBuffer
+4=SIZE_T dwLength
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetProcessPriorityBoost]
+1=[ProcessHandle] hProcess
+2=PBOOL pDisablePriorityBoost
+ParamCount=2
+Header=windows.h.api;
+[GetProcessShutdownParameters]
+1=LPDWORD lpdwLevel
+2=LPDWORD lpdwFlags
+ParamCount=2
+[GetProcessTimes]
+1=[ProcessHandle] hProcess
+2=LPFILETIME lpCreationTime
+3=LPFILETIME lpExitTime
+4=LPFILETIME lpKernelTime
+5=LPFILETIME lpUserTime
+ParamCount=5
+Header=windows.h.api;
+[GetProcessVersion]
+1=DWORD ProcessId
+ParamCount=1
+[GetProcessWorkingSetSize]
+1=[ProcessHandle] hProcess
+2=PSIZE_T lpMinimumWorkingSetSize
+3=PSIZE_T lpMaximumWorkingSetSize
+ParamCount=3
+Header=windows.h.api;
+[GetProcessWorkingSetSizeEx]
+1=[ProcessHandle] hProcess
+2=PSIZE_T lpMinimumWorkingSetSize
+3=PSIZE_T lpMaximumWorkingSetSize
+4=PDWORD Flags
+ParamCount=4
+Header=windows.h.api;
+[GetProcessorSystemCycleTime]
+1=USHORT Group
+2=PSYSTEM_PROCESSOR_CYCLE_TIME_INFORMATION Buffer
+3=PDWORD ReturnedLength
+ParamCount=3
+Header=kernel32.h.api;
+[GetStartupInfo]
+1=LPSTARTUPINFO lpStartupInfo
+ParamCount=1
+Header=windows.h.api;
+[NeedCurrentDirectoryForExePath]
+1=LPCTSTR ExeName
+ParamCount=1
+[OpenProcess]
+1=[PROCESS_ACCESS_MASK] dwDesiredAccess
+2=BOOL bInheritHandle
+3=DWORD dwProcessId
+ParamCount=3
+Header=windows.h.api;
+[QueryFullProcessImageName]
+1=[ProcessHandle] hProcess
+2=[QueryFullProcessImageNameFlags] dwFlags
+3=LPTSTR lpExeName
+4=PDWORD lpdwSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[QueryProcessAffinityUpdateMode]
+1=HANDLE ProcessHandle
+2=DWORD lpdwFlags
+ParamCount=2
+Header=windows.h.api;
+[QueryProcessCycleTime]
+1=HANDLE ProcessHandle
+2=PULONG64 CycleTime
+ParamCount=2
+Header=windows.h.api;
+[SetEnvironmentVariable]
+1=LPCTSTR lpName
+2=LPCTSTR lpValue
+ParamCount=2
+[SetPriorityClass]
+1=[ProcessHandle] hProcess
+2=[PriorityClass] dwPriorityClass
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetProcessAffinityMask]
+1=[ProcessHandle] hProcess
+2=DWORD_PTR dwProcessAffinityMask
+ParamCount=2
+Header=windows.h.api;
+[SetProcessAffinityUpdateMode]
+1=HANDLE ProcessHandle
+2=DWORD dwFlags
+ParamCount=2
+Header=windows.h.api;
+[SetProcessInformation]
+1=HANDLE hProcess
+2=[PROCESS_INFORMATION_CLASS] ProcessInformationClass
+3=LPVOID ProcessInformation
+4=DWORD ProcessInformationSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[SetProcessMitigationPolicy]
+1=[PROCESS_MITIGATION_POLICY] MitigationPolicy
+2=PVOID lpBuffer
+3=SIZE_T dwLength
+ParamCount=3
+Header=kernel32.h.api;
+[SetProcessPriorityBoost]
+1=[ProcessHandle] hProcess
+2=BOOL DisablePriorityBoost
+ParamCount=2
+Header=windows.h.api;
+[SetProcessShutdownParameters]
+1=DWORD dwLevel
+2=[ProcessShutdownFlags] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[SetProcessWorkingSetSize]
+1=[ProcessHandle] hProcess
+2=SIZE_T dwMinimumWorkingSetSize
+3=SIZE_T dwMaximumWorkingSetSize
+ParamCount=3
+Header=windows.h.api;
+[SetProcessWorkingSetSizeEx]
+1=[ProcessHandle] hProcess
+2=SIZE_T dwMinimumWorkingSetSize
+3=SIZE_T dwMaximumWorkingSetSize
+4=DWORD Flags
+ParamCount=4
+Header=windows.h.api;
+[TerminateProcess]
+1=[ProcessHandle] hProcess
+2=UINT uExitCode
+ParamCount=2
+Header=windows.h.api;
+[CreateRemoteThread]
+1=[ProcessHandle] hProcess
+2=LPSECURITY_ATTRIBUTES lpThreadAttributes
+3=SIZE_T dwStackSize
+4=LPTHREAD_START_ROUTINE lpStartAddress
+5=LPVOID lpParameter
+6=DWORD dwCreationFlags
+7=LPDWORD lpThreadId
+ParamCount=7
+Header=security.h.api;windows.h.api;
+[CreateRemoteThreadEx]
+1=[ProcessHandle] hProcess
+2=LPSECURITY_ATTRIBUTES lpThreadAttributes
+3=SIZE_T dwStackSize
+4=LPTHREAD_START_ROUTINE lpStartAddress
+5=LPVOID lpParameter
+6=DWORD dwCreationFlags
+7=LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+8=LPDWORD lpThreadId
+ParamCount=8
+Header=native.h.api;security.h.api;windows.h.api;
+[CreateThread]
+1=LPSECURITY_ATTRIBUTES lpThreadAttributes
+2=SIZE_T dwStackSize
+3=LPTHREAD_START_ROUTINE lpStartAddress
+4=LPVOID lpParameter
+5=[ThreadCreationFlags] dwCreationFlags
+6=LPDWORD lpThreadId
+ParamCount=6
+Header=kernel32.h.api;security.h.api;windows.h.api;
+[ExitThread]
+1=DWORD dwExitCode
+ParamCount=-1
+[GetCurrentThread]
+ParamCount=0
+[GetCurrentThreadId]
+ParamCount=0
+[GetExitCodeThread]
+1=[ThreadHandle] hThread
+2=LPDWORD lpExitCode
+ParamCount=2
+Header=windows.h.api;
+[GetThreadGroupAffinity]
+1=[ThreadHandle] hThread
+2=PGROUP_AFFINITY GroupAffinity
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetThreadId]
+1=HANDLE Thread
+ParamCount=1
+Header=windows.h.api;
+[GetThreadIdealProcessorEx]
+1=[ThreadHandle] hThread
+2=PPROCESSOR_NUMBER lpIdealProcessor
+ParamCount=2
+Header=windows.h.api;
+[GetThreadInformation]
+1=[ThreadHandle] hThread
+2=[THREAD_INFORMATION_CLASS] ThreadInformationClass
+3=LPVOID ThreadInformation
+4=DWORD ThreadInformationSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetThreadIOPendingFlag]
+1=[ThreadHandle] hThread
+2=PBOOL lpIOIsPending
+ParamCount=2
+Header=windows.h.api;
+[GetThreadPriority]
+1=[ThreadHandle] hThread
+ParamCount=1
+Header=windows.h.api;
+[GetThreadPriorityBoost]
+1=[ThreadHandle] hThread
+2=PBOOL pDisablePriorityBoost
+ParamCount=2
+Header=windows.h.api;
+[GetThreadTimes]
+1=[ThreadHandle] hThread
+2=LPFILETIME lpCreationTime
+3=LPFILETIME lpExitTime
+4=LPFILETIME lpKernelTime
+5=LPFILETIME lpUserTime
+ParamCount=5
+Header=windows.h.api;
+[OpenThread]
+1=[THREAD_ACCESS_MASK] dwDesiredAccess
+2=BOOL bInheritHandle
+3=DWORD dwThreadId
+ParamCount=3
+Header=windows.h.api;
+[QueryThreadCycleTime]
+1=[ThreadHandle] ThreadHandle
+2=PULONG64 CycleTime
+ParamCount=2
+Header=windows.h.api;
+[ResumeThread]
+1=[ThreadHandle] hThread
+ParamCount=1
+Header=windows.h.api;
+[SetThreadAffinityMask]
+1=[ThreadHandle] hThread
+2=DWORD_PTR dwThreadAffinityMask
+ParamCount=2
+Header=windows.h.api;
+[SetThreadGroupAffinity]
+1=[ThreadHandle] hThread
+2=GROUP_AFFINITY* GroupAffinity
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetThreadIdealProcessor]
+1=[ThreadHandle] hThread
+2=DWORD dwIdealProcessor
+ParamCount=2
+Header=windows.h.api;
+[SetThreadIdealProcessorEx]
+1=[ThreadHandle] hThread
+2=PPROCESSOR_NUMBER lpIdealProcessor
+3=PPROCESSOR_NUMBER lpPreviousIdealProcessor
+ParamCount=3
+Header=windows.h.api;
+[SetThreadInformation]
+1=[ThreadHandle] hThread
+2=[THREAD_INFORMATION_CLASS] ThreadInformationClass
+3=LPVOID ThreadInformation
+4=DWORD ThreadInformationSize
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[SetThreadPriority]
+1=[ThreadHandle] hThread
+2=[THREAD_PRIORITY] nPriority
+ParamCount=2
+Header=windows.h.api;
+[SetThreadPriorityBoost]
+1=[ThreadHandle] hThread
+2=BOOL DisablePriorityBoost
+ParamCount=2
+Header=windows.h.api;
+[SetThreadStackGuarantee]
+1=PULONG StackSizeInBytes
+ParamCount=1
+[Sleep]
+1=[WaitTimeout] dwMilliseconds
+ParamCount=1
+Header=windows.h.api;
+[SleepEx]
+1=[WaitTimeout] dwMilliseconds
+2=BOOL bAlertable
+ParamCount=2
+Header=windows.h.api;
+[SuspendThread]
+1=[ThreadHandle] hThread
+ParamCount=1
+Header=windows.h.api;
+[SwitchToThread]
+ParamCount=0
+[TerminateThread]
+1=[ThreadHandle] hThread
+2=DWORD dwExitCode
+ParamCount=2
+Header=windows.h.api;
+[TlsAlloc]
+ParamCount=0
+[TlsFree]
+1=DWORD dwTlsIndex
+ParamCount=1
+[TlsGetValue]
+1=DWORD dwTlsIndex
+ParamCount=1
+[TlsSetValue]
+1=DWORD dwTlsIndex
+2=LPVOID lpTlsValue
+ParamCount=2
+[DeleteProcThreadAttributeList]
+1=LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+ParamCount=1
+Header=native.h.api;
+[InitializeProcThreadAttributeList]
+1=LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+2=DWORD dwAttributeCount
+3=DWORD dwFlags
+4=PSIZE_T lpSize
+ParamCount=4
+Header=native.h.api;
+[UpdateProcThreadAttribute]
+1=LPPROC_THREAD_ATTRIBUTE_LIST lpAttributeList
+2=DWORD dwFlags
+3=[ProcThreadAttribute] Attribute
+4=PVOID lpValue
+5=SIZE_T cbSize
+6=PVOID lpPreviousValue
+7=PSIZE_T lpReturnSize
+ParamCount=7
+Header=native.h.api;
+[IsWow64Process]
+1=[ProcessHandle] hProcess
+2=PBOOL Wow64Process
+ParamCount=2
+Header=windows.h.api;
+[Wow64SuspendThread]
+1=[ThreadHandle] hThread
+ParamCount=1
+Header=windows.h.api;
+[AssignProcessToJobObject]
+1=HANDLE hJob
+2=[ProcessHandle] hProcess
+ParamCount=2
+Header=windows.h.api;
+[CreateJobObject]
+1=LPSECURITY_ATTRIBUTES lpJobAttributes
+2=LPCTSTR lpName
+ParamCount=2
+Header=security.h.api;
+[IsProcessInJob]
+1=HANDLE ProcessHandle
+2=HANDLE JobHandle
+3=PBOOL Result
+ParamCount=3
+Header=windows.h.api;
+[OpenJobObject]
+1=DWORD dwDesiredAccess
+2=BOOL bInheritHandles
+3=LPCTSTR lpName
+ParamCount=3
+[QueryInformationJobObject]
+1=HANDLE hJob
+2=[JOBOBJECTINFOCLASS] JobObjectInfoClass
+3=LPVOID lpJobObjectInfo
+4=DWORD cbJobObjectInfoLength
+5=LPDWORD lpReturnLength
+ParamCount=5
+Header=windows.h.api;
+[SetInformationJobObject]
+1=HANDLE hJob
+2=[JOBOBJECTINFOCLASS] JobObjectInfoClass
+3=LPVOID lpJobObjectInfo
+4=DWORD cbJobObjectInfoLength
+ParamCount=4
+Header=windows.h.api;
+[TerminateJobObject]
+1=HANDLE hJob
+2=UINT uExitCode
+ParamCount=2
+Header=windows.h.api;
+[CallbackMayRunLong]
+1=PTP_CALLBACK_INSTANCE pci
+ParamCount=1
+Header=kernel32.h.api;
+[CancelThreadpoolIo]
+1=PTP_IO pio
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpool]
+1=PTP_POOL ptpp
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpoolCleanupGroup]
+1=PTP_CLEANUP_GROUP ptpcg
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpoolCleanupGroupMembers]
+1=PTP_CLEANUP_GROUP ptpcg
+2=BOOL fCancelPendingCallbacks
+3=PVOID pvCleanupContext
+ParamCount=3
+Header=kernel32.h.api;
+[CloseThreadpoolIo]
+1=PTP_IO pio
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpoolTimer]
+1=PTP_TIMER pti
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpoolWait]
+1=PTP_WAIT pwa
+ParamCount=1
+Header=kernel32.h.api;
+[CloseThreadpoolWork]
+1=PTP_WORK pwk
+ParamCount=1
+Header=kernel32.h.api;
+[CreateThreadpool]
+1=PVOID reserved
+ParamCount=1
+[CreateThreadpoolCleanupGroup]
+ParamCount=0
+[CreateThreadpoolIo]
+1=HANDLE fl
+2=PTP_WIN32_IO_CALLBACK pfnio
+3=PVOID pv
+4=PTP_CALLBACK_ENVIRON pcbe
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[CreateThreadpoolTimer]
+1=PTP_TIMER_CALLBACK pfnti
+2=PVOID pv
+3=PTP_CALLBACK_ENVIRON pcbe
+ParamCount=3
+Header=kernel32.h.api;
+[CreateThreadpoolWait]
+1=PTP_WAIT_CALLBACK pfnwa
+2=PVOID pv
+3=PTP_CALLBACK_ENVIRON pcbe
+ParamCount=3
+Header=kernel32.h.api;
+[CreateThreadpoolWork]
+1=PTP_WORK_CALLBACK pfnwk
+2=PVOID pv
+3=PTP_CALLBACK_ENVIRON pcbe
+ParamCount=3
+Header=kernel32.h.api;
+[DisassociateCurrentThreadFromCallback]
+1=PTP_CALLBACK_INSTANCE pci
+ParamCount=1
+Header=kernel32.h.api;
+[FreeLibraryWhenCallbackReturns]
+1=PTP_CALLBACK_INSTANCE pci
+2=HMODULE mod
+ParamCount=2
+Header=kernel32.h.api;
+[IsThreadpoolTimerSet]
+1=PTP_TIMER pti
+ParamCount=1
+Header=kernel32.h.api;
+[LeaveCriticalSectionWhenCallbackReturns]
+1=PTP_CALLBACK_INSTANCE pci
+2=PCRITICAL_SECTION pcs
+ParamCount=2
+Header=kernel32.h.api;
+[QueryThreadpoolStackInformation]
+1=PTP_POOL ptpp
+2=PTP_POOL_STACK_INFORMATION ptpsi
+ParamCount=2
+Header=kernel32.h.api;
+[ReleaseMutexWhenCallbackReturns]
+1=PTP_CALLBACK_INSTANCE pci
+2=HANDLE mut
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[ReleaseSemaphoreWhenCallbackReturns]
+1=PTP_CALLBACK_INSTANCE pci
+2=HANDLE sem
+3=DWORD crel
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetEventWhenCallbackReturns]
+1=PTP_CALLBACK_INSTANCE pci
+2=HANDLE evt
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetThreadpoolStackInformation]
+1=PTP_POOL ptpp
+2=PTP_POOL_STACK_INFORMATION ptpsi
+ParamCount=2
+Header=kernel32.h.api;
+[SetThreadpoolThreadMaximum]
+1=PTP_POOL ptpp
+2=DWORD cthrdMost
+ParamCount=2
+Header=kernel32.h.api;
+[SetThreadpoolThreadMinimum]
+1=PTP_POOL ptpp
+2=DWORD cthrdMic
+ParamCount=2
+Header=kernel32.h.api;
+[SetThreadpoolTimer]
+1=PTP_TIMER pti
+2=PFILETIME pftDueTime
+3=DWORD msPeriod
+4=DWORD msWindowLength
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[SetThreadpoolWait]
+1=PTP_WAIT pwa
+2=HANDLE h
+3=PFILETIME pftTimeout
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[StartThreadpoolIo]
+1=PTP_IO pio
+ParamCount=1
+Header=kernel32.h.api;
+[SubmitThreadpoolWork]
+1=PTP_WORK pwk
+ParamCount=1
+Header=kernel32.h.api;
+[TrySubmitThreadpoolCallback]
+1=PTP_SIMPLE_CALLBACK pfns
+2=PVOID pv
+3=PTP_CALLBACK_ENVIRON pcbe
+ParamCount=3
+Header=kernel32.h.api;
+[WaitForThreadpoolIoCallbacks]
+1=PTP_IO pio
+2=BOOL fCancelPendingCallbacks
+ParamCount=2
+Header=kernel32.h.api;
+[WaitForThreadpoolTimerCallbacks]
+1=PTP_TIMER pti
+2=BOOL fCancelPendingCallbacks
+ParamCount=2
+Header=kernel32.h.api;
+[WaitForThreadpoolWaitCallbacks]
+1=PTP_WAIT pwa
+2=BOOL fCancelPendingCallbacks
+ParamCount=2
+Header=kernel32.h.api;
+[WaitForThreadpoolWorkCallbacks]
+1=PTP_WORK pwk
+2=BOOL fCancelPendingCallbacks
+ParamCount=2
+Header=kernel32.h.api;
+[BindIoCompletionCallback]
+1=HANDLE FileHandle
+2=LPOVERLAPPED_COMPLETION_ROUTINE Function
+3=ULONG Flags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[QueueUserWorkItem]
+1=LPTHREAD_START_ROUTINE Function
+2=PVOID Context
+3=[WorkItemFlags] Flags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[ConvertFiberToThread]
+ParamCount=0
+[ConvertThreadToFiber]
+1=LPVOID lpParameter
+ParamCount=1
+[ConvertThreadToFiberEx]
+1=LPVOID lpParameter
+2=DWORD dwFlags
+ParamCount=2
+[CreateFiber]
+1=SIZE_T dwStackSize
+2=LPFIBER_START_ROUTINE lpStartAddress
+3=LPVOID lpParameter
+ParamCount=3
+Header=kernel32.h.api;
+[CreateFiberEx]
+1=SIZE_T dwStackCommitSize
+2=SIZE_T dwStackReserveSize
+3=DWORD dwFlags
+4=LPFIBER_START_ROUTINE lpStartAddress
+5=LPVOID lpParameter
+ParamCount=5
+Header=kernel32.h.api;
+[DeleteFiber]
+1=LPVOID lpFiber
+ParamCount=1
+[FlsAlloc]
+1=PFLS_CALLBACK_FUNCTION lpCallback
+ParamCount=1
+Header=kernel32.h.api;
+[FlsFree]
+1=DWORD dwFlsIndex
+ParamCount=1
+[FlsGetValue]
+1=DWORD dwFlsIndex
+ParamCount=1
+[FlsSetValue]
+1=DWORD dwFlsIndex
+2=PVOID lpFlsData
+ParamCount=2
+[IsThreadAFiber]
+ParamCount=0
+[SwitchToFiber]
+1=LPVOID lpFiber
+ParamCount=1
+[AllocateUserPhysicalPagesNuma]
+1=[ProcessHandle] hProcess
+2=PULONG_PTR NumberOfPages
+3=PULONG_PTR PageArray
+4=DWORD nndPreferred
+ParamCount=4
+Header=windows.h.api;
+[GetNumaAvailableMemoryNode]
+1=UCHAR Node
+2=PULONGLONG AvailableBytes
+ParamCount=2
+[GetNumaAvailableMemoryNodeEx]
+1=USHORT Node
+2=PULONGLONG AvailableBytes
+ParamCount=2
+[GetNumaHighestNodeNumber]
+1=PULONG HighestNodeNumber
+ParamCount=1
+[GetNumaNodeNumberFromHandle]
+1=HANDLE hFile
+2=PUSHORT NodeNumber
+ParamCount=2
+Header=windows.h.api;
+[GetNumaNodeProcessorMask]
+1=UCHAR Node
+2=PULONGLONG ProcessorMask
+ParamCount=2
+[GetNumaNodeProcessorMaskEx]
+1=USHORT Node
+2=PGROUP_AFFINITY ProcessorMask
+ParamCount=2
+Header=kernel32.h.api;
+[GetNumaProcessorNode]
+1=UCHAR Processor
+2=PUCHAR NodeNumber
+ParamCount=2
+[GetNumaProcessorNodeEx]
+1=PPROCESSOR_NUMBER Processor
+2=PUSHORT NodeNumber
+ParamCount=2
+Header=windows.h.api;
+[GetNumaProximityNode]
+1=ULONG ProximityId
+2=PUCHAR NodeNumber
+ParamCount=2
+[GetNumaProximityNodeEx]
+1=ULONG ProximityId
+2=PUSHORT NodeNumber
+ParamCount=2
+[GetActiveProcessorCount]
+1=WORD GroupNumber
+ParamCount=1
+[GetActiveProcessorGroupCount]
+ParamCount=0
+[GetCurrentProcessorNumber]
+ParamCount=0
+[GetCurrentProcessorNumberEx]
+1=PPROCESSOR_NUMBER ProcNumber
+ParamCount=1
+Header=windows.h.api;
+[GetLogicalProcessorInformation]
+1=PSYSTEM_LOGICAL_PROCESSOR_INFORMATION Buffer
+2=PDWORD ReturnLength
+ParamCount=2
+Header=kernel32.h.api;
+[GetLogicalProcessorInformationEx]
+1=[LOGICAL_PROCESSOR_RELATIONSHIP] RelationshipType
+2=PSYSTEM_LOGICAL_PROCESSOR_INFORMATION_EX Buffer
+3=PDWORD ReturnedLength
+ParamCount=3
+Header=kernel32.h.api;
+[GetMaximumProcessorCount]
+1=WORD GroupNumber
+ParamCount=1
+[GetMaximumProcessorGroupCount]
+ParamCount=0
+[QueryIdleProcessorCycleTime]
+1=PULONG BufferLength
+2=PULONG64 ProcessorIdleCycleTime
+ParamCount=2
+[QueryIdleProcessorCycleTimeEx]
+1=USHORT Group
+2=PULONG BufferLength
+3=PULONG64 ProcessorIdleCycleTime
+ParamCount=3
+[CreateUmsCompletionList]
+1=PUMS_COMPLETION_LIST* UmsCompletionList
+ParamCount=1
+Header=kernel32.h.api;
+[CreateUmsThreadContext]
+1=PUMS_CONTEXT* lpUmsThread
+ParamCount=1
+Header=kernel32.h.api;
+[DeleteUmsCompletionList]
+1=PUMS_COMPLETION_LIST UmsCompletionList
+ParamCount=1
+Header=kernel32.h.api;
+[DeleteUmsThreadContext]
+1=PUMS_CONTEXT UmsThread
+ParamCount=1
+Header=kernel32.h.api;
+[DequeueUmsCompletionListItems]
+1=PUMS_COMPLETION_LIST UmsCompletionList
+2=DWORD WaitTimeOut
+3=PUMS_CONTEXT* UmsThreadList
+ParamCount=3
+Header=kernel32.h.api;
+[EnterUmsSchedulingMode]
+1=PUMS_SCHEDULER_STARTUP_INFO SchedulerStartupInfo
+ParamCount=1
+Header=kernel32.h.api;
+[ExecuteUmsThread]
+1=PUMS_CONTEXT UmsThread
+ParamCount=1
+Header=kernel32.h.api;
+[GetCurrentUmsThread]
+ParamCount=0
+[GetNextUmsListItem]
+1=PUMS_CONTEXT UmsContext
+ParamCount=1
+Header=kernel32.h.api;
+[GetUmsCompletionListEvent]
+1=PUMS_COMPLETION_LIST UmsCompletionList
+2=PHANDLE UmsCompletionEvent
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetUmsSystemThreadInformation]
+1=[ThreadHandle] ThreadHandle
+2=PUMS_SYSTEM_THREAD_INFORMATION SystemThreadInfo
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[QueryUmsThreadInformation]
+1=PUMS_CONTEXT UmsThread
+2=[UMS_THREAD_INFO_CLASS] UmsThreadInfoClass
+3=PVOID UmsThreadInformation
+4=ULONG UmsThreadInformationLength
+5=PULONG ReturnLength
+ParamCount=5
+Header=kernel32.h.api;
+[SetUmsThreadInformation]
+1=PUMS_CONTEXT UmsThread
+2=[UMS_THREAD_INFO_CLASS] UmsThreadInfoClass
+3=PVOID UmsThreadInformation
+4=ULONG UmsThreadInformationLength
+ParamCount=4
+Header=kernel32.h.api;
+[UmsThreadYield]
+1=PVOID SchedulerParam
+ParamCount=1
+[WinExec]
+1=LPCSTR lpCmdLine
+2=[ShowWindowCmd] uCmdShow
+ParamCount=2
+Header=windows.h.api;
+[ActivateActCtx]
+1=HANDLE hActCtx
+2=ULONG_PTR* lpCookie
+ParamCount=2
+Header=windows.h.api;
+[AddRefActCtx]
+1=HANDLE hActCtx
+ParamCount=1
+Header=windows.h.api;
+[CreateActCtx]
+1=PACTCTX pActCtx
+ParamCount=1
+Header=windows.h.api;
+[DeactivateActCtx]
+1=[DeactivateActCtxFlags] dwFlags
+2=ULONG_PTR ulCookie
+ParamCount=2
+Header=kernel32.h.api;
+[FindActCtxSectionGuid]
+1=[FIND_ACTCTX_SECTION_FLAGS] dwFlags
+2=GUID* lpExtensionGuid
+3=[ACTIVATION_CONTEXT_SECTION] ulSectionId
+4=GUID* lpGuidToFind
+5=PACTCTX_SECTION_KEYED_DATA ReturnedData
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[FindActCtxSectionString]
+1=[FIND_ACTCTX_SECTION_FLAGS] dwFlags
+2=GUID* lpExtensionGuid
+3=[ACTIVATION_CONTEXT_SECTION] ulSectionId
+4=LPCTSTR lpStringToFind
+5=PACTCTX_SECTION_KEYED_DATA ReturnedData
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetCurrentActCtx]
+1=HANDLE* lphActCtx
+ParamCount=1
+Header=windows.h.api;
+[QueryActCtxW]
+1=[QueryActCtxFlags] dwFlags
+2=HANDLE hActCtx
+3=PVOID pvSubInstance
+4=[ActivationContextInfoClass] ulInfoClass
+5=PVOID pvBuffer
+6=SIZE_T cbBuffer
+7=SIZE_T* pcbWrittenOrRequired
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[QueryActCtxSettingsW]
+1=DWORD dwFlags
+2=HANDLE hActCtx
+3=PCWSTR settingsNameSpace
+4=PCWSTR settingName
+5=PWSTR pvBuffer
+6=SIZE_T dwBuffer
+7=SIZE_T* pdwWrittenOrRequired
+ParamCount=7
+Header=windows.h.api;
+[ReleaseActCtx]
+1=HANDLE hActCtx
+ParamCount=1
+Header=windows.h.api;
+[ZombifyActCtx]
+1=HANDLE hActCtx
+ParamCount=1
+Header=windows.h.api;
+[AddAtom]
+1=LPCTSTR lpString
+ParamCount=1
+[DeleteAtom]
+1=ATOM nAtom
+ParamCount=1
+Header=windows.h.api;
+[FindAtom]
+1=LPCTSTR lpString
+ParamCount=1
+[GetAtomName]
+1=ATOM nAtom
+2=LPTSTR lpBuffer
+3=int nSize
+ParamCount=3
+Header=windows.h.api;
+[GlobalAddAtom]
+1=LPCTSTR lpString
+ParamCount=1
+[GlobalDeleteAtom]
+1=ATOM nAtom
+ParamCount=1
+Header=windows.h.api;
+[GlobalFindAtom]
+1=LPCTSTR lpString
+ParamCount=1
+[GlobalGetAtomName]
+1=ATOM nAtom
+2=LPTSTR lpBuffer
+3=int nSize
+ParamCount=3
+Header=windows.h.api;
+[InitAtomTable]
+1=DWORD nSize
+ParamCount=1
+[BuildCommDCB]
+1=LPCTSTR lpDef
+2=LPDCB lpDCB
+ParamCount=2
+Header=kernel32.h.api;
+[BuildCommDCBAndTimeouts]
+1=LPCTSTR lpDef
+2=LPDCB lpDCB
+3=LPCOMMTIMEOUTS lpCommTimeouts
+ParamCount=3
+Header=kernel32.h.api;
+[ClearCommBreak]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[ClearCommError]
+1=HANDLE hFile
+2=LPDWORD lpErrors
+3=LPCOMSTAT lpStat
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[CommConfigDialog]
+1=LPCTSTR lpszName
+2=HWND hWnd
+3=LPCOMMCONFIG lpCC
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[EscapeCommFunction]
+1=HANDLE hFile
+2=[COMM_FUNCTION] dwFunc
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCommConfig]
+1=HANDLE hCommDev
+2=LPCOMMCONFIG lpCC
+3=LPDWORD lpdwSize
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[GetCommMask]
+1=HANDLE hFile
+2=COMM_EVENT* lpEvtMask
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCommModemStatus]
+1=HANDLE hFile
+2=MODEM_STATUS_FLAGS* lpModemStat
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCommProperties]
+1=HANDLE hFile
+2=LPCOMMPROP lpCommProp
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCommState]
+1=HANDLE hFile
+2=LPDCB lpDCB
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCommTimeouts]
+1=HANDLE hFile
+2=LPCOMMTIMEOUTS lpCommTimeouts
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetDefaultCommConfig]
+1=LPCTSTR lpszName
+2=LPCOMMCONFIG lpCC
+3=LPDWORD lpdwSize
+ParamCount=3
+Header=kernel32.h.api;
+[PurgeComm]
+1=HANDLE hFile
+2=[PURGE_FLAGS] dwFlags
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetCommBreak]
+1=HANDLE hFile
+ParamCount=1
+Header=windows.h.api;
+[SetCommConfig]
+1=HANDLE hCommDev
+2=LPCOMMCONFIG lpCC
+3=DWORD dwSize
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetCommMask]
+1=HANDLE hFile
+2=[COMM_EVENT] dwEvtMask
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetCommState]
+1=HANDLE hFile
+2=LPDCB lpDCB
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetCommTimeouts]
+1=HANDLE hFile
+2=LPCOMMTIMEOUTS lpCommTimeouts
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetDefaultCommConfig]
+1=LPCTSTR lpszName
+2=LPCOMMCONFIG lpCC
+3=DWORD dwSize
+ParamCount=3
+Header=kernel32.h.api;
+[SetupComm]
+1=HANDLE hFile
+2=DWORD dwInQueue
+3=DWORD dwOutQueue
+ParamCount=3
+Header=windows.h.api;
+[TransmitCommChar]
+1=HANDLE hFile
+2=char cChar
+ParamCount=2
+Header=windows.h.api;
+[WaitCommEvent]
+1=HANDLE hFile
+2=COMM_EVENT* lpEvtMask
+3=LPOVERLAPPED lpOverlapped
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[AddConsoleAlias]
+1=LPCTSTR Source
+2=LPCTSTR Target
+3=LPCTSTR ExeName
+ParamCount=3
+[AllocConsole]
+ParamCount=0
+[AttachConsole]
+1=DWORD dwProcessId
+ParamCount=1
+[CreateConsoleScreenBuffer]
+1=DWORD dwDesiredAccess
+2=[FILE_SHARE_MODE] dwShareMode
+3=SECURITY_ATTRIBUTES* lpSecurityAttributes
+4=[CONSOLE_TEXTMODE_FLAGS] dwFlags
+5=LPVOID lpScreenBufferData
+ParamCount=5
+Header=kernel32.h.api;native.h.api;security.h.api;
+[FillConsoleOutputAttribute]
+1=HANDLE hConsoleOutput
+2=[ConsoleAttribute] wAttribute
+3=DWORD nLength
+4=COORD dwWriteCoord
+5=LPDWORD lpNumberOfAttrsWritten
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[FillConsoleOutputCharacter]
+1=HANDLE hConsoleOutput
+2=TCHAR cCharacter
+3=DWORD nLength
+4=COORD dwWriteCoord
+5=LPDWORD lpNumberOfCharsWritten
+ParamCount=5
+Header=windows.h.api;
+[FlushConsoleInputBuffer]
+1=HANDLE hConsoleInput
+ParamCount=1
+Header=windows.h.api;
+[FreeConsole]
+ParamCount=0
+[GenerateConsoleCtrlEvent]
+1=DWORD dwCtrlEvent
+2=DWORD dwProcessGroupId
+ParamCount=2
+[GetConsoleAlias]
+1=LPTSTR lpSource
+2=LPTSTR lpTargetBuffer
+3=DWORD TargetBufferLength
+4=LPTSTR lpExeName
+ParamCount=4
+[GetConsoleAliases]
+1=LPTSTR lpAliasBuffer
+2=DWORD AliasBufferLength
+3=LPTSTR lpExeName
+ParamCount=3
+[GetConsoleAliasesLength]
+1=LPTSTR lpExeName
+ParamCount=1
+[GetConsoleAliasExes]
+1=LPTSTR lpExeNameBuffer
+2=DWORD ExeNameBufferLength
+ParamCount=2
+[GetConsoleAliasExesLength]
+ParamCount=0
+[GetConsoleCP]
+ParamCount=0
+[GetConsoleCursorInfo]
+1=HANDLE hConsoleOutput
+2=PCONSOLE_CURSOR_INFO lpConsoleCursorInfo
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetConsoleDisplayMode]
+1=CONSOLE_FULLSCREEN_MODE* lpModeFlags
+ParamCount=1
+Header=kernel32.h.api;
+[GetConsoleFontSize]
+1=HANDLE hConsoleOutput
+2=DWORD nFont
+ParamCount=2
+Header=windows.h.api;
+[GetConsoleHistoryInfo]
+1=PCONSOLE_HISTORY_INFO lpConsoleHistoryInfo
+ParamCount=1
+Header=kernel32.h.api;
+[GetConsoleMode]
+1=HANDLE hConsoleHandle
+2=ConsoleModeFlags* lpMode
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetConsoleOriginalTitle]
+1=LPTSTR lpConsoleTitle
+2=DWORD nSize
+ParamCount=2
+[GetConsoleOutputCP]
+ParamCount=0
+[GetConsoleProcessList]
+1=LPDWORD lpdwProcessList
+2=DWORD dwProcessCount
+ParamCount=2
+[GetConsoleScreenBufferInfo]
+1=HANDLE hConsoleOutput
+2=PCONSOLE_SCREEN_BUFFER_INFO lpConsoleScreenBufferInfo
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetConsoleScreenBufferInfoEx]
+1=HANDLE hConsoleOutput
+2=PCONSOLE_SCREEN_BUFFER_INFOEX lpConsoleScreenBufferInfoEx
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetConsoleSelectionInfo]
+1=PCONSOLE_SELECTION_INFO lpConsoleSelectionInfo
+ParamCount=1
+Header=kernel32.h.api;
+[GetConsoleTitle]
+1=LPTSTR lpConsoleTitle
+2=DWORD nSize
+ParamCount=2
+[GetConsoleWindow]
+ParamCount=0
+[GetCurrentConsoleFont]
+1=HANDLE hConsoleOutput
+2=BOOL bMaximumWindow
+3=PCONSOLE_FONT_INFO lpConsoleCurrentFont
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[GetCurrentConsoleFontEx]
+1=HANDLE hConsoleOutput
+2=BOOL bMaximumWindow
+3=PCONSOLE_FONT_INFOEX lpConsoleCurrentFontEx
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[GetLargestConsoleWindowSize]
+1=HANDLE hConsoleOutput
+ParamCount=1
+Header=windows.h.api;
+[GetNumberOfConsoleInputEvents]
+1=HANDLE hConsoleInput
+2=LPDWORD lpcNumberOfEvents
+ParamCount=2
+Header=windows.h.api;
+[GetNumberOfConsoleMouseButtons]
+1=LPDWORD lpNumberOfMouseButtons
+ParamCount=1
+[GetStdHandle]
+1=[StdHandle] nStdHandle
+ParamCount=1
+Header=kernel32.h.api;
+[PeekConsoleInput]
+1=HANDLE hConsoleInput
+2=PINPUT_RECORD lpBuffer
+3=DWORD nLength
+4=LPDWORD lpNumberOfEventsRead
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[ReadConsole]
+1=HANDLE hConsoleInput
+2=LPVOID lpBuffer
+3=DWORD nNumberOfCharsToRead
+4=LPDWORD lpNumberOfCharsRead
+5=LPVOID pInputControl
+ParamCount=5
+Header=windows.h.api;
+[ReadConsoleInput]
+1=HANDLE hConsoleInput
+2=PINPUT_RECORD lpBuffer
+3=DWORD nLength
+4=LPDWORD lpNumberOfEventsRead
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[ReadConsoleOutput]
+1=HANDLE hConsoleOutput
+2=PCHAR_INFO lpBuffer
+3=COORD dwBufferSize
+4=COORD dwBufferCoord
+5=PSMALL_RECT lpReadRegion
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[ReadConsoleOutputAttribute]
+1=HANDLE hConsoleOutput
+2=ConsoleAttribute* lpAttribute
+3=DWORD nLength
+4=COORD dwReadCoord
+5=LPDWORD lpNumberOfAttrsRead
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[ReadConsoleOutputCharacter]
+1=HANDLE hConsoleOutput
+2=LPTSTR lpCharacter
+3=DWORD nLength
+4=COORD dwReadCoord
+5=LPDWORD lpNumberOfCharsRead
+ParamCount=5
+Header=windows.h.api;
+[ScrollConsoleScreenBuffer]
+1=HANDLE hConsoleOutput
+2=SMALL_RECT* lpScrollRectangle
+3=SMALL_RECT* lpClipRectangle
+4=COORD dwDestinationOrigin
+5=CHAR_INFO* lpFill
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleActiveScreenBuffer]
+1=HANDLE hConsoleOutput
+ParamCount=1
+Header=windows.h.api;
+[SetConsoleCP]
+1=[CodePageEnum] wCodePageID
+ParamCount=1
+Header=windows.h.api;
+[SetConsoleCtrlHandler]
+1=PHANDLER_ROUTINE HandlerRoutine
+2=BOOL Add
+ParamCount=2
+Header=kernel32.h.api;
+[SetConsoleCursorInfo]
+1=HANDLE hConsoleOutput
+2=CONSOLE_CURSOR_INFO* lpConsoleCursorInfo
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleCursorPosition]
+1=HANDLE hConsoleOutput
+2=COORD dwCursorPosition
+ParamCount=2
+Header=windows.h.api;
+[SetConsoleDisplayMode]
+1=HANDLE hConsoleOutput
+2=[CONSOLE_DISPLAY_MODE] dwFlags
+3=PCOORD lpNewScreenBufferDimensions
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleHistoryInfo]
+1=PCONSOLE_HISTORY_INFO lpConsoleHistoryInfo
+ParamCount=1
+Header=kernel32.h.api;
+[SetConsoleMode]
+1=HANDLE hConsoleHandle
+2=[ConsoleModeFlags] dwMode
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleOutputCP]
+1=[CodePageEnum] wCodePageID
+ParamCount=1
+Header=windows.h.api;
+[SetConsoleScreenBufferInfoEx]
+1=HANDLE hConsoleOutput
+2=PCONSOLE_SCREEN_BUFFER_INFOEX lpConsoleScreenBufferInfoEx
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleScreenBufferSize]
+1=HANDLE hConsoleOutput
+2=COORD dwSize
+ParamCount=2
+Header=windows.h.api;
+[SetConsoleTextAttribute]
+1=HANDLE hConsoleOutput
+2=[ConsoleAttribute] wAttributes
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetConsoleTitle]
+1=LPCTSTR lpConsoleTitle
+ParamCount=1
+[SetConsoleWindowInfo]
+1=HANDLE hConsoleOutput
+2=BOOL bAbsolute
+3=SMALL_RECT* lpConsoleWindow
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetCurrentConsoleFontEx]
+1=HANDLE hConsoleOutput
+2=BOOL bMaximumWindow
+3=PCONSOLE_FONT_INFOEX lpConsoleCurrentFontEx
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetStdHandle]
+1=[StdHandle] nStdHandle
+2=HANDLE hHandle
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[WriteConsole]
+1=HANDLE hConsoleOutput
+2=LPCTSTR lpBuffer
+3=DWORD nNumberOfCharsToWrite
+4=LPDWORD lpNumberOfCharsWritten
+5=LPVOID lpReserved
+ParamCount=5
+Header=windows.h.api;
+[WriteConsoleInput]
+1=HANDLE hConsoleInput
+2=INPUT_RECORD* lpBuffer
+3=DWORD nLength
+4=LPDWORD lpNumberOfEventsWritten
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[WriteConsoleOutput]
+1=HANDLE hConsoleOutput
+2=CHAR_INFO* lpBuffer
+3=COORD dwBufferSize
+4=COORD dwBufferCoord
+5=PSMALL_RECT lpWriteRegion
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[WriteConsoleOutputAttribute]
+1=HANDLE hConsoleOutput
+2=ConsoleAttribute* lpAttribute
+3=DWORD nLength
+4=COORD dwWriteCoord
+5=LPDWORD lpNumberOfAttrsWritten
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[WriteConsoleOutputCharacter]
+1=HANDLE hConsoleOutput
+2=LPCTSTR lpCharacter
+3=DWORD nLength
+4=COORD dwWriteCoord
+5=LPDWORD lpNumberOfCharsWritten
+ParamCount=5
+Header=windows.h.api;
+[SetConsoleInputExeName]
+1=LPCTSTR lpName
+ParamCount=1
+[DeviceIoControl]
+1=HANDLE hDevice
+2=[IOCTL] dwIoControlCode
+3=LPVOID lpInBuffer
+4=DWORD nInBufferSize
+5=LPVOID lpOutBuffer
+6=DWORD nOutBufferSize
+7=LPDWORD lpBytesReturned
+8=LPOVERLAPPED lpOverlapped
+ParamCount=8
+Header=ioctl.h.api;windows.h.api;
+[Beep]
+1=DWORD dwFreq
+2=DWORD dwDuration
+ParamCount=2
+[RtlCaptureStackBackTrace]
+1=ULONG FramesToSkip
+2=ULONG FramesToCapture
+3=PVOID* BackTrace
+4=PULONG BackTraceHash
+ParamCount=4
+[FatalAppExit]
+1=UINT uAction
+2=LPCTSTR lpMessageText
+ParamCount=-2
+[FormatMessage]
+1=[FormatMessageFlags] dwFlags
+2=LPCVOID lpSource
+3=DWORD dwMessageId
+4=DWORD dwLanguageId
+5=LPTSTR lpBuffer
+6=DWORD nSize
+7=va_list* Arguments
+ParamCount=7
+Header=kernel32.h.api;
+[GetErrorMode]
+ParamCount=0
+[GetLastError]
+ParamCount=0
+[GetThreadErrorMode]
+ParamCount=0
+[RtlLookupFunctionEntry]
+1=ULONGLONG ControlPC
+2=PULONGLONG ImageBase
+3=PULONGLONG TargetGp
+ParamCount=3
+[RtlPcToFileHeader]
+1=PVOID PcValue
+2=PVOID* BaseOfImage
+ParamCount=2
+[SetErrorMode]
+1=[SEM_FLAGS] uMode
+ParamCount=1
+Header=kernel32.h.api;
+[SetLastError]
+1=[ERROR_CODE] dwErrCode
+ParamCount=1
+Header=windows.h.api;
+[SetThreadErrorMode]
+1=[SEM_FLAGS_DWORD] dwNewMode
+2=SEM_FLAGS_DWORD* lpOldMode
+ParamCount=2
+Header=kernel32.h.api;
+[CloseHandle]
+1=HANDLE hObject
+ParamCount=1
+Header=windows.h.api;
+[DuplicateHandle]
+1=[ProcessHandle] hSourceProcessHandle
+2=[PROCESS_THREAD_HANDLE] hSourceHandle
+3=[ProcessHandle] hTargetProcessHandle
+4=LPHANDLE lpTargetHandle
+5=[StandardAccessRights] dwDesiredAccess
+6=BOOL bInheritHandle
+7=[DUPLICATE_HANDLE_FLAGS] dwOptions
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[GetHandleInformation]
+1=HANDLE hObject
+2=HANDLE_FLAGS* lpdwFlags
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[SetHandleInformation]
+1=HANDLE hObject
+2=[HANDLE_FLAGS] dwMask
+3=[HANDLE_FLAGS] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetHandleCount]
+1=UINT uNumber
+ParamCount=1
+[CreateMailslot]
+1=LPCTSTR lpName
+2=DWORD nMaxMessageSize
+3=DWORD lReadTimeout
+4=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+ParamCount=4
+Header=security.h.api;
+[GetMailslotInfo]
+1=HANDLE hMailslot
+2=LPDWORD lpMaxMessageSize
+3=LPDWORD lpNextSize
+4=LPDWORD lpMessageCount
+5=LPDWORD lpReadTimeout
+ParamCount=5
+Header=windows.h.api;
+[SetMailslotInfo]
+1=HANDLE hMailslot
+2=DWORD lReadTimeout
+ParamCount=2
+Header=windows.h.api;
+[AdjustCalendarDate]
+1=LPCALDATETIME lpCalDateTime
+2=[CALDATETIME_DATEUNIT] calUnit
+3=INT amount
+ParamCount=3
+Header=kernel32.h.api;
+[CompareString]
+1=[LCID] Locale
+2=[NLS_STRING_COMPARE_FLAGS] dwCmpFlags
+3=LPCTSTR lpString1
+4=int cchCount1
+5=LPCTSTR lpString2
+6=int cchCount2
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[CompareStringEx]
+1=LPCWSTR lpLocaleName
+2=[NLS_STRING_COMPARE_FLAGS] dwCmpFlags
+3=LPCWSTR lpString1
+4=int cchCount1
+5=LPCWSTR lpString2
+6=int cchCount2
+7=LPNLSVERSIONINFO lpVersionInformation
+8=LPVOID lpReserved
+9=LPARAM lParam
+ParamCount=9
+Header=kernel32.h.api;windows.h.api;
+[CompareStringOrdinal]
+1=LPCWSTR lpString1
+2=int cchCount1
+3=LPCWSTR lpString2
+4=int cchCount2
+5=BOOL bIgnoreCase
+ParamCount=5
+[ConvertCalDateTimeToSystemTime]
+1=LPCALDATETIME lpCalDateTime
+2=SYSTEMTIME* lpSysTime
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[ConvertDefaultLocale]
+1=[LCID] Locale
+ParamCount=1
+Header=windows.h.api;
+[ConvertSystemTimeToCalDateTime]
+1=SYSTEMTIME lpSysTime
+2=[CALID] calId
+3=LPCALDATETIME lpCalDateTime
+ParamCount=-3
+Header=kernel32.h.api;windows.h.api;
+[EnumCalendarInfo]
+1=CALINFO_ENUMPROC pCalInfoEnumProc
+2=[LCID] Locale
+3=[CALID] Calendar
+4=[CALTYPE] CalType
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[EnumCalendarInfoEx]
+1=CALINFO_ENUMPROCEX pCalInfoEnumProcEx
+2=[LCID] Locale
+3=[CALID] Calendar
+4=[CALTYPE] CalType
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[EnumCalendarInfoExEx]
+1=CALINFO_ENUMPROCEXEX pCalInfoEnumProcExEx
+2=LPCWSTR lpLocaleName
+3=[CALID] Calendar
+4=LPCWSTR lpReserved
+5=[CALTYPE] CalType
+6=LPARAM lParam
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[EnumDateFormats]
+1=DATEFMT_ENUMPROC lpDateFmtEnumProc
+2=[LCID] Locale
+3=[NLS_DATE_FLAGS] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[EnumDateFormatsEx]
+1=DATEFMT_ENUMPROCEX lpDateFmtEnumProcEx
+2=[LCID] Locale
+3=[NLS_DATE_FLAGS] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[EnumDateFormatsExEx]
+1=DATEFMT_ENUMPROCEXEX lpDateFmtEnumProcExEx
+2=LPCWSTR lpLocaleName
+3=[NLS_DATE_FLAGS] dwFlags
+4=LPARAM lParam
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[EnumLanguageGroupLocales]
+1=LANGGROUPLOCALE_ENUMPROC lpLangGroupLocaleEnumProc
+2=[LGRPID] LanguageGroup
+3=DWORD dwFlags
+4=LONG_PTR lParam
+ParamCount=4
+Header=kernel32.h.api;
+[EnumSystemCodePages]
+1=CODEPAGE_ENUMPROC lpCodePageEnumProc
+2=[CodePageEnumerationFlags] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[EnumSystemGeoID]
+1=[GEOCLASS] GeoClass
+2=[GEOID] ParentGeoId
+3=GEO_ENUMPROC lpGeoEnumProc
+ParamCount=3
+Header=kernel32.h.api;
+[EnumSystemLanguageGroups]
+1=LANGUAGEGROUP_ENUMPROC lpLanguageGroupEnumProc
+2=[LANGUAGE_GROUP_FLAGS] dwFlags
+3=LONG_PTR lParam
+ParamCount=3
+Header=kernel32.h.api;
+[EnumSystemLocales]
+1=LOCALE_ENUMPROC lpLocaleEnumProc
+2=[LocaleEnumerationFlags] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[EnumSystemLocalesEx]
+1=LOCALE_ENUMPROCEX lpLocaleEnumProcEx
+2=[EnumSystemLocalesExFlags] dwFlags
+3=LPARAM lParam
+4=LPVOID lpReserved
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[EnumTimeFormats]
+1=TIMEFMT_ENUMPROC lpTimeFmtEnumProc
+2=[LCID] Locale
+3=[NLS_TIME_FLAGS] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[EnumTimeFormatsEx]
+1=TIMEFMT_ENUMPROCEX lpTimeFmtEnumProcEx
+2=LPCWSTR lpLocaleName
+3=[NLS_TIME_FLAGS] dwFlags
+4=LPARAM lParam
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[FindNLSString]
+1=[LCID] Locale
+2=[NLS_STRING_FIND_FLAGS] dwFindNLSStringFlags
+3=LPCWSTR lpStringSource
+4=int cchSource
+5=LPCWSTR lpStringValue
+6=int cchValue
+7=LPINT pcchFound
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[FindNLSStringEx]
+1=LPCWSTR lpLocaleName
+2=[NLS_STRING_FIND_FLAGS] dwFindNLSStringFlags
+3=LPCWSTR lpStringSource
+4=int cchSource
+5=LPCWSTR lpStringValue
+6=int cchValue
+7=LPINT pcchFound
+8=LPNLSVERSIONINFO lpVersionInformation
+9=LPVOID lpReserved
+10=LPARAM lParam
+ParamCount=10
+Header=kernel32.h.api;windows.h.api;
+[FindStringOrdinal]
+1=[NLS_FIND_FLAGS] dwFindStringOrdinalFlags
+2=LPCWSTR lpStringSource
+3=int cchSource
+4=LPCWSTR lpStringValue
+5=int cchValue
+6=BOOL bIgnoreCase
+ParamCount=6
+Header=kernel32.h.api;
+[FoldString]
+1=[MappingFlags] dwMapFlags
+2=LPCTSTR lpSrcStr
+3=int cchSrc
+4=LPTSTR lpDestStr
+5=int cchDest
+ParamCount=5
+Header=kernel32.h.api;
+[GetACP]
+ParamCount=0
+[GetCalendarDateFormatEx]
+1=LPCWSTR lpszLocale
+2=[NLS_DATE_FLAGS] dwFlags
+3=LPCALDATETIME lpCalDateTime
+4=LPCWSTR lpFormat
+5=LPWSTR lpDateStr
+6=int cchDate
+ParamCount=6
+Header=kernel32.h.api;
+[GetCalendarInfo]
+1=[LCID] Locale
+2=[CALID] Calendar
+3=[CALTYPE] CalType
+4=LPTSTR lpCalData
+5=int cchData
+6=LPDWORD lpValue
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetCalendarInfoEx]
+1=LPCWSTR lpLocaleName
+2=[CALID] Calendar
+3=LPCWSTR lpReserved
+4=[CALTYPE] CalType
+5=LPWSTR lpCalData
+6=int cchData
+7=LPDWORD lpValue
+ParamCount=7
+Header=kernel32.h.api;
+[GetCalendarSupportedDateRange]
+1=[CALID] Calendar
+2=LPCALDATETIME lpCalMinDateTime
+3=LPCALDATETIME lpCalMaxDateTime
+ParamCount=3
+Header=kernel32.h.api;
+[GetCPInfo]
+1=[CodePageEnum] CodePage
+2=LPCPINFO lpCPInfo
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[GetCPInfoEx]
+1=[CodePageEnum] CodePage
+2=DWORD dwFlags
+3=LPCPINFOEX lpCPInfoEx
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[GetCurrencyFormat]
+1=[LCID] Locale
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=LPCTSTR lpValue
+4=CURRENCYFMT* lpFormat
+5=LPTSTR lpCurrencyStr
+6=int cchCurrency
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetCurrencyFormatEx]
+1=LPCWSTR lpLocaleName
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=LPCWSTR lpValue
+4=CURRENCYFMT* lpFormat
+5=LPWSTR lpCurrencyStr
+6=int cchCurrency
+ParamCount=6
+Header=kernel32.h.api;
+[GetDateFormat]
+1=[LCID] Locale
+2=[NLS_DATE_FLAGS] dwFlags
+3=SYSTEMTIME* lpDate
+4=LPCTSTR lpFormat
+5=LPTSTR lpDateStr
+6=int cchDate
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetDateFormatEx]
+1=LPCWSTR lpLocaleName
+2=[NLS_DATE_FLAGS] dwFlags
+3=SYSTEMTIME* lpDate
+4=LPCWSTR lpFormat
+5=LPWSTR lpDateStr
+6=int cchDate
+7=LPCWSTR lpCalendar
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[GetDurationFormat]
+1=[LCID] Locale
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=SYSTEMTIME* lpDuration
+4=ULONGLONG ullDuration
+5=LPCWSTR lpFormat
+6=LPWSTR lpDurationStr
+7=int cchDuration
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[GetDurationFormatEx]
+1=LPCWSTR lpLocaleName
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=SYSTEMTIME* lpDuration
+4=ULONGLONG ullDuration
+5=LPCWSTR lpFormat
+6=LPWSTR lpDurationStr
+7=int cchDuration
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[GetGeoInfo]
+1=[GEOID] Location
+2=[GEOTYPE] GeoType
+3=LPTSTR lpGeoData
+4=int cchData
+5=[LANGID] LangId
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetLocaleInfo]
+1=[LCID] Locale
+2=[LCTYPE] LCType
+3=LPTSTR lpLCData
+4=int cchData
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[GetLocaleInfoEx]
+1=LPCWSTR lpLocaleName
+2=[LCTYPE] LCType
+3=LPWSTR lpLCData
+4=int cchData
+ParamCount=4
+Header=kernel32.h.api;
+[GetNLSVersion]
+1=[NLS_FUNCTION] Function
+2=[LCID] Locale
+3=LPNLSVERSIONINFO lpVersionInformation
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[GetNLSVersionEx]
+1=[NLS_FUNCTION] function
+2=LPCWSTR lpLocaleName
+3=LPNLSVERSIONINFOEX lpVersionInformation
+ParamCount=3
+Header=kernel32.h.api;
+[GetNumberFormat]
+1=[LCID] Locale
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=LPCTSTR lpValue
+4=NUMBERFMT* lpFormat
+5=LPTSTR lpNumberStr
+6=int cchNumber
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetNumberFormatEx]
+1=LPCWSTR lpLocaleName
+2=[LOCALE_NOUSEROVERRIDE_FLAG] dwFlags
+3=LPCWSTR lpValue
+4=NUMBERFMT* lpFormat
+5=LPWSTR lpNumberStr
+6=int cchNumber
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetOEMCP]
+ParamCount=0
+[GetStringScripts]
+1=[GET_STRING_SCRIPTS_FLAGS] dwFlags
+2=LPCWSTR lpString
+3=int cchString
+4=LPWSTR lpScripts
+5=int cchScripts
+ParamCount=5
+Header=kernel32.h.api;
+[GetStringTypeA]
+1=[LCID] Locale
+2=[CharacterTypeFlag] dwInfoType
+3=LPCSTR lpSrcStr
+4=int cchSrc
+5=LPWORD lpCharType
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetStringTypeEx]
+1=[LCID] Locale
+2=[CharacterTypeFlag] dwInfoType
+3=LPCTSTR lpSrcStr
+4=int cchSrc
+5=LPWORD lpCharType
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetStringTypeW]
+1=[CharacterTypeFlag] dwInfoType
+2=LPCWSTR lpSrcStr
+3=int cchSrc
+4=LPWORD lpCharType
+ParamCount=4
+Header=kernel32.h.api;
+[GetSystemDefaultLangID]
+ParamCount=0
+[GetSystemDefaultLCID]
+ParamCount=0
+[GetSystemDefaultLocaleName]
+1=LPWSTR lpLocaleName
+2=int cchLocaleName
+ParamCount=2
+[GetThreadLocale]
+ParamCount=0
+[GetTimeFormat]
+1=[LCID] Locale
+2=[NLS_TIME_FLAGS] dwFlags
+3=SYSTEMTIME* lpTime
+4=LPCTSTR lpFormat
+5=LPTSTR lpTimeStr
+6=int cchTime
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetTimeFormatEx]
+1=LPCWSTR lpLocaleName
+2=[NLS_TIME_FLAGS] dwFlags
+3=SYSTEMTIME* lpTime
+4=LPCWSTR lpFormat
+5=LPWSTR lpTimeStr
+6=int cchTime
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[GetUserDefaultLangID]
+ParamCount=0
+[GetUserDefaultLCID]
+ParamCount=0
+[GetUserDefaultLocaleName]
+1=LPWSTR lpLocaleName
+2=int cchLocaleName
+ParamCount=2
+[GetUserGeoID]
+1=[GEOCLASS] GeoClass
+ParamCount=1
+Header=kernel32.h.api;
+[IsCalendarLeapYear]
+1=[CALID] calId
+2=UINT year
+3=UINT era
+ParamCount=3
+Header=kernel32.h.api;
+[IsNLSDefinedString]
+1=[NLS_FUNCTION] Function
+2=DWORD dwFlags
+3=LPNLSVERSIONINFO lpVersionInformation
+4=LPCWSTR lpString
+5=INT cchStr
+ParamCount=5
+Header=kernel32.h.api;
+[IsValidCodePage]
+1=[CodePageEnum] CodePage
+ParamCount=1
+Header=windows.h.api;
+[IsValidLanguageGroup]
+1=[LGRPID] LanguageGroup
+2=[LANGUAGE_GROUP_FLAGS] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[IsValidLocale]
+1=[LCID] Locale
+2=[LocaleEnumerationFlags] dwFlags
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[IsValidLocaleName]
+1=LPCWSTR lpLocaleName
+ParamCount=1
+[IsValidNLSVersion]
+1=[NLS_FUNCTION] function
+2=LPCWSTR lpLocaleName
+3=LPNLSVERSIONINFOEX lpVersionInformation
+ParamCount=3
+Header=kernel32.h.api;
+[LCIDToLocaleName]
+1=[LCID] Locale
+2=LPWSTR lpName
+3=int cchName
+4=[LOCALE_NAME_FLAGS] dwFlags
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[LCMapString]
+1=[LCID] Locale
+2=[LocaleMappingFlags] dwMapFlags
+3=LPCTSTR lpSrcStr
+4=int cchSrc
+5=LPTSTR lpDestStr
+6=int cchDest
+ParamCount=6
+Header=windows.h.api;
+[LCMapStringEx]
+1=LPCWSTR lpLocaleName
+2=[LocaleMappingFlags] dwMapFlags
+3=LPCWSTR lpSrcStr
+4=int cchSrc
+5=LPWSTR lpDestStr
+6=int cchDest
+7=LPNLSVERSIONINFO lpVersionInformation
+8=LPVOID lpReserved
+9=LPARAM lParam
+ParamCount=9
+Header=kernel32.h.api;windows.h.api;
+[LoadStringByReference]
+1=[LoadStringByReference_Flags] Flags
+2=PCWSTR Language
+3=PCWSTR SourceString
+4=PWSTR Buffer
+5=ULONG cchBuffer
+6=PCWSTR Directory
+7=PULONG pcchBufferOut
+ParamCount=7
+Header=kernel32.h.api;
+[LocaleNameToLCID]
+1=LPCWSTR lpName
+2=[LOCALE_NAME_FLAGS] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[NotifyUILanguageChange]
+1=DWORD dwFlags
+2=PCWSTR pcwstrNewLanguage
+3=PCWSTR pcwstrPreviousLanguage
+4=DWORD dwReserved
+5=PDWORD pdwStatusRtrn
+ParamCount=5
+[ResolveLocaleName]
+1=LPCWSTR lpNameToResolve
+2=LPWSTR lpLocaleName
+3=int cchLocaleName
+ParamCount=3
+[SetCalendarInfo]
+1=[LCID] Locale
+2=[CALID] Calendar
+3=[CALTYPE] CalType
+4=LPCTSTR lpCalData
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[SetLocaleInfo]
+1=[LCID] Locale
+2=[LCTYPE] LCType
+3=LPCTSTR lpLCData
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetThreadLocale]
+1=[LCID] Locale
+ParamCount=1
+Header=windows.h.api;
+[SetUserGeoID]
+1=[GEOID] GeoId
+ParamCount=1
+Header=kernel32.h.api;
+[UpdateCalendarDayOfWeek]
+1=LPCALDATETIME lpCalDateTime
+ParamCount=1
+Header=kernel32.h.api;
+[VerifyScripts]
+1=[VERIFY_SCRIPTS_FLAGS] dwFlags
+2=LPCWSTR lpLocaleScripts
+3=int cchLocaleScripts
+4=LPCWSTR lpTestScripts
+5=int cchTestScripts
+ParamCount=5
+Header=kernel32.h.api;
+[GetDevicePowerState]
+1=HANDLE hDevice
+2=BOOL* pfOn
+ParamCount=2
+Header=windows.h.api;
+[GetSystemPowerStatus]
+1=LPSYSTEM_POWER_STATUS lpSystemPowerStatus
+ParamCount=1
+Header=kernel32.h.api;
+[IsSystemResumeAutomatic]
+ParamCount=0
+[PowerClearRequest]
+1=HANDLE PowerRequest
+2=[POWER_REQUEST_TYPE] RequestType
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[PowerCreateRequest]
+1=PREASON_CONTEXT Context
+ParamCount=1
+Header=kernel32.h.api;
+[PowerSetRequest]
+1=HANDLE PowerRequest
+2=[POWER_REQUEST_TYPE] RequestType
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[QueryUnbiasedInterruptTime]
+1=PULONGLONG UnbiasedTime
+ParamCount=1
+[SetThreadExecutionState]
+1=[EXECUTION_STATE] esFlags
+ParamCount=1
+Header=kernel32.h.api;
+[RequestWakeupLatency]
+1=[LATENCY_TIME] latency
+ParamCount=1
+Header=kernel32.h.api;
+[SetSystemPowerState]
+1=BOOL fSuspend
+2=BOOL fForce
+ParamCount=2
+[BeginUpdateResource]
+1=LPCTSTR pFileName
+2=BOOL bDeleteExistingResources
+ParamCount=2
+[EndUpdateResource]
+1=HANDLE hUpdate
+2=BOOL fDiscard
+ParamCount=2
+Header=windows.h.api;
+[EnumResourceLanguages]
+1=HMODULE hModule
+2=LPCTSTR lpType
+3=LPCTSTR lpName
+4=ENUMRESLANGPROC lpEnumFunc
+5=LONG_PTR lParam
+ParamCount=5
+Header=kernel32.h.api;
+[EnumResourceLanguagesEx]
+1=HMODULE hModule
+2=LPCTSTR lpType
+3=LPCTSTR lpName
+4=ENUMRESLANGPROC lpEnumFunc
+5=LONG_PTR lParam
+6=[RESOURCE_ENUM_FLAGS] dwFlags
+7=[LANGID] LangId
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[EnumResourceNames]
+1=HMODULE hModule
+2=LPCTSTR lpszType
+3=ENUMRESNAMEPROC lpEnumFunc
+4=LONG_PTR lParam
+ParamCount=4
+Header=kernel32.h.api;
+[EnumResourceNamesEx]
+1=HMODULE hModule
+2=LPCTSTR lpszType
+3=ENUMRESNAMEPROC lpEnumFunc
+4=LONG_PTR lParam
+5=[RESOURCE_ENUM_FLAGS] dwFlags
+6=[LANGID] LangId
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[EnumResourceTypes]
+1=HMODULE hModule
+2=ENUMRESTYPEPROC lpEnumFunc
+3=LONG_PTR lParam
+ParamCount=3
+Header=kernel32.h.api;
+[EnumResourceTypesEx]
+1=HMODULE hModule
+2=ENUMRESTYPEPROC lpEnumFunc
+3=LONG_PTR lParam
+4=[RESOURCE_ENUM_FLAGS] dwFlags
+5=[LANGID] LangId
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[FindResource]
+1=HMODULE hModule
+2=LPCTSTR lpName
+3=LPCTSTR lpType
+ParamCount=3
+[FindResourceEx]
+1=HMODULE hModule
+2=LPCTSTR lpType
+3=LPCTSTR lpName
+4=WORD wLanguage
+ParamCount=4
+[FreeResource]
+1=HGLOBAL hglbResource
+ParamCount=1
+Header=windows.h.api;
+[LoadResource]
+1=HMODULE hModule
+2=HRSRC hResInfo
+ParamCount=2
+Header=windows.h.api;
+[LockResource]
+1=HGLOBAL hResData
+ParamCount=1
+Header=windows.h.api;
+[SizeofResource]
+1=HMODULE hModule
+2=HRSRC hResInfo
+ParamCount=2
+Header=windows.h.api;
+[UpdateResource]
+1=HANDLE hUpdate
+2=LPCTSTR lpType
+3=LPCTSTR lpName
+4=WORD wLanguage
+5=LPVOID lpData
+6=DWORD cbData
+ParamCount=6
+Header=windows.h.api;
+[lstrcat]
+1=LPSTR lpString1
+2=LPSTR lpString2
+ParamCount=2
+[lstrcmp]
+1=LPCSTR lpString1
+2=LPCSTR lpString2
+ParamCount=2
+[lstrcmpi]
+1=LPCSTR lpString1
+2=LPCSTR lpString2
+ParamCount=2
+[lstrcpy]
+1=LPSTR lpString1
+2=LPSTR lpString2
+ParamCount=2
+[lstrcpyn]
+1=LPSTR lpString1
+2=LPCSTR lpString2
+3=int iMaxLength
+ParamCount=3
+[lstrlen]
+1=LPCSTR lpString
+ParamCount=1
+[RaiseException]
+1=DWORD dwExceptionCode
+2=DWORD dwExceptionFlags
+3=DWORD nNumberOfArguments
+4=ULONG_PTR *lpArguments
+ParamCount=4
+[AddVectoredContinueHandler]
+1=ULONG FirstHandler
+2=PVECTORED_EXCEPTION_HANDLER VectoredHandler
+ParamCount=2
+Header=windows.h.api;
+[AddVectoredExceptionHandler]
+1=ULONG FirstHandler
+2=PVECTORED_EXCEPTION_HANDLER VectoredHandler
+ParamCount=2
+Header=windows.h.api;
+[RemoveVectoredContinueHandler]
+1=PVOID Handler
+ParamCount=1
+[RemoveVectoredExceptionHandler]
+1=PVOID Handler
+ParamCount=1
+[SetUnhandledExceptionFilter]
+1=LPTOP_LEVEL_EXCEPTION_FILTER lpTopLevelExceptionFilter
+ParamCount=1
+Header=kernel32.h.api;
+[UnhandledExceptionFilter]
+1=EXCEPTION_POINTERS* ExceptionInfo
+ParamCount=1
+Header=windows.h.api;
+[RtlAddFunctionTable]
+1=PRUNTIME_FUNCTION FunctionTable
+2=DWORD EntryCount
+3=DWORD64 BaseAddress
+ParamCount=3
+Header=kernel32.h.api;
+[RtlCaptureContext]
+1=PCONTEXT ContextRecord
+ParamCount=1
+Header=windows.h.api;
+[RtlDeleteFunctionTable]
+1=PRUNTIME_FUNCTION FunctionTable
+ParamCount=1
+Header=kernel32.h.api;
+[RtlInstallFunctionTableCallback]
+1=DWORD64 TableIdentifier
+2=DWORD64 BaseAddress
+3=DWORD Length
+4=PGET_RUNTIME_FUNCTION_CALLBACK Callback
+5=PVOID Context
+6=PCWSTR OutOfProcessCallbackDll
+ParamCount=6
+Header=kernel32.h.api;
+[RtlRestoreContext]
+1=PCONTEXT ContextRecord
+2=PEXCEPTION_RECORD ExceptionRecord
+ParamCount=2
+Header=windows.h.api;
+[GetOverlappedResult]
+1=HANDLE hFile
+2=LPOVERLAPPED lpOverlapped
+3=LPDWORD lpNumberOfBytesTransferred
+4=BOOL bWait
+ParamCount=4
+Header=windows.h.api;
+[GetOverlappedResultEx]
+1=HANDLE hFile
+2=LPOVERLAPPED lpOverlapped
+3=LPDWORD lpNumberOfBytesTransferred
+4=DWORD dwMilliseconds
+5=BOOL bAlertable
+ParamCount=5
+Header=windows.h.api;
+[QueueUserAPC]
+1=PAPCFUNC pfnAPC
+2=[ThreadHandle] hThread
+3=ULONG_PTR dwData
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[AcquireSRWLockExclusive]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[AcquireSRWLockShared]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[InitializeConditionVariable]
+1=PCONDITION_VARIABLE ConditionVariable
+ParamCount=1
+Header=kernel32.h.api;
+[InitializeSRWLock]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[ReleaseSRWLockExclusive]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[ReleaseSRWLockShared]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[SleepConditionVariableCS]
+1=PCONDITION_VARIABLE ConditionVariable
+2=PCRITICAL_SECTION CriticalSection
+3=[WaitTimeout] dwMilliseconds
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SleepConditionVariableSRW]
+1=PCONDITION_VARIABLE ConditionVariable
+2=PSRWLOCK SRWLock
+3=[WaitTimeout] dwMilliseconds
+4=[CONDITION_VARIABLE_FLAGS] Flags
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[TryAcquireSRWLockExclusive]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[TryAcquireSRWLockShared]
+1=PSRWLOCK SRWLock
+ParamCount=1
+Header=kernel32.h.api;
+[WakeAllConditionVariable]
+1=PCONDITION_VARIABLE ConditionVariable
+ParamCount=1
+Header=kernel32.h.api;
+[WakeConditionVariable]
+1=PCONDITION_VARIABLE ConditionVariable
+ParamCount=1
+Header=kernel32.h.api;
+[DeleteCriticalSection]
+1=LPCRITICAL_SECTION lpCriticalSection
+ParamCount=1
+Header=kernel32.h.api;
+[EnterCriticalSection]
+1=LPCRITICAL_SECTION lpCriticalSection
+ParamCount=1
+Header=kernel32.h.api;
+[InitializeCriticalSection]
+1=LPCRITICAL_SECTION lpCriticalSection
+ParamCount=1
+Header=kernel32.h.api;
+[InitializeCriticalSectionAndSpinCount]
+1=LPCRITICAL_SECTION lpCriticalSection
+2=DWORD dwSpinCount
+ParamCount=2
+Header=kernel32.h.api;
+[InitializeCriticalSectionEx]
+1=LPCRITICAL_SECTION lpCriticalSection
+2=DWORD dwSpinCount
+3=[CRITICAL_SECTION_FLAGS] Flags
+ParamCount=3
+Header=kernel32.h.api;
+[LeaveCriticalSection]
+1=LPCRITICAL_SECTION lpCriticalSection
+ParamCount=1
+Header=kernel32.h.api;
+[SetCriticalSectionSpinCount]
+1=LPCRITICAL_SECTION lpCriticalSection
+2=DWORD dwSpinCount
+ParamCount=2
+Header=kernel32.h.api;
+[TryEnterCriticalSection]
+1=LPCRITICAL_SECTION lpCriticalSection
+ParamCount=1
+Header=kernel32.h.api;
+[CreateEvent]
+1=LPSECURITY_ATTRIBUTES lpEventAttributes
+2=BOOL bManualReset
+3=BOOL bInitialState
+4=LPCTSTR lpName
+ParamCount=4
+Header=security.h.api;
+[CreateEventEx]
+1=LPSECURITY_ATTRIBUTES lpEventAttributes
+2=LPCTSTR lpName
+3=[CREATE_EVENT_FLAGS] dwFlags
+4=[EventAccessRights] dwDesiredAccess
+ParamCount=4
+Header=kernel32.h.api;security.h.api;
+[OpenEvent]
+1=[EventAccessRights] dwDesiredAccess
+2=BOOL bInheritHandle
+3=LPCTSTR lpName
+ParamCount=3
+Header=kernel32.h.api;
+[PulseEvent]
+1=HANDLE hEvent
+ParamCount=1
+Header=windows.h.api;
+[ResetEvent]
+1=HANDLE hEvent
+ParamCount=1
+Header=windows.h.api;
+[SetEvent]
+1=HANDLE hEvent
+ParamCount=1
+Header=windows.h.api;
+[InitOnceBeginInitialize]
+1=LPINIT_ONCE lpInitOnce
+2=[INIT_ONCE_FLAGS] dwFlags
+3=PBOOL fPending
+4=LPVOID* lpContext
+ParamCount=4
+Header=kernel32.h.api;
+[InitOnceComplete]
+1=LPINIT_ONCE lpInitOnce
+2=[INIT_ONCE_FLAGS] dwFlags
+3=LPVOID lpContext
+ParamCount=3
+Header=kernel32.h.api;
+[InitOnceExecuteOnce]
+1=PINIT_ONCE InitOnce
+2=PINIT_ONCE_FN InitFn
+3=PVOID Parameter
+4=LPVOID* Context
+ParamCount=4
+Header=kernel32.h.api;
+[InitOnceInitialize]
+1=PINIT_ONCE InitOnce
+ParamCount=1
+Header=kernel32.h.api;
+[InterlockedCompareExchange]
+1=LONG volatile* Destination
+2=LONG Exchange
+3=LONG Comparand
+ParamCount=3
+[InterlockedCompareExchange64]
+1=LONGLONG volatile* Destination
+2=LONGLONG Exchange
+3=LONGLONG Comparand
+ParamCount=3
+[InterlockedDecrement]
+1=LONG volatile* Addend
+ParamCount=1
+[InterlockedExchange]
+1=LONG volatile* Target
+2=LONG Value
+ParamCount=2
+[InterlockedExchangeAdd]
+1=LONG volatile* Addend
+2=LONG Value
+ParamCount=2
+[InterlockedIncrement]
+1=LONG volatile* Addend
+ParamCount=1
+[CreateMutex]
+1=LPSECURITY_ATTRIBUTES lpMutexAttributes
+2=BOOL bInitialOwner
+3=LPCTSTR lpName
+ParamCount=3
+Header=security.h.api;
+[CreateMutexEx]
+1=LPSECURITY_ATTRIBUTES lpMutexAttributes
+2=LPCTSTR lpName
+3=[CREATE_MUTEX_FLAGS] dwFlags
+4=[MutexAccessRights] dwDesiredAccess
+ParamCount=4
+Header=kernel32.h.api;security.h.api;
+[OpenMutex]
+1=[MutexAccessRights] dwDesiredAccess
+2=BOOL bInheritHandle
+3=LPCTSTR lpName
+ParamCount=3
+Header=kernel32.h.api;
+[ReleaseMutex]
+1=HANDLE hMutex
+ParamCount=1
+Header=windows.h.api;
+[AddSIDToBoundaryDescriptor]
+1=HANDLE* BoundaryDescriptor
+2=PSID RequiredSid
+ParamCount=2
+Header=windows.h.api;
+[AddIntegrityLabelToBoundaryDescriptor]
+1=HANDLE* BoundaryDescriptor
+2=PSID IntegrityLabel
+ParamCount=2
+Header=windows.h.api;
+[ClosePrivateNamespace]
+1=HANDLE Handle
+2=[PrivateNamespaceFlag] Flags
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[CreateBoundaryDescriptor]
+1=LPCTSTR Name
+2=ULONG Flags
+ParamCount=2
+[CreatePrivateNamespace]
+1=LPSECURITY_ATTRIBUTES lpPrivateNamespaceAttributes
+2=LPVOID lpBoundaryDescriptor
+3=LPCTSTR lpAliasPrefix
+ParamCount=3
+Header=security.h.api;
+[DeleteBoundaryDescriptor]
+1=HANDLE BoundaryDescriptor
+ParamCount=1
+Header=windows.h.api;
+[OpenPrivateNamespace]
+1=LPVOID lpBoundaryDescriptor
+2=LPCTSTR lpAliasPrefix
+ParamCount=2
+[CreateSemaphore]
+1=LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+2=LONG lInitialCount
+3=LONG lMaximumCount
+4=LPCTSTR lpName
+ParamCount=4
+Header=security.h.api;
+[CreateSemaphoreEx]
+1=LPSECURITY_ATTRIBUTES lpSemaphoreAttributes
+2=LONG lInitialCount
+3=LONG lMaximumCount
+4=LPCTSTR lpName
+5=DWORD dwFlags
+6=[SemaphoreAccessRights] dwDesiredAccess
+ParamCount=6
+Header=kernel32.h.api;security.h.api;
+[OpenSemaphore]
+1=[SemaphoreAccessRights] dwDesiredAccess
+2=BOOL bInheritHandle
+3=LPCTSTR lpName
+ParamCount=3
+Header=kernel32.h.api;
+[ReleaseSemaphore]
+1=HANDLE hSemaphore
+2=LONG lReleaseCount
+3=LPLONG lpPreviousCount
+ParamCount=3
+Header=windows.h.api;
+[InitializeSListHead]
+1=PSLIST_HEADER ListHead
+ParamCount=1
+Header=windows.h.api;
+[InterlockedFlushSList]
+1=PSLIST_HEADER ListHead
+ParamCount=1
+Header=windows.h.api;
+[InterlockedPopEntrySList]
+1=PSLIST_HEADER ListHead
+ParamCount=1
+Header=windows.h.api;
+[InterlockedPushEntrySList]
+1=PSLIST_HEADER ListHead
+2=PSLIST_ENTRY ListEntry
+ParamCount=2
+Header=windows.h.api;
+[InterlockedPushListSList]
+1=PSLIST_HEADER ListHead
+2=PSLIST_ENTRY List
+3=PSLIST_ENTRY ListEnd
+4=ULONG Count
+ParamCount=4
+Header=windows.h.api;
+[InterlockedPushListSListEx]
+1=PSLIST_HEADER ListHead
+2=PSLIST_ENTRY List
+3=PSLIST_ENTRY ListEnd
+4=ULONG Count
+ParamCount=4
+Header=windows.h.api;
+[QueryDepthSList]
+1=PSLIST_HEADER ListHead
+ParamCount=1
+Header=windows.h.api;
+[DeleteSynchronizationBarrier]
+1=LPSYNCHRONIZATION_BARRIER lpBarrier
+ParamCount=1
+Header=kernel32.h.api;
+[EnterSynchronizationBarrier]
+1=LPSYNCHRONIZATION_BARRIER lpBarrier
+2=[SYNCHRONIZATION_BARRIER_FLAGS] dwFlags
+ParamCount=2
+Header=kernel32.h.api;
+[InitializeSynchronizationBarrier]
+1=LPSYNCHRONIZATION_BARRIER lpBarrier
+2=LONG lTotalThreads
+3=LONG lSpinCount
+ParamCount=3
+Header=kernel32.h.api;
+[ChangeTimerQueueTimer]
+1=HANDLE TimerQueue
+2=HANDLE Timer
+3=ULONG DueTime
+4=ULONG Period
+ParamCount=4
+Header=windows.h.api;
+[CreateTimerQueue]
+ParamCount=0
+[CreateTimerQueueTimer]
+1=PHANDLE phNewTimer
+2=HANDLE TimerQueue
+3=WAITORTIMERCALLBACK Callback
+4=PVOID Parameter
+5=DWORD DueTime
+6=DWORD Period
+7=[WorkItemFlags] Flags
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[DeleteTimerQueue]
+1=HANDLE TimerQueue
+ParamCount=1
+Header=windows.h.api;
+[DeleteTimerQueueEx]
+1=HANDLE TimerQueue
+2=HANDLE CompletionEvent
+ParamCount=2
+Header=windows.h.api;
+[DeleteTimerQueueTimer]
+1=HANDLE TimerQueue
+2=HANDLE Timer
+3=HANDLE CompletionEvent
+ParamCount=3
+Header=windows.h.api;
+[RegisterWaitForSingleObject]
+1=PHANDLE phNewWaitObject
+2=HANDLE hObject
+3=WAITORTIMERCALLBACK Callback
+4=PVOID Context
+5=[WaitTimeout] dwMilliseconds
+6=[WorkItemFlags] dwFlags
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[SignalObjectAndWait]
+1=HANDLE hObjectToSignal
+2=HANDLE hObjectToWaitOn
+3=[WaitTimeout] dwMilliseconds
+4=BOOL bAlertable
+ParamCount=4
+Header=windows.h.api;
+[UnregisterWait]
+1=HANDLE WaitHandle
+ParamCount=1
+Header=windows.h.api;
+[UnregisterWaitEx]
+1=HANDLE WaitHandle
+2=HANDLE CompletionEvent
+ParamCount=2
+Header=windows.h.api;
+[WaitForMultipleObjects]
+1=DWORD nCount
+2=HANDLE* lpHandles
+3=BOOL bWaitAll
+4=[WaitTimeout] dwMilliseconds
+ParamCount=4
+Header=windows.h.api;
+[WaitForMultipleObjectsEx]
+1=DWORD nCount
+2=HANDLE* lpHandles
+3=BOOL bWaitAll
+4=[WaitTimeout] dwMilliseconds
+5=BOOL bAlertable
+ParamCount=5
+Header=windows.h.api;
+[WaitForSingleObject]
+1=HANDLE hHandle
+2=[WaitTimeout] dwMilliseconds
+ParamCount=2
+Header=windows.h.api;
+[WaitForSingleObjectEx]
+1=HANDLE hHandle
+2=[WaitTimeout] dwMilliseconds
+3=BOOL bAlertable
+ParamCount=3
+Header=windows.h.api;
+[WaitOnAddress]
+1=VOID volatile* Address
+2=PVOID CompareAddress
+3=SIZE_T AddressSize
+4=DWORD dwMilliseconds
+ParamCount=4
+Header=kernel32.h.api;
+[WakeByAddressAll]
+1=PVOID Address
+ParamCount=1
+[WakeByAddressSingle]
+1=PVOID Address
+ParamCount=1
+[CancelWaitableTimer]
+1=HANDLE hTimer
+ParamCount=1
+Header=windows.h.api;
+[CreateWaitableTimer]
+1=LPSECURITY_ATTRIBUTES lpTimerAttributes
+2=BOOL bManualReset
+3=LPCTSTR lpTimerName
+ParamCount=3
+Header=security.h.api;
+[CreateWaitableTimerEx]
+1=LPSECURITY_ATTRIBUTES lpTimerAttributes
+2=LPCTSTR lpTimerName
+3=[CREATE_WAITABLE_TIMER_FLAGS] dwFlags
+4=[TimerAccessRights] dwDesiredAccess
+ParamCount=4
+Header=kernel32.h.api;security.h.api;
+[OpenWaitableTimer]
+1=[TimerAccessRights] dwDesiredAccess
+2=BOOL bInheritHandle
+3=LPCTSTR lpTimerName
+ParamCount=3
+Header=kernel32.h.api;
+[SetWaitableTimer]
+1=HANDLE hTimer
+2=LARGE_INTEGER* pDueTime
+3=LONG lPeriod
+4=PTIMERAPCROUTINE pfnCompletionRoutine
+5=LPVOID lpArgToCompletionRoutine
+6=BOOL fResume
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[SetWaitableTimerEx]
+1=HANDLE hTimer
+2=LARGE_INTEGER* lpDueTime
+3=LONG lPeriod
+4=PTIMERAPCROUTINE pfnCompletionRoutine
+5=LPVOID lpArgToCompletionRoutine
+6=PREASON_CONTEXT WakeContext
+7=ULONG TolerableDelay
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[DnsHostnameToComputerName]
+1=LPCTSTR Hostname
+2=LPTSTR ComputerName
+3=LPDWORD nSize
+ParamCount=3
+[EnumSystemFirmwareTables]
+1=DWORD FirmwareTableProviderSignature
+2=PVOID pFirmwareTableBuffer
+3=DWORD BufferSize
+ParamCount=3
+[ExpandEnvironmentStrings]
+1=LPCTSTR lpSrc
+2=LPTSTR lpDst
+3=DWORD nSize
+ParamCount=3
+[GetComputerName]
+1=LPTSTR lpBuffer
+2=LPDWORD lpnSize
+ParamCount=2
+[GetComputerNameEx]
+1=[COMPUTER_NAME_FORMAT] NameType
+2=LPTSTR lpBuffer
+3=LPDWORD lpnSize
+ParamCount=3
+Header=kernel32.h.api;
+[GetFirmwareEnvironmentVariable]
+1=LPCTSTR lpName
+2=LPCTSTR lpGuid
+3=PVOID pBuffer
+4=DWORD nSize
+ParamCount=4
+[GetFirmwareEnvironmentVariableEx]
+1=LPCTSTR lpName
+2=LPCTSTR lpGuid
+3=PVOID pBuffer
+4=DWORD nSize
+5=PDWORD pdwAttribubutes
+ParamCount=5
+[GetFirmwareType]
+1=PFIRMWARE_TYPE FirmwareType
+ParamCount=1
+Header=kernel32.h.api;
+[GetNativeSystemInfo]
+1=LPSYSTEM_INFO lpSystemInfo
+ParamCount=1
+Header=kernel32.h.api;
+[GetProductInfo]
+1=DWORD dwOSMajorVersion
+2=DWORD dwOSMinorVersion
+3=DWORD dwSpMajorVersion
+4=DWORD dwSpMinorVersion
+5=ProductType* pdwReturnedProductType
+ParamCount=5
+Header=kernel32.h.api;
+[GetSystemDirectory]
+1=LPTSTR lpBuffer
+2=UINT uSize
+ParamCount=2
+[GetSystemFirmwareTable]
+1=DWORD FirmwareTableProviderSignature
+2=DWORD FirmwareTableID
+3=PVOID pFirmwareTableBuffer
+4=DWORD BufferSize
+ParamCount=4
+[GetSystemInfo]
+1=LPSYSTEM_INFO lpSystemInfo
+ParamCount=1
+Header=kernel32.h.api;
+[GetSystemRegistryQuota]
+1=PDWORD pdwQuotaAllowed
+2=PDWORD pdwQuotaUsed
+ParamCount=2
+[GetSystemWindowsDirectory]
+1=LPTSTR lpBuffer
+2=UINT uSize
+ParamCount=2
+[GetSystemWow64Directory]
+1=LPTSTR lpBuffer
+2=UINT uSize
+ParamCount=2
+[GetVersion]
+ParamCount=0
+[GetVersionEx]
+1=LPOSVERSIONINFO lpVersionInfo
+ParamCount=1
+Header=windows.h.api;
+[GetWindowsDirectory]
+1=LPTSTR lpBuffer
+2=UINT uSize
+ParamCount=2
+[IsProcessorFeaturePresent]
+1=[ProcessorFeatureEnum] ProcessorFeature
+ParamCount=1
+Header=kernel32.h.api;
+[SetComputerName]
+1=LPCTSTR lpComputerName
+ParamCount=1
+[SetComputerNameEx]
+1=[COMPUTER_NAME_FORMAT] NameType
+2=LPCTSTR lpBuffer
+ParamCount=2
+Header=kernel32.h.api;
+[SetFirmwareEnvironmentVariable]
+1=LPCTSTR lpName
+2=LPCTSTR lpGuid
+3=PVOID pBuffer
+4=DWORD nSize
+ParamCount=4
+[VerifyVersionInfo]
+1=LPOSVERSIONINFOEX lpVersionInfo
+2=[NtVerType] dwTypeMask
+3=DWORDLONG dwlConditionMask
+ParamCount=3
+Header=native.h.api;windows.h.api;
+[VerSetConditionMask]
+1=ULONGLONG dwlConditionMask
+2=[NtVerType] dwTypeBitMask
+3=[VerOperator] dwConditionMask
+ParamCount=3
+Header=kernel32.h.api;native.h.api;
+[BackupRead]
+1=HANDLE hFile
+2=LPBYTE lpBuffer
+3=DWORD nNumberOfBytesToRead
+4=LPDWORD lpNumberOfBytesRead
+5=BOOL bAbort
+6=BOOL bProcessSecurity
+7=LPVOID* lpContext
+ParamCount=7
+Header=windows.h.api;
+[BackupSeek]
+1=HANDLE hFile
+2=DWORD dwLowBytesToSeek
+3=DWORD dwHighBytesToSeek
+4=LPDWORD lpdwLowByteSeeked
+5=LPDWORD lpdwHighByteSeeked
+6=LPVOID* lpContext
+ParamCount=6
+Header=windows.h.api;
+[BackupWrite]
+1=HANDLE hFile
+2=LPBYTE lpBuffer
+3=DWORD nNumberOfBytesToWrite
+4=LPDWORD lpNumberOfBytesWritten
+5=BOOL bAbort
+6=BOOL bProcessSecurity
+7=LPVOID* lpContext
+ParamCount=7
+Header=windows.h.api;
+[CreateTapePartition]
+1=HANDLE hDevice
+2=DWORD dwPartitionMethod
+3=DWORD dwCount
+4=DWORD dwSize
+ParamCount=4
+Header=windows.h.api;
+[EraseTape]
+1=HANDLE hDevice
+2=DWORD dwEraseType
+3=BOOL bImmediate
+ParamCount=3
+Header=windows.h.api;
+[GetTapeParameters]
+1=HANDLE hDevice
+2=DWORD dwOperation
+3=LPDWORD lpdwSize
+4=LPVOID lpTapeInformation
+ParamCount=4
+Header=windows.h.api;
+[GetTapePosition]
+1=HANDLE hDevice
+2=DWORD dwPositionType
+3=LPDWORD lpdwPartition
+4=LPDWORD lpdwOffsetLow
+5=LPDWORD lpdwOffsetHigh
+ParamCount=5
+Header=windows.h.api;
+[GetTapeStatus]
+1=HANDLE hDevice
+ParamCount=1
+Header=windows.h.api;
+[PrepareTape]
+1=HANDLE hDevice
+2=DWORD dwOperation
+3=BOOL bImmediate
+ParamCount=3
+Header=windows.h.api;
+[SetTapeParameters]
+1=HANDLE hDevice
+2=DWORD dwOperation
+3=LPVOID lpTapeInformation
+ParamCount=3
+Header=windows.h.api;
+[SetTapePosition]
+1=HANDLE hDevice
+2=DWORD dwPositionMethod
+3=DWORD dwPartition
+4=DWORD dwOffsetLow
+5=DWORD dwOffsetHigh
+6=BOOL bImmediate
+ParamCount=6
+Header=windows.h.api;
+[WriteTapemark]
+1=HANDLE hDevice
+2=DWORD dwTapemarkType
+3=DWORD dwTapemarkCount
+4=BOOL bImmediate
+ParamCount=4
+Header=windows.h.api;
+[ProcessIdToSessionId]
+1=DWORD dwProcessId
+2=DWORD* pSessionId
+ParamCount=2
+[WTSGetActiveConsoleSessionId]
+ParamCount=0
+[GetSystemTime]
+1=LPSYSTEMTIME lpSystemTime
+ParamCount=1
+Header=windows.h.api;
+[GetSystemTimeAdjustment]
+1=PDWORD lpTimeAdjustment
+2=PDWORD lpTimeIncrement
+3=PBOOL lpTimeAdjustmentDisabled
+ParamCount=3
+[SetSystemTime]
+1=SYSTEMTIME* lpSystemTime
+ParamCount=1
+Header=windows.h.api;
+[SetSystemTimeAdjustment]
+1=DWORD dwTimeAdjustment
+2=BOOL bTimeAdjustmentDisabled
+ParamCount=2
+[FileTimeToLocalFileTime]
+1=FILETIME* lpFileTime
+2=LPFILETIME lpLocalFileTime
+ParamCount=2
+Header=windows.h.api;
+[GetDynamicTimeZoneInformation]
+1=PDYNAMIC_TIME_ZONE_INFORMATION pTimeZoneInformation
+ParamCount=1
+Header=kernel32.h.api;
+[GetLocalTime]
+1=LPSYSTEMTIME lpSystemTime
+ParamCount=1
+Header=windows.h.api;
+[GetTimeZoneInformation]
+1=LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+ParamCount=1
+Header=windows.h.api;
+[GetTimeZoneInformationForYear]
+1=USHORT wYear
+2=PDYNAMIC_TIME_ZONE_INFORMATION pdtzi
+3=LPTIME_ZONE_INFORMATION ptzi
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetDynamicTimeZoneInformation]
+1=DYNAMIC_TIME_ZONE_INFORMATION* lpTimeZoneInformation
+ParamCount=1
+Header=kernel32.h.api;
+[SetLocalTime]
+1=SYSTEMTIME* lpSystemTime
+ParamCount=1
+Header=windows.h.api;
+[SetTimeZoneInformation]
+1=TIME_ZONE_INFORMATION* lpTimeZoneInformation
+ParamCount=1
+Header=windows.h.api;
+[SystemTimeToTzSpecificLocalTime]
+1=LPTIME_ZONE_INFORMATION lpTimeZone
+2=LPSYSTEMTIME lpUniversalTime
+3=LPSYSTEMTIME lpLocalTime
+ParamCount=3
+Header=windows.h.api;
+[TzSpecificLocalTimeToSystemTime]
+1=LPTIME_ZONE_INFORMATION lpTimeZoneInformation
+2=LPSYSTEMTIME lpLocalTime
+3=LPSYSTEMTIME lpUniversalTime
+ParamCount=3
+Header=windows.h.api;
+[CompareFileTime]
+1=FILETIME* lpFileTime1
+2=FILETIME* lpFileTime2
+ParamCount=2
+Header=windows.h.api;
+[FileTimeToSystemTime]
+1=FILETIME* lpFileTime
+2=LPSYSTEMTIME lpSystemTime
+ParamCount=2
+Header=windows.h.api;
+[GetFileTime]
+1=HANDLE hFile
+2=LPFILETIME lpCreationTime
+3=LPFILETIME lpLastAccessTime
+4=LPFILETIME lpLastWriteTime
+ParamCount=4
+Header=windows.h.api;
+[GetSystemTimeAsFileTime]
+1=LPFILETIME lpSystemTimeAsFileTime
+ParamCount=1
+Header=windows.h.api;
+[GetSystemTimePreciseAsFileTime]
+1=LPFILETIME lpSystemTimeAsFileTime
+ParamCount=1
+Header=windows.h.api;
+[LocalFileTimeToFileTime]
+1=FILETIME* lpLocalFileTime
+2=LPFILETIME lpFileTime
+ParamCount=2
+Header=windows.h.api;
+[SetFileTime]
+1=HANDLE hFile
+2=FILETIME* lpCreationTime
+3=FILETIME* lpLastAccessTime
+4=FILETIME* lpLastWriteTime
+ParamCount=4
+Header=windows.h.api;
+[SystemTimeToFileTime]
+1=SYSTEMTIME* lpSystemTime
+2=LPFILETIME lpFileTime
+ParamCount=2
+Header=windows.h.api;
+[DosDateTimeToFileTime]
+1=WORD wFatDate
+2=WORD wFatTime
+3=LPFILETIME lpFileTime
+ParamCount=3
+Header=windows.h.api;
+[FileTimeToDosDateTime]
+1=FILETIME* lpFileTime
+2=LPWORD lpFatDate
+3=LPWORD lpFatTime
+ParamCount=3
+Header=windows.h.api;
+[GetSystemTimes]
+1=LPFILETIME lpIdleTime
+2=LPFILETIME lpKernelTime
+3=LPFILETIME lpUserTime
+ParamCount=3
+Header=windows.h.api;
+[GetTickCount]
+ParamCount=0
+[GetTickCount64]
+ParamCount=0
+[QueryPerformanceCounter]
+1=LARGE_INTEGER* lpPerformanceCount
+ParamCount=1
+Header=windows.h.api;
+[QueryPerformanceFrequency]
+1=LARGE_INTEGER* lpFrequency
+ParamCount=1
+Header=windows.h.api;
+[IsDBCSLeadByte]
+1=BYTE TestChar
+ParamCount=1
+[IsDBCSLeadByteEx]
+1=[CodePageEnum] CodePage
+2=BYTE TestChar
+ParamCount=2
+Header=windows.h.api;
+[MultiByteToWideChar]
+1=[CodePageEnum] CodePage
+2=[MultiByteFlags] dwFlags
+3=LPCSTR lpMultiByteStr
+4=int cbMultiByte
+5=LPWSTR lpWideCharStr
+6=int cchWideChar
+ParamCount=6
+Header=kernel32.h.api;windows.h.api;
+[WideCharToMultiByte]
+1=[CodePageEnum] CodePage
+2=[WideCharFlags] dwFlags
+3=LPCWSTR lpWideCharStr
+4=int cchWideChar
+5=LPSTR lpMultiByteStr
+6=int cbMultiByte
+7=LPCSTR lpDefaultChar
+8=LPBOOL lpUsedDefaultChar
+ParamCount=8
+Header=kernel32.h.api;windows.h.api;
+[VerLanguageName]
+1=DWORD wLang
+2=LPTSTR szLang
+3=DWORD cchLang
+ParamCount=3
+[RaiseFailFastException]
+1=PEXCEPTION_RECORD pExceptionRecord
+2=PCONTEXT pContextRecord
+3=[FAIL_FAST_EXCEPTION_FLAGS] dwFlags
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[WerGetFlags]
+1=[ProcessHandle] hProcess
+2=WER_FAULT_REPORTING_FLAGS* pdwFlags
+ParamCount=2
+Header=kernel32.h.api;windows.h.api;
+[WerRegisterFile]
+1=PCWSTR pwzFile
+2=[WER_REGISTER_FILE_TYPE] regFileType
+3=[WerFileFlags] dwFlags
+ParamCount=3
+Header=kernel32.h.api;
+[WerRegisterMemoryBlock]
+1=PVOID pvAddress
+2=DWORD dwSize
+ParamCount=2
+[WerRegisterRuntimeExceptionModule]
+1=PCWSTR pwszOutOfProcessCallbackDll
+2=PVOID pContext
+ParamCount=2
+[WerSetFlags]
+1=[WER_FAULT_REPORTING_FLAGS] dwFlags
+ParamCount=1
+Header=kernel32.h.api;
+[WerUnregisterFile]
+1=PCWSTR pwzFilePath
+ParamCount=1
+[WerUnregisterMemoryBlock]
+1=PVOID pvAddress
+ParamCount=1
+[WerUnregisterRuntimeExceptionModule]
+1=PCWSTR pwszOutOfProcessCallbackDll
+2=PVOID pContext
+ParamCount=2
+[CreateDirectory]
+1=LPCTSTR lpPathName
+2=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+ParamCount=2
+Header=security.h.api;
+[CreateDirectoryEx]
+1=LPCTSTR lpTemplateDirectory
+2=LPCTSTR lpNewDirectory
+3=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+ParamCount=3
+Header=security.h.api;
+[CreateDirectoryTransacted]
+1=LPCTSTR lpTemplateDirectory
+2=LPCTSTR lpNewDirectory
+3=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+4=HANDLE hTransaction
+ParamCount=4
+Header=security.h.api;windows.h.api;
+[FindCloseChangeNotification]
+1=HANDLE hChangeHandle
+ParamCount=1
+Header=windows.h.api;
+[FindFirstChangeNotification]
+1=LPCTSTR lpPathName
+2=BOOL bWatchSubtree
+3=[FILE_NOTIFY_CHANGE_FLAGS] dwNotifyFilter
+ParamCount=3
+Header=windows.h.api;
+[FindNextChangeNotification]
+1=HANDLE hChangeHandle
+ParamCount=1
+Header=windows.h.api;
+[GetCurrentDirectory]
+1=DWORD nBufferLength
+2=LPTSTR lpBuffer
+ParamCount=2
+[ReadDirectoryChangesW]
+1=HANDLE hDirectory
+2=LPVOID lpBuffer
+3=DWORD nBufferLength
+4=BOOL bWatchSubtree
+5=[FILE_NOTIFY_CHANGE_FLAGS] dwNotifyFilter
+6=LPDWORD lpBytesReturned
+7=LPOVERLAPPED lpOverlapped
+8=LPOVERLAPPED_COMPLETION_ROUTINE lpCompletionRoutine
+ParamCount=8
+Header=kernel32.h.api;windows.h.api;
+[RemoveDirectory]
+1=LPCTSTR lpPathName
+ParamCount=1
+[RemoveDirectoryTransacted]
+1=LPCTSTR lpPathName
+2=HANDLE hTransaction
+ParamCount=2
+Header=windows.h.api;
+[SetCurrentDirectory]
+1=LPCTSTR lpPathName
+ParamCount=1
+[GetDiskFreeSpace]
+1=LPCTSTR lpRootPathName
+2=LPDWORD lpSectorsPerCluster
+3=LPDWORD lpBytesPerSector
+4=LPDWORD lpNumberOfFreeClusters
+5=LPDWORD lpTotalNumberOfClusters
+ParamCount=5
+[GetDiskFreeSpaceEx]
+1=LPCTSTR lpDirectoryName
+2=PULARGE_INTEGER lpFreeBytesAvailable
+3=PULARGE_INTEGER lpTotalNumberOfBytes
+4=PULARGE_INTEGER lpTotalNumberOfFreeBytes
+ParamCount=4
+Header=windows.h.api;
+[DefineDosDevice]
+1=[DDD_FLAGS] dwFlags
+2=LPCTSTR lpDeviceName
+3=LPCTSTR lpTargetPath
+ParamCount=3
+Header=kernel32.h.api;
+[DeleteVolumeMountPoint]
+1=LPCTSTR lpszVolumeMountPoint
+ParamCount=1
+[FindFirstVolume]
+1=LPTSTR lpszVolumeName
+2=DWORD cchBufferLength
+ParamCount=2
+[FindNextVolume]
+1=HANDLE hFindVolume
+2=LPTSTR lpszVolumeName
+3=DWORD cchBufferLength
+ParamCount=3
+Header=windows.h.api;
+[FindNextVolumeMountPoint]
+1=HANDLE hFindVolumeMountPoint
+2=LPTSTR lpszVolumeMountPoint
+3=DWORD cchBufferLength
+ParamCount=3
+Header=windows.h.api;
+[FindVolumeClose]
+1=HANDLE hFindVolume
+ParamCount=1
+Header=windows.h.api;
+[FindVolumeMountPointClose]
+1=HANDLE hFindVolumeMountPoint
+ParamCount=1
+Header=windows.h.api;
+[GetDriveType]
+1=LPCTSTR lpRootPathName
+ParamCount=1
+[GetLogicalDrives]
+ParamCount=0
+[GetLogicalDriveStrings]
+1=DWORD nBufferLength
+2=LPTSTR lpBuffer
+ParamCount=2
+[GetVolumeInformation]
+1=LPCTSTR lpRootPathName
+2=LPTSTR lpVolumeNameBuffer
+3=DWORD nVolumeNameSize
+4=LPDWORD lpVolumeSerialNumber
+5=LPDWORD lpMaximumComponentLength
+6=[LPFILE_SYSTEM_FLAGS] lpFileSystemFlags
+7=LPTSTR lpFileSystemNameBuffer
+8=DWORD nFileSystemNameSize
+ParamCount=8
+Header=kernel32.h.api;
+[GetVolumeInformationByHandleW]
+1=HANDLE hFile
+2=LPTSTR lpVolumeNameBuffer
+3=DWORD nVolumeNameSize
+4=LPDWORD lpVolumeSerialNumber
+5=LPDWORD lpMaximumComponentLength
+6=[LPFILE_SYSTEM_FLAGS] lpFileSystemFlags
+7=LPTSTR lpFileSystemNameBuffer
+8=DWORD nFileSystemNameSize
+ParamCount=8
+Header=kernel32.h.api;windows.h.api;
+[GetVolumeNameForVolumeMountPoint]
+1=LPCTSTR lpszVolumeMountPoint
+2=LPTSTR lpszVolumeName
+3=DWORD cchBufferLength
+ParamCount=3
+[GetVolumePathName]
+1=LPCTSTR lpszFileName
+2=LPTSTR lpszVolumePathName
+3=DWORD cchBufferLength
+ParamCount=3
+[GetVolumePathNamesForVolumeName]
+1=LPCTSTR lpszVolumeName
+2=LPTSTR lpszVolumePathNames
+3=DWORD cchBufferLength
+4=PDWORD lpcchReturnLength
+ParamCount=4
+[QueryDosDevice]
+1=LPCTSTR lpDeviceName
+2=LPTSTR lpTargetPath
+3=DWORD ucchMax
+ParamCount=3
+[SetVolumeLabel]
+1=LPCTSTR lpRootPathName
+2=LPCTSTR lpVolumeName
+ParamCount=2
+[FindFirstVolumeMountPoint]
+1=LPTSTR lpszRootPathName
+2=LPTSTR lpszVolumeMountPoint
+3=DWORD cchBufferLength
+ParamCount=3
+[SetVolumeMountPoint]
+1=LPCTSTR lpszVolumeMountPoint
+2=LPCTSTR lpszVolumeName
+ParamCount=2
+[CreatePipe]
+1=PHANDLE hReadPipe
+2=PHANDLE hWritePipe
+3=LPSECURITY_ATTRIBUTES lpPipeAttributes
+4=DWORD nSize
+ParamCount=4
+Header=security.h.api;windows.h.api;
+[CallNamedPipe]
+1=LPCTSTR lpNamedPipeName
+2=LPVOID lpInBuffer
+3=DWORD nInBufferSize
+4=LPVOID lpOutBuffer
+5=DWORD nOutBufferSize
+6=LPDWORD lpBytesRead
+7=[NMPWAIT] nTimeOut
+ParamCount=7
+Header=kernel32.h.api;
+[ConnectNamedPipe]
+1=HANDLE hNamedPipe
+2=LPOVERLAPPED lpOverlapped
+ParamCount=2
+Header=windows.h.api;
+[CreateNamedPipe]
+1=LPCTSTR lpName
+2=[PIPE_ACCESS] dwOpenMode
+3=[PIPE_MODE] dwPipeMode
+4=DWORD nMaxInstances
+5=DWORD nOutBufferSize
+6=DWORD nInBufferSize
+7=DWORD nDefaultTimeOut
+8=LPSECURITY_ATTRIBUTES lpSecurityAttributes
+ParamCount=8
+Header=kernel32.h.api;security.h.api;
+[DisconnectNamedPipe]
+1=HANDLE hNamedPipe
+ParamCount=1
+Header=windows.h.api;
+[GetNamedPipeClientComputerName]
+1=HANDLE Pipe
+2=LPTSTR ClientComputerName
+3=ULONG ClientComputerNameLength
+ParamCount=3
+Header=windows.h.api;
+[GetNamedPipeClientProcessId]
+1=HANDLE Pipe
+2=PULONG ClientProcessId
+ParamCount=2
+Header=windows.h.api;
+[GetNamedPipeClientSessionId]
+1=HANDLE Pipe
+2=PULONG ClientSessionId
+ParamCount=2
+Header=windows.h.api;
+[GetNamedPipeHandleState]
+1=HANDLE hNamedPipe
+2=PIPE_STATE* lpState
+3=LPDWORD lpCurInstances
+4=LPDWORD lpMaxCollectionCount
+5=LPDWORD lpCollectDataTimeout
+6=LPTSTR lpUserName
+7=DWORD nMaxUserNameSize
+ParamCount=7
+Header=kernel32.h.api;windows.h.api;
+[GetNamedPipeInfo]
+1=HANDLE hNamedPipe
+2=PIPE_TYPE* lpFlags
+3=LPDWORD lpOutBufferSize
+4=LPDWORD lpInBufferSize
+5=LPDWORD lpMaxInstances
+ParamCount=5
+Header=kernel32.h.api;windows.h.api;
+[GetNamedPipeServerProcessId]
+1=HANDLE Pipe
+2=PULONG ServerProcessId
+ParamCount=2
+Header=windows.h.api;
+[GetNamedPipeServerSessionId]
+1=HANDLE Pipe
+2=PULONG ServerSessionId
+ParamCount=2
+Header=windows.h.api;
+[PeekNamedPipe]
+1=HANDLE hNamedPipe
+2=LPVOID lpBuffer
+3=DWORD nBufferSize
+4=LPDWORD lpBytesRead
+5=LPDWORD lpTotalBytesAvail
+6=LPDWORD lpBytesLeftThisMessage
+ParamCount=6
+Header=windows.h.api;
+[SetNamedPipeHandleState]
+1=HANDLE hNamedPipe
+2=PIPE_MODE* lpMode
+3=LPDWORD lpMaxCollectionCount
+4=LPDWORD lpCollectDataTimeout
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[TransactNamedPipe]
+1=HANDLE hNamedPipe
+2=LPVOID lpInBuffer
+3=DWORD nInBufferSize
+4=LPVOID lpOutBuffer
+5=DWORD nOutBufferSize
+6=LPDWORD lpBytesRead
+7=LPOVERLAPPED lpOverlapped
+ParamCount=7
+Header=windows.h.api;
+[WaitNamedPipe]
+1=LPCTSTR lpNamedPipeName
+2=[NMPWAIT] nTimeOut
+ParamCount=2
+Header=kernel32.h.api;
+[DisableThreadProfiling]
+1=HANDLE PerformanceDataHandle
+ParamCount=1
+Header=windows.h.api;
+[EnableThreadProfiling]
+1=[ThreadHandle] ThreadHandle
+2=[THREAD_PROFILING_FLAGS] Flags
+3=DWORD64 HardwareCounters
+4=HANDLE PerformanceDataHandle
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[QueryThreadProfiling]
+1=[ThreadHandle] ThreadHandle
+2=PBOOLEAN Enabled
+ParamCount=2
+Header=windows.h.api;
+[ReadThreadProfilingData]
+1=HANDLE PerformanceDataHandle
+2=[READ_THREAD_PROFILING_FLAGS] Flags
+3=PPERFORMANCE_DATA PerformanceData
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[BaseFormatTimeOut]
+1=LARGE_INTEGER* pLITimeout
+2=DWORD dwMillis
+ParamCount=2
+Header=windows.h.api;
+[BaseGetNamedObjectDirectory]
+1=HANDLE* phDir
+ParamCount=1
+Header=windows.h.api;
+[Basep8BitStringToDynamicUnicodeString]
+1=PUNICODE_STRING pConvertedStr
+2=LPCSTR pszAnsiStr
+ParamCount=2
+Header=windows.h.api;
+[CheckElevationEnabled]
+1=BOOL* pResult
+ParamCount=1
+[ConsoleMenuControl]
+1=HANDLE hConOut
+2=DWORD cmdIdLow
+3=DWORD cmdIdHigh
+ParamCount=3
+Header=windows.h.api;
+[SetConsoleCursor]
+1=HANDLE hConsole
+2=HCURSOR hCursor
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[SetConsoleMaximumWindowSize]
+1=HANDLE hConsole
+2=DWORD dwUnk
+ParamCount=2
+Header=windows.h.api;
+[SetStdHandleEx]
+1=[StdHandle] dwStdHandle
+2=HANDLE hNewHandle
+3=HANDLE* phOldHandle
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[ShowConsoleCursor]
+1=HANDLE hConsoleOutput
+2=BOOL bShow
+ParamCount=2
+Header=windows.h.api;
+[AddLocalAlternateComputerName]
+1=LPCTSTR lpDnsFQHostname
+2=ULONG ulFlags
+ParamCount=2
+[DelayLoadFailureHook]
+1=LPCSTR pszDllName
+2=LPCSTR pszProcName
+ParamCount=2
+[ResolveDelayLoadedAPI]
+1=HMODULE-PVOID ParentModuleBase
+2=PCIMAGE_DELAYLOAD_DESCRIPTOR DelayloadDescriptor
+3=PDELAYLOAD_FAILURE_DLL_CALLBACK FailureDllHook
+4=PDELAYLOAD_FAILURE_SYSTEM_ROUTINE FailureSystemHook
+5=PIMAGE_THUNK_DATA ThunkAddress
+6=ULONG Flags
+ParamCount=6
+Header=kernel32.h.api;
+[ResolveDelayLoadsFromDll]
+1=HMODULE-PVOID ParentBase
+2=LPCSTR TargetDllName
+3=ULONG Flags
+ParamCount=3
+[DecodePointer]
+1=PVOID Ptr
+ParamCount=1
+[DecodeSystemPointer]
+1=PVOID Ptr
+ParamCount=1
+[EncodePointer]
+1=PVOID Ptr
+ParamCount=1
+[EncodeSystemPointer]
+1=PVOID Ptr
+ParamCount=1
+[MulDiv]
+1=int nNumber
+2=int nNumerator
+3=int nDenominator
+ParamCount=3
+[CheckTokenCapability]
+1=HANDLE TokenHandle
+2=PSID CapabilitySidToCheck
+3=PBOOL HasCapability
+ParamCount=3
+Header=windows.h.api;
+[CheckTokenMembershipEx]
+1=HANDLE TokenHandle
+2=PSID SidToCheck
+3=[CTM_FLAGS] Flags
+4=PBOOL IsMember
+ParamCount=4
+Header=kernel32.h.api;windows.h.api;
+[AddResourceAttributeAce]
+1=PACL pAcl
+2=DWORD dwAceRevision
+3=[AceFlags] AceFlags
+4=[ACCESS_MASK_DWORD] AccessMask
+5=PSID pSid
+6=PCLAIM_SECURITY_ATTRIBUTES_INFORMATION pAttributeInfo
+7=PDWORD pReturnLength
+ParamCount=7
+Header=kernel32.h.api;security.h.api;windows.h.api;
+[AddScopedPolicyIDAce]
+1=PACL pAcl
+2=DWORD dwAceRevision
+3=[AceFlags] AceFlags
+4=[ACCESS_MASK_DWORD] AccessMask
+5=PSID pSid
+ParamCount=5
+Header=security.h.api;windows.h.api;
+[ClosePackageInfo]
+1=PACKAGE_INFO_REFERENCE packageInfoReference
+ParamCount=1
+Header=kernel32.h.api;
+[GetApplicationUserModelId]
+1=HANDLE hProcess
+2=UINT32* applicationUserModelIdLength
+3=PWSTR applicationUserModelId
+ParamCount=3
+Header=windows.h.api;
+[GetCurrentApplicationUserModelId]
+1=UINT32* applicationUserModelIdLength
+2=PWSTR applicationUserModelId
+ParamCount=2
+[GetCurrentPackageFamilyName]
+1=UINT32* packageFamilyNameLength
+2=PWSTR packageFamilyName
+ParamCount=2
+[GetCurrentPackageFullName]
+1=UINT32* packageFullNameLength
+2=PWSTR packageFullName
+ParamCount=2
+[GetCurrentPackageId]
+1=UINT32* bufferLength
+2=BYTE* buffer
+ParamCount=2
+[GetCurrentPackageInfo]
+1=PACKAGE_FILTER_FLAGS flags
+2=UINT32* bufferLength
+3=BYTE* buffer
+4=UINT32* count
+ParamCount=4
+[GetCurrentPackagePath]
+1=UINT32* pathLength
+2=PWSTR path
+ParamCount=2
+[GetPackageFamilyName]
+1=HANDLE hProcess
+2=UINT32* packageFamilyNameLength
+3=PWSTR packageFamilyName
+ParamCount=3
+Header=windows.h.api;
+[GetPackageFullName]
+1=HANDLE hProcess
+2=UINT32* packageFullNameLength
+3=PWSTR packageFullName
+ParamCount=3
+Header=windows.h.api;
+[GetPackageId]
+1=HANDLE hProcess
+2=UINT32* bufferLength
+3=BYTE* pBuffer
+ParamCount=3
+Header=windows.h.api;
+[GetPackageInfo]
+1=PACKAGE_INFO_REFERENCE packageInfoReference
+2=PACKAGE_CONSTANTS flags
+3=UINT32* bufferLength
+4=BYTE* buffer
+5=UINT32* count
+ParamCount=5
+Header=kernel32.h.api;
+[GetPackagePath]
+1=const PACKAGE_ID* packageId
+2=UINT32 reserved
+3=UINT32* pathLength
+4=PWSTR path
+ParamCount=4
+Header=kernel32.h.api;
+[GetPackagesByPackageFamily]
+1=PWSTR packageFamilyName
+2=UINT32* count
+3=PWSTR* packageFullNames
+4=UINT32* bufferLength
+5=WCHAR* buffer
+ParamCount=5
+[OpenPackageInfoByFullName]
+1=PCWSTR packageFullName
+2=UINT32 reserved
+3=PACKAGE_INFO_REFERENCE* packageInfoReference
+ParamCount=3
+Header=kernel32.h.api;
+[PackageFamilyNameFromFullName]
+1=PCWSTR packageFullName
+2=UINT32* packageFamilyNameLength
+3=PWSTR packageFamilyName
+ParamCount=3
+[PackageFamilyNameFromId]
+1=const PACKAGE_ID* packageId
+2=UINT32* packageFamilyNameLength
+3=PWSTR packageFamilyName
+ParamCount=3
+[PackageFullNameFromId]
+1=const PACKAGE_ID* packageId
+2=UINT32* packageFullNameLength
+3=PWSTR packageFullName
+ParamCount=3
+[PackageIdFromFullName]
+1=PCWSTR packageFullName
+2=PACKAGE_INFORMATION_FLAGS flags
+3=UINT32* bufferLength
+4=BYTE* buffer
+ParamCount=4
+[PackageNameAndPublisherIdFromFamilyName]
+1=PCWSTR packageFamilyName
+2=UINT32* packageNameLength
+3=PWSTR packageName
+4=UINT32* packagePublisherIdLength
+5=PWSTR packagePublisherId
+ParamCount=5
+[K32EmptyWorkingSet]
+1=[ProcessHandle] hProcess
+ParamCount=1
+Header=windows.h.api;
+[K32EnumDeviceDrivers]
+1=LPVOID* lpImageBase
+2=DWORD cb
+3=LPDWORD lpcbNeeded
+ParamCount=3
+[K32EnumPageFiles]
+1=PENUM_PAGE_CALLBACK pCallbackRoutine
+2=LPVOID lpContext
+ParamCount=2
+Header=processes.h.api;
+[K32EnumProcesses]
+1=DWORD* pProcessIds
+2=DWORD cb
+3=DWORD* pBytesReturned
+ParamCount=3
+[K32EnumProcessModules]
+1=[ProcessHandle] hProcess
+2=HMODULE* lphModule
+3=DWORD cb
+4=LPDWORD lpcbNeeded
+ParamCount=4
+Header=windows.h.api;
+[K32EnumProcessModulesEx]
+1=[ProcessHandle] hProcess
+2=HMODULE* lphModule
+3=DWORD cb
+4=LPDWORD lpcbNeeded
+5=DWORD dwFilterFlag
+ParamCount=5
+Header=windows.h.api;
+[K32GetDeviceDriverBaseName]
+1=LPVOID ImageBase
+2=LPTSTR lpBaseName
+3=DWORD nSize
+ParamCount=3
+[K32GetDeviceDriverFileName]
+1=LPVOID ImageBase
+2=LPTSTR lpFilename
+3=DWORD nSize
+ParamCount=3
+[K32GetMappedFileName]
+1=[ProcessHandle] hProcess
+2=LPVOID lpv
+3=LPTSTR lpFilename
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[K32GetModuleBaseName]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPTSTR lpBaseName
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[K32GetModuleFileNameEx]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPTSTR lpFilename
+4=DWORD nSize
+ParamCount=4
+Header=windows.h.api;
+[K32GetModuleInformation]
+1=[ProcessHandle] hProcess
+2=HMODULE hModule
+3=LPMODULEINFO lpmodinfo
+4=DWORD cb
+ParamCount=4
+Header=processes.h.api;windows.h.api;
+[K32GetPerformanceInfo]
+1=PPERFORMANCE_INFORMATION pPerformanceInformation
+2=DWORD cb
+ParamCount=2
+Header=processes.h.api;
+[K32GetProcessImageFileName]
+1=[ProcessHandle] hProcess
+2=LPTSTR lpImageFileName
+3=DWORD nSize
+ParamCount=3
+Header=windows.h.api;
+[K32GetProcessMemoryInfo]
+1=HANDLE Process
+2=PPROCESS_MEMORY_COUNTERS ppsmemCounters
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[K32GetWsChanges]
+1=[ProcessHandle] hProcess
+2=PPSAPI_WS_WATCH_INFORMATION lpWatchInfo
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[K32GetWsChangesEx]
+1=[ProcessHandle] hProcess
+2=PPSAPI_WS_WATCH_INFORMATION_EX lpWatchInfoEx
+3=DWORD cb
+ParamCount=3
+Header=processes.h.api;windows.h.api;
+[K32InitializeProcessForWsWatch]
+1=[ProcessHandle] hProcess
+ParamCount=1
+Header=windows.h.api;
+[K32QueryWorkingSet]
+1=[ProcessHandle] hProcess
+2=PVOID pv
+3=DWORD cb
+ParamCount=3
+Header=windows.h.api;
+[K32QueryWorkingSetEx]
+1=[ProcessHandle] hProcess
+2=PVOID pv
+3=DWORD cb
+ParamCount=3
+Header=windows.h.api;
+[EnumUILanguages]
+1=UILANGUAGE_ENUMPROC lpUILanguageEnumProc
+2=[EnumUILanguages_FLAGS] dwFlags
+3=LONG_PTR lParam
+ParamCount=3
+Header=kernel32.h.api;
+[GetFileMUIInfo]
+1=[GetFileMUIInfo_FLAGS] dwFlags
+2=PCWSTR pcwszFilePath
+3=PFILEMUIINFO pFileMUIInfo
+4=DWORD* pcbFileMUIInfo
+ParamCount=4
+Header=kernel32.h.api;
+[GetFileMUIPath]
+1=DWORD dwFlags
+2=PCWSTR pcwszFilePath
+3=PWSTR pwszLanguage
+4=PULONG pcchLanguage
+5=PWSTR pwszFileMUIPath
+6=PULONG pcchFileMUIPath
+7=PULONGLONG pululEnumerator
+ParamCount=7
+[GetProcessPreferredUILanguages]
+1=[MUI_LANGUAGE_FORMAT_FLAGS] dwFlags
+2=PULONG pulNumLanguages
+3=PZZWSTR pwszLanguagesBuffer
+4=PULONG pcchLanguagesBuffer
+ParamCount=4
+Header=kernel32.h.api;
+[GetSystemDefaultUILanguage]
+ParamCount=0
+[GetSystemPreferredUILanguages]
+1=[GetSystemPreferredUILanguages_FLAGS] dwFlags
+2=PULONG pulNumLanguages
+3=PZZWSTR pwszLanguagesBuffer
+4=PULONG pcchLanguagesBuffer
+ParamCount=4
+Header=kernel32.h.api;
+[GetThreadPreferredUILanguages]
+1=[GetThreadPreferredUILanguages_FLAGS] dwFlags
+2=PULONG pulNumLanguages
+3=PZZWSTR pwszLanguagesBuffer
+4=PULONG pcchLanguagesBuffer
+ParamCount=4
+Header=kernel32.h.api;
+[GetThreadUILanguage]
+ParamCount=0
+[GetUILanguageInfo]
+1=[MUI_LANGUAGE_FORMAT_FLAGS] dwFlags
+2=PCZZWSTR pwmszLanguage
+3=PZZWSTR pwszFallbackLanguages
+4=PDWORD pcchFallbackLanguages
+5=MUI_LANGUAGE_ATTRIBUTES* pdwAttributes
+ParamCount=5
+Header=kernel32.h.api;
+[GetUserDefaultUILanguage]
+ParamCount=0
+[GetUserPreferredUILanguages]
+1=[MUI_LANGUAGE_FORMAT_FLAGS] dwFlags
+2=PULONG pulNumLanguages
+3=PZZWSTR pwszLanguagesBuffer
+4=PULONG pcchLanguagesBuffer
+ParamCount=4
+Header=kernel32.h.api;
+[SetProcessPreferredUILanguages]
+1=[MUI_LANGUAGE_FORMAT_FLAGS] dwFlags
+2=PCZZWSTR pwszLanguagesBuffer
+3=PULONG pulNumLanguages
+ParamCount=3
+Header=kernel32.h.api;
+[SetThreadPreferredUILanguages]
+1=[SetThreadPreferredUILanguages_FLAGS] dwFlags
+2=PCZZWSTR pwszLanguagesBuffer
+3=PULONG pulNumLanguages
+ParamCount=3
+Header=kernel32.h.api;
+[SetThreadUILanguage]
+1=[LANGID] LangId
+ParamCount=1
+Header=windows.h.api;
+[CopyContext]
+1=PCONTEXT Destination
+2=DWORD ContextFlags
+3=PCONTEXT Source
+ParamCount=3
+Header=windows.h.api;
+[GetEnabledXStateFeatures]
+ParamCount=0
+[GetXStateFeaturesMask]
+1=PCONTEXT Context
+2=XSTATE_MASK* FeatureMask
+ParamCount=2
+Header=windows.h.api;
+[InitializeContext]
+1=PVOID Buffer
+2=DWORD ContextFlags
+3=PCONTEXT* Context
+4=PWORD ContextLength
+ParamCount=4
+Header=windows.h.api;
+[LocateXStateFeature]
+1=PCONTEXT Context
+2=[XSTATE_FEATURE] FeatureId
+3=PDWORD Length
+ParamCount=3
+Header=kernel32.h.api;windows.h.api;
+[SetXStateFeaturesMask]
+1=PCONTEXT Context
+2=[XSTATE_MASK] FeatureMask
+ParamCount=2
+Header=windows.h.api;
+[CheckElevation]
+1=LPCWSTR lpApplicationName
+2=PDWORD pdwFlags
+3=HANDLE hChildToken
+4=PDWORD pdwRunLevel
+5=PDWORD pdwReason
+ParamCount=5
+Header=windows.h.api;
+[RegCloseKey]
+SourceModule=advapi32.api
+[RegCreateKeyEx]
+SourceModule=advapi32.api
+[RegDeleteKeyEx]
+SourceModule=advapi32.api
+[RegDeleteTree]
+SourceModule=advapi32.api
+[RegDeleteValue]
+SourceModule=advapi32.api
+[RegDisablePredefinedCacheEx]
+SourceModule=advapi32.api
+[RegEnumKeyEx]
+SourceModule=advapi32.api
+[RegEnumValue]
+SourceModule=advapi32.api
+[RegFlushKey]
+SourceModule=advapi32.api
+[RegGetValue]
+SourceModule=advapi32.api
+[RegLoadKey]
+SourceModule=advapi32.api
+[RegLoadMUIString]
+SourceModule=advapi32.api
+[RegNotifyChangeKeyValue]
+SourceModule=advapi32.api
+[RegOpenCurrentUser]
+SourceModule=advapi32.api
+[RegOpenKeyEx]
+SourceModule=advapi32.api
+[RegOpenUserClassesRoot]
+SourceModule=advapi32.api
+[RegQueryInfoKey]
+SourceModule=advapi32.api
+[RegQueryValueEx]
+SourceModule=advapi32.api
+[RegRestoreKey]
+SourceModule=advapi32.api
+[RegSaveKeyEx]
+SourceModule=advapi32.api
+[RegSetValueEx]
+SourceModule=advapi32.api
+[RegUnLoadKey]
+SourceModule=advapi32.api
+[RegGetKeySecurity]
+SourceModule=advapi32.api
+[RegSetKeySecurity]
+SourceModule=advapi32.api
+[CreateProcessAsUser]
+SourceModule=advapi32.api
+[CopyLZFile]
+SourceModule=lz32.api
+[GetExpandedName]
+SourceModule=lz32.api
+[LZClose]
+SourceModule=lz32.api
+[LZCloseFile]
+SourceModule=lz32.api
+[LZCopy]
+SourceModule=lz32.api
+[LZCreateFileW]
+SourceModule=lz32.api
+[LZDone]
+SourceModule=lz32.api
+[LZInit]
+SourceModule=lz32.api
+[LZOpenFile]
+SourceModule=lz32.api
+[LZRead]
+SourceModule=lz32.api
+[LZSeek]
+SourceModule=lz32.api
+[LZStart]
+SourceModule=lz32.api
+[RtlEncodePointer]
+SourceModule=ntdll.api
+[RtlDecodePointer]
+SourceModule=ntdll.api

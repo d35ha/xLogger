@@ -1,0 +1,1099 @@
+[CallingConvention]
+@=STDCALL
+[JetAddColumn]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szColumnName
+4=JET_COLUMNDEF* pcolumndef
+5=const void* pvDefault
+6=unsigned long cbDefault
+7=JET_COLUMNID* pcolumnid
+ParamCount=7
+Header=esent.h.api;
+[JetAttachDatabase]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=[JetOpenDatabaseFlags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetAttachDatabase2]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=const unsigned long cpgDatabaseSizeMax
+4=[JetOpenDatabaseFlags] grbit
+ParamCount=4
+Header=esent.h.api;
+[JetBackup]
+1=JET_PCSTR szBackupPath
+2=[JetBackupFlags] grbit
+3=JET_PFNSTATUS pfnStatus
+ParamCount=3
+Header=esent.h.api;
+[JetBackupInstance]
+1=[JET_INSTANCE] instance
+2=JET_PCSTR szBackupPath
+3=[JetBackupFlags] grbit
+4=JET_PFNSTATUS pfnStatus
+ParamCount=4
+Header=esent.h.api;
+[JetBeginExternalBackup]
+1=[JetBackupFlags] grbit
+ParamCount=1
+Header=esent.h.api;
+[JetBeginExternalBackupInstance]
+1=[JET_INSTANCE] instance
+2=[JetBackupFlags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetBeginSession]
+1=[JET_INSTANCE] instance
+2=JET_SESID* psesid
+3=JET_PCSTR szUserName
+4=JET_PCSTR szPassword
+ParamCount=4
+Header=esent.h.api;
+[JetBeginTransaction]
+1=[JET_SESID] sesid
+ParamCount=1
+Header=esent.h.api;
+[JetBeginTransaction2]
+1=[JET_SESID] sesid
+2=[JetBeginTransaction2Flags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetCloseDatabase]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetCloseFile]
+1=JET_HANDLE hfFile
+ParamCount=1
+Header=esent.h.api;
+[JetCloseFileInstance]
+1=[JET_INSTANCE] instance
+2=JET_HANDLE hfFile
+ParamCount=2
+Header=esent.h.api;
+[JetCloseTable]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+ParamCount=2
+Header=esent.h.api;
+[JetCommitTransaction]
+1=[JET_SESID] sesid
+2=[JetCommitTransactionFlags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetCompact]
+1=[JET_SESID] sesid
+2=JET_PCSTR szDatabaseSrc
+3=JET_PCSTR szDatabaseDest
+4=JET_PFNSTATUS pfnStatus
+5=JET_CONVERT* pconvert
+6=[JetCompactFlags] grbit
+ParamCount=6
+Header=esent.h.api;
+[JetComputeStats]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+ParamCount=2
+Header=esent.h.api;
+[JetCreateDatabase]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=JET_PCSTR szConnect
+4=JET_DBID* pdbid
+5=[JetCreateDatabaseFlags] grbit
+ParamCount=5
+Header=esent.h.api;
+[JetCreateDatabase2]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=const unsigned long cpgDatabaseSizeMax
+4=JET_DBID* pdbid
+5=[JetCreateDatabaseFlags] grbit
+ParamCount=5
+Header=esent.h.api;
+[JetCreateIndex]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+4=[JetCreateIndexFlags] grbit
+5=JET_PCSTR szKey
+6=unsigned long cbKey
+7=unsigned long lDensity
+ParamCount=7
+Header=esent.h.api;
+[JetCreateIndex2]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_INDEXCREATE* pindexcreate
+4=unsigned long cIndexCreate
+ParamCount=4
+Header=esent.h.api;
+[JetCreateInstance]
+1=JET_INSTANCE* pinstance
+2=JET_PCSTR szInstanceName
+ParamCount=2
+Header=esent.h.api;
+[JetCreateInstance2]
+1=JET_INSTANCE* pinstance
+2=JET_PCSTR szInstanceName
+3=JET_PCSTR szDisplayName
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetCreateTable]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=unsigned long lPages
+5=unsigned long lDensity
+6=JET_TABLEID* ptableid
+ParamCount=6
+Header=esent.h.api;
+[JetCreateTableColumnIndex]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_TABLECREATE* ptablecreate
+ParamCount=3
+Header=esent.h.api;
+[JetCreateTableColumnIndex2]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_TABLECREATE2* ptablecreate
+ParamCount=3
+Header=esent.h.api;
+[JetDefragment]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=unsigned long* pcPasses
+5=unsigned long* pcSeconds
+6=[JetDefragmentFlags] grbit
+ParamCount=6
+Header=esent.h.api;
+[JetDefragment2]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=unsigned long* pcPasses
+5=unsigned long* pcSeconds
+6=JET_CALLBACK callback
+7=[JetDefragmentFlags] grbit
+ParamCount=7
+Header=esent.h.api;
+[JetDelete]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+ParamCount=2
+Header=esent.h.api;
+[JetDeleteColumn]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szColumnName
+ParamCount=3
+Header=esent.h.api;
+[JetDeleteColumn2]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szColumnName
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetDeleteIndex]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+ParamCount=3
+Header=esent.h.api;
+[JetDeleteTable]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+ParamCount=3
+Header=esent.h.api;
+[JetDetachDatabase]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+ParamCount=2
+Header=esent.h.api;
+[JetDetachDatabase2]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=[JetDetachDatabase2Flags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetDupCursor]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_TABLEID* ptableid
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetDupSession]
+1=[JET_SESID] sesid
+2=JET_SESID* psesid
+ParamCount=2
+Header=esent.h.api;
+[JetEnableMultiInstance]
+1=JET_SETSYSPARAM* psetsysparam
+2=unsigned long csetsysparam
+3=unsigned long* pcsetsucceed
+ParamCount=3
+Header=esent.h.api;
+[JetEndExternalBackup]
+ParamCount=0
+[JetEndExternalBackupInstance]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetEndExternalBackupInstance2]
+1=[JET_INSTANCE] instance
+2=[JetEndExternalBackupInstance2Flags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetEndSession]
+1=[JET_SESID] sesid
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetEnumerateColumns]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=unsigned long cEnumColumnId
+4=JET_ENUMCOLUMNID* rgEnumColumnId
+5=unsigned long* pcEnumColumn
+6=JET_ENUMCOLUMN** prgEnumColumn
+7=JET_PFNREALLOC pfnRealloc
+8=void* pvReallocContext
+9=unsigned long cbDataMost
+10=[JetEnumerateColumnsFlags] grbit
+ParamCount=10
+Header=esent.h.api;
+[JetEscrowUpdate]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_COLUMNID columnid
+4=void* pv
+5=unsigned long cbMax
+6=void* pvOld
+7=unsigned long cbOldMax
+8=unsigned long* pcbOldActual
+9=[JetEscrowUpdateFlags] grbit
+ParamCount=9
+Header=esent.h.api;
+[JetExternalRestore]
+1=JET_PSTR szCheckpointFilePath
+2=JET_PSTR szLogPath
+3=JET_RSTMAP* rgrstmap
+4=long crstfilemap
+5=JET_PSTR szBackupLogPath
+6=long genLow
+7=long genHigh
+8=JET_PFNSTATUS pfn
+ParamCount=8
+Header=esent.h.api;
+[JetExternalRestore2]
+1=JET_PSTR szCheckpointFilePath
+2=JET_PSTR szLogPath
+3=JET_RSTMAP* rgrstmap
+4=long crstfilemap
+5=JET_PSTR szBackupLogPath
+6=JET_LOGINFO* pLogInfo
+7=JET_PSTR szTargetInstanceName
+8=JET_PSTR szTargetInstanceLogPath
+9=JET_PSTR szTargetInstanceCheckpointPath
+10=JET_PFNSTATUS pfn
+ParamCount=10
+Header=esent.h.api;
+[JetFreeBuffer]
+1=char* pbBuf
+ParamCount=1
+[JetGetAttachInfo]
+1=tchar* szz
+2=unsigned long cbMax
+3=unsigned long* pcbActual
+ParamCount=3
+[JetGetAttachInfoInstance]
+1=[JET_INSTANCE] instance
+2=tchar* szz
+3=unsigned long cbMax
+4=unsigned long* pcbActual
+ParamCount=4
+Header=esent.h.api;
+[JetGetBookmark]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvBookmark
+4=unsigned long cbMax
+5=unsigned long* pcbActual
+ParamCount=5
+Header=esent.h.api;
+[JetGetColumnInfo]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=JET_PCSTR szColumnName
+5=void* pvResult
+6=unsigned long cbMax
+7=unsigned long InfoLevel
+ParamCount=7
+Header=esent.h.api;
+[JetGetCurrentIndex]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PSTR szIndexName
+4=unsigned long cchIndexName
+ParamCount=4
+Header=esent.h.api;
+[JetGetCursorInfo]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvResult
+4=unsigned long cbMax
+5=unsigned long InfoLevel
+ParamCount=5
+Header=esent.h.api;
+[JetGetDatabaseFileInfo]
+1=JET_PCSTR szDatabaseName
+2=void* pvResult
+3=unsigned long cbMax
+4=unsigned long InfoLevel
+ParamCount=4
+Header=esent.h.api;
+[JetGetDatabaseInfo]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=void* pvResult
+4=unsigned long cbMax
+5=unsigned long InfoLevel
+ParamCount=5
+Header=esent.h.api;
+[JetGetIndexInfo]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=JET_PCSTR szIndexName
+5=void* pvResult
+6=unsigned long cbResult
+7=unsigned long InfoLevel
+ParamCount=7
+Header=esent.h.api;
+[JetGetInstanceInfo]
+1=unsigned long* pcInstanceInfo
+2=JET_INSTANCE_INFO** paInstanceInfo
+ParamCount=2
+Header=esent.h.api;
+[JetGetInstanceMiscInfo]
+1=[JET_INSTANCE] instance
+2=void* pvResult
+3=unsigned long cbMax
+4=unsigned long InfoLevel
+ParamCount=4
+Header=esent.h.api;
+[JetGetLock]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=[JetGetLockFlags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetGetLogInfo]
+1=tchar* szz
+2=unsigned long cbMax
+3=unsigned long* pcbActual
+ParamCount=3
+[JetGetLogInfoInstance]
+1=[JET_INSTANCE] instance
+2=tchar* szz
+3=unsigned long cbMax
+4=unsigned long* pcbActual
+ParamCount=4
+Header=esent.h.api;
+[JetGetLogInfoInstance2]
+1=[JET_INSTANCE] instance
+2=tchar* szz
+3=unsigned long cbMax
+4=unsigned long* pcbActual
+5=JET_LOGINFO* pLogInfo
+ParamCount=5
+Header=esent.h.api;
+[JetGetLS]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_LS* pls
+4=[JetGetLSFlags] grbit
+ParamCount=4
+Header=esent.h.api;
+[JetGetObjectInfo]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_OBJTYP objtyp
+4=JET_PCSTR szContainerName
+5=JET_PCSTR szObjectName
+6=void* pvResult
+7=unsigned long cbMax
+8=unsigned long InfoLevel
+ParamCount=8
+Header=esent.h.api;
+[JetGetRecordPosition]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_RECPOS* precpos
+4=unsigned long cbRecpos
+ParamCount=4
+Header=esent.h.api;
+[JetGetRecordSize]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_RECSIZE* precsize
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetGetSecondaryIndexBookmark]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvSecondaryKey
+4=unsigned long cbSecondaryKeyMax
+5=unsigned long* pcbSecondaryKeyActual
+6=void* pvPrimaryBookmark
+7=unsigned long cbPrimaryBookmarkMax
+8=unsigned long* pcbPrimaryKeyActual
+9=JET_GRBIT grbit
+ParamCount=9
+Header=esent.h.api;
+[JetGetSystemParameter]
+1=[JET_INSTANCE] instance
+2=[JET_SESID] sesid
+3=[JET_param] paramid
+4=JET_API_PTR* plParam
+5=JET_PSTR szParam
+6=unsigned long cbMax
+ParamCount=6
+Header=esent.h.api;
+[JetGetTableColumnInfo]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szColumnName
+4=void* pvResult
+5=unsigned long cbMax
+6=unsigned long InfoLevel
+ParamCount=6
+Header=esent.h.api;
+[JetGetTableIndexInfo]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+4=void* pvResult
+5=unsigned long cbResult
+6=unsigned long InfoLevel
+ParamCount=6
+Header=esent.h.api;
+[JetGetTableInfo]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvResult
+4=unsigned long cbMax
+5=unsigned long InfoLevel
+ParamCount=5
+Header=esent.h.api;
+[JetGetThreadStats]
+1=void* pvResult
+2=unsigned long cbMax
+ParamCount=2
+[JetGetTruncateLogInfoInstance]
+1=[JET_INSTANCE] instance
+2=tchar* szz
+3=unsigned long cbMax
+4=unsigned long* pcbActual
+ParamCount=4
+Header=esent.h.api;
+[JetGetVersion]
+1=[JET_SESID] sesid
+2=unsigned long* pwVersion
+ParamCount=2
+Header=esent.h.api;
+[JetGotoBookmark]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvBookmark
+4=unsigned long cbBookmark
+ParamCount=4
+Header=esent.h.api;
+[JetGotoPosition]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_RECPOS* precpos
+ParamCount=3
+Header=esent.h.api;
+[JetGotoSecondaryIndexBookmark]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvSecondaryKey
+4=unsigned long cbSecondaryKey
+5=void* pvPrimaryBookmark
+6=unsigned long cbPrimaryBookmark
+7=[JetGotoSecondaryIndexBookmarkFlags] grbit
+ParamCount=7
+Header=esent.h.api;
+[JetGrowDatabase]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=unsigned long cpg
+4=unsigned long* pcpgReal
+ParamCount=4
+Header=esent.h.api;
+[JetIdle]
+1=[JET_SESID] sesid
+2=[JetIdleFlags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetIndexRecordCount]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=unsigned long* pcrec
+4=unsigned long crecMax
+ParamCount=4
+Header=esent.h.api;
+[JetInit]
+1=JET_INSTANCE* pinstance
+ParamCount=1
+Header=esent.h.api;
+[JetInit2]
+1=JET_INSTANCE* pinstance
+2=[JetInitFlags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetInit3]
+1=JET_INSTANCE* pinstance
+2=JET_RSTINFO* prstInfo
+3=[JetInitFlags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetIntersectIndexes]
+1=[JET_SESID] sesid
+2=JET_INDEXRANGE* rgindexrange
+3=unsigned long cindexrange
+4=JET_RECORDLIST* precordlist
+5=JET_GRBIT grbit
+ParamCount=5
+Header=esent.h.api;
+[JetMakeKey]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=const void* pvData
+4=unsigned long cbData
+5=[JetMakeKeyFlags] grbit
+ParamCount=5
+Header=esent.h.api;
+[JetMove]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=[JetMoveRow] cRow
+4=[JetMoveFlags] grbit
+ParamCount=4
+Header=esent.h.api;
+[JetOpenDatabase]
+1=[JET_SESID] sesid
+2=JET_PCSTR szFilename
+3=JET_PCSTR szConnect
+4=JET_DBID* pdbid
+5=[JetOpenDatabaseFlags] grbit
+ParamCount=5
+Header=esent.h.api;
+[JetOpenFile]
+1=JET_PCSTR szFileName
+2=JET_HANDLE* phfFile
+3=unsigned long* pulFileSizeLow
+4=unsigned long* pulFileSizeHigh
+ParamCount=4
+Header=esent.h.api;
+[JetOpenFileInstance]
+1=[JET_INSTANCE] instance
+2=JET_PCSTR szFileName
+3=JET_HANDLE* phfFile
+4=unsigned long* pulFileSizeLow
+5=unsigned long* pulFileSizeHigh
+ParamCount=5
+Header=esent.h.api;
+[JetOpenTable]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=const void* pvParameters
+5=unsigned long cbParameters
+6=[JetOpenTableFlags] grbit
+7=JET_TABLEID* ptableid
+ParamCount=7
+Header=esent.h.api;
+[JetOpenTemporaryTable]
+1=[JET_SESID] sesid
+2=JET_OPENTEMPORARYTABLE* popentemporarytable
+ParamCount=2
+Header=esent.h.api;
+[JetOpenTempTable]
+1=[JET_SESID] sesid
+2=JET_COLUMNDEF* prgcolumndef
+3=unsigned long ccolumn
+4=[JetOpenTempTableFlags] grbit
+5=JET_TABLEID* ptableid
+6=JET_COLUMNID* prgcolumnid
+ParamCount=6
+Header=esent.h.api;
+[JetOpenTempTable2]
+1=[JET_SESID] sesid
+2=JET_COLUMNDEF* prgcolumndef
+3=unsigned long ccolumn
+4=unsigned long lcid
+5=[JetOpenTempTableFlags] grbit
+6=JET_TABLEID* ptableid
+7=JET_COLUMNID* prgcolumnid
+ParamCount=7
+Header=esent.h.api;
+[JetOpenTempTable3]
+1=[JET_SESID] sesid
+2=JET_COLUMNDEF* prgcolumndef
+3=unsigned long ccolumn
+4=JET_UNICODEINDEX* pidxunicode
+5=[JetOpenTempTableFlags] grbit
+6=JET_TABLEID* ptableid
+7=JET_COLUMNID* prgcolumnid
+ParamCount=7
+Header=esent.h.api;
+[JetOSSnapshotAbort]
+1=JET_OSSNAPID snapId
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetOSSnapshotEnd]
+1=JET_OSSNAPID snapId
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetOSSnapshotFreeze]
+1=JET_OSSNAPID snapId
+2=unsigned long* pcInstanceInfo
+3=JET_INSTANCE_INFO** paInstanceInfo
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetOSSnapshotGetFreezeInfo]
+1=JET_OSSNAPID snapId
+2=unsigned long* pcInstanceInfo
+3=JET_INSTANCE_INFO** paInstanceInfo
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetOSSnapshotPrepare]
+1=JET_OSSNAPID* psnapId
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetOSSnapshotPrepareInstance]
+1=JET_OSSNAPID snapId
+2=[JET_INSTANCE] instance
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetOSSnapshotThaw]
+1=JET_OSSNAPID snapId
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetOSSnapshotTruncateLog]
+1=JET_OSSNAPID snapId
+2=JET_GRBIT grbit
+ParamCount=2
+Header=esent.h.api;
+[JetOSSnapshotTruncateLogInstance]
+1=JET_OSSNAPID snapId
+2=[JET_INSTANCE] instance
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetPrepareUpdate]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=[JetPrepareUpdateOption] prep
+ParamCount=3
+Header=esent.h.api;
+[JetReadFile]
+1=JET_HANDLE hfFile
+2=void* pv
+3=unsigned long cb
+4=unsigned long* pcbActual
+ParamCount=4
+Header=esent.h.api;
+[JetReadFileInstance]
+1=[JET_INSTANCE] instance
+2=JET_HANDLE hfFile
+3=void* pv
+4=unsigned long cb
+5=unsigned long* pcb
+ParamCount=5
+Header=esent.h.api;
+[JetRegisterCallback]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_CBTYP cbtyp
+4=JET_CALLBACK pCallback
+5=void* pvContext
+6=JET_HANDLE* phCallbackId
+ParamCount=6
+Header=esent.h.api;
+[JetRenameColumn]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szName
+4=JET_PCSTR szNameNew
+5=JET_GRBIT grbit
+ParamCount=5
+Header=esent.h.api;
+[JetRenameTable]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szName
+4=JET_PCSTR szNameNew
+ParamCount=4
+Header=esent.h.api;
+[JetResetSessionContext]
+1=[JET_SESID] sesid
+ParamCount=1
+Header=esent.h.api;
+[JetResetTableSequential]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetRestore]
+1=JET_PCSTR sz
+2=JET_PFNSTATUS pfn
+ParamCount=2
+Header=esent.h.api;
+[JetRestore2]
+1=JET_PCSTR sz
+2=JET_PCSTR szDest
+3=JET_PFNSTATUS pfn
+ParamCount=3
+Header=esent.h.api;
+[JetRestoreInstance]
+1=[JET_INSTANCE] instance
+2=JET_PCSTR sz
+3=JET_PCSTR szDest
+4=JET_PFNSTATUS pfn
+ParamCount=4
+Header=esent.h.api;
+[JetRetrieveColumn]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_COLUMNID columnid
+4=void* pvData
+5=unsigned long cbData
+6=unsigned long* pcbActual
+7=[JetRetrieveColumnFlags] grbit
+8=JET_RETINFO* pretinfo
+ParamCount=8
+Header=esent.h.api;
+[JetRetrieveColumns]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_RETRIEVECOLUMN* pretrievecolumn
+4=unsigned long cretrievecolumn
+ParamCount=4
+Header=esent.h.api;
+[JetRetrieveKey]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvData
+4=unsigned long cbMax
+5=unsigned long* pcbActual
+6=JET_GRBIT grbit
+ParamCount=6
+Header=esent.h.api;
+[JetRollback]
+1=[JET_SESID] sesid
+2=[JetRollbackFlags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetSeek]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=[JetSeekFlags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetSetColumn]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_COLUMNID columnid
+4=const void* pvData
+5=unsigned long cbData
+6=[JetSetColumnFlags] grbit
+7=JET_SETINFO* psetinfo
+ParamCount=7
+Header=esent.h.api;
+[JetSetColumnDefaultValue]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_PCSTR szTableName
+4=JET_PCSTR szColumnName
+5=const void* pvData
+6=const unsigned long cbData
+7=JET_GRBIT grbit
+ParamCount=7
+Header=esent.h.api;
+[JetSetColumns]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_SETCOLUMN* psetcolumn
+4=unsigned long csetcolumn
+ParamCount=4
+Header=esent.h.api;
+[JetSetCurrentIndex]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+ParamCount=3
+Header=esent.h.api;
+[JetSetCurrentIndex2]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+4=[JetSetCurrentIndexFlags] grbit
+ParamCount=4
+Header=esent.h.api;
+[JetSetCurrentIndex3]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+4=[JetSetCurrentIndexFlags] grbit
+5=unsigned long itagSequence
+ParamCount=5
+Header=esent.h.api;
+[JetSetCurrentIndex4]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_PCSTR szIndexName
+4=JET_INDEXID* pindexid
+5=[JetSetCurrentIndexFlags] grbit
+6=unsigned long itagSequence
+ParamCount=6
+Header=esent.h.api;
+[JetSetDatabaseSize]
+1=[JET_SESID] sesid
+2=JET_PCSTR szDatabaseName
+3=unsigned long cpg
+4=unsigned long* pcpgReal
+ParamCount=4
+Header=esent.h.api;
+[JetSetIndexRange]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableidSrc
+3=[JetSetIndexRangeFlags] grbit
+ParamCount=3
+Header=esent.h.api;
+[JetSetLS]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=[JET_LS] ls
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetSetSessionContext]
+1=[JET_SESID] sesid
+2=JET_API_PTR ulContext
+ParamCount=2
+Header=esent.h.api;
+[JetSetSystemParameter]
+1=JET_INSTANCE* pinstance
+2=[JET_SESID] sesid
+3=[JET_param] paramid
+4=JET_API_PTR lParam
+5=JET_PCSTR szParam
+ParamCount=5
+Header=esent.h.api;
+[JetSetTableSequential]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetStopBackup]
+ParamCount=0
+[JetStopBackupInstance]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetStopService]
+ParamCount=0
+[JetStopServiceInstance]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetTerm]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetTerm2]
+1=[JET_INSTANCE] instance
+2=[JetTerm2Flags] grbit
+ParamCount=2
+Header=esent.h.api;
+[JetTruncateLog]
+ParamCount=0
+[JetTruncateLogInstance]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetUnregisterCallback]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_CBTYP cbtyp
+4=JET_HANDLE hCallbackId
+ParamCount=4
+Header=esent.h.api;
+[JetUpdate]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvBookmark
+4=unsigned long cbBookmark
+5=unsigned long* pcbActual
+ParamCount=5
+Header=esent.h.api;
+[JetUpdate2]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=void* pvBookmark
+4=unsigned long cbBookmark
+5=unsigned long* pcbActual
+6=[JetUpdateFlags] grbit
+ParamCount=6
+Header=esent.h.api;
+[JetBeginTransaction3]
+1=[JET_SESID] sesid
+2=__int64 trxid
+3=JET_GRBIT grbit
+ParamCount=3
+Header=esent.h.api;
+[JetCommitTransaction2]
+1=[JET_SESID] sesid
+2=JET_GRBIT grbit
+3=DWORD cmsecDurableCommit
+4=JET_COMMIT_ID* pCommitID
+ParamCount=4
+Header=esent.h.api;
+[JetCreateIndex3]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_INDEXCREATE2* pindexcreate
+4=unsigned long cIndexCreate
+ParamCount=4
+Header=esent.h.api;
+[JetCreateIndex4]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_INDEXCREATE2* pindexcreate
+4=unsigned long cIndexCreate
+ParamCount=4
+Header=esent.h.api;
+[JetCreateTableColumnIndex3]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_TABLECREATE3* ptablecreate
+ParamCount=3
+Header=esent.h.api;
+[JetCreateTableColumnIndex4]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=JET_TABLECREATE3* ptablecreate
+ParamCount=3
+Header=esent.h.api;
+[JetGetErrorInfoW]
+1=void* pvContext
+2=void* pvResult
+3=unsigned long cbMax
+4=unsigned long InfoLevel
+5=JET_GRBIT grbit
+ParamCount=5
+Header=esent.h.api;
+[JetGetRecordSize2]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_RECSIZE2* precsize
+4=JET_GRBIT grbit
+ParamCount=4
+Header=esent.h.api;
+[JetGetSessionParameter]
+1=[JET_SESID] sesid
+2=unsigned long sesparamid
+3=void* pvParam
+4=unsigned long cbParamMax
+5=unsigned long pcbParamActual
+ParamCount=5
+Header=esent.h.api;
+[JetPrereadIndexRanges]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_INDEX_RANGE* const rgIndexRanges
+4=const unsigned long cIndexRanges
+5=ed long* const pcRangesPreread
+6=JET_COLUMNID* const rgcolumnidPreread
+7=const unsigned long ccolumnidPreread
+8=JET_GRBIT grbit
+ParamCount=8
+Header=esent.h.api;
+[JetPrereadKeys]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=const void** rgpvKeys
+4=unsigned long* rgcbKeys
+5=long ckeys
+6=long* pckeysPreread
+7=JET_GRBIT grbit
+ParamCount=7
+Header=esent.h.api;
+[JetResizeDatabase]
+1=[JET_SESID] sesid
+2=[JET_DBID] dbid
+3=unsigned long cpg
+4=unsigned long* pcpgActual
+5=JET_GRBIT grbit
+ParamCount=5
+Header=esent.h.api;
+[JetSetCursorFilter]
+1=[JET_SESID] sesid
+2=[JET_TABLEID] tableid
+3=JET_INDEX_COLUMN* rgFilters
+4=DWORD cFilters
+5=JET_GRBIT grbit
+ParamCount=5
+Header=esent.h.api;
+[JetSetSessionParameter]
+1=[JET_SESID] sesid
+2=unsigned long sesparamid
+3=void* pvParam
+4=unsigned long cbParam
+ParamCount=4
+Header=esent.h.api;
+[JetStopServiceInstance2]
+1=[JET_INSTANCE] instance
+ParamCount=1
+Header=esent.h.api;
+[JetDefragment3]
+1=[JET_SESID] sesid
+2=JET_PCSTR szDatabaseName
+3=JET_PCSTR szTableName
+4=unsigned long* pcPasses
+5=unsigned long* pcSeconds
+6=JET_CALLBACK callback
+7=void* pvContext
+8=JET_GRBIT grbit
+ParamCount=8
+Header=esent.h.api;
+[JetOpenTemporaryTable2]
+1=[JET_SESID] sesid
+2=JET_OPENTEMPORARYTABLE2* popentemporarytable
+ParamCount=2
+Header=esent.h.api;

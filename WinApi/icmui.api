@@ -1,0 +1,6 @@
+[CallingConvention]
+@=STDCALL
+[SetupColorMatching]
+1=PCOLORMATCHSETUP pcms
+ParamCount=1
+Header=icmui.h.api;

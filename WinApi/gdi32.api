@@ -1,0 +1,1715 @@
+[CallingConvention]
+@=STDCALL
+[BitBlt]
+1=HDC hdcDest
+2=int nXDest
+3=int nYDest
+4=int nWidth
+5=int nHeight
+6=HDC hdcSrc
+7=int nXSrc
+8=int nYSrc
+9=[RasterOperationEnum] dwRop
+ParamCount=9
+Header=gdi32.h.api;gdi.h.api;
+[CreateBitmap]
+1=int nWidth
+2=int nHeight
+3=UINT cPlanes
+4=UINT cBitsPerPel
+5=const VOID* lpvBits
+ParamCount=5
+[CreateBitmapIndirect]
+1=BITMAP* lpbm
+ParamCount=1
+Header=gdi32.h.api;
+[CreateCompatibleBitmap]
+1=HDC hdc
+2=int nWidth
+3=int nHeight
+ParamCount=3
+Header=gdi.h.api;
+[CreateDIBitmap]
+1=HDC hdc
+2=BITMAPINFOHEADER* lpbmih
+3=[CreateBitmapInitFlag] fdwInit
+4=const VOID* lpbInit
+5=BITMAPINFO* lpbmi
+6=[ColorUseEnum] fuUsage
+ParamCount=6
+Header=gdi32.h.api;gdi.h.api;
+[CreateDIBSection]
+1=HDC hdc
+2=BITMAPINFO* pbmi
+3=[ColorUseEnum] iUsage
+4=VOID** ppvBits
+5=HANDLE hSection
+6=DWORD dwOffset
+ParamCount=6
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[ExtFloodFill]
+1=HDC hdc
+2=int nXStart
+3=int nYStart
+4=[COLORREF] crColor
+5=UINT fuFillType
+ParamCount=5
+Header=gdi.h.api;
+[GetBitmapDimensionEx]
+1=HBITMAP hBitmap
+2=LPSIZE lpDimension
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetDIBColorTable]
+1=HDC hdc
+2=UINT uStartIndex
+3=UINT cEntries
+4=RGBQUAD* pColors
+ParamCount=4
+Header=gdi.h.api;
+[GetDIBits]
+1=HDC hdc
+2=HBITMAP hbmp
+3=UINT uStartScan
+4=UINT cScanLines
+5=LPVOID lpvBits
+6=LPBITMAPINFO lpbi
+7=[ColorUseEnum] uUsage
+ParamCount=7
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetPixel]
+1=HDC hdc
+2=int nXPos
+3=int nYPos
+ParamCount=3
+Header=gdi.h.api;
+[GetStretchBltMode]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[MaskBlt]
+1=HDC hdcDest
+2=int nXDest
+3=int nYDest
+4=int nWidth
+5=int nHeight
+6=HDC hdcSrc
+7=int nXSrc
+8=int nYSrc
+9=HBITMAP hbmMask
+10=int xMask
+11=int yMask
+12=[RasterOperationEnum] dwRop
+ParamCount=12
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[PlgBlt]
+1=HDC hdcDest
+2=POINT* lpPoint
+3=HDC hdcSrc
+4=int nXSrc
+5=int nYSrc
+6=int nWidth
+7=int nHeight
+8=HBITMAP hbmMask
+9=int xMask
+10=int yMask
+ParamCount=10
+Header=gdi.h.api;windows.h.api;
+[SetBitmapDimensionEx]
+1=HBITMAP hBitmap
+2=int nWidth
+3=int nHeight
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[SetDIBColorTable]
+1=HDC hdc
+2=UINT uStartIndex
+3=UINT cEntries
+4=RGBQUAD* pColors
+ParamCount=4
+Header=gdi.h.api;
+[SetDIBits]
+1=HDC hdc
+2=HBITMAP hbmp
+3=UINT uStartScan
+4=UINT cScanLines
+5=const VOID* lpvBits
+6=BITMAPINFO* lpbmi
+7=[ColorUseEnum] fuColorUse
+ParamCount=7
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[SetDIBitsToDevice]
+1=HDC hdc
+2=int XDest
+3=int YDest
+4=DWORD dwWidth
+5=DWORD dwHeight
+6=int XSrc
+7=int YSrc
+8=UINT uStartScan
+9=UINT cScanLines
+10=const VOID* lpvBits
+11=BITMAPINFO* lpbmi
+12=[ColorUseEnum] fuColorUse
+ParamCount=12
+Header=gdi32.h.api;gdi.h.api;
+[SetPixel]
+1=HDC hdc
+2=int X
+3=int Y
+4=[COLORREF] crColor
+ParamCount=4
+Header=gdi.h.api;
+[SetPixelV]
+1=HDC hdc
+2=int X
+3=int Y
+4=[COLORREF] crColor
+ParamCount=4
+Header=gdi.h.api;
+[SetStretchBltMode]
+1=HDC hdc
+2=[StretchModeEnum] iStretchMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[StretchBlt]
+1=HDC hdcDest
+2=int nXOriginDest
+3=int nYOriginDest
+4=int nWidthDest
+5=int nHeightDest
+6=HDC hdcSrc
+7=int nXOriginSrc
+8=int nYOriginSrc
+9=int nWidthSrc
+10=int nHeightSrc
+11=[RasterOperationEnum] dwRop
+ParamCount=11
+Header=gdi32.h.api;gdi.h.api;
+[StretchDIBits]
+1=HDC hdc
+2=int XDest
+3=int YDest
+4=int nDestWidth
+5=int nDestHeight
+6=int XSrc
+7=int YSrc
+8=int nSrcWidth
+9=int nSrcHeight
+10=const VOID* lpBits
+11=BITMAPINFO* lpBitsInfo
+12=[ColorUseEnum] iUsage
+13=[RasterOperationEnum] dwRop
+ParamCount=13
+Header=gdi32.h.api;gdi.h.api;
+[CreateDiscardableBitmap]
+1=HDC hdc
+2=int nWidth
+3=int nHeight
+ParamCount=3
+Header=gdi.h.api;
+[FloodFill]
+1=HDC hdc
+2=int nXStart
+3=int nYStart
+4=[COLORREF] crFill
+ParamCount=4
+Header=gdi.h.api;
+[GetBitmapBits]
+1=HBITMAP hbmp
+2=LONG cbBuffer
+3=LPVOID lpvBits
+ParamCount=3
+Header=windows.h.api;
+[SetBitmapBits]
+1=HBITMAP hbmp
+2=DWORD cBytes
+3=const VOID* lpBits
+ParamCount=3
+Header=windows.h.api;
+[CreateBrushIndirect]
+1=LOGBRUSH* lplb
+ParamCount=1
+Header=gdi32.h.api;
+[CreateDIBPatternBrushPt]
+1=const VOID* lpPackedDIB
+2=[ColorUseEnum] iUsage
+ParamCount=2
+Header=gdi32.h.api;
+[CreateHatchBrush]
+1=[HatchStyle] fnStyle
+2=[COLORREF] clrref
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[CreatePatternBrush]
+1=HBITMAP hbmp
+ParamCount=1
+Header=windows.h.api;
+[CreateSolidBrush]
+1=[COLORREF] crColor
+ParamCount=1
+Header=gdi.h.api;
+[GetBrushOrgEx]
+1=HDC hdc
+2=LPPOINT lppt
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[PatBlt]
+1=HDC hdc
+2=int nXLeft
+3=int nYLeft
+4=int nWidth
+5=int nHeight
+6=[RasterOperationEnum] dwRop
+ParamCount=6
+Header=gdi32.h.api;gdi.h.api;
+[SetBrushOrgEx]
+1=HDC hdc
+2=int nXOrg
+3=int nYOrg
+4=LPPOINT lppt
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[CreateDIBPatternBrush]
+1=HGLOBAL hglbDIBPacked
+2=UINT fuColorSpec
+ParamCount=2
+Header=windows.h.api;
+[ExcludeClipRect]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+ParamCount=5
+Header=gdi.h.api;
+[ExtSelectClipRgn]
+1=HDC hdc
+2=HRGN hrgn
+3=[RgnMode] fnMode
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[GetClipBox]
+1=HDC hdc
+2=LPRECT lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetClipRgn]
+1=HDC hdc
+2=HRGN hrgn
+ParamCount=2
+Header=gdi.h.api;
+[GetMetaRgn]
+1=HDC hdc
+2=HRGN hrgn
+ParamCount=2
+Header=gdi.h.api;
+[GetRandomRgn]
+1=HDC hdc
+2=HRGN hrgn
+3=[RandomRgnEnum] iNum
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[IntersectClipRect]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+ParamCount=5
+Header=gdi.h.api;
+[OffsetClipRgn]
+1=HDC hdc
+2=int nXOffset
+3=int nYOffset
+ParamCount=3
+Header=gdi.h.api;
+[PtVisible]
+1=HDC hdc
+2=int X
+3=int Y
+ParamCount=3
+Header=gdi.h.api;
+[RectVisible]
+1=HDC hdc
+2=RECT* lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[SelectClipPath]
+1=HDC hdc
+2=int iMode
+ParamCount=2
+Header=gdi.h.api;
+[SelectClipRgn]
+1=HDC hdc
+2=HRGN hrgn
+ParamCount=2
+Header=gdi.h.api;
+[SetMetaRgn]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[AnimatePalette]
+1=HPALETTE hpal
+2=UINT iStartIndex
+3=UINT cEntries
+4=PALETTEENTRY* ppe
+ParamCount=4
+Header=gdi.h.api;ole.h.api;
+[CreateHalftonePalette]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CreatePalette]
+1=LOGPALETTE* lplgpl
+ParamCount=1
+Header=ole.h.api;
+[GetColorAdjustment]
+1=HDC hdc
+2=LPCOLORADJUSTMENT lpca
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[GetNearestColor]
+1=HDC hdc
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[GetNearestPaletteIndex]
+1=HPALETTE hpal
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[GetPaletteEntries]
+1=HPALETTE hpal
+2=UINT iStartIndex
+3=UINT nEntries
+4=LPPALETTEENTRY lppe
+ParamCount=4
+Header=gdi.h.api;ole.h.api;
+[GetSystemPaletteEntries]
+1=HDC hdc
+2=UINT iStartIndex
+3=UINT nEntries
+4=LPPALETTEENTRY lppe
+ParamCount=4
+Header=gdi.h.api;ole.h.api;
+[GetSystemPaletteUse]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[RealizePalette]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[ResizePalette]
+1=HPALETTE hpal
+2=UINT nEntries
+ParamCount=2
+Header=gdi.h.api;
+[SelectPalette]
+1=HDC hdc
+2=HPALETTE hpal
+3=BOOL bForceBackground
+ParamCount=3
+Header=gdi.h.api;
+[SetColorAdjustment]
+1=HDC hdc
+2=COLORADJUSTMENT* lpca
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetPaletteEntries]
+1=HPALETTE hpal
+2=UINT iStart
+3=UINT cEntries
+4=PALETTEENTRY* lppe
+ParamCount=4
+Header=gdi.h.api;ole.h.api;
+[SetSystemPaletteUse]
+1=HDC hdc
+2=UINT uUsage
+ParamCount=2
+Header=gdi.h.api;
+[UnrealizeObject]
+1=HGDIOBJ hgdiobj
+ParamCount=1
+Header=gdi32.h.api;
+[UpdateColors]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CombineTransform]
+1=LPXFORM lpxformResult
+2=XFORM* lpxform1
+3=XFORM* lpxform2
+ParamCount=3
+Header=gdi32.h.api;
+[DPtoLP]
+1=HDC hdc
+2=LPPOINT lpPoints
+3=int nCount
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[GetCurrentPositionEx]
+1=HDC hdc
+2=LPPOINT lpPoint
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetGraphicsMode]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetMapMode]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetViewportExtEx]
+1=HDC hdc
+2=LPSIZE lpSize
+ParamCount=2
+Header=gdi.h.api;
+[GetViewportOrgEx]
+1=HDC hdc
+2=LPPOINT lpPoint
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetWindowExtEx]
+1=HDC hdc
+2=LPSIZE lpSize
+ParamCount=2
+Header=gdi.h.api;
+[GetWindowOrgEx]
+1=HDC hdc
+2=LPPOINT lpPoint
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetWorldTransform]
+1=HDC hdc
+2=LPXFORM lpXform
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[LPtoDP]
+1=HDC hdc
+2=LPPOINT lpPoints
+3=int nCount
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[ModifyWorldTransform]
+1=HDC hdc
+2=XFORM* lpXform
+3=[ModifyWorldTransformMode] iMode
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[OffsetViewportOrgEx]
+1=HDC hdc
+2=int nXOffset
+3=int nYOffset
+4=LPPOINT lpPoint
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[OffsetWindowOrgEx]
+1=HDC hdc
+2=int nXOffset
+3=int nYOffset
+4=LPPOINT lpPoint
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[ScaleViewportExtEx]
+1=HDC hdc
+2=int Xnum
+3=int Xdenom
+4=int Ynum
+5=int Ydenom
+6=LPSIZE lpSize
+ParamCount=6
+Header=gdi.h.api;
+[ScaleWindowExtEx]
+1=HDC hdc
+2=int Xnum
+3=int Xdenom
+4=int Ynum
+5=int Ydenom
+6=LPSIZE lpSize
+ParamCount=6
+Header=gdi.h.api;
+[SetGraphicsMode]
+1=HDC hdc
+2=[GraphicsModes] iMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetMapMode]
+1=HDC hdc
+2=[MappingMode] fnMapMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetViewportExtEx]
+1=HDC hdc
+2=int nXExtent
+3=int nYExtent
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;
+[SetViewportOrgEx]
+1=HDC hdc
+2=int X
+3=int Y
+4=LPPOINT lpPoint
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[SetWindowExtEx]
+1=HDC hdc
+2=int nXExtent
+3=int nYExtent
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;
+[SetWindowOrgEx]
+1=HDC hdc
+2=int X
+3=int Y
+4=LPPOINT lpPoint
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[SetWorldTransform]
+1=HDC hdc
+2=XFORM* lpXform
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[CancelDC]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CreateCompatibleDC]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CreateDC]
+1=LPCTSTR lpszDriver
+2=LPCTSTR lpszDevice
+3=LPCTSTR lpszOutput
+4=DEVMODE* lpInitData
+ParamCount=4
+Header=windows.h.api;
+[CreateIC]
+1=LPCTSTR lpszDriver
+2=LPCTSTR lpszDevice
+3=LPCTSTR lpszOutput
+4=DEVMODE* lpdvmInit
+ParamCount=4
+Header=windows.h.api;
+[DeleteDC]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[DeleteObject]
+1=HGDIOBJ hObject
+ParamCount=1
+Header=gdi32.h.api;
+[DrawEscape]
+1=HDC hdc
+2=int nEscape
+3=int cbInput
+4=LPCSTR lpszInData
+ParamCount=4
+Header=gdi.h.api;
+[EnumObjects]
+1=HDC hdc
+2=int nObjectType
+3=GOBJENUMPROC lpObjectFunc
+4=LPARAM lParam
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetCurrentObject]
+1=HDC hdc
+2=[ObjectType] uObjectType
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[GetDCBrushColor]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetDCOrgEx]
+1=HDC hdc
+2=LPPOINT lpPoint
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[GetDCPenColor]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetDeviceCaps]
+1=HDC hdc
+2=[DeviceCapsEnum] nIndex
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[GetLayout]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetObject]
+1=HGDIOBJ hgdiobj
+2=int cbBuffer
+3=LPVOID lpvObject
+ParamCount=3
+Header=gdi32.h.api;
+[GetObjectType]
+1=HGDIOBJ h
+ParamCount=1
+Header=gdi32.h.api;
+[GetStockObject]
+1=[STOCK_OBJECT] fnObject
+ParamCount=1
+Header=gdi32.h.api;
+[ResetDC]
+1=HDC hdc
+2=DEVMODE* lpInitData
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[RestoreDC]
+1=HDC hdc
+2=int nSavedDC
+ParamCount=2
+Header=gdi.h.api;
+[SaveDC]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[SelectObject]
+1=HDC hdc
+2=HGDIOBJ hgdiobj
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetDCBrushColor]
+1=HDC hdc
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[SetDCPenColor]
+1=HDC hdc
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[SetLayout]
+1=HDC hdc
+2=[LayoutFlags] dwLayout
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[Chord]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+6=int nXRadial1
+7=int nYRadial1
+8=int nXRadial2
+9=int nYRadial2
+ParamCount=9
+Header=gdi.h.api;
+[Ellipse]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+ParamCount=5
+Header=gdi.h.api;
+[Pie]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+6=int nXRadial1
+7=int nYRadial1
+8=int nXRadial2
+9=int nYRadial2
+ParamCount=9
+Header=gdi.h.api;
+[Polygon]
+1=HDC hdc
+2=POINT* lpPoints
+3=int nCount
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PolyPolygon]
+1=HDC hdc
+2=POINT* lpPoints
+3=const INT* lpPolyCounts
+4=int nCount
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[Rectangle]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+ParamCount=5
+Header=gdi.h.api;
+[RoundRect]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+6=int nWidth
+7=int nHeight
+ParamCount=7
+Header=gdi.h.api;
+[AddFontMemResourceEx]
+1=PVOID pbFont
+2=DWORD cbFont
+3=PVOID pdv
+4=DWORD* pcFonts
+ParamCount=4
+[AddFontResource]
+1=LPCTSTR lpszFilename
+ParamCount=1
+[AddFontResourceEx]
+1=LPCTSTR lpszFilename
+2=DWORD fl
+3=PVOID pdv
+ParamCount=3
+[CreateFont]
+1=int nHeight
+2=int nWidth
+3=int nEscapement
+4=int nOrientation
+5=[FontWeight] fnWeight
+6=DWORD fdwItalic
+7=DWORD fdwUnderline
+8=DWORD fdwStrikeOut
+9=[FontCharset] fdwCharSet
+10=[FontOutputPrecision] fdwOutputPrecision
+11=[FontClipPrecision] fdwClipPrecision
+12=[FontQuality] fdwQuality
+13=[FontPitchAndFamily] fdwPitchAndFamily
+14=LPCTSTR lpszFace
+ParamCount=14
+Header=gdi.h.api;
+[CreateFontIndirect]
+1=LOGFONT* lplf
+ParamCount=1
+Header=gdi.h.api;
+[CreateFontIndirectEx]
+1=ENUMLOGFONTEXDV* penumlfex
+ParamCount=1
+Header=gdi32.h.api;
+[CreateScalableFontResource]
+1=DWORD fdwHidden
+2=LPCTSTR lpszFontRes
+3=LPCTSTR lpszFontFile
+4=LPCTSTR lpszCurrentPath
+ParamCount=4
+[EnumFontFamiliesEx]
+1=HDC hdc
+2=LPLOGFONT lpLogfont
+3=FONTENUMPROC lpEnumFontFamExProc
+4=LPARAM lParam
+5=DWORD dwFlags
+ParamCount=5
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[ExtTextOut]
+1=HDC hdc
+2=int X
+3=int Y
+4=[ExtTextOutFlags] fuOptions
+5=RECT* lprc
+6=LPCTSTR lpString
+7=UINT cbCount
+8=const INT* lpDx
+ParamCount=8
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetAspectRatioFilterEx]
+1=HDC hdc
+2=LPSIZE lpAspectRatio
+ParamCount=2
+Header=gdi.h.api;
+[GetCharABCWidths]
+1=HDC hdc
+2=UINT uFirstChar
+3=UINT uLastChar
+4=LPABC lpabc
+ParamCount=4
+Header=gdi.h.api;
+[GetCharABCWidthsFloat]
+1=HDC hdc
+2=UINT iFirstChar
+3=UINT iLastChar
+4=LPABCFLOAT lpABCF
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[GetCharABCWidthsI]
+1=HDC hdc
+2=UINT giFirst
+3=UINT cgi
+4=LPWORD pgi
+5=LPABC lpabc
+ParamCount=5
+Header=gdi.h.api;
+[GetCharacterPlacement]
+1=HDC hdc
+2=LPCTSTR lpString
+3=int nCount
+4=int nMaxExtent
+5=LPGCP_RESULTS lpResults
+6=[GCP_FLAGS] dwFlags
+ParamCount=6
+Header=gdi32.h.api;gdi.h.api;
+[GetCharWidth32]
+1=HDC hdc
+2=UINT iFirstChar
+3=UINT iLastChar
+4=LPINT lpBuffer
+ParamCount=4
+Header=gdi.h.api;
+[GetCharWidthFloat]
+1=HDC hdc
+2=UINT iFirstChar
+3=UINT iLastChar
+4=PFLOAT pxBuffer
+ParamCount=4
+Header=gdi.h.api;
+[GetCharWidthI]
+1=HDC hdc
+2=UINT giFirst
+3=UINT cgi
+4=LPWORD pgi
+5=LPINT lpBuffer
+ParamCount=5
+Header=gdi.h.api;
+[GetFontData]
+1=HDC hdc
+2=DWORD dwTable
+3=DWORD dwOffset
+4=LPVOID lpvBuffer
+5=DWORD cbData
+ParamCount=5
+Header=gdi.h.api;
+[GetFontLanguageInfo]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetFontUnicodeRanges]
+1=HDC hdc
+2=LPGLYPHSET lpgs
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[GetGlyphIndices]
+1=HDC hdc
+2=LPCTSTR lpstr
+3=int c
+4=LPWORD pgi
+5=[GetGlyphIndicesFlag] fl
+ParamCount=5
+Header=gdi32.h.api;gdi.h.api;
+[GetGlyphOutline]
+1=HDC hdc
+2=UINT uChar
+3=[GetGlyphOutlineFormat] uFormat
+4=LPGLYPHMETRICS lpgm
+5=DWORD cbBuffer
+6=LPVOID lpvBuffer
+7=MAT2* lpmat2
+ParamCount=7
+Header=gdi32.h.api;gdi.h.api;
+[GetKerningPairs]
+1=HDC hdc
+2=DWORD nNumPairs
+3=LPKERNINGPAIR lpkrnpair
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[GetOutlineTextMetrics]
+1=HDC hdc
+2=UINT cbData
+3=LPOUTLINETEXTMETRIC lpOTM
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[GetRasterizerCaps]
+1=LPRASTERIZER_STATUS lprs
+2=UINT cb
+ParamCount=2
+Header=gdi32.h.api;
+[GetTextAlign]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetTextCharacterExtra]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetTextColor]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetTextExtentExPoint]
+1=HDC hdc
+2=LPCTSTR lpszStr
+3=int cchString
+4=int nMaxExtent
+5=LPINT lpnFit
+6=LPINT alpDx
+7=LPSIZE lpSize
+ParamCount=7
+Header=gdi.h.api;
+[GetTextExtentExPointI]
+1=HDC hdc
+2=LPWORD pgiIn
+3=int cgi
+4=int nMaxExtent
+5=LPINT lpnFit
+6=LPINT alpDx
+7=LPSIZE lpSize
+ParamCount=7
+Header=gdi.h.api;
+[GetTextExtentPoint32]
+1=HDC hdc
+2=LPCTSTR lpString
+3=int c
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;
+[GetTextExtentPointI]
+1=HDC hdc
+2=LPWORD pgiIn
+3=int cgi
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;
+[GetTextFace]
+1=HDC hdc
+2=int nCount
+3=LPTSTR lpFaceName
+ParamCount=3
+Header=gdi.h.api;
+[GetTextMetrics]
+1=HDC hdc
+2=LPTEXTMETRIC lptm
+ParamCount=2
+Header=gdi.h.api;
+[PolyTextOut]
+1=HDC hdc
+2=POLYTEXT* pptxt
+3=int cStrings
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[RemoveFontMemResourceEx]
+1=HANDLE fh
+ParamCount=1
+Header=windows.h.api;
+[RemoveFontResource]
+1=LPCTSTR lpFileName
+ParamCount=1
+[RemoveFontResourceEx]
+1=LPCTSTR lpFileName
+2=DWORD fl
+3=PVOID pdv
+ParamCount=3
+[SetMapperFlags]
+1=HDC hdc
+2=DWORD dwFlag
+ParamCount=2
+Header=gdi.h.api;
+[SetTextAlign]
+1=HDC hdc
+2=[TextAlignFlag] fMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetTextCharacterExtra]
+1=HDC hdc
+2=int nCharExtra
+ParamCount=2
+Header=gdi.h.api;
+[SetTextColor]
+1=HDC hdc
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[SetTextJustification]
+1=HDC hdc
+2=int nBreakExtra
+3=int nBreakCount
+ParamCount=3
+Header=gdi.h.api;
+[TextOut]
+1=HDC hdc
+2=int nXStart
+3=int nYStart
+4=LPCTSTR lpString
+5=int cbString
+ParamCount=5
+Header=gdi.h.api;
+[EnumFontFamilies]
+1=HDC hdc
+2=LPCTSTR lpszFamily
+3=FONTENUMPROC lpEnumFontFamProc
+4=LPARAM lParam
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[EnumFonts]
+1=HDC hdc
+2=LPCTSTR lpFaceName
+3=FONTENUMPROC lpFontFunc
+4=LPARAM lParam
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetCharWidth]
+1=HDC hdc
+2=UINT iFirstChar
+3=UINT iLastChar
+4=LPINT lpBuffer
+ParamCount=4
+Header=gdi.h.api;
+[GetTextExtentPoint]
+1=HDC hdc
+2=LPCTSTR lpString
+3=int cbString
+4=LPSIZE lpSize
+ParamCount=4
+Header=gdi.h.api;
+[AngleArc]
+1=HDC hdc
+2=int X
+3=int Y
+4=DWORD dwRadius
+5=FLOAT eStartAngle
+6=FLOAT eSweepAngle
+ParamCount=6
+Header=gdi.h.api;
+[Arc]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+6=int nXStartArc
+7=int nYStartArc
+8=int nXEndArc
+9=int nYEndArc
+ParamCount=9
+Header=gdi.h.api;
+[ArcTo]
+1=HDC hdc
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+6=int nXRadial1
+7=int nYRadial1
+8=int nXRadial2
+9=int nYRadial2
+ParamCount=9
+Header=gdi.h.api;
+[GetArcDirection]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[LineDDA]
+1=int nXStart
+2=int nYStart
+3=int nXEnd
+4=int nYEnd
+5=LINEDDAPROC lpLineFunc
+6=LPARAM lpData
+ParamCount=6
+Header=gdi32.h.api;windows.h.api;
+[LineTo]
+1=HDC hdc
+2=int nXEnd
+3=int nYEnd
+ParamCount=3
+Header=gdi.h.api;
+[MoveToEx]
+1=HDC hdc
+2=int X
+3=int Y
+4=LPPOINT lpPoint
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[PolyBezier]
+1=HDC hdc
+2=POINT* lppt
+3=DWORD cPoints
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PolyBezierTo]
+1=HDC hdc
+2=POINT* lppt
+3=DWORD cCount
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PolyDraw]
+1=HDC hdc
+2=POINT* lppt
+3=POINT_TYPE* lpbTypes
+4=int cCount
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[Polyline]
+1=HDC hdc
+2=POINT* lppt
+3=int cPoints
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PolylineTo]
+1=HDC hdc
+2=POINT* lppt
+3=DWORD cCount
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PolyPolyline]
+1=HDC hdc
+2=POINT* lppt
+3=const DWORD* lpdwPolyPoints
+4=DWORD cCount
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[SetArcDirection]
+1=HDC hdc
+2=int ArcDirection
+ParamCount=2
+Header=gdi.h.api;
+[CloseEnhMetaFile]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CopyEnhMetaFile]
+1=HENHMETAFILE hemfSrc
+2=LPCTSTR lpszFile
+ParamCount=2
+Header=windows.h.api;
+[CreateEnhMetaFile]
+1=HDC hdcRef
+2=LPCTSTR lpFilename
+3=RECT* lpRect
+4=LPCTSTR lpDescription
+ParamCount=4
+Header=gdi.h.api;windows.h.api;
+[DeleteEnhMetaFile]
+1=HENHMETAFILE hemf
+ParamCount=1
+Header=windows.h.api;
+[EnumEnhMetaFile]
+1=HDC hdc
+2=HENHMETAFILE hemf
+3=ENHMFENUMPROC lpEnhMetaFunc
+4=LPVOID lpData
+5=RECT* lpRect
+ParamCount=5
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GdiComment]
+1=HDC hdc
+2=UINT cbSize
+3=const BYTE* lpData
+ParamCount=3
+Header=gdi.h.api;
+[GetEnhMetaFile]
+1=LPCTSTR lpszMetaFile
+ParamCount=1
+[GetEnhMetaFileBits]
+1=HENHMETAFILE hemf
+2=UINT cbBuffer
+3=LPBYTE lpbBuffer
+ParamCount=3
+Header=windows.h.api;
+[GetEnhMetaFileDescription]
+1=HENHMETAFILE hemf
+2=UINT cchBuffer
+3=LPTSTR lpszDescription
+ParamCount=3
+Header=windows.h.api;
+[GetEnhMetaFileHeader]
+1=HENHMETAFILE hemf
+2=UINT cbBuffer
+3=LPENHMETAHEADER lpemh
+ParamCount=3
+Header=gdi32.h.api;windows.h.api;
+[GetEnhMetaFilePaletteEntries]
+1=HENHMETAFILE hemf
+2=UINT cEntries
+3=LPPALETTEENTRY lppe
+ParamCount=3
+Header=ole.h.api;windows.h.api;
+[GetWinMetaFileBits]
+1=HENHMETAFILE hemf
+2=UINT cbBuffer
+3=LPBYTE lpbBuffer
+4=[MappingMode] fnMapMode
+5=HDC hdcRef
+ParamCount=5
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[PlayEnhMetaFile]
+1=HDC hdc
+2=HENHMETAFILE hemf
+3=RECT* lpRect
+ParamCount=3
+Header=gdi.h.api;windows.h.api;
+[PlayEnhMetaFileRecord]
+1=HDC hdc
+2=LPHANDLETABLE lpHandletable
+3=ENHMETARECORD* lpEnhMetaRecord
+4=UINT nHandles
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[SetEnhMetaFileBits]
+1=UINT cbBuffer
+2=const BYTE* lpData
+ParamCount=2
+[SetWinMetaFileBits]
+1=UINT cbBuffer
+2=const BYTE* lpbBuffer
+3=HDC hdcRef
+4=METAFILEPICT* lpmfp
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[CloseMetaFile]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CopyMetaFile]
+1=HMETAFILE hmfSrc
+2=LPCTSTR lpszFile
+ParamCount=2
+Header=gdi.h.api;
+[CreateMetaFile]
+1=LPCTSTR lpszFile
+ParamCount=1
+[DeleteMetaFile]
+1=HMETAFILE hmf
+ParamCount=1
+Header=gdi.h.api;
+[EnumMetaFile]
+1=HDC hdc
+2=HMETAFILE hmf
+3=MFENUMPROC lpMetaFunc
+4=LPARAM lParam
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetMetaFileBitsEx]
+1=HMETAFILE hmf
+2=UINT nSize
+3=LPVOID lpvData
+ParamCount=3
+Header=gdi.h.api;
+[PlayMetaFile]
+1=HDC hdc
+2=HMETAFILE hmf
+ParamCount=2
+Header=gdi.h.api;
+[PlayMetaFileRecord]
+1=HDC hdc
+2=LPHANDLETABLE lpHandletable
+3=LPMETARECORD lpMetaRecord
+4=UINT nHandles
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[SetMetaFileBitsEx]
+1=UINT nSize
+2=const BYTE* lpData
+ParamCount=2
+[GdiFlush]
+ParamCount=0
+[GdiGetBatchLimit]
+ParamCount=0
+[GdiSetBatchLimit]
+1=DWORD dwLimit
+ParamCount=1
+[GetBkColor]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetBkMode]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetBoundsRect]
+1=HDC hdc
+2=LPRECT lprcBounds
+3=[BoundsAccumulationFlags] flags
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetROP2]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[SetBkColor]
+1=HDC hdc
+2=[COLORREF] crColor
+ParamCount=2
+Header=gdi.h.api;
+[SetBkMode]
+1=HDC hdc
+2=[BkModeEnum] iBkMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetBoundsRect]
+1=HDC hdc
+2=RECT* lprcBounds
+3=[BoundsAccumulationFlags] flags
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[SetROP2]
+1=HDC hdc
+2=[ROP2ModeEnum] fnDrawMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[AbortPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[BeginPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CloseFigure]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[EndPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[FillPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[FlattenPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetMiterLimit]
+1=HDC hdc
+2=PFLOAT peLimit
+ParamCount=2
+Header=gdi.h.api;
+[GetPath]
+1=HDC hdc
+2=LPPOINT lpPoints
+3=POINT_TYPE* lpTypes
+4=int nSize
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[PathToRegion]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[SetMiterLimit]
+1=HDC hdc
+2=FLOAT eNewLimit
+3=PFLOAT peOldLimit
+ParamCount=3
+Header=gdi.h.api;
+[StrokeAndFillPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[StrokePath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[WidenPath]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[AbortDoc]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[StartDoc]
+1=HDC hdc
+2=DOCINFO* lpdi
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[EndDoc]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[EndPage]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[Escape]
+1=HDC hdc
+2=[GdiEscapeFunction] nEscape
+3=int cbInput
+4=LPCSTR lpvInData
+5=LPVOID lpvOutData
+ParamCount=5
+Header=gdi32.h.api;gdi.h.api;
+[ExtEscape]
+1=HDC hdc
+2=int nEscape
+3=int cbInput
+4=LPCSTR lpszInData
+5=int cbOutput
+6=LPSTR lpszOutData
+ParamCount=6
+Header=gdi.h.api;
+[SetAbortProc]
+1=HDC hdc
+2=ABORTPROC lpAbortProc
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[StartPage]
+1=HDC hDC
+ParamCount=1
+Header=gdi.h.api;
+[CombineRgn]
+1=HRGN hrgnDest
+2=HRGN hrgnSrc1
+3=HRGN hrgnSrc2
+4=[RgnMode] fnCombineMode
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[CreateEllipticRgn]
+1=int nLeftRect
+2=int nTopRect
+3=int nRightRect
+4=int nBottomRect
+ParamCount=4
+[CreateEllipticRgnIndirect]
+1=RECT* lprc
+ParamCount=1
+Header=windows.h.api;
+[CreatePolygonRgn]
+1=POINT* lppt
+2=int cPoints
+3=[PolyFillModes] fnPolyFillMode
+ParamCount=3
+Header=gdi32.h.api;windows.h.api;
+[CreatePolyPolygonRgn]
+1=POINT* lppt
+2=const INT* lpPolyCounts
+3=int nCount
+4=[PolyFillModes] fnPolyFillMode
+ParamCount=4
+Header=gdi32.h.api;windows.h.api;
+[CreateRectRgn]
+1=int nLeftRect
+2=int nTopRect
+3=int nRightRect
+4=int nBottomRect
+ParamCount=4
+[CreateRectRgnIndirect]
+1=RECT* lprc
+ParamCount=1
+Header=windows.h.api;
+[CreateRoundRectRgn]
+1=int nLeftRect
+2=int nTopRect
+3=int nRightRect
+4=int nBottomRect
+5=int nWidthEllipse
+6=int nHeightEllipse
+ParamCount=6
+[EqualRgn]
+1=HRGN hSrcRgn1
+2=HRGN hSrcRgn2
+ParamCount=2
+Header=gdi.h.api;
+[ExtCreateRegion]
+1=XFORM* lpXform
+2=DWORD nCount
+3=RGNDATA* lpRgnData
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[FillRgn]
+1=HDC hdc
+2=HRGN hrgn
+3=HBRUSH hbr
+ParamCount=3
+Header=gdi.h.api;
+[FrameRgn]
+1=HDC hdc
+2=HRGN hrgn
+3=HBRUSH hbr
+4=int nWidth
+5=int nHeight
+ParamCount=5
+Header=gdi.h.api;
+[GetPolyFillMode]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetRegionData]
+1=HRGN hRgn
+2=DWORD dwCount
+3=LPRGNDATA lpRgnData
+ParamCount=3
+Header=gdi.h.api;
+[GetRgnBox]
+1=HRGN hrgn
+2=LPRECT lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[InvertRgn]
+1=HDC hdc
+2=HRGN hrgn
+ParamCount=2
+Header=gdi.h.api;
+[OffsetRgn]
+1=HRGN hrgn
+2=int nXOffset
+3=int nYOffset
+ParamCount=3
+Header=gdi.h.api;
+[PaintRgn]
+1=HDC hdc
+2=HRGN hrgn
+ParamCount=2
+Header=gdi.h.api;
+[PtInRegion]
+1=HRGN hrgn
+2=int X
+3=int Y
+ParamCount=3
+Header=gdi.h.api;
+[RectInRegion]
+1=HRGN hrgn
+2=RECT* lprc
+ParamCount=2
+Header=gdi.h.api;windows.h.api;
+[SetPolyFillMode]
+1=HDC hdc
+2=[PolyFillModes] iPolyFillMode
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetRectRgn]
+1=HRGN hrgn
+2=int nLeftRect
+3=int nTopRect
+4=int nRightRect
+5=int nBottomRect
+ParamCount=5
+Header=gdi.h.api;
+[GetTextCharset]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[GetTextCharsetInfo]
+1=HDC hdc
+2=LPFONTSIGNATURE lpSig
+3=DWORD dwFlags
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[TranslateCharsetInfo]
+1=DWORD* lpSrc
+2=LPCHARSETINFO lpCs
+3=[TranslateCharsetInfoFlag] dwFlags
+ParamCount=3
+Header=gdi32.h.api;
+[ChoosePixelFormat]
+1=HDC hdc
+2=PIXELFORMATDESCRIPTOR* ppfd
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[DescribePixelFormat]
+1=HDC hdc
+2=int iPixelFormat
+3=UINT nBytes
+4=LPPIXELFORMATDESCRIPTOR ppfd
+ParamCount=4
+Header=gdi32.h.api;gdi.h.api;
+[GetPixelFormat]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[SetPixelFormat]
+1=HDC hdc
+2=int iPixelFormat
+3=PIXELFORMATDESCRIPTOR* ppfd
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[GetEnhMetaFilePixelFormat]
+1=HENHMETAFILE hemf
+2=DWORD cbBuffer
+3=PIXELFORMATDESCRIPTOR* ppfd
+ParamCount=3
+Header=gdi32.h.api;windows.h.api;
+[SwapBuffers]
+1=HDC hdc
+ParamCount=1
+Header=gdi.h.api;
+[CheckColorsInGamut]
+1=HDC hDC
+2=LPVOID lpRGBTriples
+3=LPVOID lpBuffer
+4=UINT nCount
+ParamCount=4
+Header=gdi.h.api;
+[ColorCorrectPalette]
+1=HDC hDC
+2=HPALETTE hPalette
+3=DWORD dwFirstEntry
+4=DWORD dwNumOfEntries
+ParamCount=4
+Header=gdi.h.api;
+[ColorMatchToTarget]
+1=HDC hDC
+2=HDC hdcTarget
+3=[CS_ACTION] uiAction
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[CreateColorSpace]
+1=LPLOGCOLORSPACE lpLogColorSpace
+ParamCount=1
+Header=gdi.h.api;
+[DeleteColorSpace]
+1=HCOLORSPACE hColorSpace
+ParamCount=1
+Header=gdi32.h.api;
+[EnumICMProfiles]
+1=HDC hDC
+2=ICMENUMPROC lpEnumICMProfilesFunc
+3=LPARAM lParam
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;windows.h.api;
+[GetColorSpace]
+1=HDC hDC
+ParamCount=1
+Header=gdi.h.api;
+[GetICMProfile]
+1=HDC hDC
+2=LPDWORD lpcbName
+3=LPTSTR lpszFilename
+ParamCount=3
+Header=gdi.h.api;
+[GetLogColorSpace]
+1=HCOLORSPACE hColorSpace
+2=LPLOGCOLORSPACE lpBuffer
+3=DWORD nSize
+ParamCount=3
+Header=gdi32.h.api;gdi.h.api;
+[SetColorSpace]
+1=HDC hDC
+2=HCOLORSPACE hColorSpace
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetICMMode]
+1=HDC hDC
+2=[ICM_MODE] iEnableICM
+ParamCount=2
+Header=gdi32.h.api;gdi.h.api;
+[SetICMProfile]
+1=HDC hDC
+2=LPTSTR lpFileName
+ParamCount=2
+Header=gdi.h.api;
+[GetDeviceGammaRamp]
+1=HDC hDC
+2=LPVOID lpRamp
+ParamCount=2
+Header=gdi.h.api;
+[SetDeviceGammaRamp]
+1=HDC hDC
+2=LPVOID lpRamp
+ParamCount=2
+Header=gdi.h.api;
+[UpdateICMRegKey]
+1=DWORD dwReserved
+2=LPTSTR lpszCMID
+3=LPTSTR lpszFileName
+4=[ICM_COMMAND] nCommand
+ParamCount=4
+Header=gdi32.h.api;

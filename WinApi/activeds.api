@@ -1,0 +1,81 @@
+[CallingConvention]
+@=STDCALL
+[ADsBuildEnumerator]
+1=IADsContainer* pADsContainer
+2=IEnumVARIANT** ppEnumVariant
+ParamCount=2
+[ADsBuildVarArrayInt]
+1=LPDWORD lpdwObjectTypes
+2=DWORD dwObjectTypes
+3=VARIANT* pVar
+ParamCount=3
+Header=ole.h.api;
+[ADsBuildVarArrayStr]
+1=LPWSTR* lppPathNames
+2=DWORD dwPathNames
+3=VARIANT* pVar
+ParamCount=3
+Header=ole.h.api;
+[ADsEncodeBinaryData]
+1=PBYTE pbSrcData
+2=DWORD dwSrcLen
+3=LPWSTR* ppszDestData
+ParamCount=3
+[ADsEnumerateNext]
+1=IEnumVARIANT* pEnumVariant
+2=ULONG cElements
+3=VARIANT* pvar
+4=ULONG* pcElementsFetched
+ParamCount=4
+Header=ole.h.api;
+[ADsFreeEnumerator]
+1=IEnumVARIANT* pEnumVariant
+ParamCount=1
+[ADsGetLastError]
+1=LPDWORD lpError
+2=LPWSTR lpErrorBuf
+3=DWORD dwErrorBufLen
+4=LPWSTR lpNameBuf
+5=DWORD dwNameBufLen
+ParamCount=5
+[ADsGetObject]
+1=LPWSTR lpszPathName
+2=REFIID riid
+3=VOID** ppObject
+ParamCount=3
+Header=windows.h.api;
+[ADsOpenObject]
+1=LPWSTR lpszPathName
+2=LPWSTR lpszUserName
+3=LPWSTR lpszPassword
+4=DWORD dwReserved
+5=REFIID riid
+6=VOID** ppObject
+ParamCount=6
+Header=windows.h.api;
+[ADsSetLastError]
+1=DWORD dwErr
+2=LPWSTR pszError
+3=LPWSTR pszProvider
+ParamCount=3
+[AllocADsMem]
+1=DWORD cb
+ParamCount=1
+[AllocADsStr]
+1=LPWSTR pStr
+ParamCount=1
+[FreeADsMem]
+1=LPVOID pMem
+ParamCount=1
+[FreeADsStr]
+1=LPWSTR pStr
+ParamCount=1
+[ReallocADsMem]
+1=LPVOID pOldMem
+2=DWORD cbOld
+3=DWORD cbNew
+ParamCount=3
+[ReallocADsStr]
+1=LPWSTR* ppStr
+2=LPWSTR pStr
+ParamCount=2

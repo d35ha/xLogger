@@ -1,0 +1,50 @@
+[CallingConvention]
+@=STDCALL
+[GetExpandedName]
+1=LPTSTR lpszSource
+2=LPTSTR lpszBuffer
+ParamCount=2
+[LZClose]
+1=INT hFile
+ParamCount=1
+[LZCopy]
+1=INT hfSource
+2=INT hfDest
+ParamCount=2
+[LZInit]
+1=INT hfSource
+ParamCount=1
+[LZOpenFile]
+1=LPTSTR lpFileName
+2=LPOFSTRUCT lpReOpenBuf
+3=[OpenFlags] wStyle
+ParamCount=3
+Header=lz32.h.api;windows.h.api;
+[LZRead]
+1=INT hFile
+2=LPBYTE lpBuffer
+3=INT cbRead
+ParamCount=3
+[LZSeek]
+1=INT hFile
+2=LONG lOffset
+3=INT iOrigin
+ParamCount=3
+[CopyLZFile]
+1=INT hfSource
+2=INT hfDest
+ParamCount=2
+[LZDone]
+ParamCount=0
+[LZStart]
+ParamCount=0
+[LZCloseFile]
+1=INT hFile
+ParamCount=1
+[LZCreateFileW]
+1=[FILE_ACCESS_MASK] dwDesiredAccess
+2=[FILE_SHARE_MODE] dwShareMode
+3=[CreationDisposition] dwCreationDisposition
+4=LPWSTR lpString1
+ParamCount=4
+Header=kernel32.h.api;native.h.api;windows.h.api;

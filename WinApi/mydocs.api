@@ -1,0 +1,4 @@
+[CallingConvention]
+@=STDCALL
+[PerUserInit]
+ParamCount=0

@@ -1,0 +1,287 @@
+[CallingConvention]
+@=STDCALL
+[DrawDibOpen]
+ParamCount=0
+[DrawDibClose]
+1=HDRAWDIB hdd
+ParamCount=1
+Header=msvfw32.h.api;
+[DrawDibProfileDisplay]
+1=LPBITMAPINFOHEADER lpbi
+ParamCount=1
+Header=gdi.h.api;
+[DrawDibDraw]
+1=HDRAWDIB hdd
+2=HDC hdc
+3=int xDst
+4=int yDst
+5=int dxDst
+6=int dyDst
+7=LPBITMAPINFOHEADER lpbi
+8=LPVOID lpBits
+9=int xSrc
+10=int ySrc
+11=int dxSrc
+12=int dySrc
+13=UINT wFlags
+ParamCount=13
+Header=msvfw32.h.api;gdi.h.api;
+[DrawDibGetBuffer]
+1=HDRAWDIB hdd
+2=LPBITMAPINFOHEADER lpbi
+3=DWORD dwSize
+4=DWORD dwFlags
+ParamCount=4
+Header=msvfw32.h.api;gdi.h.api;
+[StretchDIB]
+1=LPBITMAPINFOHEADER biDst
+2=LPVOID lpvDst
+3=int DstX
+4=int DstY
+5=int DstXE
+6=int DstYE
+7=LPBITMAPINFOHEADER biSrc
+8=LPVOID lpvSrc
+9=int SrcX
+10=int SrcY
+11=int SrcXE
+12=int SrcYE
+ParamCount=12
+Header=gdi.h.api;
+[DrawDibBegin]
+1=HDRAWDIB hdd
+2=HDC hdc
+3=int dxDest
+4=int dyDest
+5=LPBITMAPINFOHEADER lpbi
+6=int dxSrc
+7=int dySrc
+8=UINT wFlags
+ParamCount=8
+Header=msvfw32.h.api;gdi.h.api;
+[DrawDibEnd]
+1=HDRAWDIB hdd
+ParamCount=1
+Header=msvfw32.h.api;
+[DrawDibStart]
+1=HDRAWDIB hdd
+2=LONG rate
+ParamCount=2
+Header=msvfw32.h.api;
+[DrawDibStop]
+1=HDRAWDIB hdd
+ParamCount=1
+Header=msvfw32.h.api;
+[DrawDibRealize]
+1=HDRAWDIB hdd
+2=HDC hdc
+3=BOOL fBackground
+ParamCount=3
+Header=msvfw32.h.api;gdi.h.api;
+[DrawDibSetPalette]
+1=HDRAWDIB hdd
+2=HPALETTE hpal
+ParamCount=2
+Header=msvfw32.h.api;gdi.h.api;
+[DrawDibGetPalette]
+1=HDRAWDIB hdd
+ParamCount=1
+Header=msvfw32.h.api;
+[DrawDibChangePalette]
+1=HDRAWDIB hdd
+2=int iStart
+3=int iLen
+4=LPPALETTEENTRY lppe
+ParamCount=4
+Header=msvfw32.h.api;ole.h.api;
+[DrawDibTime]
+1=HDRAWDIB hdd
+2=LPDRAWDIBTIME lpddtime
+ParamCount=2
+Header=msvfw32.h.api;
+[GetOpenFileNamePreview]
+1=LPOPENFILENAME lpofn
+ParamCount=1
+Header=gdi.h.api;
+[GetSaveFileNamePreview]
+1=LPOPENFILENAME lpofn
+ParamCount=1
+Header=gdi.h.api;
+[MCIWndCreate]
+1=HWND hwndParent
+2=HINSTANCE hInstance
+3=DWORD dwStyle
+4=LPCTSTR szFile
+ParamCount=4
+Header=windows.h.api;
+[MCIWndRegisterClass]
+1=HINSTANCE hInstance
+ParamCount=1
+Header=windows.h.api;
+[ICClose]
+1=HIC hic
+ParamCount=1
+Header=msvfw32.h.api;
+[ICCompress]
+1=HIC hic
+2=DWORD dwFlags
+3=LPBITMAPINFOHEADER lpbiOutput
+4=LPVOID lpData
+5=LPBITMAPINFOHEADER lpbiInput
+6=LPVOID lpBits
+7=LPDWORD lpckid
+8=LPDWORD lpdwFlags
+9=LONG lFrameNum
+10=DWORD dwFrameSize
+11=DWORD dwQuality
+12=LPBITMAPINFOHEADER lpbiPrev
+13=LPVOID lpPrev
+ParamCount=13
+Header=msvfw32.h.api;gdi.h.api;
+[ICCompressorChoose]
+1=HWND hwnd
+2=UINT uiFlags
+3=LPVOID pvIn
+4=LPVOID lpData
+5=PCOMPVARS pc
+6=LPSTR lpszTitle
+ParamCount=6
+Header=msvfw32.h.api;windows.h.api;
+[ICCompressorFree]
+1=PCOMPVARS pc
+ParamCount=1
+Header=msvfw32.h.api;
+[ICDecompress]
+1=HIC hic
+2=DWORD dwFlags
+3=LPBITMAPINFOHEADER lpbiFormat
+4=LPVOID lpData
+5=LPBITMAPINFOHEADER lpbi
+6=LPVOID lpBits
+ParamCount=6
+Header=msvfw32.h.api;gdi.h.api;
+[ICDraw]
+1=HIC hic
+2=DWORD dwFlags
+3=LPVOID lpFormat
+4=LPVOID lpData
+5=DWORD cbData
+6=LONG lTime
+ParamCount=6
+Header=msvfw32.h.api;
+[ICDrawBegin]
+1=HIC hic
+2=DWORD dwFlags
+3=HPALETTE hpal
+4=HWND hwnd
+5=HDC hdc
+6=int xDst
+7=int yDst
+8=int dxDst
+9=int dyDst
+10=LPBITMAPINFOHEADER lpbi
+11=int xSrc
+12=int ySrc
+13=int dxSrc
+14=int dySrc
+15=DWORD dwRate
+16=DWORD dwScale
+ParamCount=16
+Header=msvfw32.h.api;gdi.h.api;windows.h.api;
+[ICGetDisplayFormat]
+1=HIC hic
+2=LPBITMAPINFOHEADER lpbiIn
+3=LPBITMAPINFOHEADER lpbiOut
+4=int BitDepth
+5=int dx
+6=int dy
+ParamCount=6
+Header=msvfw32.h.api;gdi.h.api;
+[ICGetInfo]
+1=HIC hic
+2=ICINFO* lpicinfo
+3=DWORD cb
+ParamCount=3
+Header=msvfw32.h.api;
+[ICImageCompress]
+1=HIC hic
+2=UINT uiFlags
+3=LPBITMAPINFO lpbiIn
+4=LPVOID lpBits
+5=LPBITMAPINFO lpbiOut
+6=LONG lQuality
+7=LONG* plSize
+ParamCount=7
+Header=msvfw32.h.api;gdi.h.api;
+[ICImageDecompress]
+1=HIC hic
+2=UINT uiFlags
+3=LPBITMAPINFO lpbiIn
+4=LPVOID lpBits
+5=LPBITMAPINFO lpbiOut
+ParamCount=5
+Header=msvfw32.h.api;gdi.h.api;
+[ICInfo]
+1=DWORD fccType
+2=DWORD fccHandler
+3=ICINFO* lpicinfo
+ParamCount=3
+Header=msvfw32.h.api;
+[ICInstall]
+1=DWORD fccType
+2=DWORD fccHandler
+3=LPARAM lParam
+4=LPSTR szDesc
+5=UINT wFlags
+ParamCount=5
+Header=windows.h.api;
+[ICLocate]
+1=DWORD fccType
+2=DWORD fccHandler
+3=LPBITMAPINFOHEADER lpbiIn
+4=LPBITMAPINFOHEADER lpbiOut
+5=[ICOpenFlags] wFlags
+ParamCount=5
+Header=msvfw32.h.api;gdi.h.api;
+[ICOpen]
+1=DWORD fccType
+2=DWORD fccHandler
+3=[ICOpenFlags] wMode
+ParamCount=3
+Header=msvfw32.h.api;
+[ICOpenFunction]
+1=DWORD fccType
+2=DWORD fccHandler
+3=[ICOpenFlags] wMode
+4=FARPROC lpfnHandler
+ParamCount=4
+Header=msvfw32.h.api;windows.h.api;
+[ICRemove]
+1=DWORD fccType
+2=DWORD fccHandler
+3=UINT wFlags
+ParamCount=3
+[ICSendMessage]
+1=HIC hic
+2=[ICMessage] wMsg
+3=DWORD dw1
+4=DWORD dw2
+ParamCount=4
+Header=msvfw32.h.api;
+[ICSeqCompressFrame]
+1=PCOMPVARS pc
+2=UINT uiFlags
+3=LPVOID lpBits
+4=BOOL* pfKey
+5=LONG* plSize
+ParamCount=5
+Header=msvfw32.h.api;
+[ICSeqCompressFrameEnd]
+1=PCOMPVARS pc
+ParamCount=1
+Header=msvfw32.h.api;
+[ICSeqCompressFrameStart]
+1=PCOMPVARS pc
+2=LPBITMAPINFO lpbiIn
+ParamCount=2
+Header=msvfw32.h.api;gdi.h.api;

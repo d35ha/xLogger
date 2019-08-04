@@ -1,0 +1,58 @@
+[CallingConvention]
+@=STDCALL
+[AvQuerySystemResponsiveness]
+1=HANDLE AvrtHandle
+2=PULONG SystemResponsivenessValue
+ParamCount=2
+Header=windows.h.api;
+[AvRtCreateThreadOrderingGroup]
+1=PHANDLE Context
+2=PLARGE_INTEGER Period
+3=GUID* ThreadOrderingGuid
+4=PLARGE_INTEGER Timeout
+ParamCount=4
+Header=windows.h.api;
+[AvRtCreateThreadOrderingGroupEx]
+1=PHANDLE Context
+2=PLARGE_INTEGER Period
+3=GUID* ThreadOrderingGuid
+4=PLARGE_INTEGER Timeout
+5=LPCTSTR TaskName
+ParamCount=5
+Header=windows.h.api;
+[AvRtDeleteThreadOrderingGroup]
+1=HANDLE Context
+ParamCount=1
+Header=windows.h.api;
+[AvRtJoinThreadOrderingGroup]
+1=PHANDLE Context
+2=GUID* ThreadOrderingGuid
+3=BOOL Before
+ParamCount=3
+Header=windows.h.api;
+[AvRtLeaveThreadOrderingGroup]
+1=HANDLE Context
+ParamCount=1
+Header=windows.h.api;
+[AvRtWaitOnThreadOrderingGroup]
+1=HANDLE Context
+ParamCount=1
+Header=windows.h.api;
+[AvRevertMmThreadCharacteristics]
+1=HANDLE AvrtHandle
+ParamCount=1
+Header=windows.h.api;
+[AvSetMmMaxThreadCharacteristics]
+1=LPCTSTR FirstTask
+2=LPCTSTR SecondTask
+3=LPDWORD TaskIndex
+ParamCount=3
+[AvSetMmThreadCharacteristics]
+1=LPCTSTR TaskName
+2=LPDWORD TaskIndex
+ParamCount=2
+[AvSetMmThreadPriority]
+1=HANDLE AvrtHandle
+2=[AVRT_PRIORITY] Priority
+ParamCount=2
+Header=avrt.h.api;windows.h.api;
