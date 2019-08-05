@@ -453,7 +453,7 @@ INT main(INT argc, CHAR** argv)
             "	--exclude-all-mods-except <list of modules>: Only log calls made to these modules\n"
             "	--detach-on-exit: Keep the process when the logger exits (the process will continue logging)\n"
             "	--detach-on-system: Detach the logger on reaching system/attach breakpoint (the process will continue logging)\n"
-            "	--hide-debugger: Hide the debugger (xLogger) from being detected by IsDebuggerPresent,PEB manipulation,...\n"
+            "	--hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB manipulation,..\n"
             "	--external-console: Run the process in external console (only with -c switch)\n"
             "	--apis-dir <directory path>: directory of api definition files (default: WinApi)\n"
             "	--headers-dir <directory path>: directory of headers definition files (default: WinApi\\headers)\n"
