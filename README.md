@@ -51,7 +51,7 @@ Options:
         --exclude-all-mods-except <list of modules>: Only log calls made to these modules
         --detach-on-exit: Keep the process when the logger exits (the process will continue logging)
         --detach-on-system: Detach on reaching system/attach breakpoint (the process will continue logging)
-        --hide-debugger: Hide the debugger (xLogger) from being detected by IsDebuggerPresent,PEB BeingDebugged,..
+        --hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB BeingDebugged,..
         --external-console: Run the process at external console (only with -c switch)
         --apis-dir <directory path>: directory of api definition files (default: WinApi)
         --headers-dir <directory path>: directory of headers definition files (default: WinApi\headers)
