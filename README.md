@@ -22,7 +22,7 @@ Commonly there's two types of API hooking:
   * The most powerful hooking technique
   * Depends on replacing the first bytes from the API prologue with an unconditional jump to the trampoline function
   * Can be detected easily by checking the first instruction
-  * Perfect when used against specific API(s), but using it at a wide range of APIs (logging) will be very exhaustive
+  * Perfect when used against specific API(s), but using it with a wide range of APIs (logging) will be very exhaustive
 
 # Export address table hooking 
 Whatever the way used at the dynamic/manual API resolving, the resolver has to loop on the export address table (EAT) to get the API address, so placing our hooks on the EAT will deceive the resolver by getting the address of the trampoline instead of the address of the API, this can make a really good ApiLogger that can handle the reallife advanced malware samples</br>
