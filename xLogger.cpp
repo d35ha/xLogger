@@ -1,14 +1,27 @@
-﻿#include "xPE/xPE.h"
+#ifndef _CRT_SECURE_NO_WARNINGS
+#define _CRT_SECURE_NO_WARNINGS
+#endif
+
+#include "xPE/xPE.h"
 #include "INIReader.h"
-#include <psapi.h>
+#include <dbghelp.h>
 #include <string>
 #include <vector>
 #include <map>
 
-#pragma comment(lib, "ntdll.lib")
+#define PSAPI_VERSION 1
+#include <psapi.h>
 
-static INT DllsPageAlignment = 0;
+#pragma comment(lib, "Psapi.lib")
+#pragma comment(lib, "dbghelp.lib")
+
+typedef struct _MY_FILE_NAME_INFORMATION {
+	ULONG FileNameLength;
+	WCHAR FileName[1];
+} MY_FILE_NAME_INFORMATION, * PMY_FILE_NAME_INFORMATION;
+
 static INT PageSize = 0;
+static INT DllsPageAlignment = 0;
 static BOOL IsVerbous = FALSE;
 static BOOL DetachOnExit = FALSE;
 static BOOL DetachOnSystem = FALSE;
@@ -41,15 +54,15 @@ std::map<std::string,
 
 struct _ShellCodeInfo
 {
-    WORD wSizeOfExtModLst = 0;
-    HANDLE hLogFile = NULL;
-    LPVOID lpWinApi = NULL;
-    LPVOID lpLogApi = NULL;
-    LPVOID lpImageTop = NULL;
-    LPVOID lpImageBase = NULL;
-    LPVOID lpNtWriteFile = NULL;
-    LPVOID lpNtQueryPerfCounter = NULL;
-    LPVOID lpRtlQueryPerfCounter = NULL;
+    WORD wSizeOfExtModLst;
+    HANDLE hLogFile;
+    LPVOID lpWinApi;
+    LPVOID lpLogApi;
+    LPVOID lpImageTop;
+    LPVOID lpImageBase;
+    LPVOID lpNtWriteFile;
+    LPVOID lpNtQueryPerfCounter;
+    LPVOID lpRtlQueryPerfCounter;
     std::vector<BYTE> WinApiData;
     std::vector<BYTE> ShellCode;
 } ShellCodeInfo;
@@ -57,32 +70,32 @@ struct _ShellCodeInfo
 
 struct _ApiInfo
 {
-    DWORD dwApiInfoOffset = 0;
-    DWORD dwHookOffset = 0;
-    LPVOID lpAddress = NULL;
+    DWORD dwApiInfoOffset;
+    DWORD dwHookOffset;
+    LPVOID lpAddress;
 };
 
 struct _DllInfo
 {
-    DWORD dwDllSize = 0;
-    DWORD dwNumberOfApis = 0;
-    DWORD dwHookChainSize = 0;
-    LPVOID lpHookChain = NULL;
+    DWORD dwDllSize;
+    DWORD dwNumberOfApis;
+    DWORD dwHookChainSize;
+    LPVOID lpHookChain;
     std::string szDllName;
     std::map<std::string, _ApiInfo> ApiArray;
 };
 
 struct _SupportedApiInfo
 {
-    DWORD dwApiInfoOffset = 0;
+    DWORD dwApiInfoOffset;
     std::string SourceModule;
 };
 
 
 typedef struct _SupportedHeaderInfo
 {
-    DWORD dwHeaderInfoOffset = 0;
-    DWORD dwHeaderSize = 0;
+    DWORD dwHeaderInfoOffset;
+    DWORD dwHeaderSize;
 
 } SupportedHeaderInfo, *LPSupportedHeaderInfo;
 
@@ -96,27 +109,14 @@ struct _WinApi
     std::vector<std::map<std::string,
         std::map<std::string,
         _SupportedApiInfo>>::iterator> CachedSourceModules;
-    std::vector<std::string> CrtDlls = {
-        "msvcrt.dll",
-        "msvcr70.dll",
-        "msvcr70d.dll",
-        "msvcr71.dll",
-        "msvcr71d.dll",
-        "msvcr80.dll",
-        "msvcr80d.dll",
-        "msvcr90.dll",
-        "msvcr90d.dll",
-        "msvcr100.dll",
-        "msvcr100d.dll",
-        "msvcr100_clr0400.dll"
-    };
+	std::vector<std::string> CrtDlls;
     std::map<std::string, DWORD> WinTypesSizes;
     std::vector<std::string> WinTypesStr;
 } WinApi;
 
 #if defined(_M_X64) || defined(__amd64__)
 
-std::vector<BYTE> LoggerShellCode =
+BYTE bLoggerShellCode[] =
 {
     0x65, 0x48, 0x8b, 0x04, 0x25, 0x60, 0x00, 0x00, 0x00, 0x48, 0x8b, 0x40, 0x18, 0x48, 0x8b, 0x40,
     0x10, 0x49, 0x89, 0xc2, 0x4c, 0x8b, 0x58, 0x30, 0x4c, 0x39, 0x5c, 0x24, 0x10, 0x7c, 0x11, 0x44,
@@ -268,8 +268,11 @@ std::vector<BYTE> LoggerShellCode =
     0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90,
     0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90
 };
+std::vector<BYTE> LoggerShellCode(bLoggerShellCode,
+	bLoggerShellCode + sizeof(bLoggerShellCode));
+
 #else
-std::vector<BYTE> LoggerShellCode =
+BYTE bLoggerShellCode[] =
 {
     0x50, 0x64, 0xa1, 0x30, 0x00, 0x00, 0x00, 0x8b, 0x40, 0x0c, 0x8b, 0x40, 0x0c, 0x89, 0xc1, 0x8b,
     0x50, 0x18, 0x39, 0x54, 0x24, 0x0c, 0x7c, 0x0e, 0x8b, 0x50, 0x20, 0x03, 0x50, 0x18, 0x39, 0x54,
@@ -397,11 +400,13 @@ std::vector<BYTE> LoggerShellCode =
     0x03, 0x83, 0xc7, 0x30, 0x97, 0x88, 0x04, 0x11, 0x97, 0x42, 0x39, 0xe0, 0x74, 0x03, 0x48, 0xeb,
     0xbf, 0x58, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08, 0xc3
 };
+std::vector<BYTE> LoggerShellCode(bLoggerShellCode, 
+	bLoggerShellCode + sizeof(bLoggerShellCode));
 
 #endif
 
 #if defined(_M_X64) || defined(__amd64__)
-std::vector<BYTE> TrampolineCode =
+BYTE bTrampolineCode[] =
 {
     0x68,
 #define API_INFO_OFF_OFFSET 0x1
@@ -414,9 +419,11 @@ std::vector<BYTE> TrampolineCode =
     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
     0xFF, 0xE0
 };
+std::vector<BYTE> TrampolineCode(bTrampolineCode,
+	bTrampolineCode + sizeof(bTrampolineCode));
 
 #else
-std::vector<BYTE> TrampolineCode =
+BYTE bTrampolineCode[] =
 {
     0x68,
 #define API_INFO_OFF_OFFSET 0x1
@@ -429,16 +436,23 @@ std::vector<BYTE> TrampolineCode =
     0x00, 0x00, 0x00, 0x00,
     0xFF, 0xE0
 };
+std::vector<BYTE> TrampolineCode(bTrampolineCode,
+	bTrampolineCode + sizeof(bTrampolineCode));
+
 #endif
 
-BOOL GetFileNameFromHandle(HANDLE hFile, LPSTR pszFileName, DWORD dwBuffSize);
 BOOL ParseLoadedDll(HANDLE hProcess, std::map<LPVOID, _DllInfo>::iterator DllInfo);
 BOOL InitializeWinApi();
 BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo);
 
 INT main(INT argc, CHAR** argv)
 {
-    Utils::InitColors();
+	if (!Utils::InitUtils())
+	{
+		Utils::Printf::Fail("Cannot initialize properly");
+		return FALSE;
+	};
+
     if (argc < 3)
     {
         Utils::Printf::Info(
@@ -446,15 +460,15 @@ INT main(INT argc, CHAR** argv)
             "A super simple CLI windows api logger\n"
             "Usage: xLogger <Options> [-c [CommandLine]|-attach [Pid]] -l [LogFile]\n"
             "Options:\n"
-            "	--external-mods <list of modules>: Log calls from these modules in addition to the main module\n"
+            "	--external-mods <list of modules>: Log calls from these modules with the main module\n"
             "	--exclude-apis <list of dll:api>: Never log calls made to these apis\n"
             "	--exclude-mods <list of modules>: Never log calls made to these modules\n"
             "	--exclude-all-apis-except <list of dll:api>: Only log calls made to these apis\n"
             "	--exclude-all-mods-except <list of modules>: Only log calls made to these modules\n"
             "	--detach-on-exit: Keep the process when the logger exits (the process will continue logging)\n"
-            "	--detach-on-system: Detach the logger on reaching system/attach breakpoint (the process will continue logging)\n"
-            "	--hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB manipulation,..\n"
-            "	--external-console: Run the process in external console (only with -c switch)\n"
+            "	--detach-on-system: Detach on reaching system/attach breakpoint (the process will continue logging)\n"
+            "	--hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB BeingDebugged,..\n"
+            "	--external-console: Run the process at external console (only with -c switch)\n"
             "	--apis-dir <directory path>: directory of api definition files (default: WinApi)\n"
             "	--headers-dir <directory path>: directory of headers definition files (default: WinApi\\headers)\n"
             "	-v: verbous mode\n"
@@ -523,7 +537,7 @@ INT main(INT argc, CHAR** argv)
             std::string ApiName = ListIter->substr((SIZE_T)dwPos + 1);
             while (DllName.back() == ' ') DllName.pop_back();
             while (ApiName.front() == ' ') ApiName.erase(0, 1);
-            for (auto& ch : DllName) ch = tolower(ch);
+			std::for_each(DllName.begin(), DllName.end(), [](CHAR& ch) {ch = tolower(ch); });
             if (ApiName.find_first_of(' ') != std::string::npos
                     || ApiName.find_first_of(':') != std::string::npos)
             {
@@ -535,8 +549,9 @@ INT main(INT argc, CHAR** argv)
             if ((SplittedListIter = (*MapToSaveTo).find(DllName)) ==
                     (*MapToSaveTo).end())
             {
+				std::vector<std::string> EmptyList;
                 SplittedListIter = (*MapToSaveTo).insert((*MapToSaveTo).end(),
-                                   std::make_pair(DllName, std::vector<std::string>({})));
+                                   std::make_pair(DllName, EmptyList));
             };
             SplittedListIter->second.push_back(ApiName);
             ListIter++;
@@ -916,7 +931,7 @@ INT main(INT argc, CHAR** argv)
         };
 
         DWORD dwNeededSize = 0;
-        if (!K32EnumProcessModules(
+        if (!EnumProcessModules(
                     hProcess,
                     NULL,
                     0,
@@ -935,7 +950,7 @@ INT main(INT argc, CHAR** argv)
                 hFile,
                 hProcess,
                 &ShellCodeInfo.hLogFile,
-                NULL,
+                0,
                 FALSE,
                 DUPLICATE_SAME_ACCESS
 
@@ -1054,6 +1069,12 @@ INT main(INT argc, CHAR** argv)
         Utils::Reportf::ApiError("GetModuleHandleA", "Unable to get ntdll handle");
         return FALSE;
     };
+	HMODULE hKernel32 = GetModuleHandleA("kernel32.dll");
+	if (!hKernel32)
+	{
+		Utils::Reportf::ApiError("GetModuleHandleA", "Unable to get kernel32 handle");
+		return FALSE;
+	};
     ShellCodeInfo.lpNtWriteFile = (LPVOID)GetProcAddress(
                                       hNtdll,
                                       "NtWriteFile"
@@ -1078,18 +1099,39 @@ INT main(INT argc, CHAR** argv)
                                           );
     if (!ShellCodeInfo.lpRtlQueryPerfCounter)
     {
-        Utils::Printf::Fail("Unable to get RtlQueryPerformanceCounter address");
-        return FALSE;
+		ShellCodeInfo.lpRtlQueryPerfCounter = (LPVOID)GetProcAddress(
+			hKernel32,
+			"QueryPerformanceCounter"
+		);
+		if (!ShellCodeInfo.lpRtlQueryPerfCounter)
+		{
+			Utils::Printf::Fail("Unable to get QueryPerformanceCounter address");
+			return FALSE;
+		};
     };
-
 
     BOOL ReachedSystemBP = FALSE;
     SIZE_T stWrittenBytes = 0;
     DWORD dwContinueStatus = DBG_CONTINUE;
+
+	PCHAR pEnd;
+	IO_STATUS_BLOCK IoStatusBlock;
+
+	LPVOID fnNtQueryInformationFile = NULL;
+	if (!(fnNtQueryInformationFile = (LPVOID)GetProcAddress(hNtdll, "NtQueryInformationFile")))
+	{
+		Utils::Printf::Fail("Cannot get NtQueryInformationFile address");
+		return FALSE;
+	};
+
     for (;;)
     {
         CHAR szDllName[MAX_PATH] = { 0 };
+		WCHAR FileNameInformation[MAX_PATH + sizeof(ULONG) / 2] = { 0 };
         DEBUG_EVENT DebugEvent = { 0 };
+
+		PMY_FILE_NAME_INFORMATION lpFileNameInformation =
+			(PMY_FILE_NAME_INFORMATION)FileNameInformation;
 
         if (!WaitForDebugEvent(
                     &DebugEvent,
@@ -1099,180 +1141,198 @@ INT main(INT argc, CHAR** argv)
             return FALSE;
         };
 
-        _DllInfo DllInfo;
+		_DllInfo DllInfo;
+		DllInfo.dwDllSize = 0;
+		DllInfo.dwHookChainSize = 0;
+		DllInfo.dwNumberOfApis = 0;
+		DllInfo.lpHookChain = NULL;
+
         std::map<LPVOID, _DllInfo>::iterator DllInfoIter;
 
-        switch (DebugEvent.dwDebugEventCode)
-        {
-        case EXCEPTION_DEBUG_EVENT:
+		switch (DebugEvent.dwDebugEventCode)
+		{
+		case EXCEPTION_DEBUG_EVENT:
 
-            dwContinueStatus = DBG_EXCEPTION_NOT_HANDLED;
-            if (!(!ReachedSystemBP &&
-                    DebugEvent.u.Exception.ExceptionRecord.ExceptionCode ==
-                    EXCEPTION_BREAKPOINT))
-            {
+			dwContinueStatus = DBG_EXCEPTION_NOT_HANDLED;
+			if (!(!ReachedSystemBP &&
+				DebugEvent.u.Exception.ExceptionRecord.ExceptionCode ==
+				EXCEPTION_BREAKPOINT))
+			{
 #if defined(_M_X64) || defined(__amd64__)
-                if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%llx",
-                                                       DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
-                                                       DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
-                                                       DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
-                                                      );
+				if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%llx",
+					DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
+					DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
+					DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
+				);
 #else
-                if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%lx",
-                                                       DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
-                                                       DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
-                                                       DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
-                                                      );
+				if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%lx",
+					DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
+					DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
+					DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
+				);
 #endif
-                break;
-            };
+				break;
+			};
 
 #if defined(_M_X64) || defined(__amd64__)
-            Utils::Printf::Success("Process reached system/attach breakpoint at 0x%llx",
-                                   DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
+			Utils::Printf::Success("Process reached system/attach breakpoint at 0x%llx",
+				DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
 #else
-            Utils::Printf::Success("Process reached system/attach breakpoint at 0x%lx",
-                                   DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
+			Utils::Printf::Success("Process reached system/attach breakpoint at 0x%lx",
+				DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
 #endif
-            ReachedSystemBP = TRUE;
+			ReachedSystemBP = TRUE;
 
-            if (DetachOnSystem)
-            {
-                DebugActiveProcessStop(DebugEvent.dwProcessId);
-                return TRUE;
-            };
-            break;
+			if (DetachOnSystem)
+			{
+				DebugActiveProcessStop(DebugEvent.dwProcessId);
+				return TRUE;
+			};
+			break;
 
-        case EXIT_PROCESS_DEBUG_EVENT:
-            Utils::Printf::Success("Process exited with code 0x%lx", DebugEvent.u.ExitProcess.dwExitCode);
-            return FALSE;
-        case CREATE_PROCESS_DEBUG_EVENT:
+		case EXIT_PROCESS_DEBUG_EVENT:
+			Utils::Printf::Success("Process exited with code 0x%lx", DebugEvent.u.ExitProcess.dwExitCode);
+			return TRUE;
+		case CREATE_PROCESS_DEBUG_EVENT:
 
-            if (ShellCodeInfo.WinApiData.empty())
-            {
-                Utils::Printf::Fail("No apis loaded at all");
-                return FALSE;
-            };
-            if (!(ShellCodeInfo.lpWinApi = VirtualAllocEx(
-                                               hProcess,
-                                               NULL,
-                                               ShellCodeInfo.WinApiData.size(),
-                                               MEM_RESERVE | MEM_COMMIT,
-                                               PAGE_READWRITE
-                                           )))
-            {
-                Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the api data");
-                return FALSE;
-            };
+			if (ShellCodeInfo.WinApiData.empty())
+			{
+				Utils::Printf::Fail("No apis loaded at all");
+				return FALSE;
+			};
+			if (!(ShellCodeInfo.lpWinApi = VirtualAllocEx(
+				hProcess,
+				NULL,
+				ShellCodeInfo.WinApiData.size(),
+				MEM_RESERVE | MEM_COMMIT,
+				PAGE_READWRITE
+			)))
+			{
+				Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the api data");
+				return FALSE;
+			};
 
-            if (!WriteProcessMemory(
-                        hProcess,
-                        ShellCodeInfo.lpWinApi,
-                        ShellCodeInfo.WinApiData.data(),
-                        ShellCodeInfo.WinApiData.size(),
-                        &stWrittenBytes
-                    ) || stWrittenBytes != ShellCodeInfo.WinApiData.size())
-            {
-                Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the api data");
-                return FALSE;
-            };
+			if (!WriteProcessMemory(
+				hProcess,
+				ShellCodeInfo.lpWinApi,
+				ShellCodeInfo.WinApiData.data(),
+				ShellCodeInfo.WinApiData.size(),
+				&stWrittenBytes
+			) || stWrittenBytes != ShellCodeInfo.WinApiData.size())
+			{
+				Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the api data");
+				return FALSE;
+			};
 
-            for (DWORD dwIndex = 0;
-                    dwIndex < sizeof(LPVOID); dwIndex++)
-            {
-                LoggerShellCode.at(LOG_FILE_HANDLE_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.hLogFile)[dwIndex];
-                LoggerShellCode.at(API_INFO_ADDRESS_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.lpWinApi)[dwIndex];
-                LoggerShellCode.at(NT_WRITE_FILE_ADDR_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.lpNtWriteFile)[dwIndex];
-                LoggerShellCode.at(NT_QUERY_PERF_COUNTER_RET_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.lpNtQueryPerfCounter)[dwIndex];
-                LoggerShellCode.at(NT_QUERY_PERF_COUNTER_CALL_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.lpRtlQueryPerfCounter)[dwIndex];
-            };
+			for (DWORD dwIndex = 0;
+				dwIndex < sizeof(LPVOID); dwIndex++)
+			{
+				LoggerShellCode.at(LOG_FILE_HANDLE_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.hLogFile)[dwIndex];
+				LoggerShellCode.at(API_INFO_ADDRESS_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.lpWinApi)[dwIndex];
+				LoggerShellCode.at(NT_WRITE_FILE_ADDR_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.lpNtWriteFile)[dwIndex];
+				LoggerShellCode.at(NT_QUERY_PERF_COUNTER_RET_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.lpNtQueryPerfCounter)[dwIndex];
+				LoggerShellCode.at(NT_QUERY_PERF_COUNTER_CALL_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.lpRtlQueryPerfCounter)[dwIndex];
+			};
 
-            ShellCodeInfo.wSizeOfExtModLst = 0;
-            std::for_each(ExternalModules.begin(), ExternalModules.end(),
-                          [&](const std::string& szExternalModule) -> void
-            {
-                LoggerShellCode.insert(
-                    LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
-                    (BYTE)szExternalModule.length()
-                );
-                ShellCodeInfo.wSizeOfExtModLst++;
-                LoggerShellCode.insert(
-                    LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
-                    szExternalModule.begin(),
-                    szExternalModule.end()
-                );
-                ShellCodeInfo.wSizeOfExtModLst += (WORD)szExternalModule.length();
-            });
+			ShellCodeInfo.wSizeOfExtModLst = 0;
+			std::for_each(ExternalModules.begin(), ExternalModules.end(),
+				[&](const std::string& szExternalModule) -> void
+				{
+					LoggerShellCode.insert(
+						LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
+						(BYTE)szExternalModule.length()
+					);
+					ShellCodeInfo.wSizeOfExtModLst++;
+					LoggerShellCode.insert(
+						LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
+						szExternalModule.begin(),
+						szExternalModule.end()
+					);
+					ShellCodeInfo.wSizeOfExtModLst += (WORD)szExternalModule.length();
+				});
 
-            LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[0];
-            LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET + 1) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[1];
+			LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[0];
+			LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET + 1) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[1];
 
 
-            if (!(ShellCodeInfo.lpLogApi = VirtualAllocEx(
-                                               hProcess,
-                                               NULL,
-                                               LoggerShellCode.size() + PageSize,
-                                               MEM_RESERVE | MEM_COMMIT,
-                                               PAGE_EXECUTE_READWRITE
-                                           )))
-            {
-                Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the logger");
-                return FALSE;
-            };
+			if (!(ShellCodeInfo.lpLogApi = VirtualAllocEx(
+				hProcess,
+				NULL,
+				LoggerShellCode.size() + PageSize,
+				MEM_RESERVE | MEM_COMMIT,
+				PAGE_EXECUTE_READWRITE
+			)))
+			{
+				Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the logger");
+				return FALSE;
+			};
 
-            if (!WriteProcessMemory(
-                        hProcess,
-                        ShellCodeInfo.lpLogApi,
-                        LoggerShellCode.data(),
-                        LoggerShellCode.size(),
-                        &stWrittenBytes
-                    ) || stWrittenBytes != LoggerShellCode.size())
-            {
-                Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the logger");
-                return FALSE;
-            };
+			if (!WriteProcessMemory(
+				hProcess,
+				ShellCodeInfo.lpLogApi,
+				LoggerShellCode.data(),
+				LoggerShellCode.size(),
+				&stWrittenBytes
+			) || stWrittenBytes != LoggerShellCode.size())
+			{
+				Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the logger");
+				return FALSE;
+			};
 
-            for (DWORD dwIndex = 0;
-                    dwIndex < sizeof(LPVOID); dwIndex++)
-            {
-                TrampolineCode.at(API_LOGGER_ADDR_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ShellCodeInfo.lpLogApi)[dwIndex];
-            };
+			for (DWORD dwIndex = 0;
+				dwIndex < sizeof(LPVOID); dwIndex++)
+			{
+				TrampolineCode.at(API_LOGGER_ADDR_OFFSET + (SIZE_T)dwIndex) =
+					((PBYTE)& ShellCodeInfo.lpLogApi)[dwIndex];
+			};
 
-            break;
-        case LOAD_DLL_DEBUG_EVENT:
+			break;
+		case LOAD_DLL_DEBUG_EVENT:
+
+			if ((*(NTSTATUS(WINAPI*)(
+				HANDLE,
+				PIO_STATUS_BLOCK,
+				PVOID,
+				ULONG,
+				INT
+				)) fnNtQueryInformationFile)(
+					DebugEvent.u.LoadDll.hFile,
+					&IoStatusBlock,
+					lpFileNameInformation,
+					sizeof(FileNameInformation),
+					0x9
+					))
+			{
+				Utils::Printf::Fail("Cannot get a loaded library name at 0x%lx",
+					DebugEvent.u.LoadDll.lpBaseOfDll);
+				return FALSE;
+			};
+
+			wcstombs(
+				szDllName,
+				lpFileNameInformation->FileName,
+				lpFileNameInformation->FileNameLength / sizeof(WCHAR)
+			);
+			szDllName[lpFileNameInformation->FileNameLength / sizeof(WCHAR)] = 0;
+
+			pEnd = &szDllName[strlen(szDllName)];
+			while (*pEnd != (CHAR)'\\')
+			{
+				*pEnd = tolower(*pEnd);
+				pEnd--;
+			};
+			strncpy(szDllName, ++pEnd, sizeof(szDllName) - 1);
+			szDllName[sizeof(szDllName) - 1] = 0;
 
 #if defined(_M_X64) || defined(__amd64__)
-            if (!GetFileNameFromHandle(
-                        DebugEvent.u.LoadDll.hFile,
-                        szDllName,
-                        sizeof(szDllName) + 1
-                    ))
-            {
-                Utils::Printf::Fail("Cannot get a loaded library at 0x%llx name",
-                                    DebugEvent.u.LoadDll.lpBaseOfDll);
-                return FALSE;
-            };
-
-            Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%llx", TOP_NODE,
-                                   szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
+			Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%llx", TOP_NODE,
+				szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
 #else
-            if (!GetFileNameFromHandle(
-                        DebugEvent.u.LoadDll.hFile,
-                        szDllName,
-                        sizeof(szDllName) + 1
-                    ))
-            {
-                Utils::Printf::Fail("Cannot get a loaded library at 0x%lx name",
-                                    DebugEvent.u.LoadDll.lpBaseOfDll);
-                return FALSE;
-            };
-
             Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%lx", TOP_NODE,
                                    szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
 #endif
@@ -1307,7 +1367,12 @@ INT main(INT argc, CHAR** argv)
             if (dwPid && (dwModNum == WinApi.DllArray.size()))
             {
                 dwModNum = 0;
-                _DllInfo MainModule;
+				_DllInfo MainModule;
+				MainModule.dwDllSize = 0;
+				MainModule.dwHookChainSize = 0;
+				MainModule.dwNumberOfApis = 0;
+				MainModule.lpHookChain = NULL;
+
                 MainModule.szDllName = "Main";
                 MainModule.dwDllSize = (DWORD)((uintptr_t)ShellCodeInfo.lpImageTop -
                                                (uintptr_t)ShellCodeInfo.lpImageBase);
@@ -1544,8 +1609,6 @@ INT main(INT argc, CHAR** argv)
                 WinApi.DllArray.erase(DllInfoIter);
             };
 
-
-
             break;
         };
 
@@ -1564,67 +1627,6 @@ INT main(INT argc, CHAR** argv)
     CloseHandle(hProcess);
     if (hThread) CloseHandle(hThread);
     CloseHandle(hFile);
-    return TRUE;
-};
-
-BOOL GetFileNameFromHandle(HANDLE hFile, LPSTR pszFileName, DWORD dwBuffSize)
-{
-    DWORD dwFileSizeHi = 0;
-    DWORD dwFileSizeLo = GetFileSize(hFile, &dwFileSizeHi);
-    if (dwFileSizeLo == 0 && dwFileSizeHi == 0)
-    {
-        Utils::Reportf::ApiError("GetFileSize", "Cannot get the size from this file handle or the size is zero");
-        return FALSE;
-    };
-
-    HANDLE hFileMap = NULL;
-    if (!(hFileMap = CreateFileMappingA(
-                         hFile,
-                         NULL,
-                         PAGE_READONLY,
-                         0,
-                         1,
-                         NULL
-                     )))
-    {
-        Utils::Reportf::ApiError("CreateFileMappingA", "Unable to map the file of this handle");
-        return FALSE;
-    };
-
-    PVOID pMem = NULL;
-    if (!(pMem = MapViewOfFile(
-                     hFileMap,
-                     FILE_MAP_READ,
-                     0,
-                     0,
-                     1
-                 )))
-    {
-        Utils::Reportf::ApiError("MapViewOfFile", "Unable to map the file of this handle");
-        return FALSE;
-    };
-
-    if (!K32GetMappedFileNameA(
-                GetCurrentProcess(),
-                pMem,
-                pszFileName,
-                dwBuffSize - 1
-            ))
-    {
-        Utils::Reportf::ApiError("K32GetMappedFileNameA", "Unable to get the mapped file name");
-        return FALSE;
-    };
-
-    PCHAR pEnd = &pszFileName[strlen(pszFileName)];
-    while (*pEnd != (CHAR)'\\')
-    {
-        *pEnd = tolower(*pEnd);
-        pEnd--;
-    };
-    strcpy_s(pszFileName, dwBuffSize, ++pEnd);
-
-    UnmapViewOfFile(pMem);
-    CloseHandle(hFileMap);
     return TRUE;
 };
 
@@ -1947,7 +1949,7 @@ BOOL ParseLoadedDll(HANDLE hProcess, std::map<LPVOID, _DllInfo>::iterator DllInf
         };
         if (!SupportedApiInfo->second.SourceModule.empty()) continue;
 
-        _ApiInfo ApiInfo = { 0 };
+		_ApiInfo ApiInfo = { 0 };
         ApiInfo.lpAddress = (LPVOID)(*pdwFunRva + (uintptr_t)DllInfo->first);
         ApiInfo.dwHookOffset = DllInfo->second.dwHookChainSize;
         ApiInfo.dwApiInfoOffset = SupportedApiInfo->second.dwApiInfoOffset;
@@ -2090,28 +2092,28 @@ BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo)
             return FALSE;
         };
 
-        for (auto const& ApiInfo : DllInfo.ApiArray)
-        {
-            for (DWORD dwIndex = 0;
-                    dwIndex < sizeof(DWORD); dwIndex++)
-            {
-                TrampolineCode.at(API_INFO_OFF_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ApiInfo.second.dwApiInfoOffset)[dwIndex];
-            };
+        std::for_each(DllInfo.ApiArray.begin(), DllInfo.ApiArray.end(), 
+			[&](std::pair<std::string, _ApiInfo> ApiInfo) -> void {
+				for (DWORD dwIndex = 0;
+					dwIndex < sizeof(DWORD); dwIndex++)
+				{
+					TrampolineCode.at(API_INFO_OFF_OFFSET + (SIZE_T)dwIndex) =
+						((PBYTE)& ApiInfo.second.dwApiInfoOffset)[dwIndex];
+				};
 
-            for (DWORD dwIndex = 0;
-                    dwIndex < sizeof(LPVOID); dwIndex++)
-            {
-                TrampolineCode.at(API_ADDR_OFFSET + (SIZE_T)dwIndex) =
-                    ((PBYTE)& ApiInfo.second.lpAddress)[dwIndex];
-            };
+				for (DWORD dwIndex = 0;
+					dwIndex < sizeof(LPVOID); dwIndex++)
+				{
+					TrampolineCode.at(API_ADDR_OFFSET + (SIZE_T)dwIndex) =
+						((PBYTE)& ApiInfo.second.lpAddress)[dwIndex];
+				};
 
-            CopyMemory(
-                (LPVOID)((uintptr_t)lpHookChain + ApiInfo.second.dwHookOffset),
-                TrampolineCode.data(),
-                TrampolineCode.size()
-            );
-        };
+				CopyMemory(
+					(LPVOID)((uintptr_t)lpHookChain + ApiInfo.second.dwHookOffset),
+					TrampolineCode.data(),
+					TrampolineCode.size()
+				);
+			});
 
         SIZE_T stWrittenBytes = 0;
         if (!WriteProcessMemory(
@@ -2144,6 +2146,19 @@ BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo)
 
 BOOL InitializeWinApi()
 {
+	WinApi.CrtDlls.push_back("msvcrt.dll");
+	WinApi.CrtDlls.push_back("msvcr70.dll");
+	WinApi.CrtDlls.push_back("msvcr70d.dll");
+	WinApi.CrtDlls.push_back("msvcr71.dll");
+	WinApi.CrtDlls.push_back("msvcr71d.dll");
+	WinApi.CrtDlls.push_back("msvcr80.dll");
+	WinApi.CrtDlls.push_back("msvcr80d.dll");
+	WinApi.CrtDlls.push_back("msvcr90.dll");
+	WinApi.CrtDlls.push_back("msvcr90d.dll");
+	WinApi.CrtDlls.push_back("msvcr100.dll");
+	WinApi.CrtDlls.push_back("msvcr100d.dll");
+	WinApi.CrtDlls.push_back("msvcr100_clr0400.dll");
+
     WinApi.WinTypesSizes["BYTE"] = 1;
     WinApi.WinTypesSizes["CHAR"] = 1;
     WinApi.WinTypesSizes["INT8"] = 1;
@@ -2361,186 +2376,194 @@ BOOL InitializeWinApi()
         return FALSE;
     };
 
-    do
-    {
-        std::string HeaderFileName = HeadersDir;
-        HeaderFileName.append(WinFindData.cFileName);
+	do
+	{
+		std::string HeaderFileName = HeadersDir;
+		HeaderFileName.append(WinFindData.cFileName);
 
-        INIReader HeaderReader(HeaderFileName.c_str());
-        if (HeaderReader.ParseError() < 0) {
-            if (IsVerbous) Utils::Printf::Info("Error happend at parsing %s", HeaderFileName.c_str());
-            continue;
-        };
+		INIReader HeaderReader(HeaderFileName.c_str());
+		if (HeaderReader.ParseError() < 0) {
+			if (IsVerbous) Utils::Printf::Info("Error happend at parsing %s", HeaderFileName.c_str());
+			continue;
+		};
 
-        std::string HeaderFile = WinFindData.cFileName;
-        for (auto& ch : HeaderFile) ch = tolower(ch);
+		std::string HeaderFile = WinFindData.cFileName;
+		std::for_each(HeaderFile.begin(), HeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-        std::map<std::string, SupportedHeaderInfo> HeaderFileInfo;
-        std::set<std::string> HeaderSections = HeaderReader.Sections();
+		std::map<std::string, SupportedHeaderInfo> HeaderFileInfo;
+		std::set<std::string> HeaderSections = HeaderReader.Sections();
 
-        std::for_each(HeaderSections.begin(), HeaderSections.end(),
-        [&](std::string const& HeaderSection) -> void {
+		std::for_each(HeaderSections.begin(), HeaderSections.end(),
+			[&](std::string const& HeaderSection) -> void {
 
-            std::vector<BYTE> WinHeaderInfo;
-            SupportedHeaderInfo HeaderInfo = { 0 };
+				std::vector<BYTE> WinHeaderInfo;
+				SupportedHeaderInfo HeaderInfo = { 0 };
 
-            HeaderInfo.dwHeaderInfoOffset = dwCurrentOffset;
+				HeaderInfo.dwHeaderInfoOffset = dwCurrentOffset;
 
-            std::string szBase = HeaderReader.Get(HeaderSection.c_str(), "Base", "");
-            std::string szType = HeaderReader.Get(HeaderSection.c_str(), "Type", "");
-            std::string szTypeDisplay = HeaderReader.Get(HeaderSection.c_str(), "TypeDisplay", "");
-            std::string szHeader = HeaderReader.Get(HeaderSection.c_str(), "Header", "");
-            while (szHeader.back() == ';') szHeader.pop_back();
-            for (auto& ch : szHeader) ch = tolower(ch);
+				std::string szBase = HeaderReader.Get(HeaderSection.c_str(), "Base", "");
+				std::string szType = HeaderReader.Get(HeaderSection.c_str(), "Type", "");
+				std::string szTypeDisplay = HeaderReader.Get(HeaderSection.c_str(), "TypeDisplay", "");
+				std::string szHeader = HeaderReader.Get(HeaderSection.c_str(), "Header", "");
+				if (!szHeader.empty()) { while (szHeader.back() == ';') szHeader.pop_back(); }
+				std::for_each(szHeader.begin(), szHeader.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-            std::map<std::string, ULONG> AdditionalHeaderData;
-            if (szBase.front() == '[' && szBase.back() == ']')
-            {
-                szBase.pop_back();
-                szBase.erase(0, 1);
+				std::map<std::string, ULONG> AdditionalHeaderData;
+				if (szBase.front() == '[' && szBase.back() == ']')
+				{
+					szBase.pop_back();
+					szBase.erase(0, 1);
 
-                if (szHeader.empty())
-                {
-                    if (IsVerbous) Utils::Printf::Info("Header %s has base %s with no header",
-                                                           HeaderSection.c_str(), szBase.c_str());
-                    return;
-                };
+					if (szHeader.empty())
+					{
+						if (IsVerbous) Utils::Printf::Info("Header %s has base %s with no header",
+							HeaderSection.c_str(), szBase.c_str());
+						return;
+					};
 
-                std::string szHeaderPath = HeadersDir + szHeader;
-                INIReader AdditionalHeaderReader(szHeaderPath.c_str());
-                for (auto& AdditionalSection : AdditionalHeaderReader.Sections())
-                {
-                    if (!AdditionalSection.compare(szBase))
-                    {
-                        std::string szNewBase = AdditionalHeaderReader.Get(szBase.c_str(), "Base", "");
-                        std::string szNewType = AdditionalHeaderReader.Get(szBase.c_str(), "Type", "");
-                        std::string szNewTypeDisplay = AdditionalHeaderReader.Get(szBase.c_str(), "TypeDisplay", "");
+					std::string szHeaderPath = HeadersDir + szHeader;
+					INIReader AdditionalHeaderReader(szHeaderPath.c_str());
 
-                        if (!szNewBase.empty()) szBase = szNewBase;
-                        if (!szNewType.empty()) szType = szNewType;
-                        if (!szNewTypeDisplay.empty()) szTypeDisplay = szNewTypeDisplay;
+					std::set<std::string>::iterator AdditionalSection =
+						AdditionalHeaderReader.Sections().begin();
 
-                        DWORD dwIndex = 0;
-                        for (;;)
-                        {
-                            std::string szIndex = std::to_string(++dwIndex);
-                            std::string szConstKey = "Const" + szIndex;
-                            std::string szValueKey = "Value" + szIndex;
+					while (AdditionalSection != AdditionalHeaderReader.Sections().end()) {
+						if (!AdditionalSection->compare(szBase))
+						{
+							std::string szNewBase = AdditionalHeaderReader.Get(szBase.c_str(), "Base", "");
+							std::string szNewType = AdditionalHeaderReader.Get(szBase.c_str(), "Type", "");
+							std::string szNewTypeDisplay = AdditionalHeaderReader.Get(szBase.c_str(), "TypeDisplay", "");
 
-                            std::string szConst = AdditionalHeaderReader.Get(AdditionalSection.c_str(),
-                                                  szConstKey.c_str(), "");
-                            if (szConst.empty()) break;
+							if (!szNewBase.empty()) szBase = szNewBase;
+							if (!szNewType.empty()) szType = szNewType;
+							if (!szNewTypeDisplay.empty()) szTypeDisplay = szNewTypeDisplay;
 
-                            std::string szValue = AdditionalHeaderReader.Get(AdditionalSection.c_str(),
-                                                  szValueKey.c_str(), "");
-                            if (szValue.empty())
-                            {
-                                if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
-                                                                       AdditionalSection.c_str(), szConstKey.c_str());
-                                return;
-                            };
-                            PCHAR lpEnd;
-                            ULONG dwValue = (ULONG)strtoll(szValue.c_str(), &lpEnd, 0);
+							DWORD dwIndex = 0;
+							for (;;)
+							{
+								CHAR bIndex[10] = { 0 };
+								itoa(++dwIndex, bIndex, 10);
+								std::string szIndex = bIndex;
+								std::string szConstKey = "Const" + szIndex;
+								std::string szValueKey = "Value" + szIndex;
 
-                            if (lpEnd <= szValue.c_str())
-                            {
-                                if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
-                                                                       AdditionalSection.c_str(), szConstKey.c_str(), szValue.c_str());
-                                return;
-                            };
+								std::string szConst = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
+									szConstKey.c_str(), "");
+								if (szConst.empty()) break;
 
-                            AdditionalHeaderData.insert(AdditionalHeaderData.end(),
-                                                        std::make_pair(szConst, dwValue));
-                        };
+								std::string szValue = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
+									szValueKey.c_str(), "");
+								if (szValue.empty())
+								{
+									if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
+										AdditionalSection->c_str(), szConstKey.c_str());
+									return;
+								};
 
-                        break;
-                    };
-                };
-            };
+								DWORD dwValue = 0;
+								INT ret = 0;
+								if (!(ret = sscanf(szValue.c_str(), "%lu", &dwValue))
+									|| ret == EOF)
+								{
+									if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
+										AdditionalSection->c_str(), szConstKey.c_str(), szValue.c_str());
+									return;
+								};
 
-            if (szTypeDisplay.empty() && szBase.empty())
-            {
-                if (IsVerbous) Utils::Printf::Info("Header %s has no size",
-                                                       HeaderSection.c_str());
-                return;
-            };
+								AdditionalHeaderData.insert(AdditionalHeaderData.end(),
+									std::make_pair(szConst, dwValue));
+							};
+							break;
+						};
+						AdditionalSection++;
+					};
+				};
 
-            szTypeDisplay.empty() ? HeaderInfo.dwHeaderSize = GetTypeSize(szBase) :
-                    HeaderInfo.dwHeaderSize = GetTypeSize(szTypeDisplay);
+				if (szTypeDisplay.empty() && szBase.empty())
+				{
+					if (IsVerbous) Utils::Printf::Info("Header %s has no size",
+						HeaderSection.c_str());
+					return;
+				};
 
-            DWORD dwIndex = 0;
-            if (!szType.compare("Enum")) WinHeaderInfo.push_back((BYTE)0);
-            else if (!szType.compare("Flag")) WinHeaderInfo.push_back((BYTE)1);
-            else
-            {
-                if (IsVerbous) Utils::Printf::Info("Header %s has unsupported type %s",
-                                                       HeaderSection.c_str(), szType.c_str());
-                return;
-            };
+				szTypeDisplay.empty() ? HeaderInfo.dwHeaderSize = GetTypeSize(szBase) :
+					HeaderInfo.dwHeaderSize = GetTypeSize(szTypeDisplay);
 
-            for (;;)
-            {
-                std::string szIndex = std::to_string(++dwIndex);
-                std::string szConstKey = "Const" + szIndex;
-                std::string szValueKey = "Value" + szIndex;
+				DWORD dwIndex = 0;
+				if (!szType.compare("Enum")) WinHeaderInfo.push_back((BYTE)0);
+				else if (!szType.compare("Flag")) WinHeaderInfo.push_back((BYTE)1);
+				else
+				{
+					if (IsVerbous) Utils::Printf::Info("Header %s has unsupported type %s",
+						HeaderSection.c_str(), szType.c_str());
+					return;
+				};
 
-                std::string szConst = HeaderReader.Get(HeaderSection.c_str(),
-                                                       szConstKey.c_str(), "");
-                if (szConst.empty()) break;
+				for (;;)
+				{
+					CHAR bIndex[10] = { 0 };
+					itoa(++dwIndex, bIndex, 10);
+					std::string szIndex = bIndex;
+					std::string szConstKey = "Const" + szIndex;
+					std::string szValueKey = "Value" + szIndex;
 
-                std::string szValue = HeaderReader.Get(HeaderSection.c_str(),
-                                                       szValueKey.c_str(), "");
-                if (szValue.empty())
-                {
-                    if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
-                                                           HeaderSection.c_str(), szConstKey.c_str());
-                    return;
-                };
-                PCHAR lpEnd;
-                ULONG dwValue = (ULONG)strtoll(szValue.c_str(), &lpEnd, 0);
+					std::string szConst = HeaderReader.Get(HeaderSection.c_str(),
+						szConstKey.c_str(), "");
+					if (szConst.empty()) break;
 
-                if (lpEnd <= szValue.c_str())
-                {
-                    if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
-                                                           HeaderSection.c_str(), szConstKey.c_str(), szValue.c_str());
-                    return;
-                };
+					std::string szValue = HeaderReader.Get(HeaderSection.c_str(),
+						szValueKey.c_str(), "");
+					if (szValue.empty())
+					{
+						if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
+							HeaderSection.c_str(), szConstKey.c_str());
+						return;
+					};
+					DWORD dwValue = 0;
+					INT ret = 0;
+					if (!(ret = sscanf(szValue.c_str(), "%lu", &dwValue))
+						|| ret == EOF)
+					{
+						if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
+							HeaderSection.c_str(), szConstKey.c_str(), szValue.c_str());
+						return;
+					};
 
-                WinHeaderInfo.push_back(((PBYTE)& dwValue)[0]);
-                WinHeaderInfo.push_back(((PBYTE)& dwValue)[1]);
-                WinHeaderInfo.push_back(((PBYTE)& dwValue)[2]);
-                WinHeaderInfo.push_back(((PBYTE)& dwValue)[3]);
-                WinHeaderInfo.push_back((BYTE)szConst.size());
-                WinHeaderInfo.insert(WinHeaderInfo.end(),
-                                     szConst.begin(), szConst.end());
-            };
+					WinHeaderInfo.push_back(((PBYTE)& dwValue)[0]);
+					WinHeaderInfo.push_back(((PBYTE)& dwValue)[1]);
+					WinHeaderInfo.push_back(((PBYTE)& dwValue)[2]);
+					WinHeaderInfo.push_back(((PBYTE)& dwValue)[3]);
+					WinHeaderInfo.push_back((BYTE)szConst.size());
+					WinHeaderInfo.insert(WinHeaderInfo.end(),
+						szConst.begin(), szConst.end());
+				};
 
-            std::map<std::string, DWORD>::iterator HeaderDataIter =
-                AdditionalHeaderData.begin();
-            while (HeaderDataIter != AdditionalHeaderData.end())
-            {
-                WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[0]);
-                WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[1]);
-                WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[2]);
-                WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[3]);
-                WinHeaderInfo.push_back((BYTE)HeaderDataIter->first.size());
-                WinHeaderInfo.insert(WinHeaderInfo.end(),
-                                     HeaderDataIter->first.begin(), HeaderDataIter->first.end());
-                HeaderDataIter++;
-                dwIndex++;
-            };
-            dwIndex--;
+				std::map<std::string, DWORD>::iterator HeaderDataIter =
+					AdditionalHeaderData.begin();
+				while (HeaderDataIter != AdditionalHeaderData.end())
+				{
+					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[0]);
+					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[1]);
+					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[2]);
+					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[3]);
+					WinHeaderInfo.push_back((BYTE)HeaderDataIter->first.size());
+					WinHeaderInfo.insert(WinHeaderInfo.end(),
+						HeaderDataIter->first.begin(), HeaderDataIter->first.end());
+					HeaderDataIter++;
+					dwIndex++;
+				};
+				dwIndex--;
 
-            WinHeaderInfo.insert(WinHeaderInfo.begin() + 1, 1, ((PBYTE)& dwIndex)[0]);
-            WinHeaderInfo.insert(WinHeaderInfo.begin() + 2, 1, ((PBYTE)& dwIndex)[1]);
+				WinHeaderInfo.insert(WinHeaderInfo.begin() + 1, 1, ((PBYTE)& dwIndex)[0]);
+				WinHeaderInfo.insert(WinHeaderInfo.begin() + 2, 1, ((PBYTE)& dwIndex)[1]);
 
-            ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
-                                            WinHeaderInfo.begin(), WinHeaderInfo.end());
-            dwCurrentOffset += (DWORD)WinHeaderInfo.size();
-            HeaderFileInfo.insert(std::make_pair(HeaderSection, HeaderInfo));
-        });
-        WinApi.HeadersInfo[HeaderFile] = HeaderFileInfo;
-    } while (FindNextFileA(
+				ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
+					WinHeaderInfo.begin(), WinHeaderInfo.end());
+				dwCurrentOffset += (DWORD)WinHeaderInfo.size();
+				HeaderFileInfo.insert(std::make_pair(HeaderSection, HeaderInfo));
+			});
+		WinApi.HeadersInfo[HeaderFile] = HeaderFileInfo;
+	} while (FindNextFileA(
                  hFind,
                  &WinFindData
              ));
@@ -2576,7 +2599,7 @@ BOOL InitializeWinApi()
         };
 
         std::string DllName = WinFindData.cFileName;
-        for (auto& ch : DllName) ch = tolower(ch);
+        std::for_each(DllName.begin(), DllName.end(), [](CHAR& ch) {ch = tolower(ch); });
 
         DllName.erase(DllName.find(".api"), sizeof(".api"));
         DllName.append(".dll");
@@ -2634,198 +2657,222 @@ BOOL InitializeWinApi()
         };
 
         std::for_each(ApiSections.begin(), ApiSections.end(),
-        [&](std::string const& ApiSection) -> void {
+			[&](std::string const& ApiSection) -> void {
 
-            _SupportedApiInfo ApiInfo;
-            std::string szSourceModule = ApiReader.Get(ApiSection.c_str(), "SourceModule", "");
-            for (auto& ch : szSourceModule) ch = tolower(ch);
+				_SupportedApiInfo ApiInfo;
+				ApiInfo.dwApiInfoOffset = 0;
+				std::string szSourceModule = ApiReader.Get(ApiSection.c_str(), "SourceModule", "");
+				std::for_each(szSourceModule.begin(), szSourceModule.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-            if (szSourceModule.compare("")) ApiInfo.SourceModule = szSourceModule;
+				if (szSourceModule.compare("")) ApiInfo.SourceModule = szSourceModule;
 
-            if (!ApiInfo.SourceModule.empty())
-            {
-                DWORD dwPos = (DWORD)ApiInfo.SourceModule.find(".api");
-                if (dwPos == (DWORD)std::string::npos)
-                {
-                    if (IsVerbous) Utils::Printf::Info("Bad api %s's source module %s",
-                                                           ApiSection.c_str(), ApiInfo.SourceModule.c_str());
-                    return;
-                };
-                ApiInfo.SourceModule.erase(dwPos, sizeof(".api"));
-                ApiInfo.SourceModule.append(".dll");
-                DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
-                return;
-            };
+				if (!ApiInfo.SourceModule.empty())
+				{
+					DWORD dwPos = (DWORD)ApiInfo.SourceModule.find(".api");
+					if (dwPos == (DWORD)std::string::npos)
+					{
+						if (IsVerbous) Utils::Printf::Info("Bad api %s's source module %s",
+							ApiSection.c_str(), ApiInfo.SourceModule.c_str());
+						return;
+					};
+					ApiInfo.SourceModule.erase(dwPos, sizeof(".api"));
+					ApiInfo.SourceModule.append(".dll");
+					DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
+					return;
+				};
 
-            std::vector<std::string> Headers;
-            std::string szHeader = ApiReader.Get(ApiSection.c_str(), "Header", "");
-            if (szHeader.compare(""))
-            {
-                DWORD dwPos = 0;
-                std::string szHeaderFile;
-                if (szHeader.back() != ';') szHeader.append(";");
-                while ((dwPos = (DWORD)szHeader.find(";")) != (DWORD)std::string::npos) {
-                    if (dwPos)
-                    {
-                        szHeaderFile = szHeader.substr(0, dwPos);
-                        while (szHeaderFile.back() == ' ') szHeaderFile.pop_back();
-                        while (szHeaderFile.front() == ' ') szHeaderFile.erase(0, 1);
-                        for (auto& ch : szHeaderFile) ch = tolower(ch);
-                        if (szHeaderFile.find(".api") == std::string::npos)
-                        {
-                            if (IsVerbous) Utils::Printf::Info("Bad api %s's header file %s",
-                                                                   ApiSection.c_str(), szHeaderFile.c_str());
-                            return;
-                        };
-                        Headers.push_back(szHeaderFile);
-                    };
-                    szHeader.erase(0, (SIZE_T)dwPos + 1);
-                };
-            };
+				std::vector<std::string> Headers;
+				std::string szHeader = ApiReader.Get(ApiSection.c_str(), "Header", "");
+				if (szHeader.compare(""))
+				{
+					DWORD dwPos = 0;
+					std::string szHeaderFile;
+					if (szHeader.back() != ';') szHeader.append(";");
+					while ((dwPos = (DWORD)szHeader.find(";")) != (DWORD)std::string::npos) {
+						if (dwPos)
+						{
+							szHeaderFile = szHeader.substr(0, dwPos);
+							while (szHeaderFile.back() == ' ') szHeaderFile.pop_back();
+							while (szHeaderFile.front() == ' ') szHeaderFile.erase(0, 1);
+							std::for_each(szHeaderFile.begin(), szHeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
+							if (szHeaderFile.find(".api") == std::string::npos)
+							{
+								if (IsVerbous) Utils::Printf::Info("Bad api %s's header file %s",
+									ApiSection.c_str(), szHeaderFile.c_str());
+								return;
+							};
+							Headers.push_back(szHeaderFile);
+						};
+						szHeader.erase(0, (SIZE_T)dwPos + 1);
+					};
+				};
 
-            std::vector<BYTE> WinApiInfo;
-            ApiInfo.dwApiInfoOffset = dwCurrentOffset;
-            WinApiInfo.push_back((BYTE)(ApiSection.length() + 2));
-            WinApiInfo.insert(WinApiInfo.end(),
-                              ApiSection.begin(), ApiSection.end());
-            WinApiInfo.push_back((BYTE)' ');
-            WinApiInfo.push_back((BYTE)'(');
+				std::vector<BYTE> WinApiInfo;
+				ApiInfo.dwApiInfoOffset = dwCurrentOffset;
 
-            BOOL bUseOldStack = FALSE;
-            INT dwParamCount = 0;
-            dwParamCount = ApiReader.GetInteger(ApiSection.c_str(), "ParamCount", 0);
-            if (dwParamCount < 0)
-            {
-                bUseOldStack = TRUE;
-                dwParamCount = 0 - dwParamCount;
-            };
+				std::string UnDecoratedSymbol = ApiSection;
+				if (UnDecoratedSymbol.front() == '?')
+				{
+					CHAR Symbol[MAX_PATH];
+					if (!UnDecorateSymbolName(
+						UnDecoratedSymbol.c_str(),
+						Symbol,
+						sizeof(Symbol),
+						UNDNAME_COMPLETE
+					))
+					{
+						if (IsVerbous) Utils::Printf::Info("Cannot undecorate the api %s",
+							UnDecoratedSymbol.c_str());
+						return;
+					};
+					UnDecoratedSymbol = Symbol;
+				};
 
-            WinApiInfo.push_back((BYTE)dwParamCount);
-            for (DWORD dwParamIndex = 1; dwParamIndex <= (DWORD)dwParamCount; dwParamIndex++)
-            {
-                std::string szParamIndex = std::to_string(dwParamIndex);
-                std::string szParameter = ApiReader.Get(ApiSection.c_str(), szParamIndex.c_str(), "");
-                if (!szParameter.compare(""))
-                {
-                    if (IsVerbous) Utils::Printf::Info("Bad api %s with empty parameter %s",
-                                                           ApiSection.c_str(), szParamIndex.c_str());
-                    return;
-                };
+				WinApiInfo.push_back((BYTE)(UnDecoratedSymbol.length() + 2));
+				WinApiInfo.insert(WinApiInfo.end(),
+					UnDecoratedSymbol.begin(), UnDecoratedSymbol.end());
 
-                DWORD dwParamNameOffset = (DWORD)szParameter.find_last_of(" ");
-                if (!dwParamNameOffset)
-                {
-                    if (IsVerbous) Utils::Printf::Info("Bad api %s with parameter %s without datatype",
-                                                           ApiSection.c_str(), szParameter.c_str());
-                    return;
-                };
-                dwParamNameOffset++;
+				WinApiInfo.push_back((BYTE)' ');
+				WinApiInfo.push_back((BYTE)'(');
 
-                std::string ParamName = szParameter.substr((SIZE_T)dwParamNameOffset);
-                std::string DataType = szParameter.substr(0, dwParamNameOffset - 1);
-                while (DataType.back() == ' ') DataType.pop_back();
+				BOOL bUseOldStack = FALSE;
+				INT dwParamCount = 0;
+				dwParamCount = ApiReader.GetInteger(ApiSection.c_str(), "ParamCount", 0);
+				if (dwParamCount < 0)
+				{
+					bUseOldStack = TRUE;
+					dwParamCount = 0 - dwParamCount;
+				};
 
-                BOOL IsHeader = FALSE;
-                if (DataType.front() == '[' && DataType.back() == ']')
-                {
-                    DataType.pop_back();
-                    DataType.erase(0, 1);
-                    if (DataType.back() != '*' &&
-                            !(DataType.front() == 'L' &&
-                              DataType.at(1) == 'P')) IsHeader = TRUE;
-                };
+				WinApiInfo.push_back((BYTE)dwParamCount);
+				for (DWORD dwParamIndex = 1; dwParamIndex <= (DWORD)dwParamCount; dwParamIndex++)
+				{
+					CHAR bIndex[10] = { 0 };
+					itoa(dwParamIndex, bIndex, 10);
+					std::string szParamIndex = bIndex;
 
-                DWORD dwTotaParamlSize = (DWORD)ParamName.length() + (DWORD)DataType.length() + 13;
-                WinApiInfo.push_back((BYTE)dwTotaParamlSize);
+					std::string szParameter = ApiReader.Get(ApiSection.c_str(), szParamIndex.c_str(), "");
+					if (!szParameter.compare(""))
+					{
+						if (IsVerbous) Utils::Printf::Info("Bad api %s with empty parameter %s",
+							ApiSection.c_str(), szParamIndex.c_str());
+						return;
+					};
 
-                std::string szNewParam = "\n        ";
-                WinApiInfo.insert(WinApiInfo.end(),
-                                  szNewParam.begin(), szNewParam.end());
+					DWORD dwParamNameOffset = (DWORD)szParameter.find_last_of(" ");
+					if (!dwParamNameOffset)
+					{
+						if (IsVerbous) Utils::Printf::Info("Bad api %s with parameter %s without datatype",
+							ApiSection.c_str(), szParameter.c_str());
+						return;
+					};
+					dwParamNameOffset++;
 
-                WinApiInfo.insert(WinApiInfo.end(),
-                                  DataType.begin(), DataType.end());
-                WinApiInfo.push_back((BYTE)' ');
-                WinApiInfo.insert(WinApiInfo.end(),
-                                  ParamName.begin(), ParamName.end());
+					std::string ParamName = szParameter.substr((SIZE_T)dwParamNameOffset);
+					std::string DataType = szParameter.substr(0, dwParamNameOffset - 1);
+					while (DataType.back() == ' ') DataType.pop_back();
 
-                WinApiInfo.push_back((BYTE)' ');
-                WinApiInfo.push_back((BYTE)'=');
-                WinApiInfo.push_back((BYTE)' ');
+					BOOL IsHeader = FALSE;
+					if (DataType.front() == '[' && DataType.back() == ']')
+					{
+						DataType.pop_back();
+						DataType.erase(0, 1);
+						if (DataType.back() != '*' &&
+							!(DataType.front() == 'L' &&
+								DataType.at(1) == 'P')) IsHeader = TRUE;
+					};
 
-                DWORD dwSize = 0;
-                if (IsHeader)
-                {
-                    if (Headers.empty())
-                    {
-                        bUseOldStack = TRUE;
-                        dwSize = GetTypeSize(DataType);
-                        WinApiInfo.push_back((BYTE)dwSize);
-                        WinApiInfo.push_back((BYTE)0);
-                    }
-                    else
-                    {
-                        SupportedHeaderInfo HeaderData;
-                        std::vector<std::string>::iterator HeadersIter =
-                            Headers.begin();
+					DWORD dwTotaParamlSize = (DWORD)ParamName.length() + (DWORD)DataType.length() + 13;
+					WinApiInfo.push_back((BYTE)dwTotaParamlSize);
 
-                        while (HeadersIter != Headers.end())
-                        {
-                            if (GetHeaderInfo(DataType, *HeadersIter, &HeaderData))
-                            {
-                                dwSize = HeaderData.dwHeaderSize;
-                                WinApiInfo.push_back((BYTE)dwSize);
-                                WinApiInfo.push_back((BYTE)1);
-                                WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[0]);
-                                WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[1]);
-                                WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[2]);
-                                WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[3]);
-                                break;
-                            };
-                            HeadersIter++;
-                        };
+					std::string szNewParam = "\n        ";
+					WinApiInfo.insert(WinApiInfo.end(),
+						szNewParam.begin(), szNewParam.end());
 
-                        if (HeadersIter == Headers.end())
-                        {
-                            bUseOldStack = TRUE;
-                            dwSize = GetTypeSize(DataType);
-                            WinApiInfo.push_back((BYTE)dwSize);
-                            WinApiInfo.push_back((BYTE)0);
-                        };
-                    };
-                }
-                else
-                {
-                    if (IsStrType(DataType))
-                    {
-                        dwSize = sizeof(LPVOID);
-                        WinApiInfo.push_back((BYTE)dwSize);
-                        WinApiInfo.push_back((BYTE)2);
-                    }
-                    else if (IsBool(DataType))
-                    {
-                        dwSize = 1;
-                        WinApiInfo.push_back((BYTE)1);
-                        WinApiInfo.push_back((BYTE)3);
-                    }
-                    else
-                    {
-                        dwSize = GetTypeSize(DataType);
-                        WinApiInfo.push_back((BYTE)dwSize);
-                        WinApiInfo.push_back((BYTE)0);
-                    };
-                };
+					WinApiInfo.insert(WinApiInfo.end(),
+						DataType.begin(), DataType.end());
+					WinApiInfo.push_back((BYTE)' ');
+					WinApiInfo.insert(WinApiInfo.end(),
+						ParamName.begin(), ParamName.end());
+
+					WinApiInfo.push_back((BYTE)' ');
+					WinApiInfo.push_back((BYTE)'=');
+					WinApiInfo.push_back((BYTE)' ');
+
+					DWORD dwSize = 0;
+					if (IsHeader)
+					{
+						if (Headers.empty())
+						{
+							bUseOldStack = TRUE;
+							dwSize = GetTypeSize(DataType);
+							WinApiInfo.push_back((BYTE)dwSize);
+							WinApiInfo.push_back((BYTE)0);
+						}
+						else
+						{
+							SupportedHeaderInfo HeaderData = { 0 };
+							std::vector<std::string>::iterator HeadersIter =
+								Headers.begin();
+
+							while (HeadersIter != Headers.end())
+							{
+								if (GetHeaderInfo(DataType, *HeadersIter, &HeaderData))
+								{
+									dwSize = HeaderData.dwHeaderSize;
+									WinApiInfo.push_back((BYTE)dwSize);
+									WinApiInfo.push_back((BYTE)1);
+									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[0]);
+									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[1]);
+									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[2]);
+									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[3]);
+									break;
+								};
+								HeadersIter++;
+							};
+
+							if (HeadersIter == Headers.end())
+							{
+								bUseOldStack = TRUE;
+								dwSize = GetTypeSize(DataType);
+								WinApiInfo.push_back((BYTE)dwSize);
+								WinApiInfo.push_back((BYTE)0);
+							};
+						};
+					}
+					else
+					{
+						if (IsStrType(DataType))
+						{
+							dwSize = sizeof(LPVOID);
+							WinApiInfo.push_back((BYTE)dwSize);
+							WinApiInfo.push_back((BYTE)2);
+						}
+						else if (IsBool(DataType))
+						{
+							dwSize = 1;
+							WinApiInfo.push_back((BYTE)1);
+							WinApiInfo.push_back((BYTE)3);
+						}
+						else
+						{
+							dwSize = GetTypeSize(DataType);
+							WinApiInfo.push_back((BYTE)dwSize);
+							WinApiInfo.push_back((BYTE)0);
+						};
+					};
 #if ! (defined(_M_X64) || defined(__amd64__))
-                if (dwSize == 8) bUseOldStack = TRUE;
+					if (dwSize == 8) bUseOldStack = TRUE;
 #endif
-            };
+				};
 
-            WinApiInfo.push_back((BYTE)bUseOldStack);
-            WinApiInfo.push_back((BYTE)bClearStack);
-            ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
-                                            WinApiInfo.begin(), WinApiInfo.end());
-            dwCurrentOffset += (DWORD)WinApiInfo.size();
-            DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
-        });
+				WinApiInfo.push_back((BYTE)bUseOldStack);
+				WinApiInfo.push_back((BYTE)bClearStack);
+				ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
+					WinApiInfo.begin(), WinApiInfo.end());
+				dwCurrentOffset += (DWORD)WinApiInfo.size();
+				DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
+			});
         WinApi.KnownDlls[DllName] = DllInfo;
 
     } while (FindNextFileA(
