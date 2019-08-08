@@ -2462,7 +2462,9 @@ BOOL InitializeWinApi()
 
 								DWORD dwValue = 0;
 								INT ret = 0;
-								if (!(ret = sscanf(szValue.c_str(), "%lu", &dwValue))
+								if (!(ret = sscanf(szValue.c_str(), 
+									(szValue[0] == '0' && tolower(szValue[1]) == 'x') ? "%lx" : "%lu",
+									&dwValue))
 									|| ret == EOF)
 								{
 									if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
@@ -2521,7 +2523,9 @@ BOOL InitializeWinApi()
 					};
 					DWORD dwValue = 0;
 					INT ret = 0;
-					if (!(ret = sscanf(szValue.c_str(), "%lu", &dwValue))
+					if (!(ret = sscanf(szValue.c_str(),
+						(szValue[0] == '0' && tolower(szValue[1]) == 'x') ? "%lx" : "%lu",
+						&dwValue))
 						|| ret == EOF)
 					{
 						if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
