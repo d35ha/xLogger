@@ -12,7 +12,7 @@ Commonly there's two types of API hooking:
   * Depends on changing the API addresses, assigned by the loader, at the IAT with the addresses of the trampoline functions
   * It will fail at so many cases:
     * Manual API resolving</br>
-      When the malicious sample manually resolves all/some of it's APIs, these API addresses won't be stored at the IAT so it cannot be hooked
+      When the malicious sample manually resolves all/some of its APIs, these API addresses won't be stored at the IAT so it cannot be hooked
     * Dynamic API resolving with GetProcAddress</br>
     * Manipulated IAT</br>
       I've already proved that API calls can be obfuscated by misusing the IAT at [CallObfuscator](https://github.com/d35ha/CallObfuscator)
@@ -78,7 +78,7 @@ Options:
   * Use this option to include any of the loaded modules to the logging scope
   * This is very good when the sample is loading any external dll (ex: python27.dll)
   * Notice that this also can be used to include the system dlls (ex: kerenl32.dll) to the scope
-  * Example `--exclude-mods kernelbase.dll,msvcrt.dll,evil.dll`
+  * Example `--external-mods kernelbase.dll,msvcrt.dll,evil.dll`
  
 * `--exclude-apis`
   * By default the tool will log the calls made to all of the pre-defined apis
@@ -109,6 +109,7 @@ Options:
 * `--detach-on-system`
   * This will make xLogger terminate itelf once it reaches the system breakpoint (with `-c`) or the attach breakpoint (with `-attach`)
   * Good for stealther logging
+  * The logging will never stop, even after xLogger is terminated
   * The only drawback of terminating xLogger is that no subsequent loaded dlls will be hooked, only calls made to the already-loaded dlls will be logged
   
 * `--hide-debugger`
