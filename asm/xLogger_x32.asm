@@ -334,6 +334,13 @@ STRING_PARAMETER:
     cmp     eax, 0ffffh
     jg      VALID_POINTER
     test    eax, eax
+    call    EAX_TO_HEX
+    mov     dword [esp], esi
+    mov     esi, ecx
+    mov     ecx, edx
+    rep     movsb
+    mov     esi, [esp]
+    add     dword [esi - 4h], edx
     jnz     NEXT_PARAM
     mov     dword [edi], "NULL"
     add     dword [esi - 4h], 4
