@@ -327,7 +327,7 @@ STRING_PARAMETER:
     cmp     rax, 0ffffh
     jg      VALID_POINTER
     test    rax, rax
-    jnz     NEXT_PARAM
+    jnz     VALUE_PARAMETER
     mov     dword [r8], "NULL"
     add     qword [rsi - 8h], 4
     jmp     NEXT_PARAM
