@@ -1586,13 +1586,6 @@ Header=msvcrxx.h.api;
 ParamCount=0
 [?unexpected@@YAXXZ]
 ParamCount=0
-[CxxFrameHandler]
-1=EHExceptionRecord* pExcept
-2=EHRegistrationNode* pRN
-3=void* pContext
-4=DispatcherContext* pDC
-ParamCount=4
-Header=msvcrxx.h.api;
 [except_handler3]
 1=PEXCEPTION_RECORD exception_record
 2=PEXCEPTION_REGISTRATION registration
