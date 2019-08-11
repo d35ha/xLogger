@@ -156,6 +156,7 @@ SourceModule=kernel32.api
   
 * Future options
   * `--auto-attach` to automatically attach the logger to any process created by the current process, I've the theory, just need time
+  * `--log-all` to log calls to all of the exported functions even if it's not defined at its dll definition file
 
 # RealLife Samples
 
