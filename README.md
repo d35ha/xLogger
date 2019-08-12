@@ -107,7 +107,7 @@ Options:
   * Because of using a shellcode, what is actually logging the calls is the process itself, so terminating xLogger will not stop the process from logging any subsequent calls with the same constrains defined by the used options
   
 * `--detach-on-system`
-  * This will make xLogger terminate itelf once it reaches the system breakpoint (with `-c`) or the attach breakpoint (with `-attach`)
+  * This will make xLogger terminate itself once it reaches the system breakpoint (with `-c`) or the attach breakpoint (with `-attach`)
   * Good for stealther logging
   * The logging will never stop, even after xLogger is terminated
   * The only drawback of terminating xLogger is that no subsequent loaded dlls will be hooked, only calls made to the already-loaded dlls will be logged
@@ -115,7 +115,7 @@ Options:
 * `--hide-debugger`
   * xLogger itself is a small debugger, so basically it can be detected as any other debugger
   * Using this option, xLogger will use some of the anti-detection techniques to hide itself
-  * Currently, the implemented techniques are PEB `NtGlobalFlags` and `BeingDebugged`, a lot to be added ...
+  * Currently, the implemented techniques are PEB `NtGlobalFlag` and `BeingDebugged`, a lot to be added ...
 
 * `--external-console`
   * By default xLogger console handle will be passed to the process, so the process stdout/stderr/stdin will be the same as the tool
