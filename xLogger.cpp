@@ -16,8 +16,8 @@
 #pragma comment(lib, "dbghelp.lib")
 
 typedef struct _MY_FILE_NAME_INFORMATION {
-	ULONG FileNameLength;
-	WCHAR FileName[1];
+    ULONG FileNameLength;
+    WCHAR FileName[1];
 } MY_FILE_NAME_INFORMATION, * PMY_FILE_NAME_INFORMATION;
 
 static INT PageSize = 0;
@@ -67,7 +67,6 @@ struct _ShellCodeInfo
     std::vector<BYTE> ShellCode;
 } ShellCodeInfo;
 
-
 struct _ApiInfo
 {
     DWORD dwApiInfoOffset;
@@ -91,7 +90,6 @@ struct _SupportedApiInfo
     std::string SourceModule;
 };
 
-
 typedef struct _SupportedHeaderInfo
 {
     DWORD dwHeaderInfoOffset;
@@ -109,7 +107,7 @@ struct _WinApi
     std::vector<std::map<std::string,
         std::map<std::string,
         _SupportedApiInfo>>::iterator> CachedSourceModules;
-	std::vector<std::string> CrtDlls;
+    std::vector<std::string> CrtDlls;
     std::map<std::string, DWORD> WinTypesSizes;
     std::vector<std::string> WinTypesStr;
 } WinApi;
@@ -268,142 +266,142 @@ BYTE bLoggerShellCode[] =
     0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x90
 };
 std::vector<BYTE> LoggerShellCode(bLoggerShellCode,
-	bLoggerShellCode + sizeof(bLoggerShellCode));
+    bLoggerShellCode + sizeof(bLoggerShellCode));
 
 #else
 BYTE bLoggerShellCode[] =
 {
-	0x50, 0x64, 0xa1, 0x30, 0x00, 0x00, 0x00, 0x8b, 0x40, 0x0c, 0x8b, 0x40, 0x0c, 0x89, 0xc1, 0x8b,
-	0x50, 0x18, 0x39, 0x54, 0x24, 0x0c, 0x7c, 0x0e, 0x8b, 0x50, 0x20, 0x03, 0x50, 0x18, 0x39, 0x54,
-	0x24, 0x0c, 0x7d, 0x02, 0xeb, 0x06, 0x8b, 0x00, 0x39, 0xc8, 0x75, 0xe3, 0x39, 0xc8, 0x0f, 0x84,
-	0x8a, 0x00, 0x00, 0x00, 0xb9, 0xd1, 0x00, 0x00, 0x00, 0x03, 0x0c, 0x24, 0x0f, 0xb7, 0x11, 0x85,
-	0xd2, 0x74, 0x75, 0x83, 0xec, 0x14, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0x5c, 0x24,
-	0x08, 0x89, 0x6c, 0x24, 0x0c, 0x89, 0x44, 0x24, 0x10, 0x8b, 0x40, 0x30, 0x31, 0xf6, 0x83, 0xc1,
-	0x02, 0x0f, 0xb6, 0x31, 0x41, 0x4a, 0x31, 0xff, 0x0f, 0xb6, 0x1c, 0x78, 0x80, 0xfb, 0x5a, 0x7f,
-	0x08, 0x80, 0xfb, 0x41, 0x7c, 0x03, 0x80, 0xc3, 0x20, 0x0f, 0xb6, 0x2c, 0x39, 0x39, 0xdd, 0x75,
-	0x1d, 0x47, 0x39, 0xf7, 0x75, 0xe2, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x8b, 0x5c, 0x24,
-	0x08, 0x8b, 0x6c, 0x24, 0x0c, 0x8b, 0x44, 0x24, 0x10, 0x83, 0xc4, 0x14, 0xeb, 0x20, 0x29, 0xf2,
-	0x01, 0xf1, 0x85, 0xd2, 0x75, 0xbb, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x8b, 0x5c, 0x24,
-	0x08, 0x8b, 0x6c, 0x24, 0x0c, 0x83, 0xc4, 0x14, 0x83, 0xc4, 0x04, 0xc2, 0x04, 0x00, 0x89, 0xc2,
-	0xb8, 0xd1, 0x00, 0x00, 0x00, 0x03, 0x04, 0x24, 0x0f, 0xb7, 0x08, 0x8d, 0x44, 0x08, 0x02, 0xff,
-	0xe0,
+    0x50, 0x64, 0xa1, 0x30, 0x00, 0x00, 0x00, 0x8b, 0x40, 0x0c, 0x8b, 0x40, 0x0c, 0x89, 0xc1, 0x8b,
+    0x50, 0x18, 0x39, 0x54, 0x24, 0x0c, 0x7c, 0x0e, 0x8b, 0x50, 0x20, 0x03, 0x50, 0x18, 0x39, 0x54,
+    0x24, 0x0c, 0x7d, 0x02, 0xeb, 0x06, 0x8b, 0x00, 0x39, 0xc8, 0x75, 0xe3, 0x39, 0xc8, 0x0f, 0x84,
+    0x8a, 0x00, 0x00, 0x00, 0xb9, 0xd1, 0x00, 0x00, 0x00, 0x03, 0x0c, 0x24, 0x0f, 0xb7, 0x11, 0x85,
+    0xd2, 0x74, 0x75, 0x83, 0xec, 0x14, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0x5c, 0x24,
+    0x08, 0x89, 0x6c, 0x24, 0x0c, 0x89, 0x44, 0x24, 0x10, 0x8b, 0x40, 0x30, 0x31, 0xf6, 0x83, 0xc1,
+    0x02, 0x0f, 0xb6, 0x31, 0x41, 0x4a, 0x31, 0xff, 0x0f, 0xb6, 0x1c, 0x78, 0x80, 0xfb, 0x5a, 0x7f,
+    0x08, 0x80, 0xfb, 0x41, 0x7c, 0x03, 0x80, 0xc3, 0x20, 0x0f, 0xb6, 0x2c, 0x39, 0x39, 0xdd, 0x75,
+    0x1d, 0x47, 0x39, 0xf7, 0x75, 0xe2, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x8b, 0x5c, 0x24,
+    0x08, 0x8b, 0x6c, 0x24, 0x0c, 0x8b, 0x44, 0x24, 0x10, 0x83, 0xc4, 0x14, 0xeb, 0x20, 0x29, 0xf2,
+    0x01, 0xf1, 0x85, 0xd2, 0x75, 0xbb, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x8b, 0x5c, 0x24,
+    0x08, 0x8b, 0x6c, 0x24, 0x0c, 0x83, 0xc4, 0x14, 0x83, 0xc4, 0x04, 0xc2, 0x04, 0x00, 0x89, 0xc2,
+    0xb8, 0xd1, 0x00, 0x00, 0x00, 0x03, 0x04, 0x24, 0x0f, 0xb7, 0x08, 0x8d, 0x44, 0x08, 0x02, 0xff,
+    0xe0,
 #define EXTERNAL_MODS_LIST_OFFSET 209
-	0x00, 0x00, 0xb8, 0x1d, 0x05, 0x00, 0x00, 0x03, 0x04, 0x24, 0x01, 0xc8, 0x3b, 0x44, 0x24,
-	0x0c, 0x75, 0x06, 0x83, 0xc4, 0x04, 0xc2, 0x04, 0x00, 0x56, 0x57, 0x53, 0x55, 0xbd,
+    0x00, 0x00, 0xb8, 0x1d, 0x05, 0x00, 0x00, 0x03, 0x04, 0x24, 0x01, 0xc8, 0x3b, 0x44, 0x24,
+    0x0c, 0x75, 0x06, 0x83, 0xc4, 0x04, 0xc2, 0x04, 0x00, 0x56, 0x57, 0x53, 0x55, 0xbd,
 #define API_INFO_ADDRESS_OFFSET 238
-	0x00, 0x00, 0x00, 0x00,
-	0x87, 0x6c, 0x24, 0x18, 0x03, 0x6c, 0x24, 0x18, 0xbe, 0x01, 0x07, 0x00, 0x00, 0x03,
-	0x74, 0x24, 0x10, 0x01, 0xce, 0xf3, 0x90, 0xb0, 0x01, 0x86, 0x06, 0x84, 0xc0, 0x75, 0xf6, 0x83,
-	0xc6, 0x05, 0x56, 0x83, 0xc2, 0x2c, 0x8b, 0x42, 0x04, 0x0f, 0xb7, 0x12, 0x66, 0xd1, 0xea, 0x8b,
-	0x3c, 0x24, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x5d, 0xc6, 0x44, 0x17, 0x02, 0x20, 0x31,
-	0xc9, 0x39, 0xca, 0x74, 0x0a, 0x8a, 0x1c, 0x48, 0x88, 0x5c, 0x0f, 0x01, 0x41, 0xeb, 0xf2, 0x83,
-	0xc2, 0x03, 0x01, 0xd7, 0x89, 0x56, 0xfc, 0x64, 0xa1, 0x24, 0x00, 0x00, 0x00, 0xe8, 0x26, 0x05,
-	0x00, 0x00, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x5d, 0xc6, 0x44, 0x17, 0x02, 0x20, 0x47,
-	0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x83, 0xc2, 0x03, 0x8b, 0x34, 0x24, 0x01, 0x56, 0xfc, 0x8a,
-	0x55, 0x00, 0x45, 0x89, 0xd1, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xee, 0xf3, 0xa4, 0x5e, 0x01,
-	0x56, 0xfc, 0x01, 0xd5, 0x0f, 0xb6, 0x7d, 0x00, 0x45, 0x83, 0xec, 0x08, 0x85, 0xff, 0x0f, 0x84,
-	0xf7, 0x02, 0x00, 0x00, 0x31, 0xdb, 0x0f, 0xb6, 0x55, 0x00, 0x45, 0x89, 0xd1, 0x89, 0x34, 0x24,
-	0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xee, 0xf3, 0xa4, 0x8b, 0x34, 0x24,
-	0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x01, 0xd5, 0x8b, 0x44, 0x9c, 0x28, 0x0f, 0xb6, 0x55,
-	0x00, 0x45, 0x83, 0xfa, 0x08, 0x74, 0x31, 0x83, 0xfa, 0x04, 0x74, 0x0f, 0x25, 0xff, 0xff, 0x00,
-	0x00, 0x83, 0xfa, 0x02, 0x74, 0x05, 0x25, 0xff, 0x00, 0x00, 0x00, 0x0f, 0xb6, 0x55, 0x00, 0x45,
-	0x85, 0xd2, 0x74, 0x42, 0x83, 0xfa, 0x01, 0x0f, 0x84, 0x97, 0x00, 0x00, 0x00, 0x83, 0xfa, 0x02,
-	0x0f, 0x84, 0x54, 0x01, 0x00, 0x00, 0xeb, 0x67, 0xe8, 0x7b, 0x04, 0x00, 0x00, 0x89, 0x34, 0x24,
-	0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xc6, 0x04, 0x17, 0x3a, 0x89, 0xce, 0x89,
-	0xd1, 0xf3, 0xa4, 0x42, 0x8b, 0x34, 0x24, 0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x43, 0x47,
-	0x8b, 0x44, 0x9c, 0x28, 0xeb, 0xb5, 0xe8, 0x4d, 0x04, 0x00, 0x00, 0x89, 0x34, 0x24, 0x89, 0x7c,
-	0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24,
-	0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x43, 0x39, 0xfb, 0x0f, 0x84, 0x56, 0x02, 0x00, 0x00,
-	0x8b, 0x56, 0xfc, 0xc6, 0x04, 0x16, 0x2c, 0xff, 0x46, 0xfc, 0xe9, 0x37, 0xff, 0xff, 0xff, 0x89,
-	0xf1, 0x03, 0x4e, 0xfc, 0x85, 0xc0, 0x75, 0x10, 0xc7, 0x01, 0x46, 0x41, 0x4c, 0x53, 0xc6, 0x41,
-	0x04, 0x45, 0x83, 0x46, 0xfc, 0x05, 0xeb, 0xcb, 0xc7, 0x01, 0x54, 0x52, 0x55, 0x45, 0x83, 0x46,
-	0xfc, 0x04, 0xeb, 0xbf, 0x55, 0x31, 0xc9, 0x89, 0x7c, 0x24, 0x08, 0x8b, 0x6d, 0x00, 0x03, 0x6c,
-	0x24, 0x24, 0x80, 0x7d, 0x00, 0x00, 0x75, 0x38, 0x45, 0x0f, 0xb7, 0x55, 0x00, 0x83, 0xc5, 0x02,
-	0x85, 0xd2, 0x0f, 0x84, 0x88, 0x00, 0x00, 0x00, 0x4a, 0x01, 0xcd, 0x8b, 0x7d, 0x00, 0x83, 0xc5,
-	0x04, 0x0f, 0xb6, 0x4d, 0x00, 0x45, 0x39, 0xf8, 0x75, 0xe6, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89,
-	0xee, 0xf3, 0xa4, 0x8b, 0x74, 0x24, 0x04, 0x89, 0xf9, 0x29, 0xf1, 0x89, 0x4e, 0xfc, 0xeb, 0x6d,
-	0x45, 0x0f, 0xb7, 0x55, 0x00, 0x83, 0xc5, 0x02, 0x50, 0x31, 0xc0, 0x85, 0xd2, 0x74, 0x40, 0x4a,
-	0x01, 0xcd, 0x8b, 0x7d, 0x00, 0x83, 0xc5, 0x04, 0x0f, 0xb6, 0x4d, 0x00, 0x45, 0x89, 0xfe, 0x23,
-	0x3c, 0x24, 0x39, 0xfe, 0x75, 0xe5, 0x8b, 0x7c, 0x24, 0x08, 0x03, 0x7f, 0xfc, 0x89, 0xee, 0xf3,
-	0xa4, 0x8b, 0x74, 0x24, 0x08, 0x66, 0xc7, 0x07, 0x20, 0x7c, 0xc6, 0x47, 0x02, 0x20, 0x83, 0xc7,
-	0x03, 0x89, 0xf9, 0x29, 0xf1, 0x89, 0x4e, 0xfc, 0x40, 0x0f, 0xb6, 0x4d, 0xff, 0xeb, 0xbc, 0x89,
-	0xc2, 0x58, 0x8b, 0x74, 0x24, 0x04, 0x85, 0xd2, 0x74, 0x06, 0x83, 0x6e, 0xfc, 0x03, 0xeb, 0x0d,
-	0x8b, 0x7c, 0x24, 0x08, 0x5d, 0x83, 0xc5, 0x04, 0xe9, 0xe9, 0xfe, 0xff, 0xff, 0x8b, 0x7c, 0x24,
-	0x08, 0x5d, 0x83, 0xc5, 0x04, 0xe9, 0xf9, 0xfe, 0xff, 0xff, 0x31, 0xd2, 0x89, 0x7c, 0x24, 0x04,
-	0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x3d, 0xff, 0xff, 0x00, 0x00, 0x7f, 0x2b, 0x85, 0xc0, 0xe8, 0x15,
-	0x03, 0x00, 0x00, 0x89, 0x34, 0x24, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x01,
-	0x56, 0xfc, 0x0f, 0x85, 0xcb, 0xfe, 0xff, 0xff, 0xc7, 0x07, 0x4e, 0x55, 0x4c, 0x4c, 0x83, 0x46,
-	0xfc, 0x04, 0xe9, 0xbc, 0xfe, 0xff, 0xff, 0x80, 0x78, 0x01, 0x00, 0x74, 0x69, 0xc6, 0x07, 0x22,
-	0x8a, 0x0c, 0x10, 0x84, 0xc9, 0x0f, 0x84, 0xcd, 0x00, 0x00, 0x00, 0x80, 0xf9, 0x5c, 0x75, 0x08,
-	0xc6, 0x44, 0x17, 0x01, 0x5c, 0x47, 0xeb, 0x3d, 0x80, 0xf9, 0x22, 0x75, 0x08, 0xc6, 0x44, 0x17,
-	0x01, 0x5c, 0x47, 0xeb, 0x30, 0x80, 0xf9, 0x0a, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
-	0x6e, 0x42, 0x47, 0xeb, 0xcb, 0x80, 0xf9, 0x09, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
-	0x74, 0x42, 0x47, 0xeb, 0xbb, 0x80, 0xf9, 0x0d, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
-	0x72, 0x42, 0x47, 0xeb, 0xab, 0x80, 0xf9, 0x20, 0x7c, 0x7e, 0x80, 0xf9, 0x7e, 0x7f, 0x79, 0x88,
-	0x4c, 0x17, 0x01, 0x42, 0xeb, 0x9a, 0xc6, 0x07, 0x4c, 0xc6, 0x47, 0x01, 0x22, 0x8a, 0x0c, 0x50,
-	0x84, 0xc9, 0x74, 0x63, 0x80, 0xf9, 0x5c, 0x75, 0x08, 0xc6, 0x44, 0x17, 0x02, 0x5c, 0x47, 0xeb,
-	0x3d, 0x80, 0xf9, 0x22, 0x75, 0x08, 0xc6, 0x44, 0x17, 0x02, 0x5c, 0x47, 0xeb, 0x30, 0x80, 0xf9,
-	0x0a, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x6e, 0x42, 0x47, 0xeb, 0xcf, 0x80, 0xf9,
-	0x09, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x74, 0x42, 0x47, 0xeb, 0xbf, 0x80, 0xf9,
-	0x0d, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x74, 0x42, 0x47, 0xeb, 0xaf, 0x80, 0xf9,
-	0x20, 0x7c, 0x14, 0x80, 0xf9, 0x7e, 0x7f, 0x0f, 0x88, 0x4c, 0x17, 0x02, 0x8a, 0x4c, 0x50, 0x01,
-	0x84, 0xc9, 0x75, 0x03, 0x42, 0xeb, 0x96, 0x42, 0xc6, 0x44, 0x17, 0x01, 0x22, 0x83, 0xc2, 0x02,
-	0x29, 0xf7, 0x2b, 0x7e, 0xfc, 0x01, 0xfa, 0x01, 0x56, 0xfc, 0xe9, 0xc4, 0xfd, 0xff, 0xff, 0x8b,
-	0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0xe9, 0x9b, 0xfd, 0xff, 0xff, 0x89, 0x34, 0x24, 0x89, 0x7c,
-	0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xba, 0x02, 0x00, 0x00, 0x00, 0xe8, 0x02, 0x00, 0x00,
-	0x00, 0x29, 0x20, 0x5e, 0xeb, 0x1a, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03,
-	0x7e, 0xfc, 0xba, 0x03, 0x00, 0x00, 0x00, 0xe8, 0x03, 0x00, 0x00, 0x00, 0x0a, 0x29, 0x20, 0x5e,
-	0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x01, 0x56, 0xfc, 0x83, 0xc4,
-	0x08, 0x80, 0x7d, 0x00, 0x00, 0x0f, 0x85, 0x4f, 0x01, 0x00, 0x00, 0x45, 0x0f, 0xb6, 0x6d, 0x00,
-	0x55, 0x83, 0xec, 0x08, 0x54, 0xb8,
+    0x00, 0x00, 0x00, 0x00,
+    0x87, 0x6c, 0x24, 0x18, 0x03, 0x6c, 0x24, 0x18, 0xbe, 0x01, 0x07, 0x00, 0x00, 0x03,
+    0x74, 0x24, 0x10, 0x01, 0xce, 0xf3, 0x90, 0xb0, 0x01, 0x86, 0x06, 0x84, 0xc0, 0x75, 0xf6, 0x83,
+    0xc6, 0x05, 0x56, 0x83, 0xc2, 0x2c, 0x8b, 0x42, 0x04, 0x0f, 0xb7, 0x12, 0x66, 0xd1, 0xea, 0x8b,
+    0x3c, 0x24, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x5d, 0xc6, 0x44, 0x17, 0x02, 0x20, 0x31,
+    0xc9, 0x39, 0xca, 0x74, 0x0a, 0x8a, 0x1c, 0x48, 0x88, 0x5c, 0x0f, 0x01, 0x41, 0xeb, 0xf2, 0x83,
+    0xc2, 0x03, 0x01, 0xd7, 0x89, 0x56, 0xfc, 0x64, 0xa1, 0x24, 0x00, 0x00, 0x00, 0xe8, 0x26, 0x05,
+    0x00, 0x00, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x5d, 0xc6, 0x44, 0x17, 0x02, 0x20, 0x47,
+    0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x83, 0xc2, 0x03, 0x8b, 0x34, 0x24, 0x01, 0x56, 0xfc, 0x8a,
+    0x55, 0x00, 0x45, 0x89, 0xd1, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xee, 0xf3, 0xa4, 0x5e, 0x01,
+    0x56, 0xfc, 0x01, 0xd5, 0x0f, 0xb6, 0x7d, 0x00, 0x45, 0x83, 0xec, 0x08, 0x85, 0xff, 0x0f, 0x84,
+    0xf7, 0x02, 0x00, 0x00, 0x31, 0xdb, 0x0f, 0xb6, 0x55, 0x00, 0x45, 0x89, 0xd1, 0x89, 0x34, 0x24,
+    0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xee, 0xf3, 0xa4, 0x8b, 0x34, 0x24,
+    0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x01, 0xd5, 0x8b, 0x44, 0x9c, 0x28, 0x0f, 0xb6, 0x55,
+    0x00, 0x45, 0x83, 0xfa, 0x08, 0x74, 0x31, 0x83, 0xfa, 0x04, 0x74, 0x0f, 0x25, 0xff, 0xff, 0x00,
+    0x00, 0x83, 0xfa, 0x02, 0x74, 0x05, 0x25, 0xff, 0x00, 0x00, 0x00, 0x0f, 0xb6, 0x55, 0x00, 0x45,
+    0x85, 0xd2, 0x74, 0x42, 0x83, 0xfa, 0x01, 0x0f, 0x84, 0x97, 0x00, 0x00, 0x00, 0x83, 0xfa, 0x02,
+    0x0f, 0x84, 0x54, 0x01, 0x00, 0x00, 0xeb, 0x67, 0xe8, 0x7b, 0x04, 0x00, 0x00, 0x89, 0x34, 0x24,
+    0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xc6, 0x04, 0x17, 0x3a, 0x89, 0xce, 0x89,
+    0xd1, 0xf3, 0xa4, 0x42, 0x8b, 0x34, 0x24, 0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x43, 0x47,
+    0x8b, 0x44, 0x9c, 0x28, 0xeb, 0xb5, 0xe8, 0x4d, 0x04, 0x00, 0x00, 0x89, 0x34, 0x24, 0x89, 0x7c,
+    0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24,
+    0x01, 0x56, 0xfc, 0x8b, 0x7c, 0x24, 0x04, 0x43, 0x39, 0xfb, 0x0f, 0x84, 0x56, 0x02, 0x00, 0x00,
+    0x8b, 0x56, 0xfc, 0xc6, 0x04, 0x16, 0x2c, 0xff, 0x46, 0xfc, 0xe9, 0x37, 0xff, 0xff, 0xff, 0x89,
+    0xf1, 0x03, 0x4e, 0xfc, 0x85, 0xc0, 0x75, 0x10, 0xc7, 0x01, 0x46, 0x41, 0x4c, 0x53, 0xc6, 0x41,
+    0x04, 0x45, 0x83, 0x46, 0xfc, 0x05, 0xeb, 0xcb, 0xc7, 0x01, 0x54, 0x52, 0x55, 0x45, 0x83, 0x46,
+    0xfc, 0x04, 0xeb, 0xbf, 0x55, 0x31, 0xc9, 0x89, 0x7c, 0x24, 0x08, 0x8b, 0x6d, 0x00, 0x03, 0x6c,
+    0x24, 0x24, 0x80, 0x7d, 0x00, 0x00, 0x75, 0x38, 0x45, 0x0f, 0xb7, 0x55, 0x00, 0x83, 0xc5, 0x02,
+    0x85, 0xd2, 0x0f, 0x84, 0x88, 0x00, 0x00, 0x00, 0x4a, 0x01, 0xcd, 0x8b, 0x7d, 0x00, 0x83, 0xc5,
+    0x04, 0x0f, 0xb6, 0x4d, 0x00, 0x45, 0x39, 0xf8, 0x75, 0xe6, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x89,
+    0xee, 0xf3, 0xa4, 0x8b, 0x74, 0x24, 0x04, 0x89, 0xf9, 0x29, 0xf1, 0x89, 0x4e, 0xfc, 0xeb, 0x6d,
+    0x45, 0x0f, 0xb7, 0x55, 0x00, 0x83, 0xc5, 0x02, 0x50, 0x31, 0xc0, 0x85, 0xd2, 0x74, 0x40, 0x4a,
+    0x01, 0xcd, 0x8b, 0x7d, 0x00, 0x83, 0xc5, 0x04, 0x0f, 0xb6, 0x4d, 0x00, 0x45, 0x89, 0xfe, 0x23,
+    0x3c, 0x24, 0x39, 0xfe, 0x75, 0xe5, 0x8b, 0x7c, 0x24, 0x08, 0x03, 0x7f, 0xfc, 0x89, 0xee, 0xf3,
+    0xa4, 0x8b, 0x74, 0x24, 0x08, 0x66, 0xc7, 0x07, 0x20, 0x7c, 0xc6, 0x47, 0x02, 0x20, 0x83, 0xc7,
+    0x03, 0x89, 0xf9, 0x29, 0xf1, 0x89, 0x4e, 0xfc, 0x40, 0x0f, 0xb6, 0x4d, 0xff, 0xeb, 0xbc, 0x89,
+    0xc2, 0x58, 0x8b, 0x74, 0x24, 0x04, 0x85, 0xd2, 0x74, 0x06, 0x83, 0x6e, 0xfc, 0x03, 0xeb, 0x0d,
+    0x8b, 0x7c, 0x24, 0x08, 0x5d, 0x83, 0xc5, 0x04, 0xe9, 0xe9, 0xfe, 0xff, 0xff, 0x8b, 0x7c, 0x24,
+    0x08, 0x5d, 0x83, 0xc5, 0x04, 0xe9, 0xf9, 0xfe, 0xff, 0xff, 0x31, 0xd2, 0x89, 0x7c, 0x24, 0x04,
+    0x89, 0xf7, 0x03, 0x7e, 0xfc, 0x3d, 0xff, 0xff, 0x00, 0x00, 0x7f, 0x2b, 0x85, 0xc0, 0xe8, 0x15,
+    0x03, 0x00, 0x00, 0x89, 0x34, 0x24, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x01,
+    0x56, 0xfc, 0x0f, 0x85, 0xcb, 0xfe, 0xff, 0xff, 0xc7, 0x07, 0x4e, 0x55, 0x4c, 0x4c, 0x83, 0x46,
+    0xfc, 0x04, 0xe9, 0xbc, 0xfe, 0xff, 0xff, 0x80, 0x78, 0x01, 0x00, 0x74, 0x69, 0xc6, 0x07, 0x22,
+    0x8a, 0x0c, 0x10, 0x84, 0xc9, 0x0f, 0x84, 0xcd, 0x00, 0x00, 0x00, 0x80, 0xf9, 0x5c, 0x75, 0x08,
+    0xc6, 0x44, 0x17, 0x01, 0x5c, 0x47, 0xeb, 0x3d, 0x80, 0xf9, 0x22, 0x75, 0x08, 0xc6, 0x44, 0x17,
+    0x01, 0x5c, 0x47, 0xeb, 0x30, 0x80, 0xf9, 0x0a, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
+    0x6e, 0x42, 0x47, 0xeb, 0xcb, 0x80, 0xf9, 0x09, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
+    0x74, 0x42, 0x47, 0xeb, 0xbb, 0x80, 0xf9, 0x0d, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x01, 0x5c,
+    0x72, 0x42, 0x47, 0xeb, 0xab, 0x80, 0xf9, 0x20, 0x7c, 0x7e, 0x80, 0xf9, 0x7e, 0x7f, 0x79, 0x88,
+    0x4c, 0x17, 0x01, 0x42, 0xeb, 0x9a, 0xc6, 0x07, 0x4c, 0xc6, 0x47, 0x01, 0x22, 0x8a, 0x0c, 0x50,
+    0x84, 0xc9, 0x74, 0x63, 0x80, 0xf9, 0x5c, 0x75, 0x08, 0xc6, 0x44, 0x17, 0x02, 0x5c, 0x47, 0xeb,
+    0x3d, 0x80, 0xf9, 0x22, 0x75, 0x08, 0xc6, 0x44, 0x17, 0x02, 0x5c, 0x47, 0xeb, 0x30, 0x80, 0xf9,
+    0x0a, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x6e, 0x42, 0x47, 0xeb, 0xcf, 0x80, 0xf9,
+    0x09, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x74, 0x42, 0x47, 0xeb, 0xbf, 0x80, 0xf9,
+    0x0d, 0x75, 0x0b, 0x66, 0xc7, 0x44, 0x17, 0x02, 0x5c, 0x74, 0x42, 0x47, 0xeb, 0xaf, 0x80, 0xf9,
+    0x20, 0x7c, 0x14, 0x80, 0xf9, 0x7e, 0x7f, 0x0f, 0x88, 0x4c, 0x17, 0x02, 0x8a, 0x4c, 0x50, 0x01,
+    0x84, 0xc9, 0x75, 0x03, 0x42, 0xeb, 0x96, 0x42, 0xc6, 0x44, 0x17, 0x01, 0x22, 0x83, 0xc2, 0x02,
+    0x29, 0xf7, 0x2b, 0x7e, 0xfc, 0x01, 0xfa, 0x01, 0x56, 0xfc, 0xe9, 0xc4, 0xfd, 0xff, 0xff, 0x8b,
+    0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0xe9, 0x9b, 0xfd, 0xff, 0xff, 0x89, 0x34, 0x24, 0x89, 0x7c,
+    0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xba, 0x02, 0x00, 0x00, 0x00, 0xe8, 0x02, 0x00, 0x00,
+    0x00, 0x29, 0x20, 0x5e, 0xeb, 0x1a, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03,
+    0x7e, 0xfc, 0xba, 0x03, 0x00, 0x00, 0x00, 0xe8, 0x03, 0x00, 0x00, 0x00, 0x0a, 0x29, 0x20, 0x5e,
+    0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x01, 0x56, 0xfc, 0x83, 0xc4,
+    0x08, 0x80, 0x7d, 0x00, 0x00, 0x0f, 0x85, 0x4f, 0x01, 0x00, 0x00, 0x45, 0x0f, 0xb6, 0x6d, 0x00,
+    0x55, 0x83, 0xec, 0x08, 0x54, 0xb8,
 #define NT_QUERY_PERF_COUNTER_CALL_OFFSET 1254
-	0x00, 0x00, 0x00, 0x00,
-	0xff, 0xd0, 0x2b, 0x66, 0xfc, 0xff,
-	0x76, 0xfc, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x8d, 0x7c, 0x24, 0x0c,
-	0x8b, 0x4e, 0xfc, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08, 0x8b,
-	0x56, 0xfc, 0x30, 0xc0, 0x86, 0x46, 0xfb, 0x89, 0xe3, 0x01, 0xd3, 0x83, 0xe4, 0xf0, 0x89, 0xfd,
-	0x85, 0xed, 0x74, 0x07, 0xff, 0x74, 0xab, 0x2c, 0x4d, 0xeb, 0xf5, 0x29, 0xd3, 0xff, 0x54, 0x13,
-	0x24, 0x89, 0xdc, 0xf3, 0x90, 0xb1, 0x01, 0x86, 0x4e, 0xfb, 0x84, 0xc9, 0x75, 0xf5, 0x5a, 0x83,
-	0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x8d, 0x74, 0x24, 0x08, 0x89,
-	0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x89, 0x56, 0xfc, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04,
-	0x83, 0xc4, 0x08, 0x01, 0xd4, 0xe8, 0x0e, 0x01, 0x00, 0x00, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24,
-	0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xc6, 0x07, 0x2d, 0xc6, 0x47, 0x01, 0x3e,
-	0xc6, 0x47, 0x02, 0x20, 0xc6, 0x44, 0x17, 0x03, 0x20, 0x83, 0xc7, 0x03, 0x89, 0xce, 0x89, 0xd1,
-	0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08, 0x83, 0xc2, 0x04, 0x01,
-	0x56, 0xfc, 0x83, 0xec, 0x10, 0x89, 0xe1, 0x8d, 0x54, 0x24, 0x08, 0x52, 0x51, 0x89, 0xc5, 0xb8,
+    0x00, 0x00, 0x00, 0x00,
+    0xff, 0xd0, 0x2b, 0x66, 0xfc, 0xff,
+    0x76, 0xfc, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x8d, 0x7c, 0x24, 0x0c,
+    0x8b, 0x4e, 0xfc, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08, 0x8b,
+    0x56, 0xfc, 0x30, 0xc0, 0x86, 0x46, 0xfb, 0x89, 0xe3, 0x01, 0xd3, 0x83, 0xe4, 0xf0, 0x89, 0xfd,
+    0x85, 0xed, 0x74, 0x07, 0xff, 0x74, 0xab, 0x2c, 0x4d, 0xeb, 0xf5, 0x29, 0xd3, 0xff, 0x54, 0x13,
+    0x24, 0x89, 0xdc, 0xf3, 0x90, 0xb1, 0x01, 0x86, 0x4e, 0xfb, 0x84, 0xc9, 0x75, 0xf5, 0x5a, 0x83,
+    0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x8d, 0x74, 0x24, 0x08, 0x89,
+    0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x89, 0x56, 0xfc, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04,
+    0x83, 0xc4, 0x08, 0x01, 0xd4, 0xe8, 0x0e, 0x01, 0x00, 0x00, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24,
+    0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03, 0x7e, 0xfc, 0xc6, 0x07, 0x2d, 0xc6, 0x47, 0x01, 0x3e,
+    0xc6, 0x47, 0x02, 0x20, 0xc6, 0x44, 0x17, 0x03, 0x20, 0x83, 0xc7, 0x03, 0x89, 0xce, 0x89, 0xd1,
+    0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08, 0x83, 0xc2, 0x04, 0x01,
+    0x56, 0xfc, 0x83, 0xec, 0x10, 0x89, 0xe1, 0x8d, 0x54, 0x24, 0x08, 0x52, 0x51, 0x89, 0xc5, 0xb8,
 #define NT_QUERY_PERF_COUNTER_RET_OFFSET 1456
-	0x00, 0x00, 0x00, 0x00,
-	0xff, 0xd0, 0x8b, 0x04, 0x24, 0x2b, 0x44, 0x24, 0x10, 0x69, 0xc0, 0x40,
-	0x42, 0x0f, 0x00, 0x31, 0xd2, 0xf7, 0x74, 0x24, 0x08, 0x83, 0xc4, 0x18, 0xe8, 0xa7, 0x00, 0x00,
-	0x00, 0x89, 0xe8, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03,
-	0x7e, 0xfc, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x20, 0xc7, 0x44, 0x17, 0x02, 0xc2, 0xb5,
-	0x73, 0x5d, 0x83, 0xc7, 0x01, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c,
-	0x24, 0x04, 0x83, 0xc4, 0x08, 0x83, 0xc2, 0x06, 0x01, 0x56, 0xfc, 0x5d, 0x85, 0xed, 0x74, 0x11,
-	0xe8, 0x20, 0x00, 0x00, 0x00, 0x83, 0xc4, 0x0c, 0x8b, 0x0c, 0x24, 0x8d, 0x64, 0x94, 0x04, 0x51,
-	0xc3, 0xe8, 0x0f, 0x00, 0x00, 0x00, 0x83, 0xc4, 0x0c, 0xc3, 0xe8, 0x06, 0x00, 0x00, 0x00, 0x83,
-	0xc4, 0x04, 0xc2, 0x04, 0x00, 0x5b, 0x8b, 0x56, 0xfc, 0xc7, 0x04, 0x16, 0x0a, 0x0a, 0x00, 0x00,
-	0x83, 0xc2, 0x02, 0x31, 0xc9, 0x51, 0x51, 0x52, 0x56, 0xe8, 0x08, 0x00, 0x00, 0x00, 0x90, 0x90,
-	0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x51, 0x51, 0x51, 0x68,
+    0x00, 0x00, 0x00, 0x00,
+    0xff, 0xd0, 0x8b, 0x04, 0x24, 0x2b, 0x44, 0x24, 0x10, 0x69, 0xc0, 0x40,
+    0x42, 0x0f, 0x00, 0x31, 0xd2, 0xf7, 0x74, 0x24, 0x08, 0x83, 0xc4, 0x18, 0xe8, 0xa7, 0x00, 0x00,
+    0x00, 0x89, 0xe8, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c, 0x24, 0x04, 0x89, 0xf7, 0x03,
+    0x7e, 0xfc, 0xc6, 0x07, 0x5b, 0xc6, 0x44, 0x17, 0x01, 0x20, 0xc7, 0x44, 0x17, 0x02, 0xc2, 0xb5,
+    0x73, 0x5d, 0x83, 0xc7, 0x01, 0x89, 0xce, 0x89, 0xd1, 0xf3, 0xa4, 0x8b, 0x34, 0x24, 0x8b, 0x7c,
+    0x24, 0x04, 0x83, 0xc4, 0x08, 0x83, 0xc2, 0x06, 0x01, 0x56, 0xfc, 0x5d, 0x85, 0xed, 0x74, 0x11,
+    0xe8, 0x20, 0x00, 0x00, 0x00, 0x83, 0xc4, 0x0c, 0x8b, 0x0c, 0x24, 0x8d, 0x64, 0x94, 0x04, 0x51,
+    0xc3, 0xe8, 0x0f, 0x00, 0x00, 0x00, 0x83, 0xc4, 0x0c, 0xc3, 0xe8, 0x06, 0x00, 0x00, 0x00, 0x83,
+    0xc4, 0x04, 0xc2, 0x04, 0x00, 0x5b, 0x8b, 0x56, 0xfc, 0xc7, 0x04, 0x16, 0x0a, 0x0a, 0x00, 0x00,
+    0x83, 0xc2, 0x02, 0x31, 0xc9, 0x51, 0x51, 0x52, 0x56, 0xe8, 0x08, 0x00, 0x00, 0x00, 0x90, 0x90,
+    0x90, 0x90, 0x90, 0x90, 0x90, 0x90, 0x51, 0x51, 0x51, 0x68,
 #define LOG_FILE_HANDLE_OFFSET 1626
-	0x00, 0x00, 0x00, 0x00,
-	0x89, 0xc5,
-	0xb8,
+    0x00, 0x00, 0x00, 0x00,
+    0x89, 0xc5,
+    0xb8,
 #define NT_WRITE_FILE_ADDR_OFFSET 1633
-	0x00, 0x00, 0x00, 0x00,
-	0xff, 0xd0, 0x89, 0xe8, 0x30, 0xc9, 0x86, 0x4e, 0xfb, 0x89, 0xd9,
-	0x89, 0xfa, 0x5d, 0x5b, 0x5f, 0x5e, 0x51, 0xc3, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c,
-	0x24, 0x04, 0xe8, 0x0c, 0x00, 0x00, 0x00, 0x30, 0x78, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30,
-	0x30, 0x90, 0x90, 0x59, 0xba, 0x02, 0x00, 0x00, 0x00, 0x50, 0x85, 0xc0, 0x75, 0x07, 0xc6, 0x04,
-	0x11, 0x30, 0x42, 0xeb, 0x50, 0x89, 0xe0, 0x83, 0xc0, 0x03, 0x0f, 0xb6, 0x30, 0x85, 0xf6, 0x75,
-	0x03, 0x48, 0xeb, 0xf6, 0x0f, 0xb6, 0x30, 0x89, 0xf7, 0xc1, 0xee, 0x04, 0x83, 0xfe, 0x0a, 0x7c,
-	0x05, 0x83, 0xc6, 0x57, 0xeb, 0x0c, 0x85, 0xf6, 0x75, 0x05, 0x83, 0xfa, 0x02, 0x74, 0x09, 0x83,
-	0xc6, 0x30, 0x96, 0x88, 0x04, 0x11, 0x96, 0x42, 0x83, 0xe7, 0x0f, 0x83, 0xff, 0x0a, 0x7c, 0x05,
-	0x83, 0xc7, 0x57, 0xeb, 0x03, 0x83, 0xc7, 0x30, 0x97, 0x88, 0x04, 0x11, 0x97, 0x42, 0x39, 0xe0,
-	0x74, 0x03, 0x48, 0xeb, 0xbf, 0x58, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08,
-	0xc3
+    0x00, 0x00, 0x00, 0x00,
+    0xff, 0xd0, 0x89, 0xe8, 0x30, 0xc9, 0x86, 0x4e, 0xfb, 0x89, 0xd9,
+    0x89, 0xfa, 0x5d, 0x5b, 0x5f, 0x5e, 0x51, 0xc3, 0x83, 0xec, 0x08, 0x89, 0x34, 0x24, 0x89, 0x7c,
+    0x24, 0x04, 0xe8, 0x0c, 0x00, 0x00, 0x00, 0x30, 0x78, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30, 0x30,
+    0x30, 0x90, 0x90, 0x59, 0xba, 0x02, 0x00, 0x00, 0x00, 0x50, 0x85, 0xc0, 0x75, 0x07, 0xc6, 0x04,
+    0x11, 0x30, 0x42, 0xeb, 0x50, 0x89, 0xe0, 0x83, 0xc0, 0x03, 0x0f, 0xb6, 0x30, 0x85, 0xf6, 0x75,
+    0x03, 0x48, 0xeb, 0xf6, 0x0f, 0xb6, 0x30, 0x89, 0xf7, 0xc1, 0xee, 0x04, 0x83, 0xfe, 0x0a, 0x7c,
+    0x05, 0x83, 0xc6, 0x57, 0xeb, 0x0c, 0x85, 0xf6, 0x75, 0x05, 0x83, 0xfa, 0x02, 0x74, 0x09, 0x83,
+    0xc6, 0x30, 0x96, 0x88, 0x04, 0x11, 0x96, 0x42, 0x83, 0xe7, 0x0f, 0x83, 0xff, 0x0a, 0x7c, 0x05,
+    0x83, 0xc7, 0x57, 0xeb, 0x03, 0x83, 0xc7, 0x30, 0x97, 0x88, 0x04, 0x11, 0x97, 0x42, 0x39, 0xe0,
+    0x74, 0x03, 0x48, 0xeb, 0xbf, 0x58, 0x8b, 0x34, 0x24, 0x8b, 0x7c, 0x24, 0x04, 0x83, 0xc4, 0x08,
+    0xc3
 };
 std::vector<BYTE> LoggerShellCode(bLoggerShellCode, 
-	bLoggerShellCode + sizeof(bLoggerShellCode));
+    bLoggerShellCode + sizeof(bLoggerShellCode));
 
 #endif
 
@@ -422,7 +420,7 @@ BYTE bTrampolineCode[] =
     0xFF, 0xE0
 };
 std::vector<BYTE> TrampolineCode(bTrampolineCode,
-	bTrampolineCode + sizeof(bTrampolineCode));
+    bTrampolineCode + sizeof(bTrampolineCode));
 
 #else
 BYTE bTrampolineCode[] =
@@ -439,7 +437,7 @@ BYTE bTrampolineCode[] =
     0xFF, 0xE0
 };
 std::vector<BYTE> TrampolineCode(bTrampolineCode,
-	bTrampolineCode + sizeof(bTrampolineCode));
+    bTrampolineCode + sizeof(bTrampolineCode));
 
 #endif
 
@@ -449,11 +447,11 @@ BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo);
 
 INT main(INT argc, CHAR** argv)
 {
-	if (!Utils::InitUtils())
-	{
-		Utils::Printf::Fail("Cannot initialize properly");
-		return FALSE;
-	};
+    if (!Utils::InitUtils())
+    {
+        Utils::Printf::Fail("Cannot initialize properly");
+        return FALSE;
+    };
 
     if (argc < 3)
     {
@@ -462,30 +460,30 @@ INT main(INT argc, CHAR** argv)
             "A super simple CLI windows api logger\n"
             "Usage: xLogger <Options> [-c [CommandLine]|-attach [Pid]] -l [LogFile]\n"
             "Options:\n"
-            "	--external-mods <list of modules>: Log calls from these modules with the main module\n"
-            "	--exclude-apis <list of dll:api>: Never log calls made to these apis\n"
-            "	--exclude-mods <list of modules>: Never log calls made to these modules\n"
-            "	--exclude-all-apis-except <list of dll:api>: Only log calls made to these apis\n"
-            "	--exclude-all-mods-except <list of modules>: Only log calls made to these modules\n"
-            "	--detach-on-exit: Keep the process when the logger exits (the process will continue logging)\n"
-            "	--detach-on-system: Detach on reaching system/attach breakpoint (the process will continue logging)\n"
-            "	--hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB BeingDebugged,..\n"
-            "	--external-console: Run the process at external console (only with -c switch)\n"
-            "	--apis-dir <directory path>: directory of api definition files (default: WinApi)\n"
-            "	--headers-dir <directory path>: directory of headers definition files (default: WinApi\\headers)\n"
-            "	-v: verbous mode\n"
+            "    --external-mods <list of modules>: Log calls from these modules with the main module\n"
+            "    --exclude-apis <list of dll:api>: Never log calls made to these apis\n"
+            "    --exclude-mods <list of modules>: Never log calls made to these modules\n"
+            "    --exclude-all-apis-except <list of dll:api>: Only log calls made to these apis\n"
+            "    --exclude-all-mods-except <list of modules>: Only log calls made to these modules\n"
+            "    --detach-on-exit: Keep the process when the logger exits (the process will continue logging)\n"
+            "    --detach-on-system: Detach on reaching system/attach breakpoint (the process will continue logging)\n"
+            "    --hide-debugger: Hide the debugger from being detected by IsDebuggerPresent,PEB BeingDebugged,..\n"
+            "    --external-console: Run the process at external console (only with -c switch)\n"
+            "    --apis-dir <directory path>: directory of api definition files (default: WinApi)\n"
+            "    --headers-dir <directory path>: directory of headers definition files (default: WinApi\\headers)\n"
+            "    -v: verbous mode\n"
             "CommandLine: The command line of the target executable\n"
             "Pid: The pid of the target process\n"
             "LogFile: Path of the file to save the logged calls to\n"
             "Examples:\n"
-            "	xLogger -c evil.exe -l log.txt\n"
-            "	xLogger -attach 1337 -l log.txt\n"
-            "	xLogger -c \"evil.exe param\" --exclude-mods ntdll.dll -l \"log.txt\"\n"
-            "	xLogger -c \"\\\"c:\\malware folder\\evil.exe\\\" \\\"param one\\\"\" -l log.txt\n"
-            "	xLogger -c \"c:\\python\\python.exe c:\\bad.py\" --external-mods python27.dll -l log.txt\n"
-            "	xLogger -c evil.exe --exclude-apis kernel32.dll:GetLastError,ntdll.dll:NtReadFile -v -l log.txt\n"
-            "	xLogger -c evil.exe -l log.txt --exclude-all-apis-except kernel32.dll:CreateProcessInternalW\n"
-            "	xLogger -c evil.exe -l log.txt --exclude-all-mods-except ntdll.dll,msvcrt.dll\n"
+            "    xLogger -c evil.exe -l log.txt\n"
+            "    xLogger -attach 1337 -l log.txt\n"
+            "    xLogger -c \"evil.exe param\" --exclude-mods ntdll.dll -l \"log.txt\"\n"
+            "    xLogger -c \"\\\"c:\\malware folder\\evil.exe\\\" \\\"param one\\\"\" -l log.txt\n"
+            "    xLogger -c \"c:\\python\\python.exe c:\\bad.py\" --external-mods python27.dll -l log.txt\n"
+            "    xLogger -c evil.exe --exclude-apis kernel32.dll:GetLastError,ntdll.dll:NtReadFile -v -l log.txt\n"
+            "    xLogger -c evil.exe -l log.txt --exclude-all-apis-except kernel32.dll:CreateProcessInternalW\n"
+            "    xLogger -c evil.exe -l log.txt --exclude-all-mods-except ntdll.dll,msvcrt.dll\n"
         );
         return TRUE;
     };
@@ -539,7 +537,7 @@ INT main(INT argc, CHAR** argv)
             std::string ApiName = ListIter->substr((SIZE_T)dwPos + 1);
             while (DllName.back() == ' ') DllName.pop_back();
             while (ApiName.front() == ' ') ApiName.erase(0, 1);
-			std::for_each(DllName.begin(), DllName.end(), [](CHAR& ch) {ch = tolower(ch); });
+            std::for_each(DllName.begin(), DllName.end(), [](CHAR& ch) {ch = tolower(ch); });
             if (ApiName.find_first_of(' ') != std::string::npos
                     || ApiName.find_first_of(':') != std::string::npos)
             {
@@ -551,7 +549,7 @@ INT main(INT argc, CHAR** argv)
             if ((SplittedListIter = (*MapToSaveTo).find(DllName)) ==
                     (*MapToSaveTo).end())
             {
-				std::vector<std::string> EmptyList;
+                std::vector<std::string> EmptyList;
                 SplittedListIter = (*MapToSaveTo).insert((*MapToSaveTo).end(),
                                    std::make_pair(DllName, EmptyList));
             };
@@ -864,7 +862,7 @@ INT main(INT argc, CHAR** argv)
         while (szExeCmd.front() == ' ') szExeCmd.erase(0, 1);
         if (szExeCmd.front() == '"')
         {
-			SIZE_T DoubleQuotePos = szExeCmd.find_first_of('"', 1);
+            SIZE_T DoubleQuotePos = szExeCmd.find_first_of('"', 1);
             if (DoubleQuotePos == std::string::npos
                     || (DoubleQuotePos != szExeCmd.length() - 1
                         && szExeCmd.at(DoubleQuotePos + 1) != ' '))
@@ -872,8 +870,8 @@ INT main(INT argc, CHAR** argv)
                 Utils::Printf::Fail("Cannot extract the working directory from the supplied command line");
                 return FALSE;
             };
-			FilePath = szExeCmd.substr(1, --DoubleQuotePos);
-			szExeCmd.erase(1, FilePath.length());
+            FilePath = szExeCmd.substr(1, --DoubleQuotePos);
+            szExeCmd.erase(1, FilePath.length());
         }
         else
         {
@@ -1025,12 +1023,12 @@ INT main(INT argc, CHAR** argv)
         Utils::Reportf::ApiError("GetModuleHandleA", "Unable to get ntdll handle");
         return FALSE;
     };
-	HMODULE hKernel32 = GetModuleHandleA("kernel32.dll");
-	if (!hKernel32)
-	{
-		Utils::Reportf::ApiError("GetModuleHandleA", "Unable to get kernel32 handle");
-		return FALSE;
-	};
+    HMODULE hKernel32 = GetModuleHandleA("kernel32.dll");
+    if (!hKernel32)
+    {
+        Utils::Reportf::ApiError("GetModuleHandleA", "Unable to get kernel32 handle");
+        return FALSE;
+    };
     ShellCodeInfo.lpNtWriteFile = (LPVOID)GetProcAddress(
                                       hNtdll,
                                       "NtWriteFile"
@@ -1055,51 +1053,51 @@ INT main(INT argc, CHAR** argv)
                                           );
     if (!ShellCodeInfo.lpRtlQueryPerfCounter)
     {
-		ShellCodeInfo.lpRtlQueryPerfCounter = (LPVOID)GetProcAddress(
-			hKernel32,
-			"QueryPerformanceCounter"
-		);
-		if (!ShellCodeInfo.lpRtlQueryPerfCounter)
-		{
-			Utils::Printf::Fail("Unable to get QueryPerformanceCounter address");
-			return FALSE;
-		};
+        ShellCodeInfo.lpRtlQueryPerfCounter = (LPVOID)GetProcAddress(
+            hKernel32,
+            "QueryPerformanceCounter"
+        );
+        if (!ShellCodeInfo.lpRtlQueryPerfCounter)
+        {
+            Utils::Printf::Fail("Unable to get QueryPerformanceCounter address");
+            return FALSE;
+        };
     };
 
     BOOL ReachedSystemBP = FALSE;
     SIZE_T stWrittenBytes = 0;
     DWORD dwContinueStatus = DBG_CONTINUE;
 
-	PCHAR pEnd;
-	IO_STATUS_BLOCK IoStatusBlock;
+    PCHAR pEnd;
+    IO_STATUS_BLOCK IoStatusBlock;
 
-	LPVOID fnNtQueryInformationFile = NULL;
-	if (!(fnNtQueryInformationFile = (LPVOID)GetProcAddress(hNtdll, "NtQueryInformationFile")))
-	{
-		Utils::Printf::Fail("Cannot get NtQueryInformationFile address");
-		return FALSE;
-	};
+    LPVOID fnNtQueryInformationFile = NULL;
+    if (!(fnNtQueryInformationFile = (LPVOID)GetProcAddress(hNtdll, "NtQueryInformationFile")))
+    {
+        Utils::Printf::Fail("Cannot get NtQueryInformationFile address");
+        return FALSE;
+    };
 
-	if (DetachOnExit)
-	{
-		if (!DebugSetProcessKillOnExit(
-			FALSE
-		))
-		{
-			Utils::Reportf::ApiError("DebugSetProcessKillOnExit",
-				"Cannot set the option of detaching at exiting the logger");
-			return FALSE;
-		};
-	};
+    if (DetachOnExit)
+    {
+        if (!DebugSetProcessKillOnExit(
+            FALSE
+        ))
+        {
+            Utils::Reportf::ApiError("DebugSetProcessKillOnExit",
+                "Cannot set the option of detaching at exiting the logger");
+            return FALSE;
+        };
+    };
 
     for (;;)
     {
         CHAR szDllName[MAX_PATH] = { 0 };
-		WCHAR FileNameInformation[MAX_PATH + sizeof(ULONG) / 2] = { 0 };
+        WCHAR FileNameInformation[MAX_PATH + sizeof(ULONG) / 2] = { 0 };
         DEBUG_EVENT DebugEvent = { 0 };
 
-		PMY_FILE_NAME_INFORMATION lpFileNameInformation =
-			(PMY_FILE_NAME_INFORMATION)FileNameInformation;
+        PMY_FILE_NAME_INFORMATION lpFileNameInformation =
+            (PMY_FILE_NAME_INFORMATION)FileNameInformation;
 
         if (!WaitForDebugEvent(
                     &DebugEvent,
@@ -1109,231 +1107,231 @@ INT main(INT argc, CHAR** argv)
             return FALSE;
         };
 
-		_DllInfo DllInfo;
-		DllInfo.dwDllSize = 0;
-		DllInfo.dwHookChainSize = 0;
-		DllInfo.dwNumberOfApis = 0;
-		DllInfo.lpHookChain = NULL;
+        _DllInfo DllInfo;
+        DllInfo.dwDllSize = 0;
+        DllInfo.dwHookChainSize = 0;
+        DllInfo.dwNumberOfApis = 0;
+        DllInfo.lpHookChain = NULL;
 
         std::map<LPVOID, _DllInfo>::iterator DllInfoIter;
 
-		switch (DebugEvent.dwDebugEventCode)
-		{
-		case EXCEPTION_DEBUG_EVENT:
+        switch (DebugEvent.dwDebugEventCode)
+        {
+        case EXCEPTION_DEBUG_EVENT:
 
-			dwContinueStatus = DBG_EXCEPTION_NOT_HANDLED;
-			if (!(!ReachedSystemBP &&
-				DebugEvent.u.Exception.ExceptionRecord.ExceptionCode ==
-				EXCEPTION_BREAKPOINT))
-			{
+            dwContinueStatus = DBG_EXCEPTION_NOT_HANDLED;
+            if (!(!ReachedSystemBP &&
+                DebugEvent.u.Exception.ExceptionRecord.ExceptionCode ==
+                EXCEPTION_BREAKPOINT))
+            {
 #if defined(_M_X64) || defined(__amd64__)
-				if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%llx",
-					DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
-					DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
-					DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
-				);
+                if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%llx",
+                    DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
+                    DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
+                    DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
+                );
 #else
-				if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%lx",
-					DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
-					DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
-					DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
-				);
+                if (IsVerbous) Utils::Printf::Info("%s chance exception 0x%lx at 0x%lx",
+                    DebugEvent.u.Exception.dwFirstChance ? "First" : "Last",
+                    DebugEvent.u.Exception.ExceptionRecord.ExceptionCode,
+                    DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress
+                );
 #endif
-				break;
-			};
+                break;
+            };
 
 #if defined(_M_X64) || defined(__amd64__)
-			Utils::Printf::Success("Process reached system/attach breakpoint at 0x%llx",
-				DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
+            Utils::Printf::Success("Process reached system/attach breakpoint at 0x%llx",
+                DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
 #else
-			Utils::Printf::Success("Process reached system/attach breakpoint at 0x%lx",
-				DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
+            Utils::Printf::Success("Process reached system/attach breakpoint at 0x%lx",
+                DebugEvent.u.Exception.ExceptionRecord.ExceptionAddress);
 #endif
-			ReachedSystemBP = TRUE;
+            ReachedSystemBP = TRUE;
 
-			if (HideDebugger)
-			{
-				BYTE BeingDebugged = 0;
-				SIZE_T stWrittenBytes = 0;
-				if (!WriteProcessMemory(
-					hProcess,
-					(LPVOID)((uintptr_t)lpPebAddress + offsetof(PEB, BeingDebugged)),
-					&BeingDebugged,
-					sizeof(BeingDebugged),
-					&stWrittenBytes
-				) || stWrittenBytes != sizeof(BeingDebugged))
-				{
-					Utils::Reportf::ApiError("WriteProcessMemory", "Unable to hide the debugger");
-					return FALSE;
-				};
+            if (HideDebugger)
+            {
+                BYTE BeingDebugged = 0;
+                SIZE_T stWrittenBytes = 0;
+                if (!WriteProcessMemory(
+                    hProcess,
+                    (LPVOID)((uintptr_t)lpPebAddress + offsetof(PEB, BeingDebugged)),
+                    &BeingDebugged,
+                    sizeof(BeingDebugged),
+                    &stWrittenBytes
+                ) || stWrittenBytes != sizeof(BeingDebugged))
+                {
+                    Utils::Reportf::ApiError("WriteProcessMemory", "Unable to hide the debugger");
+                    return FALSE;
+                };
 
-				ULONG NtGlobalFlags = 0;
-				if (!WriteProcessMemory(
-					hProcess,
+                ULONG NtGlobalFlags = 0;
+                if (!WriteProcessMemory(
+                    hProcess,
 #if defined(_M_X64) || defined(__amd64__)
-					(LPVOID)((uintptr_t)lpPebAddress + 0xBC),
+                    (LPVOID)((uintptr_t)lpPebAddress + 0xBC),
 #else
-					(LPVOID)((uintptr_t)lpPebAddress + 0x68),
+                    (LPVOID)((uintptr_t)lpPebAddress + 0x68),
 #endif
-					& NtGlobalFlags,
-					sizeof(NtGlobalFlags),
-					&stWrittenBytes
-				) || stWrittenBytes != sizeof(NtGlobalFlags))
-				{
-					Utils::Reportf::ApiError("WriteProcessMemory", "Unable to hide the debugger");
-					return FALSE;
-				};
-			};
+                    & NtGlobalFlags,
+                    sizeof(NtGlobalFlags),
+                    &stWrittenBytes
+                ) || stWrittenBytes != sizeof(NtGlobalFlags))
+                {
+                    Utils::Reportf::ApiError("WriteProcessMemory", "Unable to hide the debugger");
+                    return FALSE;
+                };
+            };
 
-			if (DetachOnSystem)
-			{
-				DebugActiveProcessStop(DebugEvent.dwProcessId);
-				return TRUE;
-			};
-			break;
+            if (DetachOnSystem)
+            {
+                DebugActiveProcessStop(DebugEvent.dwProcessId);
+                return TRUE;
+            };
+            break;
 
-		case EXIT_PROCESS_DEBUG_EVENT:
-			Utils::Printf::Success("Process exited with code 0x%lx", DebugEvent.u.ExitProcess.dwExitCode);
-			return TRUE;
-		case CREATE_PROCESS_DEBUG_EVENT:
+        case EXIT_PROCESS_DEBUG_EVENT:
+            Utils::Printf::Success("Process exited with code 0x%lx", DebugEvent.u.ExitProcess.dwExitCode);
+            return TRUE;
+        case CREATE_PROCESS_DEBUG_EVENT:
 
-			if (ShellCodeInfo.WinApiData.empty())
-			{
-				Utils::Printf::Fail("No apis loaded at all");
-				return FALSE;
-			};
-			if (!(ShellCodeInfo.lpWinApi = VirtualAllocEx(
-				hProcess,
-				NULL,
-				ShellCodeInfo.WinApiData.size(),
-				MEM_RESERVE | MEM_COMMIT,
-				PAGE_READWRITE
-			)))
-			{
-				Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the api data");
-				return FALSE;
-			};
+            if (ShellCodeInfo.WinApiData.empty())
+            {
+                Utils::Printf::Fail("No apis loaded at all");
+                return FALSE;
+            };
+            if (!(ShellCodeInfo.lpWinApi = VirtualAllocEx(
+                hProcess,
+                NULL,
+                ShellCodeInfo.WinApiData.size(),
+                MEM_RESERVE | MEM_COMMIT,
+                PAGE_READWRITE
+            )))
+            {
+                Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the api data");
+                return FALSE;
+            };
 
-			if (!WriteProcessMemory(
-				hProcess,
-				ShellCodeInfo.lpWinApi,
-				ShellCodeInfo.WinApiData.data(),
-				ShellCodeInfo.WinApiData.size(),
-				&stWrittenBytes
-			) || stWrittenBytes != ShellCodeInfo.WinApiData.size())
-			{
-				Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the api data");
-				return FALSE;
-			};
+            if (!WriteProcessMemory(
+                hProcess,
+                ShellCodeInfo.lpWinApi,
+                ShellCodeInfo.WinApiData.data(),
+                ShellCodeInfo.WinApiData.size(),
+                &stWrittenBytes
+            ) || stWrittenBytes != ShellCodeInfo.WinApiData.size())
+            {
+                Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the api data");
+                return FALSE;
+            };
 
-			for (DWORD dwIndex = 0;
-				dwIndex < sizeof(LPVOID); dwIndex++)
-			{
-				LoggerShellCode.at(LOG_FILE_HANDLE_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.hLogFile)[dwIndex];
-				LoggerShellCode.at(API_INFO_ADDRESS_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.lpWinApi)[dwIndex];
-				LoggerShellCode.at(NT_WRITE_FILE_ADDR_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.lpNtWriteFile)[dwIndex];
-				LoggerShellCode.at(NT_QUERY_PERF_COUNTER_RET_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.lpNtQueryPerfCounter)[dwIndex];
-				LoggerShellCode.at(NT_QUERY_PERF_COUNTER_CALL_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.lpRtlQueryPerfCounter)[dwIndex];
-			};
+            for (DWORD dwIndex = 0;
+                dwIndex < sizeof(LPVOID); dwIndex++)
+            {
+                LoggerShellCode.at(LOG_FILE_HANDLE_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.hLogFile)[dwIndex];
+                LoggerShellCode.at(API_INFO_ADDRESS_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.lpWinApi)[dwIndex];
+                LoggerShellCode.at(NT_WRITE_FILE_ADDR_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.lpNtWriteFile)[dwIndex];
+                LoggerShellCode.at(NT_QUERY_PERF_COUNTER_RET_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.lpNtQueryPerfCounter)[dwIndex];
+                LoggerShellCode.at(NT_QUERY_PERF_COUNTER_CALL_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.lpRtlQueryPerfCounter)[dwIndex];
+            };
 
-			ShellCodeInfo.wSizeOfExtModLst = 0;
-			std::for_each(ExternalModules.begin(), ExternalModules.end(),
-				[&](const std::string& szExternalModule) -> void
-				{
-					LoggerShellCode.insert(
-						LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
-						(BYTE)szExternalModule.length()
-					);
-					ShellCodeInfo.wSizeOfExtModLst++;
-					LoggerShellCode.insert(
-						LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
-						szExternalModule.begin(),
-						szExternalModule.end()
-					);
-					ShellCodeInfo.wSizeOfExtModLst += (WORD)szExternalModule.length();
-				});
+            ShellCodeInfo.wSizeOfExtModLst = 0;
+            std::for_each(ExternalModules.begin(), ExternalModules.end(),
+                [&](const std::string& szExternalModule) -> void
+                {
+                    LoggerShellCode.insert(
+                        LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
+                        (BYTE)szExternalModule.length()
+                    );
+                    ShellCodeInfo.wSizeOfExtModLst++;
+                    LoggerShellCode.insert(
+                        LoggerShellCode.begin() + EXTERNAL_MODS_LIST_OFFSET + ShellCodeInfo.wSizeOfExtModLst + 2,
+                        szExternalModule.begin(),
+                        szExternalModule.end()
+                    );
+                    ShellCodeInfo.wSizeOfExtModLst += (WORD)szExternalModule.length();
+                });
 
-			LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[0];
-			LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET + 1) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[1];
+            LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[0];
+            LoggerShellCode.at(EXTERNAL_MODS_LIST_OFFSET + 1) = ((PBYTE)& ShellCodeInfo.wSizeOfExtModLst)[1];
 
 
-			if (!(ShellCodeInfo.lpLogApi = VirtualAllocEx(
-				hProcess,
-				NULL,
-				LoggerShellCode.size() + PageSize,
-				MEM_RESERVE | MEM_COMMIT,
-				PAGE_EXECUTE_READWRITE
-			)))
-			{
-				Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the logger");
-				return FALSE;
-			};
+            if (!(ShellCodeInfo.lpLogApi = VirtualAllocEx(
+                hProcess,
+                NULL,
+                LoggerShellCode.size() + PageSize,
+                MEM_RESERVE | MEM_COMMIT,
+                PAGE_EXECUTE_READWRITE
+            )))
+            {
+                Utils::Reportf::ApiError("VirtualAllocEx", "Cannot allocate for the logger");
+                return FALSE;
+            };
 
-			if (!WriteProcessMemory(
-				hProcess,
-				ShellCodeInfo.lpLogApi,
-				LoggerShellCode.data(),
-				LoggerShellCode.size(),
-				&stWrittenBytes
-			) || stWrittenBytes != LoggerShellCode.size())
-			{
-				Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the logger");
-				return FALSE;
-			};
+            if (!WriteProcessMemory(
+                hProcess,
+                ShellCodeInfo.lpLogApi,
+                LoggerShellCode.data(),
+                LoggerShellCode.size(),
+                &stWrittenBytes
+            ) || stWrittenBytes != LoggerShellCode.size())
+            {
+                Utils::Reportf::ApiError("WriteProcessMemory", "Cannot write the logger");
+                return FALSE;
+            };
 
-			for (DWORD dwIndex = 0;
-				dwIndex < sizeof(LPVOID); dwIndex++)
-			{
-				TrampolineCode.at(API_LOGGER_ADDR_OFFSET + (SIZE_T)dwIndex) =
-					((PBYTE)& ShellCodeInfo.lpLogApi)[dwIndex];
-			};
+            for (DWORD dwIndex = 0;
+                dwIndex < sizeof(LPVOID); dwIndex++)
+            {
+                TrampolineCode.at(API_LOGGER_ADDR_OFFSET + (SIZE_T)dwIndex) =
+                    ((PBYTE)& ShellCodeInfo.lpLogApi)[dwIndex];
+            };
 
-			break;
-		case LOAD_DLL_DEBUG_EVENT:
+            break;
+        case LOAD_DLL_DEBUG_EVENT:
 
-			if ((*(NTSTATUS(WINAPI*)(
-				HANDLE,
-				PIO_STATUS_BLOCK,
-				PVOID,
-				ULONG,
-				INT
-				)) fnNtQueryInformationFile)(
-					DebugEvent.u.LoadDll.hFile,
-					&IoStatusBlock,
-					lpFileNameInformation,
-					sizeof(FileNameInformation),
-					0x9
-					))
-			{
-				Utils::Printf::Fail("Cannot get a loaded library name at 0x%lx",
-					DebugEvent.u.LoadDll.lpBaseOfDll);
-				return FALSE;
-			};
+            if ((*(NTSTATUS(WINAPI*)(
+                HANDLE,
+                PIO_STATUS_BLOCK,
+                PVOID,
+                ULONG,
+                INT
+                )) fnNtQueryInformationFile)(
+                    DebugEvent.u.LoadDll.hFile,
+                    &IoStatusBlock,
+                    lpFileNameInformation,
+                    sizeof(FileNameInformation),
+                    0x9
+                    ))
+            {
+                Utils::Printf::Fail("Cannot get a loaded library name at 0x%lx",
+                    DebugEvent.u.LoadDll.lpBaseOfDll);
+                return FALSE;
+            };
 
-			wcstombs(
-				szDllName,
-				lpFileNameInformation->FileName,
-				lpFileNameInformation->FileNameLength / sizeof(WCHAR)
-			);
-			szDllName[lpFileNameInformation->FileNameLength / sizeof(WCHAR)] = 0;
+            wcstombs(
+                szDllName,
+                lpFileNameInformation->FileName,
+                lpFileNameInformation->FileNameLength / sizeof(WCHAR)
+            );
+            szDllName[lpFileNameInformation->FileNameLength / sizeof(WCHAR)] = 0;
 
-			pEnd = &szDllName[strlen(szDllName)];
-			while (*pEnd != (CHAR)'\\')
-			{
-				*pEnd = tolower(*pEnd);
-				pEnd--;
-			};
-			strncpy(szDllName, ++pEnd, sizeof(szDllName) - 1);
-			szDllName[sizeof(szDllName) - 1] = 0;
+            pEnd = &szDllName[strlen(szDllName)];
+            while (*pEnd != (CHAR)'\\')
+            {
+                *pEnd = tolower(*pEnd);
+                pEnd--;
+            };
+            strncpy(szDllName, ++pEnd, sizeof(szDllName) - 1);
+            szDllName[sizeof(szDllName) - 1] = 0;
 
 #if defined(_M_X64) || defined(__amd64__)
-			Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%llx", TOP_NODE,
-				szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
+            Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%llx", TOP_NODE,
+                szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
 #else
             Utils::Printf::Success("%c%c%c%c%c Dll %s loaded at 0x%lx", TOP_NODE,
                                    szDllName, DebugEvent.u.LoadDll.lpBaseOfDll);
@@ -1369,11 +1367,11 @@ INT main(INT argc, CHAR** argv)
             if (dwPid && (dwModNum == WinApi.DllArray.size()))
             {
                 dwModNum = 0;
-				_DllInfo MainModule;
-				MainModule.dwDllSize = 0;
-				MainModule.dwHookChainSize = 0;
-				MainModule.dwNumberOfApis = 0;
-				MainModule.lpHookChain = NULL;
+                _DllInfo MainModule;
+                MainModule.dwDllSize = 0;
+                MainModule.dwHookChainSize = 0;
+                MainModule.dwNumberOfApis = 0;
+                MainModule.lpHookChain = NULL;
 
                 MainModule.szDllName = "Main";
                 MainModule.dwDllSize = (DWORD)((uintptr_t)ShellCodeInfo.lpImageTop -
@@ -1388,8 +1386,8 @@ INT main(INT argc, CHAR** argv)
                     if (DllArrayIter == WinApi.DllArray.end()) DllArrayIter = MainModuleDllArray.begin();
                     else if (DllArrayIter == MainModuleDllArray.end()) break;
 
-					Utils::Printf::Success("Hooking the IAT of the %s module",
-						DllArrayIter->second.szDllName.c_str());
+                    Utils::Printf::Success("Hooking the IAT of the %s module",
+                        DllArrayIter->second.szDllName.c_str());
 
                     BYTE bNtHeader[sizeof(IMAGE_NT_HEADERS)] = { 0 };
                     PIMAGE_NT_HEADERS lpNtHeader = (PIMAGE_NT_HEADERS)bNtHeader;
@@ -1505,7 +1503,7 @@ INT main(INT argc, CHAR** argv)
                                 Utils::Printf::Fail("The imported address 0x%lx in module %s relies in unlisted dll",
                                                     dwFThunk->u1.AddressOfData, DllArrayIter->second.szDllName.c_str());
 #endif
-								return FALSE;
+                                return FALSE;
                             };
 
                             std::map<std::string, _ApiInfo>::iterator ApiInfoIter
@@ -1638,21 +1636,21 @@ INT main(INT argc, CHAR** argv)
 BOOL ParseLoadedDll(HANDLE hProcess, std::map<LPVOID, _DllInfo>::iterator DllInfo)
 {
 
-	std::map<std::string, std::vector<std::string>>::iterator
-		BlockedApisIter = ExcludedApis.find(DllInfo->second.szDllName);
+    std::map<std::string, std::vector<std::string>>::iterator
+        BlockedApisIter = ExcludedApis.find(DllInfo->second.szDllName);
 
-	BYTE bNtHeader[sizeof(IMAGE_NT_HEADERS)] = { 0 };
-	PIMAGE_NT_HEADERS lpNtHeader = (PIMAGE_NT_HEADERS)bNtHeader;
-	if (!Load::Process::GetModNtHeader(
-		hProcess,
-		DllInfo->first,
-		lpNtHeader
-	))
-	{
-		Utils::Printf::Fail("Unable to get the dll NT header");
-		return FALSE;
-	};
-	DllInfo->second.dwDllSize = lpNtHeader->OptionalHeader.SizeOfImage;
+    BYTE bNtHeader[sizeof(IMAGE_NT_HEADERS)] = { 0 };
+    PIMAGE_NT_HEADERS lpNtHeader = (PIMAGE_NT_HEADERS)bNtHeader;
+    if (!Load::Process::GetModNtHeader(
+        hProcess,
+        DllInfo->first,
+        lpNtHeader
+    ))
+    {
+        Utils::Printf::Fail("Unable to get the dll NT header");
+        return FALSE;
+    };
+    DllInfo->second.dwDllSize = lpNtHeader->OptionalHeader.SizeOfImage;
 
     if (!AllExcludedExceptModules.empty())
     {
@@ -1954,7 +1952,7 @@ BOOL ParseLoadedDll(HANDLE hProcess, std::map<LPVOID, _DllInfo>::iterator DllInf
         };
         if (!SupportedApiInfo->second.SourceModule.empty()) continue;
 
-		_ApiInfo ApiInfo = { 0 };
+        _ApiInfo ApiInfo = { 0 };
         ApiInfo.lpAddress = (LPVOID)(*pdwFunRva + (uintptr_t)DllInfo->first);
         ApiInfo.dwHookOffset = DllInfo->second.dwHookChainSize;
         ApiInfo.dwApiInfoOffset = SupportedApiInfo->second.dwApiInfoOffset;
@@ -2098,27 +2096,27 @@ BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo)
         };
 
         std::for_each(DllInfo.ApiArray.begin(), DllInfo.ApiArray.end(), 
-			[&](std::pair<std::string, _ApiInfo> ApiInfo) -> void {
-				for (DWORD dwIndex = 0;
-					dwIndex < sizeof(DWORD); dwIndex++)
-				{
-					TrampolineCode.at(API_INFO_OFF_OFFSET + (SIZE_T)dwIndex) =
-						((PBYTE)& ApiInfo.second.dwApiInfoOffset)[dwIndex];
-				};
+            [&](std::pair<std::string, _ApiInfo> ApiInfo) -> void {
+                for (DWORD dwIndex = 0;
+                    dwIndex < sizeof(DWORD); dwIndex++)
+                {
+                    TrampolineCode.at(API_INFO_OFF_OFFSET + (SIZE_T)dwIndex) =
+                        ((PBYTE)& ApiInfo.second.dwApiInfoOffset)[dwIndex];
+                };
 
-				for (DWORD dwIndex = 0;
-					dwIndex < sizeof(LPVOID); dwIndex++)
-				{
-					TrampolineCode.at(API_ADDR_OFFSET + (SIZE_T)dwIndex) =
-						((PBYTE)& ApiInfo.second.lpAddress)[dwIndex];
-				};
+                for (DWORD dwIndex = 0;
+                    dwIndex < sizeof(LPVOID); dwIndex++)
+                {
+                    TrampolineCode.at(API_ADDR_OFFSET + (SIZE_T)dwIndex) =
+                        ((PBYTE)& ApiInfo.second.lpAddress)[dwIndex];
+                };
 
-				CopyMemory(
-					(LPVOID)((uintptr_t)lpHookChain + ApiInfo.second.dwHookOffset),
-					TrampolineCode.data(),
-					TrampolineCode.size()
-				);
-			});
+                CopyMemory(
+                    (LPVOID)((uintptr_t)lpHookChain + ApiInfo.second.dwHookOffset),
+                    TrampolineCode.data(),
+                    TrampolineCode.size()
+                );
+            });
 
         SIZE_T stWrittenBytes = 0;
         if (!WriteProcessMemory(
@@ -2151,18 +2149,18 @@ BOOL HookDll(HANDLE hProcess, _DllInfo DllInfo)
 
 BOOL InitializeWinApi()
 {
-	WinApi.CrtDlls.push_back("msvcrt.dll");
-	WinApi.CrtDlls.push_back("msvcr70.dll");
-	WinApi.CrtDlls.push_back("msvcr70d.dll");
-	WinApi.CrtDlls.push_back("msvcr71.dll");
-	WinApi.CrtDlls.push_back("msvcr71d.dll");
-	WinApi.CrtDlls.push_back("msvcr80.dll");
-	WinApi.CrtDlls.push_back("msvcr80d.dll");
-	WinApi.CrtDlls.push_back("msvcr90.dll");
-	WinApi.CrtDlls.push_back("msvcr90d.dll");
-	WinApi.CrtDlls.push_back("msvcr100.dll");
-	WinApi.CrtDlls.push_back("msvcr100d.dll");
-	WinApi.CrtDlls.push_back("msvcr100_clr0400.dll");
+    WinApi.CrtDlls.push_back("msvcrt.dll");
+    WinApi.CrtDlls.push_back("msvcr70.dll");
+    WinApi.CrtDlls.push_back("msvcr70d.dll");
+    WinApi.CrtDlls.push_back("msvcr71.dll");
+    WinApi.CrtDlls.push_back("msvcr71d.dll");
+    WinApi.CrtDlls.push_back("msvcr80.dll");
+    WinApi.CrtDlls.push_back("msvcr80d.dll");
+    WinApi.CrtDlls.push_back("msvcr90.dll");
+    WinApi.CrtDlls.push_back("msvcr90d.dll");
+    WinApi.CrtDlls.push_back("msvcr100.dll");
+    WinApi.CrtDlls.push_back("msvcr100d.dll");
+    WinApi.CrtDlls.push_back("msvcr100_clr0400.dll");
 
     WinApi.WinTypesSizes["BYTE"] = 1;
     WinApi.WinTypesSizes["CHAR"] = 1;
@@ -2381,198 +2379,198 @@ BOOL InitializeWinApi()
         return FALSE;
     };
 
-	do
-	{
-		std::string HeaderFileName = HeadersDir;
-		HeaderFileName.append(WinFindData.cFileName);
+    do
+    {
+        std::string HeaderFileName = HeadersDir;
+        HeaderFileName.append(WinFindData.cFileName);
 
-		INIReader HeaderReader(HeaderFileName.c_str());
-		if (HeaderReader.ParseError() < 0) {
-			if (IsVerbous) Utils::Printf::Info("Error happend at parsing %s", HeaderFileName.c_str());
-			continue;
-		};
+        INIReader HeaderReader(HeaderFileName.c_str());
+        if (HeaderReader.ParseError() < 0) {
+            if (IsVerbous) Utils::Printf::Info("Error happend at parsing %s", HeaderFileName.c_str());
+            continue;
+        };
 
-		std::string HeaderFile = WinFindData.cFileName;
-		std::for_each(HeaderFile.begin(), HeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
+        std::string HeaderFile = WinFindData.cFileName;
+        std::for_each(HeaderFile.begin(), HeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-		std::map<std::string, SupportedHeaderInfo> HeaderFileInfo;
-		std::set<std::string> HeaderSections = HeaderReader.Sections();
+        std::map<std::string, SupportedHeaderInfo> HeaderFileInfo;
+        std::set<std::string> HeaderSections = HeaderReader.Sections();
 
-		std::for_each(HeaderSections.begin(), HeaderSections.end(),
-			[&](std::string const& HeaderSection) -> void {
+        std::for_each(HeaderSections.begin(), HeaderSections.end(),
+            [&](std::string const& HeaderSection) -> void {
 
-				std::vector<BYTE> WinHeaderInfo;
-				SupportedHeaderInfo HeaderInfo = { 0 };
+                std::vector<BYTE> WinHeaderInfo;
+                SupportedHeaderInfo HeaderInfo = { 0 };
 
-				HeaderInfo.dwHeaderInfoOffset = dwCurrentOffset;
+                HeaderInfo.dwHeaderInfoOffset = dwCurrentOffset;
 
-				std::string szBase = HeaderReader.Get(HeaderSection.c_str(), "Base", "");
-				std::string szType = HeaderReader.Get(HeaderSection.c_str(), "Type", "");
-				std::string szTypeDisplay = HeaderReader.Get(HeaderSection.c_str(), "TypeDisplay", "");
-				std::string szHeader = HeaderReader.Get(HeaderSection.c_str(), "Header", "");
-				if (!szHeader.empty()) { while (szHeader.back() == ';') szHeader.pop_back(); }
-				std::for_each(szHeader.begin(), szHeader.end(), [](CHAR& ch) {ch = tolower(ch); });
+                std::string szBase = HeaderReader.Get(HeaderSection.c_str(), "Base", "");
+                std::string szType = HeaderReader.Get(HeaderSection.c_str(), "Type", "");
+                std::string szTypeDisplay = HeaderReader.Get(HeaderSection.c_str(), "TypeDisplay", "");
+                std::string szHeader = HeaderReader.Get(HeaderSection.c_str(), "Header", "");
+                if (!szHeader.empty()) { while (szHeader.back() == ';') szHeader.pop_back(); }
+                std::for_each(szHeader.begin(), szHeader.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-				std::map<std::string, ULONG> AdditionalHeaderData;
-				if (szBase.front() == '[' && szBase.back() == ']')
-				{
-					szBase.pop_back();
-					szBase.erase(0, 1);
+                std::map<std::string, ULONG> AdditionalHeaderData;
+                if (szBase.front() == '[' && szBase.back() == ']')
+                {
+                    szBase.pop_back();
+                    szBase.erase(0, 1);
 
-					if (szHeader.empty())
-					{
-						if (IsVerbous) Utils::Printf::Info("Header %s has base %s with no header",
-							HeaderSection.c_str(), szBase.c_str());
-						return;
-					};
+                    if (szHeader.empty())
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Header %s has base %s with no header",
+                            HeaderSection.c_str(), szBase.c_str());
+                        return;
+                    };
 
-					std::string szHeaderPath = HeadersDir + szHeader;
-					INIReader AdditionalHeaderReader(szHeaderPath.c_str());
+                    std::string szHeaderPath = HeadersDir + szHeader;
+                    INIReader AdditionalHeaderReader(szHeaderPath.c_str());
 
-					std::set<std::string>::iterator AdditionalSection =
-						AdditionalHeaderReader.Sections().begin();
+                    std::set<std::string>::iterator AdditionalSection =
+                        AdditionalHeaderReader.Sections().begin();
 
-					while (AdditionalSection != AdditionalHeaderReader.Sections().end()) {
-						if (!AdditionalSection->compare(szBase))
-						{
-							std::string szNewBase = AdditionalHeaderReader.Get(szBase.c_str(), "Base", "");
-							std::string szNewType = AdditionalHeaderReader.Get(szBase.c_str(), "Type", "");
-							std::string szNewTypeDisplay = AdditionalHeaderReader.Get(szBase.c_str(), "TypeDisplay", "");
+                    while (AdditionalSection != AdditionalHeaderReader.Sections().end()) {
+                        if (!AdditionalSection->compare(szBase))
+                        {
+                            std::string szNewBase = AdditionalHeaderReader.Get(szBase.c_str(), "Base", "");
+                            std::string szNewType = AdditionalHeaderReader.Get(szBase.c_str(), "Type", "");
+                            std::string szNewTypeDisplay = AdditionalHeaderReader.Get(szBase.c_str(), "TypeDisplay", "");
 
-							if (!szNewBase.empty()) szBase = szNewBase;
-							if (!szNewType.empty()) szType = szNewType;
-							if (!szNewTypeDisplay.empty()) szTypeDisplay = szNewTypeDisplay;
+                            if (!szNewBase.empty()) szBase = szNewBase;
+                            if (!szNewType.empty()) szType = szNewType;
+                            if (!szNewTypeDisplay.empty()) szTypeDisplay = szNewTypeDisplay;
 
-							DWORD dwIndex = 0;
-							for (;;)
-							{
-								CHAR bIndex[10] = { 0 };
-								itoa(++dwIndex, bIndex, 10);
-								std::string szIndex = bIndex;
-								std::string szConstKey = "Const" + szIndex;
-								std::string szValueKey = "Value" + szIndex;
+                            DWORD dwIndex = 0;
+                            for (;;)
+                            {
+                                CHAR bIndex[10] = { 0 };
+                                itoa(++dwIndex, bIndex, 10);
+                                std::string szIndex = bIndex;
+                                std::string szConstKey = "Const" + szIndex;
+                                std::string szValueKey = "Value" + szIndex;
 
-								std::string szConst = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
-									szConstKey.c_str(), "");
-								if (szConst.empty()) break;
+                                std::string szConst = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
+                                    szConstKey.c_str(), "");
+                                if (szConst.empty()) break;
 
-								std::string szValue = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
-									szValueKey.c_str(), "");
-								if (szValue.empty())
-								{
-									if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
-										AdditionalSection->c_str(), szConstKey.c_str());
-									return;
-								};
+                                std::string szValue = AdditionalHeaderReader.Get(AdditionalSection->c_str(),
+                                    szValueKey.c_str(), "");
+                                if (szValue.empty())
+                                {
+                                    if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
+                                        AdditionalSection->c_str(), szConstKey.c_str());
+                                    return;
+                                };
 
-								DWORD dwValue = 0;
-								INT ret = 0;
-								if (!(ret = sscanf(szValue.c_str(), 
-									(szValue.length() > 2 && (szValue[0] == '0' && tolower(szValue[1]) == 'x')) ? "%lx" : "%lu",
-									&dwValue))
-									|| ret == EOF)
-								{
-									if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
-										AdditionalSection->c_str(), szConstKey.c_str(), szValue.c_str());
-									return;
-								};
+                                DWORD dwValue = 0;
+                                INT ret = 0;
+                                if (!(ret = sscanf(szValue.c_str(), 
+                                    (szValue.length() > 2 && (szValue[0] == '0' && tolower(szValue[1]) == 'x')) ? "%lx" : "%lu",
+                                    &dwValue))
+                                    || ret == EOF)
+                                {
+                                    if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
+                                        AdditionalSection->c_str(), szConstKey.c_str(), szValue.c_str());
+                                    return;
+                                };
 
-								AdditionalHeaderData.insert(AdditionalHeaderData.end(),
-									std::make_pair(szConst, dwValue));
-							};
-							break;
-						};
-						AdditionalSection++;
-					};
-				};
+                                AdditionalHeaderData.insert(AdditionalHeaderData.end(),
+                                    std::make_pair(szConst, dwValue));
+                            };
+                            break;
+                        };
+                        AdditionalSection++;
+                    };
+                };
 
-				if (szTypeDisplay.empty() && szBase.empty())
-				{
-					if (IsVerbous) Utils::Printf::Info("Header %s has no size",
-						HeaderSection.c_str());
-					return;
-				};
+                if (szTypeDisplay.empty() && szBase.empty())
+                {
+                    if (IsVerbous) Utils::Printf::Info("Header %s has no size",
+                        HeaderSection.c_str());
+                    return;
+                };
 
-				szTypeDisplay.empty() ? HeaderInfo.dwHeaderSize = GetTypeSize(szBase) :
-					HeaderInfo.dwHeaderSize = GetTypeSize(szTypeDisplay);
+                szTypeDisplay.empty() ? HeaderInfo.dwHeaderSize = GetTypeSize(szBase) :
+                    HeaderInfo.dwHeaderSize = GetTypeSize(szTypeDisplay);
 
-				DWORD dwIndex = 0;
-				if (!szType.compare("Enum")) WinHeaderInfo.push_back((BYTE)0);
-				else if (!szType.compare("Flag")) WinHeaderInfo.push_back((BYTE)1);
-				else
-				{
-					if (IsVerbous) Utils::Printf::Info("Header %s has unsupported type %s",
-						HeaderSection.c_str(), szType.c_str());
-					return;
-				};
+                DWORD dwIndex = 0;
+                if (!szType.compare("Enum")) WinHeaderInfo.push_back((BYTE)0);
+                else if (!szType.compare("Flag")) WinHeaderInfo.push_back((BYTE)1);
+                else
+                {
+                    if (IsVerbous) Utils::Printf::Info("Header %s has unsupported type %s",
+                        HeaderSection.c_str(), szType.c_str());
+                    return;
+                };
 
-				for (;;)
-				{
-					CHAR bIndex[10] = { 0 };
-					itoa(++dwIndex, bIndex, 10);
-					std::string szIndex = bIndex;
-					std::string szConstKey = "Const" + szIndex;
-					std::string szValueKey = "Value" + szIndex;
+                for (;;)
+                {
+                    CHAR bIndex[10] = { 0 };
+                    itoa(++dwIndex, bIndex, 10);
+                    std::string szIndex = bIndex;
+                    std::string szConstKey = "Const" + szIndex;
+                    std::string szValueKey = "Value" + szIndex;
 
-					std::string szConst = HeaderReader.Get(HeaderSection.c_str(),
-						szConstKey.c_str(), "");
-					if (szConst.empty()) break;
+                    std::string szConst = HeaderReader.Get(HeaderSection.c_str(),
+                        szConstKey.c_str(), "");
+                    if (szConst.empty()) break;
 
-					std::string szValue = HeaderReader.Get(HeaderSection.c_str(),
-						szValueKey.c_str(), "");
-					if (szValue.empty())
-					{
-						if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
-							HeaderSection.c_str(), szConstKey.c_str());
-						return;
-					};
-					DWORD dwValue = 0;
-					INT ret = 0;
-					if (!(ret = sscanf(szValue.c_str(),
-						(szValue.length() > 2 && (szValue[0] == '0' && tolower(szValue[1]) == 'x')) ? "%lx" : "%lu",
-						&dwValue))
-						|| ret == EOF)
-					{
-						if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
-							HeaderSection.c_str(), szConstKey.c_str(), szValue.c_str());
-						return;
-					};
+                    std::string szValue = HeaderReader.Get(HeaderSection.c_str(),
+                        szValueKey.c_str(), "");
+                    if (szValue.empty())
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Header %s has const %s with no value supplied",
+                            HeaderSection.c_str(), szConstKey.c_str());
+                        return;
+                    };
+                    DWORD dwValue = 0;
+                    INT ret = 0;
+                    if (!(ret = sscanf(szValue.c_str(),
+                        (szValue.length() > 2 && (szValue[0] == '0' && tolower(szValue[1]) == 'x')) ? "%lx" : "%lu",
+                        &dwValue))
+                        || ret == EOF)
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Header %s has const %s with bad value supplied %s",
+                            HeaderSection.c_str(), szConstKey.c_str(), szValue.c_str());
+                        return;
+                    };
 
-					WinHeaderInfo.push_back(((PBYTE)& dwValue)[0]);
-					WinHeaderInfo.push_back(((PBYTE)& dwValue)[1]);
-					WinHeaderInfo.push_back(((PBYTE)& dwValue)[2]);
-					WinHeaderInfo.push_back(((PBYTE)& dwValue)[3]);
-					WinHeaderInfo.push_back((BYTE)szConst.size());
-					WinHeaderInfo.insert(WinHeaderInfo.end(),
-						szConst.begin(), szConst.end());
-				};
+                    WinHeaderInfo.push_back(((PBYTE)& dwValue)[0]);
+                    WinHeaderInfo.push_back(((PBYTE)& dwValue)[1]);
+                    WinHeaderInfo.push_back(((PBYTE)& dwValue)[2]);
+                    WinHeaderInfo.push_back(((PBYTE)& dwValue)[3]);
+                    WinHeaderInfo.push_back((BYTE)szConst.size());
+                    WinHeaderInfo.insert(WinHeaderInfo.end(),
+                        szConst.begin(), szConst.end());
+                };
 
-				std::map<std::string, DWORD>::iterator HeaderDataIter =
-					AdditionalHeaderData.begin();
-				while (HeaderDataIter != AdditionalHeaderData.end())
-				{
-					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[0]);
-					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[1]);
-					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[2]);
-					WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[3]);
-					WinHeaderInfo.push_back((BYTE)HeaderDataIter->first.size());
-					WinHeaderInfo.insert(WinHeaderInfo.end(),
-						HeaderDataIter->first.begin(), HeaderDataIter->first.end());
-					HeaderDataIter++;
-					dwIndex++;
-				};
-				dwIndex--;
+                std::map<std::string, DWORD>::iterator HeaderDataIter =
+                    AdditionalHeaderData.begin();
+                while (HeaderDataIter != AdditionalHeaderData.end())
+                {
+                    WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[0]);
+                    WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[1]);
+                    WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[2]);
+                    WinHeaderInfo.push_back(((PBYTE)& HeaderDataIter->second)[3]);
+                    WinHeaderInfo.push_back((BYTE)HeaderDataIter->first.size());
+                    WinHeaderInfo.insert(WinHeaderInfo.end(),
+                        HeaderDataIter->first.begin(), HeaderDataIter->first.end());
+                    HeaderDataIter++;
+                    dwIndex++;
+                };
+                dwIndex--;
 
-				WinHeaderInfo.insert(WinHeaderInfo.begin() + 1, 1, ((PBYTE)& dwIndex)[0]);
-				WinHeaderInfo.insert(WinHeaderInfo.begin() + 2, 1, ((PBYTE)& dwIndex)[1]);
+                WinHeaderInfo.insert(WinHeaderInfo.begin() + 1, 1, ((PBYTE)& dwIndex)[0]);
+                WinHeaderInfo.insert(WinHeaderInfo.begin() + 2, 1, ((PBYTE)& dwIndex)[1]);
 
-				ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
-					WinHeaderInfo.begin(), WinHeaderInfo.end());
-				dwCurrentOffset += (DWORD)WinHeaderInfo.size();
-				HeaderFileInfo.insert(std::make_pair(HeaderSection, HeaderInfo));
-			});
-		WinApi.HeadersInfo[HeaderFile] = HeaderFileInfo;
-	} while (FindNextFileA(
+                ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
+                    WinHeaderInfo.begin(), WinHeaderInfo.end());
+                dwCurrentOffset += (DWORD)WinHeaderInfo.size();
+                HeaderFileInfo.insert(std::make_pair(HeaderSection, HeaderInfo));
+            });
+        WinApi.HeadersInfo[HeaderFile] = HeaderFileInfo;
+    } while (FindNextFileA(
                  hFind,
                  &WinFindData
              ));
@@ -2666,222 +2664,222 @@ BOOL InitializeWinApi()
         };
 
         std::for_each(ApiSections.begin(), ApiSections.end(),
-			[&](std::string const& ApiSection) -> void {
+            [&](std::string const& ApiSection) -> void {
 
-				_SupportedApiInfo ApiInfo;
-				ApiInfo.dwApiInfoOffset = 0;
-				std::string szSourceModule = ApiReader.Get(ApiSection.c_str(), "SourceModule", "");
-				std::for_each(szSourceModule.begin(), szSourceModule.end(), [](CHAR& ch) {ch = tolower(ch); });
+                _SupportedApiInfo ApiInfo;
+                ApiInfo.dwApiInfoOffset = 0;
+                std::string szSourceModule = ApiReader.Get(ApiSection.c_str(), "SourceModule", "");
+                std::for_each(szSourceModule.begin(), szSourceModule.end(), [](CHAR& ch) {ch = tolower(ch); });
 
-				if (szSourceModule.compare("")) ApiInfo.SourceModule = szSourceModule;
+                if (szSourceModule.compare("")) ApiInfo.SourceModule = szSourceModule;
 
-				if (!ApiInfo.SourceModule.empty())
-				{
-					DWORD dwPos = (DWORD)ApiInfo.SourceModule.find(".api");
-					if (dwPos == (DWORD)std::string::npos)
-					{
-						if (IsVerbous) Utils::Printf::Info("Bad api %s's source module %s",
-							ApiSection.c_str(), ApiInfo.SourceModule.c_str());
-						return;
-					};
-					ApiInfo.SourceModule.erase(dwPos, sizeof(".api"));
-					ApiInfo.SourceModule.append(".dll");
-					DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
-					return;
-				};
+                if (!ApiInfo.SourceModule.empty())
+                {
+                    DWORD dwPos = (DWORD)ApiInfo.SourceModule.find(".api");
+                    if (dwPos == (DWORD)std::string::npos)
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Bad api %s's source module %s",
+                            ApiSection.c_str(), ApiInfo.SourceModule.c_str());
+                        return;
+                    };
+                    ApiInfo.SourceModule.erase(dwPos, sizeof(".api"));
+                    ApiInfo.SourceModule.append(".dll");
+                    DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
+                    return;
+                };
 
-				std::vector<std::string> Headers;
-				std::string szHeader = ApiReader.Get(ApiSection.c_str(), "Header", "");
-				if (szHeader.compare(""))
-				{
-					DWORD dwPos = 0;
-					std::string szHeaderFile;
-					if (szHeader.back() != ';') szHeader.append(";");
-					while ((dwPos = (DWORD)szHeader.find(";")) != (DWORD)std::string::npos) {
-						if (dwPos)
-						{
-							szHeaderFile = szHeader.substr(0, dwPos);
-							while (szHeaderFile.back() == ' ') szHeaderFile.pop_back();
-							while (szHeaderFile.front() == ' ') szHeaderFile.erase(0, 1);
-							std::for_each(szHeaderFile.begin(), szHeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
-							if (szHeaderFile.find(".api") == std::string::npos)
-							{
-								if (IsVerbous) Utils::Printf::Info("Bad api %s's header file %s",
-									ApiSection.c_str(), szHeaderFile.c_str());
-								return;
-							};
-							Headers.push_back(szHeaderFile);
-						};
-						szHeader.erase(0, (SIZE_T)dwPos + 1);
-					};
-				};
+                std::vector<std::string> Headers;
+                std::string szHeader = ApiReader.Get(ApiSection.c_str(), "Header", "");
+                if (szHeader.compare(""))
+                {
+                    DWORD dwPos = 0;
+                    std::string szHeaderFile;
+                    if (szHeader.back() != ';') szHeader.append(";");
+                    while ((dwPos = (DWORD)szHeader.find(";")) != (DWORD)std::string::npos) {
+                        if (dwPos)
+                        {
+                            szHeaderFile = szHeader.substr(0, dwPos);
+                            while (szHeaderFile.back() == ' ') szHeaderFile.pop_back();
+                            while (szHeaderFile.front() == ' ') szHeaderFile.erase(0, 1);
+                            std::for_each(szHeaderFile.begin(), szHeaderFile.end(), [](CHAR& ch) {ch = tolower(ch); });
+                            if (szHeaderFile.find(".api") == std::string::npos)
+                            {
+                                if (IsVerbous) Utils::Printf::Info("Bad api %s's header file %s",
+                                    ApiSection.c_str(), szHeaderFile.c_str());
+                                return;
+                            };
+                            Headers.push_back(szHeaderFile);
+                        };
+                        szHeader.erase(0, (SIZE_T)dwPos + 1);
+                    };
+                };
 
-				std::vector<BYTE> WinApiInfo;
-				ApiInfo.dwApiInfoOffset = dwCurrentOffset;
+                std::vector<BYTE> WinApiInfo;
+                ApiInfo.dwApiInfoOffset = dwCurrentOffset;
 
-				std::string UnDecoratedSymbol = ApiSection;
-				if (UnDecoratedSymbol.front() == '?')
-				{
-					CHAR Symbol[MAX_PATH];
-					if (!UnDecorateSymbolName(
-						UnDecoratedSymbol.c_str(),
-						Symbol,
-						sizeof(Symbol),
-						UNDNAME_COMPLETE
-					))
-					{
-						if (IsVerbous) Utils::Printf::Info("Cannot undecorate the api %s",
-							UnDecoratedSymbol.c_str());
-						return;
-					};
-					UnDecoratedSymbol = Symbol;
-				};
+                std::string UnDecoratedSymbol = ApiSection;
+                if (UnDecoratedSymbol.front() == '?')
+                {
+                    CHAR Symbol[MAX_PATH];
+                    if (!UnDecorateSymbolName(
+                        UnDecoratedSymbol.c_str(),
+                        Symbol,
+                        sizeof(Symbol),
+                        UNDNAME_COMPLETE
+                    ))
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Cannot undecorate the api %s",
+                            UnDecoratedSymbol.c_str());
+                        return;
+                    };
+                    UnDecoratedSymbol = Symbol;
+                };
 
-				WinApiInfo.push_back((BYTE)(UnDecoratedSymbol.length() + 2));
-				WinApiInfo.insert(WinApiInfo.end(),
-					UnDecoratedSymbol.begin(), UnDecoratedSymbol.end());
+                WinApiInfo.push_back((BYTE)(UnDecoratedSymbol.length() + 2));
+                WinApiInfo.insert(WinApiInfo.end(),
+                    UnDecoratedSymbol.begin(), UnDecoratedSymbol.end());
 
-				WinApiInfo.push_back((BYTE)' ');
-				WinApiInfo.push_back((BYTE)'(');
+                WinApiInfo.push_back((BYTE)' ');
+                WinApiInfo.push_back((BYTE)'(');
 
-				BOOL bUseOldStack = FALSE;
-				INT dwParamCount = 0;
-				dwParamCount = ApiReader.GetInteger(ApiSection.c_str(), "ParamCount", 0);
-				if (dwParamCount < 0)
-				{
-					bUseOldStack = TRUE;
-					dwParamCount = 0 - dwParamCount;
-				};
+                BOOL bUseOldStack = FALSE;
+                INT dwParamCount = 0;
+                dwParamCount = ApiReader.GetInteger(ApiSection.c_str(), "ParamCount", 0);
+                if (dwParamCount < 0)
+                {
+                    bUseOldStack = TRUE;
+                    dwParamCount = 0 - dwParamCount;
+                };
 
-				WinApiInfo.push_back((BYTE)dwParamCount);
-				for (DWORD dwParamIndex = 1; dwParamIndex <= (DWORD)dwParamCount; dwParamIndex++)
-				{
-					CHAR bIndex[10] = { 0 };
-					itoa(dwParamIndex, bIndex, 10);
-					std::string szParamIndex = bIndex;
+                WinApiInfo.push_back((BYTE)dwParamCount);
+                for (DWORD dwParamIndex = 1; dwParamIndex <= (DWORD)dwParamCount; dwParamIndex++)
+                {
+                    CHAR bIndex[10] = { 0 };
+                    itoa(dwParamIndex, bIndex, 10);
+                    std::string szParamIndex = bIndex;
 
-					std::string szParameter = ApiReader.Get(ApiSection.c_str(), szParamIndex.c_str(), "");
-					if (!szParameter.compare(""))
-					{
-						if (IsVerbous) Utils::Printf::Info("Bad api %s with empty parameter %s",
-							ApiSection.c_str(), szParamIndex.c_str());
-						return;
-					};
+                    std::string szParameter = ApiReader.Get(ApiSection.c_str(), szParamIndex.c_str(), "");
+                    if (!szParameter.compare(""))
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Bad api %s with empty parameter %s",
+                            ApiSection.c_str(), szParamIndex.c_str());
+                        return;
+                    };
 
-					DWORD dwParamNameOffset = (DWORD)szParameter.find_last_of(" ");
-					if (!dwParamNameOffset)
-					{
-						if (IsVerbous) Utils::Printf::Info("Bad api %s with parameter %s without datatype",
-							ApiSection.c_str(), szParameter.c_str());
-						return;
-					};
-					dwParamNameOffset++;
+                    DWORD dwParamNameOffset = (DWORD)szParameter.find_last_of(" ");
+                    if (!dwParamNameOffset)
+                    {
+                        if (IsVerbous) Utils::Printf::Info("Bad api %s with parameter %s without datatype",
+                            ApiSection.c_str(), szParameter.c_str());
+                        return;
+                    };
+                    dwParamNameOffset++;
 
-					std::string ParamName = szParameter.substr((SIZE_T)dwParamNameOffset);
-					std::string DataType = szParameter.substr(0, dwParamNameOffset - 1);
-					while (DataType.back() == ' ') DataType.pop_back();
+                    std::string ParamName = szParameter.substr((SIZE_T)dwParamNameOffset);
+                    std::string DataType = szParameter.substr(0, dwParamNameOffset - 1);
+                    while (DataType.back() == ' ') DataType.pop_back();
 
-					BOOL IsHeader = FALSE;
-					if (DataType.front() == '[' && DataType.back() == ']')
-					{
-						DataType.pop_back();
-						DataType.erase(0, 1);
-						if (DataType.back() != '*' &&
-							!(DataType.front() == 'L' &&
-								DataType.at(1) == 'P')) IsHeader = TRUE;
-					};
+                    BOOL IsHeader = FALSE;
+                    if (DataType.front() == '[' && DataType.back() == ']')
+                    {
+                        DataType.pop_back();
+                        DataType.erase(0, 1);
+                        if (DataType.back() != '*' &&
+                            !(DataType.front() == 'L' &&
+                                DataType.at(1) == 'P')) IsHeader = TRUE;
+                    };
 
-					DWORD dwTotaParamlSize = (DWORD)ParamName.length() + (DWORD)DataType.length() + 13;
-					WinApiInfo.push_back((BYTE)dwTotaParamlSize);
+                    DWORD dwTotaParamlSize = (DWORD)ParamName.length() + (DWORD)DataType.length() + 13;
+                    WinApiInfo.push_back((BYTE)dwTotaParamlSize);
 
-					std::string szNewParam = "\n        ";
-					WinApiInfo.insert(WinApiInfo.end(),
-						szNewParam.begin(), szNewParam.end());
+                    std::string szNewParam = "\n        ";
+                    WinApiInfo.insert(WinApiInfo.end(),
+                        szNewParam.begin(), szNewParam.end());
 
-					WinApiInfo.insert(WinApiInfo.end(),
-						DataType.begin(), DataType.end());
-					WinApiInfo.push_back((BYTE)' ');
-					WinApiInfo.insert(WinApiInfo.end(),
-						ParamName.begin(), ParamName.end());
+                    WinApiInfo.insert(WinApiInfo.end(),
+                        DataType.begin(), DataType.end());
+                    WinApiInfo.push_back((BYTE)' ');
+                    WinApiInfo.insert(WinApiInfo.end(),
+                        ParamName.begin(), ParamName.end());
 
-					WinApiInfo.push_back((BYTE)' ');
-					WinApiInfo.push_back((BYTE)'=');
-					WinApiInfo.push_back((BYTE)' ');
+                    WinApiInfo.push_back((BYTE)' ');
+                    WinApiInfo.push_back((BYTE)'=');
+                    WinApiInfo.push_back((BYTE)' ');
 
-					DWORD dwSize = 0;
-					if (IsHeader)
-					{
-						if (Headers.empty())
-						{
-							bUseOldStack = TRUE;
-							dwSize = GetTypeSize(DataType);
-							WinApiInfo.push_back((BYTE)dwSize);
-							WinApiInfo.push_back((BYTE)0);
-						}
-						else
-						{
-							SupportedHeaderInfo HeaderData = { 0 };
-							std::vector<std::string>::iterator HeadersIter =
-								Headers.begin();
+                    DWORD dwSize = 0;
+                    if (IsHeader)
+                    {
+                        if (Headers.empty())
+                        {
+                            bUseOldStack = TRUE;
+                            dwSize = GetTypeSize(DataType);
+                            WinApiInfo.push_back((BYTE)dwSize);
+                            WinApiInfo.push_back((BYTE)0);
+                        }
+                        else
+                        {
+                            SupportedHeaderInfo HeaderData = { 0 };
+                            std::vector<std::string>::iterator HeadersIter =
+                                Headers.begin();
 
-							while (HeadersIter != Headers.end())
-							{
-								if (GetHeaderInfo(DataType, *HeadersIter, &HeaderData))
-								{
-									dwSize = HeaderData.dwHeaderSize;
-									WinApiInfo.push_back((BYTE)dwSize);
-									WinApiInfo.push_back((BYTE)1);
-									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[0]);
-									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[1]);
-									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[2]);
-									WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[3]);
-									break;
-								};
-								HeadersIter++;
-							};
+                            while (HeadersIter != Headers.end())
+                            {
+                                if (GetHeaderInfo(DataType, *HeadersIter, &HeaderData))
+                                {
+                                    dwSize = HeaderData.dwHeaderSize;
+                                    WinApiInfo.push_back((BYTE)dwSize);
+                                    WinApiInfo.push_back((BYTE)1);
+                                    WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[0]);
+                                    WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[1]);
+                                    WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[2]);
+                                    WinApiInfo.push_back(((PBYTE)& HeaderData.dwHeaderInfoOffset)[3]);
+                                    break;
+                                };
+                                HeadersIter++;
+                            };
 
-							if (HeadersIter == Headers.end())
-							{
-								bUseOldStack = TRUE;
-								dwSize = GetTypeSize(DataType);
-								WinApiInfo.push_back((BYTE)dwSize);
-								WinApiInfo.push_back((BYTE)0);
-							};
-						};
-					}
-					else
-					{
-						if (IsStrType(DataType))
-						{
-							dwSize = sizeof(LPVOID);
-							WinApiInfo.push_back((BYTE)dwSize);
-							WinApiInfo.push_back((BYTE)2);
-						}
-						else if (IsBool(DataType))
-						{
-							dwSize = 1;
-							WinApiInfo.push_back((BYTE)1);
-							WinApiInfo.push_back((BYTE)3);
-						}
-						else
-						{
-							dwSize = GetTypeSize(DataType);
-							WinApiInfo.push_back((BYTE)dwSize);
-							WinApiInfo.push_back((BYTE)0);
-						};
-					};
+                            if (HeadersIter == Headers.end())
+                            {
+                                bUseOldStack = TRUE;
+                                dwSize = GetTypeSize(DataType);
+                                WinApiInfo.push_back((BYTE)dwSize);
+                                WinApiInfo.push_back((BYTE)0);
+                            };
+                        };
+                    }
+                    else
+                    {
+                        if (IsStrType(DataType))
+                        {
+                            dwSize = sizeof(LPVOID);
+                            WinApiInfo.push_back((BYTE)dwSize);
+                            WinApiInfo.push_back((BYTE)2);
+                        }
+                        else if (IsBool(DataType))
+                        {
+                            dwSize = 1;
+                            WinApiInfo.push_back((BYTE)1);
+                            WinApiInfo.push_back((BYTE)3);
+                        }
+                        else
+                        {
+                            dwSize = GetTypeSize(DataType);
+                            WinApiInfo.push_back((BYTE)dwSize);
+                            WinApiInfo.push_back((BYTE)0);
+                        };
+                    };
 #if ! (defined(_M_X64) || defined(__amd64__))
-					if (dwSize == 8) bUseOldStack = TRUE;
+                    if (dwSize == 8) bUseOldStack = TRUE;
 #endif
-				};
+                };
 
-				WinApiInfo.push_back((BYTE)bUseOldStack);
-				WinApiInfo.push_back((BYTE)bClearStack);
-				ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
-					WinApiInfo.begin(), WinApiInfo.end());
-				dwCurrentOffset += (DWORD)WinApiInfo.size();
-				DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
-			});
+                WinApiInfo.push_back((BYTE)bUseOldStack);
+                WinApiInfo.push_back((BYTE)bClearStack);
+                ShellCodeInfo.WinApiData.insert(ShellCodeInfo.WinApiData.end(),
+                    WinApiInfo.begin(), WinApiInfo.end());
+                dwCurrentOffset += (DWORD)WinApiInfo.size();
+                DllInfo.insert(std::make_pair(ApiSection, ApiInfo));
+            });
         WinApi.KnownDlls[DllName] = DllInfo;
 
     } while (FindNextFileA(
