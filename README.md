@@ -77,6 +77,7 @@ Options:
   * By default the tool will log any calls made from the main module or any other place at the address space excluding the loaded modules
   * Use this option to include any of the loaded modules to the logging scope
   * This is very good when the sample is loading any external dll (ex: python27.dll)
+  * You should use this option while analysing malicious dlls with rundll32.exe
   * Notice that this also can be used to include the system dlls (ex: kerenl32.dll) to the scope
   * Example `--external-mods kernelbase.dll,msvcrt.dll,evil.dll`
  
