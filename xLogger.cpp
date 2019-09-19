@@ -286,7 +286,7 @@ BYTE bLoggerShellCode[] =
     0xb8, 0xd1, 0x00, 0x00, 0x00, 0x03, 0x04, 0x24, 0x0f, 0xb7, 0x08, 0x8d, 0x44, 0x08, 0x02, 0xff,
     0xe0,
 #define EXTERNAL_MODS_LIST_OFFSET 209
-    0x00, 0x00, 0xb8, 0x1d, 0x05, 0x00, 0x00, 0x03, 0x04, 0x24, 0x01, 0xc8, 0x3b, 0x44, 0x24,
+    0x00, 0x00, 0xb8, 0x31, 0x05, 0x00, 0x00, 0x03, 0x04, 0x24, 0x01, 0xc8, 0x3b, 0x44, 0x24,
     0x0c, 0x75, 0x06, 0x83, 0xc4, 0x04, 0xc2, 0x04, 0x00, 0x56, 0x57, 0x53, 0x55, 0xbd,
 #define API_INFO_ADDRESS_OFFSET 238
     0x00, 0x00, 0x00, 0x00,
@@ -888,10 +888,13 @@ INT main(INT argc, CHAR** argv)
             SlashPos = 1;
         };
 
+		while (szExeCmd.front() == ' ') szExeCmd.erase(0, 1);
+		std::string CommandLine = FilePath + " " + szExeCmd;
+
         if (!CreateProcessA(
-                    (LPCSTR)FilePath.c_str(),
-                    (LPSTR)szExeCmd.c_str(),
-                    NULL,
+					NULL,
+                    (LPSTR)CommandLine.c_str(),
+                    NULL, 
                     NULL,
                     FALSE,
                     ExternalConsole ?
@@ -903,7 +906,7 @@ INT main(INT argc, CHAR** argv)
                     &ProcessInformation
                 ))
         {
-            Utils::Reportf::ApiError("CreateProcessA", "Cannot create a new process from '%s'", FilePath.c_str());
+            Utils::Reportf::ApiError("CreateProcessA", "Cannot create a new process from '%s'", CommandLine.c_str());
             return FALSE;
         };
         Utils::Printf::Success("Process created successfully with pid %d", ProcessInformation.dwProcessId);
