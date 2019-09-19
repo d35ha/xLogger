@@ -115,7 +115,7 @@ Options:
 * `--hide-debugger`
   * xLogger itself is a small debugger, so basically it can be detected as any other debugger
   * Using this option, xLogger will use some of the anti-detection techniques to hide itself
-  * Currently, the implemented techniques are PEB `NtGlobalFlag` and `BeingDebugged`, a lot to be added ...
+  * Currently, the implemented techniques are PEB `NtGlobalFlag` and `BeingDebugged`, in future ScyllaHide will be used
 
 * `--external-console`
   * By default xLogger console handle will be passed to the process, so the process stdout/stderr/stdin will be the same as the tool
@@ -157,6 +157,7 @@ SourceModule=kernel32.api
 * Future options
   * `--auto-attach` to automatically attach the logger to any process created by the current process, I've the theory, just need time
   * `--log-all` to log calls to all of the exported functions even if it's not defined at its dll definition file
+  * `--inject-dll` to inject a custom dll at the system/attach breakpoint
 
 # RealLife Samples
 
