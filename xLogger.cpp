@@ -481,8 +481,8 @@ INT main(INT argc, CHAR** argv)
             "    xLogger -c \"evil.exe param\" --exclude-mods ntdll.dll -l \"log.txt\"\n"
             "    xLogger -c \"\\\"c:\\malware folder\\evil.exe\\\" \\\"param one\\\"\" -l log.txt\n"
             "    xLogger -c \"c:\\python\\python.exe c:\\bad.py\" --external-mods python27.dll -l log.txt\n"
-			"    xLogger -c \"c:\\Windows\\System32\rundll32.exe c:\\evil.dll,evil_export\" -l log.txt --external-mods evil.dll\n"
-			"    xLogger -c evil.exe --exclude-apis kernel32.dll:GetLastError,ntdll.dll:NtReadFile -v -l log.txt\n"
+            "    xLogger -c \"c:\\Windows\\System32\\rundll32.exe c:\\evil.dll,evil_export\" -l log.txt --external-mods evil.dll\n"
+            "    xLogger -c evil.exe --exclude-apis kernel32.dll:GetLastError,ntdll.dll:NtReadFile -v -l log.txt\n"
             "    xLogger -c evil.exe -l log.txt --exclude-all-apis-except kernel32.dll:CreateProcessInternalW\n"
             "    xLogger -c evil.exe -l log.txt --exclude-all-mods-except ntdll.dll,msvcrt.dll\n"
         );
